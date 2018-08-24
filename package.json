@@ -20,7 +20,7 @@
     "coverage": "yarn test -- --coverage",
     "ci": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "doc": "build-storybook -c .storybook -o .out",
-    "deploy-storybook": "storybook-to-ghpages"
+    "pub:doc": "storybook-to-ghpages"
   },
   "pre-commit": "lint",
   "lint-staged": {
