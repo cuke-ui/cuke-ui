@@ -19,7 +19,8 @@ module.exports = {
   },
   "globals": {
     describe:true,
-    it:true
+    it:true,
+    __dirname:true
   },
   "rules": {
     "object-shorthand": "error",

@@ -1,0 +1,62 @@
+@import "../styles/vars.less";
+@import "../styles/mixins.less";
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-align: center;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    line-height: @button-height;
+    padding: 0 30px;
+    font-size: @font-size;
+    height: @button-height;
+    user-select: none;
+    transition: all @default-transition;
+    position: relative;
+    color: @font-color;
+    background-color: #fff;
+    border-color: @border-color;
+    border-radius: @border-radius;
+    outline: none;
+    .btn-hover(@default-color);
+    &.btn-primary {
+        .btn-hover(@primary-color)
+    }
+    &.btn-default {
+        color:@font-color;
+        background-color: #fff;
+        border: 1px solid @default-color;
+        &:hover,
+        &:active {
+            border: 1px solid @primary-color
+        }
+    }
+    &.btn-warning {
+        .btn-hover(@warning-color)
+    }
+    &.btn-error {
+        .btn-hover(@error-color)
+    }
+    &.btn-success {
+        .btn-hover(@success-color)
+    }
+    &.btn-info {
+        .btn-hover(@info-color)
+    }
+    &.btn-disabled {
+        .btn-hover(@disabled-color);
+        cursor: no-drop;
+        border-style: dashed;
+        color: @font-color;
+        border-color: @border-color;
+    }
+    &.btn-block {
+        width: 100%;
+        display: block
+    }
+}
