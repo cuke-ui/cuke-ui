@@ -34,8 +34,13 @@ storiesOf("Button 按钮", module).add("按钮", () => (
 			</Button>
 		</p>
 		<p>
-			<Button type="disabled" onClick={action("clicked")}>
+			<Button type="primary" disabled onClick={action("clicked")}>
 				禁用
+			</Button>
+		</p>
+		<p>
+			<Button type="primary" loading={true} onClick={action("clicked")}>
+				加载中
 			</Button>
 		</p>
 		<p>

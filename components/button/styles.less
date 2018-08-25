@@ -1,7 +1,8 @@
 @import "../styles/vars.less";
+@import "../styles/animate.less";
 @import "../styles/mixins.less";
 
-.btn {
+.cuke-button {
     display: inline-block;
     margin-bottom: 0;
     font-weight: 500;
@@ -28,7 +29,7 @@
         .btn-hover(@primary-color)
     }
     &.btn-default {
-        color:@font-color;
+        color: @font-color;
         background-color: #fff;
         border: 1px solid @default-color;
         &:hover,
@@ -58,5 +59,13 @@
     &.btn-block {
         width: 100%;
         display: block
+    }
+    &.btn-loading {
+        opacity: @loading-opacity;
+        >.spin {
+            display: inline-block;
+            margin-right: 10px;
+            animation: spin @loading-time linear infinite;
+        }
     }
 }

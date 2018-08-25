@@ -9089,6 +9089,10 @@ react-icons@^2.2.7:
   dependencies:
     react-icon-base "2.1.0"
 
+react-icons@^3.0.5:
+  version "3.0.5"
+  resolved "http://registry.npm.taobao.org/react-icons/download/react-icons-3.0.5.tgz#9f22a319a48b562e052af2255a3dda8ded363d1c"
+
 react-inspector@^2.2.2:
   version "2.3.0"
   resolved "http://registry.npm.taobao.org/react-inspector/download/react-inspector-2.3.0.tgz#fc9c1d38ab687fc0d190dcaf133ae40158968fc8"

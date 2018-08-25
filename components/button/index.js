@@ -1,13 +1,16 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
+// import FaBeer from 'react-icons/lib/fa/beer';
 import "./styles.less";
 
-export default class Button extends React.PureComponent {
+export default class Button extends PureComponent {
 	static defaultProps = {
 		prefix: "cuke-button",
 		type: "default",
-		htmlType: "button"
+		htmlType: "button",
+		loading: false,
+		disabled: false
 	};
 	static propTypes = {
 		block: PropTypes.bool,
@@ -23,6 +26,8 @@ export default class Button extends React.PureComponent {
 	};
 	render() {
 		const {
+			loading,
+			disabled,
 			block,
 			prefix,
 			children,
@@ -37,7 +42,7 @@ export default class Button extends React.PureComponent {
 			return type.indexOf(btnType) !== -1;
 		};
 
-		const isDisabled = checkType("disabled") ? { disabled: true } : {};
+		const isDisabled = disabled ? { disabled: true } : {};
 		return (
 			<button
 				{...attr}
@@ -46,18 +51,20 @@ export default class Button extends React.PureComponent {
 				onClick={onClick}
 				className={cls(
 					prefix,
-					"btn",
 					{ "btn-primary": checkType("primary") },
 					{ "btn-warning": checkType("warning") },
 					{ "btn-success": checkType("success") },
 					{ "btn-error": checkType("error") },
 					{ "btn-default": checkType("default") },
-					{ "btn-disabled": checkType("disabled") },
 					{ "btn-info": checkType("info") },
+					{ "btn-disabled": disabled },
+					{ "btn-loading": loading },
 					{ "btn-block": block },
 					className
 				)}
 			>
+				{//TODO: 替换图标
+				loading ? <i className="spin">1</i> : undefined}
 				<span>{children}</span>
 			</button>
 		);
