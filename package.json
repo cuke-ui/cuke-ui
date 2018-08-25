@@ -18,7 +18,7 @@
     "lint": "prettier --write \"components/**/*.js\" && yarn eslint:fix && yarn stylelint:fix",
     "test": "jest --config jest.config.js",
     "coverage": "yarn test -- --coverage",
-    "ci": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "ci": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && yarn pub:doc",
     "build:doc": "build-storybook -c .storybook -o .out",
     "pub:doc": "storybook-to-ghpages"
   },
@@ -99,6 +99,7 @@
     "url-loader": "^0.5.8"
   },
   "dependencies": {
-    "react-icons": "^3.0.5"
+    "react-icons": "^3.0.5",
+    "react-jinke-music-player": "^4.0.3"
   }
 }

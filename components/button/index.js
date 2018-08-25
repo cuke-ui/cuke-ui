@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
-// import FaBeer from 'react-icons/lib/fa/beer';
+import { IoIosRefresh } from "react-icons/io";
+// console.log(a);
 import "./styles.less";
 
 export default class Button extends PureComponent {
@@ -64,7 +65,7 @@ export default class Button extends PureComponent {
 				)}
 			>
 				{//TODO: 替换图标
-				loading ? <i className="spin">1</i> : undefined}
+				loading ? <IoIosRefresh className="cuke-loading" /> : undefined}
 				<span>{children}</span>
 			</button>
 		);
