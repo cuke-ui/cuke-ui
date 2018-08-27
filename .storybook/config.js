@@ -1,4 +1,7 @@
-import { configure } from '@storybook/react';
+import { configure,setAddon } from '@storybook/react';
+import {name,repository} from "../package.json"
+import infoAddon from '@storybook/addon-info';
+import { setOptions } from '@storybook/addon-options';
 
 const req = require.context('../components', true, /\.stories\.js$/)
 
@@ -9,4 +12,9 @@ function loadStories() {
   require('../stories/dataEntry'); //数据录入
 }
 
+setOptions({
+  name: name,
+  url: repository,
+});
+setAddon(infoAddon);
 configure(loadStories, module);
