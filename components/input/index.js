@@ -1,36 +1,90 @@
 import React, { PureComponent } from 'react';
 import cls from 'classnames';
 import PropTypes from 'prop-types';
+import './styles.less';
 
-//TODO: 输入框组件
 export default class Input extends PureComponent {
 	static defaultProps = {
-		prefix: 'cuke-input',
+		prefixCls: 'cuke-input',
+		isDisabled: false,
+		placeholder: '',
+		type: 'text'
 	};
 
 	static propTypes = {
-		separator: PropTypes.oneOfType([
-			PropTypes.string.isRequired,
-			PropTypes.object.isRequired,
-		])
+		prefixCls: PropTypes.string.isRequired,
+		placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		isDisabled: PropTypes.bool,
+		type: PropTypes.oneOf([
+			'text',
+			'password',
+			'range',
+			'date',
+			'number',
+			'color',
+			'email'
+		]),
+		value: PropTypes.string,
+		defaultValue: PropTypes.string,
+		onChange: PropTypes.func
 	};
 
+	onChange = (e) => {
+		if(!this.props.disabled) {
+			this.props.onChange(e.target.value)
+		}
+	}
+
 	render() {
-    const {
-      prefix,
-      className,
-      ...attr
-    } = this.props
-		return (
-			<div
-				className={cls(
-					prefix,
-					className
-				)}
+		const {
+			type,
+			placeholder,
+			prefixCls,
+			className,
+			disabled,
+			addonBefore,
+			addonAfter,
+			...attr
+		} = this.props;
+		const isDisabled = disabled ? { disabled: true } : {};
+
+		const inputEle = (
+			<input
+				type={type}
+				className={cls(prefixCls, className, {
+					[`${prefixCls}-disabled`]: disabled
+				})}
 				{...attr}
-			>
-				<input type="text"/>
-			</div>
+				placeholder={placeholder}
+				{...isDisabled}
+				onChange={this.onChange}
+			/>
 		);
+
+		if (addonBefore || addonAfter) {
+			return (
+				<span className={
+					cls(
+						`${prefixCls}-group`,
+						{[`${prefixCls}-group-addon-before`] : !!addonBefore },
+						{[`${prefixCls}-group-addon-after`] : !!addonAfter },
+						{[`${prefixCls}-group-addon-all`] : !!addonAfter && !!addonBefore},
+					)
+				}>
+					{addonBefore ? (
+						<span className={`${prefixCls}-group-addon`}>{addonBefore}</span>
+					) : (
+						undefined
+					)}
+					{inputEle}
+					{addonAfter ? (
+						<span className={`${prefixCls}-group-addon`}>{addonAfter}</span>
+					) : (
+						undefined
+					)}
+				</span>
+			);
+		}
+		return inputEle;
 	}
 }

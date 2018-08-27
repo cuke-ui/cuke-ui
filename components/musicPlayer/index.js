@@ -70,10 +70,11 @@ export default class MusicPlayer extends Component {
 		glassBg: PropTypes.bool,
 		remember: PropTypes.bool,
 		remove: PropTypes.bool,
-		defaultPlayIndex: PropTypes.number
+		defaultPlayIndex: PropTypes.number,
+		prefixCls: PropTypes.string.isRequired
 	};
 	static defaultProps = {
-		prefix: "cuke-music-player",
+		prefixCls: "cuke-music-player",
 		playModeText: {
 			order: "顺序播放",
 			orderLoop: "列表循环",
@@ -89,10 +90,10 @@ export default class MusicPlayer extends Component {
 	};
 
 	render() {
-		const { prefix, className, ...attr } = this.props;
+		const { prefixCls, className, ...attr } = this.props;
 
 		return (
-			<div {...attr} className={cls(prefix, className)}>
+			<div {...attr} className={cls(prefixCls, className)}>
 				<ReactMusicPlayer {...attr} />
 			</div>
 		);

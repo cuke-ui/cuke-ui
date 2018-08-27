@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 
 export default class Breadcrumb extends PureComponent {
 	static defaultProps = {
-		prefix: 'cuke-breadcrumb',
+		prefixCls: 'cuke-breadcrumb',
 		separator: '/'
 	};
 
 	static propTypes = {
+		prefixCls: PropTypes.string.isRequired,
 		separator: PropTypes.oneOfType([
 			PropTypes.string.isRequired,
 			PropTypes.object.isRequired,
@@ -16,7 +17,7 @@ export default class Breadcrumb extends PureComponent {
 	};
 
 	render() {
-		const { prefix, className, separator, children, ...attr } = this.props;
+		const { prefixCls, className, separator, children, ...attr } = this.props;
 
 		const items = React.Children.map(children, (element, index) => {
 			return cloneElement(element, {
@@ -28,7 +29,7 @@ export default class Breadcrumb extends PureComponent {
 		return (
 			<div
 				className={cls(
-					prefix,
+					prefixCls,
 					className
 				)}
 				{...attr}

@@ -14,7 +14,7 @@ export default class WordPad extends PureComponent {
 		}
 	};
 	static defaultProps = {
-		prefix: 'cuke-word-pad',
+		prefixCls: 'cuke-word-pad',
 		clear: false,
 		width: 700,
 		height: 700,
@@ -31,16 +31,17 @@ export default class WordPad extends PureComponent {
 		strokeWidth: propTypes.number,
 		lineJoin: propTypes.string,
 		lineCap: propTypes.string,
-		getCanvas: propTypes.func
+		getCanvas: propTypes.func,
+		prefixCls: propTypes.string.isRequired
 	};
 	constructor(props) {
 		super(props);
 	}
 	render() {
-		const { prefix, className, ...attr } = this.props;
+		const { prefixCls, className, ...attr } = this.props;
 		return (
 			<canvas
-				className={cls(prefix, className)}
+				className={cls(prefixCls, className)}
 				{...attr}
 				ref={node => (this.canvas = node)}
 			>

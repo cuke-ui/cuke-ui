@@ -6,14 +6,18 @@ import "./styles.less";
 
 export default class Button extends PureComponent {
 	static defaultProps = {
-		prefix: "cuke-button",
+		prefixCls: "cuke-button",
 		type: "default",
 		htmlType: "button",
 		loading: false,
 		disabled: false
 	};
 	static propTypes = {
+		prefixCls:PropTypes.string.isRequired,
 		block: PropTypes.bool,
+		loading: PropTypes.bool,
+		disabled: PropTypes.bool,
+		htmlType: PropTypes.string,
 		type: PropTypes.oneOf([
 			"primary",
 			"default",
@@ -29,7 +33,7 @@ export default class Button extends PureComponent {
 			loading,
 			disabled,
 			block,
-			prefix,
+			prefixCls,
 			children,
 			type,
 			className,
@@ -50,7 +54,7 @@ export default class Button extends PureComponent {
 				type={htmlType}
 				onClick={onClick}
 				className={cls(
-					prefix,
+					prefixCls,
 					{ "btn-primary": checkType("primary") },
 					{ "btn-warning": checkType("warning") },
 					{ "btn-success": checkType("success") },

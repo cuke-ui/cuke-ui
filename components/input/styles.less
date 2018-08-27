@@ -1,3 +1,103 @@
+@import '../styles/vars.less';
+@import '../styles/mixins.less';
+
 .cuke-input {
+	font-variant: tabular-nums;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	display: inline-block;
+	padding: @input-padding;
+	width: 100%;
+	height: @input-height;
+	font-size: @font-size;
+	line-height: 1.5;
+	color: @font-color;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid @border-color;
+	border-radius: @border-radius;
+	transition: all @animate-time;
+	outline: none;
+
+	&:active,
+	&:hover,
+	&:focus {
+		border-color: @primary-color;
+		outline: none;
+		box-shadow: @input-box-shadow;
+	}
+
+	&-disabled {
+		cursor: no-drop;
+		background-color: @disabled-color;
+		&:active,
+		&:hover,
+		&:focus {
+			border-color: @border-color;
+			outline: none;
+			box-shadow: none;
+		}
+	}
+
+	&-group-addon-before {
+		> .cuke-input {
+			border-bottom-right-radius: @border-radius !important;
+			border-top-right-radius: @border-radius !important;
+		}
+	}
+	&-group-addon-after {
+		> .cuke-input {
+      border-bottom-left-radius: @border-radius !important;
+      border-top-left-radius: @border-radius !important;
+		}
+  }
   
+  &-group-addon-all {
+    > .cuke-input {
+      border-radius: 0 !important;
+		}
+  }
+
+	&-group {
+		vertical-align: middle;
+		.flex-center(space-around);
+
+		> .cuke-input {
+			flex: 1 1 auto;
+			width: 100%;
+			margin-bottom: 0;
+			border-radius: 0;
+		}
+
+		&-addon {
+			padding: @input-padding;
+			font-size: @font-size;
+			font-weight: normal;
+			height: @input-height;
+			line-height: @input-height;
+			color: rgba(0, 0, 0, 0.65);
+			text-align: center;
+			background-color: @bg-color;
+			border: 1px solid @border-color;
+			border-radius: @border-radius;
+			position: relative;
+			transition: all @loading-time;
+			.flex-center();
+
+			&:first-child {
+				border-bottom-right-radius: 0;
+				border-top-right-radius: 0;
+				border-right: none;
+			}
+
+			&:last-child {
+				border-bottom-left-radius: 0;
+				border-top-left-radius: 0;
+				border-left: none;
+			}
+		}
+	}
 }

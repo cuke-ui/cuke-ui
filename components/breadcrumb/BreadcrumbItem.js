@@ -3,16 +3,16 @@ import cls from 'classnames';
 
 class BreadcrumbItem extends PureComponent {
 	static defaultProps = {
-		prefix: 'cuke-breadcrumb-item',
+		prefixCls: 'cuke-breadcrumb-item',
 		separator: '/'
 	};
 
 	render() {
-		const { prefix, className, separator, children, ...attr } = this.props;
+		const { prefixCls, className, separator, children, ...attr } = this.props;
 		return (
-			<span className={cls(prefix, className)} {...attr}>
-				<span className={`${prefix}-text`}>{children}</span>
-				<span className={`${prefix}-separator`}>{separator}</span>
+			<span className={cls(prefixCls, className)} {...attr}>
+				<span className={`${prefixCls}-text`}>{children}</span>
+				<span className={`${prefixCls}-separator`}>{separator}</span>
 			</span>
 		);
 	}

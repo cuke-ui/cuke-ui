@@ -2,6 +2,7 @@ import { configure,setAddon } from '@storybook/react';
 import {name,repository} from "../package.json"
 import infoAddon from '@storybook/addon-info';
 import { setOptions } from '@storybook/addon-options';
+import "../components/styles/app.less"
 
 const req = require.context('../components', true, /\.stories\.js$/)
 
