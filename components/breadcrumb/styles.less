@@ -1,0 +1,21 @@
+@import "../styles/vars.less";
+
+.cuke-breadcrumb {
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  line-height: normal;
+  color: lighten(@font-color,50%);
+
+  > span:last-child {
+    font-weight: bold;
+    color: @font-color;
+
+    .cuke-breadcrumb-item-separator {
+      display: none;
+    }
+  }
+  .cuke-breadcrumb-item-separator {
+    margin: 0 8px;
+    color: #d9d9d9;
+  }
+}

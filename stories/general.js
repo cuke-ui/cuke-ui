@@ -3,7 +3,8 @@ import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import Button from "../components/button";
 
-storiesOf("Button 按钮", module).add("按钮", () => (
+storiesOf("普通", module)
+.add("Button 按钮", () => (
 	<div>
 		<p>
 			<Button onClick={action("clicked")}>默认</Button>

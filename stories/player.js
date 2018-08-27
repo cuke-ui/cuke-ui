@@ -2,7 +2,8 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import MusicPlayer from "../components/musicPlayer";
 
-storiesOf("musicPlayer 音乐播放器", module).add("播放器", () => (
+storiesOf("视听娱乐", module)
+.add("MusicPlayer 音乐播放器", () => (
   <MusicPlayer audioLists={[{
     name:"星球坠落",
     singer:"中国新说唱",
