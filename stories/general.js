@@ -1,11 +1,20 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
+import { withInfo } from '@storybook/addon-info';
 import { action } from "@storybook/addon-actions";
 import Button from "../components/button";
 
 storiesOf("普通", module)
-.add("Button 按钮", () => (
-	<div>
+.add('Button 按钮',
+    withInfo(`
+      代码演示
+    
+      ~~~js
+      <Button>点我</Button>
+      ~~~
+    
+    `)(() =>
+		<div>
 		<p>
 			<Button onClick={action("clicked")}>默认</Button>
 		</p>
@@ -50,4 +59,5 @@ storiesOf("普通", module)
 			</Button>
 		</p>
 	</div>
-));
+    )
+  )

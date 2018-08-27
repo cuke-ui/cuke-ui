@@ -1,8 +1,9 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { withInfo } from '@storybook/addon-info';
 import Breadcrumb from '../components/breadcrumb';
 
-storiesOf('导航', module).add('Breadcrumb 面包屑', () => (
+storiesOf('导航', module).add('Breadcrumb 面包屑', withInfo()(() => (
 	<div>
 		<h3>默认导航</h3>
 		<Breadcrumb>
@@ -22,4 +23,4 @@ storiesOf('导航', module).add('Breadcrumb 面包屑', () => (
 			<Breadcrumb.Item>导航</Breadcrumb.Item>
 		</Breadcrumb>
 	</div>
-));
+)))

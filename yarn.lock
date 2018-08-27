@@ -9374,6 +9374,12 @@ react-treebeard@^2.1.0:
     shallowequal "^0.2.2"
     velocity-react "^1.3.1"
 
+react-turntable@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/react-turntable/-/react-turntable-1.2.5.tgz#82b21e30474d4e1a0bd12e02337fd286d6c49ce1"
+  dependencies:
+    prop-types "^15.6.0"
+
 react@^16.4.2:
   version "16.4.2"
   resolved "http://registry.npm.taobao.org/react/download/react-16.4.2.tgz#2cd90154e3a9d9dd8da2991149fdca3c260e129f"

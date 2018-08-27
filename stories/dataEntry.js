@@ -4,10 +4,11 @@ import { action } from '@storybook/addon-actions';
 import WordPad from '../components/wordPad';
 import Button from '../components/button';
 import Input from '../components/input';
+import { withInfo } from '@storybook/addon-info';
 import { IoIosAddCircleOutline } from "react-icons/io";
 
 storiesOf('数据录入', module)
-	.add('WordPad 写字板', () => (
+	.add('WordPad 写字板', withInfo()(() => (
 		<div>
 			<h3>用鼠标在上面写字</h3>
 			<WordPad
@@ -33,8 +34,8 @@ storiesOf('数据录入', module)
 				}}
 			/>
 		</div>
-	))
-	.add('Input 输入框', () => (
+	)))
+	.add('Input 输入框', withInfo()(() => (
 		<div style={{ width: 400 }}>
 			<h3>基本使用</h3>
 			<Input placeholder="请输入" onChange={(value)=> console.log(value)}/>
@@ -52,4 +53,4 @@ storiesOf('数据录入', module)
 			<Input addonAfter={'.com'} placeholder="填写网址" style={{ margin: '10px 0' }}/>
 			<Input addonBefore={"https://"} addonAfter={'.cn'} placeholder="www.lijinke" />
 		</div>
-	));
+	)))

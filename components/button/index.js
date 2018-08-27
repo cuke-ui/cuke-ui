@@ -10,6 +10,7 @@ export default class Button extends PureComponent {
 		type: "default",
 		htmlType: "button",
 		loading: false,
+		block:false,
 		disabled: false
 	};
 	static propTypes = {
