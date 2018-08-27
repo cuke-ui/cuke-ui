@@ -5,6 +5,12 @@ const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 module.exports = (storybookBaseConfig, configType) => {
 	const isDev = configType === 'DEVELOPMENT';
 
+	storybookBaseConfig.devServer = {
+		...storybookBaseConfig.devServer,
+		open:true,
+		openUrl:""
+	}
+
 	storybookBaseConfig.module.rules.push(
 		...[
 			{

@@ -14,3 +14,4 @@ coverage
 yarn.lock
 postcss.config.json
 logos
+.out

@@ -1,5 +1,7 @@
 # cuke-ui
 
+[![Build Status](https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master)](https://travis-ci.com/cuke-ui/cuke-ui)
+
 (施工中...)
 
 
@@ -22,7 +24,30 @@ yarn dev
 3. 访问 [http://localhost:8080](http://localhost:8080)
 
 
-### 发布文档
+### 测试相关
+> 覆盖率
+
+```
+yarn coverage
+```
+
+> 单元测试
+
+```
+yarn test
+```
+
+
+
+### 文档相关
+
+> 打包文档
+
+```
+yarn build:doc
+```
+
+> 发布文档
 ```
 yarn pub:doc
 ```
