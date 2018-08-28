@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TurnTable/> should render a <TurnTable/> components 1`] = `
+<div
+  class="react-turntable react-turntable-section cuke-turn-table"
+  style="width:500px;height:500px"
+>
+  <canvas
+    id="react-turntable-section-canvas"
+  />
+  <div
+    class="react-turntable-section-btn"
+  >
+    抽奖
+  </div>
+</div>
+`;
+
+exports[`<TurnTable/> should render the custom config 1`] = `
+<div
+  class="react-turntable react-turntable-section custom"
+  style="width:500px;height:500px"
+>
+  <canvas
+    id="react-turntable-section-canvas"
+  />
+  <div
+    class="react-turntable-section-btn"
+  >
+    我要抽奖
+  </div>
+</div>
+`;

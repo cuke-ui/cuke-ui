@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Breadcrumb/> should render Breadcrumb 1`] = `
+<div
+  class="cuke-breadcrumb"
+>
+  <span
+    class="cuke-breadcrumb-item"
+  >
+    <span
+      class="cuke-breadcrumb-item-text"
+    >
+      首页
+    </span>
+    <span
+      class="cuke-breadcrumb-item-separator"
+    >
+      /
+    </span>
+  </span>
+  <span
+    class="cuke-breadcrumb-item"
+  >
+    <span
+      class="cuke-breadcrumb-item-text"
+    >
+      模块
+    </span>
+    <span
+      class="cuke-breadcrumb-item-separator"
+    >
+      /
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Breadcrumb/> should render custom separator 1`] = `
+<div
+  class="cuke-breadcrumb"
+>
+  <span
+    class="cuke-breadcrumb-item"
+  >
+    <span
+      class="cuke-breadcrumb-item-text"
+    >
+      黄瓜 ui
+    </span>
+    <span
+      class="cuke-breadcrumb-item-separator"
+    >
+      &gt;
+    </span>
+  </span>
+  <span
+    class="cuke-breadcrumb-item"
+  >
+    <span
+      class="cuke-breadcrumb-item-text"
+    >
+      面包屑
+    </span>
+    <span
+      class="cuke-breadcrumb-item-separator"
+    >
+      &gt;
+    </span>
+  </span>
+  <span
+    class="cuke-breadcrumb-item"
+  >
+    <span
+      class="cuke-breadcrumb-item-text"
+    >
+      <a
+        href="#"
+      >
+        链接
+      </a>
+    </span>
+    <span
+      class="cuke-breadcrumb-item-separator"
+    >
+      &gt;
+    </span>
+  </span>
+  <span
+    class="cuke-breadcrumb-item"
+  >
+    <span
+      class="cuke-breadcrumb-item-text"
+    >
+      导航
+    </span>
+    <span
+      class="cuke-breadcrumb-item-separator"
+    >
+      &gt;
+    </span>
+  </span>
+</div>
+`;

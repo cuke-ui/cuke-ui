@@ -47,13 +47,12 @@ export default class Button extends PureComponent {
 			return type.indexOf(btnType) !== -1;
 		};
 
-		const isDisabled = disabled ? { disabled: true } : {};
+		const isDisabled = disabled || loading ? { disabled: true } : { onClick };
 		return (
 			<button
 				{...attr}
 				{...isDisabled}
 				type={htmlType}
-				onClick={onClick}
 				className={cls(
 					prefixCls,
 					{ "btn-primary": checkType("primary") },

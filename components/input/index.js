@@ -54,10 +54,10 @@ export default class Input extends PureComponent {
 				className={cls(prefixCls, className, {
 					[`${prefixCls}-disabled`]: disabled
 				})}
-				{...attr}
 				placeholder={placeholder}
-				{...isDisabled}
 				onChange={this.onChange}
+				{...attr}
+				{...isDisabled}
 			/>
 		);
 

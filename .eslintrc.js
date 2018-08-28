@@ -20,7 +20,9 @@ module.exports = {
   "globals": {
     describe:true,
     it:true,
-    __dirname:true
+    __dirname:true,
+    expect:true,
+    jest:true
   },
   "rules": {
     "object-shorthand": "error",
