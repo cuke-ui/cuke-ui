@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import MusicPlayer from '../components/musicPlayer';
-import Turntable from '../components/turnTable/';
+import Turntable from '../components/turnTable';
+import message from '../components/message';
 
 storiesOf('娱乐', module)
 	.add(
@@ -44,7 +45,8 @@ storiesOf('娱乐', module)
 						return true
 					},
 					onComplete(prize) {
-						alert(prize);
+						console.log(prize)
+						message.success(prize)
 					}
 				}}
 			/>
