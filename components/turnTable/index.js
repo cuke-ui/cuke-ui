@@ -12,10 +12,9 @@ export default class TurnTable extends PureComponent {
 		speed: 1000, //旋转速度
 		duration: 5000, //旋转时间
 		prizes: [],
-		clickEle: '',
 		clickText: '抽奖',
-		primaryColor: '#ccc',
-		secondaryColor: '#1890ff',
+		primaryColor: '#2f363d',
+		secondaryColor: '#EEC775',
 		fontStyle: {
 			color: '#fff',
 			size: '14px',
@@ -36,6 +35,7 @@ export default class TurnTable extends PureComponent {
 		speed: PropTypes.number,
 		duration: PropTypes.number,
 		onComplete: PropTypes.func,
+		onStart: PropTypes.func,
 		fontVertical: PropTypes.bool,
 		fontStyle: PropTypes.object
 	};

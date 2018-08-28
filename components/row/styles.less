@@ -1,0 +1,19 @@
+@import '../styles/vars.less';
+@import '../styles/mixins.less';
+
+@prefixCls : cuke-row;
+
+.@{prefixCls}{
+	display: flex;
+	flex-wrap: wrap;
+
+	&.align-left {
+		justify-content: flex-start;
+	}
+	&.align-right {
+		justify-content: flex-end;
+	}
+	&.align-center {
+		justify-content: center;
+	}
+}

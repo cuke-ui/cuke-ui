@@ -57,6 +57,8 @@
   "devDependencies": {
     "@storybook/addon-info": "^3.4.10",
     "@storybook/addon-options": "^3.4.10",
+    "@storybook/addon-storysource": "^3.4.10",
+    "@storybook/addon-viewport": "^3.4.10",
     "@storybook/react": "^3.4.10",
     "@storybook/storybook-deployer": "^2.3.0",
     "autoprefixer": "^6.7.2",

@@ -14,6 +14,11 @@ module.exports = (storybookBaseConfig, configType) => {
 	storybookBaseConfig.module.rules.push(
 		...[
 			{
+        test: /\.stories\.jsx?$/,
+        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        enforce: 'pre',
+      },
+			{
 				test: /\.less$/,
 				use: [
 					{ loader: 'style-loader' },

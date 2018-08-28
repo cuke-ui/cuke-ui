@@ -93,9 +93,7 @@ export default class MusicPlayer extends Component {
 		const { prefixCls, className, ...attr } = this.props;
 
 		return (
-			<div {...attr} className={cls(prefixCls, className)}>
-				<ReactMusicPlayer {...attr} />
-			</div>
+			<ReactMusicPlayer className={cls(prefixCls, className)} {...attr} />
 		);
 	}
 }

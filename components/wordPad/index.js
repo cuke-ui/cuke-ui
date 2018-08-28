@@ -38,11 +38,11 @@ export default class WordPad extends PureComponent {
 		super(props);
 	}
 	render() {
-		const { prefixCls, className, ...attr } = this.props;
+		const { prefixCls, className, style } = this.props;
 		return (
 			<canvas
 				className={cls(prefixCls, className)}
-				{...attr}
+				style={style}
 				ref={node => (this.canvas = node)}
 			>
 				你的浏览器不支持 canvas

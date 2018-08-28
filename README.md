@@ -37,6 +37,12 @@ yarn coverage
 yarn test
 ```
 
+> watch
+
+```
+yarn test -- --watch
+```
+
 
 
 ### 文档相关
@@ -51,4 +57,10 @@ yarn build:doc
 ```
 yarn pub:doc
 ```
+
+### 参考轮子
+
+- [ant-design](https://github.com/ant-design/ant-design)
+- [gulu](https://github.com/FrankFang/gulu)
+- [dragon-ui](https://github.com/JeromeLin/dragon-ui)
 

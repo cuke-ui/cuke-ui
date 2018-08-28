@@ -38,8 +38,13 @@ storiesOf('娱乐', module)
 			<Turntable
 				{...{
 					prizes: new Array(8).fill(0).map((_,i)=> `奖品${i+1}`),
+					onStart(){
+						//在转动之前 会触发 返回 false 会停止转动  可以再这个方法里面做一些判断
+						console.log('start...')
+						return true
+					},
 					onComplete(prize) {
-						console.log('prize:', prize);
+						alert(prize);
 					}
 				}}
 			/>

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<WordPad/> should render a <WordPad/> components 1`] = `
+<canvas
+  class="cuke-word-pad"
+>
+  你的浏览器不支持 canvas
+</canvas>
+`;
