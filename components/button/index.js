@@ -1,32 +1,32 @@
-import React, { PureComponent } from "react";
-import PropTypes from "prop-types";
-import cls from "classnames";
-import { IoIosRefresh } from "react-icons/io";
-import "./styles.less";
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import cls from 'classnames';
+import { FiLoader } from 'react-icons/fi';
+import './styles.less';
 
 export default class Button extends PureComponent {
 	static defaultProps = {
-		prefixCls: "cuke-button",
-		type: "default",
-		htmlType: "button",
+		prefixCls: 'cuke-button',
+		type: 'default',
+		htmlType: 'button',
 		loading: false,
-		block:false,
+		block: false,
 		disabled: false
 	};
 	static propTypes = {
-		prefixCls:PropTypes.string.isRequired,
+		prefixCls: PropTypes.string.isRequired,
 		block: PropTypes.bool,
 		loading: PropTypes.bool,
 		disabled: PropTypes.bool,
 		htmlType: PropTypes.string,
 		type: PropTypes.oneOf([
-			"primary",
-			"default",
-			"warning",
-			"success",
-			"error",
-			"info",
-			"disabled"
+			'primary',
+			'default',
+			'warning',
+			'success',
+			'error',
+			'info',
+			'disabled'
 		])
 	};
 	render() {
@@ -55,20 +55,19 @@ export default class Button extends PureComponent {
 				type={htmlType}
 				className={cls(
 					prefixCls,
-					{ "btn-primary": checkType("primary") },
-					{ "btn-warning": checkType("warning") },
-					{ "btn-success": checkType("success") },
-					{ "btn-error": checkType("error") },
-					{ "btn-default": checkType("default") },
-					{ "btn-info": checkType("info") },
-					{ "btn-disabled": disabled },
-					{ "btn-loading": loading },
-					{ "btn-block": block },
+					{ 'btn-primary': checkType('primary') },
+					{ 'btn-warning': checkType('warning') },
+					{ 'btn-success': checkType('success') },
+					{ 'btn-error': checkType('error') },
+					{ 'btn-default': checkType('default') },
+					{ 'btn-info': checkType('info') },
+					{ 'btn-disabled': disabled },
+					{ 'btn-loading': loading },
+					{ 'btn-block': block },
 					className
 				)}
 			>
-				{//TODO: 替换图标
-				loading ? <IoIosRefresh className="cuke-loading" /> : undefined}
+				{loading ? <FiLoader className="cuke-loading" /> : undefined}
 				<span>{children}</span>
 			</button>
 		);

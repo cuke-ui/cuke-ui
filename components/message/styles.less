@@ -1,0 +1,94 @@
+@import '../styles/vars.less';
+@import '../styles/mixins.less';
+@import '../styles/animate.less';
+
+@prefixCls: cuke-message;
+.@{prefixCls} {
+	position: fixed;
+	z-index: @message-z-index;
+	pointer-events: none;
+	width: @message-width;
+	height: @message-height;
+	transform: translate3d(0,0,0);
+	margin:auto;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+	.flex-center();
+	.clearfix();
+	@media screen and (max-width: 768px) {
+		width: auto !important;
+	}
+	padding: @message-padding;
+	border-radius: @border-radius;
+	box-shadow: @default-shadow;
+	background: @message-theme-light-bg;
+	pointer-events: all;
+	text-align: center;
+	.message-loading {
+		svg {
+			animation: cuke-spin @loading-time linear infinite;
+		}
+	}
+	.icon {
+		svg,
+		i {
+			font-size: @message-icon-font-size;
+			@media screen and (max-width: 768px) {
+				font-size: @message-icon-font-size-sm;
+			}
+		}
+	}
+	.text {
+		font-size: @message-title-size;
+		@media screen and (max-width: 768px) {
+			font-size: @message-title-size-sm;
+		}
+	}
+	&.theme-dark {
+		background: @message-theme-dark-bg;
+		color: @message-theme-dark-font-color;
+		svg,
+		i,
+		.text {
+			color: @message-theme-dark-font-color !important;
+		}
+	}
+	background: @message-theme-light-bg;
+	.text {
+		color: @font-color;
+	}
+	.message-info {
+		svg {
+			color: @info-color;
+		}
+	}
+	.message-error {
+		svg {
+			color: @error-color;
+		}
+	}
+	.message-success {
+		svg {
+			color: @success-color;
+		}
+	}
+	.message-warning {
+		svg {
+			color: @warning-color;
+		}
+	}
+	.message-loading {
+		svg {
+			color: @loading-color;
+		}
+	}
+	
+	&.open {
+		animation: cuke-fade-in @default-transition forwards;
+	}
+	&.close {
+		animation: cuke-fade-out @default-transition forwards;
+	}
+}

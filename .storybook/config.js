@@ -14,6 +14,7 @@ function loadStories() {
   require('../stories/navigation'); //导航
   require('../stories/dataEntry'); //数据录入
   require('../stories/grid'); //布局
+  require('../stories/feedback'); //操作反馈
 }
 
 setOptions({

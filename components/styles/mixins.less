@@ -14,3 +14,13 @@
     justify-content: @justify;
     align-items: @align;
 }
+
+.clearfix() {
+    &::before,
+    &::after {
+        clear: both;
+        content: "";
+        display: table;
+        zoom: 1;
+    }
+}
