@@ -38,7 +38,7 @@ storiesOf('数据录入', module)
 	.add('Input 输入框', withInfo()(() => (
 		<div style={{ width: 400 }}>
 			<h3>基本使用</h3>
-			<Input placeholder="请输入" onChange={(value)=> console.log(value)}/>
+			<Input placeholder="请输入" onChange={(e)=> console.log(e.target.value)}/>
 			<Input
 				type="password"
 				placeholder="请输入密码"

@@ -5,8 +5,7 @@ import './styles.less';
 
 export default class Col extends PureComponent {
 	static defaultProps = {
-		prefixCls: 'cuke-col',
-		gutter:0,
+		prefixCls: 'cuke-col'
 	};
 
 	static propTypes = {

@@ -7,8 +7,7 @@ module.exports = (storybookBaseConfig, configType) => {
 
 	storybookBaseConfig.devServer = {
 		...storybookBaseConfig.devServer,
-		open:true,
-		openUrl:""
+		open:true
 	}
 
 	storybookBaseConfig.module.rules.push(

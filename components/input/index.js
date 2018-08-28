@@ -8,7 +8,8 @@ export default class Input extends PureComponent {
 		prefixCls: 'cuke-input',
 		isDisabled: false,
 		placeholder: '',
-		type: 'text'
+		type: 'text',
+		onChange : ()=>{}
 	};
 
 	static propTypes = {

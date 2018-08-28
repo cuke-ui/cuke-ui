@@ -55,6 +55,7 @@
     "ui"
   ],
   "devDependencies": {
+    "@storybook/addon-console": "^1.0.4",
     "@storybook/addon-info": "^3.4.10",
     "@storybook/addon-options": "^3.4.10",
     "@storybook/addon-storysource": "^3.4.10",
