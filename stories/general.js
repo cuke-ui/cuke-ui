@@ -53,7 +53,6 @@ storiesOf('普通', module).add(
 			</Button>
 
 			<h2>空心按钮</h2>
-
 			<Button type="primary" hollow onClick={action('clicked')}>
 				主色调
 			</Button>
