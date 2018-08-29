@@ -8,18 +8,18 @@ storiesOf('数据展示', module).add(
 	'Tooltip',
 	withInfo()(() => (
 		<div>
-			<h3>基本使用</h3>
+			<h2>基本使用</h2>
 
 			<Tooltip title="黄瓜ui">
 				<span> 鼠标放上来 </span>
 			</Tooltip>
 
-			<h3>配合按钮使用</h3>
+			<h2>配合按钮使用</h2>
 			<Tooltip title="黄瓜ui">
 				<Button type="primary"> 鼠标放上来 </Button>
 			</Tooltip>
 
-			<h3>四个方向</h3>
+			<h2>四个方向</h2>
 			<Tooltip title="黄瓜ui" position="top">
 				<Button>上</Button>
 			</Tooltip>

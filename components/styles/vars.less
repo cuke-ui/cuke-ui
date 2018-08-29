@@ -7,7 +7,6 @@
 @bg-color: #FAFAFA;
 @border-color: #e8e8e8;
 @label-color: #333;
-@button-height: 40px;
 @default-color: #d9d9d9;
 @disabled-color: #f7f7f7;
 @loading-color: darken(@info-color, 10%);
@@ -23,7 +22,19 @@
 @animate-type: cubic-bezier(0.165, 0.84, 0.44, 1);
 @default-transition: @animate-time @animate-type;
 
-//输入框
+
+//Button 按钮
+@button-default-height: 40px;
+@button-small-height: 30px;
+@button-large-height: 50px;
+@button-default-font-size: @font-size;
+@button-large-font-size : 16px;
+@button-small-font-size : 12px;
+@button-small-padding: 0 10px;
+@button-large-padding: 0 40px;
+@button-default-padding: 0 30px;
+
+//Input 输入框
 @input-height: 40px;
 @input-padding: 4px 10px;
 @input-box-shadow:0 0 0 2px fade(@primary-color, 20%);

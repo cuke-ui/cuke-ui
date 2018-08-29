@@ -137,5 +137,29 @@ exports[`<Button/> should render a <Button/> components 1`] = `
       100%
     </span>
   </button>
+  <button
+    class="cuke-button btn-primary btn-large"
+    type="button"
+  >
+    <span>
+      大
+    </span>
+  </button>
+  <button
+    class="cuke-button btn-info"
+    type="button"
+  >
+    <span>
+      中
+    </span>
+  </button>
+  <button
+    class="cuke-button btn-warning btn-small"
+    type="button"
+  >
+    <span>
+      小
+    </span>
+  </button>
 </div>
 `;

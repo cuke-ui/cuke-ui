@@ -7,7 +7,7 @@ import "./styles/grid.less"
 
 storiesOf('布局', module).add('Grid 栅栏', withInfo()(() => (
 	<div>
-		<h3>24格网格</h3>
+		<h2>24格网格</h2>
     {
       [8,6,4,2].map((span,i)=>{
         return (
@@ -22,7 +22,7 @@ storiesOf('布局', module).add('Grid 栅栏', withInfo()(() => (
       })
     }
 
-    <h3>设置 gutter</h3>
+    <h2>设置 gutter</h2>
 
     <Row className="example-row" gutter={10}>
       <Col span={8} className="example-col">8</Col>
@@ -30,7 +30,7 @@ storiesOf('布局', module).add('Grid 栅栏', withInfo()(() => (
       <Col span={8} className="example-col">8</Col>
     </Row>
 
-    <h3>设置间隙</h3>
+    <h2>设置间隙</h2>
     <Row className="example-row">
       <Col span={8} className="example-col">8</Col>
       <Col span={8} offset={8} className="example-col">8</Col>

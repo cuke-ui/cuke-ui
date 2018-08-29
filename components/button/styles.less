@@ -14,10 +14,10 @@
     background-image: none;
     border: 1px solid transparent;
     white-space: nowrap;
-    line-height: @button-height;
-    padding: 0 30px;
-    font-size: @font-size;
-    height: @button-height;
+    line-height: 1.5;
+    padding: @button-default-padding;
+    font-size: @button-default-font-size;
+    height: @button-default-height;
     user-select: none;
     transition: all @default-transition;
     position: relative;
@@ -28,7 +28,10 @@
     outline: none;
     .btn-hover(@default-color);
     &.btn-primary {
-        .btn-hover(@primary-color)
+        .btn-hover(@primary-color);
+        &.btn-hollow {
+            .btn-hollow(@primary-color)
+        }
     }
     &.btn-default {
         color: @font-color;
@@ -38,25 +41,43 @@
         &:active {
             border: 1px solid @primary-color;
         }
+        &.btn-hollow {
+            .btn-hollow(@default-color;)
+        }
     }
     &.btn-warning {
-        .btn-hover(@warning-color)
+        .btn-hover(@warning-color);
+        &.btn-hollow {
+            .btn-hollow(@warning-color)
+        }
     }
     &.btn-error {
-        .btn-hover(@error-color)
+        .btn-hover(@error-color);
+        &.btn-hollow {
+            .btn-hollow(@error-color)
+        }
     }
     &.btn-success {
-        .btn-hover(@success-color)
+        .btn-hover(@success-color);
+        &.btn-hollow {
+            .btn-hollow(@success-color)
+        }
     }
     &.btn-info {
-        .btn-hover(@info-color)
+        .btn-hover(@info-color);
+        &.btn-hollow {
+            .btn-hollow(@info-color)
+        }
     }
     &.btn-disabled {
         .btn-hover(@disabled-color);
         cursor: no-drop;
         border-style: dashed;
         color: @font-color;
-        border-color: @border-color;
+        border-color: @border-color;;
+        &.btn-hollow {
+            color: @font-color;
+        }
     }
     &.btn-block {
         width: 100%;
@@ -69,5 +90,15 @@
             margin-right: 10px;
             animation: cuke-spin @loading-time linear infinite !important;
         }
+    }
+    &.btn-large {
+        font-size:@button-large-font-size;
+        padding:@button-large-padding;
+        height:@button-large-height;
+    }
+    &.btn-small {
+        font-size:@button-small-font-size;
+        padding:@button-small-padding;
+        height:@button-small-height;
     }
 }

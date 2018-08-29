@@ -10,7 +10,7 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 storiesOf('数据录入', module)
 	.add('WordPad 写字板', withInfo()(() => (
 		<div>
-			<h3>用鼠标在上面写字</h3>
+			<h2>用鼠标在上面写字</h2>
 			<WordPad
 				width={300}
 				height={300}
@@ -22,7 +22,7 @@ storiesOf('数据录入', module)
 			/>
 			<Button type="primary">获取文字</Button>
 
-			<h3>自定义画笔</h3>
+			<h2>自定义画笔</h2>
 			<WordPad
 				width={200}
 				height={200}
@@ -37,7 +37,7 @@ storiesOf('数据录入', module)
 	)))
 	.add('Input 输入框', withInfo()(() => (
 		<div style={{ width: 400 }}>
-			<h3>基本使用</h3>
+			<h2>基本使用</h2>
 			<Input placeholder="请输入" onChange={(e)=> console.log(e.target.value)}/>
 			<Input
 				type="password"
@@ -48,7 +48,7 @@ storiesOf('数据录入', module)
 			<Input placeholder="请输入" defaultValue={'默认值'} style={{ margin: '10px 0' }}/>
 			<Input disabled placeholder="禁用"  />
 
-			<h3>前置/后置标签</h3>
+			<h2>前置/后置标签</h2>
 			<Input addonBefore={<IoIosAddCircleOutline/>} placeholder="请输入" />
 			<Input addonAfter={'.com'} placeholder="填写网址" style={{ margin: '10px 0' }}/>
 			<Input addonBefore={"https://"} addonAfter={'.cn'} placeholder="www.lijinke" />

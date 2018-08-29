@@ -1,11 +1,28 @@
-.btn-hover(@color: @default-color, @lighten: 4%, @font-color: #fff) {
+.btn-hover(@color: @default-color, @lighten: 5%, @font-color: #fff) {
     color: @font-color;
     background-color: @color;
     border: 1px solid @color;
-    &:hover,
-    &:active,
-    &:focus {
-        background-color: lighten(@color, @lighten);
+    &:not(.btn-disabled){
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: lighten(@color, @lighten);
+        }
+    }
+}
+
+.btn-hollow(@color,@lighten : 5%){
+    color:@color;
+    background: transparent;
+
+    &:not(.btn-disabled){
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: transparent;
+            border-color:lighten(@color, @lighten);
+            color: lighten(@color, @lighten);
+        }
     }
 }
 
