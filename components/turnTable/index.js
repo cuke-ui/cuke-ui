@@ -1,26 +1,26 @@
-import React, { PureComponent } from 'react';
-import cls from 'classnames';
-import PropTypes from 'prop-types';
-import ReactTurntable from 'react-turntable';
-import 'react-turntable/assets/index.css';
+import React, { PureComponent } from "react";
+import cls from "classnames";
+import PropTypes from "prop-types";
+import ReactTurntable from "react-turntable";
+import "react-turntable/assets/index.css";
 
 export default class TurnTable extends PureComponent {
 	static defaultProps = {
-		prefixCls: 'cuke-turn-table',
+		prefixCls: "cuke-turn-table",
 		width: 500,
 		height: 500,
 		speed: 1000, //旋转速度
 		duration: 5000, //旋转时间
 		prizes: [],
-		clickText: '抽奖',
-		primaryColor: '#2f363d',
-		secondaryColor: '#EEC775',
+		clickText: "抽奖",
+		primaryColor: "#2f363d",
+		secondaryColor: "#EEC775",
 		fontStyle: {
-			color: '#fff',
-			size: '14px',
-			fontWeight: 'bold',
+			color: "#fff",
+			size: "14px",
+			fontWeight: "bold",
 			fontVertical: false,
-			fontFamily: 'Microsoft YaHei'
+			fontFamily: "Microsoft YaHei"
 		}
 	};
 

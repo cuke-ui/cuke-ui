@@ -28,18 +28,16 @@
     }
   },
   "lint-staged": {
-    "components/**/*.js": [
+    "components/**/*.{js}": [
       "prettier --write",
       "eslint --fix",
+      "jest --config jest.config.js",
       "git add"
     ],
     "components/**/*.less": [
       "prettier --write",
       "stylelint --syntax less --fix",
       "git add"
-    ],
-    "tests": [
-      "jest --config jest.config.js"
     ]
   },
   "storybook-deployer": {

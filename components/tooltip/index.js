@@ -1,7 +1,7 @@
-import React, { PureComponent } from 'react';
-import cls from 'classnames';
-import PropTypes from 'prop-types';
-import './styles.less';
+import React, { PureComponent } from "react";
+import cls from "classnames";
+import PropTypes from "prop-types";
+import "./styles.less";
 
 export default class Tooltip extends PureComponent {
 	state = {
@@ -10,15 +10,15 @@ export default class Tooltip extends PureComponent {
 		top: 0
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-tooltip',
-		position: 'top',
-		title: ''
+		prefixCls: "cuke-tooltip",
+		position: "top",
+		title: ""
 	};
 
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
 		title: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-		position: PropTypes.oneOf(['top','right','left','bottom']),
+		position: PropTypes.oneOf(["top", "right", "left", "bottom"])
 	};
 
 	getBounding = () => {
@@ -28,9 +28,7 @@ export default class Tooltip extends PureComponent {
 			top,
 			left
 		} = this.triggerWrapper.getBoundingClientRect();
-		const {
-			height: wrapperHeight
-		} = this.wrapper.getBoundingClientRect();
+		const { height: wrapperHeight } = this.wrapper.getBoundingClientRect();
 		const { scrollX, scrollY } = window;
 		const positions = {
 			top: { top: top + scrollY - wrapperHeight, left: left + scrollX },

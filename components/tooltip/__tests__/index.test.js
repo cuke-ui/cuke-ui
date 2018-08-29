@@ -1,12 +1,12 @@
-import React from 'react';
-import assert from 'power-assert';
-import { render,shallow,mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import Tooltip from '../index';
-import Button from '../../button';
+import React from "react";
+import assert from "power-assert";
+import { render, shallow, mount } from "enzyme";
+import toJson from "enzyme-to-json";
+import Tooltip from "../index";
+import Button from "../../button";
 
-describe('<Tooltip/>', () => {
-	it('should render a <Tooltip/> components', () => {
+describe("<Tooltip/>", () => {
+	it("should render a <Tooltip/> components", () => {
 		const wrapper = render(
 			<div>
 				<Tooltip title="黄瓜ui">
@@ -15,10 +15,10 @@ describe('<Tooltip/>', () => {
 				<Tooltip title="黄瓜ui" position="top">
 					<Button>上</Button>
 				</Tooltip>
-				<Tooltip title="黄瓜ui" position="bottom" style={{ margin: '0 10px' }}>
+				<Tooltip title="黄瓜ui" position="bottom" style={{ margin: "0 10px" }}>
 					<Button>下</Button>
 				</Tooltip>
-				<Tooltip title="黄瓜ui" position="left" style={{ margin: '0 10px' }}>
+				<Tooltip title="黄瓜ui" position="left" style={{ margin: "0 10px" }}>
 					<Button>左</Button>
 				</Tooltip>
 				<Tooltip title="黄瓜ui" position="right">
@@ -29,13 +29,13 @@ describe('<Tooltip/>', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it('should find cuke-tooltip classnames', () => {
+	it("should find cuke-tooltip classnames", () => {
 		const wrapper = shallow(
 			<Tooltip title="黄瓜ui">
 				<span> 鼠标放上来 </span>
 			</Tooltip>
 		);
-		assert(wrapper.find('.cuke-tooltip').length === 1);
+		assert(wrapper.find(".cuke-tooltip").length === 1);
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 

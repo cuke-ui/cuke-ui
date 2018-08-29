@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
-import propTypes from 'prop-types';
-import cls from 'classnames'
+import React, { PureComponent } from "react";
+import propTypes from "prop-types";
+import cls from "classnames";
 
-import './styles.less';
+import "./styles.less";
 
 export default class WordPad extends PureComponent {
 	state = {
@@ -14,15 +14,15 @@ export default class WordPad extends PureComponent {
 		}
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-word-pad',
+		prefixCls: "cuke-word-pad",
 		clear: false,
 		width: 700,
 		height: 700,
-		lineCap:"round",
+		lineCap: "round",
 		lineJoin: "round",
 		strokeWidth: 10,
 		strokeColor: "#444",
-		getCanvas: ()=>{}
+		getCanvas: () => {}
 	};
 	static propTypes = {
 		width: propTypes.number.isRequired,
@@ -82,7 +82,7 @@ export default class WordPad extends PureComponent {
 		this.canvas.onmousemove = e => {
 			e.preventDefault();
 			const { isMouseDown, lastCoordinate } = this.state;
-			const { strokeColor,strokeWidth,lineCap,lineJoin } = this.props;
+			const { strokeColor, strokeWidth, lineCap, lineJoin } = this.props;
 			if (isMouseDown) {
 				//如果鼠标移动的时候鼠标是按下时  执行绘制
 				const nowCoordinate = this.windowToCanvas(e.clientX, e.clientY);
@@ -109,7 +109,7 @@ export default class WordPad extends PureComponent {
 	}
 	componentDidMount() {
 		const { width, height } = this.props;
-		this.ctx = this.canvas.getContext('2d');
+		this.ctx = this.canvas.getContext("2d");
 		this.canvas.width = width;
 		this.canvas.height = height;
 		this.bindEvents();

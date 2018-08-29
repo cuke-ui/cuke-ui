@@ -1,18 +1,18 @@
-import React, { PureComponent, cloneElement } from 'react';
-import cls from 'classnames';
-import PropTypes from 'prop-types';
+import React, { PureComponent, cloneElement } from "react";
+import cls from "classnames";
+import PropTypes from "prop-types";
 
 export default class Breadcrumb extends PureComponent {
 	static defaultProps = {
-		prefixCls: 'cuke-breadcrumb',
-		separator: '/'
+		prefixCls: "cuke-breadcrumb",
+		separator: "/"
 	};
 
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
 		separator: PropTypes.oneOfType([
 			PropTypes.string.isRequired,
-			PropTypes.object.isRequired,
+			PropTypes.object.isRequired
 		])
 	};
 
@@ -27,13 +27,7 @@ export default class Breadcrumb extends PureComponent {
 		});
 
 		return (
-			<div
-				className={cls(
-					prefixCls,
-					className
-				)}
-				{...attr}
-			>
+			<div className={cls(prefixCls, className)} {...attr}>
 				{items}
 			</div>
 		);

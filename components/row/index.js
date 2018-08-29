@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react';
-import cls from 'classnames';
-import PropTypes from 'prop-types';
-import './styles.less';
+import React, { PureComponent } from "react";
+import cls from "classnames";
+import PropTypes from "prop-types";
+import "./styles.less";
 
 export default class Row extends PureComponent {
 	static defaultProps = {
-		prefixCls: 'cuke-row',
+		prefixCls: "cuke-row",
 		gutter: 0
 	};
 

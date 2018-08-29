@@ -1,10 +1,10 @@
-import React, { PureComponent } from 'react';
-import cls from 'classnames';
+import React, { PureComponent } from "react";
+import cls from "classnames";
 
 class BreadcrumbItem extends PureComponent {
 	static defaultProps = {
-		prefixCls: 'cuke-breadcrumb-item',
-		separator: '/'
+		prefixCls: "cuke-breadcrumb-item",
+		separator: "/"
 	};
 
 	render() {

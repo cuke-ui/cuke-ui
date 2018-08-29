@@ -1,17 +1,17 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import ReactDOM from 'react-dom';
-import cls from 'classnames';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
+import cls from "classnames";
 
 import {
-  FiVolume2 as InfoIcon,
+	FiVolume2 as InfoIcon,
 	FiLoader as LoadingIcon,
 	FiCheckCircle as SuccessIcon,
 	FiXCircle as ErrorIcon,
 	FiAlertCircle as WarningIcon
-} from 'react-icons/fi';
+} from "react-icons/fi";
 
-import './styles.less';
+import "./styles.less";
 
 export default class Message extends PureComponent {
 	state = {
@@ -23,11 +23,11 @@ export default class Message extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.typeConfig = {
-			info: 'info',
-			success: 'success',
-			error: 'error',
-			warning: 'warning',
-			loading: 'loading'
+			info: "info",
+			success: "success",
+			error: "error",
+			warning: "warning",
+			loading: "loading"
 		};
 	}
 	static propTypes = {
@@ -37,7 +37,7 @@ export default class Message extends PureComponent {
 		onClose: PropTypes.func
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-message',
+		prefixCls: "cuke-message",
 		duration: 2,
 		darkTheme: false,
 		onClose: () => {}
@@ -45,7 +45,7 @@ export default class Message extends PureComponent {
 	createContainer() {
 		const { prefixCls } = this.props;
 		if (!this.div) {
-			this.div = document.createElement('div');
+			this.div = document.createElement("div");
 			this.div.className = prefixCls;
 			document.body.appendChild(this.div);
 		}
@@ -66,14 +66,14 @@ export default class Message extends PureComponent {
 		ReactDOM.unmountComponentAtNode(this._container);
 		this._dom.remove();
 	};
-	static renderElement = (type, title, duration, onClose,darkTheme) => {
-		let div = document.createElement('div');
+	static renderElement = (type, title, duration, onClose, darkTheme) => {
+		let div = document.createElement("div");
 		document.body.appendChild(div);
 		let _message = ReactDOM.render(
 			<Message
 				type={type}
 				title={title}
-        darkTheme={darkTheme}
+				darkTheme={darkTheme}
 				duration={duration}
 				onClose={onClose}
 			/>,
@@ -82,20 +82,20 @@ export default class Message extends PureComponent {
 		_message._container = div;
 		_message._dom = div;
 	};
-	static error(title, duration, onClose,darkTheme) {
-		this.renderElement('error', title, duration, onClose,darkTheme);
+	static error(title, duration, onClose, darkTheme) {
+		this.renderElement("error", title, duration, onClose, darkTheme);
 	}
-	static info(title, duration, onClose,darkTheme) {
-		this.renderElement('info', title, duration, onClose,darkTheme);
+	static info(title, duration, onClose, darkTheme) {
+		this.renderElement("info", title, duration, onClose, darkTheme);
 	}
-	static success(title, duration, onClose,darkTheme) {
-		this.renderElement('success', title, duration, onClose,darkTheme);
+	static success(title, duration, onClose, darkTheme) {
+		this.renderElement("success", title, duration, onClose, darkTheme);
 	}
-	static warning(title, duration, onClose,darkTheme) {
-		this.renderElement('warning', title, duration, onClose,darkTheme);
+	static warning(title, duration, onClose, darkTheme) {
+		this.renderElement("warning", title, duration, onClose, darkTheme);
 	}
-	static loading(title, duration, onClose,darkTheme) {
-		this.renderElement('loading', title, duration, onClose,darkTheme);
+	static loading(title, duration, onClose, darkTheme) {
+		this.renderElement("loading", title, duration, onClose, darkTheme);
 	}
 	render() {
 		const {
@@ -118,7 +118,7 @@ export default class Message extends PureComponent {
 				className={cls(
 					prefixCls,
 					className,
-					{ 'theme-dark': darkTheme },
+					{ "theme-dark": darkTheme },
 					{ open: visible && duration },
 					{ close: !visible }
 				)}
@@ -131,11 +131,11 @@ export default class Message extends PureComponent {
 					)}
 				>
 					<p className="icon">
-						{type === typeConfig['info'] ? <InfoIcon /> : undefined}
-						{type === typeConfig['success'] ? <SuccessIcon /> : undefined}
-						{type === typeConfig['error'] ? <ErrorIcon /> : undefined}
-						{type === typeConfig['warning'] ? <WarningIcon /> : undefined}
-						{type === typeConfig['loading'] ? <LoadingIcon /> : undefined}
+						{type === typeConfig["info"] ? <InfoIcon /> : undefined}
+						{type === typeConfig["success"] ? <SuccessIcon /> : undefined}
+						{type === typeConfig["error"] ? <ErrorIcon /> : undefined}
+						{type === typeConfig["warning"] ? <WarningIcon /> : undefined}
+						{type === typeConfig["loading"] ? <LoadingIcon /> : undefined}
 					</p>
 
 					<p className="text">

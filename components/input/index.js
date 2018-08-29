@@ -1,15 +1,15 @@
-import React, { PureComponent } from 'react';
-import cls from 'classnames';
-import PropTypes from 'prop-types';
-import './styles.less';
+import React, { PureComponent } from "react";
+import cls from "classnames";
+import PropTypes from "prop-types";
+import "./styles.less";
 
 export default class Input extends PureComponent {
 	static defaultProps = {
-		prefixCls: 'cuke-input',
+		prefixCls: "cuke-input",
 		isDisabled: false,
-		placeholder: '',
-		type: 'text',
-		onChange : ()=>{}
+		placeholder: "",
+		type: "text",
+		onChange: () => {}
 	};
 
 	static propTypes = {
@@ -17,24 +17,24 @@ export default class Input extends PureComponent {
 		placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 		isDisabled: PropTypes.bool,
 		type: PropTypes.oneOf([
-			'text',
-			'password',
-			'range',
-			'date',
-			'number',
-			'color',
-			'email'
+			"text",
+			"password",
+			"range",
+			"date",
+			"number",
+			"color",
+			"email"
 		]),
 		value: PropTypes.string,
 		defaultValue: PropTypes.string,
 		onChange: PropTypes.func
 	};
 
-	onChange = (e) => {
-		if(!this.props.disabled) {
-			this.props.onChange(e.target.value)
+	onChange = e => {
+		if (!this.props.disabled) {
+			this.props.onChange(e.target.value);
 		}
-	}
+	};
 
 	render() {
 		const {
@@ -64,14 +64,14 @@ export default class Input extends PureComponent {
 
 		if (addonBefore || addonAfter) {
 			return (
-				<span className={
-					cls(
+				<span
+					className={cls(
 						`${prefixCls}-group`,
-						{[`${prefixCls}-group-addon-before`] : !!addonBefore },
-						{[`${prefixCls}-group-addon-after`] : !!addonAfter },
-						{[`${prefixCls}-group-addon-all`] : !!addonAfter && !!addonBefore},
-					)
-				}>
+						{ [`${prefixCls}-group-addon-before`]: !!addonBefore },
+						{ [`${prefixCls}-group-addon-after`]: !!addonAfter },
+						{ [`${prefixCls}-group-addon-all`]: !!addonAfter && !!addonBefore }
+					)}
+				>
 					{addonBefore ? (
 						<span className={`${prefixCls}-group-addon`}>{addonBefore}</span>
 					) : (
