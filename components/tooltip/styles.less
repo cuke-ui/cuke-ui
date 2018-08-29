@@ -1,0 +1,85 @@
+@import '../styles/vars.less';
+@import '../styles/mixins.less';
+
+@prefixCls : cuke-tooltip;
+
+//参考  gulu
+.@{prefixCls} {
+	display: inline-block;
+	vertical-align: top;
+
+	&-trigger-wrapper {
+		display: inline-block
+	}
+	&-wrapper {
+		// display: none;
+		position: absolute;
+		box-shadow: @default-shadow;
+		background-color: @tooltip-bg-color;
+		color: @tooltip-font-color;
+		padding: @tooltip-padding;
+		font-size: @font-size;
+		border-radius: @border-radius;
+		word-break: break-all;
+		z-index: 99;
+
+		&::after,&::before {
+			content: " ";
+			position: absolute;
+			width:0;
+			height:0;
+			border:@tooltip-triangle-width solid transparent;
+		}
+
+		&.position-top,
+		&.position-bottom{
+			&::before, &::after {
+				left: 50%;
+				transform: translateX(-50%);
+      }
+		}
+
+		&.position-top {
+			transform:  translateY(-100%);
+			margin-top: -6px;
+			&::before, &::after {
+				top: 95%;   // 三角形尖尖小一些
+				border-top-color: @tooltip-bg-color;
+        border-bottom: none;
+      }
+		}
+		&.position-bottom {
+			&::before, &::after {
+				bottom: 95%;   // 三角形尖尖小一些
+        border-bottom-color: @tooltip-bg-color;
+        bottom: 100%;
+      }
+		}
+		&.position-left {
+			transform: translateX(-100%);
+			margin-left: -25px;
+			&::before, &::after {
+        transform: translateY(-50%);
+				top: 50%;
+				border-right: none;
+				border-left-color: @tooltip-bg-color;
+        left: 100%
+      }
+		}
+		&.position-right {
+			margin-left: 10px;
+			&::before, &::after {
+        transform: translateY(-50%);
+				top: 50%;
+				border-right-color: @tooltip-bg-color;
+        border-left: none;
+        right: 100%;
+      }
+		}
+
+	}
+
+	&-open {
+		display: block;
+	}
+}

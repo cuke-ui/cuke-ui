@@ -13,6 +13,7 @@ function loadStories() {
   require('../stories/player');     //视听娱乐
   require('../stories/navigation'); //导航
   require('../stories/dataEntry'); //数据录入
+  require('../stories/dataDisplay'); //数据展示
   require('../stories/grid'); //布局
   require('../stories/feedback'); //操作反馈
 }

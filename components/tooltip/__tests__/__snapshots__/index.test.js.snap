@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tooltip/> should find cuke-tooltip classnames 1`] = `
+<div
+  className="cuke-tooltip"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <span
+    className="cuke-tooltip-trigger-wrapper"
+  >
+    <span>
+       鼠标放上来 
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
+<div>
+  <div
+    class="cuke-tooltip"
+  >
+    <span
+      class="cuke-tooltip-trigger-wrapper"
+    >
+      <span>
+         鼠标放上来 
+      </span>
+    </span>
+  </div>
+  <div
+    class="cuke-tooltip"
+  >
+    <span
+      class="cuke-tooltip-trigger-wrapper"
+    >
+      <button
+        class="cuke-button btn-default"
+        type="button"
+      >
+        <span>
+          上
+        </span>
+      </button>
+    </span>
+  </div>
+  <div
+    class="cuke-tooltip"
+    style="margin:0 10px"
+  >
+    <span
+      class="cuke-tooltip-trigger-wrapper"
+    >
+      <button
+        class="cuke-button btn-default"
+        type="button"
+      >
+        <span>
+          下
+        </span>
+      </button>
+    </span>
+  </div>
+  <div
+    class="cuke-tooltip"
+    style="margin:0 10px"
+  >
+    <span
+      class="cuke-tooltip-trigger-wrapper"
+    >
+      <button
+        class="cuke-button btn-default"
+        type="button"
+      >
+        <span>
+          左
+        </span>
+      </button>
+    </span>
+  </div>
+  <div
+    class="cuke-tooltip"
+  >
+    <span
+      class="cuke-tooltip-trigger-wrapper"
+    >
+      <button
+        class="cuke-button btn-default"
+        type="button"
+      >
+        <span>
+          右
+        </span>
+      </button>
+    </span>
+  </div>
+</div>
+`;
