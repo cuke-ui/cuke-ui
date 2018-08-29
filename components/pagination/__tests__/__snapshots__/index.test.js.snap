@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
+<section
+  className="cuke-pagination"
+  current={1}
+  onChange={[Function]}
+>
+  <Button
+    block={false}
+    disabled={true}
+    hollow={false}
+    htmlType="button"
+    loading={false}
+    prefixCls="cuke-button"
+    size="default"
+    type="default"
+  >
+    上一页
+  </Button>
+  <span
+    className="cuke-pagination-pages"
+  >
+    <span
+      className="cuke-pagination-page-index"
+    >
+      1
+    </span>
+     
+    /
+     
+    10
+  </span>
+  <Button
+    block={false}
+    disabled={false}
+    hollow={false}
+    htmlType="button"
+    loading={false}
+    onClick={[Function]}
+    prefixCls="cuke-button"
+    size="default"
+    type="primary"
+  >
+    下一页
+  </Button>
+</section>
+`;
+
+exports[`<Pagination/> should render Pagination 1`] = `
+<div>
+  <section
+    class="cuke-pagination"
+    current="1"
+  >
+    <button
+      class="cuke-button btn-default btn-disabled"
+      disabled=""
+      type="button"
+    >
+      <span>
+        上一页
+      </span>
+    </button>
+    <span
+      class="cuke-pagination-pages"
+    >
+      <span
+        class="cuke-pagination-page-index"
+      >
+        1
+      </span>
+       / 10
+    </span>
+    <button
+      class="cuke-button btn-primary"
+      type="button"
+    >
+      <span>
+        下一页
+      </span>
+    </button>
+  </section>
+  <section
+    class="cuke-pagination"
+    current="1"
+  >
+    <button
+      class="cuke-button btn-default btn-disabled"
+      disabled=""
+      type="button"
+    >
+      <span>
+        后退
+      </span>
+    </button>
+    <span
+      class="cuke-pagination-pages"
+    >
+      <span
+        class="cuke-pagination-page-index"
+      >
+        1
+      </span>
+       / 10
+    </span>
+    <button
+      class="cuke-button btn-primary"
+      type="button"
+    >
+      <span>
+        前进
+      </span>
+    </button>
+  </section>
+  <section
+    class="cuke-pagination"
+    current="1"
+  >
+    <button
+      class="cuke-button btn-default btn-disabled"
+      disabled=""
+      type="button"
+    >
+      <span>
+        上一页
+      </span>
+    </button>
+    <span
+      class="cuke-pagination-pages"
+    >
+      <span
+        class="cuke-pagination-page-index"
+      >
+        1
+      </span>
+       | 10
+    </span>
+    <button
+      class="cuke-button btn-primary"
+      type="button"
+    >
+      <span>
+        下一页
+      </span>
+    </button>
+  </section>
+</div>
+`;
