@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Alert/> should render  description width <Alert/>  1`] = `
+<div>
+  <div
+    class="cuke-alert cuke-alert-success has-description"
+  >
+    <div
+      class="cuke-alert-message"
+    >
+      <span>
+        一等奖
+      </span>
+    </div>
+    <div
+      class="cuke-alert-description"
+    >
+      获得5元兰博基尼购车优惠券
+    </div>
+  </div>
+  <div
+    class="cuke-alert cuke-alert-info has-description"
+  >
+    <div
+      class="cuke-alert-message"
+    >
+      <span>
+        通知
+      </span>
+    </div>
+    <div
+      class="cuke-alert-description"
+    >
+      请李时珍的皮同学赶快回家,你妈在找你
+    </div>
+  </div>
+  <div
+    class="cuke-alert cuke-alert-error has-description"
+  >
+    <div
+      class="cuke-alert-message"
+    >
+      <span>
+        错误
+      </span>
+    </div>
+    <div
+      class="cuke-alert-description"
+    >
+      发生了未知的错误
+    </div>
+  </div>
+  <div
+    class="cuke-alert cuke-alert-warning has-description"
+  >
+    <div
+      class="cuke-alert-message"
+    >
+      <span>
+        警告
+      </span>
+    </div>
+    <div
+      class="cuke-alert-description"
+    >
+      不要在写代码了,快要猝死了
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Alert/> should render a <Alert/> components 1`] = `
+<div>
+  <div
+    class="cuke-alert cuke-alert-success"
+  >
+    <div
+      class="cuke-alert-message"
+    >
+      <span>
+        黄瓜 ui 开发中
+      </span>
+    </div>
+  </div>
+  <div
+    class="cuke-alert cuke-alert-info"
+  >
+    <div
+      class="cuke-alert-message"
+    >
+      <span>
+        恭喜你获得充气女友一个
+      </span>
+    </div>
+  </div>
+  <div
+    class="cuke-alert cuke-alert-error"
+  >
+    <div
+      class="cuke-alert-message"
+    >
+      <span>
+        网费不足,请立即充值,不要坑队友
+      </span>
+    </div>
+  </div>
+  <div
+    class="cuke-alert cuke-alert-warning"
+  >
+    <div
+      class="cuke-alert-message"
+    >
+      <span>
+        有电危险
+      </span>
+    </div>
+  </div>
+</div>
+`;

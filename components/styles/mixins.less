@@ -32,6 +32,11 @@
     align-items: @align;
 }
 
+.add-alert-style(@color: @default-color,@opacity: 10%){
+    border-color: @color;
+    background-color:fade(@color, @opacity);
+}
+
 .clearfix() {
     &::before,
     &::after {

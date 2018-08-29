@@ -4,12 +4,13 @@ import ReactDOM from "react-dom";
 import cls from "classnames";
 
 import {
-	FiVolume2 as InfoIcon,
-	FiLoader as LoadingIcon,
-	FiCheckCircle as SuccessIcon,
-	FiXCircle as ErrorIcon,
-	FiAlertCircle as WarningIcon
-} from "react-icons/fi";
+	InfoIcon,
+	LoadingIcon,
+	SuccessIcon,
+	ErrorIcon,
+	WarningIcon
+} from "../icon";
+
 
 import "./styles.less";
 
@@ -114,7 +115,6 @@ export default class Message extends PureComponent {
 
 		return (
 			<div
-				key="message"
 				className={cls(
 					prefixCls,
 					className,

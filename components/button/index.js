@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import cls from 'classnames';
-import { FiLoader } from 'react-icons/fi';
+import { LoadingIcon } from '../icon';
 import './styles.less';
 
 export default class Button extends PureComponent {
@@ -76,7 +76,7 @@ export default class Button extends PureComponent {
 					className
 				)}
 			>
-				{loading ? <FiLoader className="cuke-loading" /> : undefined}
+				{loading ? <LoadingIcon className="cuke-loading" /> : undefined}
 				<span>{children}</span>
 			</button>
 		);

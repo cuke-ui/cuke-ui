@@ -1,0 +1,62 @@
+@import "../styles/vars.less";
+@import "../styles/animate.less";
+@import "../styles/mixins.less";
+
+@prefixCls : cuke-alert;
+
+.@{prefixCls} {
+    padding: @alert-padding;
+    border:1px solid @border-color;
+    border-radius:@border-radius;
+    font-size: @font-size;
+    color:@font-color;
+    line-height:1.5;
+    position:relative;
+    list-style:none;
+
+    &-icon {
+        margin: @alert-icon-margin;
+    }
+    &-close {
+        position: absolute;
+        right:20px;
+        top:8px;;
+        font-size: @font-size;
+        cursor:pointer;
+    }
+    &.has-description {
+        .@{prefixCls}-message {
+            font-weight:bold;
+            font-size: @alert-message-font-size;
+            margin: @alert-message-margin;
+        }
+    }
+    &-description {
+        line-height:22px;
+        font-size: @font-size;
+    }
+    &-success {
+        .add-alert-style(@success-color);
+        .@{prefixCls}-icon {
+            color: @success-color;
+        }
+    }
+    &-info {
+        .add-alert-style(@info-color);
+        .@{prefixCls}-icon {
+            color: @info-color;
+        }
+    }
+    &-error {
+        .add-alert-style(@error-color);
+        .@{prefixCls}-icon {
+            color: @error-color;
+        }
+    }
+    &-warning {
+        .add-alert-style(@warning-color);
+        .@{prefixCls}-icon {
+            color: @warning-color;
+        }
+    }
+}
