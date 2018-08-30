@@ -1,0 +1,351 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Modal/> should render a <Modal/> components 1`] = `
+<div>
+  <div
+    class="cuke-modal-mask cuke-modal-mask-show"
+  />
+  <div
+    class="cuke-modal-wrap"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="cuke-modal cuke-modal-open"
+    >
+      <section
+        class="cuke-modal-header"
+      >
+        <h2
+          class="cuke-modal-title"
+        >
+          基本使用
+        </h2>
+        <svg
+          attr="[object Object]"
+          class="undefined cuke-modal-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </section>
+      <section
+        class="cuke-modal-content"
+      >
+        <p>
+          基本使用
+        </p>
+      </section>
+      <section
+        class="cuke-modal-footer"
+      >
+        <button
+          class="cuke-button btn-default"
+          type="button"
+        >
+          <span>
+            取消
+          </span>
+        </button>
+        <button
+          class="cuke-button btn-primary"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </section>
+    </div>
+  </div>
+  <div
+    class="cuke-modal-mask cuke-modal-mask-show"
+  />
+  <div
+    class="cuke-modal-wrap"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="cuke-modal cuke-modal-open"
+    >
+      <section
+        class="cuke-modal-header"
+      >
+        <h2
+          class="cuke-modal-title"
+        >
+          基本使用
+        </h2>
+        <svg
+          attr="[object Object]"
+          class="undefined cuke-modal-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </section>
+      <section
+        class="cuke-modal-content"
+      >
+        <p>
+          自定义文本 
+        </p>
+      </section>
+      <section
+        class="cuke-modal-footer"
+      >
+        <button
+          class="cuke-button btn-default"
+          type="button"
+        >
+          <span>
+            cancel
+          </span>
+        </button>
+        <button
+          class="cuke-button btn-primary"
+          type="button"
+        >
+          <span>
+            ok
+          </span>
+        </button>
+      </section>
+    </div>
+  </div>
+  <div
+    class="cuke-modal-mask cuke-modal-mask-show"
+  />
+  <div
+    class="cuke-modal-wrap"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="cuke-modal cuke-modal-open"
+    >
+      <section
+        class="cuke-modal-header"
+      >
+        <h2
+          class="cuke-modal-title"
+        >
+          基本使用
+        </h2>
+        <svg
+          attr="[object Object]"
+          class="undefined cuke-modal-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </section>
+      <section
+        class="cuke-modal-content"
+      >
+        <p>
+          无 footer
+        </p>
+      </section>
+    </div>
+  </div>
+  <div
+    class="cuke-modal-mask cuke-modal-mask-show"
+  />
+  <div
+    class="cuke-modal-wrap cuke-modal-centered"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="cuke-modal cuke-modal-open"
+    >
+      <section
+        class="cuke-modal-header"
+      >
+        <h2
+          class="cuke-modal-title"
+        >
+          基本使用
+        </h2>
+        <svg
+          attr="[object Object]"
+          class="undefined cuke-modal-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </section>
+      <section
+        class="cuke-modal-content"
+      >
+        <p>
+          居中
+        </p>
+      </section>
+      <section
+        class="cuke-modal-footer"
+      >
+        <button
+          class="cuke-button btn-default"
+          type="button"
+        >
+          <span>
+            取消
+          </span>
+        </button>
+        <button
+          class="cuke-button btn-primary"
+          type="button"
+        >
+          <span>
+            确定
+          </span>
+        </button>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Modal/> should render custom footer width <Modal/>  1`] = `
+Array [
+  <div
+    class="cuke-modal-mask cuke-modal-mask-show"
+  />,
+  <div
+    class="cuke-modal-wrap"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="cuke-modal cuke-modal-open"
+    >
+      <section
+        class="cuke-modal-header"
+      >
+        <h2
+          class="cuke-modal-title"
+        >
+          基本使用
+        </h2>
+        <svg
+          attr="[object Object]"
+          class="undefined cuke-modal-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </section>
+      <section
+        class="cuke-modal-content"
+      >
+        <p>
+           其实我是高仿 ant-design 的 
+        </p>
+      </section>
+      <section
+        class="cuke-modal-footer"
+      >
+        <a>
+          取消
+        </a>
+        <a>
+          确定
+        </a>
+      </section>
+    </div>
+  </div>,
+]
+`;

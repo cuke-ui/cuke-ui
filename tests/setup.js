@@ -1,5 +1,6 @@
 const Enzyme = require("enzyme");
 const Adapter = require("enzyme-adapter-react-16");
+const ReactDOM = require('react-dom')
 
 if (typeof window !== 'undefined') {
   global.window.resizeTo = (width, height) => {
@@ -19,4 +20,6 @@ global.requestAnimationFrame = function (cb) {
 global.cancelAnimationFrame = function (cb) {
   return clearTimeout(cb, 0);
 };
+ReactDOM.createPortal = node => node
+
 Enzyme.configure({ adapter: new Adapter() });
