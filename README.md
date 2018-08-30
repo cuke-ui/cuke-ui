@@ -1,8 +1,7 @@
 # cuke-ui
+黄瓜 ui : 一个即插即用的 React ui 库 (施工中...)
 
 [![Build Status](https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master)](https://travis-ci.com/cuke-ui/cuke-ui)
-
-(施工中...)
 
 
 ### 开发
@@ -18,7 +17,7 @@ yarn
 ```
 
 2. 启动开发服务器
-> 基于  storybook [什么是storybook](https://storybook.js.org/basics/introduction/)
+> 基于  storybook  [什么是storybook?](https://storybook.js.org/basics/introduction/)
 
 ```
 yarn dev
