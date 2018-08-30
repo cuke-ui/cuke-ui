@@ -5,6 +5,7 @@ import message from '../components/message';
 import Button from '../components/button';
 import Alert from '../components/alert';
 import Modal from '../components/modal';
+import ModalPage from './pages/modal';
 import './styles/feedback.less';
 
 storiesOf('操作反馈', module)
@@ -147,38 +148,6 @@ storiesOf('操作反馈', module)
 	.add(
 		'Modal 对话框',
 		withInfo()(() => (
-			<div>
-				//TODO: 完善例子
-				<h2>基本使用</h2>
-				<Button type="primary">打开</Button>
-				<Modal
-					title="基本使用"
-					visible={true}
-					onCancel={() => message.info('取消')}
-					onOk={() => message.success('确定')}
-				>
-					<p> 其实我是高仿 ant-design 的 </p>
-				</Modal>
-				{/* <h2>异步关闭</h2>
-				<Modal title="异步关闭" visible={false} confirmLoading={true} />
-				<h2>自定义文案</h2>
-				<Modal
-					title="自定义文案"
-					visible={false}
-					cancelText={'嘻嘻'}
-					okText="哈哈"
-				>
-					<p> 其实我是高仿 ant-design 的 </p>
-				</Modal>
-				<h2>没有footer</h2>
-				<Modal title="没有 footer" visible={false} footer={null}>
-					<p> 没有 footer, 也可以自定义 </p>
-				</Modal>
-				<h2>自定义位置</h2>
-				<Modal title="没错,高仿 ant-design" visible={false} centered>
-					<p> 可以设置 centered </p>
-					<p> 也可以设置 style 的 top 值 改变位置 </p>
-				</Modal> */}
-			</div>
+      <ModalPage/>
 		))
 	);
