@@ -3,6 +3,32 @@
 
 [![Build Status](https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master)](https://travis-ci.com/cuke-ui/cuke-ui)
 
+### 计划开发的组件
+> 计划2018年底完成,给自己一个交代
+
+- [x] [Button 按钮](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%99%AE%E9%80%9A&selectedStory=Button%20%E6%8C%89%E9%92%AE&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Alert  警告提示](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Alert%20%E8%AD%A6%E5%91%8A%E6%8F%90%E7%A4%BA&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Breadcrumb 面包屑](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%AF%BC%E8%88%AA&selectedStory=Breadcrumb%20%E9%9D%A2%E5%8C%85%E5%B1%91&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Grid 网格布局](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%B8%83%E5%B1%80&selectedStory=Grid%20%E6%A0%85%E6%A0%8F&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Input 输入框](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=Input%20%E8%BE%93%E5%85%A5%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Message 消息提示](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Message%20%E6%B6%88%E6%81%AF%E6%8F%90%E7%A4%BA&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Modal 对话框](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Modal%20%E5%AF%B9%E8%AF%9D%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Pagination 分页器](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%AF%BC%E8%88%AA&selectedStory=Pagination%20%E5%88%86%E9%A1%B5%E5%99%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Tooltip 文字提示](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Tooltip&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [TurnTable 抽奖转盘](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%A8%B1%E4%B9%90&selectedStory=TurnTable%20%E6%8A%BD%E5%A5%96%E8%BD%AC%E7%9B%98&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [WordPad   手写输入板](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=WordPad%20%E5%86%99%E5%AD%97%E6%9D%BF&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [MusicPlayer 响应式音乐播放器](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%A8%B1%E4%B9%90&selectedStory=MusicPlayer%20%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [] Spin  加载中
+- [] Progress  进度条
+- [] BackTop  回到顶部
+- [] Tabs  选项卡
+- [] Dropdown 下拉菜单
+- [] Checkbox  复选框
+- [] Swtich  选择器
+- [] Radio   单选框  
+- [] Select  下拉选择器  
+- [] Upload  上传  
+
 
 ### 开发
 > 请首先安装 npm i -g yarn
