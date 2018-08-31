@@ -18,6 +18,7 @@ module.exports = {
     "commonjs": true,
   },
   "globals": {
+    process:true,
     describe:true,
     it:true,
     __dirname:true,
