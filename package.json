@@ -18,7 +18,6 @@
     "lint": "prettier --write \"components/**/*.js\" && yarn eslint:fix && yarn stylelint:fix",
     "test": "jest --config jest.config.js",
     "coverage": "yarn test -- --coverage",
-    "prepush":"yarn test",
     "ci": "yarn pub:doc && yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:doc": "build-storybook -c .storybook -o .out",
     "pub:doc": "yarn build:doc && storybook-to-ghpages --existing-output-dir=.out"
