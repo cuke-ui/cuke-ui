@@ -1,26 +1,26 @@
-import React, { PureComponent, Fragment } from 'react';
-import propTypes from 'prop-types';
-import { createPortal, render } from 'react-dom'; //传送门 将节点挂载在root 节点之外
-import cls from 'classnames';
-import Button from '../button';
-import { CloseIcon } from '../icon';
-import './styles.less';
+import React, { PureComponent, Fragment } from "react";
+import propTypes from "prop-types";
+import { createPortal, render } from "react-dom"; //传送门 将节点挂载在root 节点之外
+import cls from "classnames";
+import Button from "../button";
+import { CloseIcon } from "../icon";
+import "./styles.less";
 
 export default class Modal extends PureComponent {
 	state = {
 		init: false
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-modal',
+		prefixCls: "cuke-modal",
 		visible: false,
 		targetAtNode: document.body,
-		title: '',
+		title: "",
 		onOk: () => {},
 		onCancel: () => {},
-		okText: '确定',
-		cancelText: '取消',
+		okText: "确定",
+		cancelText: "取消",
 		footer: [],
-		content: '',
+		content: "",
 		confirmLoading: false,
 		maskClosable: true,
 		centered: false,
@@ -59,7 +59,7 @@ export default class Modal extends PureComponent {
 				visible
 				{...options}
 			/>,
-			document.getElementById('root')
+			document.getElementById("root")
 		);
 	};
 	componentWillReceiveProps({ visible }) {
@@ -100,8 +100,7 @@ export default class Modal extends PureComponent {
 		const initMaskAnimate = init
 			? {
 					[`${prefixCls}-mask-show`]: visible,
-					[`${prefixCls}-mask-hide`]: !visible
-			  }
+					[`${prefixCls}-mask-hide`]: !visible}
 			: { [`${prefixCls}-mask-show`]: visible };
 
 		const maskClickHandle = maskClosable ? { onClick: onCancel } : {};

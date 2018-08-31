@@ -1,11 +1,11 @@
-import React from 'react';
-import { render, shallow, mount } from 'enzyme';
-import assert from 'power-assert';
-import toJson from 'enzyme-to-json';
-import Modal from '../index';
+import React from "react";
+import { render, shallow, mount } from "enzyme";
+import assert from "power-assert";
+import toJson from "enzyme-to-json";
+import Modal from "../index";
 
-describe('<Modal/>', () => {
-	it('should render a <Modal/> components', () => {
+describe("<Modal/>", () => {
+	it("should render a <Modal/> components", () => {
 		const wrapper = render(
 			<div>
 				<Modal title="基本使用" visible>
@@ -25,7 +25,7 @@ describe('<Modal/>', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it('should render custom footer width <Modal/> ', () => {
+	it("should render custom footer width <Modal/> ", () => {
 		const wrapper = render(
 			<Modal
 				title="基本使用"
@@ -37,13 +37,13 @@ describe('<Modal/>', () => {
 		);
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
-	it('should render confirm mode width <Modal/> ', () => {
+	it("should render confirm mode width <Modal/> ", () => {
 		const wrapper = render(
 			<Modal
-			className="cuke-modal-confirm"
-			showMask={false}
-			closable={false}
-			visible
+				className="cuke-modal-confirm"
+				showMask={false}
+				closable={false}
+				visible
 			>
 				<p>confirm</p>
 			</Modal>
@@ -51,19 +51,19 @@ describe('<Modal/>', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it('should can not clicked with set maskClosable false', () => {
+	it("should can not clicked with set maskClosable false", () => {
 		const onCancelClick = jest.fn();
 		const wrapper = mount(
 			<Modal footer={null} visible={true} onCancel={onCancelClick}>
 				<span>关闭回调</span>
 			</Modal>
 		);
-		wrapper.find('.cuke-modal').simulate('click');
+		wrapper.find(".cuke-modal").simulate("click");
 		assert(wrapper.props().visible === true);
 		expect(onCancelClick).not.toHaveBeenCalled();
 	});
 
-	it('should can trigger onClose event', () => {
+	it("should can trigger onClose event", () => {
 		const onClick = jest.fn();
 		const onCancelClick = jest.fn();
 		const wrapper = shallow(
@@ -71,7 +71,7 @@ describe('<Modal/>', () => {
 				<span>关闭回调</span>
 			</Modal>
 		);
-		wrapper.find('.cuke-modal').simulate('click');
+		wrapper.find(".cuke-modal").simulate("click");
 		expect(onClick).not.toHaveBeenCalled();
 		expect(onCancelClick).not.toHaveBeenCalled();
 	});

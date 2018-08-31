@@ -1,35 +1,32 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cls from 'classnames';
-import Button from '../button';
-import './styles.less';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import cls from "classnames";
+import Button from "../button";
+import "./styles.less";
 
 export default class Pagination extends PureComponent {
 	defaultCurrentPage = 1;
 	typeConfig = {
-		prev: 'prev',
-		next: 'next'
+		prev: "prev",
+		next: "next"
 	};
 	state = {
 		current: 1
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-pagination',
-		current: 'N/A',
-    total: 'N/A',
-    separator:"/",
+		prefixCls: "cuke-pagination",
+		current: "N/A",
+		total: "N/A",
+		separator: "/",
 		locale: {
-			prevText: '上一页',
-			nextText: '下一页'
-    },
-    onChange: ()=> {}
+			prevText: "上一页",
+			nextText: "下一页"
+		},
+		onChange: () => {}
 	};
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
-		separator:  PropTypes.oneOfType([
-			PropTypes.object,
-			PropTypes.string
-		]),
+		separator: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 		total: PropTypes.oneOfType([
 			PropTypes.number.isRequired,
 			PropTypes.string.isRequired
@@ -54,8 +51,8 @@ export default class Pagination extends PureComponent {
 	render() {
 		const {
 			prefixCls,
-      total,
-      separator,
+			total,
+			separator,
 			locale: { prevText, nextText },
 			className,
 			...attr
@@ -73,7 +70,8 @@ export default class Pagination extends PureComponent {
 					</Button>
 				)}
 				<span className={`${prefixCls}-pages`}>
-					<span className={`${prefixCls}-page-index`}>{current}</span> {separator} {total}
+					<span className={`${prefixCls}-page-index`}>{current}</span>{" "}
+					{separator} {total}
 				</span>
 				{current >= total ? (
 					<Button disabled>{nextText}</Button>

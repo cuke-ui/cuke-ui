@@ -12,19 +12,20 @@
     "build": "cross-env NODE_ENV=production && yarn run clean && webpack --env.mode=production --mode production --progress --config webpack.config.js",
     "dev": "start-storybook -p 8080 -c .storybook",
     "upgrade": "yarn update",
-    "precommit": "lint-staged",
+    "precommit": "yarn lint && lint-staged",
     "stylelint:fix": "stylelint 'components/**/*.less' --syntax less --fix",
     "eslint:fix": "eslint ./components --fix",
     "lint": "prettier --write \"components/**/*.js\" && yarn eslint:fix && yarn stylelint:fix",
     "test": "jest --config jest.config.js",
     "coverage": "yarn test -- --coverage",
+    "prepush":"yarn pub:doc",
     "ci": "yarn pub:doc && yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:doc": "build-storybook -c .storybook -o .out",
     "pub:doc": "yarn build:doc && storybook-to-ghpages --existing-output-dir=.out"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn lint && lint-staged"
     }
   },
   "lint-staged": {

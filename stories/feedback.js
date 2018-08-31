@@ -6,6 +6,9 @@ import Button from '../components/button';
 import Alert from '../components/alert';
 import Modal from '../components/modal';
 import ModalPage from './pages/modal';
+import Spin from '../components/spin';
+
+import { SuccessIcon } from '../components/icon';
 import './styles/feedback.less';
 
 storiesOf('操作反馈', module)
@@ -170,8 +173,40 @@ storiesOf('操作反馈', module)
 			`
 		)(() => (
 			<div>
-				<Modal visible={false}/>
-      	<ModalPage/>
+				<Modal visible={false} />
+				<ModalPage />
+			</div>
+		))
+	)
+	.add(
+		'Spin 加载中',
+		withInfo()(() => (
+			<div>
+				<h2>基本使用</h2>
+				<Spin />
+
+				<h2>三种尺寸</h2>
+				<Spin size="small" />
+				<Spin style={{ margin: '0 10px' }} />
+				<Spin size="large" />
+
+				<h2>在容器中显示</h2>
+				<Spin tip="拼了老命加载中...">
+					<Alert
+						style={{margin:0}}
+						message="通知"
+						description={
+							<div>
+								<p> 系统错误,正在重新尝试,请稍后</p>
+								<p> 请各部门做好准备</p>
+							</div>
+						}
+						type="warning"
+					/>
+				</Spin>
+
+				<h2>自定义加载图标</h2>
+				<Spin indicator={<SuccessIcon />} />
 			</div>
 		))
 	);
