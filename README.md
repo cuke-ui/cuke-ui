@@ -18,7 +18,7 @@
 - [x] [TurnTable 抽奖转盘](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%A8%B1%E4%B9%90&selectedStory=TurnTable%20%E6%8A%BD%E5%A5%96%E8%BD%AC%E7%9B%98&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [WordPad   手写输入板](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=WordPad%20%E5%86%99%E5%AD%97%E6%9D%BF&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [MusicPlayer 响应式音乐播放器](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%A8%B1%E4%B9%90&selectedStory=MusicPlayer%20%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
-- [x] Spin  加载中
+- [x] [Spin  加载中](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Spin%20%E5%8A%A0%E8%BD%BD%E4%B8%AD&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [ ] Progress  进度条
 - [ ] BackTop  回到顶部
 - [ ] Tabs  选项卡
