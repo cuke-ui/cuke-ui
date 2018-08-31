@@ -9,3 +9,6 @@ export { default as Row } from "./row";
 export { default as message } from "./message";
 export { default as Pagination } from "./pagination";
 export { default as Alert } from "./alert";
+export { default as Modal } from "./modal";
+export { default as Spin } from "./spin";
+export { default as Tooltip } from "./tooltip";
