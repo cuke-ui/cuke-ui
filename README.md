@@ -24,11 +24,23 @@
 - [ ] Tabs  选项卡
 - [ ] Dropdown 下拉菜单
 - [ ] Checkbox  复选框
-- [ ] Swtich  选择器
+- [ ] Switch  选择器
 - [ ] Radio   单选框  
 - [ ] Select  下拉选择器  
 - [ ] Upload  上传  
 
+### 发布打包
+> 基于webpack打包umd模块
+
+```
+yarn run build
+```
+
+输出 
+
+- `dist`
+	- `cuke-ui.min.js`
+	- `cuke-ui.min.css`
 
 ### 开发
 > 请首先安装 npm i -g yarn

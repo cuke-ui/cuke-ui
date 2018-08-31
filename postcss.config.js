@@ -1,16 +1,7 @@
-const plugins = [
-  require('autoprefixer'),
-  // require('cssnano')({
-  //   preset: [
-  //     'default', {
-  //       discardComments: {
-  //         removeAll: true
-  //       }
-  //     }
-  //   ]
-  // })
-];
-
 module.exports = {
-  plugins
+  plugins: [
+    require("autoprefixer")({
+      browsers: ["last 2 versions", "Android >= 4.0"]
+    })
+  ]
 };
