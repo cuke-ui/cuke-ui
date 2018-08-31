@@ -11,7 +11,7 @@
     "clean": "rimraf dist",
     "build": "cross-env NODE_ENV=production && yarn run clean && webpack --env.mode=production --mode production --progress --config webpack.config.js",
     "dev": "start-storybook -p 8080 -c .storybook",
-    "upgrade": "yarn update",
+    "upgrade": "yarn upgrade",
     "precommit": "lint-staged",
     "stylelint:fix": "stylelint 'components/**/*.less' --syntax less --fix",
     "eslint:fix": "eslint ./components --fix",
@@ -24,13 +24,14 @@
   },
   "lint-staged": {
     "components/**/*.{js}": [
-      "lint",
-      "test",
+      "prettier --write",
+      "eslint --fix",
+      "jest --config jest.config.js",
       "git add"
     ],
     "components/**/*.less": [
       "prettier --write",
-      "stylelint:fix",
+      "stylelint --syntax less --fix",
       "git add"
     ]
   },
