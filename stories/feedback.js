@@ -147,7 +147,31 @@ storiesOf('操作反馈', module)
 	)
 	.add(
 		'Modal 对话框',
-		withInfo()(() => (
-      <ModalPage/>
+		withInfo(
+			`
+			使用
+			~~~js
+			<Modal
+				title="哈哈"
+				visible={true}
+				okText="确定"
+				cancelText="取消"
+				closable={true}
+				maskClosable={true}
+				centered={true}
+				footer={null}
+				targetAtNode={document.body}
+				onCancel={() => {}}
+				onOk={() => {}}
+		>
+			<span>自定义文字</span>
+		</Modal>
+		~~~
+			`
+		)(() => (
+			<div>
+				<Modal visible={false}/>
+      	<ModalPage/>
+			</div>
 		))
 	);

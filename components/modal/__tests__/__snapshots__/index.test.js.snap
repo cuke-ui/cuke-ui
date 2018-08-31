@@ -50,9 +50,9 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <p>
+        <span>
           基本使用
-        </p>
+        </span>
       </section>
       <section
         class="cuke-modal-footer"
@@ -124,9 +124,9 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <p>
+        <span>
           自定义文本 
-        </p>
+        </span>
       </section>
       <section
         class="cuke-modal-footer"
@@ -198,9 +198,9 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <p>
+        <span>
           无 footer
-        </p>
+        </span>
       </section>
     </div>
   </div>
@@ -252,9 +252,9 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <p>
+        <span>
           居中
-        </p>
+        </span>
       </section>
       <section
         class="cuke-modal-footer"
@@ -277,6 +277,53 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         </button>
       </section>
     </div>
+  </div>
+</div>
+`;
+
+exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
+<div
+  class="cuke-modal-wrap"
+  role="dialog"
+  tabindex="-1"
+>
+  <div
+    class="cuke-modal cuke-modal-confirm cuke-modal-open"
+  >
+    <section
+      class="cuke-modal-header"
+    >
+      <h2
+        class="cuke-modal-title"
+      />
+    </section>
+    <section
+      class="cuke-modal-content"
+    >
+      <p>
+        confirm
+      </p>
+    </section>
+    <section
+      class="cuke-modal-footer"
+    >
+      <button
+        class="cuke-button btn-default"
+        type="button"
+      >
+        <span>
+          取消
+        </span>
+      </button>
+      <button
+        class="cuke-button btn-primary"
+        type="button"
+      >
+        <span>
+          确定
+        </span>
+      </button>
+    </section>
   </div>
 </div>
 `;
@@ -331,9 +378,9 @@ Array [
       <section
         class="cuke-modal-content"
       >
-        <p>
+        <span>
            其实我是高仿 ant-design 的 
-        </p>
+        </span>
       </section>
       <section
         class="cuke-modal-footer"

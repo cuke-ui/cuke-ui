@@ -1,5 +1,6 @@
 import React from 'react';
-import { render, shallow } from 'enzyme';
+import { render, shallow, mount } from 'enzyme';
+import assert from 'power-assert';
 import toJson from 'enzyme-to-json';
 import Modal from '../index';
 
@@ -8,16 +9,16 @@ describe('<Modal/>', () => {
 		const wrapper = render(
 			<div>
 				<Modal title="基本使用" visible>
-					<p>基本使用</p>
+					<span>基本使用</span>
 				</Modal>
 				<Modal title="基本使用" okText="ok" cancelText="cancel" visible>
-					<p>自定义文本 </p>
+					<span>自定义文本 </span>
 				</Modal>
 				<Modal title="基本使用" visible footer={null}>
-					<p>无 footer</p>
+					<span>无 footer</span>
 				</Modal>
 				<Modal title="基本使用" visible closable centered>
-					<p>居中</p>
+					<span>居中</span>
 				</Modal>
 			</div>
 		);
@@ -31,10 +32,35 @@ describe('<Modal/>', () => {
 				visible
 				footer={[<a key="cancel">取消</a>, <a key="confirm">确定</a>]}
 			>
-				<p> 其实我是高仿 ant-design 的 </p>
+				<span> 其实我是高仿 ant-design 的 </span>
 			</Modal>
 		);
 		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+	it('should render confirm mode width <Modal/> ', () => {
+		const wrapper = render(
+			<Modal
+			className="cuke-modal-confirm"
+			showMask={false}
+			closable={false}
+			visible
+			>
+				<p>confirm</p>
+			</Modal>
+		);
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+	it('should can not clicked with set maskClosable false', () => {
+		const onCancelClick = jest.fn();
+		const wrapper = mount(
+			<Modal footer={null} visible={true} onCancel={onCancelClick}>
+				<span>关闭回调</span>
+			</Modal>
+		);
+		wrapper.find('.cuke-modal').simulate('click');
+		assert(wrapper.props().visible === true);
+		expect(onCancelClick).not.toHaveBeenCalled();
 	});
 
 	it('should can trigger onClose event', () => {
@@ -42,7 +68,7 @@ describe('<Modal/>', () => {
 		const onCancelClick = jest.fn();
 		const wrapper = shallow(
 			<Modal title="关闭回调" visible onOk={onClick} onCancel={onCancelClick}>
-				<p>关闭回调</p>
+				<span>关闭回调</span>
 			</Modal>
 		);
 		wrapper.find('.cuke-modal').simulate('click');

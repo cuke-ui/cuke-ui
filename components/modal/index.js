@@ -1,12 +1,15 @@
 import React, { PureComponent, Fragment } from 'react';
 import propTypes from 'prop-types';
-import { createPortal } from 'react-dom'; //传送门 将节点挂载在root 节点之外
+import { createPortal, render } from 'react-dom'; //传送门 将节点挂载在root 节点之外
 import cls from 'classnames';
 import Button from '../button';
 import { CloseIcon } from '../icon';
 import './styles.less';
 
 export default class Modal extends PureComponent {
+	state = {
+		init: false
+	};
 	static defaultProps = {
 		prefixCls: 'cuke-modal',
 		visible: false,
@@ -17,11 +20,12 @@ export default class Modal extends PureComponent {
 		okText: '确定',
 		cancelText: '取消',
 		footer: [],
-		content: null,
+		content: '',
 		confirmLoading: false,
 		maskClosable: true,
 		centered: false,
-		closable: true
+		closable: true,
+		showMask: true
 	};
 	static propTypes = {
 		onCancel: propTypes.func,
@@ -35,6 +39,7 @@ export default class Modal extends PureComponent {
 		centered: propTypes.bool,
 		closable: propTypes.bool,
 		maskClosable: propTypes.bool,
+		showMask: propTypes.bool,
 		footer: propTypes.oneOfType([
 			//footer 不需要设置为 footer={null}
 			propTypes.array,
@@ -42,6 +47,28 @@ export default class Modal extends PureComponent {
 			propTypes.object
 		])
 	};
+	constructor(props) {
+		super(props);
+	}
+	static confirm = options => {
+		render(
+			<Modal
+				className="cuke-modal-confirm"
+				showMask={false}
+				closable={false}
+				visible
+				{...options}
+			/>,
+			document.getElementById('root')
+		);
+	};
+	componentWillReceiveProps({ visible }) {
+		if (visible === true) {
+			this.setState({
+				init: true
+			});
+		}
+	}
 	render() {
 		const {
 			prefixCls,
@@ -60,21 +87,35 @@ export default class Modal extends PureComponent {
 			centered,
 			closable,
 			maskClosable,
+			showMask,
 			...attr
 		} = this.props;
+
+		const { init } = this.state;
+
+		const initModalAnimate = init
+			? { [`${prefixCls}-open`]: visible, [`${prefixCls}-close`]: !visible }
+			: { [`${prefixCls}-open`]: visible };
+
+		const initMaskAnimate = init
+			? {
+					[`${prefixCls}-mask-show`]: visible,
+					[`${prefixCls}-mask-hide`]: !visible
+			  }
+			: { [`${prefixCls}-mask-show`]: visible };
 
 		const maskClickHandle = maskClosable ? { onClick: onCancel } : {};
 
 		return createPortal(
 			<Fragment>
-				<div
-					className={cls(
-						`${prefixCls}-mask`,
-						{ [`${prefixCls}-mask-show`]: visible },
-						{ [`${prefixCls}-mask-hide`]: !visible }
-					)}
-					{...maskClickHandle}
-				/>
+				{showMask ? (
+					<div
+						className={cls(`${prefixCls}-mask`, initMaskAnimate)}
+						{...maskClickHandle}
+					/>
+				) : (
+					undefined
+				)}
 				<div
 					role="dialog"
 					tabIndex="-1"
@@ -83,12 +124,7 @@ export default class Modal extends PureComponent {
 					})}
 				>
 					<div
-						className={cls(
-							prefixCls,
-							className,
-							{ [`${prefixCls}-open`]: visible },
-							{ [`${prefixCls}-close`]: !visible }
-						)}
+						className={cls(prefixCls, className, initModalAnimate)}
 						ref={node => (this.modal = node)}
 						{...attr}
 					>

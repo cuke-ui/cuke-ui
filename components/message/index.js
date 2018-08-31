@@ -19,8 +19,6 @@ export default class Message extends PureComponent {
 		visible: true
 	};
 	animationTime = 500;
-	_container;
-	_dom;
 	constructor(props) {
 		super(props);
 		this.typeConfig = {
@@ -45,10 +43,10 @@ export default class Message extends PureComponent {
 	};
 	createContainer() {
 		const { prefixCls } = this.props;
-		if (!this.div) {
-			this.div = document.createElement("div");
-			this.div.className = prefixCls;
-			document.body.appendChild(this.div);
+		if (!this.container) {
+			this.container = document.createElement("div");
+			this.container.className = prefixCls;
+			document.body.appendChild(this.container);
 		}
 	}
 	componentDidMount() {
@@ -64,8 +62,8 @@ export default class Message extends PureComponent {
 		}, duration * 1000);
 	}
 	removeNode = () => {
-		ReactDOM.unmountComponentAtNode(this._container);
-		this._dom.remove();
+		ReactDOM.unmountComponentAtNode(this.container);
+		this.container.remove();
 	};
 	static renderElement = (type, title, duration, onClose, darkTheme) => {
 		let div = document.createElement("div");
