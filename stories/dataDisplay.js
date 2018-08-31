@@ -4,6 +4,9 @@ import Tooltip from '../components/tooltip';
 import Button from '../components/button';
 import { withInfo } from '@storybook/addon-info';
 
+import "../components/tooltip/styles.less";
+import "../components/button/styles.less";
+
 storiesOf('数据展示', module).add(
 	'Tooltip',
 	withInfo()(() => (

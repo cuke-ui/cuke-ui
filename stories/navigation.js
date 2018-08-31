@@ -4,6 +4,9 @@ import { withInfo } from '@storybook/addon-info';
 import Breadcrumb from '../components/breadcrumb';
 import Pagination from '../components/pagination';
 
+import "../components/breadcrumb/styles.less";
+import "../components/pagination/styles.less";
+
 storiesOf('导航', module)
 	.add(
 		'Breadcrumb 面包屑',

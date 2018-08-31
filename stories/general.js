@@ -5,6 +5,8 @@ import { action } from '@storybook/addon-actions';
 import Button from '../components/button';
 import './styles/button.less';
 
+import "../components/button/styles.less";
+
 storiesOf('普通', module).add(
 	'Button 按钮',
 	withInfo(`

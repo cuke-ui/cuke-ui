@@ -11,7 +11,6 @@ import {
 	WarningIcon
 } from "../icon";
 
-import "./styles.less";
 
 export default class Message extends PureComponent {
 	state = {

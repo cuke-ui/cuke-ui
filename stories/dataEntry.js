@@ -7,6 +7,8 @@ import Input from '../components/input';
 import { withInfo } from '@storybook/addon-info';
 import { IoIosAddCircleOutline } from "react-icons/io";
 
+import "../components/input/styles.less";
+
 storiesOf('数据录入', module)
 	.add('WordPad 写字板', withInfo()(() => (
 		<div>

@@ -3,6 +3,7 @@
 exports[`<WordPad/> should render a <WordPad/> components 1`] = `
 <canvas
   class="cuke-word-pad"
+  style="display:block"
 >
   你的浏览器不支持 canvas
 </canvas>

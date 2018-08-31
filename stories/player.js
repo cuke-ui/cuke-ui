@@ -4,6 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import MusicPlayer from '../components/musicPlayer';
 import Turntable from '../components/turnTable';
 import message from '../components/message';
+import "../components/message/styles.less";
 
 storiesOf('娱乐', module)
 	.add(

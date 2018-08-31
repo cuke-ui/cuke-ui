@@ -10,6 +10,11 @@ import Spin from '../components/spin';
 
 import { SuccessIcon } from '../components/icon';
 import './styles/feedback.less';
+import "../components/message/styles.less";
+import "../components/button/styles.less";
+import "../components/alert/styles.less";
+import "../components/modal/styles.less";
+import "../components/spin/styles.less";
 
 storiesOf('操作反馈', module)
 	.add(

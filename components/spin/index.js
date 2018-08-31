@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 import cls from "classnames";
 import { LoadingIcon } from "../icon";
 
-import "./styles.less";
-
 export default class Spin extends PureComponent {
 	state = {
 		visible: true

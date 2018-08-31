@@ -4,7 +4,6 @@ import { createPortal, render } from "react-dom"; //传送门 将节点挂载在
 import cls from "classnames";
 import Button from "../button";
 import { CloseIcon } from "../icon";
-import "./styles.less";
 
 export default class Modal extends PureComponent {
 	state = {

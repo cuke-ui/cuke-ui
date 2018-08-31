@@ -9,7 +9,6 @@ import {
 	WarningIcon
 } from "../icon";
 
-import "./styles.less";
 
 export default class Alert extends PureComponent {
 	state = {

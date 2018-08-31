@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import { LoadingIcon } from "../icon";
-import "./styles.less";
 
 export default class Button extends PureComponent {
 	static defaultProps = {

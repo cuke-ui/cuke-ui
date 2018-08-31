@@ -5,6 +5,8 @@ import Row from '../components/row';
 import Col from '../components/col';
 import "./styles/grid.less"
 
+import "../components/row/styles.less";
+import "../components/col/styles.less";
 storiesOf('布局', module).add('Grid 栅栏', withInfo()(() => (
 	<div>
 		<h2>24格网格</h2>

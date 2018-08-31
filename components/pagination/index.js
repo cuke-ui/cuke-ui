@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Button from "../button";
-import "./styles.less";
 
 export default class Pagination extends PureComponent {
 	defaultCurrentPage = 1;

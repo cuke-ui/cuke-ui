@@ -2,8 +2,6 @@ import React, { PureComponent } from "react";
 import propTypes from "prop-types";
 import cls from "classnames";
 
-import "./styles.less";
-
 export default class WordPad extends PureComponent {
 	state = {
 		isMouseDown: false,
@@ -42,7 +40,10 @@ export default class WordPad extends PureComponent {
 		return (
 			<canvas
 				className={cls(prefixCls, className)}
-				style={style}
+				style={{
+					...style,
+					display: "block"
+				}}
 				ref={node => (this.canvas = node)}
 			>
 				你的浏览器不支持 canvas

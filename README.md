@@ -29,8 +29,38 @@
 - [ ] Select  下拉选择器  
 - [ ] Upload  上传  
 
+### 参考轮子
+
+- [ant-design](https://github.com/ant-design/ant-design)
+- [gulu](https://github.com/FrankFang/gulu)
+- [dragon-ui](https://github.com/JeromeLin/dragon-ui)
+
+### 使用
+
+> 全部引入
+
+```js
+import {Button} from "cuke-ui"
+import "cuke-ui/dist/cuke-ui.min.css"
+
+class Text extends React.Component {
+	render(){
+		return (
+			<Button>黄瓜ui</Button>
+		)
+	}
+}
+```
+
+> 按需引入 (TODO)
+
+```js
+import Button from 'cuke-ui/lib/Button';
+import 'cuke-ui/lib/Button/style.less';
+```
+
 ### 发布打包
-> 基于webpack打包umd模块
+> 基于webpack打包umd模块 , babel 打包es模块 , Gulp 打包css
 
 ```
 yarn run build
@@ -39,8 +69,13 @@ yarn run build
 输出 
 
 - `dist`
+	- `cuke-ui.js`
 	- `cuke-ui.min.js`
+	- `cuke-ui.css`
 	- `cuke-ui.min.css`
+- `lib`
+	- `所有组件`
+	- `index.js`
 
 ### 开发
 > 请首先安装 npm i -g yarn
@@ -149,10 +184,4 @@ yarn build:doc
 ```
 yarn pub:doc
 ```
-
-### 参考轮子
-
-- [ant-design](https://github.com/ant-design/ant-design)
-- [gulu](https://github.com/FrankFang/gulu)
-- [dragon-ui](https://github.com/JeromeLin/dragon-ui)
 

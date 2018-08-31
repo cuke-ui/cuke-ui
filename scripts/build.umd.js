@@ -9,16 +9,16 @@
  * UMD 两种环境都可以执行
  */
 
+const fs = require("fs");
 const path = require("path");
 const webpack = require("webpack");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const { version, name, description } = require("../package.json");
 
 const config = {
-	mode: "production",
-
 	entry: {
 		[name]: ["./components/index.js"]
 	},
@@ -50,27 +50,6 @@ const config = {
 		enforceExtension: false,
 		extensions: [".js", ".jsx", ".json", ".less", ".css"]
 	},
-	optimization: {
-		minimizer: [
-			new UglifyJsPlugin({
-				cache: true,
-				parallel: true,
-				uglifyOptions: {
-					compress: {
-						warnings: false,
-						drop_debugger: true,
-						drop_console: false
-					}
-				}
-			}),
-			new OptimizeCSSAssetsPlugin({
-				//压缩css  与 ExtractTextPlugin 配合使用
-				cssProcessor: require("cssnano"),
-				cssProcessorOptions: { discardComments: { removeAll: true } }, //移除所有注释
-				canPrint: true //是否向控制台打印消息
-			})
-		]
-	},
 	module: {
 		rules: [
 			{
@@ -85,20 +64,19 @@ const config = {
 			},
 			{
 				test: /\.(le|c)ss$/,
-				use: [
-					{ loader: MiniCssExtractPlugin.loader },
-					"css-loader",
-					{
-						loader: "postcss-loader",
-						options: { sourceMap: false }
-					},
-					{
-						loader: "less-loader",
-						options: {
-							sourceMap: false
+				use: ExtractTextPlugin.extract({
+					fallback: "style-loader",
+					use: [
+						"css-loader",
+						{ loader: "postcss-loader", options: { sourceMap: false } },
+						{
+							loader: "less-loader",
+							options: {
+								sourceMap: false
+							}
 						}
-					}
-				]
+					]
+				})
 			},
 			{
 				test: /\.(jpg|jpeg|png|gif|cur|ico)$/,
@@ -114,7 +92,8 @@ const config = {
 		]
 	},
 	plugins: [
-		new MiniCssExtractPlugin({
+		new ProgressBarPlugin(),
+		new ExtractTextPlugin({
 			filename: "[name].min.css"
 		}),
 		//在打包的文件之前 加上版权说明
@@ -124,24 +103,31 @@ const config = {
     Copyright (c) 2018 ${name} version(${version})
 
     ${description}
-    
-    Permission is hereby granted, free of charge, to any person obtaining a copy
-    of this software and associated documentation files (the "Software"), to deal
-    in the Software without restriction, including without limitation the rights
-    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-    copies of the Software, and to permit persons to whom the Software is
-    furnished to do so, subject to the following conditions:
-    The above copyright notice and this permission notice shall be included in all
-    copies or substantial portions of the Software.
-  
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-    SOFTWARE.
-  `)
+    ${fs.readFileSync(path.join(process.cwd(), "LICENSE"))}
+	`),
+		new webpack.DefinePlugin({
+			"process.env.NODE_ENV": JSON.stringify("production")
+		}),
+		new webpack.LoaderOptionsPlugin({
+			minimize: true
+		}),
+		new UglifyJsPlugin({
+			cache: true,
+			parallel: true,
+			uglifyOptions: {
+				compress: {
+					warnings: false,
+					drop_debugger: true,
+					drop_console: false
+				}
+			}
+		}),
+		new OptimizeCSSAssetsPlugin({
+			//压缩css  与 ExtractTextPlugin 配合使用
+			cssProcessor: require("cssnano"),
+			cssProcessorOptions: { discardComments: { removeAll: true } }, //移除所有注释
+			canPrint: true //是否向控制台打印消息
+		})
 	]
 };
 
