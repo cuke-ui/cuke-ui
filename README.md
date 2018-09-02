@@ -68,19 +68,19 @@ cuke-ui
 > 全部引入
 
 ```js
-import {Button} from "cuke-ui"
+import { Button, message } from "cuke-ui"
 import "cuke-ui/dist/cuke-ui.min.css"
 
 class Text extends React.Component {
-	render(){
-		return (
-			<Button>黄瓜ui</Button>
-		)
-	}
+  render(){
+    return (
+      <Button onClick={()=> message.success('即插即用的react UI库')}>黄瓜ui</Button>
+    )
+}
 }
 ```
 
-> 按需引入 (TODO)
+> 按需引入
 
 ```js
 import Button from 'cuke-ui/lib/Button';
@@ -154,9 +154,9 @@ import Button from '../components/button';          //引入你的组件
 import { withInfo } from '@storybook/addon-info';
 
 storiesOf('示例标题', module)
-	.add('Button 按钮', withInfo()(() => (         // 添加到页面上
-			<Button type="primary">获取文字</Button>   // 这里写jsx
-	)))
+ .add('Button 按钮', withInfo()(() => (         // 添加到页面上
+   <Button type="primary">获取文字</Button>   // 这里写jsx
+ )))
 ```
 
 
