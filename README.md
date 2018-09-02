@@ -3,7 +3,7 @@ cuke-ui
 </h1>
 
 <h4 align="center">
-黄瓜 ui : 一个即插即用的 React UI 库 (施工中,请勿用于生产环境...)
+黄瓜 ui : 一个即插即用的 React UI 库 (**施工中,请勿用于生产环境...**)
 </h4>
 
 <p align="center">
@@ -30,6 +30,41 @@ cuke-ui
 ### 在线演示
 
 [https://cuke-ui.github.io/cuke-ui/](https://cuke-ui.github.io/cuke-ui/)
+
+### 安装
+> 使用 npm 
+```
+npm i cuke-ui --save
+```
+
+> 使用 yarn
+```
+yarn add cuke-ui
+```
+
+### 如何使用
+
+> 全部引入
+
+```js
+import { Button, message } from "cuke-ui"
+import "cuke-ui/dist/cuke-ui.min.css"
+
+class Text extends React.Component {
+  render(){
+    return (
+      <Button onClick={()=> message.success('即插即用的react UI库')}>黄瓜ui</Button>
+    )
+ }
+}
+```
+
+> 按需引入
+
+```js
+import Button from 'cuke-ui/lib/Button';
+import 'cuke-ui/lib/Button/style.less';
+```
 
 ### 计划开发的组件
 > 计划2018年底完成,给自己一个交代
@@ -63,29 +98,6 @@ cuke-ui
 - [gulu](https://github.com/FrankFang/gulu)
 - [dragon-ui](https://github.com/JeromeLin/dragon-ui)
 
-### 使用
-
-> 全部引入
-
-```js
-import { Button, message } from "cuke-ui"
-import "cuke-ui/dist/cuke-ui.min.css"
-
-class Text extends React.Component {
-  render(){
-    return (
-      <Button onClick={()=> message.success('即插即用的react UI库')}>黄瓜ui</Button>
-    )
-}
-}
-```
-
-> 按需引入
-
-```js
-import Button from 'cuke-ui/lib/Button';
-import 'cuke-ui/lib/Button/style.less';
-```
 
 ### 发布打包
 > 基于webpack打包umd模块 , babel 打包es模块 , Gulp 打包css
@@ -102,7 +114,9 @@ yarn run build
 	- `cuke-ui.css`
 	- `cuke-ui.min.css`
 - `lib`
-	- `所有组件`
+	- `button`
+	  - `index.js`
+	  - `style.less`
 	- `index.js`
 
 ### 开发
