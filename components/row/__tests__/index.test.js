@@ -20,10 +20,10 @@ describe("<Row/>", () => {
 		const wrapper = render(
 			<div>
 				<Row>
-					<Col span={12}>1</Col>
-					<Col span={6}>2</Col>
+					<Col span={12}>12</Col>
+					<Col span={6}>6</Col>
 					<Col span={2} offset={4}>
-						3
+						2
 					</Col>
 				</Row>
 			</div>

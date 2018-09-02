@@ -10,19 +10,19 @@ exports[`<Row/> should find cuke-row classnames 1`] = `
       class="cuke-col cuke-col-12"
       style="padding-left:0px;padding-right:0px"
     >
-      1
+      12
     </div>
     <div
       class="cuke-col cuke-col-6"
       style="padding-left:0px;padding-right:0px"
     >
-      2
+      6
     </div>
     <div
       class="cuke-col cuke-col-2 cuke-col-offset-4"
       style="padding-left:0px;padding-right:0px"
     >
-      3
+      2
     </div>
   </div>
 </div>
