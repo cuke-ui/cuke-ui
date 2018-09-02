@@ -16,3 +16,5 @@ export { default as Alert } from "./alert";
 export { default as Modal } from "./modal";
 export { default as Spin } from "./spin";
 export { default as Tooltip } from "./tooltip";
+export { default as Progress } from "./progress";
+export { default as backTop } from "./backTop";
