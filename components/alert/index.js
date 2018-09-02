@@ -9,7 +9,6 @@ import {
 	WarningIcon
 } from "../icon";
 
-
 export default class Alert extends PureComponent {
 	state = {
 		visible: true

@@ -73,7 +73,6 @@
     &.btn-disabled {
         .btn-hover(@disabled-color);
         cursor: no-drop;
-        border-style: dashed;
         color: @font-color;
         border-color: @border-color;;
         &.btn-hollow {
@@ -86,6 +85,7 @@
     }
     &.btn-loading {
         opacity: @loading-opacity;
+        cursor: no-drop;
         >.cuke-loading {
             display: inline-block;
             margin-right: 10px;
@@ -101,5 +101,8 @@
         font-size:@button-small-font-size;
         padding:@button-small-padding;
         height:@button-small-height;
+    }
+    &.btn-dashed {
+        border:1px dashed;
     }
 }

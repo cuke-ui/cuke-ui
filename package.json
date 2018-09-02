@@ -23,7 +23,7 @@
     "lint": "prettier --write \"components/**/*.js\" && yarn eslint:fix && yarn stylelint:fix",
     "test": "jest --config jest.config.js",
     "coverage": "yarn test -- --coverage",
-    "ci": "yarn pub:doc && yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "ci": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && yarn pub:doc",
     "build:doc": "build-storybook -c .storybook -o .out",
     "pub:doc": "yarn build:doc && storybook-to-ghpages --existing-output-dir=.out",
     "prepublish": "yarn build",
@@ -138,7 +138,7 @@
   },
   "dependencies": {
     "react-icons": "^3.0.5",
-    "react-jinke-music-player": "^4.0.3",
+    "react-jinke-music-player": "^4.0.4",
     "react-turntable": "^1.2.5"
   }
 }

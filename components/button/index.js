@@ -12,7 +12,8 @@ export default class Button extends PureComponent {
 		loading: false,
 		block: false,
 		disabled: false,
-		hollow: false
+		hollow: false,
+		dashed: false
 	};
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
@@ -20,6 +21,7 @@ export default class Button extends PureComponent {
 		hollow: PropTypes.bool,
 		loading: PropTypes.bool,
 		disabled: PropTypes.bool,
+		dashed: PropTypes.bool,
 		htmlType: PropTypes.string,
 		type: PropTypes.oneOf([
 			"primary",
@@ -45,6 +47,7 @@ export default class Button extends PureComponent {
 			onClick,
 			hollow,
 			size,
+			dashed,
 			...attr
 		} = this.props;
 
@@ -72,6 +75,7 @@ export default class Button extends PureComponent {
 					{ "btn-hollow": hollow },
 					{ "btn-large": size === "large" },
 					{ "btn-small": size === "small" },
+					{ "btn-dashed": dashed },
 					className
 				)}
 			>

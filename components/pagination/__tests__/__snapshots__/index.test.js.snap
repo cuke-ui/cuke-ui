@@ -8,6 +8,7 @@ exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
 >
   <Button
     block={false}
+    dashed={false}
     disabled={true}
     hollow={false}
     htmlType="button"
@@ -33,6 +34,7 @@ exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
   </span>
   <Button
     block={false}
+    dashed={false}
     disabled={false}
     hollow={false}
     htmlType="button"

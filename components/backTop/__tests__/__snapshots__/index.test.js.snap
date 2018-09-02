@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BackTop/> should render a <BackTop/> components 1`] = `
+<div>
+  <div
+    class="cuke-back-top cuke-back-top-close"
+  >
+    <div
+      class="cuke-back-top-inner"
+    >
+      <div
+        class="cuke-back-top-inner-icon"
+      >
+        <svg
+          attr="[object Object]"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <polyline
+            points="18 15 12 9 6 15"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cuke-back-top cuke-back-top-close"
+  >
+    <div
+      class="cuke-back-top-inner"
+    >
+      <div>
+        backTop
+      </div>
+    </div>
+  </div>
+</div>
+`;

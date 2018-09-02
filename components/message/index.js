@@ -11,7 +11,6 @@ import {
 	WarningIcon
 } from "../icon";
 
-
 export default class Message extends PureComponent {
 	state = {
 		visible: true

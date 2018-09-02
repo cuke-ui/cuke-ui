@@ -16,6 +16,7 @@ function loadStories() {
   require('../stories/dataDisplay'); //数据展示
   require('../stories/grid'); //布局
   require('../stories/feedback'); //操作反馈
+  require('../stories/other'); //其他
 }
 
 setOptions({

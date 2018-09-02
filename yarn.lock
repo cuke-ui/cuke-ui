@@ -9367,9 +9367,9 @@ react-is@^16.4.2:
   version "16.4.2"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.4.2.tgz#84891b56c2b6d9efdee577cc83501dfc5ecead88"
 
-react-jinke-music-player@^4.0.3:
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/react-jinke-music-player/-/react-jinke-music-player-4.0.3.tgz#914ec39536c00f71ed4b9629895e3f1d5635f295"
+react-jinke-music-player@^4.0.4:
+  version "4.0.4"
+  resolved "http://registry.npm.taobao.org/react-jinke-music-player/download/react-jinke-music-player-4.0.4.tgz#78baa18d146b80b3b544419b6b83d8a4730f7e73"
   dependencies:
     classnames "^2.2.5"
     is-mobile "^0.2.2"
