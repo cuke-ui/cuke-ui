@@ -6,7 +6,9 @@ import Button from '../components/button';
 import Alert from '../components/alert';
 import Modal from '../components/modal';
 import ModalPage from './pages/modal';
+import ProgressPage from './pages/progress';
 import Spin from '../components/spin';
+import Progress from '../components/progress';
 
 import { SuccessIcon } from '../components/icon';
 import './styles/feedback.less';
@@ -15,6 +17,7 @@ import "../components/button/styles.less";
 import "../components/alert/styles.less";
 import "../components/modal/styles.less";
 import "../components/spin/styles.less";
+import "../components/progress/styles.less";
 
 storiesOf('操作反馈', module)
 	.add(
@@ -212,6 +215,33 @@ storiesOf('操作反馈', module)
 
 				<h2>自定义加载图标</h2>
 				<Spin indicator={<SuccessIcon />} />
+			</div>
+		))
+	)
+	.add(
+		'Progress 进度条',
+		withInfo()(() => (
+			<div className="progress-example">
+				<h2>基本使用</h2>
+				<Progress percent={70}/>
+
+				<Progress percent={70} animation={false}/>
+
+				<h2>5种状态</h2>
+				<Progress percent={20} type="default"/>
+				<Progress percent={30} type="success"/>
+				<Progress percent={40} type="info"/>
+				<Progress percent={50} type="warning"/>
+				<Progress percent={60} type="error"/>
+
+				<Progress percent={20} type="default" animation={false}/>
+				<Progress percent={30} type="success" animation={false}/>
+				<Progress percent={40} type="info" animation={false}/>
+				<Progress percent={50} type="warning" animation={false}/>
+				<Progress percent={60} type="error" animation={false}/>
+
+				<h2>动态改变</h2>
+				<ProgressPage/>
 			</div>
 		))
 	);

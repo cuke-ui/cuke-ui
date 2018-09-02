@@ -3,7 +3,7 @@ cuke-ui
 </h1>
 
 <h4 align="center">
-黄瓜 ui : 一个即插即用的 React ui 库 (施工中...)
+黄瓜 ui : 一个即插即用的 React ui 库 (施工中,请勿用于生产环境...)
 </h4>
 
 <p align="center">
@@ -27,6 +27,10 @@ cuke-ui
   <a>
 </p>
 
+### 在线演示
+
+[https://cuke-ui.github.io/cuke-ui/](https://cuke-ui.github.io/cuke-ui/)
+
 ### 计划开发的组件
 > 计划2018年底完成,给自己一个交代
 
@@ -44,7 +48,7 @@ cuke-ui
 - [x] [MusicPlayer 响应式音乐播放器](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%A8%B1%E4%B9%90&selectedStory=MusicPlayer%20%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Spin  加载中](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Spin%20%E5%8A%A0%E8%BD%BD%E4%B8%AD&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [BackTop 回到顶部](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%85%B6%E4%BB%96&selectedStory=BackTop%20%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
-- [ ] Progress  进度条
+- [x] Progress  进度条
 - [ ] Tabs  选项卡
 - [ ] Dropdown 下拉菜单
 - [ ] Checkbox  复选框

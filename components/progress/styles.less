@@ -1,0 +1,72 @@
+@import "../styles/vars.less";
+@import "../styles/animate.less";
+@import "../styles/mixins.less";
+@prefixCls : cuke-progress;
+.@{prefixCls} {
+    width:100%;
+    height: @progress-height;
+    border-radius:@progress-border-radius;
+    overflow: hidden;
+    position: relative;
+    &-enter {
+        height: inherit;
+        background: @bg-color;
+    }
+    &-bg {
+        height: inherit;
+        border-radius: @progress-border-radius;
+        background-color: @primary-color;
+        transition: width @default-transition;
+        &-animation{
+            background-size: @progress-bg-offset;
+            animation: panoramic @progress-animate-time linear infinite;
+        }
+    }
+    &-default {
+        .@{prefixCls}-bg {
+            background-color: @primary-color;
+            &-animation{
+                .set-progress-bar-bg(@primary-color);
+            }
+        }
+    }
+    &-success {
+        .@{prefixCls}-bg {
+            background-color: @success-color;
+            &-animation{
+                .set-progress-bar-bg(@success-color);
+            }
+        }
+    }
+    &-info {
+        .@{prefixCls}-bg {
+            background-color: @info-color;
+            &-animation{
+                .set-progress-bar-bg(@info-color);
+            }
+        } 
+    }
+
+    &-warning {
+        .@{prefixCls}-bg {
+            background-color: @warning-color;
+            &-animation{
+                .set-progress-bar-bg(@warning-color);
+            }
+        } 
+    }
+
+    &-error {
+        .@{prefixCls}-bg {
+            background-color: @error-color;
+            &-animation{
+                .set-progress-bar-bg(@error-color);
+            }
+        } 
+    }
+    @keyframes panoramic {
+        to {
+            background-position: 200%;
+        }
+    }
+}

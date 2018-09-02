@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Progress/> should render a <Progress/> components 1`] = `
+<div>
+  <div
+    class="cuke-progress cuke-progress-default"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg cuke-progress-bg-animation"
+        style="width:70%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-default"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg"
+        style="width:70%"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Progress/> should render five type width <Progress/>  1`] = `
+<div>
+  <div
+    class="cuke-progress cuke-progress-default"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg cuke-progress-bg-animation"
+        style="width:20%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-success"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg cuke-progress-bg-animation"
+        style="width:30%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-info"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg cuke-progress-bg-animation"
+        style="width:40%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-warning"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg cuke-progress-bg-animation"
+        style="width:50%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-error"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg cuke-progress-bg-animation"
+        style="width:60%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-default"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg"
+        style="width:20%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-success"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg"
+        style="width:30%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-info"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg"
+        style="width:40%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-warning"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg"
+        style="width:50%"
+      />
+    </div>
+  </div>
+  <div
+    class="cuke-progress cuke-progress-error"
+  >
+    <div
+      class="cuke-progress-enter"
+    >
+      <div
+        class="cuke-progress-bg"
+        style="width:60%"
+      />
+    </div>
+  </div>
+</div>
+`;

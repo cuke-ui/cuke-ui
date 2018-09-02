@@ -4,7 +4,11 @@ import { withInfo } from '@storybook/addon-info';
 import MusicPlayer from '../components/musicPlayer';
 import Turntable from '../components/turnTable';
 import message from '../components/message';
+import Col from '../components/col';
+import Row from '../components/row';
 import "../components/message/styles.less";
+
+const prizes = new Array(8).fill(0).map((_,i)=> `奖品${i+1}`)
 
 storiesOf('娱乐', module)
 	.add(
@@ -37,9 +41,12 @@ storiesOf('娱乐', module)
     
     `
 		)(() => (
-			<Turntable
+   <Row>
+    <Col>
+    <h2>基本使用</h2>
+    <Turntable
 				{...{
-					prizes: new Array(8).fill(0).map((_,i)=> `奖品${i+1}`),
+					prizes,
 					onStart(){
 						//在转动之前 会触发 返回 false 会停止转动  可以再这个方法里面做一些判断
 						console.log('start...')
@@ -50,6 +57,50 @@ storiesOf('娱乐', module)
 						message.success(prize)
 					}
 				}}
-			/>
+   />
+    </Col>
+   <Col>
+   <h2>自定义配置</h2>
+   <Turntable
+   {...{
+    prizes,
+    width: 300,
+    height: 300,
+    speed: 2000,
+    duration: 10000,
+    clickText: "自定义",
+    primaryColor: "#355",
+    secondaryColor: "#f63",
+    fontStyle: {
+     color: "#ccc",
+     size: "14px",
+     fontWeight: "none",
+     fontVertical: false,
+     fontFamily: "Microsoft YaHei"
+    },
+    onComplete(prize) {
+     console.log(prize)
+     message.success(prize)
+    }
+   }}
+  />
+  </Col>
+  <Col>
+  <h2>文字竖排显示</h2>
+  <Turntable
+  {...{
+   prizes,
+   fontStyle: {
+    color: "#fff",
+    fontVertical: true,
+   },
+   onComplete(prize) {
+    console.log(prize)
+    message.success(prize)
+   }
+  }}
+ />
+ </Col>
+   </Row>
 		))
 	);
