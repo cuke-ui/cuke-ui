@@ -1,7 +1,31 @@
-# cuke-ui
-黄瓜 ui : 一个即插即用的 React ui 库 (施工中...)
+<h1 align="center">
+cuke-ui
+</h1>
 
-[![Build Status](https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master)](https://travis-ci.com/cuke-ui/cuke-ui)
+<h4 align="center">
+黄瓜 ui : 一个即插即用的 React ui 库 (施工中...)
+</h4>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
+    <img src="https://img.shields.io/npm/dm/cuke-ui.svg?style=flat-square" alt="npm">
+  </a>
+  <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
+    <img src="https://img.shields.io/npm/l/cuke-ui.svg?style=flat-square" alt="npm">
+  </a>
+   <a href="https://travis-ci.org/cuke-ui/cuke-ui" title="Build Status">
+    <img src="https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master" alt="Build Status">
+  </a>
+   <a href="https://badge.fury.io/js/cuke-ui" title="npm">
+    <img src="https://img.shields.io/npm/v/cuke-ui.svg?style=flat-square" alt="npm version">
+  </a>
+   <a href="https://coveralls.io/github/cuke-ui/cuke-ui?branch=master" title="Coverage Status">
+    <img src="https://coveralls.io/repos/github/cuke-ui/cuke-ui/badge.svg?branch=master" alt="Coverage Status">
+  </a>
+  <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
+    <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg">
+  <a>
+</p>
 
 ### 计划开发的组件
 > 计划2018年底完成,给自己一个交代
@@ -19,8 +43,8 @@
 - [x] [WordPad   手写输入板](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=WordPad%20%E5%86%99%E5%AD%97%E6%9D%BF&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [MusicPlayer 响应式音乐播放器](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%A8%B1%E4%B9%90&selectedStory=MusicPlayer%20%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Spin  加载中](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Spin%20%E5%8A%A0%E8%BD%BD%E4%B8%AD&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [BackTop 回到顶部](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%85%B6%E4%BB%96&selectedStory=BackTop%20%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [ ] Progress  进度条
-- [ ] BackTop  回到顶部
 - [ ] Tabs  选项卡
 - [ ] Dropdown 下拉菜单
 - [ ] Checkbox  复选框
