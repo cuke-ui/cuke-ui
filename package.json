@@ -21,7 +21,7 @@
     "stylelint:fix": "stylelint 'components/**/*.less' --syntax less --fix",
     "eslint:fix": "eslint ./components --fix",
     "lint": "prettier --write \"components/**/*.js\" && yarn eslint:fix && yarn stylelint:fix",
-    "test": "jest --config jest.config.js -u",
+    "test": "jest --config jest.config.js",
     "coverage": "yarn test -- --coverage",
     "ci": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:doc": "build-storybook -c .storybook -o .out",
