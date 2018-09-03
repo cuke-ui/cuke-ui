@@ -13,9 +13,6 @@ cuke-ui
   <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
     <img src="https://img.shields.io/npm/l/cuke-ui.svg?style=flat-square" alt="npm"/>
   </a>
-   <a href="https://travis-ci.org/cuke-ui/cuke-ui" title="Build Status">
-    <img src="https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master" alt="Build Status"/>
-  </a>
    <a href="https://badge.fury.io/js/cuke-ui" title="npm">
     <img src="https://img.shields.io/npm/v/cuke-ui.svg?style=flat-square" alt="npm version"/>
   </a>
