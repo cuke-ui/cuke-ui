@@ -88,7 +88,7 @@ import 'cuke-ui/lib/Button/style.less';
 - [x] [Spin  加载中](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Spin%20%E5%8A%A0%E8%BD%BD%E4%B8%AD&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [BackTop 回到顶部](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%85%B6%E4%BB%96&selectedStory=BackTop%20%E5%9B%9E%E5%88%B0%E9%A1%B6%E9%83%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Progress  进度条](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Progress%20%E8%BF%9B%E5%BA%A6%E6%9D%A1&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
-- [x] Tabs  选项卡
+- [x] [Tabs  选项卡](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Tabs%20%E9%80%89%E9%A1%B9%E5%8D%A1&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [ ] Dropdown 下拉菜单
 - [ ] Checkbox  复选框
 - [ ] Switch  选择器
