@@ -8,24 +8,28 @@ cuke-ui
 
 <p align="center">
   <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
-    <img src="https://img.shields.io/npm/dm/cuke-ui.svg?style=flat-square" alt="npm">
+    <img src="https://img.shields.io/npm/dm/cuke-ui.svg?style=flat-square" alt="npm"/>
   </a>
   <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
-    <img src="https://img.shields.io/npm/l/cuke-ui.svg?style=flat-square" alt="npm">
+    <img src="https://img.shields.io/npm/l/cuke-ui.svg?style=flat-square" alt="npm"/>
   </a>
    <a href="https://travis-ci.org/cuke-ui/cuke-ui" title="Build Status">
-    <img src="https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master" alt="Build Status">
+    <img src="https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master" alt="Build Status"/>
   </a>
    <a href="https://badge.fury.io/js/cuke-ui" title="npm">
-    <img src="https://img.shields.io/npm/v/cuke-ui.svg?style=flat-square" alt="npm version">
+    <img src="https://img.shields.io/npm/v/cuke-ui.svg?style=flat-square" alt="npm version"/>
   </a>
    <a href="https://coveralls.io/github/cuke-ui/cuke-ui?branch=master" title="Coverage Status">
-    <img src="https://coveralls.io/repos/github/cuke-ui/cuke-ui/badge.svg?branch=master" alt="Coverage Status">
+    <img src="https://coveralls.io/repos/github/cuke-ui/cuke-ui/badge.svg?branch=master" alt="Coverage Status"/>
   </a>
   <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
-    <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg">
+    <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg"/>
   <a>
 </p>
+
+### 名字由来
+cuke(黄瓜), 常见的一种蔬菜, 希望这个项目也成为常见的一个依赖(虽然这是不可能的), 其实 黄瓜也符合 这个组件库的 宗旨 : 即插即用
+主题色 采用 黄瓜绿, 清新又可爱, 组件借鉴(抄袭)了 有牌面的  Ant Design, 抱着学习的目的,开发了这个组件库, 所以建议不要用于生产环境,可能心情不好就不维护了
 
 ### 在线演示
 
@@ -44,9 +48,9 @@ yarn add cuke-ui
 
 ### 如何使用
 
-> 全部引入
+> 1.全部引入
 
-```js
+```jsx
 import { Button, message } from "cuke-ui"
 import "cuke-ui/dist/cuke-ui.min.css"
 
@@ -59,7 +63,7 @@ class Text extends React.Component {
 }
 ```
 
-> 按需引入
+> 2.按需引入
 
 ```js
 import Button from 'cuke-ui/lib/Button';
@@ -91,6 +95,9 @@ import 'cuke-ui/lib/Button/style.less';
 - [ ] Radio   单选框  
 - [ ] Select  下拉选择器  
 - [ ] Upload  上传  
+- [ ] Form    表单  
+- [ ] Rate    评分  
+- [ ] Badge   徽标数 
 
 ### 参考轮子
 
@@ -119,15 +126,17 @@ yarn run build
 	  - `style.less`
 	- `index.js`
 
-### 开发
+###  本地开发
 > 请首先安装 npm i -g yarn
+
 
 1. 安装依赖
 > 如果无法科学上网 可 使用 淘宝镜像 
 > yarn config set registry https://registry.npm.taobao.org
 
-
 ```
+git clone https://github.com/cuke-ui/cuke-ui.git
+cd cuke-ui
 yarn
 ```
 
@@ -190,7 +199,11 @@ configure(loadStories, module);
 
 这样就完成了 `storybook` 会将你写好的组件 添加到页面上, 并且会自动生成说明文档 （其实本质上就是一个 webpack 的 dev-server）
 
+最后的最后, 在 `components/index.js` 导出组件,以便于发布
 
+```js
+export { default as Button } from "./button";
+```
 
 
 ### 测试相关

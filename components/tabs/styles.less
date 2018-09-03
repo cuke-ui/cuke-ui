@@ -1,0 +1,69 @@
+@import "../styles/vars.less";
+@import "../styles/mixins.less";
+
+@prefixCls : cuke-tabs;
+.@{prefixCls} {
+  &-header {
+    overflow: hidden;
+    margin-bottom: -1px;
+    position: relative;
+    .flex-center(flex-start);
+
+    &.@{prefixCls}-card {
+
+      .@{prefixCls}-tab {
+        border: 1px solid @border-color;
+        border-bottom: none;
+        background-color: @bg-color;
+        margin-right: @tabs-card-tab-offset;
+      }
+    }
+  }
+
+  &-tab {
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    transition: color @default-transition;
+    padding: @tabs-tab-padding ;
+
+    &.@{prefixCls}-tab-active {
+      color: @primary-color;
+      background-color: #fff !important;
+    }
+
+    &.@{prefixCls}-tab-disabled {
+      color: @default-color;
+      cursor: no-drop;
+    }
+  }
+
+  &-content {
+    border-top: 1px solid @border-color;
+    padding: @tabs-content-padding ;
+    overflow: hidden;
+  }
+
+  &-line {
+    position: absolute;
+    bottom:0;
+    border-bottom: 2px solid @primary-color;
+    left:0;
+    width: auto;
+    transition: transform @default-transition;
+  }
+
+  &-panel {
+    width:100%;
+    float: left;
+  }
+
+  &-extra {
+    position: absolute;
+    right:0;
+    top:0;
+  } 
+}

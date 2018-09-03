@@ -1,0 +1,260 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Tabs/> should render Tabs 1`] = `
+<div
+  class="cuke-tabs"
+  defaultactivekey="1"
+>
+  <div
+    class="cuke-tabs-header"
+  >
+    <div
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab cuke-tabs-tab-active"
+      role="tab"
+    >
+      选项1
+    </div>
+    <div
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab"
+      role="tab"
+    >
+      选项2
+    </div>
+    <div
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab"
+      role="tab"
+    >
+      选项3
+    </div>
+    <div
+      class="cuke-tabs-line"
+      style="width:0;transform:translate3d(0px,0,0)"
+    />
+  </div>
+  <div
+    class="cuke-tabs-content"
+  >
+    <div
+      actionkey="1"
+      class="cuke-tabs-panel"
+      tab="选项1"
+    >
+      1
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Tabs/> should render custom active key 1`] = `
+<div
+  class="cuke-tabs"
+  defaultactivekey="2"
+>
+  <div
+    class="cuke-tabs-header"
+  >
+    <div
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab"
+      role="tab"
+    >
+      选项1
+    </div>
+    <div
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab cuke-tabs-tab-active"
+      role="tab"
+    >
+      选项2
+    </div>
+    <div
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab"
+      role="tab"
+    >
+      选项3
+    </div>
+    <div
+      class="cuke-tabs-line"
+      style="width:0;transform:translate3d(0px,0,0)"
+    />
+  </div>
+  <div
+    class="cuke-tabs-content"
+  >
+    <div
+      actionkey="2"
+      class="cuke-tabs-panel"
+      tab="选项2"
+    >
+      2
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Tabs/> should render custom tab title 1`] = `
+<div
+  className="cuke-tabs"
+  defaultActiveKey="2"
+  onChange={[Function]}
+>
+  <div
+    className="cuke-tabs-header"
+  >
+    <div
+      aria-disabled={false}
+      aria-selected={true}
+      className="cuke-tabs-tab"
+      key="0/.$1"
+      onClick={[Function]}
+      role="tab"
+    >
+      <SuccessIcon />
+    </div>
+    <div
+      aria-disabled={false}
+      aria-selected={true}
+      className="cuke-tabs-tab cuke-tabs-tab-active"
+      key="1/.$2"
+      onClick={[Function]}
+      role="tab"
+    >
+      <ErrorIcon />
+    </div>
+    <div
+      className="cuke-tabs-line"
+      style={
+        Object {
+          "transform": "translate3d(0px,0,0)",
+          "width": 0,
+        }
+      }
+    />
+  </div>
+  <div
+    className="cuke-tabs-content"
+  >
+    <BreadcrumbItem
+      actionKey={2}
+      key="0/.$1"
+      prefixCls="cuke-tabs-panel"
+      tab={<SuccessIcon />}
+      visible={false}
+    >
+      1
+    </BreadcrumbItem>
+    <BreadcrumbItem
+      actionKey={2}
+      key="1/.$2"
+      prefixCls="cuke-tabs-panel"
+      tab={<ErrorIcon />}
+      visible={true}
+    >
+      2
+    </BreadcrumbItem>
+  </div>
+</div>
+`;
+
+exports[`<Tabs/> should render disabled tab 1`] = `
+<Tabs
+  defaultActiveKey="2"
+  onChange={[Function]}
+  prefixCls="cuke-tabs"
+>
+  <div
+    className="cuke-tabs"
+    defaultActiveKey="2"
+    onChange={[Function]}
+  >
+    <div
+      className="cuke-tabs-header"
+    >
+      <div
+        aria-disabled={false}
+        aria-selected={true}
+        className="cuke-tabs-tab"
+        key="0/.$1"
+        onClick={[Function]}
+        role="tab"
+      >
+        选项1
+      </div>
+      <div
+        aria-disabled={false}
+        aria-selected={true}
+        className="cuke-tabs-tab cuke-tabs-tab-active cuke-tabs-tab-disabled"
+        key="1/.$2"
+        onClick={[Function]}
+        role="tab"
+      >
+        选项2
+      </div>
+      <div
+        aria-disabled={false}
+        aria-selected={true}
+        className="cuke-tabs-tab"
+        key="2/.$3"
+        onClick={[Function]}
+        role="tab"
+      >
+        选项3
+      </div>
+      <div
+        className="cuke-tabs-line"
+        style={
+          Object {
+            "transform": "translate3d(0px,0,0)",
+            "width": 0,
+          }
+        }
+      />
+    </div>
+    <div
+      className="cuke-tabs-content"
+    >
+      <BreadcrumbItem
+        actionKey={2}
+        key="0/.$1"
+        prefixCls="cuke-tabs-panel"
+        tab="选项1"
+        visible={false}
+      />
+      <BreadcrumbItem
+        actionKey={2}
+        disabled={true}
+        key="1/.$2"
+        prefixCls="cuke-tabs-panel"
+        tab="选项2"
+        visible={true}
+      >
+        <div
+          actionKey={2}
+          className="cuke-tabs-panel"
+          disabled={true}
+          tab="选项2"
+        >
+          2
+        </div>
+      </BreadcrumbItem>
+      <BreadcrumbItem
+        actionKey={2}
+        key="2/.$3"
+        prefixCls="cuke-tabs-panel"
+        tab="选项3"
+        visible={false}
+      />
+    </div>
+  </div>
+</Tabs>
+`;

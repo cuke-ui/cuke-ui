@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default class Col extends PureComponent {
 	static defaultProps = {
 		prefixCls: "cuke-col",
-		gutter: 0
+		gutter: 10
 	};
 
 	static propTypes = {
@@ -29,6 +29,7 @@ export default class Col extends PureComponent {
 			paddingLeft: `${-gutter / 2}px`,
 			paddingRight: `${-gutter / 2}px`
 		};
+
 		return (
 			<div
 				className={cls(

@@ -100,7 +100,7 @@ export default class Modal extends PureComponent {
 			? {
 					[`${prefixCls}-mask-show`]: visible,
 					[`${prefixCls}-mask-hide`]: !visible
-			}
+			  }
 			: { [`${prefixCls}-mask-show`]: visible };
 
 		const maskClickHandle = maskClosable ? { onClick: onCancel } : {};

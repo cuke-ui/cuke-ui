@@ -9,6 +9,7 @@ import "../components/styles/app.less"
 const req = require.context('../components', true, /\.stories\.js$/)
 
 function loadStories() {
+  require('../stories/index');    //介绍
   require('../stories/general');    //普通
   require('../stories/player');     //视听娱乐
   require('../stories/navigation'); //导航
