@@ -1,5 +1,5 @@
 import React, { PureComponent, Fragment } from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 import { createPortal, render } from "react-dom"; //传送门 将节点挂载在root 节点之外
 import cls from "classnames";
 import Button from "../button";
@@ -26,24 +26,24 @@ export default class Modal extends PureComponent {
 		closable: true,
 		showMask: true
 	};
-	static propTypes = {
-		onCancel: propTypes.func,
-		onOk: propTypes.func,
-		title: propTypes.oneOfType([propTypes.string, propTypes.object]),
-		okText: propTypes.oneOfType([propTypes.string, propTypes.object]),
-		cancelText: propTypes.oneOfType([propTypes.string, propTypes.object]),
-		content: propTypes.oneOfType([propTypes.string, propTypes.object]),
-		confirmLoading: propTypes.bool,
-		visible: propTypes.bool,
-		centered: propTypes.bool,
-		closable: propTypes.bool,
-		maskClosable: propTypes.bool,
-		showMask: propTypes.bool,
-		footer: propTypes.oneOfType([
+	static PropTypes = {
+		onCancel: PropTypes.func,
+		onOk: PropTypes.func,
+		title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		okText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		cancelText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		confirmLoading: PropTypes.bool,
+		visible: PropTypes.bool,
+		centered: PropTypes.bool,
+		closable: PropTypes.bool,
+		maskClosable: PropTypes.bool,
+		showMask: PropTypes.bool,
+		footer: PropTypes.oneOfType([
 			//footer 不需要设置为 footer={null}
-			propTypes.array,
-			propTypes.bool,
-			propTypes.object
+			PropTypes.array,
+			PropTypes.bool,
+			PropTypes.object
 		])
 	};
 	constructor(props) {
