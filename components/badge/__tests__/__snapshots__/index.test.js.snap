@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Badge/> should not render inner width showZero false 1`] = `
+<div>
+  <div
+    class="cuke-badge"
+  >
+    哈哈
+  </div>
+</div>
+`;
+
+exports[`<Badge/> should render a <Badge/> components 1`] = `
+<div>
+  <div
+    class="cuke-badge"
+  >
+    <span
+      class="cuke-badge-inner"
+    >
+      10
+    </span>
+    哈哈
+  </div>
+</div>
+`;

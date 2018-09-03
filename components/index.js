@@ -19,3 +19,4 @@ export { default as Tooltip } from "./tooltip";
 export { default as Progress } from "./progress";
 export { default as backTop } from "./backTop";
 export { default as Tabs } from "./tabs";
+export { default as Badge } from "./badge";
