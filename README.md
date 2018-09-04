@@ -87,7 +87,7 @@ import 'cuke-ui/lib/Button/style.less';
 - [x] [Progress  进度条](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Progress%20%E8%BF%9B%E5%BA%A6%E6%9D%A1&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Tabs  选项卡](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Tabs%20%E9%80%89%E9%A1%B9%E5%8D%A1&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Badge   徽标数](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Badge%20%E5%BE%BD%E6%A0%87%E6%95%B0&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel) 
-- [ ] Dropdown 下拉菜单
+- [x] [Dropdown 下拉菜单](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%AF%BC%E8%88%AA&selectedStory=Dropdown%20%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [ ] Checkbox  复选框
 - [ ] Switch  选择器
 - [ ] Radio   单选框  
