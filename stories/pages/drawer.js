@@ -110,8 +110,7 @@ export default class DrawerPage extends Component {
 				<Drawer
 					width={500}
 					zIndex={888}
-					title={this.state.placement}
-					placement={this.state.placement}
+					title="自定义宽度和 zIndex"
 					visible={this.state.visible12}
 					onClose={() => this.onClose('visible12')}
 				>
