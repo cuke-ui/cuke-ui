@@ -1,3 +1,21 @@
+@import "./vars.less";
+
 * {
   box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: @font-color;
+  &:active,
+  &:focus ,
+  &:visited {
+    color: @primary-color;
+  }
+}
+
+ul,ol{
+  margin:0;
+  padding:0;
+  list-style:none;
 }

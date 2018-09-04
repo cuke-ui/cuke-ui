@@ -6,7 +6,8 @@ import {
 	FiXCircle,
 	FiAlertCircle,
 	FiX,
-	FiChevronUp
+	FiChevronUp,
+	FiArrowDown
 } from "react-icons/fi";
 
 export const InfoIcon = props => <FiVolume2 {...props} />;
@@ -16,3 +17,4 @@ export const ErrorIcon = props => <FiXCircle {...props} />;
 export const WarningIcon = props => <FiAlertCircle {...props} />;
 export const CloseIcon = props => <FiX {...props} />;
 export const UpIcon = props => <FiChevronUp {...props} />;
+export const DownIcon = props => <FiArrowDown {...props} />;

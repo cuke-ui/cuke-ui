@@ -10,10 +10,14 @@ module.exports = {
   ],
   "transformIgnorePatterns": [
     "/node_modules/",
-    ".history/*"
+    ".history/*",
+    "lib",
+    "dist"
   ],
   "modulePathIgnorePatterns": [
-    "/.history/"
+    "/.history/",
+    "lib",
+    "dist"
   ],
   "moduleDirectories": [
     "node_modules",

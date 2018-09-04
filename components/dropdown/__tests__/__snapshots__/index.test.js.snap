@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dropdown/> should render a <Dropdown/> components 1`] = `
+<div>
+  <div
+    class="cuke-dropdown"
+  >
+    <div
+      class="cuke-dropdown-wrap"
+    >
+      <a
+        href="#"
+      >
+        今日菜单(有动画)
+      </a>
+    </div>
+    <div
+      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideUp"
+    >
+      <ul>
+        <li>
+           红烧牛肉 
+        </li>
+        <li>
+           麻辣干锅 
+        </li>
+        <li>
+           仔姜肉丝 
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="cuke-dropdown"
+  >
+    <div
+      class="cuke-dropdown-wrap"
+    >
+      <a
+        href="#"
+      >
+        今日菜单(无动画)
+      </a>
+    </div>
+    <div
+      class="cuke-dropdown-overlay cuke-dropdown-overlay-false"
+    >
+      <ul>
+        <li>
+           红烧牛肉 
+        </li>
+        <li>
+           麻辣干锅 
+        </li>
+        <li>
+           仔姜肉丝 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Dropdown/> should render many animate type 1`] = `
+<div>
+  <div
+    class="cuke-dropdown"
+  >
+    <div
+      class="cuke-dropdown-wrap"
+    >
+      slideDown
+    </div>
+    <div
+      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideUp"
+    >
+      <ul>
+        <li>
+           红烧牛肉 
+        </li>
+        <li>
+           麻辣干锅 
+        </li>
+        <li>
+           仔姜肉丝 
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="cuke-dropdown"
+  >
+    <div
+      class="cuke-dropdown-wrap"
+    >
+      slideDown
+    </div>
+    <div
+      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideDown"
+    >
+      <ul>
+        <li>
+           红烧牛肉 
+        </li>
+        <li>
+           麻辣干锅 
+        </li>
+        <li>
+           仔姜肉丝 
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="cuke-dropdown"
+  >
+    <div
+      class="cuke-dropdown-wrap"
+    >
+      slideRight
+    </div>
+    <div
+      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideRight"
+    >
+      <ul>
+        <li>
+           红烧牛肉 
+        </li>
+        <li>
+           麻辣干锅 
+        </li>
+        <li>
+           仔姜肉丝 
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="cuke-dropdown"
+  >
+    <div
+      class="cuke-dropdown-wrap"
+    >
+      slideLeft
+    </div>
+    <div
+      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideLeft"
+    >
+      <ul>
+        <li>
+           红烧牛肉 
+        </li>
+        <li>
+           麻辣干锅 
+        </li>
+        <li>
+           仔姜肉丝 
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    class="cuke-dropdown"
+  >
+    <div
+      class="cuke-dropdown-wrap"
+    >
+      no animate
+    </div>
+    <div
+      class="cuke-dropdown-overlay cuke-dropdown-overlay-false"
+    >
+      <ul>
+        <li>
+           红烧牛肉 
+        </li>
+        <li>
+           麻辣干锅 
+        </li>
+        <li>
+           仔姜肉丝 
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;

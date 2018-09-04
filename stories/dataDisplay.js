@@ -68,6 +68,9 @@ storiesOf('数据展示', module)
 					<Tabs.TabPane tab="选项3" key="3">
 						3
 					</Tabs.TabPane>
+					<Tabs.TabPane tab="第4个选项" key="4">
+						动态计算宽度
+					</Tabs.TabPane>
 				</Tabs>
 
 				<h2>默认选中</h2>
@@ -121,7 +124,7 @@ storiesOf('数据展示', module)
 					<Tabs.TabPane tab="选项1" key="1">
 						1
 					</Tabs.TabPane>
-					<Tabs.TabPane tab="选项2" key="2" disabled>
+					<Tabs.TabPane tab="选项2" key="2">
 						2
 					</Tabs.TabPane>
 					<Tabs.TabPane tab="选项3" key="3">

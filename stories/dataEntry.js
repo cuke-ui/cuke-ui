@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import WordPad from '../components/wordPad';
-import Button from '../components/button';
+
+import WordPadPage from "./pages/wordPad"
 import Input from '../components/input';
 import { withInfo } from '@storybook/addon-info';
 import { IoIosAddCircleOutline } from "react-icons/io";
@@ -10,32 +9,48 @@ import { IoIosAddCircleOutline } from "react-icons/io";
 import "../components/input/styles.less";
 
 storiesOf('数据录入', module)
-	.add('WordPad 写字板', withInfo()(() => (
-		<div>
-			<h2>用鼠标在上面写字</h2>
-			<WordPad
-				width={300}
-				height={300}
-				style={{
-					border: '1px solid #444',
-					margin: '10px 0'
-				}}
-				getCanvas={(canvas, ctx) => action(canvas, ctx)}
-			/>
-			<Button type="primary">获取文字</Button>
+	.add('WordPad 写字板', withInfo(`
+	import React, { Component } from 'react';
+	import WordPad from '../../components/wordPad';
+	import Button from '../../components/button';
+	import message from '../../components/message';
 
-			<h2>自定义画笔</h2>
-			<WordPad
-				width={200}
-				height={200}
-				strokeColor="#396"
-				strokeWidth={3}
-				style={{
-					border: '1px solid #444',
-					margin: '10px 0'
-				}}
-			/>
-		</div>
+	export default class WordPadPage extends Component { 
+		state = {
+			imgUrl:""
+		}
+		onGetImage = ()=>{
+			const img = this.canvas.toDataURL('image/png')
+			console.log('获取成功:',img)
+			this.setState({
+				imgUrl:img
+			})
+			message.success('获取成功')
+		}
+		render(){ 
+			const { imgUrl } = this.state
+			return (
+				<div>
+				<h2>用鼠标在上面写字</h2>
+				<WordPad
+					width={300}
+					height={300}
+					style={{
+						border: '1px solid #444',
+						margin: '10px 0'
+					}}
+	s				getCanvas={(canvas, ctx) => this.canvas = canvas}
+				/>
+				<Button type="primary" onClick={this.onGetImage}>获取文字</Button>
+				{
+					imgUrl ? <img src={imgUrl}/> : undefined
+				}
+				</div>
+			)
+		}
+	}
+	`)(() => (
+		<WordPadPage/>
 	)))
 	.add('Input 输入框', withInfo()(() => (
 		<div style={{ width: 400 }}>

@@ -1,0 +1,20 @@
+@import "../../components/styles/vars.less";
+
+.example-dropdown-list {
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+  li {
+    border-bottom: 1px solid @border-color;
+    padding: 10px 30px;
+    background: @bg-color;
+    transition: all @default-transition;
+    cursor: pointer;
+
+    &:hover {
+      color:@primary-color;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
