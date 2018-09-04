@@ -1,6 +1,6 @@
 import React from 'react';
 import assert from 'power-assert';
-import { render, mount, shallow } from 'enzyme';
+import { render, shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Dropdown from '../index';
 

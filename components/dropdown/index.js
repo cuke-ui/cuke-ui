@@ -22,7 +22,6 @@ export default class Dropdown extends PureComponent {
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
 		onVisibleChange: PropTypes.func,
-		animating: PropTypes.bool,
 		trigger: PropTypes.oneOf(Object.values(triggerTypes)),
 		animate: PropTypes.oneOf(animateType),
 		overlay: PropTypes.oneOfType([

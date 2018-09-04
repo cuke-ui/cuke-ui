@@ -12,6 +12,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
   >
     <div
       class="cuke-modal cuke-modal-open"
+      style="width:520px;z-index:999"
     >
       <section
         class="cuke-modal-header"
@@ -86,6 +87,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
   >
     <div
       class="cuke-modal cuke-modal-open"
+      style="width:520px;z-index:999"
     >
       <section
         class="cuke-modal-header"
@@ -160,6 +162,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
   >
     <div
       class="cuke-modal cuke-modal-open"
+      style="width:520px;z-index:999"
     >
       <section
         class="cuke-modal-header"
@@ -214,6 +217,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
   >
     <div
       class="cuke-modal cuke-modal-open"
+      style="width:520px;z-index:999"
     >
       <section
         class="cuke-modal-header"
@@ -289,6 +293,7 @@ exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
 >
   <div
     class="cuke-modal cuke-modal-confirm cuke-modal-open"
+    style="width:520px;z-index:999"
   >
     <section
       class="cuke-modal-header"
@@ -340,6 +345,7 @@ Array [
   >
     <div
       class="cuke-modal cuke-modal-open"
+      style="width:520px;z-index:999"
     >
       <section
         class="cuke-modal-header"

@@ -1,0 +1,636 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Drawer/> should render a <Drawer/> components 1`] = `
+<div>
+  <div
+    class="cuke-drawer-mask cuke-drawer-mask-show"
+  />
+  <div
+    class="cuke-drawer-wrap"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="cuke-drawer cuke-drawer-open cuke-drawer-right"
+      style="width:300px;z-index:999"
+    >
+      <section
+        class="cuke-drawer-header"
+      >
+        <h2
+          class="cuke-drawer-title"
+        >
+          基本使用
+        </h2>
+        <svg
+          attr="[object Object]"
+          class="undefined cuke-drawer-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </section>
+      <section
+        class="cuke-drawer-content"
+      >
+        <span>
+          基本使用
+        </span>
+      </section>
+    </div>
+  </div>
+  <div
+    class="cuke-drawer-mask cuke-drawer-mask-show"
+  />
+  <div
+    class="cuke-drawer-wrap"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="cuke-drawer cuke-drawer-open cuke-drawer-right"
+      style="width:500px;z-index:999"
+    >
+      <section
+        class="cuke-drawer-header"
+      >
+        <h2
+          class="cuke-drawer-title"
+        >
+          基本使用
+        </h2>
+        <svg
+          attr="[object Object]"
+          class="undefined cuke-drawer-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </section>
+      <section
+        class="cuke-drawer-content"
+      >
+        <span>
+          无 footer
+        </span>
+      </section>
+    </div>
+  </div>
+  <div
+    class="cuke-drawer-mask cuke-drawer-mask-show"
+  />
+  <div
+    class="cuke-drawer-wrap"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div
+      class="cuke-drawer cuke-drawer-open cuke-drawer-right"
+      style="width:500px;z-index:9999"
+    >
+      <section
+        class="cuke-drawer-header"
+      >
+        <h2
+          class="cuke-drawer-title"
+        >
+          基本使用
+        </h2>
+        <svg
+          attr="[object Object]"
+          class="undefined cuke-drawer-close"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
+        </svg>
+      </section>
+      <section
+        class="cuke-drawer-content"
+      >
+        <span>
+          无 footer
+        </span>
+      </section>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Drawer/> should render custom direction 1`] = `
+<div>
+  <Drawer
+    closable={true}
+    getTargetAtNode={[Function]}
+    maskClosable={true}
+    onClose={[Function]}
+    placement="left"
+    prefixCls="cuke-drawer"
+    showMask={true}
+    title=""
+    visible={true}
+    width={300}
+    zIndex={999}
+  >
+    <div
+      className="cuke-drawer-mask cuke-drawer-mask-show"
+      onClick={[Function]}
+    />
+    <div
+      className="cuke-drawer-wrap"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="cuke-drawer cuke-drawer-open cuke-drawer-left"
+        style={
+          Object {
+            "width": 300,
+            "zIndex": 999,
+          }
+        }
+      >
+        <section
+          className="cuke-drawer-header"
+        >
+          <h2
+            className="cuke-drawer-title"
+          />
+          <CloseIcon
+            className="cuke-drawer-close"
+            onClick={[Function]}
+          >
+            <Component
+              className="cuke-drawer-close"
+              onClick={[Function]}
+            >
+              <IconBase
+                attr={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": "2",
+                    "viewBox": "0 0 24 24",
+                  }
+                }
+                className="cuke-drawer-close"
+                onClick={[Function]}
+              >
+                <svg
+                  attr={
+                    Object {
+                      "fill": "none",
+                      "stroke": "currentColor",
+                      "strokeLinecap": "round",
+                      "strokeLinejoin": "round",
+                      "strokeWidth": "2",
+                      "viewBox": "0 0 24 24",
+                    }
+                  }
+                  className="undefined cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  onClick={[Function]}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    key="0"
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    key="1"
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </IconBase>
+            </Component>
+          </CloseIcon>
+        </section>
+        <section
+          className="cuke-drawer-content"
+        >
+          <span>
+            关闭回调
+          </span>
+        </section>
+      </div>
+    </div>
+  </Drawer>
+  <Drawer
+    closable={true}
+    getTargetAtNode={[Function]}
+    maskClosable={true}
+    onClose={[Function]}
+    placement="top"
+    prefixCls="cuke-drawer"
+    showMask={true}
+    title=""
+    visible={true}
+    width={300}
+    zIndex={999}
+  >
+    <div
+      className="cuke-drawer-mask cuke-drawer-mask-show"
+      onClick={[Function]}
+    />
+    <div
+      className="cuke-drawer-wrap"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="cuke-drawer cuke-drawer-open cuke-drawer-top"
+        style={
+          Object {
+            "width": 300,
+            "zIndex": 999,
+          }
+        }
+      >
+        <section
+          className="cuke-drawer-header"
+        >
+          <h2
+            className="cuke-drawer-title"
+          />
+          <CloseIcon
+            className="cuke-drawer-close"
+            onClick={[Function]}
+          >
+            <Component
+              className="cuke-drawer-close"
+              onClick={[Function]}
+            >
+              <IconBase
+                attr={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": "2",
+                    "viewBox": "0 0 24 24",
+                  }
+                }
+                className="cuke-drawer-close"
+                onClick={[Function]}
+              >
+                <svg
+                  attr={
+                    Object {
+                      "fill": "none",
+                      "stroke": "currentColor",
+                      "strokeLinecap": "round",
+                      "strokeLinejoin": "round",
+                      "strokeWidth": "2",
+                      "viewBox": "0 0 24 24",
+                    }
+                  }
+                  className="undefined cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  onClick={[Function]}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    key="0"
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    key="1"
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </IconBase>
+            </Component>
+          </CloseIcon>
+        </section>
+        <section
+          className="cuke-drawer-content"
+        >
+          <span>
+            关闭回调
+          </span>
+        </section>
+      </div>
+    </div>
+  </Drawer>
+  <Drawer
+    closable={true}
+    getTargetAtNode={[Function]}
+    maskClosable={true}
+    onClose={[Function]}
+    placement="right"
+    prefixCls="cuke-drawer"
+    showMask={true}
+    title=""
+    visible={true}
+    width={300}
+    zIndex={999}
+  >
+    <div
+      className="cuke-drawer-mask cuke-drawer-mask-show"
+      onClick={[Function]}
+    />
+    <div
+      className="cuke-drawer-wrap"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="cuke-drawer cuke-drawer-open cuke-drawer-right"
+        style={
+          Object {
+            "width": 300,
+            "zIndex": 999,
+          }
+        }
+      >
+        <section
+          className="cuke-drawer-header"
+        >
+          <h2
+            className="cuke-drawer-title"
+          />
+          <CloseIcon
+            className="cuke-drawer-close"
+            onClick={[Function]}
+          >
+            <Component
+              className="cuke-drawer-close"
+              onClick={[Function]}
+            >
+              <IconBase
+                attr={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": "2",
+                    "viewBox": "0 0 24 24",
+                  }
+                }
+                className="cuke-drawer-close"
+                onClick={[Function]}
+              >
+                <svg
+                  attr={
+                    Object {
+                      "fill": "none",
+                      "stroke": "currentColor",
+                      "strokeLinecap": "round",
+                      "strokeLinejoin": "round",
+                      "strokeWidth": "2",
+                      "viewBox": "0 0 24 24",
+                    }
+                  }
+                  className="undefined cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  onClick={[Function]}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    key="0"
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    key="1"
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </IconBase>
+            </Component>
+          </CloseIcon>
+        </section>
+        <section
+          className="cuke-drawer-content"
+        >
+          <span>
+            关闭回调
+          </span>
+        </section>
+      </div>
+    </div>
+  </Drawer>
+  <Drawer
+    closable={true}
+    getTargetAtNode={[Function]}
+    maskClosable={true}
+    onClose={[Function]}
+    placement="bottom"
+    prefixCls="cuke-drawer"
+    showMask={true}
+    title=""
+    visible={true}
+    width={300}
+    zIndex={999}
+  >
+    <div
+      className="cuke-drawer-mask cuke-drawer-mask-show"
+      onClick={[Function]}
+    />
+    <div
+      className="cuke-drawer-wrap"
+      role="dialog"
+      tabIndex="-1"
+    >
+      <div
+        className="cuke-drawer cuke-drawer-open cuke-drawer-bottom"
+        style={
+          Object {
+            "width": 300,
+            "zIndex": 999,
+          }
+        }
+      >
+        <section
+          className="cuke-drawer-header"
+        >
+          <h2
+            className="cuke-drawer-title"
+          />
+          <CloseIcon
+            className="cuke-drawer-close"
+            onClick={[Function]}
+          >
+            <Component
+              className="cuke-drawer-close"
+              onClick={[Function]}
+            >
+              <IconBase
+                attr={
+                  Object {
+                    "fill": "none",
+                    "stroke": "currentColor",
+                    "strokeLinecap": "round",
+                    "strokeLinejoin": "round",
+                    "strokeWidth": "2",
+                    "viewBox": "0 0 24 24",
+                  }
+                }
+                className="cuke-drawer-close"
+                onClick={[Function]}
+              >
+                <svg
+                  attr={
+                    Object {
+                      "fill": "none",
+                      "stroke": "currentColor",
+                      "strokeLinecap": "round",
+                      "strokeLinejoin": "round",
+                      "strokeWidth": "2",
+                      "viewBox": "0 0 24 24",
+                    }
+                  }
+                  className="undefined cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  onClick={[Function]}
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  style={
+                    Object {
+                      "color": undefined,
+                    }
+                  }
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    key="0"
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    key="1"
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </IconBase>
+            </Component>
+          </CloseIcon>
+        </section>
+        <section
+          className="cuke-drawer-content"
+        >
+          <span>
+            关闭回调
+          </span>
+        </section>
+      </div>
+    </div>
+  </Drawer>
+</div>
+`;

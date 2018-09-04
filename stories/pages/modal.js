@@ -64,6 +64,18 @@ export default class ModalPage extends Component {
 				</Row>
 				<Row>
 					<Col span={6}>
+						<h2>自定义z-index</h2>
+						<Button type="info" onClick={() => this.onShow('visible8')}>
+							zIndex: 10000
+						</Button>
+					</Col>
+					<Col span={6}>
+						<h2>自定义宽度</h2>
+						<Button type="info" onClick={() => this.onShow('visible9')}>
+							width: 400
+						</Button>
+					</Col>
+					<Col span={6}>
 						<h2>不显示关闭按钮</h2>
 						<Button type="warning" onClick={() => this.onShow('visible7')}>
 							打开
@@ -166,6 +178,26 @@ export default class ModalPage extends Component {
 					onOk={() => this.onCancel('visible7')}
 				>
 					<span>自定义文字</span>
+				</Modal>
+
+				<Modal
+					title="z-index:10000"
+					zIndex={10000}
+					visible={this.state.visible8}
+					onCancel={() => this.onCancel('visible8')}
+					onOk={() => this.onCancel('visible8')}
+				>
+					<span>z-index:10000</span>
+				</Modal>
+
+				<Modal
+					title="自定义宽度"
+					width={400}
+					visible={this.state.visible9}
+					onCancel={() => this.onCancel('visible9')}
+					onOk={() => this.onCancel('visible9')}
+				>
+					<span>宽度:400px</span>
 				</Modal>
 			</div>
 		);

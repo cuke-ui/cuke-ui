@@ -21,3 +21,4 @@ export { default as backTop } from "./backTop";
 export { default as Tabs } from "./tabs";
 export { default as Badge } from "./badge";
 export { default as Dropdown } from "./dropdown";
+export { default as Drawer } from "./drawer";
