@@ -20,9 +20,11 @@ cache:
     - ".eslintcache"
     - "node_modules"
 
+before_script : "yarn test -u"
+
 script: 
   - yarn lint
-  - yarn test -- -u
+  - yarn test -u
   - yarn pub:doc
 
 after_script: "yarn coverage"
