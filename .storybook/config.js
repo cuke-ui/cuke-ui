@@ -3,6 +3,7 @@ import {name,repository} from "../package.json"
 import infoAddon,{ setDefaults } from '@storybook/addon-info';
 import { configureActions } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
+import { withNotes } from '@storybook/addon-notes';
 import '@storybook/addon-console';
 import "../components/styles/app.less"
 
@@ -32,5 +33,6 @@ setDefaults({
   maxPropObjectKeys: 100,
   maxPropArrayLength: 100
 })
+// addDecorator(withNotes)
 // setAddon(infoAddon);
 configure(loadStories, module);

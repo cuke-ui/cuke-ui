@@ -43,7 +43,7 @@
             color: @primary-color;
         }
         &.btn-hollow {
-            .btn-hollow(@default-color;)
+            .btn-hollow(@default-color)
         }
     }
     &.btn-warning {
@@ -73,10 +73,10 @@
     &.btn-disabled {
         .btn-hover(@disabled-color);
         cursor: no-drop;
-        color: @font-color;
+        color: @disabled-font-color;
         border-color: @border-color;
         &.btn-hollow {
-            color: @font-color;
+            color: @disabled-font-color;
         }
     }
     &.btn-block {

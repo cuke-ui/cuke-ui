@@ -1,0 +1,98 @@
+@import "../styles/vars.less";
+
+@prefixCls : cuke-radio;
+.@{prefixCls} {
+  font-size: @font-size;
+  color:@font-color;
+  outline: none;
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: sub;
+  white-space: nowrap;
+
+  &-group {
+
+    .@{prefixCls}-wrapper {
+      margin-right: @cuke-radio-group-offset-right;
+    }
+  }
+
+  &-input {
+    box-sizing: border-box;
+    padding: 0;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &-disabled {
+    .@{prefixCls}-inner {
+      border-color: @border-color !important;
+      background-color: @disabled-color !important;
+      &::after {
+        background-color: @disabled-font-color;
+      }
+    }
+    .@{prefixCls}-input {
+      cursor: no-drop;
+    }
+
+    & + span {
+      cursor: no-drop;
+      color: @disabled-font-color;
+    }
+  }
+
+  &-checked {
+    .@{prefixCls}-inner {
+      border-color: @primary-color;
+
+      &::after {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+  }
+
+  &-inner {
+    display: block;
+    width: @cuke-radio-width;
+    height: @cuke-radio-height;
+    border: 1px solid @border-color;
+    border-radius: 50%;
+    margin-right: @cuke-radio-offset-right;
+    transition: all @default-transition;
+    position: relative;
+
+    &::after {
+      content: " ";
+      position: absolute;
+      width: @cuke-radio-width - 6px;
+      height: @cuke-radio-height - 6px;
+      border-radius: 50%;
+      background-color: @primary-color;
+      display: table;
+      top: 2px;
+      left: 2px;
+      opacity: 0;
+      transition: all @default-transition;
+      transform: scale(0)
+    }
+  }
+}
+
+.@{prefixCls}-wrapper {
+  color: @font-color;
+  font-size: @font-size;
+  box-sizing: border-box;
+  margin:0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}

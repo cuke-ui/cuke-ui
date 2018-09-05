@@ -6,7 +6,7 @@ const cardType = "card";
 
 export default class Tabs extends PureComponent {
 	state = {
-		actionKey: "1",
+		activeKey: ~~(this.props.activeKey || this.props.defaultActiveKey),
 		lineWidth: 0,
 		lineOffsetLeft: 0
 	};
@@ -19,6 +19,7 @@ export default class Tabs extends PureComponent {
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
 		defaultActiveKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+		activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		type: PropTypes.oneOf([cardType]),
 		tabBarExtraContent: PropTypes.oneOfType([
 			PropTypes.string,
@@ -27,12 +28,7 @@ export default class Tabs extends PureComponent {
 		]),
 		onChange: PropTypes.func
 	};
-	componentWillMount() {
-		const { defaultActiveKey } = this.props;
-		this.setState({
-			actionKey: ~~defaultActiveKey
-		});
-	}
+
 	componentDidMount() {
 		if (this.props.type !== cardType) {
 			setTimeout(() => {
@@ -40,6 +36,13 @@ export default class Tabs extends PureComponent {
 			}, 0);
 		}
 	}
+
+	componentWillReceiveProps({activeKey}) {
+		const _activeKey = ~~(activeKey)
+		if(_activeKey !== this.props.activeKey) {
+			this.setState({activeKey:_activeKey})
+		}
+  }
 
 	setActiveLineStyle = () => {
 		const activeElement = this.activeTab;
@@ -51,7 +54,7 @@ export default class Tabs extends PureComponent {
 		});
 	};
 	onTabChange = key => {
-		this.setState({ actionKey: key }, () => {
+		this.setState({ activeKey: key }, () => {
 			if (this.props.type !== cardType) {
 				this.setActiveLineStyle();
 			}
@@ -66,16 +69,18 @@ export default class Tabs extends PureComponent {
 			type,
 			tabBarExtraContent,
 			children,
+			activeKey : _activeKey,   //eslint-disable-line
+			defaultActiveKey,  //eslint-disable-line
 			...attr
 		} = this.props;
 
-		const { actionKey, lineWidth, lineOffsetLeft } = this.state;
+		const { activeKey, lineWidth, lineOffsetLeft } = this.state;
 
 		const content = React.Children.map(children, (element, index) => {
 			const key = (index + 1) >> 0;
 			return cloneElement(element, {
-				actionKey,
-				visible: actionKey === key,
+				activeKey,
+				visible: activeKey === key,
 				key: index
 			});
 		});
@@ -85,7 +90,7 @@ export default class Tabs extends PureComponent {
 			({ props: { tab, disabled } }, index) => {
 				const key = (index + 1) >> 0;
 				const bindActiveRef =
-					actionKey === key ? { ref: node => (this[`activeTab`] = node) } : {};
+				activeKey === key ? { ref: node => (this[`activeTab`] = node) } : {};
 				return (
 					<div
 						key={index}
@@ -93,7 +98,7 @@ export default class Tabs extends PureComponent {
 						aria-disabled={false}
 						aria-selected={true}
 						className={cls(`${prefixCls}-tab`, {
-							[`${prefixCls}-tab-active`]: actionKey === key,
+							[`${prefixCls}-tab-active`]: activeKey === key,
 							[`${prefixCls}-tab-disabled`]: !!disabled
 						})}
 						{...bindActiveRef}

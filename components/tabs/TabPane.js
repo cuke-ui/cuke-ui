@@ -1,13 +1,20 @@
-import React, { PureComponent } from "react";
-import cls from "classnames";
+import React, { PureComponent } from 'react';
+import cls from 'classnames';
 
 class BreadcrumbItem extends PureComponent {
 	static defaultProps = {
-		prefixCls: "cuke-tabs-panel"
+		prefixCls: 'cuke-tabs-panel'
 	};
 
 	render() {
-		const { prefixCls, className, children, visible, ...attr } = this.props;
+		const {
+			prefixCls,
+			className,
+			children,
+			visible,
+			activeKey, //eslint-disable-line
+			...attr
+		} = this.props;
 		if (!visible) {
 			return null;
 		}

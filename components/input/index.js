@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default class Input extends PureComponent {
 	static defaultProps = {
 		prefixCls: "cuke-input",
-		isDisabled: false,
+		disabled: false,
 		placeholder: "",
 		type: "text",
 		onChange: () => {}
@@ -14,7 +14,7 @@ export default class Input extends PureComponent {
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
 		placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-		isDisabled: PropTypes.bool,
+		disabled: PropTypes.bool,
 		type: PropTypes.oneOf([
 			"text",
 			"password",
@@ -31,7 +31,7 @@ export default class Input extends PureComponent {
 
 	onChange = e => {
 		if (!this.props.disabled) {
-			this.props.onChange(e.target.value);
+			this.props.onChange(e);
 		}
 	};
 

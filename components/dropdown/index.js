@@ -59,6 +59,7 @@ export default class Dropdown extends PureComponent {
 			disabled,
 			trigger,
 			animate,
+			onVisibleChange,   //eslint-disable-line
 			...attr
 		} = this.props;
 

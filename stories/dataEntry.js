@@ -1,15 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import WordPadPage from "./pages/wordPad"
+import WordPadPage from './pages/wordPad';
+import RadioPage from './pages/radio';
 import Input from '../components/input';
+import Radio from '../components/radio';
 import { withInfo } from '@storybook/addon-info';
-import { IoIosAddCircleOutline } from "react-icons/io";
+import { IoIosAddCircleOutline } from 'react-icons/io';
 
-import "../components/input/styles.less";
+import '../components/input/styles.less';
+import '../components/radio/styles.less';
 
 storiesOf('数据录入', module)
-	.add('WordPad 写字板', withInfo(`
+	.add(
+		'WordPad 写字板',
+		withInfo(`
 	import React, { Component } from 'react';
 	import WordPad from '../../components/wordPad';
 	import Button from '../../components/button';
@@ -49,25 +54,71 @@ storiesOf('数据录入', module)
 			)
 		}
 	}
-	`)(() => (
-		<WordPadPage/>
-	)))
-	.add('Input 输入框', withInfo()(() => (
-		<div style={{ width: 400 }}>
-			<h2>基本使用</h2>
-			<Input placeholder="请输入" onChange={(e)=> console.log(e.target.value)}/>
-			<Input
-				type="password"
-				placeholder="请输入密码"
-				style={{ margin: '10px 0' }}
-			/>
-			<Input type="number" placeholder="请输入数字" />
-			<Input placeholder="请输入" defaultValue={'默认值'} style={{ margin: '10px 0' }}/>
-			<Input disabled placeholder="禁用"  />
+	`)(() => <WordPadPage />)
+	)
+	.add(
+		'Input 输入框',
+		withInfo()(() => (
+			<div style={{ width: 400 }}>
+				<h2>基本使用</h2>
+				<Input
+					placeholder="请输入"
+					onChange={e => console.log(e.target.value)}
+				/>
+				<Input
+					type="password"
+					placeholder="请输入密码"
+					style={{ margin: '10px 0' }}
+				/>
+				<Input type="number" placeholder="请输入数字" />
+				<Input
+					placeholder="请输入"
+					defaultValue={'默认值'}
+					style={{ margin: '10px 0' }}
+				/>
+				<Input disabled placeholder="禁用" />
 
-			<h2>前置/后置标签</h2>
-			<Input addonBefore={<IoIosAddCircleOutline/>} placeholder="请输入" />
-			<Input addonAfter={'.com'} placeholder="填写网址" style={{ margin: '10px 0' }}/>
-			<Input addonBefore={"https://"} addonAfter={'.cn'} placeholder="www.lijinke" />
-		</div>
-	)))
+				<h2>前置/后置标签</h2>
+				<Input addonBefore={<IoIosAddCircleOutline />} placeholder="请输入" />
+				<Input
+					addonAfter={'.com'}
+					placeholder="填写网址"
+					style={{ margin: '10px 0' }}
+				/>
+				<Input
+					addonBefore={'https://'}
+					addonAfter={'.cn'}
+					placeholder="www.lijinke"
+				/>
+			</div>
+		))
+	)
+	.add(
+		'Radio 单选框',
+		withInfo(`
+	<div>
+	<h2>基本使用</h2>
+	<Radio value="黄瓜 ui" onChange={this.onChange}>
+		黄瓜 ui
+	</Radio>{' '}
+	<br />
+	<Radio defaultChecked={true}>默认选中</Radio> <br />
+	<h2>禁用</h2>
+	<Radio disabled>黄瓜 ui</Radio> <br />
+	<Radio checked disabled>
+		黄瓜 ui
+	</Radio>
+	<h2>老板需要几号技师</h2>
+	<p> 选中 : {this.state.value} </p>
+	<Radio.Group value={this.state.value} onChange={this.onChange}>
+		<Radio value="小红">小红</Radio>
+		<Radio value="小明">小明</Radio>
+		<Radio value="小美">小美</Radio>
+		<Radio value="小芳">小芳</Radio>
+		<Radio value="小黑" disabled>
+			小黑
+		</Radio>
+	</Radio.Group>
+</div>
+`)(() => <RadioPage />),{notes:"test"}
+	);

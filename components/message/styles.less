@@ -76,9 +76,11 @@
 		}
 	}
 	&.open {
+		pointer-events: auto;
 		animation: cuke-fade-in @message-show-time @animate-type forwards;
 	}
 	&.close {
+		pointer-events: none;
 		animation: cuke-fade-out @message-show-time @animate-type forwards;
 	}
 }

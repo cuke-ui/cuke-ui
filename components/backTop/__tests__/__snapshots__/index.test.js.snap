@@ -4,7 +4,6 @@ exports[`<BackTop/> should render a <BackTop/> components 1`] = `
 <div>
   <div
     class="cuke-back-top cuke-back-top-close"
-    visibilityheight="400"
   >
     <div
       class="cuke-back-top-inner"
@@ -32,7 +31,6 @@ exports[`<BackTop/> should render a <BackTop/> components 1`] = `
   </div>
   <div
     class="cuke-back-top cuke-back-top-close"
-    visibilityheight="400"
   >
     <div
       class="cuke-back-top-inner"

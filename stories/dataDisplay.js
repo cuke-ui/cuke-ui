@@ -87,7 +87,7 @@ storiesOf('数据展示', module)
 				</Tabs>
 
 				<h2>禁用某一项</h2>
-				<Tabs defaultActiveKey="1">
+				<Tabs activeKey="1">
 					<Tabs.TabPane tab="选项1" key="1">
 						1
 					</Tabs.TabPane>
@@ -129,6 +129,9 @@ storiesOf('数据展示', module)
 					</Tabs.TabPane>
 					<Tabs.TabPane tab="选项3" key="3">
 						3
+					</Tabs.TabPane>
+					<Tabs.TabPane tab="选项4" key="4" disabled>
+						4
 					</Tabs.TabPane>
 				</Tabs>
 			</div>

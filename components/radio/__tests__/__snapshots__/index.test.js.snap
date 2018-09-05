@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Radio/> should render Radio 1`] = `
+<div>
+  <label
+    class="cuke-radio-wrapper"
+  >
+    <span
+      class="cuke-radio"
+    >
+      <input
+        class="cuke-radio-input"
+        type="radio"
+      />
+      <span
+        class="cuke-radio-inner"
+      />
+    </span>
+    <span>
+      黄瓜 ui
+    </span>
+  </label>
+  <label
+    class="cuke-radio-wrapper"
+  >
+    <span
+      class="cuke-radio cuke-radio-disabled"
+    >
+      <input
+        class="cuke-radio-input"
+        disabled=""
+        type="radio"
+      />
+      <span
+        class="cuke-radio-inner"
+      />
+    </span>
+    <span>
+      黄瓜 ui
+    </span>
+  </label>
+  <label
+    class="cuke-radio-wrapper"
+  >
+    <span
+      checked=""
+      class="cuke-radio cuke-radio-checked cuke-radio-disabled"
+    >
+      <input
+        checked=""
+        class="cuke-radio-input"
+        disabled=""
+        type="radio"
+      />
+      <span
+        class="cuke-radio-inner"
+      />
+    </span>
+    <span />
+  </label>
+</div>
+`;
+
+exports[`<Radio/> should render RadioGroup 1`] = `
+<div>
+  <div
+    class="cuke-radio-group"
+    value="小红"
+  >
+    <label
+      class="cuke-radio-wrapper"
+    >
+      <span
+        checked=""
+        class="cuke-radio cuke-radio-checked"
+      >
+        <input
+          checked=""
+          class="cuke-radio-input"
+          type="radio"
+          value="小红"
+        />
+        <span
+          class="cuke-radio-inner"
+        />
+      </span>
+      <span>
+        小红
+      </span>
+    </label>
+    <label
+      class="cuke-radio-wrapper"
+    >
+      <span
+        class="cuke-radio"
+      >
+        <input
+          class="cuke-radio-input"
+          type="radio"
+          value="小明"
+        />
+        <span
+          class="cuke-radio-inner"
+        />
+      </span>
+      <span>
+        小明
+      </span>
+    </label>
+    <label
+      class="cuke-radio-wrapper"
+    >
+      <span
+        class="cuke-radio"
+      >
+        <input
+          class="cuke-radio-input"
+          type="radio"
+          value="小美"
+        />
+        <span
+          class="cuke-radio-inner"
+        />
+      </span>
+      <span>
+        小美
+      </span>
+    </label>
+    <label
+      class="cuke-radio-wrapper"
+    >
+      <span
+        class="cuke-radio"
+      >
+        <input
+          class="cuke-radio-input"
+          type="radio"
+          value="小芳"
+        />
+        <span
+          class="cuke-radio-inner"
+        />
+      </span>
+      <span>
+        小芳
+      </span>
+    </label>
+    <label
+      class="cuke-radio-wrapper"
+    >
+      <span
+        class="cuke-radio cuke-radio-disabled"
+      >
+        <input
+          class="cuke-radio-input"
+          disabled=""
+          type="radio"
+          value="小黑"
+        />
+        <span
+          class="cuke-radio-inner"
+        />
+      </span>
+      <span>
+        小黑
+      </span>
+    </label>
+  </div>
+</div>
+`;

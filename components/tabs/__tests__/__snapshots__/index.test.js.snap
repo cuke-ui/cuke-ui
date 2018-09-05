@@ -3,7 +3,6 @@
 exports[`<Tabs/> should render Tabs 1`] = `
 <div
   class="cuke-tabs"
-  defaultactivekey="1"
 >
   <div
     class="cuke-tabs-header"
@@ -41,7 +40,6 @@ exports[`<Tabs/> should render Tabs 1`] = `
     class="cuke-tabs-content"
   >
     <div
-      actionkey="1"
       class="cuke-tabs-panel"
       tab="选项1"
     >
@@ -54,7 +52,6 @@ exports[`<Tabs/> should render Tabs 1`] = `
 exports[`<Tabs/> should render custom active key 1`] = `
 <div
   class="cuke-tabs"
-  defaultactivekey="2"
 >
   <div
     class="cuke-tabs-header"
@@ -92,7 +89,6 @@ exports[`<Tabs/> should render custom active key 1`] = `
     class="cuke-tabs-content"
   >
     <div
-      actionkey="2"
       class="cuke-tabs-panel"
       tab="选项2"
     >
@@ -105,7 +101,6 @@ exports[`<Tabs/> should render custom active key 1`] = `
 exports[`<Tabs/> should render custom tab title 1`] = `
 <div
   className="cuke-tabs"
-  defaultActiveKey="2"
   onChange={[Function]}
 >
   <div
@@ -145,7 +140,7 @@ exports[`<Tabs/> should render custom tab title 1`] = `
     className="cuke-tabs-content"
   >
     <BreadcrumbItem
-      actionKey={2}
+      activeKey={2}
       key="0/.$1"
       prefixCls="cuke-tabs-panel"
       tab={<SuccessIcon />}
@@ -154,7 +149,7 @@ exports[`<Tabs/> should render custom tab title 1`] = `
       1
     </BreadcrumbItem>
     <BreadcrumbItem
-      actionKey={2}
+      activeKey={2}
       key="1/.$2"
       prefixCls="cuke-tabs-panel"
       tab={<ErrorIcon />}
@@ -174,7 +169,6 @@ exports[`<Tabs/> should render disabled tab 1`] = `
 >
   <div
     className="cuke-tabs"
-    defaultActiveKey="2"
     onChange={[Function]}
   >
     <div
@@ -224,14 +218,14 @@ exports[`<Tabs/> should render disabled tab 1`] = `
       className="cuke-tabs-content"
     >
       <BreadcrumbItem
-        actionKey={2}
+        activeKey={2}
         key="0/.$1"
         prefixCls="cuke-tabs-panel"
         tab="选项1"
         visible={false}
       />
       <BreadcrumbItem
-        actionKey={2}
+        activeKey={2}
         disabled={true}
         key="1/.$2"
         prefixCls="cuke-tabs-panel"
@@ -239,7 +233,6 @@ exports[`<Tabs/> should render disabled tab 1`] = `
         visible={true}
       >
         <div
-          actionKey={2}
           className="cuke-tabs-panel"
           disabled={true}
           tab="选项2"
@@ -248,7 +241,7 @@ exports[`<Tabs/> should render disabled tab 1`] = `
         </div>
       </BreadcrumbItem>
       <BreadcrumbItem
-        actionKey={2}
+        activeKey={2}
         key="2/.$3"
         prefixCls="cuke-tabs-panel"
         tab="选项3"
