@@ -1,14 +1,14 @@
-import React, { PureComponent } from 'react';
-import Radio from './Radio';
-import PropTypes from 'prop-types';
-import cls from 'classnames';
+import React, { PureComponent } from "react";
+import Radio from "./Radio";
+import PropTypes from "prop-types";
+import cls from "classnames";
 
 export default class RadioGroup extends PureComponent {
 	state = {
 		value: this.props.value || this.props.defaultValue
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-radio-group',
+		prefixCls: "cuke-radio-group",
 		onChange: () => {}
 	};
 

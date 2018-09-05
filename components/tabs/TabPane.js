@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
-import cls from 'classnames';
+import React, { PureComponent } from "react";
+import cls from "classnames";
 
 class BreadcrumbItem extends PureComponent {
 	static defaultProps = {
-		prefixCls: 'cuke-tabs-panel'
+		prefixCls: "cuke-tabs-panel"
 	};
 
 	render() {

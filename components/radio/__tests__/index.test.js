@@ -1,10 +1,10 @@
-import React from 'react';
-import { render, shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import Radio from '../index';
+import React from "react";
+import { render, shallow } from "enzyme";
+import toJson from "enzyme-to-json";
+import Radio from "../index";
 
-describe('<Radio/>', () => {
-	it('should render Radio', () => {
+describe("<Radio/>", () => {
+	it("should render Radio", () => {
 		const wrapper = render(
 			<div>
 				<Radio>黄瓜 ui</Radio>
@@ -15,10 +15,10 @@ describe('<Radio/>', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it('should render RadioGroup', () => {
+	it("should render RadioGroup", () => {
 		const wrapper = render(
 			<div>
-				<Radio.Group value={'小红'}>
+				<Radio.Group value={"小红"}>
 					<Radio value="小红">小红</Radio>
 					<Radio value="小明">小明</Radio>
 					<Radio value="小美">小美</Radio>
@@ -44,20 +44,20 @@ describe('<Radio/>', () => {
 	// 	wrapper.find('input').simulate('change');
 	// 	expect(onChange).toHaveBeenCalled();
 	// });
-	it('should can trigger change event', () => {
+	it("should can trigger change event", () => {
 		const onChange = jest.fn();
 		const wrapper = shallow(<Radio onChange={onChange}>黄瓜 ui</Radio>);
-		wrapper.find('input').simulate('change');
+		wrapper.find("input").simulate("change");
 		expect(onChange).toHaveBeenCalled();
 	});
-	it('should can not trigger change event', () => {
+	it("should can not trigger change event", () => {
 		const onChange = jest.fn();
 		const wrapper = shallow(
 			<Radio onChange={onChange} disabled>
 				黄瓜 ui
 			</Radio>
 		);
-		wrapper.find('input').simulate('click');
+		wrapper.find("input").simulate("click");
 		expect(onChange).not.toHaveBeenCalled();
 	});
 });

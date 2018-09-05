@@ -1,13 +1,13 @@
-import React, { PureComponent } from 'react';
-import cls from 'classnames';
-import PropTypes from 'prop-types';
+import React, { PureComponent } from "react";
+import cls from "classnames";
+import PropTypes from "prop-types";
 
 export default class Radio extends PureComponent {
 	state = {
 		checked: this.props.checked || this.props.defaultChecked
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-radio',
+		prefixCls: "cuke-radio",
 		defaultChecked: false,
 		checked: false,
 		disabled: false
@@ -30,7 +30,7 @@ export default class Radio extends PureComponent {
 		this.setState({
 			checked: true
 		});
-		if(this.props.onChange){
+		if (this.props.onChange) {
 			this.props.onChange(e);
 		}
 	};

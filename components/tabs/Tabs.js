@@ -37,12 +37,12 @@ export default class Tabs extends PureComponent {
 		}
 	}
 
-	componentWillReceiveProps({activeKey}) {
-		const _activeKey = ~~(activeKey)
-		if(_activeKey !== this.props.activeKey) {
-			this.setState({activeKey:_activeKey})
+	componentWillReceiveProps({ activeKey }) {
+		const _activeKey = ~~activeKey;
+		if (_activeKey !== this.props.activeKey) {
+			this.setState({ activeKey: _activeKey });
 		}
-  }
+	}
 
 	setActiveLineStyle = () => {
 		const activeElement = this.activeTab;
@@ -69,8 +69,8 @@ export default class Tabs extends PureComponent {
 			type,
 			tabBarExtraContent,
 			children,
-			activeKey : _activeKey,   //eslint-disable-line
-			defaultActiveKey,  //eslint-disable-line
+			activeKey: _activeKey, //eslint-disable-line
+			defaultActiveKey, //eslint-disable-line
 			...attr
 		} = this.props;
 
@@ -90,7 +90,7 @@ export default class Tabs extends PureComponent {
 			({ props: { tab, disabled } }, index) => {
 				const key = (index + 1) >> 0;
 				const bindActiveRef =
-				activeKey === key ? { ref: node => (this[`activeTab`] = node) } : {};
+					activeKey === key ? { ref: node => (this[`activeTab`] = node) } : {};
 				return (
 					<div
 						key={index}
