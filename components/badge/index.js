@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cls from 'classnames';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import cls from "classnames";
 
-import './styles.less';
+import "./styles.less";
 
 export default class Badge extends PureComponent {
 	static propsTypes = {
@@ -13,7 +13,7 @@ export default class Badge extends PureComponent {
 		onClick: PropTypes.func
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-badge',
+		prefixCls: "cuke-badge",
 		overflowCount: 99,
 		showZero: false,
 		dot: false,
@@ -34,7 +34,6 @@ export default class Badge extends PureComponent {
 			...attr
 		} = this.props;
 
-
 		return (
 			<div className={cls(prefixCls, className)}>
 				{count > 0 || showZero ? (
@@ -42,7 +41,11 @@ export default class Badge extends PureComponent {
 						className={cls(`${prefixCls}-inner`, { [`${prefixCls}-dot`]: dot })}
 						{...attr}
 					>
-						{dot ? undefined : count >= overflowCount ? `${overflowCount}+` : count}
+						{dot
+							? undefined
+							: count >= overflowCount
+								? `${overflowCount}+`
+								: count}
 					</span>
 				) : (
 					undefined

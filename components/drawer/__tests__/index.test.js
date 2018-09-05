@@ -1,11 +1,11 @@
-import React from 'react';
-import { render, shallow, mount } from 'enzyme';
-import assert from 'power-assert';
-import toJson from 'enzyme-to-json';
-import Drawer from '../index';
+import React from "react";
+import { render, shallow, mount } from "enzyme";
+import assert from "power-assert";
+import toJson from "enzyme-to-json";
+import Drawer from "../index";
 
-describe('<Drawer/>', () => {
-	it('should render a <Drawer/> components', () => {
+describe("<Drawer/>", () => {
+	it("should render a <Drawer/> components", () => {
 		const wrapper = render(
 			<div>
 				<Drawer title="基本使用" visible>
@@ -22,19 +22,19 @@ describe('<Drawer/>', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it('should can not clicked with set maskClosable false', () => {
+	it("should can not clicked with set maskClosable false", () => {
 		const onCancelClick = jest.fn();
 		const wrapper = mount(
 			<Drawer visible={true} onCancel={onCancelClick}>
 				<span>关闭回调</span>
 			</Drawer>
 		);
-		wrapper.find('.cuke-drawer').simulate('click');
+		wrapper.find(".cuke-drawer").simulate("click");
 		assert(wrapper.props().visible === true);
 		expect(onCancelClick).not.toHaveBeenCalled();
 	});
 
-	it('should render custom direction', () => {
+	it("should render custom direction", () => {
 		const wrapper = mount(
 			<div>
 				<Drawer visible placement="left">
@@ -54,14 +54,14 @@ describe('<Drawer/>', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it('should can trigger onClose event', () => {
+	it("should can trigger onClose event", () => {
 		const onCancelClick = jest.fn();
 		const wrapper = shallow(
 			<Drawer title="关闭回调" visible onClose={onCancelClick}>
 				<span>关闭回调</span>
 			</Drawer>
 		);
-		wrapper.find('.cuke-drawer').simulate('click');
+		wrapper.find(".cuke-drawer").simulate("click");
 		expect(onCancelClick).not.toHaveBeenCalled();
 	});
 });

@@ -14,34 +14,34 @@
         pointer-events: none;
         &-mask {
             position: absolute;
-            left:0;
-            right:0;
-            margin:auto;
-            bottom:0;
-            top:0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            bottom: 0;
+            top: 0;
             z-index: @cuke-dropdown-z-index + 1;
         }
     }
     &-overlay {
         position: absolute;
-        top:110%;
-        left :0;
+        top: 110%;
+        left: 0;
         display: none;
         z-index: @cuke-dropdown-z-index;
         &-show {
             display: block;
         }
         &-slideUp {
-            animation:cuke-slide-up @default-transition;
+            animation: cuke-slide-up @default-transition;
         }
         &-slideDown {
-            animation:cuke-slide-down @default-transition;
+            animation: cuke-slide-down @default-transition;
         }
         &-slideLeft {
-            animation:cuke-slide-left @default-transition;
+            animation: cuke-slide-left @default-transition;
         }
         &-slideRight {
-            animation:cuke-slide-right @default-transition;
+            animation: cuke-slide-right @default-transition;
         }
     }
 }

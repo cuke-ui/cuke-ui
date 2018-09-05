@@ -36,7 +36,6 @@
     "components/**/*.{js}": [
       "prettier --write",
       "eslint --fix",
-      "jest --config jest.config.js",
       "git add"
     ],
     "components/**/*.less": [

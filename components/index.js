@@ -22,3 +22,5 @@ export { default as Tabs } from "./tabs";
 export { default as Badge } from "./badge";
 export { default as Dropdown } from "./dropdown";
 export { default as Drawer } from "./drawer";
+export { default as Affix } from "./affix";
+export { default as version } from "./version";

@@ -90,13 +90,15 @@ import 'cuke-ui/lib/Button/style.less';
 - [x] [Dropdown 下拉菜单](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%AF%BC%E8%88%AA&selectedStory=Dropdown%20%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Drawer 抽屉](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Drawer%20%E6%8A%BD%E5%B1%89&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [ ] Checkbox  复选框
-- [ ] Switch  选择器
+- [ ] Switch  开关
 - [ ] Radio   单选框  
 - [ ] Select  下拉选择器  
 - [ ] Upload  上传  
 - [ ] Form    表单  
 - [ ] Rate    评分  
 - [ ] Collapse  折叠面板 
+- [ ] Affix  固钉 
+- [ ] Timeline  时间轴 
 
 ### 参考轮子
 

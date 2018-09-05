@@ -4,29 +4,29 @@
 @prefixCls : cuke-back-top;
 .@{prefixCls} {
     position: fixed;
-    bottom:@back-top-offset-bottom;
-    right:@back-top-offset-right;
+    bottom: @back-top-offset-bottom;
+    right: @back-top-offset-right;
     z-index: 98;
     transition: transform @default-transition;
     display: flex;
     flex-direction: column;
-    &.@{prefixCls}-open{
+    &.@{prefixCls}-open {
         animation: cuke-fade-in @default-transition forwards;
     }
-    &.@{prefixCls}-close{
+    &.@{prefixCls}-close {
         animation: cuke-fade-out @default-transition forwards;
     }
-    &-inner{
+    &-inner {
         border-radius: 50%;
-        &-icon{
-            height:@back-top-inner-height;
-            width:@back-top-inner-width;
+        &-icon {
+            height: @back-top-inner-height;
+            width: @back-top-inner-width;
             border-radius: 50%;
             // border:1px solid @border-color;
             box-shadow: @default-shadow;
             transition: all @default-transition;
-            color:@font-color;
-            font-size:24px;
+            color: @font-color;
+            font-size: 24px;
             padding: 0;
             background-color: #fff;
             cursor: pointer;
@@ -34,13 +34,13 @@
             line-height: @back-top-inner-height;
             outline: none;
             -webkit-appearance: none;
-            i{
+            i {
                 display: block;
             }
-            &:hover{
-                border-color:@primary-color;
+            &:hover {
+                border-color: @primary-color;
                 background-color: @primary-color;
-                color:#fff;
+                color: #fff;
             }
         }
     }

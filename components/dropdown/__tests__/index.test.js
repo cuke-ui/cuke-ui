@@ -1,8 +1,8 @@
-import React from 'react';
-import assert from 'power-assert';
-import { render, shallow } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import Dropdown from '../index';
+import React from "react";
+import assert from "power-assert";
+import { render, shallow } from "enzyme";
+import toJson from "enzyme-to-json";
+import Dropdown from "../index";
 
 const overlay = (
 	<ul>
@@ -12,8 +12,8 @@ const overlay = (
 	</ul>
 );
 
-describe('<Dropdown/>', () => {
-	it('should render a <Dropdown/> components', () => {
+describe("<Dropdown/>", () => {
+	it("should render a <Dropdown/> components", () => {
 		const wrapper = render(
 			<div>
 				<Dropdown overlay={overlay}>
@@ -27,7 +27,7 @@ describe('<Dropdown/>', () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it('should find cuke-dropdown classnames', () => {
+	it("should find cuke-dropdown classnames", () => {
 		const wrapper = render(
 			<div>
 				<Dropdown overlay={overlay}>
@@ -38,12 +38,12 @@ describe('<Dropdown/>', () => {
 				</Dropdown>
 			</div>
 		);
-		assert(wrapper.find('.cuke-dropdown').length >= 1);
-		assert(wrapper.find('.cuke-dropdown-wrap').length >= 1);
-		assert(wrapper.find('.cuke-dropdown-overlay').length >= 1);
+		assert(wrapper.find(".cuke-dropdown").length >= 1);
+		assert(wrapper.find(".cuke-dropdown-wrap").length >= 1);
+		assert(wrapper.find(".cuke-dropdown-overlay").length >= 1);
 	});
 
-	it('should render disabled', () => {
+	it("should render disabled", () => {
 		const onChange = jest.fn();
 		const wrapper = shallow(
 			<div>
@@ -52,25 +52,25 @@ describe('<Dropdown/>', () => {
 				</Dropdown>
 			</div>
 		);
-		wrapper.find('div').simulate('change');
+		wrapper.find("div").simulate("change");
 		expect(onChange).not.toHaveBeenCalled();
 	});
 
-	it('should render many animate type', () => {
+	it("should render many animate type", () => {
 		const wrapper = render(
 			<div>
 				<Dropdown overlay={overlay} animate="slideUp">
-				slideDown
+					slideDown
 				</Dropdown>
 				<Dropdown overlay={overlay} animate="slideDown">
-				slideDown
+					slideDown
 				</Dropdown>
 				<Dropdown overlay={overlay} animate="slideRight">
-				slideRight
+					slideRight
 				</Dropdown>
 
 				<Dropdown overlay={overlay} animate="slideLeft">
-				slideLeft
+					slideLeft
 				</Dropdown>
 
 				<Dropdown overlay={overlay} animate={false}>
@@ -78,10 +78,10 @@ describe('<Dropdown/>', () => {
 				</Dropdown>
 			</div>
 		);
-		assert(wrapper.find('.cuke-dropdown-overlay-slideUp').length === 1);
-		assert(wrapper.find('.cuke-dropdown-overlay-slideDown').length === 1);
-		assert(wrapper.find('.cuke-dropdown-overlay-slideRight').length === 1);
-		assert(wrapper.find('.cuke-dropdown-overlay-slideLeft').length === 1);
+		assert(wrapper.find(".cuke-dropdown-overlay-slideUp").length === 1);
+		assert(wrapper.find(".cuke-dropdown-overlay-slideDown").length === 1);
+		assert(wrapper.find(".cuke-dropdown-overlay-slideRight").length === 1);
+		assert(wrapper.find(".cuke-dropdown-overlay-slideLeft").length === 1);
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 });

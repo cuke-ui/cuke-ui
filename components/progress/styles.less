@@ -3,9 +3,9 @@
 @import "../styles/mixins.less";
 @prefixCls : cuke-progress;
 .@{prefixCls} {
-    width:100%;
+    width: 100%;
     height: @progress-height;
-    border-radius:@progress-border-radius;
+    border-radius: @progress-border-radius;
     overflow: hidden;
     position: relative;
     &-enter {
@@ -17,7 +17,7 @@
         border-radius: @progress-border-radius;
         background-color: @primary-color;
         transition: width @default-transition;
-        &-animation{
+        &-animation {
             background-size: @progress-bg-offset;
             animation: panoramic @progress-animate-time linear infinite;
         }
@@ -25,7 +25,7 @@
     &-default {
         .@{prefixCls}-bg {
             background-color: @primary-color;
-            &-animation{
+            &-animation {
                 .set-progress-bar-bg(@primary-color);
             }
         }
@@ -33,7 +33,7 @@
     &-success {
         .@{prefixCls}-bg {
             background-color: @success-color;
-            &-animation{
+            &-animation {
                 .set-progress-bar-bg(@success-color);
             }
         }
@@ -41,28 +41,28 @@
     &-info {
         .@{prefixCls}-bg {
             background-color: @info-color;
-            &-animation{
+            &-animation {
                 .set-progress-bar-bg(@info-color);
             }
-        } 
+        }
     }
 
     &-warning {
         .@{prefixCls}-bg {
             background-color: @warning-color;
-            &-animation{
+            &-animation {
                 .set-progress-bar-bg(@warning-color);
             }
-        } 
+        }
     }
 
     &-error {
         .@{prefixCls}-bg {
             background-color: @error-color;
-            &-animation{
+            &-animation {
                 .set-progress-bar-bg(@error-color);
             }
-        } 
+        }
     }
     @keyframes panoramic {
         to {

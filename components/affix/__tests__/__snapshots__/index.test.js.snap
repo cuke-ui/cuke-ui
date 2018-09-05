@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Affix/> should render a <Affix/> components 1`] = `
+<div>
+  <div
+    class="cuke-affix"
+    style="top:0"
+  >
+    <div>
+      affix
+    </div>
+  </div>
+  <div
+    class="cuke-affix"
+    style="top:200px"
+  >
+    <div>
+      affix
+    </div>
+  </div>
+</div>
+`;

@@ -6,15 +6,14 @@
 .@{prefixCls} {
 	position: fixed;
 	z-index: @message-z-index;
-	pointer-events: none;
 	width: @message-width;
 	height: @message-height;
-	transform: translate3d(0,0,0);
-	margin:auto;
-	left:0;
-	top:0;
-	right:0;
-	bottom:0;
+	transform: translate3d(0, 0, 0);
+	margin: auto;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
 	.flex-center();
 	.clearfix();
 	@media screen and (max-width: 768px) {
@@ -24,13 +23,7 @@
 	border-radius: @border-radius;
 	box-shadow: @default-shadow;
 	background: @message-theme-light-bg;
-	pointer-events: all;
 	text-align: center;
-	.message-loading {
-		svg {
-			animation: cuke-spin @loading-time linear infinite;
-		}
-	}
 	.icon {
 		svg,
 		i {
@@ -41,6 +34,7 @@
 		}
 	}
 	.text {
+		color: @font-color;
 		font-size: @message-title-size;
 		@media screen and (max-width: 768px) {
 			font-size: @message-title-size-sm;
@@ -54,10 +48,6 @@
 		.text {
 			color: @message-theme-dark-font-color !important;
 		}
-	}
-	background: @message-theme-light-bg;
-	.text {
-		color: @font-color;
 	}
 	.message-info {
 		svg {
@@ -82,9 +72,9 @@
 	.message-loading {
 		svg {
 			color: @loading-color;
+			animation: cuke-spin @loading-time linear infinite;
 		}
 	}
-	
 	&.open {
 		animation: cuke-fade-in @message-show-time @animate-type forwards;
 	}

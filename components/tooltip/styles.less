@@ -9,7 +9,7 @@
 	vertical-align: top;
 
 	&-trigger-wrapper {
-		display: inline-block
+		display: inline-block;
 	}
 	&-wrapper {
 		// display: none;
@@ -26,13 +26,13 @@
 		&::after,&::before {
 			content: " ";
 			position: absolute;
-			width:0;
-			height:0;
-			border:@tooltip-triangle-width solid transparent;
+			width: 0;
+			height: 0;
+			border: @tooltip-triangle-width solid transparent;
 		}
 
 		&.position-top,
-		&.position-bottom{
+		&.position-bottom {
 			&::before, &::after {
 				left: 50%;
 				transform: translateX(-50%);
@@ -40,7 +40,7 @@
 		}
 
 		&.position-top {
-			transform:  translateY(-100%);
+			transform: translateY(-100%);
 			margin-top: -6px;
 			&::before, &::after {
 				top: 95%;   // 三角形尖尖小一些
@@ -52,7 +52,6 @@
 			&::before, &::after {
 				bottom: 95%;   // 三角形尖尖小一些
         border-bottom-color: @tooltip-bg-color;
-        bottom: 100%;
       }
 		}
 		&.position-left {
@@ -63,7 +62,7 @@
 				top: 50%;
 				border-right: none;
 				border-left-color: @tooltip-bg-color;
-        left: 100%
+        left: 100%;
       }
 		}
 		&.position-right {
@@ -76,9 +75,7 @@
         right: 100%;
       }
 		}
-
 	}
-
 	&-open {
 		display: block;
 	}

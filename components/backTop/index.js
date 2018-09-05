@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cls from 'classnames';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import cls from "classnames";
 
-import { UpIcon } from '../icon';
-import './styles.less';
+import { UpIcon } from "../icon";
+import "./styles.less";
 
 const scrollToTop = () => {
 	const c = document.documentElement.scrollTop || document.body.scrollTop;
@@ -24,7 +24,7 @@ export default class BackTop extends PureComponent {
 		onClick: PropTypes.func
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-back-top',
+		prefixCls: "cuke-back-top",
 		visibilityHeight: 400,
 		onClick: () => {}
 	};
@@ -37,13 +37,7 @@ export default class BackTop extends PureComponent {
 	}
 	render() {
 		const { visible } = this.state;
-		const {
-			className,
-			prefixCls,
-			visibilityHeight,
-			children,
-			...attr
-		} = this.props;
+		const { className, prefixCls, children, ...attr } = this.props;
 
 		return (
 			<div
@@ -72,9 +66,9 @@ export default class BackTop extends PureComponent {
 		}
 	};
 	componentDidMount() {
-		window.addEventListener('scroll', this.bindScroll);
+		window.addEventListener("scroll", this.bindScroll);
 	}
 	componentWillUnmount() {
-		window.removeEventListener('scroll', this.bindScroll);
+		window.removeEventListener("scroll", this.bindScroll);
 	}
 }

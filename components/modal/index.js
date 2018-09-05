@@ -12,7 +12,7 @@ export default class Modal extends PureComponent {
 	static defaultProps = {
 		prefixCls: "cuke-modal",
 		visible: false,
-		getTargetAtNode: ()=> document.body,
+		target: () => document.body,
 		width: 520,
 		title: "",
 		onOk: () => {},
@@ -41,7 +41,7 @@ export default class Modal extends PureComponent {
 		closable: PropTypes.bool,
 		maskClosable: PropTypes.bool,
 		showMask: PropTypes.bool,
-		getTargetAtNode: PropTypes.func,
+		target: PropTypes.func,
 		zIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		footer: PropTypes.oneOfType([
@@ -66,23 +66,23 @@ export default class Modal extends PureComponent {
 			document.getElementById("root")
 		);
 	};
-	disableScroll = ()=>{
-		document.body.style.overflow = "hidden"
+	disableScroll = () => {
+		document.body.style.overflow = "hidden";
 		//滚动条的宽度 防止鬼畜
-		document.body.style.paddingRight = "15px"
-	}
-	enableScroll = ()=> {
-		document.body.style.overflow = ""
-		document.body.style.paddingRight = 0
-	}
+		document.body.style.paddingRight = "15px";
+	};
+	enableScroll = () => {
+		document.body.style.overflow = "";
+		document.body.style.paddingRight = 0;
+	};
 	componentWillReceiveProps({ visible }) {
 		if (visible === true) {
-			this.disableScroll()
+			this.disableScroll();
 			this.setState({
 				init: true
 			});
-		}else {
-			this.enableScroll()
+		} else {
+			this.enableScroll();
 		}
 	}
 	render() {
@@ -99,7 +99,7 @@ export default class Modal extends PureComponent {
 			okText,
 			cancelText,
 			confirmLoading,
-			getTargetAtNode,
+			target,
 			centered,
 			closable,
 			maskClosable,
@@ -116,11 +116,12 @@ export default class Modal extends PureComponent {
 			? { [`${prefixCls}-open`]: visible, [`${prefixCls}-close`]: !visible }
 			: { [`${prefixCls}-open`]: visible };
 
+		/*eslint no-mixed-spaces-and-tabs: ["error", "smart-tabs"]*/
 		const initMaskAnimate = init
 			? {
 					[`${prefixCls}-mask-show`]: visible,
 					[`${prefixCls}-mask-hide`]: !visible
-			}
+			  }
 			: { [`${prefixCls}-mask-show`]: visible };
 
 		const maskClickHandle = maskClosable ? { onClick: onCancel } : {};
@@ -183,7 +184,7 @@ export default class Modal extends PureComponent {
 					</div>
 				</div>
 			</Fragment>,
-			getTargetAtNode()
+			target()
 		);
 	}
 }

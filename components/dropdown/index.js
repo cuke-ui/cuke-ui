@@ -1,20 +1,27 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
-import cls from 'classnames';
+import React, { PureComponent } from "react";
+import PropTypes from "prop-types";
+import cls from "classnames";
 
 const triggerTypes = {
-	hover: 'hover',
-	click: 'click'
+	hover: "hover",
+	click: "click"
 };
 
-const animateType = ['slideUp','slideDown','slideLeft','slideRight','none',false]
+const animateType = [
+	"slideUp",
+	"slideDown",
+	"slideLeft",
+	"slideRight",
+	"none",
+	false
+];
 
 export default class Dropdown extends PureComponent {
 	state = {
 		visible: false
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-dropdown',
+		prefixCls: "cuke-dropdown",
 		animate: animateType[0],
 		trigger: Object.values(triggerTypes)[0],
 		onVisibleChange: () => {}
@@ -55,14 +62,14 @@ export default class Dropdown extends PureComponent {
 			...attr
 		} = this.props;
 
-		const isHover = trigger === triggerTypes['hover'];
-
+		const isHover = trigger === triggerTypes["hover"];
+		/*eslint no-mixed-spaces-and-tabs: ["error", "smart-tabs"]*/
 		const bindEvents = disabled
 			? {}
 			: {
-					[isHover ? 'onMouseEnter' : 'onMouseDown']: this.onShowOverlay,
-					[isHover ? 'onMouseLeave' : 'onBlur']: this.onHideOverlay
-			};
+					[isHover ? "onMouseEnter" : "onMouseDown"]: this.onShowOverlay,
+					[isHover ? "onMouseLeave" : "onBlur"]: this.onHideOverlay
+			  };
 		return (
 			<div
 				className={cls(prefixCls, className, {
@@ -80,7 +87,7 @@ export default class Dropdown extends PureComponent {
 				<div
 					className={cls(`${prefixCls}-overlay`, {
 						[`${prefixCls}-overlay-show`]: visible,
-						[`${prefixCls}-overlay-${animate}`]: true,
+						[`${prefixCls}-overlay-${animate}`]: true
 					})}
 				>
 					{overlay}

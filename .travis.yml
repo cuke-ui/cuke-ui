@@ -20,4 +20,9 @@ cache:
     - ".eslintcache"
     - "node_modules"
 
-script: "yarn run ci"
+script: 
+  - yarn lint
+  - yarn test -- -u
+  - yarn pub:doc
+
+after_script: "yarn coverage"

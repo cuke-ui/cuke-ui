@@ -5,6 +5,7 @@ import Breadcrumb from '../components/breadcrumb';
 import Button from '../components/button';
 import Pagination from '../components/pagination';
 import Dropdown from '../components/dropdown';
+import Affix from '../components/affix';
 import Row from '../components/row';
 import Col from '../components/col';
 
@@ -13,6 +14,7 @@ import { DownIcon } from '../components/icon';
 import '../components/breadcrumb/styles.less';
 import '../components/pagination/styles.less';
 import '../components/dropdown/styles.less';
+import '../components/affix/styles.less';
 import './styles/navigation.less';
 
 const overlay = (
@@ -194,4 +196,25 @@ storiesOf('导航', module)
 				</Row>
 			</div>
 		))
-	);
+	)
+	.add(
+		'Affix 固钉',
+		withInfo()(() => (
+			<div style={{minHeight:1000}}>
+				<h2>基本使用</h2>
+				<Affix>
+					<Button type="primary">top</Button>
+				</Affix>
+
+				<h2>设置偏移量</h2>
+				<Affix offsetTop={120}>
+					<Button type="primary">距离顶部20px触发</Button>
+				</Affix>
+
+				<h2>状态改变回调</h2>
+				<Affix style={{marginLeft:200}} offsetTop={100} onChange={(fixed)=> console.log('change:',fixed)}>
+					<Button type="primary">状态改变回调</Button>
+				</Affix>
+			</div>
+		))
+	)

@@ -1,19 +1,19 @@
-import React, { PureComponent, Fragment } from 'react';
-import PropTypes from 'prop-types';
-import { createPortal } from 'react-dom'; //传送门 将节点挂载在root 节点之外
-import cls from 'classnames';
-import { CloseIcon } from '../icon';
+import React, { PureComponent, Fragment } from "react";
+import PropTypes from "prop-types";
+import { createPortal } from "react-dom"; //传送门 将节点挂载在root 节点之外
+import cls from "classnames";
+import { CloseIcon } from "../icon";
 
-const placements = ['right', 'top', 'bottom', 'left'];
+const placements = ["right", "top", "bottom", "left"];
 export default class Drawer extends PureComponent {
 	state = {
 		init: false
 	};
 	static defaultProps = {
-		prefixCls: 'cuke-drawer',
+		prefixCls: "cuke-drawer",
 		visible: false,
-		getTargetAtNode: () => document.body,
-		title: '',
+		target: () => document.body,
+		title: "",
 		onClose: () => {},
 		maskClosable: true,
 		closable: true,
@@ -33,19 +33,19 @@ export default class Drawer extends PureComponent {
 		zIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		placement: PropTypes.oneOf(placements),
-		getTargetAtNode: PropTypes.func,
+		target: PropTypes.func,
 		onClose: PropTypes.func
 	};
 	constructor(props) {
 		super(props);
 	}
 	disableScroll = () => {
-		document.body.style.overflow = 'hidden';
+		document.body.style.overflow = "hidden";
 		//滚动条的宽度 防止鬼畜
-		document.body.style.paddingRight = '15px';
+		document.body.style.paddingRight = "15px";
 	};
 	enableScroll = () => {
-		document.body.style.overflow = '';
+		document.body.style.overflow = "";
 		document.body.style.paddingRight = 0;
 	};
 	componentWillReceiveProps({ visible }) {
@@ -66,7 +66,7 @@ export default class Drawer extends PureComponent {
 			visible,
 			onClose,
 			className,
-			getTargetAtNode,
+			target,
 			closable,
 			maskClosable,
 			showMask,
@@ -83,11 +83,12 @@ export default class Drawer extends PureComponent {
 			? { [`${prefixCls}-open`]: visible, [`${prefixCls}-close`]: !visible }
 			: { [`${prefixCls}-open`]: visible };
 
+		/*eslint no-mixed-spaces-and-tabs: ["error", "smart-tabs"]*/
 		const initMaskAnimate = init
 			? {
 					[`${prefixCls}-mask-show`]: visible,
 					[`${prefixCls}-mask-hide`]: !visible
-			}
+			  }
 			: { [`${prefixCls}-mask-show`]: visible };
 
 		const maskClickHandle = maskClosable ? { onClick: onClose } : {};
@@ -130,7 +131,7 @@ export default class Drawer extends PureComponent {
 					</div>
 				</div>
 			</Fragment>,
-			getTargetAtNode()
+			target()
 		);
 	}
 }

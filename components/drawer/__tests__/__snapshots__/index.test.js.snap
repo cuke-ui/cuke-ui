@@ -174,12 +174,12 @@ exports[`<Drawer/> should render custom direction 1`] = `
 <div>
   <Drawer
     closable={true}
-    getTargetAtNode={[Function]}
     maskClosable={true}
     onClose={[Function]}
     placement="left"
     prefixCls="cuke-drawer"
     showMask={true}
+    target={[Function]}
     title=""
     visible={true}
     width={300}
@@ -289,12 +289,12 @@ exports[`<Drawer/> should render custom direction 1`] = `
   </Drawer>
   <Drawer
     closable={true}
-    getTargetAtNode={[Function]}
     maskClosable={true}
     onClose={[Function]}
     placement="top"
     prefixCls="cuke-drawer"
     showMask={true}
+    target={[Function]}
     title=""
     visible={true}
     width={300}
@@ -404,12 +404,12 @@ exports[`<Drawer/> should render custom direction 1`] = `
   </Drawer>
   <Drawer
     closable={true}
-    getTargetAtNode={[Function]}
     maskClosable={true}
     onClose={[Function]}
     placement="right"
     prefixCls="cuke-drawer"
     showMask={true}
+    target={[Function]}
     title=""
     visible={true}
     width={300}
@@ -519,12 +519,12 @@ exports[`<Drawer/> should render custom direction 1`] = `
   </Drawer>
   <Drawer
     closable={true}
-    getTargetAtNode={[Function]}
     maskClosable={true}
     onClose={[Function]}
     placement="bottom"
     prefixCls="cuke-drawer"
     showMask={true}
+    target={[Function]}
     title=""
     visible={true}
     width={300}

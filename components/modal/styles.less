@@ -4,67 +4,66 @@
 
 @prefixCls : cuke-modal;
 
-.@{prefixCls}{
+.@{prefixCls} {
     pointer-events: auto;
-    box-shadow:@default-shadow;
+    box-shadow: @default-shadow;
     background-color: @modal-bg-color;
     border-radius: @border-radius;
     width: @modal-width;
     max-height: calc(~"100vh - 48px");
-    z-index:@modal-z-index;
+    z-index: @modal-z-index;
     transform-origin: bottom center;
     outline: none;
     position: relative;
-    margin:0 auto;
-    padding:0;
-    list-style:none;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
     transform: scale(0);
-    top:@modal-offset-top;
+    top: @modal-offset-top;
 
-
-    &.@{prefixCls}-open{
+    &.@{prefixCls}-open {
         pointer-events: auto;
         animation: cuke-fade-in  @default-transition forwards;
     }
-    &.@{prefixCls}-close{
-        animation: cuke-fade-out @default-transition forwards;   
+    &.@{prefixCls}-close {
+        animation: cuke-fade-out @default-transition forwards;
         pointer-events: none;
     }
-    @media screen and (max-width:767px){
-        width:auto !important;
+    @media screen and (max-width: 767px) {
+        width: auto !important;
         margin: 10px;
     }
-    &-header{
+    &-header {
         padding: @modal-header-padding;
-        border-bottom:1px solid @border-color;
+        border-bottom: 1px solid @border-color;
         line-height: 40px;
         text-align: center;
         position: relative;
-        .@{prefixCls}-title{
+        .@{prefixCls}-title {
             font-size: @modal-title-font-size;
-            color:@font-color;
-            margin:0;   
-            font-weight:500;
+            color: @font-color;
+            margin: 0;
+            font-weight: 500;
         }
-        .@{prefixCls}-close{
+        .@{prefixCls}-close {
             position: absolute;
             right: 20px;
-            top:13px;
+            top: 13px;
             cursor: pointer;
             color: @modal-close-font-color;
             font-size: @modal-close-font-size;
-            &,i{
-                transition:all .3s @animate-type;
+            &,i {
+                transition: all .3s @animate-type;
             }
-            &:hover{
+            &:hover {
                 transform: rotate(90deg);
-                &,i{
-                    color:@primary-color;
+                &,i {
+                    color: @primary-color;
                 }
             }
         }
     }
-    &-content{
+    &-content {
         padding: @modal-padding;
         background-clip: padding-box;
         height: auto;
@@ -74,7 +73,7 @@
         word-wrap: break-word;
         max-height: 100vh;
     }
-    &-footer{
+    &-footer {
         padding: @modal-footer-padding;
         .flex-center(space-between);
         align-content: center;
@@ -91,22 +90,22 @@
                 flex: 1;
 
                 &:first-child {
-                    border-right-color:transparent;
-                    border-left-color:transparent;
-                    border-bottom-color:transparent;
+                    border-right-color: transparent;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
                     border-top-left-radius: 0;
-                    border-top-right-radius:0;
-                    border-bottom-right-radius:0;
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
 
-                    &:hover{
-                        border-color:@border-color;    
+                    &:hover {
+                        border-color: @border-color;
                     }
                 }
 
                 &:last-child {
                     border-top-left-radius: 0;
                     border-bottom-left-radius: 0;
-                    border-top-right-radius:0;
+                    border-top-right-radius: 0;
                 }
             }
         }
@@ -116,10 +115,10 @@
 .@{prefixCls}-wrap {
     position: fixed;
     overflow: auto;
-    left:0;
-    right:0;
-    bottom:0;
-    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
     z-index: @modal-z-index;
     outline: 0;
     pointer-events: none;
@@ -128,33 +127,33 @@
 
 .@{prefixCls}-centered {
     text-align: center;
-    &::before{
+    &::before {
         content: "";
         display: inline-block;
         height: 100%;
         vertical-align: middle;
         width: 0;
     }
-    .@{prefixCls}{
+    .@{prefixCls} {
         display: inline-block;
         vertical-align: middle;
-        top:0;
+        top: 0;
         text-align: left;
     }
 }
-.@{prefixCls}-mask{
+.@{prefixCls}-mask {
     position: fixed;
     background-color: @modal-mask-color;
-    left:0;
-    top:0;
-    bottom:0;
-    top:0;
-    width:100%;
-    height:100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
     z-index: @modal-z-index;
     pointer-events: none;
     transform: scale(0);
-    &-show{
+    &-show {
         pointer-events: auto;
         animation: cuke-mask-fade-in @default-transition forwards;
     }
