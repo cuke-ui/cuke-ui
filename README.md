@@ -3,7 +3,7 @@ cuke-ui
 </h1>
 
 <h4 align="center">
-黄瓜 ui : 一个即插即用的 React UI 库 (**施工中,请勿用于生产环境...**)
+黄瓜 ui : 一个即插即用的 React UI 库 (** 施工中,请勿用于生产环境... **)
 </h4>
 
 <p align="center">
@@ -48,7 +48,7 @@ yarn add cuke-ui
 
 > 使用 cdn
 
-```
+```html
 <link rel="stylesheet" href="https://unpkg.com/cuke-ui@latest/dist/cuke-ui.min.css">
 <script type="text/javascript" src="https://unpkg.com/cuke-ui@latest/dist/cuke-ui.min.js"></script>
 ```
@@ -58,6 +58,7 @@ yarn add cuke-ui
 > 1.全部引入
 
 ```jsx
+import React from "react"
 import { Button, message } from "cuke-ui"
 import "cuke-ui/dist/cuke-ui.min.css"
 
@@ -84,13 +85,16 @@ import 'cuke-ui/lib/Button/style.less';
 "plugins": [
   ["import",{
     "libraryName":"cuke-ui",
-    "style" : (name)=> {
-      return `${name}/style.less`
-    } 
+    "style" : name => `${name}/style.less`
   }]
 ]
 
 ```
+
+### 更新日志
+
+[CHANGELOG](https://github.com/cuke-ui/cuke-ui/blob/master/CHANGELOG.md)
+
 
 ### 计划开发的组件
 > 计划2018年底完成,给自己一个交代
@@ -114,17 +118,17 @@ import 'cuke-ui/lib/Button/style.less';
 - [x] [Badge   徽标数](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Badge%20%E5%BE%BD%E6%A0%87%E6%95%B0&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel) 
 - [x] [Dropdown 下拉菜单](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%AF%BC%E8%88%AA&selectedStory=Dropdown%20%E4%B8%8B%E6%8B%89%E8%8F%9C%E5%8D%95&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Drawer 抽屉](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Drawer%20%E6%8A%BD%E5%B1%89&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
-- [ ] Checkbox  复选框
-- [ ] Switch  开关
 - [x] [Radio   单选框(有问题)](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=Radio%20%E5%8D%95%E9%80%89%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)  
 - [x] [Container 包裹容器](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%B8%83%E5%B1%80&selectedStory=Container%20%E5%8C%85%E8%A3%B9%E5%AE%B9%E5%99%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [ ] [Affix  固钉](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%AF%BC%E8%88%AA&selectedStory=Affix%20%E5%9B%BA%E9%92%89&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel) 
+- [ ] Timeline  时间轴 
+- [ ] Switch  开关
+- [ ] Checkbox  复选框
 - [ ] Select  下拉选择器  
 - [ ] Upload  上传  
 - [ ] Form    表单  
 - [ ] Rate    评分  
 - [ ] Collapse  折叠面板 
-- [ ] Affix  固钉 
-- [ ] Timeline  时间轴 
 
 ### 参考轮子
 
@@ -150,7 +154,8 @@ yarn run build
 - `lib`
 	- `button`
 	  - `index.js`
-	  - `style.less`
+    - `style.less`
+  - `其他组件`
 	- `index.js`
 
 ###  本地开发
@@ -250,6 +255,13 @@ yarn test
 
 ```
 yarn test -- --watch
+```
+
+
+### 代码风格
+
+```
+yarn lint
 ```
 
 
