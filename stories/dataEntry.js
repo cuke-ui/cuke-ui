@@ -75,7 +75,7 @@ storiesOf('数据录入', module)
 					defaultValue="默认值"
 					style={{ margin: '10px 0' }}
 				/>
-				<Input readonly value="我是只读" style={{marginBottom:10}}/>
+				<Input readonly value="只读" style={{marginBottom:10}}/>
 				<Input disabled placeholder="禁用" />
 
 				<h2>前置/后置标签</h2>

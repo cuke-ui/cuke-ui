@@ -4,12 +4,16 @@ import Tooltip from '../components/tooltip';
 import Button from '../components/button';
 import Tabs from '../components/tabs';
 import Badge from '../components/badge';
+import Row from '../components/row';
+import Col from '../components/col';
+import Timeline from '../components/timeline';
 import { SuccessIcon, InfoIcon } from '../components/icon';
 import { withInfo } from '@storybook/addon-info';
 
 import '../components/tooltip/styles.less';
 import '../components/button/styles.less';
 import '../components/tabs/styles.less';
+import '../components/timeline/styles.less';
 import './styles/dataDisplay.less';
 
 storiesOf('数据展示', module)
@@ -143,7 +147,7 @@ storiesOf('数据展示', module)
 			<div>
 				<h2>基本使用</h2>
 
-				<Badge count={5} onClick={()=> console.log('badge clicked')}>
+				<Badge count={5} onClick={() => console.log('badge clicked')}>
 					<Button>购物车</Button>
 				</Badge>
 
@@ -183,7 +187,6 @@ storiesOf('数据展示', module)
 					<SuccessIcon style={{ fontSize: 30 }} />
 				</Badge>
 
-
 				<h2>小红点</h2>
 
 				<Badge count={29} dot>
@@ -194,13 +197,108 @@ storiesOf('数据展示', module)
 					即插即用的黄瓜 ui
 				</Badge>
 
-					<Badge count={20} dot>
+				<Badge count={20} dot>
 					<Button>购物车</Button>
 				</Badge>
 
 				<Badge count={0} dot>
 					<InfoIcon style={{ fontSize: 30 }} />
 				</Badge>
+			</div>
+		))
+	)
+	.add(
+		'Timeline 时间轴',
+		withInfo()(() => (
+			<div>
+				<Row>
+					<Col span={7}>
+						<h2>基本使用</h2>
+						<Timeline>
+							<Timeline.Item>三天前 lol 中国队亚运会夺冠</Timeline.Item>
+							<Timeline.Item>目前已回到国内备战s8</Timeline.Item>
+							<Timeline.Item>接下来是LPL 季后赛</Timeline.Item>
+							<Timeline.Item>目前 RNG, RW, IG 最后可能进入 S8</Timeline.Item>
+						</Timeline>
+					</Col>
+
+					<Col span={8}>
+						<h2>自定义状态</h2>
+						<Timeline>
+							<Timeline.Item type="info">信息</Timeline.Item>
+							<Timeline.Item type="error">错误</Timeline.Item>
+							<Timeline.Item type="warning">警告</Timeline.Item>
+							<Timeline.Item type="disabled">禁用</Timeline.Item>
+							<Timeline.Item type="loading">
+								EDG.Clearlove9 正在连接...
+							</Timeline.Item>
+						</Timeline>
+					</Col>
+					<Col span={7}>
+						<h2>自定义颜色</h2>
+						<Timeline>
+							<Timeline.Item color="#654">
+								三天前 lol 中国队亚运会夺冠
+							</Timeline.Item>
+							<Timeline.Item color="yellow">目前已回到国内备战s8</Timeline.Item>
+							<Timeline.Item color="green">接下来是LPL 季后赛</Timeline.Item>
+							<Timeline.Item color="#f63">目前 RNG, RW, IG 最后可能进入 S8</Timeline.Item>
+						</Timeline>
+					</Col>
+				</Row>
+				<Row>
+
+					<Col span={4}>
+						<h2>动画1</h2>
+						<Timeline animate="slideRight">
+							<Timeline.Item>slideRight</Timeline.Item>
+							<Timeline.Item>slideRight</Timeline.Item>
+							<Timeline.Item>slideRight</Timeline.Item>
+							<Timeline.Item>slideRight</Timeline.Item>
+							<Timeline.Item>slideRight</Timeline.Item>
+						</Timeline>
+					</Col>
+					<Col span={4}>
+						<h2>动画2</h2>
+						<Timeline animate="slideLeft">
+							<Timeline.Item>slideLeft</Timeline.Item>
+							<Timeline.Item>slideLeft</Timeline.Item>
+							<Timeline.Item>slideLeft</Timeline.Item>
+							<Timeline.Item>slideLeft</Timeline.Item>
+							<Timeline.Item>slideLeft</Timeline.Item>
+						</Timeline>
+					</Col>
+					<Col span={4}>
+						<h2>动画3</h2>
+						<Timeline animate="slideUp">
+							<Timeline.Item>slideUp</Timeline.Item>
+							<Timeline.Item>slideUp</Timeline.Item>
+							<Timeline.Item>slideUp</Timeline.Item>
+							<Timeline.Item>slideUp</Timeline.Item>
+							<Timeline.Item>slideUp</Timeline.Item>
+						</Timeline>
+					</Col>
+					<Col span={4}>
+						<h2>动画4</h2>
+						<Timeline animate="slideDown">
+							<Timeline.Item>slideDown</Timeline.Item>
+							<Timeline.Item>slideDown</Timeline.Item>
+							<Timeline.Item>slideDown</Timeline.Item>
+							<Timeline.Item>slideDown</Timeline.Item>
+							<Timeline.Item>slideDown</Timeline.Item>
+						</Timeline>
+					</Col>
+					<Col span={4}>
+						<h2>自定义延时 (500ms)</h2>
+						<Timeline animate="slideRight" duration={500}>
+							<Timeline.Item>哈哈</Timeline.Item>
+							<Timeline.Item>信息</Timeline.Item>
+							<Timeline.Item>错误</Timeline.Item>
+							<Timeline.Item>警告</Timeline.Item>
+							<Timeline.Item>禁用</Timeline.Item>
+						</Timeline>
+					</Col>
+				</Row>
 			</div>
 		))
 	);

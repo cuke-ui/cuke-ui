@@ -1,0 +1,120 @@
+@import '../styles/vars.less';
+
+@prefixCls : cuke-timeline;
+
+.@{prefixCls} {
+	line-height: 1.5;
+	box-sizing: border-box;
+	font-size: @font-size;
+	color: @font-color;
+	margin: 0;
+  padding: 0;
+  &-animated {
+    .@{prefixCls}-item-content {
+      opacity: 0;
+    }
+  }
+  &-slideUp {
+    .@{prefixCls}-item-content {
+      animation: cuke-slide-up @default-transition forwards;
+    }
+  }
+  &-slideDown {
+    .@{prefixCls}-item-content {
+      animation: cuke-slide-down @default-transition forwards;
+    }
+  }
+  &-slideLeft {
+    .@{prefixCls}-item-content {
+      animation: cuke-slide-left @default-transition forwards;
+    }
+  }
+  &-slideRight {
+    .@{prefixCls}-item-content {
+      animation: cuke-slide-right @default-transition forwards;
+    }
+  }
+
+	&-item {
+		position: relative;
+		padding-bottom: 20px;
+		margin: 0;
+		font-size: inherit;
+
+		&:last-child {
+			.@{prefixCls}-item-line {
+				display: none;
+			}
+		}
+
+		&-dot {
+			position: absolute;
+			left: 0;
+			top: 0;
+			background-color: #fff;
+			border: 2px solid @primary-color;
+			border-radius: 50%;
+			width: @cuke-timeline-dot-width;
+			height: @cuke-timeline-dot-height;
+		}
+		&-dot-loading {
+			background-color: #fff;
+			position: absolute;
+			left: 0;
+			top: 0;
+			margin-left: -2px;
+			cursor: no-drop;
+			svg {
+				animation: cuke-spin @loading-time linear infinite;
+				color: @loading-color;
+			}
+		}
+
+		&-primary {
+			.@{prefixCls}-item-dot {
+				border-color: @primary-color;
+			}
+		}
+		&-warning {
+			.@{prefixCls}-item-dot {
+				border-color: @warning-color;
+			}
+		}
+		&-success {
+			.@{prefixCls}-item-dot {
+				border-color: @success-color;
+			}
+		}
+		&-error {
+			.@{prefixCls}-item-dot {
+				border-color: @error-color;
+			}
+		}
+		&-info {
+			.@{prefixCls}-item-dot {
+				border-color: @info-color;
+			}
+		}
+		&-disabled {
+			.@{prefixCls}-item-dot {
+				border-color: @disabled-color;
+			}
+			cursor: no-drop;
+		}
+
+		&-content {
+			margin: @cuke-timeline-content-offset;
+			position: relative;
+      top: -2px;
+		}
+
+		&-line {
+			position: absolute;
+			width: @cuke-timeline-line-width;
+			height: 100%;
+			left: 4px;
+			top: 0.75em;
+			background-color: @border-color;
+		}
+	}
+}

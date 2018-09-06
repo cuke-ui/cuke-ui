@@ -25,5 +25,6 @@ export { default as Drawer } from "./drawer";
 export { default as Affix } from "./affix";
 export { default as Radio } from "./radio";
 export { default as Container } from "./container";
+export { default as Timeline } from "./timeline";
 
 export { default as version } from "./version";

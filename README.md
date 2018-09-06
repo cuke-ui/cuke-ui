@@ -28,7 +28,9 @@ cuke-ui
 </p>
 
 ### 名字由来
-cuke(黄瓜), 常见的一种蔬菜, 希望这个项目也成为常见的一个依赖(虽然这是不可能的), 其实 黄瓜也符合 这个组件库的 宗旨 : 即插即用
+cuke(黄瓜), 常见的一种蔬菜, 希望这个项目也成为常见的一个依赖(虽然这是不可能的), 
+其中黄瓜也符合 这个组件库的 宗旨 : 即插即用
+其次 cuke 谐音 (cool ke) 很酷的李金珂的 意思
 主题色 采用 黄瓜绿, 清新又可爱, 组件借鉴(抄袭)了 有牌面的  Ant Design, 抱着学习的目的,开发了这个组件库, 所以建议不要用于生产环境,可能心情不好就不维护了
 
 ### 在线演示
@@ -120,7 +122,7 @@ import 'cuke-ui/lib/Button/style.less';
 - [x] [Drawer 抽屉](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Drawer%20%E6%8A%BD%E5%B1%89&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Radio   单选框(有问题)](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=Radio%20%E5%8D%95%E9%80%89%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)  
 - [x] [Container 包裹容器](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%B8%83%E5%B1%80&selectedStory=Container%20%E5%8C%85%E8%A3%B9%E5%AE%B9%E5%99%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
-- [ ] [Affix  固钉](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%AF%BC%E8%88%AA&selectedStory=Affix%20%E5%9B%BA%E9%92%89&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel) 
+- [x] [Affix  固钉](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%AF%BC%E8%88%AA&selectedStory=Affix%20%E5%9B%BA%E9%92%89&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel) 
 - [ ] Timeline  时间轴 
 - [ ] Switch  开关
 - [ ] Checkbox  复选框

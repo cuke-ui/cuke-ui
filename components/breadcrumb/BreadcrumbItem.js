@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import cls from "classnames";
-
-class BreadcrumbItem extends PureComponent {
+export default class BreadcrumbItem extends PureComponent {
 	static defaultProps = {
 		prefixCls: "cuke-breadcrumb-item",
 		separator: "/"
@@ -17,5 +16,3 @@ class BreadcrumbItem extends PureComponent {
 		);
 	}
 }
-
-export default BreadcrumbItem;

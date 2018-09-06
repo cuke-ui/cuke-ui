@@ -1,0 +1,541 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Timeline/> should render Timeline 1`] = `
+<ul
+  class="cuke-timeline"
+>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-primary"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0s"
+    >
+      三天前 lol 中国队亚运会夺冠
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-primary"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.1s"
+    >
+      目前已回到国内备战s8
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-primary"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.2s"
+    >
+      接下来是LPL 季后赛
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-primary"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.3s"
+    >
+      目前 RNG, RW, IG 最后可能进入 S8
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`<Timeline/> should render custom animate 1`] = `
+<div>
+  <ul
+    class="cuke-timeline cuke-timeline-animated cuke-timeline-slideLeft"
+  >
+    <li
+      class="cuke-timeline-item cuke-timeline-item-primary"
+    >
+      <div
+        class="cuke-timeline-item-line"
+      />
+      <div
+        class="cuke-timeline-item-dot"
+        style="border-color:"
+      >
+        <div
+          class="cuke-timeline-dot"
+        />
+      </div>
+      <div
+        class="cuke-timeline-item-content"
+        style="animation-delay:0s"
+      >
+        1
+      </div>
+    </li>
+    <li
+      class="cuke-timeline-item cuke-timeline-item-primary"
+    >
+      <div
+        class="cuke-timeline-item-line"
+      />
+      <div
+        class="cuke-timeline-item-dot"
+        style="border-color:"
+      >
+        <div
+          class="cuke-timeline-dot"
+        />
+      </div>
+      <div
+        class="cuke-timeline-item-content"
+        style="animation-delay:0.1s"
+      >
+        2
+      </div>
+    </li>
+  </ul>
+  <ul
+    class="cuke-timeline cuke-timeline-animated cuke-timeline-slideRight"
+  >
+    <li
+      class="cuke-timeline-item cuke-timeline-item-primary"
+    >
+      <div
+        class="cuke-timeline-item-line"
+      />
+      <div
+        class="cuke-timeline-item-dot"
+        style="border-color:"
+      >
+        <div
+          class="cuke-timeline-dot"
+        />
+      </div>
+      <div
+        class="cuke-timeline-item-content"
+        style="animation-delay:0s"
+      >
+        1
+      </div>
+    </li>
+    <li
+      class="cuke-timeline-item cuke-timeline-item-primary"
+    >
+      <div
+        class="cuke-timeline-item-line"
+      />
+      <div
+        class="cuke-timeline-item-dot"
+        style="border-color:"
+      >
+        <div
+          class="cuke-timeline-dot"
+        />
+      </div>
+      <div
+        class="cuke-timeline-item-content"
+        style="animation-delay:0.1s"
+      >
+        2
+      </div>
+    </li>
+  </ul>
+  <ul
+    class="cuke-timeline cuke-timeline-animated cuke-timeline-slideUp"
+  >
+    <li
+      class="cuke-timeline-item cuke-timeline-item-primary"
+    >
+      <div
+        class="cuke-timeline-item-line"
+      />
+      <div
+        class="cuke-timeline-item-dot"
+        style="border-color:"
+      >
+        <div
+          class="cuke-timeline-dot"
+        />
+      </div>
+      <div
+        class="cuke-timeline-item-content"
+        style="animation-delay:0s"
+      >
+        1
+      </div>
+    </li>
+    <li
+      class="cuke-timeline-item cuke-timeline-item-primary"
+    >
+      <div
+        class="cuke-timeline-item-line"
+      />
+      <div
+        class="cuke-timeline-item-dot"
+        style="border-color:"
+      >
+        <div
+          class="cuke-timeline-dot"
+        />
+      </div>
+      <div
+        class="cuke-timeline-item-content"
+        style="animation-delay:0.1s"
+      >
+        2
+      </div>
+    </li>
+  </ul>
+  <ul
+    class="cuke-timeline cuke-timeline-animated cuke-timeline-slideBottom"
+  >
+    <li
+      class="cuke-timeline-item cuke-timeline-item-primary"
+    >
+      <div
+        class="cuke-timeline-item-line"
+      />
+      <div
+        class="cuke-timeline-item-dot"
+        style="border-color:"
+      >
+        <div
+          class="cuke-timeline-dot"
+        />
+      </div>
+      <div
+        class="cuke-timeline-item-content"
+        style="animation-delay:0s"
+      >
+        1
+      </div>
+    </li>
+    <li
+      class="cuke-timeline-item cuke-timeline-item-primary"
+    >
+      <div
+        class="cuke-timeline-item-line"
+      />
+      <div
+        class="cuke-timeline-item-dot"
+        style="border-color:"
+      >
+        <div
+          class="cuke-timeline-dot"
+        />
+      </div>
+      <div
+        class="cuke-timeline-item-content"
+        style="animation-delay:0.1s"
+      >
+        2
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`<Timeline/> should render custom color 1`] = `
+<ul
+  class="cuke-timeline"
+>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-primary"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:#654"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0s"
+    >
+      三天前 lol 中国队亚运会夺冠
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-primary"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:yellow"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.1s"
+    >
+      目前已回到国内备战s8
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-primary"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:green"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.2s"
+    >
+      接下来是LPL 季后赛
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-primary"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:#f63"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.3s"
+    >
+      目前 RNG, RW, IG 最后可能进入 S8
+    </div>
+  </li>
+</ul>
+`;
+
+exports[`<Timeline/> should render custom type 1`] = `
+<ul
+  class="cuke-timeline"
+>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-info"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0s"
+    >
+      信息
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-error"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.1s"
+    >
+      错误
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-warning"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.2s"
+    >
+      警告
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-disabled"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot"
+      style="border-color:"
+    >
+      <div
+        class="cuke-timeline-dot"
+      />
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.3s"
+    >
+      禁用
+    </div>
+  </li>
+  <li
+    class="cuke-timeline-item cuke-timeline-item-loading"
+  >
+    <div
+      class="cuke-timeline-item-line"
+    />
+    <div
+      class="cuke-timeline-item-dot-loading"
+    >
+      <svg
+        attr="[object Object]"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="color:"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <line
+          x1="12"
+          x2="12"
+          y1="2"
+          y2="6"
+        />
+        <line
+          x1="12"
+          x2="12"
+          y1="18"
+          y2="22"
+        />
+        <line
+          x1="4.93"
+          x2="7.76"
+          y1="4.93"
+          y2="7.76"
+        />
+        <line
+          x1="16.24"
+          x2="19.07"
+          y1="16.24"
+          y2="19.07"
+        />
+        <line
+          x1="2"
+          x2="6"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="18"
+          x2="22"
+          y1="12"
+          y2="12"
+        />
+        <line
+          x1="4.93"
+          x2="7.76"
+          y1="19.07"
+          y2="16.24"
+        />
+        <line
+          x1="16.24"
+          x2="19.07"
+          y1="7.76"
+          y2="4.93"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-timeline-item-content"
+      style="animation-delay:0.4s"
+    >
+      EDG.Clearlove9 正在连接...
+    </div>
+  </li>
+</ul>
+`;
