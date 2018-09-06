@@ -1,0 +1,22 @@
+@import '../styles/vars.less';
+@import '../styles/mixins.less';
+
+@prefixCls : cuke-container;
+.@{prefixCls} {
+	&::before,
+	&::after {
+		content: '';
+		clear: both;
+		zoom: 1;
+	}
+  width: @container-width;
+  margin: 0 auto;
+  padding: @container-padding;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+
+  &-centered {
+    .flex-center();
+  }
+}

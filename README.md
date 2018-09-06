@@ -46,6 +46,13 @@ npm i cuke-ui --save
 yarn add cuke-ui
 ```
 
+> 使用 cdn
+
+```
+<link rel="stylesheet" href="https://unpkg.com/cuke-ui@latest/dist/cuke-ui.min.css">
+<script type="text/javascript" src="https://unpkg.com/cuke-ui@latest/dist/cuke-ui.min.js"></script>
+```
+
 ### 如何使用
 
 > 1.全部引入
@@ -68,6 +75,21 @@ class Text extends React.Component {
 ```js
 import Button from 'cuke-ui/lib/Button';
 import 'cuke-ui/lib/Button/style.less';
+```
+
+> 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+
+```js
+//.babelrc
+"plugins": [
+  ["import",{
+    "libraryName":"cuke-ui",
+    "style" : (name)=> {
+      return `${name}/style.less`
+    } 
+  }]
+]
+
 ```
 
 ### 计划开发的组件
@@ -94,7 +116,8 @@ import 'cuke-ui/lib/Button/style.less';
 - [x] [Drawer 抽屉](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%93%8D%E4%BD%9C%E5%8F%8D%E9%A6%88&selectedStory=Drawer%20%E6%8A%BD%E5%B1%89&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [ ] Checkbox  复选框
 - [ ] Switch  开关
-- [ ] Radio   单选框  
+- [x] [Radio   单选框(有问题)](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=Radio%20%E5%8D%95%E9%80%89%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)  
+- [x] [Container 包裹容器](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E5%B8%83%E5%B1%80&selectedStory=Container%20%E5%8C%85%E8%A3%B9%E5%AE%B9%E5%99%A8&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [ ] Select  下拉选择器  
 - [ ] Upload  上传  
 - [ ] Form    表单  
@@ -243,4 +266,8 @@ yarn build:doc
 ```
 yarn pub:doc
 ```
+
+### License
+
+[MIT](https://github.com/cuke-ui/cuke-ui/blob/master/LICENSE)
 

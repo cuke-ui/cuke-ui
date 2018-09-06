@@ -97,13 +97,8 @@ const config = {
 			filename: "[name].min.css"
 		}),
 		//在打包的文件之前 加上版权说明
-		new webpack.BannerPlugin(`
-    MIT License
-  
-    Copyright (c) 2018 ${name} version(${version})
-
-    ${description}
-    ${fs.readFileSync(path.join(process.cwd(), "LICENSE"))}
+		new webpack.BannerPlugin(` \n ${name} v${version} \n ${description}
+    \n ${fs.readFileSync(path.join(process.cwd(), "LICENSE"))}
 	`),
 		new webpack.DefinePlugin({
 			"process.env.NODE_ENV": JSON.stringify("production")

@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "start": "yarn dev",
-    "clean": "rimraf dist lib",
+    "clean": "rimraf dist && rimraf lib",
     "dev": "start-storybook -p 8080 -c .storybook",
     "upgrade": "yarn upgrade",
     "stylelint:fix": "stylelint 'components/**/*.less' --syntax less --fix",
