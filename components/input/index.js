@@ -6,6 +6,7 @@ export default class Input extends PureComponent {
 	static defaultProps = {
 		prefixCls: "cuke-input",
 		disabled: false,
+		readonly: false,
 		placeholder: "",
 		type: "text",
 		onChange: () => {}
@@ -15,6 +16,7 @@ export default class Input extends PureComponent {
 		prefixCls: PropTypes.string.isRequired,
 		placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
 		disabled: PropTypes.bool,
+		readonly: PropTypes.bool,
 		type: PropTypes.oneOf([
 			"text",
 			"password",
@@ -30,9 +32,7 @@ export default class Input extends PureComponent {
 	};
 
 	onChange = e => {
-		if (!this.props.disabled) {
-			this.props.onChange(e);
-		}
+		this.props.onChange(e);
 	};
 
 	render() {
@@ -42,22 +42,23 @@ export default class Input extends PureComponent {
 			prefixCls,
 			className,
 			disabled,
+			readonly,
 			addonBefore,
 			addonAfter,
 			...attr
 		} = this.props;
-		const isDisabled = disabled ? { disabled: true } : {};
 
 		const inputEle = (
 			<input
 				type={type}
+				disabled={disabled}
+				readOnly={readonly}
 				className={cls(prefixCls, className, {
 					[`${prefixCls}-disabled`]: disabled
 				})}
 				placeholder={placeholder}
 				onChange={this.onChange}
 				{...attr}
-				{...isDisabled}
 			/>
 		);
 

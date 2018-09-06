@@ -4,7 +4,6 @@ import { storiesOf } from '@storybook/react';
 import WordPadPage from './pages/wordPad';
 import RadioPage from './pages/radio';
 import Input from '../components/input';
-import Radio from '../components/radio';
 import { withInfo } from '@storybook/addon-info';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
@@ -73,9 +72,10 @@ storiesOf('数据录入', module)
 				<Input type="number" placeholder="请输入数字" />
 				<Input
 					placeholder="请输入"
-					defaultValue={'默认值'}
+					defaultValue="默认值"
 					style={{ margin: '10px 0' }}
 				/>
+				<Input readonly value="我是只读" style={{marginBottom:10}}/>
 				<Input disabled placeholder="禁用" />
 
 				<h2>前置/后置标签</h2>

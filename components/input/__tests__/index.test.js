@@ -10,6 +10,7 @@ describe("<Input/>", () => {
 				<Input type="text" />
 				<Input type="password" placeholder="请输入" />
 				<Input type="number" placeholder="请输入" />
+				<Input readonly value="我是只读" />
 				<Input disabled placeholder="禁用" />
 			</div>
 		);

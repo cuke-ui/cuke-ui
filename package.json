@@ -26,7 +26,6 @@
     "build:doc": "build-storybook -c .storybook -o .out",
     "pub:doc": "yarn build:doc && storybook-to-ghpages --existing-output-dir=.out",
     "prepublish": "yarn build",
-    "prepush": "yarn pub:doc",
     "build": "yarn run clean && yarn build:lib && yarn build:umd && yarn build:css",
     "build:css": "cd scripts && gulp",
     "build:lib": "babel components -d lib",

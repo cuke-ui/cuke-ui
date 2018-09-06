@@ -18,6 +18,13 @@ exports[`<Input/> should render Input 1`] = `
     type="number"
   />
   <input
+    class="cuke-input"
+    placeholder=""
+    readonly=""
+    type="text"
+    value="我是只读"
+  />
+  <input
     class="cuke-input cuke-input-disabled"
     disabled=""
     placeholder="禁用"
