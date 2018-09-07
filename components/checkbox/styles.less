@@ -1,0 +1,125 @@
+@import "../styles/vars.less";
+
+@prefixCls : cuke-checkbox;
+.@{prefixCls} {
+  font-size: @font-size;
+  color: @font-color;
+  outline: none;
+  display: inline-block;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: sub;
+  white-space: nowrap;
+
+  &-group {
+
+    .@{prefixCls}-wrapper {
+      margin-right: @cuke-checkbox-group-offset-right;
+    }
+
+    &.disabled {
+      color: red;
+    }
+  }
+
+  &-input {
+    box-sizing: border-box;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 1;
+  }
+
+  &-disabled {
+    .@{prefixCls}-inner {
+      border-color: @border-color !important;
+      background-color: @disabled-color !important;
+      &::after {
+        border-color: @disabled-color;
+      }
+    }
+    .@{prefixCls}-input {
+      cursor: no-drop;
+    }
+
+    & + span {
+      cursor: no-drop;
+      color: @disabled-font-color;
+    }
+  }
+
+  &-checked {
+    .@{prefixCls}-inner {
+      border-color: @primary-color;
+      background-color: @primary-color;
+      &::after {
+        transform: rotate(45deg) scale(1);
+        //勾√ 晚一点出现
+        transition: all .2s @animate-type .1s;
+      }
+    }
+
+    &.@{prefixCls}-disabled {
+      .@{prefixCls}-inner {
+        &::after {
+          border-color: fade(@font-color, 10%);
+        }
+      }
+    }
+  }
+
+  &-inner {
+    display: inline-block;
+    width: @cuke-checkbox-width;
+    height: @cuke-checkbox-height;
+    border: 1px solid @border-color;
+    margin-right: @cuke-checkbox-offset-right;
+    transition: all @default-transition;
+    position: relative;
+    left: 0;
+    top: 0;
+    border-radius: @border-radius - 2px;
+
+    &::after {
+      //画一个矩形 旋转45° 形成一个 √
+      transform: rotate(45deg) scale(0);
+      position: absolute;
+      left: 4px;
+      top: 0;
+      display: table;
+      width: 5px;
+      height: 8px;
+      border: 2px solid #fff;
+      border-top: 0;
+      border-left: 0;
+      content: ' ';
+      transition: all .1s cubic-bezier(.71, -0.46, .88, .6);
+    }
+  }
+
+  &-indeterminate {
+    .@{prefixCls}-inner {
+      border-color: @primary-color;
+      background-color: @primary-color;
+      &::after {
+        width: 0;
+        transform: rotate(90deg) scale(1) translate(1px, -2px);
+      }
+    }
+  }
+}
+
+.@{prefixCls}-wrapper {
+  color: @font-color;
+  font-size: @font-size;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}

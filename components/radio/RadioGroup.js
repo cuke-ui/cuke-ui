@@ -9,12 +9,14 @@ export default class RadioGroup extends PureComponent {
 	};
 	static defaultProps = {
 		prefixCls: "cuke-radio-group",
+		disabled: false,
 		onChange: () => {}
 	};
 
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
-		onChange: PropTypes.func
+		onChange: PropTypes.func,
+		disabled: PropTypes.bool
 	};
 
 	constructor(props) {
@@ -36,13 +38,14 @@ export default class RadioGroup extends PureComponent {
 	}
 
 	render() {
-		const { children, prefixCls, className, ...attr } = this.props;
+		const { children, prefixCls, disabled, className, ...attr } = this.props;
 		const { value } = this.state;
 
 		// 变量子节点 对比当前value 和  子节点 value 是否相同
 		const radios = React.Children.map(children, radio => {
 			return (
 				<Radio
+					disabled={disabled}
 					{...radio.props}
 					onChange={e => this.onRadioChange(e)}
 					checked={value === radio.props.value}

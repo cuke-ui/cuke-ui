@@ -3,12 +3,14 @@ import { storiesOf } from '@storybook/react';
 
 import WordPadPage from './pages/wordPad';
 import RadioPage from './pages/radio';
+import CheckboxPage from './pages/checkbox';
 import Input from '../components/input';
 import { withInfo } from '@storybook/addon-info';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
 import '../components/input/styles.less';
 import '../components/radio/styles.less';
+import '../components/checkbox/styles.less';
 
 storiesOf('数据录入', module)
 	.add(
@@ -121,4 +123,8 @@ storiesOf('数据录入', module)
 	</Radio.Group>
 </div>
 `)(() => <RadioPage />),{notes:"test"}
+	)
+	.add(
+		'Checkbox 复选框',
+		withInfo()(() => <CheckboxPage />)
 	);

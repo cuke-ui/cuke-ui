@@ -34,6 +34,16 @@ export default class RadioPage extends PureComponent {
 						小黑
 					</Radio>
 				</Radio.Group>
+				<h2>全部禁用</h2>
+				<Radio.Group value={'小红'} disabled>
+					<Radio value="小红">小红</Radio>
+					<Radio value="小明">小明</Radio>
+					<Radio value="小美">小美</Radio>
+					<Radio value="小芳">小芳</Radio>
+					<Radio value="小黑">
+						小黑
+					</Radio>
+				</Radio.Group>
 			</div>
 		);
 	}

@@ -1,72 +1,61 @@
 import React, { PureComponent } from "react";
-import cls from "classnames";
 import PropTypes from "prop-types";
+import cls from "classnames";
 
-export default class Radio extends PureComponent {
-	state = {
-		checked: this.props.checked || this.props.defaultChecked
-	};
+export default class Checkbox extends PureComponent {
 	static defaultProps = {
-		prefixCls: "cuke-radio",
+		prefixCls: "cuke-checkbox",
 		defaultChecked: false,
-		checked: false
+		indeterminate: false,
+		checked: false,
+		onChange: () => {}
 	};
-
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
 		onChange: PropTypes.func,
 		disabled: PropTypes.bool,
 		checked: PropTypes.bool,
-		defaultChecked: PropTypes.bool
+		defaultChecked: PropTypes.bool,
+		indeterminate: PropTypes.bool
 	};
-
-	constructor(props) {
-		super(props);
-	}
-
-	//TODO: onChange 会触发两次
-	onChange = e => {
-		this.setState({
-			checked: true
-		});
-		if (this.props.onChange) {
-			this.props.onChange(e);
-		}
+	state = {
+		checked: this.props.checked || this.props.defaultChecked
 	};
-
-	componentWillReceiveProps({ checked }) {
-		//当 RadioGroup 像父元素传值时 改变当前选中状态
-		this.setState({
-			checked
+	_onChange = e => {
+		this.setState(({ checked }) => {
+			return {
+				checked: !checked
+			};
 		});
-	}
+		this.props.onChange(e);
+	};
 
 	render() {
 		const {
-			prefixCls,
-			value,
 			className,
-			children,
+			prefixCls,
 			disabled,
+			children,
+			value,
+			indeterminate,
 			...attr
 		} = this.props;
-
 		const { checked } = this.state;
-
 		return (
 			<label className={cls(`${prefixCls}-wrapper`)} {...attr}>
 				<span
 					className={cls(prefixCls, className, {
 						[`${prefixCls}-checked`]: checked,
-						[`${prefixCls}-disabled`]: disabled
+						[`${prefixCls}-disabled`]: disabled,
+						[`${prefixCls}-indeterminate`]: checked && indeterminate
 					})}
 				>
 					<input
-						type="radio"
+						type="checkbox"
 						value={value}
 						checked={checked}
 						className={cls(`${prefixCls}-input`)}
-						onChange={e => this.onChange(e)}
+						onChange={this._onChange}
 						disabled={disabled}
 					/>
 					<span className={cls(`${prefixCls}-inner`)} />

@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Checkbox/> should render Checkbox 1`] = `
+<div>
+  <label
+    class="cuke-checkbox-wrapper"
+  >
+    <span
+      class="cuke-checkbox"
+    >
+      <input
+        class="cuke-checkbox-input"
+        type="checkbox"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span>
+      黄瓜 ui
+    </span>
+  </label>
+  <label
+    class="cuke-checkbox-wrapper"
+  >
+    <span
+      class="cuke-checkbox cuke-checkbox-disabled"
+    >
+      <input
+        class="cuke-checkbox-input"
+        disabled=""
+        type="checkbox"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span>
+      黄瓜 ui
+    </span>
+  </label>
+  <label
+    checked=""
+    class="cuke-checkbox-wrapper"
+  >
+    <span
+      class="cuke-checkbox cuke-checkbox-checked cuke-checkbox-disabled"
+    >
+      <input
+        checked=""
+        class="cuke-checkbox-input"
+        disabled=""
+        type="checkbox"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span />
+  </label>
+</div>
+`;

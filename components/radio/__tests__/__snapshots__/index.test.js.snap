@@ -40,10 +40,10 @@ exports[`<Radio/> should render Radio 1`] = `
     </span>
   </label>
   <label
+    checked=""
     class="cuke-radio-wrapper"
   >
     <span
-      checked=""
       class="cuke-radio cuke-radio-checked cuke-radio-disabled"
     >
       <input
@@ -68,10 +68,10 @@ exports[`<Radio/> should render RadioGroup 1`] = `
     value="小红"
   >
     <label
+      checked=""
       class="cuke-radio-wrapper"
     >
       <span
-        checked=""
         class="cuke-radio cuke-radio-checked"
       >
         <input
