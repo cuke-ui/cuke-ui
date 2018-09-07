@@ -22,9 +22,10 @@ export default class TimelineItem extends PureComponent {
 		color: ""
 	};
 
-	static propsTypes = {
+	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
 		types: PropTypes.oneOf(types),
+		color: PropTypes.string,
 		dot: PropTypes.oneOfType([
 			PropTypes.object,
 			PropTypes.string,

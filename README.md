@@ -24,7 +24,7 @@ cuke-ui
   </a>
   <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
     <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg"/>
-  <a>
+  </a>
 </p>
 
 ### 名字由来
@@ -80,7 +80,7 @@ import Button from 'cuke-ui/lib/Button';
 import 'cuke-ui/lib/Button/style.less';
 ```
 
-> 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+> 3.使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 
 ```js
 //.babelrc
@@ -89,7 +89,6 @@ import 'cuke-ui/lib/Button/style.less';
     "libraryName":"cuke-ui",
     "style" : name => `${name}/style.less`
   }]
-]
 
 ```
 
