@@ -22,6 +22,9 @@ cuke-ui
    <a href="https://coveralls.io/github/cuke-ui/cuke-ui?branch=master" title="Coverage Status">
     <img src="https://coveralls.io/repos/github/cuke-ui/cuke-ui/badge.svg?branch=master" alt="Coverage Status"/>
   </a>
+  <a href="https://david-dm.org/cuke-ui/cuke-ui" title="dependencies status">
+    <img src="https://david-dm.org/cuke-ui/cuke-ui/status.svg"/>
+  </a>
   <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
     <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg"/>
   </a>
