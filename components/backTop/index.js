@@ -16,7 +16,7 @@ const scrollToTop = () => {
 
 export default class BackTop extends PureComponent {
 	state = {
-		visible: false
+		visible: null
 	};
 	static propsTypes = {
 		prefixCls: PropTypes.string.isRequired,
@@ -49,7 +49,8 @@ export default class BackTop extends PureComponent {
 			<div
 				className={cls(prefixCls, className, {
 					[`${prefixCls}-open`]: visible,
-					[`${prefixCls}-close`]: !visible
+					[`${prefixCls}-close`]: !visible,
+					"cuke-ui-no-animate": visible === null
 				})}
 				{...attr}
 			>

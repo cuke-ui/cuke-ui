@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import BackTop from '../components/backTop';
 import Button from '../components/button';
+import ImageColorPicker from './pages/imageColorPicker';
 
 storiesOf('其他', module)
 .add('BackTop 回到顶部', withInfo()(() => (
@@ -25,4 +26,7 @@ storiesOf('其他', module)
             <Button type="primary">自定义</Button>
         </BackTop>
     </div>
+)))
+.add('ImageColorPicker 图片取色器', withInfo()(() => (
+	<ImageColorPicker/>
 )))
