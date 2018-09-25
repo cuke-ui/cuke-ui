@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default class Col extends PureComponent {
 	static defaultProps = {
 		prefixCls: "cuke-col",
-		gutter: 10
+		gutter: 24
 	};
 
 	static propTypes = {

@@ -5,12 +5,14 @@ import WordPadPage from './pages/wordPad';
 import RadioPage from './pages/radio';
 import CheckboxPage from './pages/checkbox';
 import Input from '../components/input';
+import Switch from '../components/switch';
 import { withInfo } from '@storybook/addon-info';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
 import '../components/input/styles.less';
 import '../components/radio/styles.less';
 import '../components/checkbox/styles.less';
+import './styles/dataEntry.less';
 
 storiesOf('数据录入', module)
 	.add(
@@ -77,7 +79,7 @@ storiesOf('数据录入', module)
 					defaultValue="默认值"
 					style={{ margin: '10px 0' }}
 				/>
-				<Input readonly value="只读" style={{marginBottom:10}}/>
+				<Input readonly value="只读" style={{ marginBottom: 10 }} />
 				<Input disabled placeholder="禁用" />
 
 				<h2>前置/后置标签</h2>
@@ -122,9 +124,38 @@ storiesOf('数据录入', module)
 		</Radio>
 	</Radio.Group>
 </div>
-`)(() => <RadioPage />),{notes:"test"}
+`)(() => <RadioPage />), { notes: "test" }
 	)
 	.add(
 		'Checkbox 复选框',
 		withInfo()(() => <CheckboxPage />)
+	)
+	.add(
+		'Switch 开关',
+		withInfo()(() => (
+			<div>
+				<h2>基本使用</h2>
+				<Switch onChange={(checked)=> console.log('checked',checked)}/>
+
+				<h2>描述文字</h2>
+				<Switch checkedChildren="♂" unCheckedChildren="♀"/>
+				<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked/>
+
+				<h2>默认选中</h2>
+				<Switch defaultChecked/>
+
+				<h2>禁用</h2>
+				<Switch checkedChildren="开" unCheckedChildren="关" disabled/>
+				<Switch defaultChecked disabled/>
+
+				<h2>加载中</h2>
+				<Switch checkedChildren="开" unCheckedChildren="关" loading/>
+				<Switch defaultChecked loading/>
+
+				<h2>三种大小</h2>
+				<Switch defaultChecked size="large"/>
+				<Switch defaultChecked size="default"/>
+				<Switch defaultChecked size="small"/>
+			</div>
+		))
 	);

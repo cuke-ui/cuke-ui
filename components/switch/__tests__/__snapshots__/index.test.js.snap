@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Switch/> should render a <Switch/> components 1`] = `
+<div>
+  <span
+    class="cuke-switch"
+  >
+    <span
+      class="cuke-switch-inner"
+    />
+  </span>
+  <span
+    class="cuke-switch"
+  >
+    <span
+      class="cuke-switch-inner"
+    >
+      ♀
+    </span>
+  </span>
+  <span
+    class="cuke-switch cuke-switch-checked"
+  >
+    <span
+      class="cuke-switch-inner"
+    >
+      开
+    </span>
+  </span>
+</div>
+`;
+
+exports[`<Switch/> should render sizes 1`] = `
+<div>
+  <span
+    class="cuke-switch"
+  >
+    <span
+      class="cuke-switch-inner"
+    />
+  </span>
+  <span
+    class="cuke-switch cuke-switch-large"
+  >
+    <span
+      class="cuke-switch-inner"
+    />
+  </span>
+  <span
+    class="cuke-switch cuke-switch-small"
+  >
+    <span
+      class="cuke-switch-inner"
+    />
+  </span>
+</div>
+`;
