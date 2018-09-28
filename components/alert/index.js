@@ -27,9 +27,21 @@ export default class Alert extends PureComponent {
 	};
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
-		message: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
-		closeText: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
-		description: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
+		message: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		closeText: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		description: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
 		closable: PropTypes.bool,
 		showIcon: PropTypes.bool,
 		onClose: PropTypes.func,

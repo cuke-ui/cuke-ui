@@ -20,10 +20,26 @@ export default class MusicPlayer extends Component {
 		autoPlay: PropTypes.bool,
 		playModeText: PropTypes.object,
 		panelTitle: PropTypes.string,
-		closeText: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
-		openText: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
-		notContentText: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
-		controllerTitle: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
+		closeText: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		openText: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		notContentText: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		controllerTitle: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
 		defaultPosition: PropTypes.shape({
 			top: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
 			left: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -56,11 +72,23 @@ export default class MusicPlayer extends Component {
 		toggleMode: PropTypes.bool,
 		once: PropTypes.bool,
 		extendsContent: PropTypes.array,
-		checkedText: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
-		unCheckedText: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
+		checkedText: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		unCheckedText: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
 		defaultVolume: PropTypes.number,
 		playModeShowTime: PropTypes.number,
-		bounds: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
+		bounds: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
 		showMiniProcessBar: PropTypes.bool,
 		loadAudioErrorPlayNext: PropTypes.bool,
 		preload: PropTypes.oneOfType([

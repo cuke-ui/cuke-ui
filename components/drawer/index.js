@@ -118,7 +118,7 @@ export default class Drawer extends PureComponent {
 							className,
 							initModalAnimate,
 							`${prefixCls}-${placement}`,
-							{"no-title": !title}
+							{ "no-title": !title }
 						)}
 						ref={node => (this.modal = node)}
 						style={{

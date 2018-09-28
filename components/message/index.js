@@ -27,7 +27,11 @@ export default class Message extends PureComponent {
 		};
 	}
 	static propTypes = {
-		title: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]).isRequired,
+		title: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]).isRequired,
 		duration: PropTypes.number.isRequired,
 		darkTheme: PropTypes.bool,
 		onClose: PropTypes.func
@@ -57,6 +61,9 @@ export default class Message extends PureComponent {
 				onClose();
 			});
 		}, duration * 1000);
+	}
+	componentWillUnmount(){
+		this.removeNode()
 	}
 	removeNode = () => {
 		ReactDOM.unmountComponentAtNode(this.container);

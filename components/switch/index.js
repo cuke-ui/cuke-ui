@@ -26,8 +26,16 @@ export default class Switch extends React.PureComponent {
 		disabled: PropTypes.bool,
 		loading: PropTypes.bool,
 		onChange: PropTypes.func,
-		checkedChildren: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
-		unCheckedChildren: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		])
+		checkedChildren: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		unCheckedChildren: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		])
 	};
 	_onChange = () => {
 		const checked = !this.state.checked;
