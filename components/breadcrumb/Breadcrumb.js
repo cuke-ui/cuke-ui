@@ -10,10 +10,7 @@ export default class Breadcrumb extends PureComponent {
 
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
-		separator: PropTypes.oneOfType([
-			PropTypes.string.isRequired,
-			PropTypes.object.isRequired
-		])
+		separator: PropTypes.element
 	};
 
 	render() {

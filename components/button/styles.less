@@ -1,109 +1,109 @@
 @import "../styles/vars.less";
 @import "../styles/animate.less";
 @import "../styles/mixins.less";
-
 @prefixCls : cuke-button;
-
 .@{prefixCls} {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: 500;
-    text-align: center;
-    touch-action: manipulation;
-    cursor: pointer;
-    background-image: none;
-    border: 1px solid transparent;
-    white-space: nowrap;
-    line-height: 1.5;
-    padding: @button-default-padding;
-    font-size: @button-default-font-size;
-    height: @button-default-height;
-    user-select: none;
-    transition: all @default-transition;
-    position: relative;
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 500;
+  text-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.5;
+  padding: @button-default-padding;
+  font-size: @button-default-font-size;
+  height: @button-default-height;
+  user-select: none;
+  transition: all @default-transition;
+  position: relative;
+  color: @font-color;
+  background-color: #fff;
+  border-color: @border-color;
+  border-radius: @border-radius;
+  outline: none;
+  .btn-hover(@default-color);
+  &.btn-primary {
+    .btn-hover(@primary-color);
+    &.btn-hollow {
+      .btn-hollow(@primary-color)
+    }
+  }
+  &.btn-default {
     color: @font-color;
     background-color: #fff;
+    border: 1px solid @default-color;
+    &:not(.btn-disabled) {
+      &:hover,
+      &:active {
+        border: 1px solid @primary-color;
+        color: @primary-color;
+      }
+    }
+    &.btn-hollow {
+      .btn-hollow(@default-color)
+    }
+  }
+  &.btn-warning {
+    .btn-hover(@warning-color);
+    &.btn-hollow {
+      .btn-hollow(@warning-color)
+    }
+  }
+  &.btn-error {
+    .btn-hover(@error-color);
+    &.btn-hollow {
+      .btn-hollow(@error-color)
+    }
+  }
+  &.btn-success {
+    .btn-hover(@success-color);
+    &.btn-hollow {
+      .btn-hollow(@success-color)
+    }
+  }
+  &.btn-info {
+    .btn-hover(@info-color);
+    &.btn-hollow {
+      .btn-hollow(@info-color)
+    }
+  }
+  &.btn-disabled {
+    .btn-hover(@disabled-color);
+    cursor: no-drop;
+    color: @disabled-font-color;
     border-color: @border-color;
-    border-radius: @border-radius;
-    outline: none;
-    .btn-hover(@default-color);
-    &.btn-primary {
-        .btn-hover(@primary-color);
-        &.btn-hollow {
-            .btn-hollow(@primary-color)
-        }
+    &.btn-hollow {
+      color: @disabled-font-color;
     }
-    &.btn-default {
-        color: @font-color;
-        background-color: #fff;
-        border: 1px solid @default-color;
-        &:hover,
-        &:active {
-            border: 1px solid @primary-color;
-            color: @primary-color;
-        }
-        &.btn-hollow {
-            .btn-hollow(@default-color)
-        }
+  }
+  &.btn-block {
+    width: 100%;
+    display: block;
+  }
+  &.btn-loading {
+    opacity: @loading-opacity;
+    cursor: no-drop;
+    >.cuke-loading {
+      display: inline-block;
+      vertical-align: middle;
+      margin: -2px 10px 0 0;
+      animation: cuke-spin @loading-time linear infinite;
     }
-    &.btn-warning {
-        .btn-hover(@warning-color);
-        &.btn-hollow {
-            .btn-hollow(@warning-color)
-        }
-    }
-    &.btn-error {
-        .btn-hover(@error-color);
-        &.btn-hollow {
-            .btn-hollow(@error-color)
-        }
-    }
-    &.btn-success {
-        .btn-hover(@success-color);
-        &.btn-hollow {
-            .btn-hollow(@success-color)
-        }
-    }
-    &.btn-info {
-        .btn-hover(@info-color);
-        &.btn-hollow {
-            .btn-hollow(@info-color)
-        }
-    }
-    &.btn-disabled {
-        .btn-hover(@disabled-color);
-        cursor: no-drop;
-        color: @disabled-font-color;
-        border-color: @border-color;
-        &.btn-hollow {
-            color: @disabled-font-color;
-        }
-    }
-    &.btn-block {
-        width: 100%;
-        display: block;
-    }
-    &.btn-loading {
-        opacity: @loading-opacity;
-        cursor: no-drop;
-        >.cuke-loading {
-            display: inline-block;
-            vertical-align: middle;
-            margin: -2px 10px 0 0;
-            animation: cuke-spin @loading-time linear infinite;
-        }
-    }
-    &.btn-large {
-        font-size: @button-large-font-size;
-        padding: @button-large-padding;
-        height: @button-large-height;
-    }
-    &.btn-small {
-        font-size: @button-small-font-size;
-        padding: @button-small-padding;
-        height: @button-small-height;
-    }
-    &.btn-dashed {
-        border: 1px dashed;
-    }
+  }
+  &.btn-large {
+    font-size: @button-large-font-size;
+    padding: @button-large-padding;
+    height: @button-large-height;
+  }
+  &.btn-small {
+    font-size: @button-small-font-size;
+    padding: @button-small-padding;
+    height: @button-small-height;
+  }
+  &.btn-dashed {
+    border: 1px dashed;
+  }
 }

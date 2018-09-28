@@ -6,6 +6,7 @@ import { LoadingIcon } from "../icon";
 export default class Button extends PureComponent {
 	static defaultProps = {
 		prefixCls: "cuke-button",
+		href: "",
 		type: "default",
 		htmlType: "button",
 		size: "default",
@@ -23,6 +24,7 @@ export default class Button extends PureComponent {
 		disabled: PropTypes.bool,
 		dashed: PropTypes.bool,
 		htmlType: PropTypes.string,
+		href: PropTypes.string,
 		type: PropTypes.oneOf([
 			"primary",
 			"default",

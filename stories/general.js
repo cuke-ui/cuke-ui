@@ -42,7 +42,7 @@ storiesOf('普通', module).add(
 				成功
 			</Button>
 
-			<Button type="primary" disabled onClick={action('clicked')}>
+			<Button disabled onClick={action('clicked')}>
 				禁用
 			</Button>
 

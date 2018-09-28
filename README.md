@@ -134,6 +134,16 @@ import 'cuke-ui/lib/Button/style.less';
 - [ ] Rate    评分  
 - [ ] Collapse  折叠面板 
 
+### 设计规范
+
+高仿 Ant-Design
+
+### 谁在使用
+
+- 勇敢的人
+- 我自己
+- [李金珂的小屋](https://www.lijinke.cn)
+
 ### 参考轮子
 
 - [ant-design](https://github.com/ant-design/ant-design)

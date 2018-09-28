@@ -6,7 +6,7 @@
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  transition: all .3s @animate-type;
+  transition: all @animate-time @animate-type;
   user-select: none;
   vertical-align: middle;
   border-radius: @cuke-switch-width;
@@ -27,7 +27,7 @@
     left: @cuke-switch-offset;
     top: (@cuke-switch-height - @cuke-switch-circle-width) / 2;
     box-shadow: @default-shadow;
-    transition: all .3s @animate-type;
+    transition: all @animate-time @animate-type;
   }
 
   &-loading {

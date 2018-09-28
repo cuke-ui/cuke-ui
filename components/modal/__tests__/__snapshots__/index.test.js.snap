@@ -60,6 +60,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       >
         <button
           class="cuke-button btn-default"
+          href=""
           type="button"
         >
           <span>
@@ -68,6 +69,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         </button>
         <button
           class="cuke-button btn-primary"
+          href=""
           type="button"
         >
           <span>
@@ -135,6 +137,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       >
         <button
           class="cuke-button btn-default"
+          href=""
           type="button"
         >
           <span>
@@ -143,6 +146,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         </button>
         <button
           class="cuke-button btn-primary"
+          href=""
           type="button"
         >
           <span>
@@ -265,6 +269,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       >
         <button
           class="cuke-button btn-default"
+          href=""
           type="button"
         >
           <span>
@@ -273,6 +278,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         </button>
         <button
           class="cuke-button btn-primary"
+          href=""
           type="button"
         >
           <span>
@@ -314,6 +320,7 @@ exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
     >
       <button
         class="cuke-button btn-default"
+        href=""
         type="button"
       >
         <span>
@@ -322,6 +329,7 @@ exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
       </button>
       <button
         class="cuke-button btn-primary"
+        href=""
         type="button"
       >
         <span>

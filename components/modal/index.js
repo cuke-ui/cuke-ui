@@ -31,10 +31,10 @@ export default class Modal extends PureComponent {
 	static propTypes = {
 		onCancel: PropTypes.func,
 		onOk: PropTypes.func,
-		title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-		okText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-		cancelText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-		content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		title: PropTypes.element,
+		okText: PropTypes.element,
+		cancelText: PropTypes.element,
+		content: PropTypes.element,
 		confirmLoading: PropTypes.bool,
 		visible: PropTypes.bool,
 		centered: PropTypes.bool,
@@ -42,8 +42,8 @@ export default class Modal extends PureComponent {
 		maskClosable: PropTypes.bool,
 		showMask: PropTypes.bool,
 		target: PropTypes.func,
-		zIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-		width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+		zIndex: PropTypes.element,
+		width: PropTypes.element,
 		footer: PropTypes.oneOfType([
 			//footer 不需要设置为 footer={null}
 			PropTypes.array,

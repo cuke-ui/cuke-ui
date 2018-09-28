@@ -31,11 +31,7 @@ export default class Dropdown extends PureComponent {
 		onVisibleChange: PropTypes.func,
 		trigger: PropTypes.oneOf(Object.values(triggerTypes)),
 		animate: PropTypes.oneOf(animateType),
-		overlay: PropTypes.oneOfType([
-			PropTypes.string,
-			PropTypes.object,
-			PropTypes.number
-		])
+		overlay: PropTypes.element
 	};
 	constructor(props) {
 		super(props);

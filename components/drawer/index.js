@@ -23,8 +23,8 @@ export default class Drawer extends PureComponent {
 		placement: placements[0]
 	};
 	static propTypes = {
-		title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-		content: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+		title: PropTypes.element,
+		content: PropTypes.element,
 		confirmLoading: PropTypes.bool,
 		visible: PropTypes.bool,
 		closable: PropTypes.bool,

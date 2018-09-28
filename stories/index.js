@@ -1,16 +1,18 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { name,repository } from '../package.json';
-import Alert from '../components/alert';
-import Button from '../components/button';
-import {FaGithub} from "react-icons/fa"
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { name, repository } from "../package.json";
+import Alert from "../components/alert";
+import Button from "../components/button";
+import { FaGithub } from "react-icons/fa";
 
-storiesOf('快速上手', module).add('在项目中使用', () => (
+storiesOf("快速上手", module).add("在项目中使用", () => (
 	<article style={{ padding: 20 }}>
-		<h1 style={{ fontSize: 40,padding:0,margin:0 }}>
-		{name}
+		<h1 style={{ fontSize: 40, padding: 0, margin: 0 }}>
+			{name}
 
-		<a href={repository} target="_blank" style={{marginLeft:20}}><FaGithub style={{fontSize:30,color:"#444"}}/></a>
+			<a href={repository} target="_blank" style={{ marginLeft: 20 }}>
+				<FaGithub style={{ fontSize: 30, color: "#444" }} />
+			</a>
 		</h1>
 		<p>
 			<a href="https://www.npmjs.com/package/cuke-ui" title="npm">
@@ -78,11 +80,11 @@ storiesOf('快速上手', module).add('在项目中使用', () => (
 			description={
 				<div>
 					<p>
-						如果你看到了这里,说明你是一个勇敢的人, 这是一个凭个人兴趣撸的一个{' '}
+						如果你看到了这里,说明你是一个勇敢的人, 这是一个凭个人兴趣撸的一个{" "}
 						<strong>React UI</strong>库
 					</p>
 					<p>
-						以我的技术实力组件质量可想而知, 所以 <strong>不建议</strong> 在{' '}
+						以我的技术实力组件质量可想而知, 所以 <strong>不建议</strong> 在{" "}
 						<strong> 生产环境</strong> 中 使用, 说不定哪天我不开心了,
 						代码就不维护了
 					</p>
@@ -97,10 +99,10 @@ storiesOf('快速上手', module).add('在项目中使用', () => (
 			type="info"
 			message={
 				<span>
-					请按照{' '}
+					请按照{" "}
 					<a href="https://github.com/cuke-ui/cuke-ui/blob/master/README.md">
 						README
-					</a>{' '}
+					</a>{" "}
 					文档使用
 				</span>
 			}
@@ -122,6 +124,7 @@ storiesOf('快速上手', module).add('在项目中使用', () => (
 		<ul>
 			<li> - 我自己 </li>
 			<li> - 勇敢的人 </li>
+			<li> - <a href="https://www.lijinke.cn">李金珂的小屋</a></li>
 		</ul>
 
 		<h2>预览</h2>
@@ -130,10 +133,10 @@ storiesOf('快速上手', module).add('在项目中使用', () => (
 			type="info"
 			message={
 				<span>
-					请按照{' '}
+					请按照{" "}
 					<a href="https://github.com/cuke-ui/cuke-ui/blob/master/README.md">
 						README
-					</a>{' '}
+					</a>{" "}
 					文档使用
 				</span>
 			}
@@ -141,10 +144,10 @@ storiesOf('快速上手', module).add('在项目中使用', () => (
 				<div>
 					<p>← 左边是组件的列表,你可以点击预览效果</p>
 					<p>
-						点击右上角 ↗ 的{' '}
+						点击右上角 ↗ 的{" "}
 						<Button type="info" size="small">
 							Show Info
-						</Button>{' '}
+						</Button>{" "}
 						按钮可以看到 示例源码 和 参数列表
 					</p>
 				</div>
