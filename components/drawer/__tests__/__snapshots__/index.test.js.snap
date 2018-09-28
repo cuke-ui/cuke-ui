@@ -195,7 +195,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
       tabIndex="-1"
     >
       <div
-        className="cuke-drawer cuke-drawer-open cuke-drawer-left"
+        className="cuke-drawer cuke-drawer-open cuke-drawer-left no-title"
         style={
           Object {
             "width": 300,
@@ -310,7 +310,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
       tabIndex="-1"
     >
       <div
-        className="cuke-drawer cuke-drawer-open cuke-drawer-top"
+        className="cuke-drawer cuke-drawer-open cuke-drawer-top no-title"
         style={
           Object {
             "width": 300,
@@ -425,7 +425,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
       tabIndex="-1"
     >
       <div
-        className="cuke-drawer cuke-drawer-open cuke-drawer-right"
+        className="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
         style={
           Object {
             "width": 300,
@@ -540,7 +540,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
       tabIndex="-1"
     >
       <div
-        className="cuke-drawer cuke-drawer-open cuke-drawer-bottom"
+        className="cuke-drawer cuke-drawer-open cuke-drawer-bottom no-title"
         style={
           Object {
             "width": 300,

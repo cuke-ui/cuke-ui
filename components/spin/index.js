@@ -16,7 +16,7 @@ export default class Spin extends PureComponent {
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
 		tip: PropTypes.string,
-		indicator: PropTypes.element,
+		indicator: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
 		size: PropTypes.oneOf(["", "default", "small", "large"])
 	};
 	constructor(props) {

@@ -31,10 +31,28 @@ export default class Modal extends PureComponent {
 	static propTypes = {
 		onCancel: PropTypes.func,
 		onOk: PropTypes.func,
-		title: PropTypes.element,
-		okText: PropTypes.element,
-		cancelText: PropTypes.element,
-		content: PropTypes.element,
+		title: PropTypes.oneOfType([
+			PropTypes.oneOfType([
+				PropTypes.element,
+				PropTypes.string,
+				PropTypes.object
+			])
+		]),
+		okText: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		cancelText: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		content: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
 		confirmLoading: PropTypes.bool,
 		visible: PropTypes.bool,
 		centered: PropTypes.bool,
@@ -42,8 +60,8 @@ export default class Modal extends PureComponent {
 		maskClosable: PropTypes.bool,
 		showMask: PropTypes.bool,
 		target: PropTypes.func,
-		zIndex: PropTypes.element,
-		width: PropTypes.element,
+		zIndex: PropTypes.number,
+		width: PropTypes.number,
 		footer: PropTypes.oneOfType([
 			//footer 不需要设置为 footer={null}
 			PropTypes.array,
@@ -144,7 +162,9 @@ export default class Modal extends PureComponent {
 					})}
 				>
 					<div
-						className={cls(prefixCls, className, initModalAnimate)}
+						className={cls(prefixCls, className, initModalAnimate, {
+							"no-title": !title
+						})}
 						ref={node => (this.modal = node)}
 						style={{
 							...style,

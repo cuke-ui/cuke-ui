@@ -1,24 +1,24 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import Tooltip from '../components/tooltip';
-import Button from '../components/button';
-import Tabs from '../components/tabs';
-import Badge from '../components/badge';
-import Row from '../components/row';
-import Col from '../components/col';
-import Timeline from '../components/timeline';
-import { SuccessIcon, InfoIcon } from '../components/icon';
-import { withInfo } from '@storybook/addon-info';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import Tooltip from "../components/tooltip";
+import Button from "../components/button";
+import Tabs from "../components/tabs";
+import Badge from "../components/badge";
+import Row from "../components/row";
+import Col from "../components/col";
+import Timeline from "../components/timeline";
+import { SuccessIcon, InfoIcon } from "../components/icon";
+import { withInfo } from "@storybook/addon-info";
 
-import '../components/tooltip/styles.less';
-import '../components/button/styles.less';
-import '../components/tabs/styles.less';
-import '../components/timeline/styles.less';
-import './styles/dataDisplay.less';
+import "../components/tooltip/styles.less";
+import "../components/button/styles.less";
+import "../components/tabs/styles.less";
+import "../components/timeline/styles.less";
+import "./styles/dataDisplay.less";
 
-storiesOf('数据展示', module)
+storiesOf("数据展示", module)
 	.add(
-		'Tooltip 文字提示',
+		"Tooltip 文字提示",
 		withInfo()(() => (
 			<div>
 				<h2>基本使用</h2>
@@ -36,10 +36,10 @@ storiesOf('数据展示', module)
 				<Tooltip title="黄瓜ui" position="top">
 					<Button>上</Button>
 				</Tooltip>
-				<Tooltip title="黄瓜ui" position="bottom" style={{ margin: '0 10px' }}>
+				<Tooltip title="黄瓜ui" position="bottom" style={{ margin: "0 10px" }}>
 					<Button>下</Button>
 				</Tooltip>
-				<Tooltip title="黄瓜ui" position="left" style={{ margin: '0 10px' }}>
+				<Tooltip title="黄瓜ui" position="left" style={{ margin: "0 10px" }}>
 					<Button>左</Button>
 				</Tooltip>
 				<Tooltip title="黄瓜ui" position="right">
@@ -49,7 +49,7 @@ storiesOf('数据展示', module)
 		))
 	)
 	.add(
-		'Tabs 选项卡',
+		"Tabs 选项卡",
 		withInfo(`
 	
 	<Tabs defaultActiveKey="1" onChange={(key)=> console.log(key)}>
@@ -142,12 +142,12 @@ storiesOf('数据展示', module)
 		))
 	)
 	.add(
-		'Badge 徽标数',
+		"Badge 徽标数",
 		withInfo()(() => (
 			<div>
 				<h2>基本使用</h2>
 
-				<Badge count={5} onClick={() => console.log('badge clicked')}>
+				<Badge count={5} onClick={() => console.log("badge clicked")}>
 					<Button>购物车</Button>
 				</Badge>
 
@@ -175,15 +175,15 @@ storiesOf('数据展示', module)
 
 				<h2>自定义样式</h2>
 
-				<Badge count={1000} style={{ backgroundColor: '#396' }}>
+				<Badge count={1000} style={{ backgroundColor: "#396" }}>
 					<SuccessIcon style={{ fontSize: 30 }} />
 				</Badge>
 
-				<Badge count={1000} style={{ backgroundColor: '#f87' }}>
+				<Badge count={1000} style={{ backgroundColor: "#f87" }}>
 					<SuccessIcon style={{ fontSize: 30 }} />
 				</Badge>
 
-				<Badge count={1000} style={{ backgroundColor: '#04a' }}>
+				<Badge count={1000} style={{ backgroundColor: "#04a" }}>
 					<SuccessIcon style={{ fontSize: 30 }} />
 				</Badge>
 
@@ -208,7 +208,7 @@ storiesOf('数据展示', module)
 		))
 	)
 	.add(
-		'Timeline 时间轴',
+		"Timeline 时间轴",
 		withInfo()(() => (
 			<div>
 				<Row>
@@ -242,12 +242,13 @@ storiesOf('数据展示', module)
 							</Timeline.Item>
 							<Timeline.Item color="yellow">目前已回到国内备战s8</Timeline.Item>
 							<Timeline.Item color="green">接下来是LPL 季后赛</Timeline.Item>
-							<Timeline.Item color="#f63">目前 RNG, RW, IG 最后可能进入 S8</Timeline.Item>
+							<Timeline.Item color="#f63">
+								目前 RNG, RW, IG 最后可能进入 S8
+							</Timeline.Item>
 						</Timeline>
 					</Col>
 				</Row>
 				<Row>
-
 					<Col span={4}>
 						<h2>动画1</h2>
 						<Timeline animate="slideRight">

@@ -23,8 +23,16 @@ export default class Drawer extends PureComponent {
 		placement: placements[0]
 	};
 	static propTypes = {
-		title: PropTypes.element,
-		content: PropTypes.element,
+		title: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
+		content: PropTypes.oneOfType([
+			PropTypes.element,
+			PropTypes.string,
+			PropTypes.object
+		]),
 		confirmLoading: PropTypes.bool,
 		visible: PropTypes.bool,
 		closable: PropTypes.bool,
@@ -109,7 +117,8 @@ export default class Drawer extends PureComponent {
 							prefixCls,
 							className,
 							initModalAnimate,
-							`${prefixCls}-${placement}`
+							`${prefixCls}-${placement}`,
+							{"no-title": !title}
 						)}
 						ref={node => (this.modal = node)}
 						style={{

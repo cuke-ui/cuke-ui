@@ -11,8 +11,10 @@ import {
 
 export default class Alert extends PureComponent {
 	state = {
-		visible: true
+		visible: true,
+		animation: false
 	};
+	ANIMATE_END_TIME = 500;
 	static defaultProps = {
 		prefixCls: "cuke-alert",
 		closeText: <CloseIcon />,
@@ -25,9 +27,9 @@ export default class Alert extends PureComponent {
 	};
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
-		message: PropTypes.element,
-		closeText: PropTypes.element,
-		description: PropTypes.element,
+		message: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
+		closeText: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
+		description: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
 		closable: PropTypes.bool,
 		showIcon: PropTypes.bool,
 		onClose: PropTypes.func,
@@ -43,7 +45,12 @@ export default class Alert extends PureComponent {
 		};
 	}
 	onClose = () => {
-		this.setState({ visible: false }, this.props.onClose);
+		this.setState({ animation: true }, () => {
+			setTimeout(() => {
+				this.setState({ visible: false });
+				this.props.onClose();
+			}, this.ANIMATE_END_TIME);
+		});
 	};
 	renderIcon = type => {
 		switch (type) {
@@ -72,7 +79,7 @@ export default class Alert extends PureComponent {
 			...attr
 		} = this.props;
 
-		const { visible } = this.state;
+		const { visible, animation } = this.state;
 
 		if (!visible) {
 			return null;
@@ -80,7 +87,8 @@ export default class Alert extends PureComponent {
 		return (
 			<div
 				className={cls(prefixCls, className, `${prefixCls}-${type}`, {
-					"has-description": !!description
+					"has-description": !!description,
+					[`${prefixCls}-hide`]: animation
 				})}
 				{...attr}
 			>

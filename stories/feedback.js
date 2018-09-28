@@ -1,29 +1,29 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import message from '../components/message';
-import Button from '../components/button';
-import Alert from '../components/alert';
-import Modal from '../components/modal';
-import ModalPage from './pages/modal';
-import DrawerPage from './pages/drawer';
-import ProgressPage from './pages/progress';
-import Spin from '../components/spin';
-import Progress from '../components/progress';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { withInfo } from "@storybook/addon-info";
+import message from "../components/message";
+import Button from "../components/button";
+import Alert from "../components/alert";
+import Modal from "../components/modal";
+import ModalPage from "./pages/modal";
+import DrawerPage from "./pages/drawer";
+import ProgressPage from "./pages/progress";
+import Spin from "../components/spin";
+import Progress from "../components/progress";
 
-import { SuccessIcon } from '../components/icon';
-import './styles/feedback.less';
-import '../components/message/styles.less';
-import '../components/button/styles.less';
-import '../components/alert/styles.less';
-import '../components/modal/styles.less';
-import '../components/drawer/styles.less';
-import '../components/spin/styles.less';
-import '../components/progress/styles.less';
+import { SuccessIcon } from "../components/icon";
+import "./styles/feedback.less";
+import "../components/message/styles.less";
+import "../components/button/styles.less";
+import "../components/alert/styles.less";
+import "../components/modal/styles.less";
+import "../components/drawer/styles.less";
+import "../components/spin/styles.less";
+import "../components/progress/styles.less";
 
-storiesOf('操作反馈', module)
+storiesOf("操作反馈", module)
 	.add(
-		'Message 消息提示',
+		"Message 消息提示",
 		withInfo(
 			`
     基本使用 
@@ -38,26 +38,26 @@ storiesOf('操作反馈', module)
 		)(() => (
 			<div className="message-example">
 				<h2>基本使用</h2>
-				<Button type="primary" onClick={() => message.success('我是渣渣辉!')}>
+				<Button type="primary" onClick={() => message.success("我是渣渣辉!")}>
 					成功
 				</Button>
-				<Button type="error" onClick={() => message.error('我是渣渣辉!')}>
+				<Button type="error" onClick={() => message.error("我是渣渣辉!")}>
 					错误
 				</Button>
-				<Button type="warning" onClick={() => message.warning('真香警告!')}>
+				<Button type="warning" onClick={() => message.warning("真香警告!")}>
 					警告
 				</Button>
-				<Button type="info" onClick={() => message.info('黄瓜 ui!')}>
+				<Button type="info" onClick={() => message.info("黄瓜 ui!")}>
 					信息
 				</Button>
-				<Button type="primary" onClick={() => message.loading('我是渣渣辉!')}>
+				<Button type="primary" onClick={() => message.loading("我是渣渣辉!")}>
 					加载中
 				</Button>
 
 				<h2>自定义延时</h2>
 				<Button
 					type="primary"
-					onClick={() => message.loading('10秒后关闭', 10)}
+					onClick={() => message.loading("10秒后关闭", 10)}
 				>
 					10秒过后关闭
 				</Button>
@@ -66,19 +66,19 @@ storiesOf('操作反馈', module)
 				<Button
 					type="primary"
 					onClick={() =>
-						message.loading('领取中...', 3, () => message.success('领取成功'))
+						message.loading("领取中...", 3, () => message.success("领取成功"))
 					}
 				>
 					屠龙宝刀点击就送
 				</Button>
 
 				<h2>两种主题</h2>
-				<Button type="primary" onClick={() => message.info('你永远不懂我伤悲')}>
+				<Button type="primary" onClick={() => message.info("你永远不懂我伤悲")}>
 					白天
 				</Button>
 				<Button
 					type="primary"
-					onClick={() => message.info('像白天不懂夜的黑', 2, undefined, true)}
+					onClick={() => message.info("像白天不懂夜的黑", 2, undefined, true)}
 				>
 					黑夜
 				</Button>
@@ -86,9 +86,9 @@ storiesOf('操作反馈', module)
 		))
 	)
 	.add(
-		'Alert 警告提示',
+		"Alert 警告提示",
 		withInfo()(() => (
-			<div style={{ width: '50%' }}>
+			<div style={{ width: "50%" }}>
 				<h2>基本使用</h2>
 				<Alert type="success" message="恭喜你获得5元兰博基尼购车优惠券" />
 
@@ -153,13 +153,13 @@ storiesOf('操作反馈', module)
 					showIcon
 					closable
 					message="有一个 bug?"
-					onClose={() => console.log('关闭了')}
+					onClose={() => console.log("关闭了")}
 				/>
 			</div>
 		))
 	)
 	.add(
-		'Modal 对话框',
+		"Modal 对话框",
 		withInfo(
 			`
 			使用
@@ -189,7 +189,7 @@ storiesOf('操作反馈', module)
 		))
 	)
 	.add(
-		'Drawer 抽屉',
+		"Drawer 抽屉",
 		withInfo(
 			`
 			import React, { Component } from 'react';
@@ -325,7 +325,7 @@ storiesOf('操作反馈', module)
 		))
 	)
 	.add(
-		'Spin 加载中',
+		"Spin 加载中",
 		withInfo()(() => (
 			<div>
 				<h2>基本使用</h2>
@@ -333,7 +333,7 @@ storiesOf('操作反馈', module)
 
 				<h2>三种尺寸</h2>
 				<Spin size="small" />
-				<Spin style={{ margin: '0 10px' }} />
+				<Spin style={{ margin: "0 10px" }} />
 				<Spin size="large" />
 
 				<h2>在容器中显示</h2>
@@ -357,7 +357,7 @@ storiesOf('操作反馈', module)
 		))
 	)
 	.add(
-		'Progress 进度条',
+		"Progress 进度条",
 		withInfo()(() => (
 			<div className="progress-example">
 				<h2>基本使用</h2>

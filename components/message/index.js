@@ -27,7 +27,7 @@ export default class Message extends PureComponent {
 		};
 	}
 	static propTypes = {
-		title: PropTypes.element.isRequired,
+		title: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]).isRequired,
 		duration: PropTypes.number.isRequired,
 		darkTheme: PropTypes.bool,
 		onClose: PropTypes.func

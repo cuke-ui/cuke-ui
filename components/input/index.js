@@ -14,7 +14,7 @@ export default class Input extends PureComponent {
 
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
-		placeholder: PropTypes.element,
+		placeholder: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
 		disabled: PropTypes.bool,
 		readonly: PropTypes.bool,
 		type: PropTypes.oneOf([

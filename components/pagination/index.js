@@ -25,7 +25,7 @@ export default class Pagination extends PureComponent {
 	};
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
-		separator: PropTypes.element,
+		separator: PropTypes.oneOfType([ 			PropTypes.element, 			PropTypes.string, 			PropTypes.object, 		]),
 		total: PropTypes.oneOfType([
 			PropTypes.number.isRequired,
 			PropTypes.string.isRequired

@@ -1,150 +1,149 @@
 @import "../styles/vars.less";
 @import "../styles/animate.less";
 @import "../styles/mixins.less";
-
 @prefixCls : cuke-drawer;
-
 .@{prefixCls} {
+  pointer-events: auto;
+  background-color: @modal-bg-color;
+  z-index: @modal-z-index;
+  transform-origin: bottom center;
+  outline: none;
+  position: relative;
+  padding: 0;
+  width: @cuke-drawer-width;
+  height: 100%;
+  list-style: none;
+  transform: scale(0);
+  &.@{prefixCls}-open {
     pointer-events: auto;
-    background-color: @modal-bg-color;
-    z-index: @modal-z-index;
-    transform-origin: bottom center;
-    outline: none;
-    position: relative;
-    padding: 0;
-    width: @cuke-drawer-width;
-    height: 100%;
-    list-style: none;
-    transform: scale(0);
-
+  }
+  &.@{prefixCls}-close {
+    pointer-events: none;
+  }
+  &.no-title {
+    .@{prefixCls}-header {
+      border-bottom: 1px solid transparent;
+    }
+  }
+  &-left {
+    top: 0;
+    left: 0;
     &.@{prefixCls}-open {
-        pointer-events: auto;
+      animation: cuke-drawer-slide-in-left @cuke-drawer-animate-type forwards;
     }
     &.@{prefixCls}-close {
-        pointer-events: none;
+      animation: cuke-drawer-slide-out-left @cuke-drawer-animate-type forwards;
     }
-
-    &-left {
-        top: 0;
-        left: 0;
-        &.@{prefixCls}-open {
-            animation: cuke-drawer-slide-in-left @cuke-drawer-animate-type forwards;
-        }
-        &.@{prefixCls}-close {
-            animation: cuke-drawer-slide-out-left  @cuke-drawer-animate-type forwards;
-        }
+  }
+  &-right {
+    top: 0;
+    right: -100%;
+    &.@{prefixCls}-open {
+      animation: cuke-drawer-slide-in-right @cuke-drawer-animate-type forwards;
     }
-
-    &-right {
-        top: 0;
-        right: -100%;
-        &.@{prefixCls}-open {
-            animation: cuke-drawer-slide-in-right  @cuke-drawer-animate-type forwards;
-        }
-        &.@{prefixCls}-close {
-            animation: cuke-drawer-slide-out-right  @cuke-drawer-animate-type forwards;
-        }
+    &.@{prefixCls}-close {
+      animation: cuke-drawer-slide-out-right @cuke-drawer-animate-type forwards;
     }
-
-    &-top {
-        top: 0;
-        left: 0;
-        width: 100% !important;
-        height: @cuke-drawer-height;
-        &.@{prefixCls}-open {
-            animation: cuke-drawer-slide-in-top  @cuke-drawer-animate-type forwards;
-        }
-        &.@{prefixCls}-close {
-            animation: cuke-drawer-slide-out-top  @cuke-drawer-animate-type forwards;
-        }
+  }
+  &-top {
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: @cuke-drawer-height;
+    &.@{prefixCls}-open {
+      animation: cuke-drawer-slide-in-top @cuke-drawer-animate-type forwards;
     }
-
-    &-bottom {
-        bottom: -100%;
-        left: 0;
-        width: 100% !important;
-        height: @cuke-drawer-height;
-        &.@{prefixCls}-open {
-            animation: cuke-drawer-slide-in-bottom  @cuke-drawer-animate-type forwards;
-        }
-        &.@{prefixCls}-close {
-            animation: cuke-drawer-slide-out-bottom  @cuke-drawer-animate-type forwards;
-        }
+    &.@{prefixCls}-close {
+      animation: cuke-drawer-slide-out-top @cuke-drawer-animate-type forwards;
     }
-
-    &-header {
-        padding: @modal-header-padding;
-        border-bottom: 1px solid @border-color;
-        line-height: 40px;
-        text-align: center;
-        position: relative;
-        .@{prefixCls}-title {
-            font-size: @modal-title-font-size;
-            color: @font-color;
-            margin: 0;
-            font-weight: 500;
-        }
-        .@{prefixCls}-close {
-            position: absolute;
-            right: 20px;
-            top: 13px;
-            cursor: pointer;
-            color: @modal-close-font-color;
-            font-size: @modal-close-font-size;
-            &,i {
-                transition: all .3s @animate-type;
-            }
-            &:hover {
-                transform: rotate(90deg);
-                &,i {
-                    color: @primary-color;
-                }
-            }
-        }
+  }
+  &-bottom {
+    bottom: -100%;
+    left: 0;
+    width: 100% !important;
+    height: @cuke-drawer-height;
+    &.@{prefixCls}-open {
+      animation: cuke-drawer-slide-in-bottom @cuke-drawer-animate-type forwards;
     }
-    &-content {
-        padding: @modal-padding;
-        background-clip: padding-box;
-        height: auto;
-        overflow-y: auto;
-        margin: 0 auto;
-        line-height: 1.5;
-        word-wrap: break-word;
-        max-height: 100vh;
+    &.@{prefixCls}-close {
+      animation: cuke-drawer-slide-out-bottom @cuke-drawer-animate-type forwards;
     }
+  }
+  &-header {
+    padding: @modal-header-padding;
+    border-bottom: 1px solid @border-color;
+    line-height: 40px;
+    text-align: center;
+    position: relative;
+    .@{prefixCls}-title {
+      font-size: @modal-title-font-size;
+      color: @font-color;
+      margin: 0;
+      font-weight: 500;
+    }
+    .@{prefixCls}-close {
+      position: absolute;
+      right: 20px;
+      top: 13px;
+      cursor: pointer;
+      color: @modal-close-font-color;
+      font-size: @modal-close-font-size;
+      &,
+      i {
+        transition: all .3s @animate-type;
+      }
+      &:hover {
+        transform: rotate(90deg);
+        &,
+        i {
+          color: @primary-color;
+        }
+      }
+    }
+  }
+  &-content {
+    padding: @modal-padding;
+    background-clip: padding-box;
+    height: auto;
+    overflow-y: auto;
+    margin: 0 auto;
+    line-height: 1.5;
+    word-wrap: break-word;
+    max-height: 100vh;
+  }
 }
 
 .@{prefixCls}-wrap {
-    position: fixed;
-    overflow: auto;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    z-index: @modal-z-index;
-    outline: 0;
-    pointer-events: none;
-    -webkit-overflow-scrolling: touch;
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: @modal-z-index;
+  outline: 0;
+  pointer-events: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .@{prefixCls}-mask {
-    position: fixed;
-    background-color: @modal-mask-color;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: @modal-z-index;
+  position: fixed;
+  background-color: @modal-mask-color;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: @modal-z-index;
+  pointer-events: none;
+  transform: scale(0);
+  &-show {
+    pointer-events: auto;
+    animation: cuke-mask-fade-in @default-transition forwards;
+  }
+  &-hide {
     pointer-events: none;
-    transform: scale(0);
-    &-show {
-        pointer-events: auto;
-        animation: cuke-mask-fade-in @default-transition forwards;
-    }
-    &-hide {
-        pointer-events: none;
-        animation: cuke-mask-fade-out @default-transition forwards;
-    }
+    animation: cuke-mask-fade-out @default-transition forwards;
+  }
 }
