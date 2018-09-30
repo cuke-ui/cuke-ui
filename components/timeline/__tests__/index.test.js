@@ -17,7 +17,7 @@ describe("<Timeline/>", () => {
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
 
-	it("should find cuke-tabs classnames", () => {
+	it("should find cuke-timeline classnames", () => {
 		const wrapper = shallow(
 			<Timeline>
 				<Timeline.Item type="info">信息</Timeline.Item>

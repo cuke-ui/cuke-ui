@@ -29,5 +29,6 @@ export { default as Timeline } from "./timeline";
 export { default as Checkbox } from "./checkbox";
 export { default as Icon } from "./icon";
 export { default as Switch } from "./switch";
+export { default as Tag } from "./tag";
 
 export { default as version } from "./version";

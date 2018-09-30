@@ -7,6 +7,7 @@ import Badge from "../components/badge";
 import Row from "../components/row";
 import Col from "../components/col";
 import Timeline from "../components/timeline";
+import Tag from "../components/tag";
 import { SuccessIcon, InfoIcon } from "../components/icon";
 import { withInfo } from "@storybook/addon-info";
 
@@ -14,7 +15,9 @@ import "../components/tooltip/styles.less";
 import "../components/button/styles.less";
 import "../components/tabs/styles.less";
 import "../components/timeline/styles.less";
+import "../components/tag/styles.less";
 import "./styles/dataDisplay.less";
+import "./styles/tag.less";
 
 storiesOf("数据展示", module)
 	.add(
@@ -300,6 +303,33 @@ storiesOf("数据展示", module)
 						</Timeline>
 					</Col>
 				</Row>
+			</div>
+		))
+	)
+	.add(
+		"Tag 标签",
+		withInfo()(() => (
+			<div>
+				<h2>基本使用</h2>
+				<Tag>黄瓜 ui</Tag>
+				<Tag type="primary">黄瓜 ui</Tag>
+				<Tag type="info">黄瓜 ui</Tag>
+				<Tag type="success">黄瓜 ui</Tag>
+				<Tag type="error">黄瓜 ui</Tag>
+				<Tag type="warning">黄瓜 ui</Tag>
+				<Tag dashed>黄瓜 ui</Tag>
+				<Tag disabled>黄瓜 ui</Tag>
+
+				<h2>三种大小</h2>
+				<Tag size="small">黄瓜 ui</Tag>
+				<Tag>黄瓜 ui</Tag>
+				<Tag size="large">黄瓜 ui</Tag>
+
+
+				<h2>自定义颜色</h2>
+				<Tag color="#666">黄瓜 ui</Tag>
+				<Tag color="pink">黄瓜 ui</Tag>
+				<Tag color="#f63">黄瓜 ui</Tag>
 			</div>
 		))
 	);

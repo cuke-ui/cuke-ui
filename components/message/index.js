@@ -62,8 +62,8 @@ export default class Message extends PureComponent {
 			});
 		}, duration * 1000);
 	}
-	componentWillUnmount(){
-		this.removeNode()
+	componentWillUnmount() {
+		this.removeNode();
 	}
 	removeNode = () => {
 		ReactDOM.unmountComponentAtNode(this.container);

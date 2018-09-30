@@ -1,0 +1,88 @@
+@import '../styles/vars.less';
+@import "../styles/mixins.less";
+@prefixCls : cuke-tag;
+.@{prefixCls} {
+  line-height: 1.5;
+  box-sizing: border-box;
+	font-size: @font-size;
+	white-space: nowrap;
+	user-select: none;
+  transition: all @default-transition;
+  position: relative;
+  color: @font-color;
+  margin: 0;
+	border: 1px solid @border-color;
+	border-radius: @border-radius;
+	padding: 0 12px;
+	cursor: pointer;
+
+	.tag-hover(@default-color);
+
+	&-primary {
+		.tag-hover(@primary-color);
+		&.btn-hollow {
+			.tag-hollow(@primary-color)
+		}
+	}
+  &-default {
+    color: @font-color;
+    background-color: #fff;
+    border: 1px solid @default-color;
+    &:not(.btn-disabled) {
+      &:hover,
+      &:active {
+        border: 1px solid @primary-color;
+        color: @primary-color;
+      }
+    }
+		&.@{prefixCls}-hollow {
+      .tag-hollow(@primary-color)
+    }
+  }
+  &-warning {
+		.tag-hover(@warning-color);
+
+    &.@{prefixCls}-hollow {
+      .tag-hollow(@warning-color)
+    }
+  }
+  &-success {
+		.tag-hover(@success-color);
+    &.@{prefixCls}-hollow {
+      .tag-hollow(@success-color)
+    }
+  }
+  &-error {
+		.tag-hover(@error-color);
+    &.@{prefixCls}-hollow {
+      .tag-hollow(@error-color)
+    }
+  }
+  &-info {
+		.tag-hover(@info-color);
+    &.@{prefixCls}-hollow {
+      .tag-hollow(@info-color)
+    }
+  }
+  &-disabled {
+		.tag-hover(@disabled-color);
+    &.@{prefixCls}-hollow {
+      .tag-hollow(@disabled-color)
+    }
+		cursor: no-drop;
+		pointer-events: none;
+	}
+	&-large {
+    font-size: @tag-large-font-size;
+    padding: @tag-large-padding;
+    height: @tag-large-height;
+  }
+  &-small {
+    font-size: @tag-small-font-size;
+    padding: @tag-small-padding;
+    height: @tag-small-height;
+  }
+  &-dashed {
+    border: 1px dashed;
+  }
+}

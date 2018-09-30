@@ -1,54 +1,79 @@
 .btn-hover(@color: @default-color, @lighten: 5%, @font-color: #fff) {
-    color: @font-color;
-    background-color: @color;
-    border: 1px solid @color;
-    &:not(.btn-disabled):not(.btn-default) {
-        &:hover,
-        &:active,
-        &:focus {
-            background-color: lighten(@color, @lighten);
-        }
+  color: @font-color;
+  background-color: @color;
+  border: 1px solid @color;
+  &:not(.btn-disabled):not(.btn-default) {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: lighten(@color, @lighten);
     }
+  }
 }
 
-.btn-hollow(@color,@lighten : 5%) {
+.tag-hover(@color: @default-color, @lighten: 5%, @font-color: #fff) {
+  color: @font-color;
+  background-color: @color;
+  border: 1px solid @color;
+  &:not(.cuke-tag-disabled):not(.cuke-tag-default) {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: lighten(@color, @lighten);
+    }
+  }
+}
+
+.btn-hollow(@color, @lighten : 5%) {
+  color: @color;
+  background: transparent;
+  &:not(.btn-disabled) {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+      border-color: lighten(@color, @lighten);
+      color: lighten(@color, @lighten);
+    }
+  }
+}
+
+.tag-hollow(@color, @lighten : 5%) {
     color: @color;
     background: transparent;
-
-    &:not(.btn-disabled) {
-        &:hover,
-        &:active,
-        &:focus {
-            background-color: transparent;
-            border-color: lighten(@color, @lighten);
-            color: lighten(@color, @lighten);
-        }
+    &:not(.cuke-tag-disabled) {
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: transparent;
+        border-color: lighten(@color, @lighten);
+        color: lighten(@color, @lighten);
+      }
     }
+  }
+
+.flex-center(@justify: center, @align: center) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
 }
 
-.flex-center(@justify:center,@align:center) {
-    display: flex;
-    justify-content: @justify;
-    align-items: @align;
-}
-
-.add-alert-style(@color: @default-color,@opacity: 10%) {
-    border-color: @color;
-    background-color: fade(@color, @opacity);
+.add-alert-style(@color: @default-color, @opacity: 10%) {
+  border-color: @color;
+  background-color: fade(@color, @opacity);
 }
 
 .clearfix() {
-    &::before,
-    &::after {
-        clear: both;
-        content: "";
-        display: table;
-        zoom: 1;
-    }
+  &::before,
+  &::after {
+    clear: both;
+    content: "";
+    display: table;
+    zoom: 1;
+  }
 }
 
-
 .set-progress-bar-bg(@primaryColor: @primary-color) {
-    background: repeating-linear-gradient(-45deg, @bg-color 25%, @primaryColor 0, @primaryColor 50%, @bg-color 0, @bg-color 75%, @primaryColor 0);
-    background-size: @progress-bg-offset;
+  background: repeating-linear-gradient(-45deg, @bg-color 25%, @primaryColor 0, @primaryColor 50%, @bg-color 0, @bg-color 75%, @primaryColor 0);
+  background-size: @progress-bg-offset;
 }
