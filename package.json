@@ -30,8 +30,7 @@
     "build:css": "cd scripts && gulp",
     "build:lib": "babel components -d lib",
     "build:umd": "webpack --config ./scripts/build.umd.js",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "prepush":"yarn pub:doc"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "pre-commit": [
     "lint",
