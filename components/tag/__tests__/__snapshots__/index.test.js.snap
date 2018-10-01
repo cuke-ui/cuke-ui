@@ -1,54 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Tag/> should render custom color 1`] = `
+<div>
+  <Tag
+    closable={false}
+    color="#666"
+    dashed={false}
+    disabled={false}
+    hollow={false}
+    onClose={[Function]}
+    prefixCls="cuke-tag"
+    size="default"
+    type="default"
+  >
+    黄瓜 ui
+  </Tag>
+  <Tag
+    closable={false}
+    color="pink"
+    dashed={false}
+    disabled={false}
+    hollow={false}
+    onClose={[Function]}
+    prefixCls="cuke-tag"
+    size="default"
+    type="default"
+  >
+    黄瓜 ui
+  </Tag>
+  <Tag
+    closable={false}
+    color="#f63"
+    dashed={false}
+    disabled={false}
+    hollow={false}
+    onClose={[Function]}
+    prefixCls="cuke-tag"
+    size="default"
+    type="default"
+  >
+    黄瓜 ui
+  </Tag>
+</div>
+`;
+
 exports[`<Tag/> should render tag 1`] = `
 <div>
   <span
     class="cuke-tag cuke-tag-default"
     style="background-color:"
   >
-    黄瓜 ui
+    <span>
+      黄瓜 ui
+    </span>
   </span>
   <span
     class="cuke-tag cuke-tag-primary"
     style="background-color:"
   >
-    黄瓜 ui
+    <span>
+      黄瓜 ui
+    </span>
   </span>
   <span
     class="cuke-tag cuke-tag-info"
     style="background-color:"
   >
-    黄瓜 ui
+    <span>
+      黄瓜 ui
+    </span>
   </span>
   <span
     class="cuke-tag cuke-tag-success"
     style="background-color:"
   >
-    黄瓜 ui
+    <span>
+      黄瓜 ui
+    </span>
   </span>
   <span
     class="cuke-tag cuke-tag-error"
     style="background-color:"
   >
-    黄瓜 ui
+    <span>
+      黄瓜 ui
+    </span>
   </span>
   <span
     class="cuke-tag cuke-tag-warning"
     style="background-color:"
   >
-    黄瓜 ui
+    <span>
+      黄瓜 ui
+    </span>
   </span>
   <span
     class="cuke-tag cuke-tag-default cuke-tag-dashed"
     style="background-color:"
   >
-    黄瓜 ui
+    <span>
+      黄瓜 ui
+    </span>
   </span>
   <span
     class="cuke-tag cuke-tag-default cuke-tag-disabled"
     style="background-color:"
   >
-    黄瓜 ui
+    <span>
+      黄瓜 ui
+    </span>
   </span>
 </div>
 `;

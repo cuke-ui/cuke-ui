@@ -317,19 +317,40 @@ storiesOf("数据展示", module)
 				<Tag type="success">黄瓜 ui</Tag>
 				<Tag type="error">黄瓜 ui</Tag>
 				<Tag type="warning">黄瓜 ui</Tag>
-				<Tag dashed>黄瓜 ui</Tag>
 				<Tag disabled>黄瓜 ui</Tag>
 
-				<h2>三种大小</h2>
-				<Tag size="small">黄瓜 ui</Tag>
+				<h2>镂空</h2>
 				<Tag>黄瓜 ui</Tag>
-				<Tag size="large">黄瓜 ui</Tag>
+				<Tag type="primary" hollow>黄瓜 ui</Tag>
+				<Tag type="info" hollow>黄瓜 ui</Tag>
+				<Tag type="success" hollow>黄瓜 ui</Tag>
+				<Tag type="error" hollow>黄瓜 ui</Tag>
+				<Tag type="warning" hollow>黄瓜 ui</Tag>
+				<Tag disabled hollow>黄瓜 ui</Tag>
+
+				<h2>虚线</h2>
+				<Tag dashed>黄瓜 ui</Tag>
+				<Tag type="primary" hollow dashed>黄瓜 ui</Tag>
+				<Tag type="info" hollow dashed>黄瓜 ui</Tag>
+				<Tag type="success" hollow dashed>黄瓜 ui</Tag>
+				<Tag type="error" hollow dashed>黄瓜 ui</Tag>
+				<Tag type="warning" hollow dashed>黄瓜 ui</Tag>
+				<Tag disabled hollow dashed>黄瓜 ui</Tag>
+
+				<h2>可关闭</h2>
+				<Tag type="primary" closable onClose={()=> console.log('关闭')}>点击关闭</Tag>
+
+				<h2>三种大小</h2>
+				<Tag size="small">小 small</Tag>
+				<Tag>中 default</Tag>
+				<Tag size="large">大 large</Tag>
 
 
 				<h2>自定义颜色</h2>
 				<Tag color="#666">黄瓜 ui</Tag>
 				<Tag color="pink">黄瓜 ui</Tag>
 				<Tag color="#f63">黄瓜 ui</Tag>
+
 			</div>
 		))
 	);

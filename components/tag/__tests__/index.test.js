@@ -43,4 +43,47 @@ describe("<Tag/>", () => {
 		assert(wrapper.find(".cuke-tag-dashed").length === 1);
 		assert(wrapper.find(".cuke-tag-disabled").length === 1);
 	});
+
+	it("should render custom color", () => {
+		const wrapper = shallow(
+			<div>
+				<Tag color="#666">黄瓜 ui</Tag>
+				<Tag color="pink">黄瓜 ui</Tag>
+				<Tag color="#f63">黄瓜 ui</Tag>
+			</div>
+		);
+		expect(toJson(wrapper)).toMatchSnapshot();
+	});
+
+	it("should can trigger click event", () => {
+		const onClick = jest.fn();
+		const wrapper = shallow(<Tag onClick={onClick}>黄瓜ui</Tag>);
+		wrapper.find(".cuke-tag").simulate("click");
+		expect(onClick).toHaveBeenCalled();
+	});
+	it("should can not trigger click event when disabled", () => {
+		const onClick = jest.fn();
+		const wrapper = shallow(
+			<Tag onClick={onClick} disabled>
+				黄瓜ui
+			</Tag>
+		);
+		wrapper.find(".cuke-tag").simulate("click");
+		expect(onClick).not.toHaveBeenCalled();
+	});
+
+	it("should can trigger onClose event when clicked", () => {
+		const onClick = jest.fn();
+		const onClose = jest.fn();
+		const wrapper = shallow(
+			<Tag onClick={onClick} onClose={onClose}>
+				黄瓜ui
+			</Tag>
+		);
+		wrapper.find(".cuke-tag").simulate("click");
+		expect(onClick).toHaveBeenCalled();
+		setTimeout(() => {
+			expect(onClose).toHaveBeenCalled();
+		}, 200);
+	});
 });

@@ -1,6 +1,7 @@
 import React, { PureComponent } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
+import { CloseIcon } from "../icon";
 
 const types = [
 	"default",
@@ -13,6 +14,9 @@ const types = [
 ];
 
 export default class Tag extends PureComponent {
+	state = {
+		visible: true
+	};
 	static defaultProps = {
 		prefixCls: "cuke-tag",
 		type: types[0],
@@ -20,7 +24,9 @@ export default class Tag extends PureComponent {
 		hollow: false,
 		dashed: false,
 		disabled: false,
-		size: "default"
+		size: "default",
+		closable: false,
+		onClose: () => {}
 	};
 
 	static propTypes = {
@@ -30,7 +36,14 @@ export default class Tag extends PureComponent {
 		hollow: PropTypes.bool,
 		disabled: PropTypes.bool,
 		dashed: PropTypes.bool,
+		closable: PropTypes.bool,
+		onClose: PropTypes.func,
 		size: PropTypes.oneOf(["small", "default", "large"])
+	};
+
+	onClose = () => {
+		this.setState({ visible: false });
+		this.props.onClose();
 	};
 
 	render() {
@@ -45,9 +58,14 @@ export default class Tag extends PureComponent {
 			size,
 			style,
 			color,
+			onClick,
+			closable,
 			...attr
 		} = this.props;
 
+		if (!this.state.visible) {
+			return null;
+		}
 		return (
 			<span
 				className={cls(prefixCls, className, {
@@ -56,15 +74,22 @@ export default class Tag extends PureComponent {
 					[`${prefixCls}-disabled`]: disabled,
 					[`${prefixCls}-large`]: size === "large",
 					[`${prefixCls}-small`]: size === "small",
-					[`${prefixCls}-dashed`]: dashed
+					[`${prefixCls}-dashed`]: dashed,
+					[`${prefixCls}-color`]: color
 				})}
 				style={{
 					backgroundColor: color,
 					...style
 				}}
 				{...attr}
+				onClick={!disabled ? onClick : undefined}
 			>
-				{children}
+				<span>{children}</span>
+				{closable && (
+					<span className={cls(`${prefixCls}-close`)} onClick={this.onClose}>
+						{<CloseIcon />}
+					</span>
+				)}
 			</span>
 		);
 	}

@@ -4,75 +4,77 @@
 .@{prefixCls} {
   line-height: 1.5;
   box-sizing: border-box;
-	font-size: @font-size;
-	white-space: nowrap;
-	user-select: none;
+  font-size: @font-size;
+  white-space: nowrap;
+  user-select: none;
   transition: all @default-transition;
   position: relative;
   color: @font-color;
   margin: 0;
-	border: 1px solid @border-color;
-	border-radius: @border-radius;
-	padding: 0 12px;
-	cursor: pointer;
-
-	.tag-hover(@default-color);
-
-	&-primary {
-		.tag-hover(@primary-color);
-		&.btn-hollow {
-			.tag-hollow(@primary-color)
-		}
-	}
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+  padding: 0 12px;
+  cursor: pointer;
+  // .tag-hover(@default-color);
+  &-primary {
+    .tag-hover(@primary-color);
+    &.@{prefixCls}-hollow {
+      .tag-hollow(@primary-color)
+    }
+  }
   &-default {
     color: @font-color;
     background-color: #fff;
     border: 1px solid @default-color;
-    &:not(.btn-disabled) {
+    &:not(.@{prefixCls}-disabled):not(.@{prefixCls}-dashed):not(.@{prefixCls}-color) {
       &:hover,
       &:active {
         border: 1px solid @primary-color;
         color: @primary-color;
       }
     }
-		&.@{prefixCls}-hollow {
+    &.@{prefixCls}-hollow {
+      .tag-hollow(@primary-color)
+		}
+		&.@{prefixCls}-dashed:not(.@{prefixCls}-disabled):not(.@{prefixCls}-color):hover {
       .tag-hollow(@primary-color)
     }
   }
   &-warning {
-		.tag-hover(@warning-color);
-
+    .tag-hover(@warning-color);
     &.@{prefixCls}-hollow {
       .tag-hollow(@warning-color)
     }
   }
   &-success {
-		.tag-hover(@success-color);
+    .tag-hover(@success-color);
     &.@{prefixCls}-hollow {
       .tag-hollow(@success-color)
     }
   }
   &-error {
-		.tag-hover(@error-color);
+    .tag-hover(@error-color);
     &.@{prefixCls}-hollow {
       .tag-hollow(@error-color)
     }
   }
   &-info {
-		.tag-hover(@info-color);
+    .tag-hover(@info-color);
     &.@{prefixCls}-hollow {
       .tag-hollow(@info-color)
     }
   }
   &-disabled {
 		.tag-hover(@disabled-color);
-    &.@{prefixCls}-hollow {
-      .tag-hollow(@disabled-color)
-    }
 		cursor: no-drop;
-		pointer-events: none;
-	}
-	&-large {
+    color: @disabled-font-color;
+    border-color: @border-color;
+    &.@{prefixCls}-hollow {
+			color: @disabled-font-color;
+			background-color: transparent;
+    }
+  }
+  &-large {
     font-size: @tag-large-font-size;
     padding: @tag-large-padding;
     height: @tag-large-height;
@@ -85,4 +87,22 @@
   &-dashed {
     border: 1px dashed;
   }
+  &-color {
+    .tag-hover(transparent);
+    &:hover,
+    &:active,
+    &:focus {
+      opacity: .8;
+    }
+    &.@{prefixCls}-hollow {
+      .tag-hollow(transparent)
+    }
+	}
+	&-close {
+		margin-left: 6px;
+		cursor: pointer;
+		display: inline-block;
+		vertical-align: sub;
+		font-size: @font-size + 2px;
+	}
 }
