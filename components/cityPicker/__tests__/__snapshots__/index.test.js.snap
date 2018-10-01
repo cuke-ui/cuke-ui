@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CityPicker/> should render CityPicker 1`] = `
+<div
+  class="cuke-city-picker"
+>
+  <div
+    class="cuke-city-picker-inner"
+  >
+    <input
+      class="cuke-input cuke-city-picker-input"
+      placeholder="请选择"
+      readonly=""
+      type="text"
+      value=""
+    />
+    <svg
+      attr="[object Object]"
+      class="undefined cuke-city-picker-arrow"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <polyline
+        points="6 9 12 15 18 9"
+      />
+    </svg>
+  </div>
+  <div
+    class="cuke-city-picker-content cuke-city-picker-close"
+  >
+    <div
+      class="cuke-city-picker-core"
+    >
+      <div
+        class="cuke-city-picker-core-panel"
+      >
+        <div
+          class="cuke-city-picker-core-panel-header"
+        >
+          <ul
+            class="cuke-city-picker-core-panel-header-wrap"
+          />
+        </div>
+        <div
+          class="cuke-city-picker-core-panel-content"
+        >
+          <ul
+            class="cuke-city-picker-core-panel-content-wrap"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

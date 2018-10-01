@@ -1,10 +1,52 @@
 @import "../styles/vars.less";
 
-@prefixCls : cuke-city-picker;
+@prefixCls: cuke-city-picker;
+@corePrefixCls : cuke-city-picker-core;
+
 .@{prefixCls} {
-  width: 379px;
+  position: relative;
+  &-inner {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+
+  &-open {
+    animation: cuke-picker-open @default-transition forwards;
+  }
+
+  &-close {
+    animation: cuke-picker-close @default-transition forwards;
+    pointer-events: none;
+  }
+
+  &-input {
+    width: @cuke-city-picker-width - 180px;
+  }
+
+  &-content {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 5px;
+    transform: scale(0);
+    z-index: @cuke-city-picker-z-index;
+  }
+
+  &-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: @disabled-font-color;
+  }
+}
+
+.@{corePrefixCls} {
+  width: @cuke-city-picker-width;
   border: 1px solid @border-color;
   box-shadow: @default-shadow;
+  border-radius: @border-radius;
   &-title {
     padding: 16px 0 5px;
     text-align: center;
@@ -74,10 +116,7 @@
           cursor: pointer;
           margin-bottom: 16px;
           transition: all @default-transition;
-
-          &:not(:nth-child(5n)) {
-            margin-right: 51px;
-          }
+          width: 20%;
 
           &:hover {
             color: @primary-color;

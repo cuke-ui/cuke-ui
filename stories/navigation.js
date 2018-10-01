@@ -91,7 +91,7 @@ storiesOf('导航', module)
 			<DownIcon/>
 		</Dropdown>
 		`)(() => (
-			<div style={{paddingBottom:200}}>
+			<div className="example-drapdown" style={{paddingBottom:200}}>
 				<h2>基本使用</h2>
 
 				<Row>
