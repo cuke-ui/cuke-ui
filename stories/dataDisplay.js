@@ -8,6 +8,7 @@ import Row from "../components/row";
 import Col from "../components/col";
 import Timeline from "../components/timeline";
 import Tag from "../components/tag";
+import CityPicker from "../components/cityPicker";
 import { SuccessIcon, InfoIcon } from "../components/icon";
 import { withInfo } from "@storybook/addon-info";
 
@@ -16,6 +17,7 @@ import "../components/button/styles.less";
 import "../components/tabs/styles.less";
 import "../components/timeline/styles.less";
 import "../components/tag/styles.less";
+import "../components/cityPicker/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
 
@@ -351,6 +353,48 @@ storiesOf("数据展示", module)
 				<Tag color="pink">黄瓜 ui</Tag>
 				<Tag color="#f63">黄瓜 ui</Tag>
 
+			</div>
+		))
+	)
+	.add(
+		"AddressPicker 城市选择框",
+		withInfo()(() => (
+			<div>
+				<h2>基本使用</h2>
+				<CityPicker cityList={[{
+					group:"热门",
+					resources:[{
+						id:1,
+						name:'成都'
+					}]
+				},{
+					group:"ABCDE",
+					resources:[{
+						id:1,
+						name:'成都'
+					},{
+						id:2,
+						name:'资阳'
+					}]
+				},{
+					group:"FGHIJ",
+					resources:[{
+						id:3,
+						name:'上海'
+					},{
+						id:4,
+						name:'乐至'
+					}]
+				},{
+					group:"KOMNO",
+					resources:[{
+						id:5,
+						name:'自贡'
+					},{
+						id:6,
+						name:'北京'
+					}]
+				}]}/>
 			</div>
 		))
 	);
