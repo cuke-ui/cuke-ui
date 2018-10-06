@@ -64,13 +64,13 @@ yarn add cuke-ui
 
 ```jsx
 import React from "react"
-import { Button, message } from "cuke-ui"
+import { Button } from "cuke-ui"
 import "cuke-ui/dist/cuke-ui.min.css"
 
-class Text extends React.Component {
+class Page extends React.Component {
   render(){
     return (
-      <Button onClick={()=> message.success('即插即用的react UI库')}>黄瓜ui</Button>
+      <Button>黄瓜ui</Button>
     )
  }
 }
