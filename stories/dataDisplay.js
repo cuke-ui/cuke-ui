@@ -498,11 +498,12 @@ storiesOf("数据展示", module)
 				<h2>禁用</h2>
 				<CityPicker disabled cityList={cityList} />
 
+				<h2>禁用分组</h2>
+				<CityPicker cityList={cityList} disabledGroups={[1,2,3]}/>
+
 				<h2>自定义占位符</h2>
 				<CityPicker placeholder="请选择城市" cityList={cityList} />
 
-				<h2>禁用某一个分组</h2>
-				<CityPicker cityList={cityList} />
 
 				<h2>在任意容器中单独使用 picker</h2>
 				<CityPicker.CityPickerCore cityList={cityList} />

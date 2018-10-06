@@ -36,7 +36,6 @@ exports[`<CityPicker/> should render CityPicker 1`] = `
   >
     <div
       class="cuke-city-picker-core"
-      defaultactivegroup="0"
     >
       <div
         class="cuke-city-picker-core-panel"
@@ -46,14 +45,63 @@ exports[`<CityPicker/> should render CityPicker 1`] = `
         >
           <ul
             class="cuke-city-picker-core-panel-header-wrap"
-          />
+          >
+            <li
+              class="cuke-city-picker-core-item cuke-city-picker-core-active"
+            >
+              <span>
+                热门
+              </span>
+            </li>
+            <li
+              class="cuke-city-picker-core-item"
+            >
+              <span>
+                ABCDE
+              </span>
+            </li>
+            <li
+              class="cuke-city-picker-core-item"
+            >
+              <span>
+                FGHIJ
+              </span>
+            </li>
+            <li
+              class="cuke-city-picker-core-item"
+            >
+              <span>
+                KLMNO
+              </span>
+            </li>
+            <li
+              class="cuke-city-picker-core-item"
+            >
+              <span>
+                PQRST
+              </span>
+            </li>
+            <li
+              class="cuke-city-picker-core-item"
+            >
+              <span>
+                UVWXYZ
+              </span>
+            </li>
+          </ul>
         </div>
         <div
           class="cuke-city-picker-core-panel-content"
         >
           <ul
             class="cuke-city-picker-core-panel-content-wrap"
-          />
+          >
+            <li
+              class="city"
+            >
+              成都
+            </li>
+          </ul>
         </div>
       </div>
     </div>

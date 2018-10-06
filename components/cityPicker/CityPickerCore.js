@@ -5,6 +5,7 @@ import cls from "classnames";
 export default class CityPickerCore extends PureComponent {
 	static defaultProps = {
 		prefixCls: "cuke-city-picker-core",
+		disabledGroups: [],
 		cityList: []
 	};
 	static propTypes = {
@@ -14,6 +15,7 @@ export default class CityPickerCore extends PureComponent {
 				resources: PropTypes.arrayOf(PropTypes.object)
 			})
 		).isRequired,
+		disabledGroups: PropTypes.arrayOf([PropTypes.number, PropTypes.string]),
 		onCityGroupChange: PropTypes.func,
 		onCityChange: PropTypes.func,
 		defaultActiveGroup: PropTypes.oneOfType([
@@ -47,8 +49,10 @@ export default class CityPickerCore extends PureComponent {
 			cityList,
 			prefixCls,
 			className,
+			defaultActiveGroup, //eslint-disable-line
 			onCityGroupChange, //eslint-disable-line
 			onCityChange, //eslint-disable-line
+			disabledGroups,
 			...attr
 		} = this.props;
 		const { selectedCityGroup, selectedCityName } = this.state;
@@ -61,13 +65,22 @@ export default class CityPickerCore extends PureComponent {
 					<div className={cls(`${prefixCls}-panel-header`)}>
 						<ul className={cls(`${prefixCls}-panel-header-wrap`)}>
 							{cityGroups.map((cityGroup, i) => {
+								const isDisabled = disabledGroups.some(
+									group => group === cityGroup || group === i
+								);
 								return (
 									<li
-										onClick={() => this.onCityGroupChange(cityGroup, i)}
-										className={cls("item", {
-											active:
-												selectedCityGroup === cityGroup ||
-												selectedCityGroup === i
+										onClick={
+											isDisabled
+												? undefined
+												: () => this.onCityGroupChange(cityGroup, i)
+										}
+										className={cls(`${prefixCls}-item`, {
+											[`${prefixCls}-active`]:
+												!isDisabled &&
+												(selectedCityGroup === cityGroup ||
+													selectedCityGroup === i),
+											[`${prefixCls}-disabled`]: isDisabled
 										})}
 										key={i}
 									>

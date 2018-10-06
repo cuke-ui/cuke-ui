@@ -15,11 +15,6 @@
     }
   }
 
-  &-disabled {
-    color: @disabled-font-color;
-    cursor: no-drop;
-  }
-
   &-open {
     animation: cuke-picker-open @default-transition forwards;
   }
@@ -60,6 +55,10 @@
     padding: 16px 0 5px;
     text-align: center;
   }
+  &-disabled {
+    color: @disabled-font-color;
+    cursor: no-drop !important;
+  }
   &-panel {
     @address-select-section-header-height: 42px;
     min-height: 221px;
@@ -88,16 +87,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .item {
+        .@{corePrefixCls}-item {
           cursor: pointer;
           transition: all @default-transition;
           position: relative;
 
-          &:hover {
+          &:not(.@{corePrefixCls}-disabled):hover {
             color: @primary-color;
           }
 
-          &.active {
+          &.@{corePrefixCls}-active {
             color: @primary-color;
 
             &::after {

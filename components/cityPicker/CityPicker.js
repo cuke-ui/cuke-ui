@@ -13,7 +13,8 @@ export default class CityPicker extends PureComponent {
 		prefixCls: "cuke-city-picker",
 		cityList: [],
 		disabled: false,
-		placeholder: "请选择"
+		placeholder: "请选择",
+		disabledGroups: []
 	};
 	static propTypes = {
 		cityList: PropTypes.arrayOf(
@@ -26,6 +27,7 @@ export default class CityPicker extends PureComponent {
 			PropTypes.string,
 			PropTypes.number
 		]),
+		disabledGroups: PropTypes.arrayOf([PropTypes.number, PropTypes.string]),
 		activeGroup: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		disabled: PropTypes.bool,
 		placeholder: PropTypes.string,
@@ -65,6 +67,10 @@ export default class CityPicker extends PureComponent {
 			disabled,
 			placeholder,
 			className,
+			disabledGroups,
+			defaultActiveGroup, //eslint-disable-line
+			onCityGroupChange, //eslint-disable-line
+			onCityChange, //eslint-disable-line
 			...attr
 		} = this.props;
 		const { visible, selectedCityName, selectedCityGroup } = this.state;
@@ -93,6 +99,7 @@ export default class CityPicker extends PureComponent {
 						onCityChange={this.onCityChange}
 						defaultActiveGroup={selectedCityGroup}
 						onCityGroupChange={this.onCityGroupChange}
+						disabledGroups={disabledGroups}
 					/>
 				</div>
 			</div>
