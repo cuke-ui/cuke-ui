@@ -5,10 +5,19 @@
 
 .@{prefixCls} {
   position: relative;
+
   &-inner {
     display: inline-block;
     position: relative;
     cursor: pointer;
+    > .cuke-input:not(.cuke-input-disabled) {
+      cursor: pointer;
+    }
+  }
+
+  &-disabled {
+    color: @disabled-font-color;
+    cursor: no-drop;
   }
 
   &-open {

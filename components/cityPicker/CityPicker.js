@@ -22,19 +22,25 @@ export default class CityPicker extends PureComponent {
 				resources: PropTypes.arrayOf(PropTypes.object)
 			})
 		).isRequired,
+		defaultActiveGroup: PropTypes.oneOfType([
+			PropTypes.string,
+			PropTypes.number
+		]),
+		activeGroup: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		disabled: PropTypes.bool,
 		placeholder: PropTypes.string,
 		onCityGroupChange: PropTypes.func,
 		onCityChange: PropTypes.func
 	};
 	state = {
-		selectedCityGroup: "热门",
+		selectedCityGroup:
+			this.props.defaultActiveGroup || this.props.activeGroup || 0,
 		selectedCityName: ""
 	};
 
-	onCityGroupChange = selectedCityGroup => {
+	onCityGroupChange = (selectedCityGroup, index) => {
 		if (this.props.onCityGroupChange) {
-			this.props.onCityGroupChange(selectedCityGroup);
+			this.props.onCityGroupChange(selectedCityGroup, index);
 		}
 	};
 	onCityChange = selectedCity => {
@@ -61,7 +67,7 @@ export default class CityPicker extends PureComponent {
 			className,
 			...attr
 		} = this.props;
-		const { visible, selectedCityName } = this.state;
+		const { visible, selectedCityName, selectedCityGroup } = this.state;
 		return (
 			<div className={cls(`${prefixCls}`, className)} {...attr}>
 				<div className={cls(`${prefixCls}-inner`)}>
@@ -85,6 +91,7 @@ export default class CityPicker extends PureComponent {
 					<CityPickerCore
 						cityList={cityList}
 						onCityChange={this.onCityChange}
+						defaultActiveGroup={selectedCityGroup}
 						onCityGroupChange={this.onCityGroupChange}
 					/>
 				</div>

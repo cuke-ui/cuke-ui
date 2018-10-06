@@ -36,6 +36,7 @@ exports[`<CityPicker/> should render CityPicker 1`] = `
   >
     <div
       class="cuke-city-picker-core"
+      defaultactivegroup="0"
     >
       <div
         class="cuke-city-picker-core-panel"

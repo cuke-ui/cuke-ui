@@ -21,61 +21,86 @@ import "../components/cityPicker/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
 
-const cityList = [{
-	group: "热门",
-	resources: [{
-		id: 1,
-		name: '成都'
-	}]
-}, {
-	group: "ABCDE",
-	resources: [{
-		id: 1,
-		name: '成都'
-	}, {
-		id: 2,
-		name: '资阳'
-	}]
-}, {
-	group: "FGHIJ",
-	resources: [{
-		id: 3,
-		name: '上海'
-	}, {
-		id: 4,
-		name: '乐至'
-	}]
-}, {
-	group: "KLMNO",
-	resources: [{
-		id: 5,
-		name: '自贡'
-	}, {
-		id: 6,
-		name: '北京'
-	}, {
-		id: 7,
-		name: '香港'
-	}, {
-		id: 8,
-		name: '南京'
-	}, {
-		id: 9,
-		name: '简阳'
-	}],
-}, {
-	group: "PQRST",
-	resources: [{
-		id: 10,
-		name: '广州'
-	}]
-}, {
-	group: "UVWXYZ",
-	resources: [{
-		id: 11,
-		name: '西安'
-	}]
-}]
+const cityList = [
+	{
+		group: "热门",
+		resources: [
+			{
+				id: 1,
+				name: "成都"
+			}
+		]
+	},
+	{
+		group: "ABCDE",
+		resources: [
+			{
+				id: 1,
+				name: "成都"
+			},
+			{
+				id: 2,
+				name: "资阳"
+			}
+		]
+	},
+	{
+		group: "FGHIJ",
+		resources: [
+			{
+				id: 3,
+				name: "上海"
+			},
+			{
+				id: 4,
+				name: "乐至"
+			}
+		]
+	},
+	{
+		group: "KLMNO",
+		resources: [
+			{
+				id: 5,
+				name: "自贡"
+			},
+			{
+				id: 6,
+				name: "北京"
+			},
+			{
+				id: 7,
+				name: "香港"
+			},
+			{
+				id: 8,
+				name: "南京"
+			},
+			{
+				id: 9,
+				name: "简阳"
+			}
+		]
+	},
+	{
+		group: "PQRST",
+		resources: [
+			{
+				id: 10,
+				name: "广州"
+			}
+		]
+	},
+	{
+		group: "UVWXYZ",
+		resources: [
+			{
+				id: 11,
+				name: "西安"
+			}
+		]
+	}
+];
 
 storiesOf("数据展示", module)
 	.add(
@@ -120,87 +145,87 @@ storiesOf("数据展示", module)
 	</Tabs>
 
 	`)(() => (
-				<div>
-					<h2>基本使用</h2>
+			<div>
+				<h2>基本使用</h2>
 
-					<Tabs defaultActiveKey="1" onChange={key => console.log(key)}>
-						<Tabs.TabPane tab="选项1" key="1">
-							1
+				<Tabs defaultActiveKey="1" onChange={key => console.log(key)}>
+					<Tabs.TabPane tab="选项1" key="1">
+						1
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项2" key="2">
-							2
+					<Tabs.TabPane tab="选项2" key="2">
+						2
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项3" key="3">
-							3
+					<Tabs.TabPane tab="选项3" key="3">
+						3
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="第4个选项" key="4">
-							动态计算宽度
+					<Tabs.TabPane tab="第4个选项" key="4">
+						动态计算宽度
 					</Tabs.TabPane>
-					</Tabs>
+				</Tabs>
 
-					<h2>默认选中</h2>
-					<Tabs defaultActiveKey="2">
-						<Tabs.TabPane tab="选项1" key="1">
-							1
+				<h2>默认选中</h2>
+				<Tabs defaultActiveKey="2">
+					<Tabs.TabPane tab="选项1" key="1">
+						1
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项2" key="2">
-							2
+					<Tabs.TabPane tab="选项2" key="2">
+						2
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项3" key="3">
-							3
+					<Tabs.TabPane tab="选项3" key="3">
+						3
 					</Tabs.TabPane>
-					</Tabs>
+				</Tabs>
 
-					<h2>禁用某一项</h2>
-					<Tabs activeKey="1">
-						<Tabs.TabPane tab="选项1" key="1">
-							1
+				<h2>禁用某一项</h2>
+				<Tabs activeKey="1">
+					<Tabs.TabPane tab="选项1" key="1">
+						1
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项2" key="2" disabled>
-							2
+					<Tabs.TabPane tab="选项2" key="2" disabled>
+						2
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项3" key="3">
-							3
+					<Tabs.TabPane tab="选项3" key="3">
+						3
 					</Tabs.TabPane>
-					</Tabs>
+				</Tabs>
 
-					<h2>自定义标题</h2>
-					<Tabs defaultActiveKey="1">
-						<Tabs.TabPane tab={<SuccessIcon />} key="1">
-							已完成
+				<h2>自定义标题</h2>
+				<Tabs defaultActiveKey="1">
+					<Tabs.TabPane tab={<SuccessIcon />} key="1">
+						已完成
 					</Tabs.TabPane>
-						<Tabs.TabPane tab={<InfoIcon />} key="2">
-							待完成
+					<Tabs.TabPane tab={<InfoIcon />} key="2">
+						待完成
 					</Tabs.TabPane>
-					</Tabs>
+				</Tabs>
 
-					<h2>扩展内容</h2>
-					<Tabs defaultActiveKey="1" tabBarExtraContent={<Button>更多</Button>}>
-						<Tabs.TabPane tab={<SuccessIcon />} key="1">
-							已完成
+				<h2>扩展内容</h2>
+				<Tabs defaultActiveKey="1" tabBarExtraContent={<Button>更多</Button>}>
+					<Tabs.TabPane tab={<SuccessIcon />} key="1">
+						已完成
 					</Tabs.TabPane>
-						<Tabs.TabPane tab={<InfoIcon />} key="2">
-							待完成
+					<Tabs.TabPane tab={<InfoIcon />} key="2">
+						待完成
 					</Tabs.TabPane>
-					</Tabs>
+				</Tabs>
 
-					<h2>卡片风格</h2>
-					<Tabs defaultActiveKey="1" type="card">
-						<Tabs.TabPane tab="选项1" key="1">
-							1
+				<h2>卡片风格</h2>
+				<Tabs defaultActiveKey="1" type="card">
+					<Tabs.TabPane tab="选项1" key="1">
+						1
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项2" key="2">
-							2
+					<Tabs.TabPane tab="选项2" key="2">
+						2
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项3" key="3">
-							3
+					<Tabs.TabPane tab="选项3" key="3">
+						3
 					</Tabs.TabPane>
-						<Tabs.TabPane tab="选项4" key="4" disabled>
-							4
+					<Tabs.TabPane tab="选项4" key="4" disabled>
+						4
 					</Tabs.TabPane>
-					</Tabs>
-				</div>
-			))
+				</Tabs>
+			</div>
+		))
 	)
 	.add(
 		"Badge 徽标数",
@@ -379,36 +404,60 @@ storiesOf("数据展示", module)
 
 				<h2>镂空</h2>
 				<Tag>黄瓜 ui</Tag>
-				<Tag type="primary" hollow>黄瓜 ui</Tag>
-				<Tag type="info" hollow>黄瓜 ui</Tag>
-				<Tag type="success" hollow>黄瓜 ui</Tag>
-				<Tag type="error" hollow>黄瓜 ui</Tag>
-				<Tag type="warning" hollow>黄瓜 ui</Tag>
-				<Tag disabled hollow>黄瓜 ui</Tag>
+				<Tag type="primary" hollow>
+					黄瓜 ui
+				</Tag>
+				<Tag type="info" hollow>
+					黄瓜 ui
+				</Tag>
+				<Tag type="success" hollow>
+					黄瓜 ui
+				</Tag>
+				<Tag type="error" hollow>
+					黄瓜 ui
+				</Tag>
+				<Tag type="warning" hollow>
+					黄瓜 ui
+				</Tag>
+				<Tag disabled hollow>
+					黄瓜 ui
+				</Tag>
 
 				<h2>虚线</h2>
 				<Tag dashed>黄瓜 ui</Tag>
-				<Tag type="primary" hollow dashed>黄瓜 ui</Tag>
-				<Tag type="info" hollow dashed>黄瓜 ui</Tag>
-				<Tag type="success" hollow dashed>黄瓜 ui</Tag>
-				<Tag type="error" hollow dashed>黄瓜 ui</Tag>
-				<Tag type="warning" hollow dashed>黄瓜 ui</Tag>
-				<Tag disabled hollow dashed>黄瓜 ui</Tag>
+				<Tag type="primary" hollow dashed>
+					黄瓜 ui
+				</Tag>
+				<Tag type="info" hollow dashed>
+					黄瓜 ui
+				</Tag>
+				<Tag type="success" hollow dashed>
+					黄瓜 ui
+				</Tag>
+				<Tag type="error" hollow dashed>
+					黄瓜 ui
+				</Tag>
+				<Tag type="warning" hollow dashed>
+					黄瓜 ui
+				</Tag>
+				<Tag disabled hollow dashed>
+					黄瓜 ui
+				</Tag>
 
 				<h2>可关闭</h2>
-				<Tag type="primary" closable onClose={() => console.log('关闭')}>点击关闭</Tag>
+				<Tag type="primary" closable onClose={() => console.log("关闭")}>
+					点击关闭
+				</Tag>
 
 				<h2>三种大小</h2>
 				<Tag size="small">小 small</Tag>
 				<Tag>中 default</Tag>
 				<Tag size="large">大 large</Tag>
 
-
 				<h2>自定义颜色</h2>
 				<Tag color="#666">黄瓜 ui</Tag>
 				<Tag color="pink">黄瓜 ui</Tag>
 				<Tag color="#f63">黄瓜 ui</Tag>
-
 			</div>
 		))
 	)
@@ -433,27 +482,30 @@ storiesOf("数据展示", module)
 			}
 		]
 		`)(() => (
-				<div>
-					<h2>基本使用</h2>
-					<CityPicker
-						onCityChange={(city) => console.log('selected city:', city)}
-						onCityGroupChange={(cityGroup) => console.log('selected cityGroup:', cityGroup)}
-						cityList={cityList}
-					/>
+			<div>
+				<h2>基本使用</h2>
+				<CityPicker
+					onCityChange={city => console.log("selected city:", city)}
+					onCityGroupChange={(cityGroup,index) =>
+						console.log("selected cityGroup:", cityGroup, index)
+					}
+					cityList={cityList}
+				/>
 
-					<h2>禁用</h2>
-					<CityPicker
-						disabled
-						cityList={cityList} />
+				<h2>默认选中分组</h2>
+				<CityPicker defaultActiveGroup={1} cityList={cityList} />
 
-					<h2>自定义占位符</h2>
-					<CityPicker
-						placeholder="请选择城市"
-						cityList={cityList} />
+				<h2>禁用</h2>
+				<CityPicker disabled cityList={cityList} />
 
-					<h2>在任意容器中单独使用 picker</h2>
-					<CityPicker.CityPickerCore
-						cityList={cityList} />
-				</div>
-			))
+				<h2>自定义占位符</h2>
+				<CityPicker placeholder="请选择城市" cityList={cityList} />
+
+				<h2>禁用某一个分组</h2>
+				<CityPicker cityList={cityList} />
+
+				<h2>在任意容器中单独使用 picker</h2>
+				<CityPicker.CityPickerCore cityList={cityList} />
+			</div>
+		))
 	);

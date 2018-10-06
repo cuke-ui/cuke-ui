@@ -15,21 +15,27 @@ export default class CityPickerCore extends PureComponent {
 			})
 		).isRequired,
 		onCityGroupChange: PropTypes.func,
-		onCityChange: PropTypes.func
+		onCityChange: PropTypes.func,
+		defaultActiveGroup: PropTypes.oneOfType([
+			PropTypes.string,
+			PropTypes.number
+		]),
+		activeGroup: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
 	};
 	state = {
-		selectedCityGroup: "热门",
+		selectedCityGroup:
+			this.props.defaultActiveGroup || this.props.activeGroup || 0,
 		selectedCityName: ""
 	};
 
-	onCityGroupChange = selectedCityGroup => () => {
+	onCityGroupChange = (selectedCityGroup, index) => {
 		this.setState({ selectedCityGroup });
 
 		if (this.props.onCityGroupChange) {
-			this.props.onCityGroupChange(selectedCityGroup);
+			this.props.onCityGroupChange(selectedCityGroup, index);
 		}
 	};
-	onCityChange = selectedCity => () => {
+	onCityChange = selectedCity => {
 		this.setState({ selectedCityName: selectedCity.name });
 		if (this.props.onCityChange) {
 			this.props.onCityChange(selectedCity);
@@ -50,16 +56,18 @@ export default class CityPickerCore extends PureComponent {
 			cityList.length >= 1 ? cityList.map(({ group }) => group) : [];
 
 		return (
-			<div className={cls(`${prefixCls}`, className)} {...attr}>
+			<div className={cls(prefixCls, className)} {...attr}>
 				<div className={cls(`${prefixCls}-panel`)}>
 					<div className={cls(`${prefixCls}-panel-header`)}>
 						<ul className={cls(`${prefixCls}-panel-header-wrap`)}>
 							{cityGroups.map((cityGroup, i) => {
 								return (
 									<li
-										onClick={this.onCityGroupChange(cityGroup)}
+										onClick={() => this.onCityGroupChange(cityGroup, i)}
 										className={cls("item", {
-											active: selectedCityGroup === cityGroup
+											active:
+												selectedCityGroup === cityGroup ||
+												selectedCityGroup === i
 										})}
 										key={i}
 									>
@@ -72,21 +80,27 @@ export default class CityPickerCore extends PureComponent {
 					<div className={cls(`${prefixCls}-panel-content`)}>
 						<ul className={cls(`${prefixCls}-panel-content-wrap`)}>
 							{cityList.length >= 1 &&
-								cityList
-									.find(item => item.group === selectedCityGroup)
-									.resources.map((city, i) => {
-										return (
-											<li
-												className={cls("city", {
-													selected: selectedCityName === city.name
-												})}
-												key={i}
-												onClick={this.onCityChange(city)}
-											>
-												{city.name}
-											</li>
-										);
-									})}
+								(
+									(
+										cityList.find(
+											(item, i) =>
+												item.group === selectedCityGroup ||
+												i === selectedCityGroup
+										) || {}
+									).resources || []
+								).map((city, i) => {
+									return (
+										<li
+											className={cls("city", {
+												selected: selectedCityName === city.name
+											})}
+											key={i}
+											onClick={() => this.onCityChange(city)}
+										>
+											{city.name}
+										</li>
+									);
+								})}
 						</ul>
 					</div>
 				</div>
