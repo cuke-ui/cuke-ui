@@ -60,7 +60,7 @@ yarn add cuke-ui
 
 ### 如何使用
 
-> 1.全部引入
+> 1. 全部引入
 
 ```jsx
 import React from "react"
@@ -76,14 +76,14 @@ class Page extends React.Component {
 }
 ```
 
-> 2.按需引入
+> 2 .按需引入
 
 ```js
 import Button from 'cuke-ui/lib/Button';
 import 'cuke-ui/lib/Button/style.less';
 ```
 
-> 3.使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+> 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 
 ```js
 //.babelrc
