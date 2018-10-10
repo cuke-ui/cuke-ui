@@ -9,7 +9,8 @@ export default class Progress extends PureComponent {
 		prefixCls: "cuke-progress",
 		type: "default",
 		percent: 0,
-		animation: true
+		animation: false,
+		showInfo: true
 	};
 	static propTypes = {
 		prefixCls: PropTypes.string.isRequired,
@@ -27,8 +28,11 @@ export default class Progress extends PureComponent {
 			animation,
 			className,
 			percent,
+			showInfo,
 			...attr
 		} = this.props;
+
+		const _percent = `${Math.min(100, percent)}%`;
 
 		return (
 			<div
@@ -40,9 +44,14 @@ export default class Progress extends PureComponent {
 						className={cls(`${prefixCls}-bg`, {
 							[`${prefixCls}-bg-animation`]: animation
 						})}
-						style={{ width: `${percent}%` }}
+						style={{ width: _percent }}
 					/>
 				</div>
+				{showInfo ? (
+					<div className={`${prefixCls}-num`}>{_percent}</div>
+				) : (
+					undefined
+				)}
 			</div>
 		);
 	}

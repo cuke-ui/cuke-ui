@@ -39,12 +39,22 @@ describe("<Progress/>", () => {
 		const wrapper = render(
 			<div>
 				<Progress percent={20} />
-				<Progress percent={20} animation={false} />
+				<Progress percent={20} animation={true} />
 			</div>
 		);
 		assert(wrapper.find(".cuke-progress").length >= 1);
 		assert(wrapper.find(".cuke-progress-enter").length >= 1);
 		assert(wrapper.find(".cuke-progress-bg-animation").length === 1);
 		assert(wrapper.find(".cuke-progress-bg").length >= 1);
+		assert(wrapper.find(".cuke-progress-num").length >= 1);
+	});
+
+	it("should can not render info when set showInfo with false", () => {
+		const wrapper = render(
+			<div>
+				<Progress percent={20} showInfo={false} />
+			</div>
+		);
+		assert(wrapper.find(".cuke-progress-num").length === 0);
 	});
 });

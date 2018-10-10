@@ -9,9 +9,14 @@ exports[`<Progress/> should render a <Progress/> components 1`] = `
       class="cuke-progress-enter"
     >
       <div
-        class="cuke-progress-bg cuke-progress-bg-animation"
+        class="cuke-progress-bg"
         style="width:70%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      70%
     </div>
   </div>
   <div
@@ -24,6 +29,11 @@ exports[`<Progress/> should render a <Progress/> components 1`] = `
         class="cuke-progress-bg"
         style="width:70%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      70%
     </div>
   </div>
 </div>
@@ -38,9 +48,14 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
       class="cuke-progress-enter"
     >
       <div
-        class="cuke-progress-bg cuke-progress-bg-animation"
+        class="cuke-progress-bg"
         style="width:20%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      20%
     </div>
   </div>
   <div
@@ -50,9 +65,14 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
       class="cuke-progress-enter"
     >
       <div
-        class="cuke-progress-bg cuke-progress-bg-animation"
+        class="cuke-progress-bg"
         style="width:30%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      30%
     </div>
   </div>
   <div
@@ -62,9 +82,14 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
       class="cuke-progress-enter"
     >
       <div
-        class="cuke-progress-bg cuke-progress-bg-animation"
+        class="cuke-progress-bg"
         style="width:40%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      40%
     </div>
   </div>
   <div
@@ -74,9 +99,14 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
       class="cuke-progress-enter"
     >
       <div
-        class="cuke-progress-bg cuke-progress-bg-animation"
+        class="cuke-progress-bg"
         style="width:50%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      50%
     </div>
   </div>
   <div
@@ -86,9 +116,14 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
       class="cuke-progress-enter"
     >
       <div
-        class="cuke-progress-bg cuke-progress-bg-animation"
+        class="cuke-progress-bg"
         style="width:60%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      60%
     </div>
   </div>
   <div
@@ -102,6 +137,11 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
         style="width:20%"
       />
     </div>
+    <div
+      class="cuke-progress-num"
+    >
+      20%
+    </div>
   </div>
   <div
     class="cuke-progress cuke-progress-success"
@@ -113,6 +153,11 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
         class="cuke-progress-bg"
         style="width:30%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      30%
     </div>
   </div>
   <div
@@ -126,6 +171,11 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
         style="width:40%"
       />
     </div>
+    <div
+      class="cuke-progress-num"
+    >
+      40%
+    </div>
   </div>
   <div
     class="cuke-progress cuke-progress-warning"
@@ -138,6 +188,11 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
         style="width:50%"
       />
     </div>
+    <div
+      class="cuke-progress-num"
+    >
+      50%
+    </div>
   </div>
   <div
     class="cuke-progress cuke-progress-error"
@@ -149,6 +204,11 @@ exports[`<Progress/> should render five type width <Progress/>  1`] = `
         class="cuke-progress-bg"
         style="width:60%"
       />
+    </div>
+    <div
+      class="cuke-progress-num"
+    >
+      60%
     </div>
   </div>
 </div>

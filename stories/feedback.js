@@ -363,7 +363,7 @@ storiesOf("操作反馈", module)
 				<h2>基本使用</h2>
 				<Progress percent={70} />
 
-				<Progress percent={70} animation={false} />
+				<Progress percent={70} animation={true} />
 
 				<h2>5种状态</h2>
 				<Progress percent={20} type="default" />
@@ -372,11 +372,15 @@ storiesOf("操作反馈", module)
 				<Progress percent={50} type="warning" />
 				<Progress percent={60} type="error" />
 
-				<Progress percent={20} type="default" animation={false} />
-				<Progress percent={30} type="success" animation={false} />
-				<Progress percent={40} type="info" animation={false} />
-				<Progress percent={50} type="warning" animation={false} />
-				<Progress percent={60} type="error" animation={false} />
+				<Progress percent={20} type="default" animation={true} />
+				<Progress percent={30} type="success" animation={true} />
+				<Progress percent={40} type="info" animation={true} />
+				<Progress percent={50} type="warning" animation={true} />
+				<Progress percent={60} type="error" animation={true} />
+
+				
+				<h2>隐藏信息</h2>
+				<Progress percent={20} showInfo={false}/>
 
 				<h2>动态改变</h2>
 				<ProgressPage />

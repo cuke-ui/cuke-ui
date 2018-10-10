@@ -4,20 +4,14 @@ import Button from '../../components/button';
 
 export default class ModalPage extends Component {
 	state = {
-		percent: 10
+		percent: 50
 	};
-	onCancel = value => {
-		this.setState({
-			percent: value
-		});
-  };
   render(){
     return (
       <div>
-        <Progress percent={this.state.percent} animation={false}/>
-        <Progress percent={this.state.percent} />
-        <Button size="small" onClick={()=> this.setState({percent:this.state.percent-2})}>-</Button>
-        <Button size="small" onClick={()=> this.setState({percent:this.state.percent+2})}>+</Button>
+        <Progress percent={this.state.percent} animation={true}/>
+        <Button size="small" onClick={()=> this.setState({percent:this.state.percent-3})}>-</Button>
+        <Button size="small" onClick={()=> this.setState({percent:this.state.percent+3})}>+</Button>
       </div>
     )
   }

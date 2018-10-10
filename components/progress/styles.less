@@ -8,9 +8,18 @@
     border-radius: @progress-border-radius;
     overflow: hidden;
     position: relative;
+    .flex-center(space-between);
     &-enter {
+        width: 100%;
         height: inherit;
         background: @bg-color;
+        overflow: hidden;
+        border-radius: @progress-border-radius;
+    }
+    &-num {
+        margin-left:10px;
+        font-size: 12px;
+        color: @font-color;
     }
     &-bg {
         height: inherit;
