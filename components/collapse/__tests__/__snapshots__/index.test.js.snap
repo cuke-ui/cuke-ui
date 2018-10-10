@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Collapse/> should render Collapse 1`] = `
+<div
+  class="cuke-collapse"
+>
+  <div
+    class="cuke-collapse-item"
+  >
+    <div
+      class="cuke-collapse-item-header"
+    >
+      <span
+        class="cuke-collapse-item-arrow"
+      >
+        <svg
+          attr="[object Object]"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <polyline
+            points="9 18 15 12 9 6"
+          />
+        </svg>
+      </span>
+      标题1
+    </div>
+    <div
+      class="cuke-collapse-item-content cuke-collapse-item-hide"
+    >
+      内容1
+    </div>
+  </div>
+  <div
+    class="cuke-collapse-item"
+  >
+    <div
+      class="cuke-collapse-item-header"
+    >
+      <span
+        class="cuke-collapse-item-arrow"
+      >
+        <svg
+          attr="[object Object]"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <polyline
+            points="9 18 15 12 9 6"
+          />
+        </svg>
+      </span>
+      标题2
+    </div>
+    <div
+      class="cuke-collapse-item-content cuke-collapse-item-hide"
+    >
+      内容2
+    </div>
+  </div>
+</div>
+`;

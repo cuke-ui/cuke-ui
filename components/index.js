@@ -17,7 +17,7 @@ export { default as Modal } from "./modal";
 export { default as Spin } from "./spin";
 export { default as Tooltip } from "./tooltip";
 export { default as Progress } from "./progress";
-export { default as backTop } from "./backTop";
+export { default as BackTop } from "./backTop";
 export { default as Tabs } from "./tabs";
 export { default as Badge } from "./badge";
 export { default as Dropdown } from "./dropdown";
@@ -30,6 +30,7 @@ export { default as Checkbox } from "./checkbox";
 export { default as Icon } from "./icon";
 export { default as Switch } from "./switch";
 export { default as Tag } from "./tag";
-export { default as cityPicker } from "./cityPicker";
+export { default as CityPicker } from "./cityPicker";
+export { default as Collapse } from "./collapse";
 
 export { default as version } from "./version";

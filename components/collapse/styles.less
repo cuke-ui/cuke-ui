@@ -1,0 +1,46 @@
+@import "../styles/vars.less";
+
+
+@prefixCls : cuke-collapse;
+.@{prefixCls} {
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+  font-size: @font-size;
+  box-shadow: @default-shadow;
+  position: relative;
+
+  &-item {
+    border-bottom: 1px solid @border-color;
+
+    &-arrow {
+      font-size: 16px;
+      vertical-align: middle;
+      margin-right: 10px;
+      svg {
+        transition: @default-transition;
+      }
+    }
+
+    &-arrow-active {
+      svg {
+        transform: rotate(90deg)
+      }
+    }
+    &-header {
+      padding: 15px 20px;
+      cursor: pointer;
+      color: fade(@font-color,90%);
+      background-color: @bg-color;
+    }
+    &-content {
+      padding: 20px;
+      color: @font-color;
+      overflow: hidden;
+      transition: all @default-transition;
+    }
+
+    &-hide {
+      display: none;
+    }
+  }
+}

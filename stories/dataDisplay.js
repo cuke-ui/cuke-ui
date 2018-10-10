@@ -11,6 +11,7 @@ import Tag from "../components/tag";
 import CityPicker from "../components/cityPicker";
 import { SuccessIcon, InfoIcon } from "../components/icon";
 import { withInfo } from "@storybook/addon-info";
+import Collapse from "../components/collapse";
 
 import "../components/tooltip/styles.less";
 import "../components/button/styles.less";
@@ -18,6 +19,7 @@ import "../components/tabs/styles.less";
 import "../components/timeline/styles.less";
 import "../components/tag/styles.less";
 import "../components/cityPicker/styles.less";
+import "../components/collapse/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
 
@@ -458,6 +460,19 @@ storiesOf("数据展示", module)
 				<Tag color="#666">黄瓜 ui</Tag>
 				<Tag color="pink">黄瓜 ui</Tag>
 				<Tag color="#f63">黄瓜 ui</Tag>
+			</div>
+		))
+	)
+	.add(
+		"Collapse 折叠面板",
+		withInfo()(() => (
+			<div>
+				<h2>基本使用</h2>
+				<Collapse>
+					<Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="标题3">内容3</Collapse.Item>
+				</Collapse>
 			</div>
 		))
 	)
