@@ -1,33 +1,27 @@
 @import "../styles/vars.less";
-
 @prefixCls: cuke-city-picker;
 @corePrefixCls : cuke-city-picker-core;
-
 .@{prefixCls} {
   position: relative;
-
+  display: inline-block;
   &-inner {
     display: inline-block;
     position: relative;
     cursor: pointer;
-    > .cuke-input:not(.cuke-input-disabled) {
+    >.cuke-input:not(.cuke-input-disabled) {
       cursor: pointer;
     }
   }
-
   &-open {
     animation: cuke-picker-open @default-transition forwards;
   }
-
   &-close {
     animation: cuke-picker-close @default-transition forwards;
     pointer-events: none;
   }
-
   &-input {
     width: @cuke-city-picker-width - 180px;
   }
-
   &-content {
     position: absolute;
     left: 0;
@@ -36,7 +30,6 @@
     transform: scale(0);
     z-index: @cuke-city-picker-z-index;
   }
-
   &-arrow {
     position: absolute;
     right: 20px;
@@ -64,13 +57,11 @@
     min-height: 221px;
     background-color: #fff;
     padding: 5px 17px 10px 17px;
-
     &-header {
       height: @address-select-section-header-height;
       line-height: @address-select-section-header-height;
       color: @font-color;
       position: relative;
-
       &::before {
         content: ' ';
         position: absolute;
@@ -82,7 +73,6 @@
         left: 0;
         top: 100%;
       }
-
       &-wrap {
         display: flex;
         align-items: center;
@@ -91,14 +81,11 @@
           cursor: pointer;
           transition: all @default-transition;
           position: relative;
-
           &:not(.@{corePrefixCls}-disabled):hover {
             color: @primary-color;
           }
-
           &.@{corePrefixCls}-active {
             color: @primary-color;
-
             &::after {
               content: ' ';
               position: absolute;
@@ -113,23 +100,19 @@
       }
     }
     &-content {
-
       &-wrap {
         padding-top: 25px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
-
         .city {
           cursor: pointer;
           margin-bottom: 16px;
           transition: all @default-transition;
           width: 20%;
-
           &:hover {
             color: @primary-color;
           }
-
           &.selected {
             color: @primary-color;
           }

@@ -1,0 +1,83 @@
+@import "../styles/vars.less";
+@import "../styles/animate.less";
+@import "../styles/mixins.less";
+@prefixCls : cuke-select;
+.@{prefixCls} {
+  position: relative;
+  display: inline-block;
+  &-inner {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    >.cuke-input:not(.cuke-input-disabled) {
+      cursor: pointer;
+    }
+  }
+  &-open {
+    animation: cuke-picker-open @default-transition forwards;
+  }
+  &-close {
+    animation: cuke-picker-close @default-transition forwards;
+    pointer-events: none;
+  }
+  &-input {
+    width: @cuke-select-width;
+  }
+  &-arrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: @disabled-font-color;
+  }
+  &-content {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    margin-top: 5px;
+    transform: scale(0);
+    background: #fff;
+    border: 1px solid @border-color;
+    z-index: @cuke-select-z-index;
+    box-shadow: @default-shadow;
+  }
+  &-option {
+    width: 100%;
+    border-bottom: 1px solid @border-color;
+    padding: 10px 30px;
+    background: #fff;
+    transition: all @default-transition;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+    &:hover {
+      border-color: transparent;
+      background-color: fade(@primary-color, 20%);
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &-selected {
+      color: #fff;
+      background-color: @primary-color;
+      &:hover {
+        border-color: transparent;
+        background-color: @primary-color;
+      }
+    }
+
+    &-disabled {
+      background-color: @disabled-color;
+      cursor: no-drop;
+      color: @disabled-font-color;
+      &:hover {
+        border-color: transparent;
+        background-color: @disabled-color;
+      }
+    }
+  }
+}

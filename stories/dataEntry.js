@@ -1,22 +1,24 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
+import React from "react";
+import { storiesOf } from "@storybook/react";
 
-import WordPadPage from './pages/wordPad';
-import RadioPage from './pages/radio';
-import CheckboxPage from './pages/checkbox';
-import Input from '../components/input';
-import Switch from '../components/switch';
-import { withInfo } from '@storybook/addon-info';
-import { IoIosAddCircleOutline } from 'react-icons/io';
+import WordPadPage from "./pages/wordPad";
+import RadioPage from "./pages/radio";
+import CheckboxPage from "./pages/checkbox";
+import Input from "../components/input";
+import Switch from "../components/switch";
+import { withInfo } from "@storybook/addon-info";
+import { IoIosAddCircleOutline } from "react-icons/io";
 
-import '../components/input/styles.less';
-import '../components/radio/styles.less';
-import '../components/checkbox/styles.less';
-import './styles/dataEntry.less';
+import "../components/input/styles.less";
+import "../components/radio/styles.less";
+import "../components/checkbox/styles.less";
+import "../components/select/styles.less";
+import "./styles/dataEntry.less";
+import Select from "../components/select";
 
-storiesOf('数据录入', module)
+storiesOf("数据录入", module)
 	.add(
-		'WordPad 写字板',
+		"WordPad 写字板",
 		withInfo(`
 	import React, { Component } from 'react';
 	import WordPad from '../../components/wordPad';
@@ -60,7 +62,7 @@ storiesOf('数据录入', module)
 	`)(() => <WordPadPage />)
 	)
 	.add(
-		'Input 输入框',
+		"Input 输入框",
 		withInfo()(() => (
 			<div style={{ width: 400 }}>
 				<h2>基本使用</h2>
@@ -71,13 +73,13 @@ storiesOf('数据录入', module)
 				<Input
 					type="password"
 					placeholder="请输入密码"
-					style={{ margin: '10px 0' }}
+					style={{ margin: "10px 0" }}
 				/>
 				<Input type="number" placeholder="请输入数字" />
 				<Input
 					placeholder="请输入"
 					defaultValue="默认值"
-					style={{ margin: '10px 0' }}
+					style={{ margin: "10px 0" }}
 				/>
 				<Input readonly value="只读" style={{ marginBottom: 10 }} />
 				<Input disabled placeholder="禁用" />
@@ -85,20 +87,20 @@ storiesOf('数据录入', module)
 				<h2>前置/后置标签</h2>
 				<Input addonBefore={<IoIosAddCircleOutline />} placeholder="请输入" />
 				<Input
-					addonAfter={'.com'}
+					addonAfter={".com"}
 					placeholder="填写网址"
-					style={{ margin: '10px 0' }}
+					style={{ margin: "10px 0" }}
 				/>
 				<Input
-					addonBefore={'https://'}
-					addonAfter={'.cn'}
+					addonBefore={"https://"}
+					addonAfter={".cn"}
 					placeholder="www.lijinke"
 				/>
 			</div>
 		))
 	)
 	.add(
-		'Radio 单选框',
+		"Radio 单选框",
 		withInfo(`
 	<div>
 	<h2>基本使用</h2>
@@ -124,38 +126,84 @@ storiesOf('数据录入', module)
 		</Radio>
 	</Radio.Group>
 </div>
-`)(() => <RadioPage />), { notes: "test" }
+`)(() => <RadioPage />),
+		{ notes: "test" }
 	)
+	.add("Checkbox 复选框", withInfo()(() => <CheckboxPage />))
 	.add(
-		'Checkbox 复选框',
-		withInfo()(() => <CheckboxPage />)
-	)
-	.add(
-		'Switch 开关',
+		"Switch 开关",
 		withInfo()(() => (
 			<div>
 				<h2>基本使用</h2>
-				<Switch onChange={(checked)=> console.log('checked',checked)}/>
+				<Switch onChange={checked => console.log("checked", checked)} />
 
 				<h2>描述文字</h2>
-				<Switch checkedChildren="♂" unCheckedChildren="♀"/>
-				<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked/>
+				<Switch checkedChildren="♂" unCheckedChildren="♀" />
+				<Switch checkedChildren="开" unCheckedChildren="关" defaultChecked />
 
 				<h2>默认选中</h2>
-				<Switch defaultChecked/>
+				<Switch defaultChecked />
 
 				<h2>禁用</h2>
-				<Switch checkedChildren="开" unCheckedChildren="关" disabled/>
-				<Switch defaultChecked disabled/>
+				<Switch checkedChildren="开" unCheckedChildren="关" disabled />
+				<Switch defaultChecked disabled />
 
 				<h2>加载中</h2>
-				<Switch checkedChildren="开" unCheckedChildren="关" loading/>
-				<Switch defaultChecked loading/>
+				<Switch checkedChildren="开" unCheckedChildren="关" loading />
+				<Switch defaultChecked loading />
 
 				<h2>三种大小</h2>
-				<Switch defaultChecked size="large"/>
-				<Switch defaultChecked size="default"/>
-				<Switch defaultChecked size="small"/>
+				<Switch defaultChecked size="large" />
+				<Switch defaultChecked size="default" />
+				<Switch defaultChecked size="small" />
+			</div>
+		))
+	)
+	.add(
+		"Select 开关",
+		withInfo()(() => (
+			<div>
+				<h2>基本使用</h2>
+				<Select>
+					<Select.Option value="黄瓜">黄瓜</Select.Option>
+					<Select.Option value="茄子">茄子</Select.Option>
+					<Select.Option value="番茄">番茄</Select.Option>
+				</Select>
+
+				<h2>禁用</h2>
+				<Select placeholder="请选择" disabled>
+					<Select.Option value="黄瓜" disabled>
+						黄瓜
+					</Select.Option>
+					<Select.Option value="茄子">茄子</Select.Option>
+					<Select.Option value="番茄">番茄</Select.Option>
+				</Select>
+				<Select placeholder="请选择">
+					<Select.Option value="黄瓜" disabled>
+						黄瓜
+					</Select.Option>
+					<Select.Option value="茄子">茄子</Select.Option>
+					<Select.Option value="番茄">番茄</Select.Option>
+				</Select>
+
+				<h2>默认值</h2>
+				<Select defaultValue="黄瓜">
+					<Select.Option value="黄瓜">黄瓜</Select.Option>
+					<Select.Option value="茄子">茄子</Select.Option>
+					<Select.Option value="番茄">番茄</Select.Option>
+				</Select>
+
+				<h2>面板改变回调</h2>
+				<Select
+					placeholder="请选择"
+					onPanelVisibleChange={visible =>
+						console.log("panel change:", visible)
+					}
+				>
+					<Select.Option value="黄瓜">黄瓜</Select.Option>
+					<Select.Option value="茄子">茄子</Select.Option>
+					<Select.Option value="番茄">番茄</Select.Option>
+				</Select>
 			</div>
 		))
 	);
