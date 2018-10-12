@@ -112,6 +112,10 @@ describe("<CityPicker/>", () => {
 		const wrapper = shallow(<CityPickerCore cityList={cityList} />);
 		assert(wrapper.find(".cuke-city-picker-core").length === 1);
 	});
+	it("should render CityPickerCore ", () => {
+		const wrapper = shallow(<CityPicker cityList={cityList} />);
+		assert(wrapper.find(CityPickerCore).length === 1);
+	});
 
 	it("should render custom number active city group", () => {
 		const wrapper = shallow(

@@ -473,6 +473,54 @@ storiesOf("数据展示", module)
 					<Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
 					<Collapse.Item title="标题3">内容3</Collapse.Item>
 				</Collapse>
+
+				<h2>禁用</h2>
+				<Collapse>
+					<Collapse.Item title="黄瓜ui" disabled>
+						内容1xxxxxxxxxxxxx
+					</Collapse.Item>
+					<Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="标题3">内容3</Collapse.Item>
+				</Collapse>
+
+				<Collapse disabled>
+					<Collapse.Item title="全部禁用">内容1xxxxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="全部禁用">内容2xxxxxxxxxxx</Collapse.Item>
+				</Collapse>
+
+				<h2>默认展开</h2>
+				<Collapse defaultActiveKey={["1", "2"]}>
+					<Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="标题3">内容3</Collapse.Item>
+				</Collapse>
+
+				<h2>隐藏箭头</h2>
+				<Collapse>
+					<Collapse.Item title="黄瓜ui" hideArrow>
+						内容1xxxxxxxxxxxxx
+					</Collapse.Item>
+					<Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="标题3">内容3</Collapse.Item>
+				</Collapse>
+
+				<Collapse hideArrow>
+					<Collapse.Item title="全部隐藏">内容1xxxxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="全部隐藏">内容2xxxxxxxxxxx</Collapse.Item>
+				</Collapse>
+
+				<h2>手风琴</h2>
+				<Collapse accordion>
+					<Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="标题3">内容3</Collapse.Item>
+				</Collapse>
+
+				<h2>回调函数</h2>
+				<Collapse onChange={(value)=> console.log('change:',value)}>
+					<Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
+					<Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
+				</Collapse>
 			</div>
 		))
 	)
@@ -501,7 +549,7 @@ storiesOf("数据展示", module)
 				<h2>基本使用</h2>
 				<CityPicker
 					onCityChange={city => console.log("selected city:", city)}
-					onCityGroupChange={(cityGroup,index) =>
+					onCityGroupChange={(cityGroup, index) =>
 						console.log("selected cityGroup:", cityGroup, index)
 					}
 					cityList={cityList}
@@ -514,11 +562,10 @@ storiesOf("数据展示", module)
 				<CityPicker disabled cityList={cityList} />
 
 				<h2>禁用分组</h2>
-				<CityPicker cityList={cityList} disabledGroups={[1,2,3]}/>
+				<CityPicker cityList={cityList} disabledGroups={[1, 2, 3]} />
 
 				<h2>自定义占位符</h2>
 				<CityPicker placeholder="请选择城市" cityList={cityList} />
-
 
 				<h2>在任意容器中单独使用 picker</h2>
 				<CityPicker.CityPickerCore cityList={cityList} />
