@@ -129,13 +129,13 @@ import 'cuke-ui/lib/Button/style.less';
 - [x] [Checkbox  复选框](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=Checkbox%20%E5%A4%8D%E9%80%89%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Switch  开关](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=Switch%20%E5%BC%80%E5%85%B3&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Tag 标签](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Tag%20%E6%A0%87%E7%AD%BE&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
-- [ ] CityPicker  城市选择框 
+- [x] [CityPicker  城市选择框](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=CityPicker%20%E5%9F%8E%E5%B8%82%E9%80%89%E6%8B%A9%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Collapse  折叠面板](http://localhost:8080/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Collapse%20%E6%8A%98%E5%8F%A0%E9%9D%A2%E6%9D%BF&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [ ] DatePicker  日历选择框 
 - [ ] Select  下拉选择器  
 - [ ] Upload  上传  
 - [ ] Form    表单  
 - [ ] Rate    评分  
-- [ ] Collapse  折叠面板 
 
 ### 设计规范
 
