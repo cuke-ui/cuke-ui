@@ -160,7 +160,7 @@ storiesOf("数据录入", module)
 		))
 	)
 	.add(
-		"Select 开关",
+		"Select 选择器",
 		withInfo()(() => (
 			<div>
 				<h2>基本使用</h2>

@@ -13,6 +13,11 @@
       cursor: pointer;
     }
   }
+  &-active {
+    .@{prefixCls}-arrow {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
   &-open {
     animation: cuke-picker-open @default-transition forwards;
   }
@@ -29,6 +34,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: @disabled-font-color;
+    transition: @default-transition;
   }
   &-content {
     width: 100%;

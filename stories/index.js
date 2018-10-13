@@ -2,7 +2,7 @@ import React from "react";
 import { storiesOf } from "@storybook/react";
 import { name, repository } from "../package.json";
 import Alert from "../components/alert";
-import Button from "../components/button";
+import Tag from "../components/tag";
 import { FaGithub } from "react-icons/fa";
 
 storiesOf("快速上手", module).add("在项目中使用", () => (
@@ -145,10 +145,10 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 					<p>← 左边是组件的列表,你可以点击预览效果</p>
 					<p>
 						点击右上角 ↗ 的{" "}
-						<Button type="info" size="small">
+						<Tag type="info">
 							Show Info
-						</Button>{" "}
-						按钮可以看到 示例源码 和 参数列表
+						</Tag>{" "}
+						按钮可以看到 <Tag>示例源码</Tag> 和 <Tag>参数列表</Tag>
 					</p>
 				</div>
 			}

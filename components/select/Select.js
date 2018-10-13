@@ -60,7 +60,11 @@ export default class Select extends PureComponent {
 
 		return (
 			<div className={cls(`${prefixCls}`, className)} {...attr}>
-				<div className={cls(`${prefixCls}-inner`)}>
+				<div
+					className={cls(`${prefixCls}-inner`, {
+						[`${prefixCls}-active`]: visible
+					})}
+				>
 					<Input
 						disabled={disabled}
 						readonly
