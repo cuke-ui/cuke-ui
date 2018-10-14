@@ -70,7 +70,7 @@ import "cuke-ui/dist/cuke-ui.min.css"
 class Page extends React.Component {
   render(){
     return (
-      <Button>黄瓜ui</Button>
+      <Button type="primary">黄瓜ui</Button>
     )
  }
 }
