@@ -33,5 +33,6 @@ export { default as Tag } from "./tag";
 export { default as CityPicker } from "./cityPicker";
 export { default as Collapse } from "./collapse";
 export { default as Select } from "./select";
+export { default as DatePicker } from "./datePicker";
 
 export { default as version } from "./version";

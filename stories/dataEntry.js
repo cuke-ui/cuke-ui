@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from "react";
 import { storiesOf } from "@storybook/react";
 
@@ -7,6 +8,7 @@ import CheckboxPage from "./pages/checkbox";
 import Input from "../components/input";
 import Switch from "../components/switch";
 import DatePicker from "../components/datePicker";
+import Button from "../components/button";
 import { withInfo } from "@storybook/addon-info";
 import { IoIosAddCircleOutline } from "react-icons/io";
 
@@ -214,8 +216,24 @@ storiesOf("数据录入", module)
 		withInfo()(() => (
 			<div>
 				<h2>基本使用</h2>
-				//TODO:
-				<DatePicker/>
+				<DatePicker 
+					placeholder="请选择"
+					onChange={(currentDay, date, dateString)=> console.log(currentDay, date, dateString)}/>
+
+				<h2>禁用</h2>
+				<DatePicker	placeholder="请选择" disabled/>
+
+				<h2>默认值</h2>
+				<DatePicker defaultValue={moment('1996/09/25','YYYY/MM/DD')}/>
+
+				<h2>自定义格式</h2>
+				<DatePicker format="YYYY-MM-DD HH:mm:ss"/>
+
+				<h2>面板改变回调</h2>
+				<DatePicker onPanelVisibleChange={(visible)=> console.log('visible change', visible)}/>
+
+				<h2>扩展</h2>
+				<DatePicker extraFooter={<Button type="primary" block>黄瓜ui</Button>}/>
 			</div>
 		))
 	)

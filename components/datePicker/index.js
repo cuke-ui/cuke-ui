@@ -7,14 +7,15 @@ import { DownIcon, LoadingIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
 
 export default class DataPicker extends PureComponent {
 	state = {
-		selectedValue: this.props.defaultValue || this.props.value || "",
-		momentSelected: moment(),
-		currentDateInventory: [],
+		momentSelected: this.props.defaultValue || this.props.value || moment(),
+		selectedDate: moment().date(),
 		visible: false,
-		isShowCurrentDateInventory: false
+		isSelected: false,
+		extraFooter: null
 	};
 	static defaultProps = {
 		prefixCls: "cuke-date-picker",
+		format: "YYYY-MM-DD",
 		onPanelVisibleChange: () => {},
 		onChange: () => {}
 	};
@@ -22,6 +23,7 @@ export default class DataPicker extends PureComponent {
 		prefixCls: PropTypes.string.isRequired,
 		onPanelVisibleChange: PropTypes.func,
 		onChange: PropTypes.func,
+		format: PropTypes.string,
 		overlay: PropTypes.oneOfType([
 			PropTypes.element,
 			PropTypes.string,
@@ -32,8 +34,21 @@ export default class DataPicker extends PureComponent {
 		super(props);
 	}
 
-	onOpenOptionPanel = () => {
-		this.setState({ visible: true });
+	componentWillReceiveProps({ value }) {
+		this.setState({ momentSelected: value });
+	}
+
+	onOpenPanel = () => {
+		this.setState({ visible: true }, () => {
+			this.content.scrollIntoView({
+				behavior: "smooth",
+				block: "end"
+			});
+		});
+		// 	this.content.scrollIntoViewIfNeeded({
+		// 		behavior: 'smooth',
+		// 		block: 'end',
+		// 	})
 		this.props.onPanelVisibleChange(true);
 	};
 
@@ -59,6 +74,25 @@ export default class DataPicker extends PureComponent {
 		this.setState({
 			momentSelected: this.state.momentSelected.add(-1, "months")
 		});
+	};
+
+	selectedDate = date => {
+		this.setState(
+			{
+				selectedDate: date,
+				isSelected: true,
+				momentSelected: this.state.momentSelected.clone().date(date),
+				visible: false
+			},
+			() => {
+				this.props.onPanelVisibleChange(true);
+				this.props.onChange(
+					date,
+					this.state.momentSelected,
+					this.state.momentSelected.format(this.props.format)
+				);
+			}
+		);
 	};
 
 	renderCalendarContent = () => {
@@ -92,21 +126,26 @@ export default class DataPicker extends PureComponent {
 								`${this.props.prefixCls}-item`,
 								`${this.props.prefixCls}-last-month`
 							)}
-							key={index}
+							key={`first-date-${index}`}
 						>
 							{lastMonthDaysInMonth - dayOfFirstDate + index + 1}
 						</span>
 					))}
 
-					{new Array(daysInMonth).fill().map((_, index) => (
+					{new Array(daysInMonth).fill().map((_, date) => (
 						<span
 							className={cls(
 								`${this.props.prefixCls}-item`,
-								`${this.props.prefixCls}-current-month`
+								`${this.props.prefixCls}-current-month`,
+								{
+									[`${this.props.prefixCls}-selected-date`]:
+										this.state.selectedDate === date + 1
+								}
 							)}
-							key={index}
+							key={`date-${date}`}
+							onClick={() => this.selectedDate(date + 1)}
 						>
-							{index + 1}
+							{date + 1}
 						</span>
 					))}
 				</Fragment>
@@ -120,11 +159,14 @@ export default class DataPicker extends PureComponent {
 			className,
 			disabled,
 			placeholder,
+			format,
+			extraFooter,
+			onSelectedDateChange, //eslint-disable-line
 			onPanelVisibleChange, //eslint-disable-line
 			...attr
 		} = this.props;
 
-		const { selectedValue } = this.state;
+		const { momentSelected } = this.state;
 
 		return (
 			<div className={cls(prefixCls, className)} {...attr}>
@@ -138,8 +180,8 @@ export default class DataPicker extends PureComponent {
 						readonly
 						placeholder={placeholder}
 						className={cls(`${prefixCls}-input`)}
-						value={selectedValue}
-						onFocus={this.onOpenOptionPanel}
+						value={momentSelected.format(format)}
+						onFocus={this.onOpenPanel}
 					/>
 					<DownIcon className={`${prefixCls}-arrow`} />
 				</div>
@@ -148,6 +190,7 @@ export default class DataPicker extends PureComponent {
 						[`${prefixCls}-open`]: visible,
 						[`${prefixCls}-close`]: !visible
 					})}
+					ref={node => (this.content = node)}
 				>
 					<div className={cls(`${prefixCls}-header`)}>
 						<span className={cls(`${prefixCls}-date`)}>
@@ -172,6 +215,7 @@ export default class DataPicker extends PureComponent {
 					<div className={cls(`${prefixCls}-items`)}>
 						{this.renderCalendarContent()}
 					</div>
+					<div className={cls(`${prefixCls}-footer`)}>{extraFooter}</div>
 				</div>
 			</div>
 		);

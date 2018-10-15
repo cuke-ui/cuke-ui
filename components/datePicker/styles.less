@@ -5,6 +5,7 @@
 .@{prefixCls} {
   position: relative;
   display: inline-block;
+  user-select: none;
   &-inner {
     display: inline-block;
     position: relative;
@@ -47,12 +48,15 @@
     transform: scale(0);
     background: #fff;
     border: 1px solid @border-color;
-    z-index: @cuke-select-z-index;
+    z-index: @cuke-date-picker-z-index;
     box-shadow: @default-shadow;
+    padding: 15px;
   }
   &-header {
     margin-left: 12px;
     margin-bottom: 28px;
+    color: @primary-color;
+    font-weight: bold;
   }
   &-date {
     letter-spacing: 0.6px;
@@ -63,6 +67,21 @@
     & >.@{prefixCls}-switch-group {
       cursor: pointer;
       margin: 0 5px;
+      border: 1px solid @border-color;
+      border-radius: 50%;
+      background-color: @bg-color;
+      text-align: center;
+      width: 25px;
+      height: 25px;
+      line-height: 25px;
+      display: inline-block;
+      transition: all @default-transition;
+
+      &:hover {
+        background-color: @primary-color;
+        border-color: @primary-color;
+        color: #fff;
+      }
     }
   }
   &-button {
@@ -96,14 +115,24 @@
     .@{prefixCls}-item {
       text-align: center;
       display: inline-block;
-      width: 14.28%;
-      margin-bottom: 10px;
-      padding: 5px 0;
+      width: 13.2%;
+      padding: 7px 0;
+      margin: 0 2px 10px 2px;
       cursor: pointer;
+      border: 1px solid transparent;
+      transition: all @default-transition;
+      &:not(.@{prefixCls}-day-title):hover {
+        border: 1px solid @primary-color;
+      }
     }
   }
   &-current-month {
     border: 1px solid transparent;
     border-radius: @border-radius;
+  }
+  &-selected-date {
+    border-color: @primary-color;
+    background-color: @primary-color;
+    color: #fff;
   }
 }
