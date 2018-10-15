@@ -8,7 +8,8 @@ import {
 	FiX,
 	FiChevronUp,
 	FiChevronDown,
-	FiChevronRight
+	FiChevronRight,
+	FiChevronLeft
 } from "react-icons/fi";
 
 export const InfoIcon = props => <FiVolume2 {...props} />;
@@ -20,3 +21,4 @@ export const CloseIcon = props => <FiX {...props} />;
 export const UpIcon = props => <FiChevronUp {...props} />;
 export const DownIcon = props => <FiChevronDown {...props} />;
 export const ArrowRightIcon = props => <FiChevronRight {...props} />;
+export const ArrowLeftIcon = props => <FiChevronLeft {...props} />;

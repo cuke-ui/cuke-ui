@@ -6,6 +6,7 @@ import RadioPage from "./pages/radio";
 import CheckboxPage from "./pages/checkbox";
 import Input from "../components/input";
 import Switch from "../components/switch";
+import DatePicker from "../components/datePicker";
 import { withInfo } from "@storybook/addon-info";
 import { IoIosAddCircleOutline } from "react-icons/io";
 
@@ -13,6 +14,7 @@ import "../components/input/styles.less";
 import "../components/radio/styles.less";
 import "../components/checkbox/styles.less";
 import "../components/select/styles.less";
+import "../components/datePicker/styles.less";
 import "./styles/dataEntry.less";
 import Select from "../components/select";
 
@@ -206,4 +208,14 @@ storiesOf("数据录入", module)
 				</Select>
 			</div>
 		))
-	);
+	)
+	.add(
+		"DatePicker 日期选择器",
+		withInfo()(() => (
+			<div>
+				<h2>基本使用</h2>
+				//TODO:
+				<DatePicker/>
+			</div>
+		))
+	)

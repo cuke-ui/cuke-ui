@@ -1,7 +1,7 @@
 @import "../styles/vars.less";
 @import "../styles/animate.less";
 @import "../styles/mixins.less";
-@prefixCls : cuke-select;
+@prefixCls : cuke-date-picker;
 .@{prefixCls} {
   position: relative;
   display: inline-block;
@@ -37,8 +37,8 @@
     transition: @default-transition;
   }
   &-content {
-    width: 100%;
-    max-height: 200px;
+    width: 200%;
+    max-height: 400px;
     overflow-y: auto;
     position: absolute;
     left: 0;
@@ -50,38 +50,60 @@
     z-index: @cuke-select-z-index;
     box-shadow: @default-shadow;
   }
-  &-option {
-    width: 100%;
-    border-bottom: 1px solid @border-color;
-    padding: 10px 30px;
-    background: #fff;
-    transition: all @default-transition;
-    cursor: pointer;
+  &-header {
+    margin-left: 12px;
+    margin-bottom: 28px;
+  }
+  &-date {
+    letter-spacing: 0.6px;
+    margin-right: 10px;
+  }
+  &-switch {
+    float: right;
+    & >.@{prefixCls}-switch-group {
+      cursor: pointer;
+      margin: 0 5px;
+    }
+  }
+  &-button {
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 50%;
+    background-color: @disabled-color;
+    display: inline-block;
     text-align: center;
-    overflow: hidden;
-    &:hover {
-      border-color: transparent;
-      background-color: fade(@primary-color, 20%);
+    cursor: pointer;
+    &-icon {
+      color: @primary-color;
     }
-    &:last-child {
-      border-bottom: none;
+  }
+  &-loading {
+    height: 100%;
+    .flex-center();
+    font-size: 60px;
+    color: @primary-color;
+  }
+  &-last-month,
+  &-next-month {
+    color: @disabled-color;
+  }
+  &-day-title {
+    color: @font-color;
+    opacity: 0.65;
+  }
+  &-items {
+    .@{prefixCls}-item {
+      text-align: center;
+      display: inline-block;
+      width: 14.28%;
+      margin-bottom: 10px;
+      padding: 5px 0;
+      cursor: pointer;
     }
-    &-selected {
-      color: #fff;
-      background-color: @primary-color;
-      &:hover {
-        border-color: transparent;
-        background-color: @primary-color;
-      }
-    }
-    &-disabled {
-      background-color: @disabled-color;
-      cursor: no-drop;
-      color: @disabled-font-color;
-      &:hover {
-        border-color: transparent;
-        background-color: @disabled-color;
-      }
-    }
+  }
+  &-current-month {
+    border: 1px solid transparent;
+    border-radius: @border-radius;
   }
 }

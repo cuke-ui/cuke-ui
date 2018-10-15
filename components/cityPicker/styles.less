@@ -12,6 +12,11 @@
       cursor: pointer;
     }
   }
+  &-active {
+    .@{prefixCls}-arrow {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
   &-open {
     animation: cuke-picker-open @default-transition forwards;
   }
@@ -26,7 +31,7 @@
     position: absolute;
     left: 0;
     top: 100%;
-    margin-top: 5px;
+    margin-top: @picker-offset-top;
     transform: scale(0);
     z-index: @cuke-city-picker-z-index;
   }
@@ -36,6 +41,7 @@
     top: 50%;
     transform: translateY(-50%);
     color: @disabled-font-color;
+    transition: transform @default-transition;
   }
 }
 
