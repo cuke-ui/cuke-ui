@@ -99,6 +99,12 @@ import 'cuke-ui/lib/Button/style.less';
 
 [CHANGELOG](https://github.com/cuke-ui/cuke-ui/blob/master/CHANGELOG.md)
 
+### 感谢
+
+- [@Yuhan zhong](https://github.com/duuliy)
+- [@Caraws](https://github.com/Caraws)
+- [@CanvasCao](https://github.com/CanvasCao)
+
 
 ### 计划开发的组件
 > 计划2018年底完成,给自己一个交代
@@ -296,11 +302,6 @@ yarn build:doc
 yarn pub:doc
 ```
 
-### 感谢
-
-- [Yuhan zhong](https://github.com/duuliy)
-- [Caraws](https://github.com/Caraws)
-- [CanvasCao](https://github.com/CanvasCao)
 
 ### License
 
