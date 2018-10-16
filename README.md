@@ -296,6 +296,12 @@ yarn build:doc
 yarn pub:doc
 ```
 
+### 感谢
+
+- [Yuhan zhong](https://github.com/duuliy)
+- [Caraws](https://github.com/Caraws)
+- [CanvasCao](https://github.com/CanvasCao)
+
 ### License
 
 [MIT](https://github.com/cuke-ui/cuke-ui/blob/master/LICENSE)
