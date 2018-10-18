@@ -64,6 +64,7 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 			抱着学习的目的,开发了这个组件库,
 			所以建议不要用于生产环境,可能心情不好就不维护了
 		</p>
+
 		<h2>当前版本</h2>
 		<p>
 			<a href="https://badge.fury.io/js/cuke-ui" title="npm">
@@ -73,10 +74,20 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 				/>
 			</a>
 		</p>
+
+		<h2>在线示例</h2>
+		<iframe 
+			src="https://codesandbox.io/s/nn6yr2m94" 
+			frameBorder="0" 
+			width="100%" 
+			height={700}
+		/>
+
 		<Alert
 			showIcon
 			type="warning"
 			message="警告"
+			style={{margin: '10px 0'}}
 			description={
 				<div>
 					<p>
