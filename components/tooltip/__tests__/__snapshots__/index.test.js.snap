@@ -37,7 +37,6 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     >
       <button
         class="cuke-button btn-default"
-        href=""
         type="button"
       >
         <span>
@@ -55,7 +54,6 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     >
       <button
         class="cuke-button btn-default"
-        href=""
         type="button"
       >
         <span>
@@ -73,7 +71,6 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     >
       <button
         class="cuke-button btn-default"
-        href=""
         type="button"
       >
         <span>
@@ -90,7 +87,6 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     >
       <button
         class="cuke-button btn-default"
-        href=""
         type="button"
       >
         <span>

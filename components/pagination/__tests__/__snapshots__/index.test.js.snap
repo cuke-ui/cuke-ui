@@ -60,7 +60,6 @@ exports[`<Pagination/> should render Pagination 1`] = `
     <button
       class="cuke-button btn-default btn-disabled"
       disabled=""
-      href=""
       type="button"
     >
       <span>
@@ -79,7 +78,6 @@ exports[`<Pagination/> should render Pagination 1`] = `
     </span>
     <button
       class="cuke-button btn-primary"
-      href=""
       type="button"
     >
       <span>
@@ -94,7 +92,6 @@ exports[`<Pagination/> should render Pagination 1`] = `
     <button
       class="cuke-button btn-default btn-disabled"
       disabled=""
-      href=""
       type="button"
     >
       <span>
@@ -113,7 +110,6 @@ exports[`<Pagination/> should render Pagination 1`] = `
     </span>
     <button
       class="cuke-button btn-primary"
-      href=""
       type="button"
     >
       <span>
@@ -128,7 +124,6 @@ exports[`<Pagination/> should render Pagination 1`] = `
     <button
       class="cuke-button btn-default btn-disabled"
       disabled=""
-      href=""
       type="button"
     >
       <span>
@@ -147,7 +142,6 @@ exports[`<Pagination/> should render Pagination 1`] = `
     </span>
     <button
       class="cuke-button btn-primary"
-      href=""
       type="button"
     >
       <span>

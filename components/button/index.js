@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, Fragment } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import { LoadingIcon } from "../icon";
@@ -49,6 +49,7 @@ export default class Button extends PureComponent {
 			onClick,
 			hollow,
 			size,
+			href,
 			dashed,
 			...attr
 		} = this.props;
@@ -58,32 +59,43 @@ export default class Button extends PureComponent {
 		};
 
 		const isDisabled = disabled || loading ? { disabled: true } : { onClick };
-		return (
-			<button
-				{...attr}
-				{...isDisabled}
-				type={htmlType}
-				className={cls(
-					prefixCls,
-					{ "btn-primary": checkType("primary") },
-					{ "btn-warning": checkType("warning") },
-					{ "btn-success": checkType("success") },
-					{ "btn-error": checkType("error") },
-					{ "btn-default": checkType("default") },
-					{ "btn-info": checkType("info") },
-					{ "btn-disabled": disabled },
-					{ "btn-loading": loading },
-					{ "btn-block": block },
-					{ "btn-hollow": hollow },
-					{ "btn-large": size === "large" },
-					{ "btn-small": size === "small" },
-					{ "btn-dashed": dashed },
-					className
-				)}
-			>
-				{loading ? <LoadingIcon className="cuke-loading" /> : undefined}
+
+		const baseProps = {
+			...attr,
+			...isDisabled,
+			type: htmlType,
+			className: cls(
+				prefixCls,
+				{ "btn-primary": checkType("primary") },
+				{ "btn-warning": checkType("warning") },
+				{ "btn-success": checkType("success") },
+				{ "btn-error": checkType("error") },
+				{ "btn-default": checkType("default") },
+				{ "btn-info": checkType("info") },
+				{ "btn-disabled": disabled },
+				{ "btn-loading": loading },
+				{ "btn-block": block },
+				{ "btn-hollow": hollow },
+				{ "btn-large": size === "large" },
+				{ "btn-small": size === "small" },
+				{ "btn-dashed": dashed },
+				className
+			)
+		};
+
+		const content = (
+			<Fragment>
+				{loading && <LoadingIcon className="cuke-loading" />}
 				<span>{children}</span>
-			</button>
+			</Fragment>
 		);
+		if (href) {
+			return (
+				<a {...baseProps} data-cuke-button-link>
+					{content}
+				</a>
+			);
+		}
+		return <button {...baseProps}>{content}</button>;
 	}
 }

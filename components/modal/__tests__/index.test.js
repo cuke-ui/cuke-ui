@@ -3,6 +3,7 @@ import { render, shallow, mount } from "enzyme";
 import assert from "power-assert";
 import toJson from "enzyme-to-json";
 import Modal from "../index";
+import Button from "../../button";
 
 describe("<Modal/>", () => {
 	it("should render a <Modal/> components", () => {
@@ -37,6 +38,16 @@ describe("<Modal/>", () => {
 		);
 		expect(toJson(wrapper)).toMatchSnapshot();
 	});
+
+	it("should render default Button", () => {
+		const wrapper = shallow(
+			<Modal title="基本使用" visible>
+				<span>基本使用</span>
+			</Modal>
+		);
+		assert(wrapper.find(Button).length === 2);
+	});
+
 	it("should render confirm mode width <Modal/> ", () => {
 		const wrapper = render(
 			<Modal

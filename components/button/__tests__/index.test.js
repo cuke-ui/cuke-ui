@@ -72,4 +72,9 @@ describe("<Button/>", () => {
 		wrapper.find("button").simulate("click");
 		expect(onClick).not.toHaveBeenCalled();
 	});
+
+	it("should render link", () => {
+		const wrapper = shallow(<Button href="/test">黄瓜ui</Button>);
+		assert(wrapper.find("a.cuke-button").length >= 1);
+	});
 });

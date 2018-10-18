@@ -55,15 +55,6 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 		</p>
 		<p>即插即用的一个 React UI 库</p>
 
-		<h2>名字由来</h2>
-		<p>
-			cuke(黄瓜), 常见的一种蔬菜,
-			希望这个项目也成为常见的一个依赖(虽然这是不可能的), 其中黄瓜也符合
-			这个组件库的 宗旨 : 即插即用 其次 cuke 谐音 (cool ke) 很酷的李金珂的 意思
-			主题色 采用 黄瓜绿, 清新又可爱, 组件借鉴(抄袭)了 有牌面的 Ant Design,
-			抱着学习的目的,开发了这个组件库,
-			所以建议不要用于生产环境,可能心情不好就不维护了
-		</p>
 		<h2>当前版本</h2>
 		<p>
 			<a href="https://badge.fury.io/js/cuke-ui" title="npm">
@@ -73,10 +64,30 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 				/>
 			</a>
 		</p>
+
+		<h2>在线示例</h2>
+		<iframe 
+			src="https://codesandbox.io/s/nn6yr2m94" 
+			frameBorder="0" 
+			width="100%" 
+			height={700}
+		/>
+		<h2>名字由来</h2>
+		<p>
+			cuke(黄瓜), 常见的一种蔬菜,
+			希望这个项目也成为常见的一个依赖(虽然这是不可能的), 其中黄瓜也符合
+			这个组件库的 宗旨 : 即插即用 其次 cuke 谐音 (cool ke) 很酷的李金珂的 意思
+			主题色 采用 黄瓜绿, 清新又可爱, 组件借鉴(抄袭)了 有牌面的 Ant Design,
+			抱着学习的目的,开发了这个组件库,
+			所以建议不要用于生产环境,可能心情不好就不维护了
+		</p>
+
+
 		<Alert
 			showIcon
 			type="warning"
 			message="警告"
+			style={{margin: '10px 0'}}
 			description={
 				<div>
 					<p>

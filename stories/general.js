@@ -20,7 +20,7 @@ storiesOf('普通', module).add(
 		<div className="button-example">
 			<h2>基本使用</h2>
 
-			<Button onClick={action('clicked')}>默认</Button>
+			<Button href="#" onClick={action('clicked')}>默认</Button>
 
 			<Button type="primary" onClick={action('clicked')}>
 				主色调

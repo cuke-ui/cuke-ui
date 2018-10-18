@@ -4,7 +4,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
 <div>
   <button
     class="cuke-button btn-default"
-    href=""
     type="button"
   >
     <span>
@@ -13,7 +12,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-primary"
-    href=""
     type="button"
   >
     <span>
@@ -22,7 +20,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-info"
-    href=""
     type="button"
   >
     <span>
@@ -31,7 +28,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-warning"
-    href=""
     type="button"
   >
     <span>
@@ -40,7 +36,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-error"
-    href=""
     type="button"
   >
     <span>
@@ -49,7 +44,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-success"
-    href=""
     type="button"
   >
     <span>
@@ -59,7 +53,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   <button
     class="cuke-button btn-default btn-disabled"
     disabled=""
-    href=""
     type="button"
   >
     <span>
@@ -69,7 +62,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   <button
     class="cuke-button btn-default btn-loading"
     disabled=""
-    href=""
     type="button"
   >
     <svg
@@ -139,7 +131,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-default btn-block"
-    href=""
     type="button"
   >
     <span>
@@ -148,7 +139,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-primary btn-large"
-    href=""
     type="button"
   >
     <span>
@@ -157,7 +147,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-info"
-    href=""
     type="button"
   >
     <span>
@@ -166,7 +155,6 @@ exports[`<Button/> should render a <Button/> components 1`] = `
   </button>
   <button
     class="cuke-button btn-warning btn-small"
-    href=""
     type="button"
   >
     <span>
