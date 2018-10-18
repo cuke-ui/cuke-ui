@@ -72,6 +72,7 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 			width="100%" 
 			height={700}
 		/>
+		
 		<h2>名字由来</h2>
 		<p>
 			cuke(黄瓜), 常见的一种蔬菜,
