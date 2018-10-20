@@ -3,7 +3,7 @@ cuke-ui
 </h1>
 
 <h4 align="center">
-黄瓜 ui : 一个即插即用的 React UI 库 (** 施工中,请勿用于生产环境... **)
+黄瓜 UI : 一个即插即用的 React UI 库 (** 施工中,请勿用于生产环境... **)
 </h4>
 
 <p align="center">
@@ -40,7 +40,10 @@ cuke(黄瓜), 常见的一种蔬菜, 希望这个项目也成为常见的一个�
 
 [https://cuke-ui.github.io/cuke-ui/](https://cuke-ui.github.io/cuke-ui/)
 
-[codesandbox](https://codesandbox.io/s/nn6yr2m94)
+
+### Sandbox Editor
+
+[![Edit nn6yr2m94](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/nn6yr2m94?autoresize=1&expanddevtools=1&hidenavigation=1)
 
 ### 安装
 > 使用 npm 

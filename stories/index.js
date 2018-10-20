@@ -53,7 +53,7 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 				<img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg" />
 			</a>
 		</p>
-		<p>即插即用的一个 React UI 库</p>
+		<p>黄瓜UI: 一个即插即用的React UI 库</p>
 
 		<h2>当前版本</h2>
 		<p>
@@ -66,13 +66,17 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 		</p>
 
 		<h2>在线示例</h2>
-		<iframe 
-			src="https://codesandbox.io/s/nn6yr2m94" 
-			frameBorder="0" 
-			width="100%" 
-			height={700}
-		/>
-		
+		<iframe
+			src="https://codesandbox.io/embed/nn6yr2m94?autoresize=1&hidenavigation=1"
+			style={{
+				width: "100%",
+				height: "500px",
+				border: 0,
+				borderRadius: "4px",
+				overflow: 'hidden'
+			}}
+			sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin" />
+
 		<h2>名字由来</h2>
 		<p>
 			cuke(黄瓜), 常见的一种蔬菜,
@@ -88,7 +92,7 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 			showIcon
 			type="warning"
 			message="警告"
-			style={{margin: '10px 0'}}
+			style={{ margin: '10px 0' }}
 			description={
 				<div>
 					<p>
