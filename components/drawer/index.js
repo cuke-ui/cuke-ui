@@ -19,6 +19,7 @@ export default class Drawer extends PureComponent {
 		closable: true,
 		showMask: true,
 		width: 300,
+		height: 300,
 		zIndex: 999,
 		placement: placements[0]
 	};
@@ -40,6 +41,7 @@ export default class Drawer extends PureComponent {
 		showMask: PropTypes.bool,
 		zIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+		height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 		placement: PropTypes.oneOf(placements),
 		target: PropTypes.func,
 		onClose: PropTypes.func
@@ -79,6 +81,7 @@ export default class Drawer extends PureComponent {
 			maskClosable,
 			showMask,
 			width,
+			height,
 			zIndex,
 			placement,
 			style,
@@ -124,6 +127,8 @@ export default class Drawer extends PureComponent {
 						style={{
 							...style,
 							width,
+							height:
+								placement === "bottom" || placement === "top" ? height : "100%",
 							zIndex
 						}}
 						{...attr}

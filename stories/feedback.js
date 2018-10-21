@@ -195,6 +195,7 @@ storiesOf("操作反馈", module)
 			import React, { Component } from 'react';
 			import Drawer from '../../components/drawer';
 			import Button from '../../components/button';
+			import Radio from '../../components/radio';
 			import Col from '../../components/col';
 			import Row from '../../components/row';
 
@@ -249,14 +250,13 @@ storiesOf("操作反馈", module)
 						</Row>
 
 						<h2>四个方向</h2>
-						//TODO: 后期 完成了 Select 组件 替换
 						<p>
-							<select onChange={this.onPlacementChange} style={{width:200}}>
-								<option value="right">右</option>
-								<option value="left">左</option>
-								<option value="top">上</option>
-								<option value="bottom">下</option>
-							</select>
+						<Radio.Group value={this.state.placement} onChange={this.onPlacementChange}>
+							<Radio value="right">右</Radio>
+							<Radio value="left">左</Radio>
+							<Radio value="top">上</Radio>
+							<Radio value="bottom">下</Radio>
+						</Radio.Group>
 						</p>
 						<Row>
 							<Col span={6}>

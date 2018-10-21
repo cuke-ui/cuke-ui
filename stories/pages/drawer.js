@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Drawer from "../../components/drawer";
 import Button from "../../components/button";
+import Radio from "../../components/radio";
 import Col from "../../components/col";
 import Row from "../../components/row";
 
@@ -59,15 +60,18 @@ export default class DrawerPage extends Component {
 						</Button>
 					</Col>
 				</Row>
+				<h2>自定义高度 (方向为 top | bottom 有效)</h2>
+				<Button type="primary" onClick={() => this.onShow("visible15")}>
+					可长可短
+				</Button>
 				<h2>四个方向</h2>
-				//TODO: 后期 完成了 Select 组件 替换
 				<p>
-					<select onChange={this.onPlacementChange} style={{ width: 200 }}>
-						<option value="right">右</option>
-						<option value="left">左</option>
-						<option value="top">上</option>
-						<option value="bottom">下</option>
-					</select>
+					<Radio.Group value={this.state.placement} onChange={this.onPlacementChange}>
+						<Radio value="right">右</Radio>
+						<Radio value="left">左</Radio>
+						<Radio value="top">上</Radio>
+						<Radio value="bottom">下</Radio>
+					</Radio.Group>
 				</p>
 				<Row>
 					<Col span={6}>
@@ -128,6 +132,15 @@ export default class DrawerPage extends Component {
 				>
 					<span>宽度500px</span>
 					<span>z-index:888</span>
+				</Drawer>
+				<Drawer
+					title="自定义高度"
+					placement="bottom"
+					height={400}
+					visible={this.state.visible15}
+					onClose={() => this.onClose("visible15")}
+				>
+					<span>高度400px</span>
 				</Drawer>
 			</div>
 		);
