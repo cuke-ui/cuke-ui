@@ -10,7 +10,7 @@ yarn build:doc
 echo "√ build success"
 
 # 进入生成的文件夹
-cd docs
+cd _site
 
 echo "start publish..."
 # 提交到  gh-pages
