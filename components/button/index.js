@@ -91,7 +91,7 @@ export default class Button extends PureComponent {
 		);
 		if (href) {
 			return (
-				<a {...baseProps} data-cuke-button-link>
+				<a href={href} className={cls(`${prefixCls}-link`, className)} {...attr}>
 					{content}
 				</a>
 			);

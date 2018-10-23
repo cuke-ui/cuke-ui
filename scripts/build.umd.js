@@ -101,7 +101,8 @@ const config = {
     \n ${fs.readFileSync(path.join(process.cwd(), "LICENSE"))}
 	`),
 		new webpack.DefinePlugin({
-			"process.env.NODE_ENV": JSON.stringify("production")
+			"process.env.NODE_ENV": JSON.stringify("production"),
+			__DEBUG__: false,
 		}),
 		new webpack.LoaderOptionsPlugin({
 			minimize: true
@@ -114,7 +115,10 @@ const config = {
 					warnings: false,
 					drop_debugger: true,
 					drop_console: false
-				}
+				},
+				output: {
+					comments: false,
+				},
 			}
 		}),
 		new OptimizeCSSAssetsPlugin({

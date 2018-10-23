@@ -1,6 +1,6 @@
 {
   "name": "cuke-ui",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "main": "lib/index.js",
   "description": "A React.js UI components for Web",
   "repository": "https://github.com/cuke-ui/cuke-ui.git",
@@ -21,6 +21,7 @@
     "eslint:fix": "eslint ./components --fix",
     "lint": "prettier --write \"components/**/*.js\" && yarn eslint:fix && yarn stylelint:fix",
     "test": "jest --config jest.config.js",
+    "test:update":"yarn test -u",
     "coverage": "yarn test -- --coverage",
     "ci": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:doc": "build-storybook -c .storybook -o .out",
@@ -30,11 +31,11 @@
     "build:css": "cd scripts && gulp",
     "build:lib": "babel components -d lib",
     "build:umd": "webpack --config ./scripts/build.umd.js",
+    "prepush":"yarn test",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "pre-commit": [
-    "lint",
-    "test"
+    "lint"
   ],
   "storybook-deployer": {
     "gitUsername": "cuke-ui",
@@ -45,6 +46,9 @@
     "react": ">=16.0.0",
     "react-dom": ">=16.0.0"
   },
+  "sideEffects": [
+    "dist/*"
+  ],
   "keywords": [
     "cuke",
     "cuke-ui",

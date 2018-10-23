@@ -20,7 +20,7 @@ storiesOf('普通', module).add(
 		<div className="button-example">
 			<h2>基本使用</h2>
 
-			<Button href="#" onClick={action('clicked')}>默认</Button>
+			<Button onClick={action('clicked')}>默认</Button>
 
 			<Button type="primary" onClick={action('clicked')}>
 				主色调
@@ -107,6 +107,10 @@ storiesOf('普通', module).add(
 			<Button type="warning" size="small">
 				小
 			</Button>
+
+			<h2>链接</h2>
+			<Button href="#">主页</Button>
+			<Button type="primary" href="https://github.com/cuke-ui/cuke-ui.git">GITHUB</Button>
 		</div>
 	))
 );

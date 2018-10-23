@@ -25,9 +25,6 @@
   border-radius: @border-radius;
   outline: none;
 
-  &[data-cuke-button-link] {
-    line-height: @button-default-height;
-  }
   .btn-hover(@default-color);
   &.btn-primary {
     .btn-hover(@primary-color);
@@ -109,5 +106,8 @@
   }
   &.btn-dashed {
     border: 1px dashed;
+  }
+  &-link {
+    cursor: pointer;
   }
 }

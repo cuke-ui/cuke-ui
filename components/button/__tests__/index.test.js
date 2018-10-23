@@ -75,6 +75,6 @@ describe("<Button/>", () => {
 
 	it("should render link", () => {
 		const wrapper = shallow(<Button href="/test">黄瓜ui</Button>);
-		assert(wrapper.find("a.cuke-button").length >= 1);
+		assert(wrapper.find(".cuke-button-link").length >= 1);
 	});
 });

@@ -1,11 +1,11 @@
-import { configure,setAddon,addDecorator } from '@storybook/react';
-import {name,repository} from "../package.json"
-import infoAddon,{ setDefaults } from '@storybook/addon-info';
+import React from "react"
+import { configure, addDecorator } from '@storybook/react';
+import { name, repository } from "../package.json"
+import { setDefaults } from '@storybook/addon-info';
 import { configureActions } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
-import { withNotes } from '@storybook/addon-notes';
 import '@storybook/addon-console';
-import "../components/styles/app.less"
+import "../components/styles/index.less"
 
 const req = require.context('../components', true, /\.stories\.js$/)
 
@@ -29,10 +29,9 @@ configureActions({
   depth: 100
 })
 setDefaults({
-  header:true,
+  header: true,
   maxPropObjectKeys: 100,
   maxPropArrayLength: 100
 })
-// addDecorator(withNotes)
-// setAddon(infoAddon);
+addDecorator(story => <div style={{ padding: "20px 40px" }}>{story()}</div>)
 configure(loadStories, module);

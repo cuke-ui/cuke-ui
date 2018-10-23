@@ -15,6 +15,14 @@
     "transform-es2015-modules-commonjs",
     "transform-decorators-legacy",
     "transform-class-properties",
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    [
+      "import",
+      {
+        "libraryName": "cuke-ui",
+        "libraryDirectory": "components",
+        "style": true
+      }
+    ]
   ]
 }

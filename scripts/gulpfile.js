@@ -1,8 +1,8 @@
 /**
  * @name gulpfile.js 
  * @description 打包项目css依赖 
- * 参考 ${name} 
- * https://github.com/JeromeLin/${name}/blob/dev/scripts/gulp/gulpfile.js
+ * 参考
+ * https://github.com/JeromeLin/dragon-ui/blob/dev/scripts/gulp/gulpfile.js
  */
 
 const path = require('path');
@@ -14,14 +14,17 @@ const cssnano = require('gulp-cssnano');
 const size = require('gulp-filesize');
 const sourcemaps = require('gulp-sourcemaps');
 const rename = require('gulp-rename');
-const {name} = require('../package.json')
+const { name } = require('../package.json')
 const browserList = [
-    "last 2 versions", "Android >= 4.0","Firefox ESR","not ie < 9"
+  "last 2 versions", "Android >= 4.0", "Firefox ESR", "not ie < 9"
 ]
 
 const DIR = {
   less: path.resolve(__dirname, '../components/**/*.less'),
-  buildSrc: path.resolve(__dirname, '../components/**/styles.less'),
+  buildSrc: [
+    path.resolve(__dirname, '../components/**/styles.less'),
+    path.resolve(__dirname, '../components/**/index.less'),
+  ],
   lib: path.resolve(__dirname, '../lib'),
   dist: path.resolve(__dirname, '../dist'),
 };
