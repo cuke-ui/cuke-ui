@@ -1,21 +1,24 @@
-
 {
   "presets": [
     [
-      "env",
+      "@babel/preset-env",
       {
         "modules": false
       }
     ],
-    "react",
-    "stage-1"
+    "@babel/preset-react"
   ],
   "plugins": [
-    "transform-runtime",
-    "transform-es2015-modules-commonjs",
-    "transform-decorators-legacy",
-    "transform-class-properties",
-    "transform-object-rest-spread",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-transform-modules-commonjs",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "legacy": true
+      }
+    ],
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-object-rest-spread",
     [
       "import",
       {
@@ -23,6 +26,6 @@
         "libraryDirectory": "components",
         "style": true
       }
-    ]
+    ],
   ]
 }

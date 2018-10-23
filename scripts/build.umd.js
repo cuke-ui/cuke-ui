@@ -14,11 +14,12 @@ const path = require("path");
 const webpack = require("webpack");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const { version, name, description } = require("../package.json");
 
 const config = {
+	mode: "production",
 	entry: {
 		[name]: ["./components/index.js"]
 	},
@@ -64,19 +65,17 @@ const config = {
 			},
 			{
 				test: /\.(le|c)ss$/,
-				use: ExtractTextPlugin.extract({
-					fallback: "style-loader",
-					use: [
-						"css-loader",
-						{ loader: "postcss-loader", options: { sourceMap: false } },
-						{
-							loader: "less-loader",
-							options: {
-								sourceMap: false
-							}
+				use: [
+					MiniCssExtractPlugin.loader,
+					"css-loader",
+					{ loader: "postcss-loader", options: { sourceMap: false } },
+					{
+						loader: "less-loader",
+						options: {
+							sourceMap: false
 						}
-					]
-				})
+					}
+				]
 			},
 			{
 				test: /\.(jpg|jpeg|png|gif|cur|ico)$/,
@@ -91,9 +90,34 @@ const config = {
 			}
 		]
 	},
+	optimization: {
+		minimizer: [
+			new UglifyJsPlugin({
+				cache: true,
+				parallel: true,
+				uglifyOptions: {
+					compress: {
+						warnings: false,
+						drop_debugger: true,
+						drop_console: false
+					},
+					output: {
+						comments: false,
+					},
+				}
+			}),
+			new OptimizeCSSAssetsPlugin({
+				//压缩css  与 ExtractTextPlugin 配合使用
+				cssProcessor: require("cssnano"),
+				cssProcessorOptions: { discardComments: { removeAll: true } }, //移除所有注释
+				canPrint: true //是否向控制台打印消息
+			})
+		],
+		noEmitOnErrors: true,
+	},
 	plugins: [
 		new ProgressBarPlugin(),
-		new ExtractTextPlugin({
+		new MiniCssExtractPlugin({
 			filename: "[name].min.css"
 		}),
 		//在打包的文件之前 加上版权说明
@@ -107,26 +131,6 @@ const config = {
 		new webpack.LoaderOptionsPlugin({
 			minimize: true
 		}),
-		new UglifyJsPlugin({
-			cache: true,
-			parallel: true,
-			uglifyOptions: {
-				compress: {
-					warnings: false,
-					drop_debugger: true,
-					drop_console: false
-				},
-				output: {
-					comments: false,
-				},
-			}
-		}),
-		new OptimizeCSSAssetsPlugin({
-			//压缩css  与 ExtractTextPlugin 配合使用
-			cssProcessor: require("cssnano"),
-			cssProcessorOptions: { discardComments: { removeAll: true } }, //移除所有注释
-			canPrint: true //是否向控制台打印消息
-		})
 	]
 };
 

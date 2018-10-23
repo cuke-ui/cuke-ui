@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import ImageColorPicker from '../../components/imageColorPicker';
+// import ImageColorPicker from '../../components/imageColorPicker';
 
 
 export default class ImageColorPickerPage extends PureComponent {
@@ -10,13 +10,9 @@ export default class ImageColorPickerPage extends PureComponent {
 		console.log('选中:',value);
 	};
 	render() {
-		const img = (
-			<img src={require('./photo.jpg')}/>
-		)
 		return (
 			<div>
 				<h2>基本使用</h2>
-				<ImageColorPicker content={img}/>
 			</div>
 		);
 	}
