@@ -91,7 +91,11 @@ export default class Button extends PureComponent {
 		);
 		if (href) {
 			return (
-				<a href={href} className={cls(`${prefixCls}-link`, className)} {...attr}>
+				<a
+					href={href}
+					className={cls(`${prefixCls}-link`, className)}
+					{...attr}
+				>
 					{content}
 				</a>
 			);
