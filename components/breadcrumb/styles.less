@@ -2,10 +2,10 @@
 
 @prefixCls : cuke-breadcrumb;
 .@{prefixCls} {
-  margin-bottom: 20px;
-  padding: 10px 15px;
+  margin-bottom: @cuke-breadcrumb-offset-bottom;
+  padding: @cuke-breadcrumb-padding;
   line-height: normal;
-  color: lighten(@font-color, 50%);
+  color: @cuke-breadcrumb-font-color;
 
   > span:last-child {
     font-weight: bold;
@@ -16,7 +16,7 @@
     }
   }
   &-item-separator {
-    margin: 0 8px;
-    color: #d9d9d9;
+    margin: @cuke-breadcrumb-separator-offset;
+    color: @cuke-breadcrumb-separator-color;
   }
 }

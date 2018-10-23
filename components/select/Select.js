@@ -37,7 +37,7 @@ export default class Select extends PureComponent {
 		setTimeout(() => {
 			this.setState({ visible: false });
 			this.props.onPanelVisibleChange(false);
-		}, 100);
+		}, 120);
 	};
 
 	onChange = value => {
