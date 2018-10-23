@@ -4,6 +4,7 @@ import { name, repository } from "../package.json"
 import { setDefaults } from '@storybook/addon-info';
 import { configureActions } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
+import { withNotes } from '@storybook/addon-notes';
 import '@storybook/addon-console';
 import "../components/styles/index.less"
 
@@ -25,6 +26,7 @@ setOptions({
   name: name,
   url: repository,
 });
+
 configureActions({
   depth: 100
 })
@@ -33,5 +35,6 @@ setDefaults({
   maxPropObjectKeys: 100,
   maxPropArrayLength: 100
 })
+// addDecorator(withNotes);
 addDecorator(story => <div style={{ padding: "20px 40px" }}>{story()}</div>)
 configure(loadStories, module);
