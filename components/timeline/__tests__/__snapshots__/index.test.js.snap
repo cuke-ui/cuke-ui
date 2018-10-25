@@ -469,7 +469,6 @@ exports[`<Timeline/> should render custom type 1`] = `
       class="cuke-timeline-item-dot-loading"
     >
       <svg
-        attr="[object Object]"
         fill="none"
         height="1em"
         stroke="currentColor"

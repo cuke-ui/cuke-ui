@@ -12,7 +12,6 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         class="icon"
       >
         <svg
-          attr="[object Object]"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -51,7 +50,6 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         class="icon"
       >
         <svg
-          attr="[object Object]"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -101,7 +99,6 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         class="icon"
       >
         <svg
-          attr="[object Object]"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -140,7 +137,6 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         class="icon"
       >
         <svg
-          attr="[object Object]"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -190,7 +186,6 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         class="icon"
       >
         <svg
-          attr="[object Object]"
           fill="none"
           height="1em"
           stroke="currentColor"

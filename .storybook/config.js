@@ -7,6 +7,7 @@ import { setOptions } from '@storybook/addon-options';
 import { version } from '../package.json'
 import '@storybook/addon-console';
 import "../components/styles/index.less"
+import "../stories/styles/code.less"
 
 const req = require.context('../components', true, /\.stories\.js$/)
 

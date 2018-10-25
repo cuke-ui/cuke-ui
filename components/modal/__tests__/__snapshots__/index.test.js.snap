@@ -23,8 +23,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
           基本使用
         </h2>
         <svg
-          attr="[object Object]"
-          class="undefined cuke-modal-close"
+          class="cuke-modal-close"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -98,8 +97,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
           基本使用
         </h2>
         <svg
-          attr="[object Object]"
-          class="undefined cuke-modal-close"
+          class="cuke-modal-close"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -173,8 +171,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
           基本使用
         </h2>
         <svg
-          attr="[object Object]"
-          class="undefined cuke-modal-close"
+          class="cuke-modal-close"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -228,8 +225,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
           基本使用
         </h2>
         <svg
-          attr="[object Object]"
-          class="undefined cuke-modal-close"
+          class="cuke-modal-close"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -356,8 +352,7 @@ Array [
           基本使用
         </h2>
         <svg
-          attr="[object Object]"
-          class="undefined cuke-modal-close"
+          class="cuke-modal-close"
           fill="none"
           height="1em"
           stroke="currentColor"

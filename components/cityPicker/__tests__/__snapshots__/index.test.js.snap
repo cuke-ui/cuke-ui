@@ -15,8 +15,7 @@ exports[`<CityPicker/> should render CityPicker 1`] = `
       value=""
     />
     <svg
-      attr="[object Object]"
-      class="undefined cuke-city-picker-arrow"
+      class="cuke-city-picker-arrow"
       fill="none"
       height="1em"
       stroke="currentColor"

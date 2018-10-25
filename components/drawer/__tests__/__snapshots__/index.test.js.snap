@@ -23,8 +23,7 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
           基本使用
         </h2>
         <svg
-          attr="[object Object]"
-          class="undefined cuke-drawer-close"
+          class="cuke-drawer-close"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -78,8 +77,7 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
           基本使用
         </h2>
         <svg
-          attr="[object Object]"
-          class="undefined cuke-drawer-close"
+          class="cuke-drawer-close"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -133,8 +131,7 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
           基本使用
         </h2>
         <svg
-          attr="[object Object]"
-          class="undefined cuke-drawer-close"
+          class="cuke-drawer-close"
           fill="none"
           height="1em"
           stroke="currentColor"

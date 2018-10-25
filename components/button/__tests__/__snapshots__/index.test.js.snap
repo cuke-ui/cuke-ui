@@ -65,8 +65,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     type="button"
   >
     <svg
-      attr="[object Object]"
-      class="undefined cuke-loading"
+      class="cuke-loading"
       fill="none"
       height="1em"
       stroke="currentColor"

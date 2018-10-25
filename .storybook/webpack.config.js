@@ -1,84 +1,88 @@
-const path = require('path');
+const path = require("path")
 
-module.exports = (storybookBaseConfig, configType) => {
-	const isDev = configType === 'DEVELOPMENT';
-
-	storybookBaseConfig.devServer = {
-		...storybookBaseConfig.devServer,
-		open:true
-	}
-
-	storybookBaseConfig.module.rules.push(
-		...[
+module.exports = {
+	mode: "production",
+	module: {
+		rules: [
 			{
-        test: /\.stories\.jsx?$/,
-        loaders: [require.resolve('@storybook/addon-storysource/loader')],
-        enforce: 'pre',
-      },
+				test: /\.jsx?$/,
+				use: [
+					{
+						loader: "babel-loader",
+					},
+				],
+				exclude: /node_modules/,
+			},
 			{
 				test: /\.less$/,
 				use: [
-					{ loader: 'style-loader' },
+					"style-loader",
+					"css-loader",
+					"postcss-loader",
 					{
-						loader: 'css-loader',
+						loader: "less-loader",
 						options: {
-							javascriptEnabled: true,
-							minimize: false,
-							sourceMap: true
-						}
+							javascriptEnabled: true
+						},
 					},
-					{
-						loader: 'postcss-loader',
-						options: { javascriptEnabled: true, sourceMap: true }
-					},
-					{
-						loader: 'less-loader',
-						options: { javascriptEnabled: true, sourceMap: true }
-					}
-				]
+				],
 			},
 			{
 				test: /\.css$/,
 				use: [
-					{ loader: 'style-loader' },
+					"style-loader",
 					{
-						loader: 'css-loader',
+						loader: "css-loader",
 						options: {
 							javascriptEnabled: true,
-							minimize: false,
-							sourceMap: true
+							minimize: true,
+							sourceMap: false
 						}
 					},
 					{
-						loader: 'postcss-loader',
-						options: { javascriptEnabled: true, sourceMap: true }
+						loader: "postcss-loader",
+						options: { javascriptEnabled: true, sourceMap: false }
 					}
-				]
+				],
 			},
 			{
-				test: /\.(jpg|jpeg|png|gif|cur|ico)$/,
+				// for font
+				test: /\.(ttf|otf|eot|woff(?:2)?)(\?[a-z0-9]+)?$/,
 				use: [
 					{
-						loader: 'file-loader',
+						loader: "url-loader",
 						options: {
-							name: 'images/[name][hash:8].[ext]' //遇到图片  生成一个images文件夹  名字.后缀的图片
-						}
-					}
-				]
+							limit: 10 * 1000,
+						},
+					},
+				],
 			},
 			{
-				test: /\.(eot|ttf|svg|woff|woff2)$/,
+				// for svg
+				test: /\.(svg?)(\?[a-z0-9]+)?$/,
 				use: [
 					{
-						loader: 'file-loader',
+						loader: "url-loader",
 						options: {
-							name: 'fonts/[name][hash:8].[ext]'
-						}
-					}
-				]
-			}
-		]
-	);
-
-	return storybookBaseConfig;
-};
+							limit: 10 * 1000,
+						},
+					},
+				],
+			},
+			{
+				test: /\.(jpe?g|png|gif|ogg|mp3)$/,
+				use: [
+					{
+						loader: "url-loader",
+						options: {
+							limit: 10 * 1000,
+						},
+					},
+				],
+			},
+		],
+	},
+	resolve: {
+		extensions: [".js", ".jsx", ".js", ".json"]
+	}
+}

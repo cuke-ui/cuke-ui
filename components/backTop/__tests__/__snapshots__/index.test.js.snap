@@ -12,7 +12,6 @@ exports[`<BackTop/> should render a <BackTop/> components 1`] = `
         class="cuke-back-top-inner-icon"
       >
         <svg
-          attr="[object Object]"
           fill="none"
           height="1em"
           stroke="currentColor"

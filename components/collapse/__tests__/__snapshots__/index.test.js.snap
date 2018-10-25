@@ -14,7 +14,6 @@ exports[`<Collapse/> should render Collapse 1`] = `
         class="cuke-collapse-item-arrow"
       >
         <svg
-          attr="[object Object]"
           fill="none"
           height="1em"
           stroke="currentColor"
@@ -47,7 +46,6 @@ exports[`<Collapse/> should render Collapse 1`] = `
         class="cuke-collapse-item-arrow"
       >
         <svg
-          attr="[object Object]"
           fill="none"
           height="1em"
           stroke="currentColor"

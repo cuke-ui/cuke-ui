@@ -15,8 +15,7 @@ exports[`<Select/> should render a <Select/> components 1`] = `
       value=""
     />
     <svg
-      attr="[object Object]"
-      class="undefined cuke-select-arrow"
+      class="cuke-select-arrow"
       fill="none"
       height="1em"
       stroke="currentColor"

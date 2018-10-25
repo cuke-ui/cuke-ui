@@ -15,8 +15,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       value="2018-10-25"
     />
     <svg
-      attr="[object Object]"
-      class="undefined cuke-date-picker-arrow"
+      class="cuke-date-picker-arrow"
       fill="none"
       height="1em"
       stroke="currentColor"
@@ -49,7 +48,6 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
           class="cuke-date-picker-switch-group"
         >
           <svg
-            attr="[object Object]"
             fill="none"
             height="1em"
             stroke="currentColor"
@@ -68,7 +66,6 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
           class="cuke-date-picker-switch-group"
         >
           <svg
-            attr="[object Object]"
             fill="none"
             height="1em"
             stroke="currentColor"

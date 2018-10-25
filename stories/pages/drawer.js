@@ -29,13 +29,13 @@ export default class DrawerPage extends Component {
 		return (
 			<div>
 				<Row>
-					<Col span={4}>
+					<Col span={5}>
 						<h2>基本使用</h2>
 						<Button type="primary" onClick={() => this.onShow("visible")}>
 							偷偷打开家长的抽屉
 						</Button>
 					</Col>
-					<Col span={4}>
+					<Col span={5}>
 						<h2>没有标题</h2>
 						<Button type="primary" onClick={() => this.onShow("visible20")}>
 							偷偷打开家长的抽屉

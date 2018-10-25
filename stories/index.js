@@ -1,11 +1,14 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
-import { name, repository } from "../package.json";
+import { name, repository, author } from "../package.json";
 import Alert from "../components/alert";
 import Tag from "../components/tag";
 import { FaGithub } from "react-icons/fa";
+import ReactMarkDown from "react-markdown"
+import CodeRender from "./code-render"
+import Timeline from "../components/timeline";
 
-storiesOf("快速上手", module).add("在项目中使用", () => (
+storiesOf("综述", module).add("介绍", () => (
 	<article style={{ padding: 20 }}>
 		<h1 style={{ fontSize: 40, padding: 0, margin: 0 }}>
 			{name}
@@ -108,30 +111,13 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 			}
 		/>
 
-		<h2>安装</h2>
+		<h2>贡献</h2>
+		<p>如果你在使用 <Tag>cuke-ui</Tag> 时遇到了问题,或者想骂我, 欢迎 给我提
+			<a href="https://github.com/cuke-ui/cuke-ui/issues">Issue</a> 或 <a href="https://github.com/cuke-ui/cuke-ui/pulls">Pull Request</a>
+		</p>
 
-		<Alert
-			showIcon
-			type="info"
-			message={
-				<span>
-					请按照{" "}
-					<a href="https://github.com/cuke-ui/cuke-ui/blob/master/README.md">
-						README
-					</a>{" "}
-					文档使用
-				</span>
-			}
-			description={
-				<div>
-					<p>使用 npm : </p>
-					<strong>npm i cuke-ui --save</strong>
-
-					<p>使用 yarn : </p>
-					<strong>yarn add cuke-ui</strong>
-				</div>
-			}
-		/>
+		<h2>开发交流</h2>
+		<p>{author}</p>
 
 		<h2>设计规范</h2>
 		<p>高仿 Ant-Design : )</p>
@@ -183,4 +169,67 @@ storiesOf("快速上手", module).add("在项目中使用", () => (
 			</li>
 		</ul>
 	</article>
-));
+))
+	.add("快速上手", () => (
+		<ReactMarkDown source={require('./markdown/quickstart.md')} renderers={{
+			CodeBlock: CodeRender,
+			Code: CodeRender,
+		}} />
+	))
+
+	.add("贡献者列表", () => (
+		<ReactMarkDown source={require('./markdown/contributors.md')} renderers={{
+			CodeBlock: CodeRender,
+			Code: CodeRender,
+		}} />
+	))
+	.add("更新日志", () => (
+		<>
+			<ReactMarkDown source={require('./markdown/changelog.md')} renderers={{
+				CodeBlock: CodeRender,
+				Code: CodeRender,
+			}} />
+
+			<Timeline>
+				<Timeline.Item type="loading">
+					<h3><a>v1.0.0</a></h3>
+					<ul>
+						<li>开发中</li>
+						<li>完成剩余未完成组件</li>
+						<li>修复已知 bug</li>
+						<li>计划年底发布</li>
+					</ul>
+				</Timeline.Item>
+				<Timeline.Item type="info">
+					<h3><a>v0.0.17</a></h3>
+					<ul>
+						<li>增加各种组件,完善列表</li>
+						<li>修复超多 bug</li>
+						<li>完善文档</li>
+						<li>升级到webpack4, babel7</li>
+						<li>升级到 storybook4</li>
+						<li>优化打包流程</li>
+					</ul>
+				</Timeline.Item>
+				<Timeline.Item type="info">
+					<h3><a>v0.0.2 - v0.0.16</a></h3>
+					<ul>
+						<li>下班有空更新迭代</li>
+						<li>修复发布到 npm 遇到的各种问题</li>
+						<li>增加 webpack umd 和 babel 两种打包方式</li>
+						<li>增加 各种组件的 demo 演示</li>
+						<li>优化已有组件</li>
+					</ul>
+				</Timeline.Item>
+				<Timeline.Item type="info">
+					<h3><a>v0.0.1</a></h3>
+					<ul>
+						<li>年底的一个目标,做一个组件库</li>
+						<li>搭建项目结构</li>
+						<li>添加 storybook</li>
+						<li>集成之前写好的组件</li>
+					</ul>
+				</Timeline.Item>
+			</Timeline>
+		</>
+	))

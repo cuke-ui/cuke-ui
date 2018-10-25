@@ -9,7 +9,6 @@ exports[`<Spin/> should render a <Spin/> components 1`] = `
       class="cuke-spin-indicator"
     >
       <svg
-        attr="[object Object]"
         fill="none"
         height="1em"
         stroke="currentColor"
@@ -77,7 +76,6 @@ exports[`<Spin/> should render a <Spin/> components 1`] = `
       class="cuke-spin-indicator"
     >
       <svg
-        attr="[object Object]"
         fill="none"
         height="1em"
         stroke="currentColor"
@@ -159,7 +157,6 @@ exports[`<Spin/> should render more size width <Spin/>  1`] = `
       class="cuke-spin-indicator"
     >
       <svg
-        attr="[object Object]"
         fill="none"
         height="1em"
         stroke="currentColor"
@@ -227,7 +224,6 @@ exports[`<Spin/> should render more size width <Spin/>  1`] = `
       class="cuke-spin-indicator cuke-spin-small"
     >
       <svg
-        attr="[object Object]"
         fill="none"
         height="1em"
         stroke="currentColor"
@@ -295,7 +291,6 @@ exports[`<Spin/> should render more size width <Spin/>  1`] = `
       class="cuke-spin-indicator cuke-spin-large"
     >
       <svg
-        attr="[object Object]"
         fill="none"
         height="1em"
         stroke="currentColor"
