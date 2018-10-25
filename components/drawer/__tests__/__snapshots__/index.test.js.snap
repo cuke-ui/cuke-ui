@@ -183,54 +183,306 @@ exports[`<Drawer/> should render custom direction 1`] = `
     width={300}
     zIndex={999}
   >
-    <div
-      className="cuke-drawer-mask cuke-drawer-mask-show"
-      onClick={[Function]}
-    />
-    <div
-      className="cuke-drawer-wrap"
-      role="dialog"
-      tabIndex="-1"
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-left no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-top no-title"
+              style="width: 300px; height: 300px; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-bottom no-title"
+              style="width: 300px; height: 300px; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+        </body>
+      }
     >
       <div
-        className="cuke-drawer cuke-drawer-open cuke-drawer-left no-title"
-        style={
-          Object {
-            "height": "100%",
-            "width": 300,
-            "zIndex": 999,
-          }
-        }
+        className="cuke-drawer-mask cuke-drawer-mask-show"
+        onClick={[Function]}
+      />
+      <div
+        className="cuke-drawer-wrap"
+        role="dialog"
+        tabIndex="-1"
       >
-        <section
-          className="cuke-drawer-header"
+        <div
+          className="cuke-drawer cuke-drawer-open cuke-drawer-left no-title"
+          style={
+            Object {
+              "height": "100%",
+              "width": 300,
+              "zIndex": 999,
+            }
+          }
         >
-          <h2
-            className="cuke-drawer-title"
-          />
-          <CloseIcon
-            className="cuke-drawer-close"
-            onClick={[Function]}
+          <section
+            className="cuke-drawer-header"
           >
-            <Component
+            <h2
+              className="cuke-drawer-title"
+            />
+            <CloseIcon
               className="cuke-drawer-close"
               onClick={[Function]}
             >
-              <IconBase
-                attr={
-                  Object {
-                    "fill": "none",
-                    "stroke": "currentColor",
-                    "strokeLinecap": "round",
-                    "strokeLinejoin": "round",
-                    "strokeWidth": "2",
-                    "viewBox": "0 0 24 24",
-                  }
-                }
+              <FiX
                 className="cuke-drawer-close"
                 onClick={[Function]}
               >
-                <svg
+                <IconBase
                   attr={
                     Object {
                       "fill": "none",
@@ -241,50 +493,55 @@ exports[`<Drawer/> should render custom direction 1`] = `
                       "viewBox": "0 0 24 24",
                     }
                   }
-                  className="undefined cuke-drawer-close"
-                  fill="none"
-                  height="1em"
+                  className="cuke-drawer-close"
                   onClick={[Function]}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="1em"
                 >
-                  <line
-                    key="0"
-                    x1="18"
-                    x2="6"
-                    y1="6"
-                    y2="18"
-                  />
-                  <line
-                    key="1"
-                    x1="6"
-                    x2="18"
-                    y1="6"
-                    y2="18"
-                  />
-                </svg>
-              </IconBase>
-            </Component>
-          </CloseIcon>
-        </section>
-        <section
-          className="cuke-drawer-content"
-        >
-          <span>
-            关闭回调
-          </span>
-        </section>
+                  <svg
+                    className="cuke-drawer-close"
+                    fill="none"
+                    height="1em"
+                    onClick={[Function]}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <line
+                      key="0"
+                      x1="18"
+                      x2="6"
+                      y1="6"
+                      y2="18"
+                    />
+                    <line
+                      key="1"
+                      x1="6"
+                      x2="18"
+                      y1="6"
+                      y2="18"
+                    />
+                  </svg>
+                </IconBase>
+              </FiX>
+            </CloseIcon>
+          </section>
+          <section
+            className="cuke-drawer-content"
+          >
+            <span>
+              关闭回调
+            </span>
+          </section>
+        </div>
       </div>
-    </div>
+    </Portal>
   </Drawer>
   <Drawer
     closable={true}
@@ -300,54 +557,306 @@ exports[`<Drawer/> should render custom direction 1`] = `
     width={300}
     zIndex={999}
   >
-    <div
-      className="cuke-drawer-mask cuke-drawer-mask-show"
-      onClick={[Function]}
-    />
-    <div
-      className="cuke-drawer-wrap"
-      role="dialog"
-      tabIndex="-1"
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-left no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-top no-title"
+              style="width: 300px; height: 300px; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-bottom no-title"
+              style="width: 300px; height: 300px; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+        </body>
+      }
     >
       <div
-        className="cuke-drawer cuke-drawer-open cuke-drawer-top no-title"
-        style={
-          Object {
-            "height": 300,
-            "width": 300,
-            "zIndex": 999,
-          }
-        }
+        className="cuke-drawer-mask cuke-drawer-mask-show"
+        onClick={[Function]}
+      />
+      <div
+        className="cuke-drawer-wrap"
+        role="dialog"
+        tabIndex="-1"
       >
-        <section
-          className="cuke-drawer-header"
+        <div
+          className="cuke-drawer cuke-drawer-open cuke-drawer-top no-title"
+          style={
+            Object {
+              "height": 300,
+              "width": 300,
+              "zIndex": 999,
+            }
+          }
         >
-          <h2
-            className="cuke-drawer-title"
-          />
-          <CloseIcon
-            className="cuke-drawer-close"
-            onClick={[Function]}
+          <section
+            className="cuke-drawer-header"
           >
-            <Component
+            <h2
+              className="cuke-drawer-title"
+            />
+            <CloseIcon
               className="cuke-drawer-close"
               onClick={[Function]}
             >
-              <IconBase
-                attr={
-                  Object {
-                    "fill": "none",
-                    "stroke": "currentColor",
-                    "strokeLinecap": "round",
-                    "strokeLinejoin": "round",
-                    "strokeWidth": "2",
-                    "viewBox": "0 0 24 24",
-                  }
-                }
+              <FiX
                 className="cuke-drawer-close"
                 onClick={[Function]}
               >
-                <svg
+                <IconBase
                   attr={
                     Object {
                       "fill": "none",
@@ -358,50 +867,55 @@ exports[`<Drawer/> should render custom direction 1`] = `
                       "viewBox": "0 0 24 24",
                     }
                   }
-                  className="undefined cuke-drawer-close"
-                  fill="none"
-                  height="1em"
+                  className="cuke-drawer-close"
                   onClick={[Function]}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="1em"
                 >
-                  <line
-                    key="0"
-                    x1="18"
-                    x2="6"
-                    y1="6"
-                    y2="18"
-                  />
-                  <line
-                    key="1"
-                    x1="6"
-                    x2="18"
-                    y1="6"
-                    y2="18"
-                  />
-                </svg>
-              </IconBase>
-            </Component>
-          </CloseIcon>
-        </section>
-        <section
-          className="cuke-drawer-content"
-        >
-          <span>
-            关闭回调
-          </span>
-        </section>
+                  <svg
+                    className="cuke-drawer-close"
+                    fill="none"
+                    height="1em"
+                    onClick={[Function]}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <line
+                      key="0"
+                      x1="18"
+                      x2="6"
+                      y1="6"
+                      y2="18"
+                    />
+                    <line
+                      key="1"
+                      x1="6"
+                      x2="18"
+                      y1="6"
+                      y2="18"
+                    />
+                  </svg>
+                </IconBase>
+              </FiX>
+            </CloseIcon>
+          </section>
+          <section
+            className="cuke-drawer-content"
+          >
+            <span>
+              关闭回调
+            </span>
+          </section>
+        </div>
       </div>
-    </div>
+    </Portal>
   </Drawer>
   <Drawer
     closable={true}
@@ -417,54 +931,306 @@ exports[`<Drawer/> should render custom direction 1`] = `
     width={300}
     zIndex={999}
   >
-    <div
-      className="cuke-drawer-mask cuke-drawer-mask-show"
-      onClick={[Function]}
-    />
-    <div
-      className="cuke-drawer-wrap"
-      role="dialog"
-      tabIndex="-1"
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-left no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-top no-title"
+              style="width: 300px; height: 300px; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-bottom no-title"
+              style="width: 300px; height: 300px; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+        </body>
+      }
     >
       <div
-        className="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
-        style={
-          Object {
-            "height": "100%",
-            "width": 300,
-            "zIndex": 999,
-          }
-        }
+        className="cuke-drawer-mask cuke-drawer-mask-show"
+        onClick={[Function]}
+      />
+      <div
+        className="cuke-drawer-wrap"
+        role="dialog"
+        tabIndex="-1"
       >
-        <section
-          className="cuke-drawer-header"
+        <div
+          className="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+          style={
+            Object {
+              "height": "100%",
+              "width": 300,
+              "zIndex": 999,
+            }
+          }
         >
-          <h2
-            className="cuke-drawer-title"
-          />
-          <CloseIcon
-            className="cuke-drawer-close"
-            onClick={[Function]}
+          <section
+            className="cuke-drawer-header"
           >
-            <Component
+            <h2
+              className="cuke-drawer-title"
+            />
+            <CloseIcon
               className="cuke-drawer-close"
               onClick={[Function]}
             >
-              <IconBase
-                attr={
-                  Object {
-                    "fill": "none",
-                    "stroke": "currentColor",
-                    "strokeLinecap": "round",
-                    "strokeLinejoin": "round",
-                    "strokeWidth": "2",
-                    "viewBox": "0 0 24 24",
-                  }
-                }
+              <FiX
                 className="cuke-drawer-close"
                 onClick={[Function]}
               >
-                <svg
+                <IconBase
                   attr={
                     Object {
                       "fill": "none",
@@ -475,50 +1241,55 @@ exports[`<Drawer/> should render custom direction 1`] = `
                       "viewBox": "0 0 24 24",
                     }
                   }
-                  className="undefined cuke-drawer-close"
-                  fill="none"
-                  height="1em"
+                  className="cuke-drawer-close"
                   onClick={[Function]}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="1em"
                 >
-                  <line
-                    key="0"
-                    x1="18"
-                    x2="6"
-                    y1="6"
-                    y2="18"
-                  />
-                  <line
-                    key="1"
-                    x1="6"
-                    x2="18"
-                    y1="6"
-                    y2="18"
-                  />
-                </svg>
-              </IconBase>
-            </Component>
-          </CloseIcon>
-        </section>
-        <section
-          className="cuke-drawer-content"
-        >
-          <span>
-            关闭回调
-          </span>
-        </section>
+                  <svg
+                    className="cuke-drawer-close"
+                    fill="none"
+                    height="1em"
+                    onClick={[Function]}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <line
+                      key="0"
+                      x1="18"
+                      x2="6"
+                      y1="6"
+                      y2="18"
+                    />
+                    <line
+                      key="1"
+                      x1="6"
+                      x2="18"
+                      y1="6"
+                      y2="18"
+                    />
+                  </svg>
+                </IconBase>
+              </FiX>
+            </CloseIcon>
+          </section>
+          <section
+            className="cuke-drawer-content"
+          >
+            <span>
+              关闭回调
+            </span>
+          </section>
+        </div>
       </div>
-    </div>
+    </Portal>
   </Drawer>
   <Drawer
     closable={true}
@@ -534,54 +1305,306 @@ exports[`<Drawer/> should render custom direction 1`] = `
     width={300}
     zIndex={999}
   >
-    <div
-      className="cuke-drawer-mask cuke-drawer-mask-show"
-      onClick={[Function]}
-    />
-    <div
-      className="cuke-drawer-wrap"
-      role="dialog"
-      tabIndex="-1"
+    <Portal
+      containerInfo={
+        <body>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-left no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-top no-title"
+              style="width: 300px; height: 300px; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+              style="width: 300px; height: 100%; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+          <div
+            class="cuke-drawer-mask cuke-drawer-mask-show"
+          />
+          <div
+            class="cuke-drawer-wrap"
+            role="dialog"
+            tabindex="-1"
+          >
+            <div
+              class="cuke-drawer cuke-drawer-open cuke-drawer-bottom no-title"
+              style="width: 300px; height: 300px; z-index: 999;"
+            >
+              <section
+                class="cuke-drawer-header"
+              >
+                <h2
+                  class="cuke-drawer-title"
+                />
+                <svg
+                  class="cuke-drawer-close"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                >
+                  <line
+                    x1="18"
+                    x2="6"
+                    y1="6"
+                    y2="18"
+                  />
+                  <line
+                    x1="6"
+                    x2="18"
+                    y1="6"
+                    y2="18"
+                  />
+                </svg>
+              </section>
+              <section
+                class="cuke-drawer-content"
+              >
+                <span>
+                  关闭回调
+                </span>
+              </section>
+            </div>
+          </div>
+        </body>
+      }
     >
       <div
-        className="cuke-drawer cuke-drawer-open cuke-drawer-bottom no-title"
-        style={
-          Object {
-            "height": 300,
-            "width": 300,
-            "zIndex": 999,
-          }
-        }
+        className="cuke-drawer-mask cuke-drawer-mask-show"
+        onClick={[Function]}
+      />
+      <div
+        className="cuke-drawer-wrap"
+        role="dialog"
+        tabIndex="-1"
       >
-        <section
-          className="cuke-drawer-header"
+        <div
+          className="cuke-drawer cuke-drawer-open cuke-drawer-bottom no-title"
+          style={
+            Object {
+              "height": 300,
+              "width": 300,
+              "zIndex": 999,
+            }
+          }
         >
-          <h2
-            className="cuke-drawer-title"
-          />
-          <CloseIcon
-            className="cuke-drawer-close"
-            onClick={[Function]}
+          <section
+            className="cuke-drawer-header"
           >
-            <Component
+            <h2
+              className="cuke-drawer-title"
+            />
+            <CloseIcon
               className="cuke-drawer-close"
               onClick={[Function]}
             >
-              <IconBase
-                attr={
-                  Object {
-                    "fill": "none",
-                    "stroke": "currentColor",
-                    "strokeLinecap": "round",
-                    "strokeLinejoin": "round",
-                    "strokeWidth": "2",
-                    "viewBox": "0 0 24 24",
-                  }
-                }
+              <FiX
                 className="cuke-drawer-close"
                 onClick={[Function]}
               >
-                <svg
+                <IconBase
                   attr={
                     Object {
                       "fill": "none",
@@ -592,50 +1615,55 @@ exports[`<Drawer/> should render custom direction 1`] = `
                       "viewBox": "0 0 24 24",
                     }
                   }
-                  className="undefined cuke-drawer-close"
-                  fill="none"
-                  height="1em"
+                  className="cuke-drawer-close"
                   onClick={[Function]}
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  style={
-                    Object {
-                      "color": undefined,
-                    }
-                  }
-                  viewBox="0 0 24 24"
-                  width="1em"
                 >
-                  <line
-                    key="0"
-                    x1="18"
-                    x2="6"
-                    y1="6"
-                    y2="18"
-                  />
-                  <line
-                    key="1"
-                    x1="6"
-                    x2="18"
-                    y1="6"
-                    y2="18"
-                  />
-                </svg>
-              </IconBase>
-            </Component>
-          </CloseIcon>
-        </section>
-        <section
-          className="cuke-drawer-content"
-        >
-          <span>
-            关闭回调
-          </span>
-        </section>
+                  <svg
+                    className="cuke-drawer-close"
+                    fill="none"
+                    height="1em"
+                    onClick={[Function]}
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    style={
+                      Object {
+                        "color": undefined,
+                      }
+                    }
+                    viewBox="0 0 24 24"
+                    width="1em"
+                  >
+                    <line
+                      key="0"
+                      x1="18"
+                      x2="6"
+                      y1="6"
+                      y2="18"
+                    />
+                    <line
+                      key="1"
+                      x1="6"
+                      x2="18"
+                      y1="6"
+                      y2="18"
+                    />
+                  </svg>
+                </IconBase>
+              </FiX>
+            </CloseIcon>
+          </section>
+          <section
+            className="cuke-drawer-content"
+          >
+            <span>
+              关闭回调
+            </span>
+          </section>
+        </div>
       </div>
-    </div>
+    </Portal>
   </Drawer>
 </div>
 `;
