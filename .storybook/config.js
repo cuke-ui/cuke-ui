@@ -4,7 +4,7 @@ import { name, repository } from "../package.json"
 import { setDefaults } from '@storybook/addon-info';
 import { configureActions } from '@storybook/addon-actions';
 import { setOptions } from '@storybook/addon-options';
-import { withNotes } from '@storybook/addon-notes';
+import { version } from '../package.json'
 import '@storybook/addon-console';
 import "../components/styles/index.less"
 
@@ -23,7 +23,7 @@ function loadStories() {
 }
 
 setOptions({
-  name: name,
+  name: `${name} v${version}`,
   url: repository,
 });
 

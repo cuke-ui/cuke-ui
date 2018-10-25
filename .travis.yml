@@ -25,6 +25,6 @@ before_script : "yarn test -- -u"
 script: 
   - yarn lint
   - yarn test
-  - yarn deploy
+  - yarn pub:docs -- --ci
 
 after_script: "yarn ci"
