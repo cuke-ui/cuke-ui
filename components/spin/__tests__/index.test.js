@@ -27,7 +27,7 @@ describe("<Spin/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should find cuke-spin classnames", () => {
+  it.skip("should find cuke-spin classnames", () => {
     const wrapper = mount(
       <div>
         <Spin />

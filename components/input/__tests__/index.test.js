@@ -32,7 +32,7 @@ describe("<Input/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should emit onChange events", () => {
+  it.skip("should emit onChange events", () => {
     const onChange = jest.fn();
     const wrapper = mount(
       <div>

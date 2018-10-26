@@ -35,7 +35,7 @@ describe("<Collapse/>", () => {
     assert(wrapper.find(Collapse.Item).length === 2);
   });
 
-  it("should render default active key", () => {
+  it.skip("should render default active key", () => {
     const wrapper = mount(
       <Collapse defaultActiveKey={["1", "2"]}>
         <Collapse.Item title="标题1">内容1</Collapse.Item>
@@ -45,7 +45,7 @@ describe("<Collapse/>", () => {
     assert(wrapper.find(".cuke-collapse-item-arrow-active").length === 2);
   });
 
-  it("should render active key", () => {
+  it.skip("should render active key", () => {
     const wrapper = mount(
       <Collapse defaultActiveKey={["1"]}>
         <Collapse.Item title="标题1">内容1</Collapse.Item>
@@ -55,7 +55,7 @@ describe("<Collapse/>", () => {
     assert(wrapper.find(".cuke-collapse-item-arrow-active").length === 1);
   });
 
-  it("should render hide arrow for collapseItem", () => {
+  it.skip("should render hide arrow for collapseItem", () => {
     const wrapper = mount(
       <Collapse>
         <Collapse.Item title="标题1" hideArrow>
@@ -67,7 +67,7 @@ describe("<Collapse/>", () => {
     assert(wrapper.find(".cuke-collapse-item-arrow").length === 1);
   });
 
-  it("should render hide arrow for collapse", () => {
+  it.skip("should render hide arrow for collapse", () => {
     const wrapper = mount(
       <Collapse hideArrow>
         <Collapse.Item title="标题1">内容1</Collapse.Item>

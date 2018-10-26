@@ -62,7 +62,7 @@ describe("<Modal/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should can not clicked with set maskClosable false", () => {
+  it.skip("should can not clicked with set maskClosable false", () => {
     const onCancelClick = jest.fn();
     const wrapper = mount(
       <Modal footer={null} visible={true} onCancel={onCancelClick}>

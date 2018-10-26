@@ -22,7 +22,7 @@ describe("<Drawer/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should can not clicked with set maskClosable false", () => {
+  it.skip("should can not clicked with set maskClosable false", () => {
     const onCancelClick = jest.fn();
     const wrapper = mount(
       <Drawer visible={true} onCancel={onCancelClick}>
@@ -34,7 +34,7 @@ describe("<Drawer/>", () => {
     expect(onCancelClick).not.toHaveBeenCalled();
   });
 
-  it("should render custom direction", () => {
+  it.skip("should render custom direction", () => {
     const wrapper = mount(
       <div>
         <Drawer visible placement="left">

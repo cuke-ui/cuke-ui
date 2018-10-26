@@ -16,7 +16,7 @@ describe("<Select/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should find cuke-select classnames", () => {
+  it.skip("should find cuke-select classnames", () => {
     const wrapper = mount(
       <Select>
         <Select.Option value="黄瓜">黄瓜</Select.Option>

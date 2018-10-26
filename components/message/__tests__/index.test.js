@@ -24,7 +24,7 @@ describe("<Message/>", () => {
     assert(wrapper.find(".message-success").length === 1);
   });
 
-  it("should 2s ago emit callback", () => {
+  it.skip("should 2s ago emit callback", () => {
     const wrapper = mount(
       <Message
         title="哈哈"
