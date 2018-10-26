@@ -3,49 +3,49 @@ import cls from "classnames";
 import PropTypes from "prop-types";
 
 export default class Col extends PureComponent {
-	static defaultProps = {
-		prefixCls: "cuke-col",
-		gutter: 24
-	};
+  static defaultProps = {
+    prefixCls: "cuke-col",
+    gutter: 24
+  };
 
-	static propTypes = {
-		prefixCls: PropTypes.string.isRequired,
-		span: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-		offset: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-	};
+  static propTypes = {
+    prefixCls: PropTypes.string.isRequired,
+    span: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    offset: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+  };
 
-	render() {
-		const {
-			gutter,
-			prefixCls,
-			className,
-			style,
-			span,
-			offset,
-			...attr
-		} = this.props;
+  render() {
+    const {
+      gutter,
+      prefixCls,
+      className,
+      style,
+      span,
+      offset,
+      ...attr
+    } = this.props;
 
-		const colStyle = {
-			paddingLeft: `${-gutter / 2}px`,
-			paddingRight: `${-gutter / 2}px`
-		};
+    const colStyle = {
+      paddingLeft: `${-gutter / 2}px`,
+      paddingRight: `${-gutter / 2}px`
+    };
 
-		return (
-			<div
-				className={cls(
-					prefixCls,
-					{ [`${prefixCls}-${span}`]: span },
-					{ [`${prefixCls}-offset-${offset}`]: offset },
-					className
-				)}
-				style={{
-					...style,
-					...colStyle
-				}}
-				{...attr}
-			>
-				{this.props.children}
-			</div>
-		);
-	}
+    return (
+      <div
+        className={cls(
+          prefixCls,
+          { [`${prefixCls}-${span}`]: span },
+          { [`${prefixCls}-offset-${offset}`]: offset },
+          className
+        )}
+        style={{
+          ...style,
+          ...colStyle
+        }}
+        {...attr}
+      >
+        {this.props.children}
+      </div>
+    );
+  }
 }

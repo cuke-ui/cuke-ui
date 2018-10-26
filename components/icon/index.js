@@ -1,15 +1,15 @@
 import React from "react";
 import {
-	FiVolume2,
-	FiLoader,
-	FiCheckCircle,
-	FiXCircle,
-	FiAlertCircle,
-	FiX,
-	FiChevronUp,
-	FiChevronDown,
-	FiChevronRight,
-	FiChevronLeft
+  FiVolume2,
+  FiLoader,
+  FiCheckCircle,
+  FiXCircle,
+  FiAlertCircle,
+  FiX,
+  FiChevronUp,
+  FiChevronDown,
+  FiChevronRight,
+  FiChevronLeft
 } from "react-icons/fi";
 
 export const InfoIcon = props => <FiVolume2 {...props} />;

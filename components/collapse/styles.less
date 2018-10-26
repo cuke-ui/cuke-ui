@@ -1,48 +1,48 @@
 @import "../styles/vars.less";
 @prefixCls : cuke-collapse;
 .@{prefixCls} {
-	border: 1px solid @border-color;
-	border-radius: @border-radius;
-	font-size: @font-size;
+  border: 1px solid @border-color;
+  border-radius: @border-radius;
+  font-size: @font-size;
   position: relative;
-	.@{prefixCls}-item-disabled {
+  .@{prefixCls}-item-disabled {
 
-		.@{prefixCls}-item-header {
+    .@{prefixCls}-item-header {
       cursor: no-drop;
       color: @disabled-font-color;
-		}
-	}
-	&-item {
-		border-bottom: 1px solid @border-color;
-		&-arrow {
-			font-size: 16px;
-			vertical-align: middle;
-			margin-right: 10px;
-			svg {
-				transition: @default-transition;
-			}
-		}
-		&-arrow-active {
-			svg {
-				transform: rotate(90deg);
-			}
-		}
-		&-header {
-			padding: 15px 20px;
-			cursor: pointer;
-			color: fade(@font-color, 90%);
-			background-color: @bg-color;
-		}
-		&-content {
-			padding: 20px;
-			color: @font-color;
-			overflow: hidden;
-			transition: all @default-transition;
-		}
-		&-hide {
+    }
+  }
+  &-item {
+    border-bottom: 1px solid @border-color;
+    &-arrow {
+      font-size: 16px;
+      vertical-align: middle;
+      margin-right: 10px;
+      svg {
+        transition: @default-transition;
+      }
+    }
+    &-arrow-active {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+    &-header {
+      padding: 15px 20px;
+      cursor: pointer;
+      color: fade(@font-color, 90%);
+      background-color: @bg-color;
+    }
+    &-content {
+      padding: 20px;
+      color: @font-color;
+      overflow: hidden;
+      transition: all @default-transition;
+    }
+    &-hide {
       padding-bottom: 0;
       padding-top: 0;
       height: 0;
-		}
-	}
+    }
+  }
 }

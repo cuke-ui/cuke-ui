@@ -5,50 +5,50 @@ import ReactTurntable from "react-turntable";
 import "react-turntable/assets/index.css";
 
 export default class TurnTable extends PureComponent {
-	static defaultProps = {
-		prefixCls: "cuke-turn-table",
-		width: 500,
-		height: 500,
-		speed: 1000, //旋转速度
-		duration: 5000, //旋转时间
-		prizes: [],
-		clickText: "抽奖",
-		primaryColor: "#2f363d",
-		secondaryColor: "#EEC775",
-		fontStyle: {
-			color: "#fff",
-			size: "14px",
-			fontWeight: "bold",
-			fontVertical: false,
-			fontFamily: "Microsoft YaHei"
-		}
-	};
+  static defaultProps = {
+    prefixCls: "cuke-turn-table",
+    width: 500,
+    height: 500,
+    speed: 1000, //旋转速度
+    duration: 5000, //旋转时间
+    prizes: [],
+    clickText: "抽奖",
+    primaryColor: "#2f363d",
+    secondaryColor: "#EEC775",
+    fontStyle: {
+      color: "#fff",
+      size: "14px",
+      fontWeight: "bold",
+      fontVertical: false,
+      fontFamily: "Microsoft YaHei"
+    }
+  };
 
-	static propTypes = {
-		prefixCls: PropTypes.string.isRequired,
-		width: PropTypes.number.isRequired,
-		height: PropTypes.number.isRequired,
-		prizes: PropTypes.array.isRequired,
-		clickText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-		primaryColor: PropTypes.string,
-		secondaryColor: PropTypes.string,
-		speed: PropTypes.number,
-		duration: PropTypes.number,
-		onComplete: PropTypes.func,
-		onStart: PropTypes.func,
-		fontVertical: PropTypes.bool,
-		fontStyle: PropTypes.object
-	};
+  static propTypes = {
+    prefixCls: PropTypes.string.isRequired,
+    width: PropTypes.number.isRequired,
+    height: PropTypes.number.isRequired,
+    prizes: PropTypes.array.isRequired,
+    clickText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    primaryColor: PropTypes.string,
+    secondaryColor: PropTypes.string,
+    speed: PropTypes.number,
+    duration: PropTypes.number,
+    onComplete: PropTypes.func,
+    onStart: PropTypes.func,
+    fontVertical: PropTypes.bool,
+    fontStyle: PropTypes.object
+  };
 
-	onChange = e => {
-		if (!this.props.disabled) {
-			this.props.onChange(e.target.value);
-		}
-	};
+  onChange = e => {
+    if (!this.props.disabled) {
+      this.props.onChange(e.target.value);
+    }
+  };
 
-	render() {
-		const { prefixCls, className, ...attr } = this.props;
+  render() {
+    const { prefixCls, className, ...attr } = this.props;
 
-		return <ReactTurntable className={cls(prefixCls, className)} {...attr} />;
-	}
+    return <ReactTurntable className={cls(prefixCls, className)} {...attr} />;
+  }
 }

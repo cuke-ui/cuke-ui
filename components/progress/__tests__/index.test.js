@@ -5,56 +5,56 @@ import toJson from "enzyme-to-json";
 import Progress from "../index";
 
 describe("<Progress/>", () => {
-	it("should render a <Progress/> components", () => {
-		const wrapper = render(
-			<div>
-				<Progress percent={70} />
+  it("should render a <Progress/> components", () => {
+    const wrapper = render(
+      <div>
+        <Progress percent={70} />
 
-				<Progress percent={70} animation={false} />
-			</div>
-		);
-		expect(toJson(wrapper)).toMatchSnapshot();
-	});
+        <Progress percent={70} animation={false} />
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 
-	it("should render five type width <Progress/> ", () => {
-		const wrapper = render(
-			<div>
-				<Progress percent={20} type="default" />
-				<Progress percent={30} type="success" />
-				<Progress percent={40} type="info" />
-				<Progress percent={50} type="warning" />
-				<Progress percent={60} type="error" />
+  it("should render five type width <Progress/> ", () => {
+    const wrapper = render(
+      <div>
+        <Progress percent={20} type="default" />
+        <Progress percent={30} type="success" />
+        <Progress percent={40} type="info" />
+        <Progress percent={50} type="warning" />
+        <Progress percent={60} type="error" />
 
-				<Progress percent={20} type="default" animation={false} />
-				<Progress percent={30} type="success" animation={false} />
-				<Progress percent={40} type="info" animation={false} />
-				<Progress percent={50} type="warning" animation={false} />
-				<Progress percent={60} type="error" animation={false} />
-			</div>
-		);
-		expect(toJson(wrapper)).toMatchSnapshot();
-	});
+        <Progress percent={20} type="default" animation={false} />
+        <Progress percent={30} type="success" animation={false} />
+        <Progress percent={40} type="info" animation={false} />
+        <Progress percent={50} type="warning" animation={false} />
+        <Progress percent={60} type="error" animation={false} />
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 
-	it("should find cuke-progress classnames", () => {
-		const wrapper = render(
-			<div>
-				<Progress percent={20} />
-				<Progress percent={20} animation={true} />
-			</div>
-		);
-		assert(wrapper.find(".cuke-progress").length >= 1);
-		assert(wrapper.find(".cuke-progress-enter").length >= 1);
-		assert(wrapper.find(".cuke-progress-bg-animation").length === 1);
-		assert(wrapper.find(".cuke-progress-bg").length >= 1);
-		assert(wrapper.find(".cuke-progress-num").length >= 1);
-	});
+  it("should find cuke-progress classnames", () => {
+    const wrapper = render(
+      <div>
+        <Progress percent={20} />
+        <Progress percent={20} animation={true} />
+      </div>
+    );
+    assert(wrapper.find(".cuke-progress").length >= 1);
+    assert(wrapper.find(".cuke-progress-enter").length >= 1);
+    assert(wrapper.find(".cuke-progress-bg-animation").length === 1);
+    assert(wrapper.find(".cuke-progress-bg").length >= 1);
+    assert(wrapper.find(".cuke-progress-num").length >= 1);
+  });
 
-	it("should can not render info when set showInfo with false", () => {
-		const wrapper = render(
-			<div>
-				<Progress percent={20} showInfo={false} />
-			</div>
-		);
-		assert(wrapper.find(".cuke-progress-num").length === 0);
-	});
+  it("should can not render info when set showInfo with false", () => {
+    const wrapper = render(
+      <div>
+        <Progress percent={20} showInfo={false} />
+      </div>
+    );
+    assert(wrapper.find(".cuke-progress-num").length === 0);
+  });
 });

@@ -12,15 +12,24 @@ import "../stories/styles/code.less"
 const req = require.context('../components', true, /\.stories\.js$/)
 
 function loadStories() {
-  require('../stories/index');    //介绍
-  require('../stories/general');    //普通
-  require('../stories/player');     //视听娱乐
-  require('../stories/navigation'); //导航
-  require('../stories/dataEntry'); //数据录入
-  require('../stories/dataDisplay'); //数据展示
-  require('../stories/grid'); //布局
-  require('../stories/feedback'); //操作反馈
-  require('../stories/other'); //其他
+  // 介绍
+  require('../stories/index');
+  // 普通
+  require('../stories/general');
+  // 视听娱乐
+  require('../stories/player');
+  // 导航
+  require('../stories/navigation')
+  // 数据录入
+  require('../stories/dataEntry');
+  // 数据展示
+  require('../stories/dataDisplay');
+  // 布局
+  require('../stories/grid');
+  // 操作反馈
+  require('../stories/feedback');
+  // 其他
+  require('../stories/other'); 
 }
 
 setOptions({
@@ -31,10 +40,12 @@ setOptions({
 configureActions({
   depth: 100
 })
+
 setDefaults({
   header: true,
   maxPropObjectKeys: 100,
   maxPropArrayLength: 100
 })
+
 addDecorator(story => <div style={{ padding: "20px 40px" }}>{story()}</div>)
 configure(loadStories, module);

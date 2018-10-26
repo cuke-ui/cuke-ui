@@ -3,36 +3,36 @@
 
 @prefixCls : cuke-badge;
 .@{prefixCls} {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 
-    &-inner {
-        position: absolute;
-        right: -@badge-width/2;
-        top: -@badge-height / 2;
-        z-index: @badge-z-index;
-        font-size: @badge-font-size;
-        height: @badge-height;
-        min-width: @badge-width;
-        background-color: @error-color;
-        border-radius: @badge-height / 2;
-        line-height: @badge-height;
-        color: #fff;
-        text-align: center;
-        box-sizing: border-box;
-        padding: @badge-padding;
-        white-space: nowrap;
-        box-shadow: @default-shadow;
+  &-inner {
+    position: absolute;
+    right: -@badge-width/2;
+    top: -@badge-height / 2;
+    z-index: @badge-z-index;
+    font-size: @badge-font-size;
+    height: @badge-height;
+    min-width: @badge-width;
+    background-color: @error-color;
+    border-radius: @badge-height / 2;
+    line-height: @badge-height;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    padding: @badge-padding;
+    white-space: nowrap;
+    box-shadow: @default-shadow;
 
-        &.@{prefixCls}-dot {
-            width: @badge-dot-width;
-            height: @badge-dot-width;
-            min-width: @badge-dot-width;
-            line-height: @badge-dot-width;
-            border-radius: 50%;
-            padding: 0;
-            right: -@badge-dot-width/2;
-            top: -@badge-dot-width/2;
-        }
+    &.@{prefixCls}-dot {
+      width: @badge-dot-width;
+      height: @badge-dot-width;
+      min-width: @badge-dot-width;
+      line-height: @badge-dot-width;
+      border-radius: 50%;
+      padding: 0;
+      right: -@badge-dot-width / 2;
+      top: -@badge-dot-width / 2;
     }
+  }
 }
