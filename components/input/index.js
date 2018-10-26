@@ -9,7 +9,7 @@ export default class Input extends PureComponent {
     readonly: false,
     placeholder: "",
     type: "text",
-    onChange: () => { }
+    onChange: () => {}
   };
 
   static propTypes = {
@@ -79,14 +79,14 @@ export default class Input extends PureComponent {
           {addonBefore ? (
             <span className={`${prefixCls}-group-addon`}>{addonBefore}</span>
           ) : (
-              undefined
-            )}
+            undefined
+          )}
           {inputEle}
           {addonAfter ? (
             <span className={`${prefixCls}-group-addon`}>{addonAfter}</span>
           ) : (
-              undefined
-            )}
+            undefined
+          )}
         </span>
       );
     }

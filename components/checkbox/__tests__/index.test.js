@@ -25,7 +25,7 @@ describe("<Checkbox/>", () => {
     const wrapper = shallow(
       <Checkbox onChange={onChange} disabled>
         黄瓜 ui
-			</Checkbox>
+      </Checkbox>
     );
     wrapper.find("input").simulate("click");
     expect(onChange).not.toHaveBeenCalled();

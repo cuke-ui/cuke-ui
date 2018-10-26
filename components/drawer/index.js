@@ -14,7 +14,7 @@ export default class Drawer extends PureComponent {
     visible: false,
     target: () => document.body,
     title: "",
-    onClose: () => { },
+    onClose: () => {},
     maskClosable: true,
     closable: true,
     showMask: true,
@@ -97,9 +97,9 @@ export default class Drawer extends PureComponent {
     /*eslint no-mixed-spaces-and-tabs: ["error", "smart-tabs"]*/
     const initMaskAnimate = init
       ? {
-        [`${prefixCls}-mask-show`]: visible,
-        [`${prefixCls}-mask-hide`]: !visible
-      }
+          [`${prefixCls}-mask-show`]: visible,
+          [`${prefixCls}-mask-hide`]: !visible
+        }
       : { [`${prefixCls}-mask-show`]: visible };
 
     const maskClickHandle = maskClosable ? { onClick: onClose } : {};
@@ -112,8 +112,8 @@ export default class Drawer extends PureComponent {
             {...maskClickHandle}
           />
         ) : (
-            undefined
-          )}
+          undefined
+        )}
         <div role="dialog" tabIndex="-1" className={cls(`${prefixCls}-wrap`)}>
           <div
             className={cls(
@@ -138,8 +138,8 @@ export default class Drawer extends PureComponent {
               {closable ? (
                 <CloseIcon className={`${prefixCls}-close`} onClick={onClose} />
               ) : (
-                  undefined
-                )}
+                undefined
+              )}
             </section>
             <section className={`${prefixCls}-content`}>{children}</section>
           </div>

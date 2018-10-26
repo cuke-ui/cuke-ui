@@ -26,7 +26,7 @@ export default class BackTop extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-back-top",
     visibilityHeight: 400,
-    onClick: () => { }
+    onClick: () => {}
   };
   onClick = () => {
     this.props.onClick();

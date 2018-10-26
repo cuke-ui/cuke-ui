@@ -26,7 +26,7 @@ export default class Tag extends PureComponent {
     disabled: false,
     size: "default",
     closable: false,
-    onClose: () => { }
+    onClose: () => {}
   };
 
   static propTypes = {

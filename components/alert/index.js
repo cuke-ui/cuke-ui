@@ -23,7 +23,7 @@ export default class Alert extends PureComponent {
     description: "",
     closable: false,
     showIcon: false,
-    onClose: () => { }
+    onClose: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -108,22 +108,22 @@ export default class Alert extends PureComponent {
           {showIcon ? (
             <span className={`${prefixCls}-icon`}>{this.renderIcon(type)}</span>
           ) : (
-              undefined
-            )}
+            undefined
+          )}
           <span>{message}</span>
           {closable ? (
             <span className={`${prefixCls}-close`} onClick={this.onClose}>
               {closeText}
             </span>
           ) : (
-              undefined
-            )}
+            undefined
+          )}
         </div>
         {description ? (
           <div className={`${prefixCls}-description`}>{description}</div>
         ) : (
-            undefined
-          )}
+          undefined
+        )}
       </div>
     );
   }

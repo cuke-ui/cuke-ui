@@ -15,8 +15,8 @@ export default class Modal extends PureComponent {
     target: () => document.body,
     width: 520,
     title: "",
-    onOk: () => { },
-    onCancel: () => { },
+    onOk: () => {},
+    onCancel: () => {},
     okText: "确定",
     cancelText: "取消",
     footer: [],
@@ -137,9 +137,9 @@ export default class Modal extends PureComponent {
     /*eslint no-mixed-spaces-and-tabs: ["error", "smart-tabs"]*/
     const initMaskAnimate = init
       ? {
-        [`${prefixCls}-mask-show`]: visible,
-        [`${prefixCls}-mask-hide`]: !visible
-      }
+          [`${prefixCls}-mask-show`]: visible,
+          [`${prefixCls}-mask-hide`]: !visible
+        }
       : { [`${prefixCls}-mask-show`]: visible };
 
     const maskClickHandle = maskClosable ? { onClick: onCancel } : {};
@@ -152,8 +152,8 @@ export default class Modal extends PureComponent {
             {...maskClickHandle}
           />
         ) : (
-            undefined
-          )}
+          undefined
+        )}
         <div
           role="dialog"
           tabIndex="-1"
@@ -181,8 +181,8 @@ export default class Modal extends PureComponent {
                   onClick={onCancel}
                 />
               ) : (
-                  undefined
-                )}
+                undefined
+              )}
             </section>
             <section className={`${prefixCls}-content`}>
               {content || children}
@@ -199,8 +199,8 @@ export default class Modal extends PureComponent {
                 </Button>
               </section>
             ) : (
-                  undefined
-                )}
+              undefined
+            )}
           </div>
         </div>
       </Fragment>,

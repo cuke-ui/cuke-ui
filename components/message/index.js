@@ -40,7 +40,7 @@ export default class Message extends PureComponent {
     prefixCls: "cuke-message",
     duration: 2,
     darkTheme: false,
-    onClose: () => { }
+    onClose: () => {}
   };
   createContainer() {
     const { prefixCls } = this.props;

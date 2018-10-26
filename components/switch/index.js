@@ -16,7 +16,7 @@ export default class Switch extends React.PureComponent {
     disabled: false,
     loading: false,
     prefixCls: "cuke-switch",
-    onChange: () => { }
+    onChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -72,10 +72,10 @@ export default class Switch extends React.PureComponent {
             <LoadingIcon />
           </span>
         ) : (
-            <span className={cls(`${prefixCls}-inner`)}>
-              {checked ? checkedChildren : unCheckedChildren}
-            </span>
-          )}
+          <span className={cls(`${prefixCls}-inner`)}>
+            {checked ? checkedChildren : unCheckedChildren}
+          </span>
+        )}
       </span>
     );
   }

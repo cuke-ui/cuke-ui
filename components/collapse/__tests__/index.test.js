@@ -60,7 +60,7 @@ describe("<Collapse/>", () => {
       <Collapse>
         <Collapse.Item title="标题1" hideArrow>
           内容1
-				</Collapse.Item>
+        </Collapse.Item>
         <Collapse.Item title="标题2">内容2</Collapse.Item>
       </Collapse>
     );

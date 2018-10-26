@@ -58,10 +58,10 @@ export default class TimelineItem extends PureComponent {
             <LoadingIcon style={{ color }} />
           </div>
         ) : (
-            <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
-              {dot}
-            </div>
-          )}
+          <div className={`${prefixCls}-dot`} style={{ borderColor: color }}>
+            {dot}
+          </div>
+        )}
         <div
           className={`${prefixCls}-content`}
           style={{ animationDelay: style.animationDelay }}

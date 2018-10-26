@@ -16,8 +16,8 @@ export default class DataPicker extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-date-picker",
     format: "YYYY-MM-DD",
-    onPanelVisibleChange: () => { },
-    onChange: () => { }
+    onPanelVisibleChange: () => {},
+    onChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -196,7 +196,7 @@ export default class DataPicker extends PureComponent {
             <span className={cls(`${prefixCls}-date`)}>
               {this.state.momentSelected.year()} {"  "}
               {this.state.momentSelected.month() + 1}月
-						</span>
+            </span>
             <span className={cls(`${prefixCls}-switch`)}>
               <span
                 className={cls(`${prefixCls}-switch-group`)}

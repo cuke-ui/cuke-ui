@@ -66,7 +66,7 @@ describe("<Tag/>", () => {
     const wrapper = shallow(
       <Tag onClick={onClick} disabled>
         黄瓜ui
-			</Tag>
+      </Tag>
     );
     wrapper.find(".cuke-tag").simulate("click");
     expect(onClick).not.toHaveBeenCalled();
@@ -78,7 +78,7 @@ describe("<Tag/>", () => {
     const wrapper = shallow(
       <Tag onClick={onClick} onClose={onClose}>
         黄瓜ui
-			</Tag>
+      </Tag>
     );
     wrapper.find(".cuke-tag").simulate("click");
     expect(onClick).toHaveBeenCalled();

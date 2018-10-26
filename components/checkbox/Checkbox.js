@@ -8,7 +8,7 @@ export default class Checkbox extends PureComponent {
     defaultChecked: false,
     indeterminate: false,
     checked: false,
-    onChange: () => { }
+    onChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,

@@ -61,21 +61,21 @@ describe("<Dropdown/>", () => {
       <div>
         <Dropdown overlay={overlay} animate="slideUp">
           slideDown
-				</Dropdown>
+        </Dropdown>
         <Dropdown overlay={overlay} animate="slideDown">
           slideDown
-				</Dropdown>
+        </Dropdown>
         <Dropdown overlay={overlay} animate="slideRight">
           slideRight
-				</Dropdown>
+        </Dropdown>
 
         <Dropdown overlay={overlay} animate="slideLeft">
           slideLeft
-				</Dropdown>
+        </Dropdown>
 
         <Dropdown overlay={overlay} animate={false}>
           no animate
-				</Dropdown>
+        </Dropdown>
       </div>
     );
     assert(wrapper.find(".cuke-dropdown-overlay-slideUp").length === 1);

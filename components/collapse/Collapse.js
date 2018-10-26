@@ -64,7 +64,7 @@ export default class Collapse extends React.PureComponent {
         visible: accordion
           ? currentActiveKey === String(index + 1)
           : defaultActiveKey.includes(String(index + 1)) ||
-          activeKey.includes(String(index + 1)), //eslint-disable-line
+            activeKey.includes(String(index + 1)), //eslint-disable-line
         onChange: this.onChange
       });
     });

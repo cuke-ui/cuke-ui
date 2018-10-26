@@ -50,8 +50,8 @@ export default class Progress extends PureComponent {
         {showInfo ? (
           <div className={`${prefixCls}-num`}>{_percent}</div>
         ) : (
-            undefined
-          )}
+          undefined
+        )}
       </div>
     );
   }

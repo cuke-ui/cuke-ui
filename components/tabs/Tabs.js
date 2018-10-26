@@ -13,7 +13,7 @@ export default class Tabs extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-tabs",
     defaultActiveKey: "1",
-    onChange: () => { }
+    onChange: () => {}
   };
 
   static propTypes = {
@@ -129,15 +129,15 @@ export default class Tabs extends PureComponent {
               }}
             />
           ) : (
-              undefined
-            )}
+            undefined
+          )}
           {tabBarExtraContent ? (
             <div className={cls(`${prefixCls}-extra`)}>
               {tabBarExtraContent}
             </div>
           ) : (
-              undefined
-            )}
+            undefined
+          )}
         </div>
         <div className={cls(`${prefixCls}-content`)}>{content}</div>
       </div>

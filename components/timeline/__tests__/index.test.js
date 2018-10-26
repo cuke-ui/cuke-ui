@@ -51,7 +51,7 @@ describe("<Timeline/>", () => {
         <Timeline.Item color="green">接下来是LPL 季后赛</Timeline.Item>
         <Timeline.Item color="#f63">
           目前 RNG, RW, IG 最后可能进入 S8
-				</Timeline.Item>
+        </Timeline.Item>
       </Timeline>
     );
     expect(toJson(wrapper)).toMatchSnapshot();

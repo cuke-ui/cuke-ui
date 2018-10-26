@@ -79,8 +79,8 @@ export default class Tooltip extends PureComponent {
             {title}
           </div>
         ) : (
-            undefined
-          )}
+          undefined
+        )}
         <span
           ref={node => (this.triggerWrapper = node)}
           className={cls(`${prefixCls}-trigger-wrapper`)}

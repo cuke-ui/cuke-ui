@@ -21,7 +21,7 @@ export default class Pagination extends PureComponent {
       prevText: "上一页",
       nextText: "下一页"
     },
-    onChange: () => { }
+    onChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -68,10 +68,10 @@ export default class Pagination extends PureComponent {
         {current <= this.defaultCurrentPage ? (
           <Button disabled>{prevText}</Button>
         ) : (
-            <Button type="primary" onClick={() => this.getPageList(prev)}>
-              {prevText}
-            </Button>
-          )}
+          <Button type="primary" onClick={() => this.getPageList(prev)}>
+            {prevText}
+          </Button>
+        )}
         <span className={`${prefixCls}-pages`}>
           <span className={`${prefixCls}-page-index`}>{current}</span>{" "}
           {separator} {total}
@@ -79,10 +79,10 @@ export default class Pagination extends PureComponent {
         {current >= total ? (
           <Button disabled>{nextText}</Button>
         ) : (
-            <Button type="primary" onClick={() => this.getPageList(next)}>
-              {nextText}
-            </Button>
-          )}
+          <Button type="primary" onClick={() => this.getPageList(next)}>
+            {nextText}
+          </Button>
+        )}
       </section>
     );
   }

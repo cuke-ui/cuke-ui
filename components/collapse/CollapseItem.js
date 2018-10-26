@@ -62,14 +62,14 @@ export default class CollapseItem extends React.PureComponent {
           {hideArrow ? (
             undefined
           ) : (
-              <span
-                className={cls(`${prefixCls}-arrow`, {
-                  [`${prefixCls}-arrow-active`]: visible
-                })}
-              >
-                <ArrowRightIcon />
-              </span>
-            )}
+            <span
+              className={cls(`${prefixCls}-arrow`, {
+                [`${prefixCls}-arrow-active`]: visible
+              })}
+            >
+              <ArrowRightIcon />
+            </span>
+          )}
 
           {title}
         </div>

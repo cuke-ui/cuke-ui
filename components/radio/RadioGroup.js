@@ -10,7 +10,7 @@ export default class RadioGroup extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-radio-group",
     disabled: false,
-    onChange: () => { }
+    onChange: () => {}
   };
 
   static propTypes = {

@@ -11,8 +11,8 @@ export default class Select extends PureComponent {
   };
   static defaultProps = {
     prefixCls: "cuke-select",
-    onPanelVisibleChange: () => { },
-    onChange: () => { }
+    onPanelVisibleChange: () => {},
+    onChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,

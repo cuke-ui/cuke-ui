@@ -14,7 +14,7 @@ export default class CheckboxGroup extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-checkbox-group",
     disabled: false,
-    onChange: () => { }
+    onChange: () => {}
   };
 
   static propTypes = {

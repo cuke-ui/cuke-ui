@@ -20,7 +20,7 @@ export default class WordPad extends PureComponent {
     lineJoin: "round",
     strokeWidth: 10,
     strokeColor: "#444",
-    getCanvas: () => { }
+    getCanvas: () => {}
   };
   static propTypes = {
     width: propTypes.number.isRequired,
@@ -47,7 +47,7 @@ export default class WordPad extends PureComponent {
         ref={node => (this.canvas = node)}
       >
         你的浏览器不支持 canvas
-			</canvas>
+      </canvas>
     );
   }
   clear() {

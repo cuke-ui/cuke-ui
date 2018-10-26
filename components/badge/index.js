@@ -17,7 +17,7 @@ export default class Badge extends PureComponent {
     overflowCount: 99,
     showZero: false,
     dot: false,
-    onClick: () => { }
+    onClick: () => {}
   };
   constructor(props) {
     super(props);
@@ -48,8 +48,8 @@ export default class Badge extends PureComponent {
                 : count}
           </span>
         ) : (
-            undefined
-          )}
+          undefined
+        )}
         {children}
       </div>
     );

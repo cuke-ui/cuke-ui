@@ -24,7 +24,7 @@ export default class Dropdown extends PureComponent {
     prefixCls: "cuke-dropdown",
     animate: animateType[0],
     trigger: Object.values(triggerTypes)[0],
-    onVisibleChange: () => { }
+    onVisibleChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -68,9 +68,9 @@ export default class Dropdown extends PureComponent {
     const bindEvents = disabled
       ? {}
       : {
-        [isHover ? "onMouseEnter" : "onMouseDown"]: this.onShowOverlay,
-        [isHover ? "onMouseLeave" : "onBlur"]: this.onHideOverlay
-      };
+          [isHover ? "onMouseEnter" : "onMouseDown"]: this.onShowOverlay,
+          [isHover ? "onMouseLeave" : "onBlur"]: this.onHideOverlay
+        };
     return (
       <div
         className={cls(prefixCls, className, {
@@ -82,8 +82,8 @@ export default class Dropdown extends PureComponent {
         {disabled ? (
           <div className={cls(`${prefixCls}-disabled-mask`)} />
         ) : (
-            undefined
-          )}
+          undefined
+        )}
         <div className={cls(`${prefixCls}-wrap`)}>{children}</div>
         <div
           className={cls(`${prefixCls}-overlay`, {
