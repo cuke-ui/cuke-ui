@@ -4,59 +4,59 @@ import PropTypes from "prop-types";
 import cls from "classnames";
 
 export default class RadioGroup extends PureComponent {
-	state = {
-		value: this.props.value || this.props.defaultValue
-	};
-	static defaultProps = {
-		prefixCls: "cuke-radio-group",
-		disabled: false,
-		onChange: () => {}
-	};
+  state = {
+    value: this.props.value || this.props.defaultValue
+  };
+  static defaultProps = {
+    prefixCls: "cuke-radio-group",
+    disabled: false,
+    onChange: () => {}
+  };
 
-	static propTypes = {
-		prefixCls: PropTypes.string.isRequired,
-		onChange: PropTypes.func,
-		disabled: PropTypes.bool
-	};
+  static propTypes = {
+    prefixCls: PropTypes.string.isRequired,
+    onChange: PropTypes.func,
+    disabled: PropTypes.bool
+  };
 
-	constructor(props) {
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	onRadioChange(e) {
-		this.setState({
-			value: e.target.value
-		});
-		this.props.onChange(e);
-	}
+  onRadioChange(e) {
+    this.setState({
+      value: e.target.value
+    });
+    this.props.onChange(e);
+  }
 
-	componentWillReceiveProps({ value }) {
-		//当传入的 value 值改变时 重置下 value 值
-		this.setState({
-			value
-		});
-	}
+  componentWillReceiveProps({ value }) {
+    //当传入的 value 值改变时 重置下 value 值
+    this.setState({
+      value
+    });
+  }
 
-	render() {
-		const { children, prefixCls, disabled, className, ...attr } = this.props;
-		const { value } = this.state;
+  render() {
+    const { children, prefixCls, disabled, className, ...attr } = this.props;
+    const { value } = this.state;
 
-		// 变量子节点 对比当前value 和  子节点 value 是否相同
-		const radios = React.Children.map(children, radio => {
-			return (
-				<Radio
-					disabled={disabled}
-					{...radio.props}
-					onChange={e => this.onRadioChange(e)}
-					checked={value === radio.props.value}
-				/>
-			);
-		});
+    // 变量子节点 对比当前value 和  子节点 value 是否相同
+    const radios = React.Children.map(children, radio => {
+      return (
+        <Radio
+          disabled={disabled}
+          {...radio.props}
+          onChange={e => this.onRadioChange(e)}
+          checked={value === radio.props.value}
+        />
+      );
+    });
 
-		return (
-			<div className={cls(prefixCls, className)} {...attr}>
-				{radios}
-			</div>
-		);
-	}
+    return (
+      <div className={cls(prefixCls, className)} {...attr}>
+        {radios}
+      </div>
+    );
+  }
 }

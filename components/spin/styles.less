@@ -5,48 +5,48 @@
 @prefixCls : cuke-spin;
 
 .@{prefixCls} {
-    &-indicator {
-        color: @primary-color;
-        font-size: @spin-default-size;
-        svg {
-            display: inline-block;
-            animation: cuke-spin @loading-time linear infinite;
-        }
+  &-indicator {
+    color: @primary-color;
+    font-size: @spin-default-size;
+    svg {
+      display: inline-block;
+      animation: cuke-spin @loading-time linear infinite;
     }
+  }
     &-container {
-        position: relative;
+      position: relative;
     }
 
     &-spinning {
-        display: inline-block;
+      display: inline-block;
     }
 
     &-wrap {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        .flex-center();
-        flex-direction: column;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      .flex-center();
+      flex-direction: column;
     }
     &-blur {
-        filter: blur(@spin-blur-filter);
-        opacity: @spin-blur-opacity;
-        overflow: hidden;
-        //包裹了子组件 防止影响点击
-        pointer-events: none;
-        user-select: none;
-        transition: opacity @default-transition;
+      filter: blur(@spin-blur-filter);
+      opacity: @spin-blur-opacity;
+      overflow: hidden;
+      //包裹了子组件 防止影响点击
+      pointer-events: none;
+      user-select: none;
+      transition: opacity @default-transition;
     }
     &-tip {
-        color: @primary-color;
+      color: @primary-color;
     }
     &-small {
-        font-size: @spin-small-size;
+      font-size: @spin-small-size;
     }
     &-large {
-        font-size: @spin-large-size;
+      font-size: @spin-large-size;
     }
 }

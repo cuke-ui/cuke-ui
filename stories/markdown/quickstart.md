@@ -2,18 +2,18 @@
 ---
 
 ## 安装
-> 使用 npm 
+
+使用 npm 
 ```
 npm i cuke-ui --save
 ```
 
-> 使用 yarn
+使用 yarn
 ```
 yarn add cuke-ui
 ```
 
-> 使用 cdn
-
+使用 CDN
 ```
 <link rel="stylesheet" href="https://unpkg.com/cuke-ui@latest/dist/cuke-ui.min.css">
 <script type="text/javascript" src="https://unpkg.com/cuke-ui@latest/dist/cuke-ui.min.js"></script>
@@ -21,7 +21,7 @@ yarn add cuke-ui
 
 ## 如何使用
 
-> 1. 全部引入
+1. 全部引入
 
 ```js
 import React from "react"
@@ -33,24 +33,24 @@ class Page extends React.Component {
     return (
       <Button type="primary">黄瓜ui</Button>
     )
- }
+  }
 }
 ```
 
-> 2. 按需引入
+2. 按需引入
 
 ```js
 import Button from 'cuke-ui/lib/Button';
 import 'cuke-ui/lib/Button/style.less';
 ```
 
-> 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
+3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 
 ```js
 //webpack.config.js
 module.exports = {
 ...
- module: {
+  module: {
     rules: [
       ...
       {
@@ -61,28 +61,27 @@ module.exports = {
             options: {
               babelrc: true,
               plugins: [
-		  ["import",{
-		    "libraryName":"cuke-ui",
-		    "style" : name => `${name}/style.less`
-		  }],
-	      ]
+                ["import", {
+                  "libraryName":"cuke-ui",
+                  "style" : name => `${name}/style.less`
+                }],
+              ]
             },
           },
-  	}
-     ]
- }	  
+      }
+    ]
+  }	  
 }
 ```
 
 ## 不会搭项目?
 
-> 使用 [dawdler](https://github.com/lijinke666/dawdler) 一键生成
+使用 [dawdler](https://github.com/lijinke666/dawdler) 一键生成
 
 ```
 npm install dawdler -g
-// 或者
+# 或者
 yarn global add dawdler
-
 ```
 
 ```

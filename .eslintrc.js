@@ -18,17 +18,17 @@ module.exports = {
     "commonjs": true,
   },
   "globals": {
-    process:true,
-    describe:true,
-    it:true,
-    __dirname:true,
-    expect:true,
-    jest:true
+    process: true,
+    describe: true,
+    it: true,
+    __dirname: true,
+    expect: true,
+    jest: true
   },
   "rules": {
     "object-shorthand": "error",
     "generator-star-spacing": ["error", "after"],
-    "camelcase": ["error", {"properties": "never"}],
+    "camelcase": ["error", { "properties": "never" }],
     "eqeqeq": ["error", "smart"],
     "linebreak-style": ["error", "unix"],
     "new-cap": "error",
@@ -40,7 +40,7 @@ module.exports = {
     "no-shadow-restricted-names": "error",
     "no-unneeded-ternary": "error",
     "no-unused-expressions": "error",
-    "no-unused-vars": ["error", {"args": "none"}],
+    "no-unused-vars": ["error", { "args": "none" }],
     "no-use-before-define": ["error", "nofunc"],
     "no-var": "error",
     "prefer-arrow-callback": "error",
@@ -50,11 +50,12 @@ module.exports = {
     "yoda": ["error", "never"],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
-    "react/jsx-no-undef": ["error", {"allowGlobals": true}],
-    "react/jsx-no-bind": ["error", {"allowArrowFunctions": true}],
+    "react/jsx-no-undef": ["error", { "allowGlobals": true }],
+    "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
     "react/jsx-key": "error",
     "react/no-unknown-property": "error",
     "react/no-string-refs": "error",
     "react/no-direct-mutation-state": "error",
+    "no-console": "off",
   }
 }
