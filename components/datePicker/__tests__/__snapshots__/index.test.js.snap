@@ -31,7 +31,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
     </svg>
   </div>
   <div
-    class="cuke-date-picker-content cuke-date-picker-close"
+    class="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
   >
     <div
       class="cuke-date-picker-header"

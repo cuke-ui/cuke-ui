@@ -5,8 +5,8 @@ import Alert from "../components/alert";
 import Tag from "../components/tag";
 import { FaGithub } from "react-icons/fa";
 import ReactMarkDown from "react-markdown"
-import CodeRender from "./code-render"
-import Timeline from "../components/timeline";
+import CodeBlock from "./codeBlock"
+import ChangeLog from "./changeLog";
 
 storiesOf("综述", module).add("介绍", () => (
   <article style={{ padding: 20 }}>
@@ -172,64 +172,24 @@ storiesOf("综述", module).add("介绍", () => (
 ))
   .add("快速上手", () => (
     <ReactMarkDown source={require('./markdown/quickstart.md')} renderers={{
-      CodeBlock: CodeRender,
-      Code: CodeRender,
+      CodeBlock,
+      Code: CodeBlock,
     }} />
   ))
 
   .add("贡献者列表", () => (
     <ReactMarkDown source={require('./markdown/contributors.md')} renderers={{
-      CodeBlock: CodeRender,
-      Code: CodeRender,
+      CodeBlock,
+      Code: CodeBlock,
     }} />
   ))
   .add("更新日志", () => (
     <>
       <ReactMarkDown source={require('./markdown/changelog.md')} renderers={{
-        CodeBlock: CodeRender,
-        Code: CodeRender,
+        CodeBlock,
+        Code: CodeBlock,
       }} />
 
-      <Timeline>
-        <Timeline.Item type="loading">
-          <h3><a>v1.0.0</a></h3>
-          <ul>
-            <li>开发中</li>
-            <li>完成剩余未完成组件</li>
-            <li>修复已知 bug</li>
-            <li>计划年底发布</li>
-          </ul>
-        </Timeline.Item>
-        <Timeline.Item type="info">
-          <h3><a>v0.0.17</a></h3>
-          <ul>
-            <li>增加各种组件,完善列表</li>
-            <li>修复超多 bug</li>
-            <li>完善文档</li>
-            <li>升级到webpack4, babel7</li>
-            <li>升级到 storybook4</li>
-            <li>优化打包流程</li>
-          </ul>
-        </Timeline.Item>
-        <Timeline.Item type="info">
-          <h3><a>v0.0.2 - v0.0.16</a></h3>
-          <ul>
-            <li>下班有空更新迭代</li>
-            <li>修复发布到 npm 遇到的各种问题</li>
-            <li>增加 webpack umd 和 babel 两种打包方式</li>
-            <li>增加 各种组件的 demo 演示</li>
-            <li>优化已有组件</li>
-          </ul>
-        </Timeline.Item>
-        <Timeline.Item type="info">
-          <h3><a>v0.0.1</a></h3>
-          <ul>
-            <li>年底的一个目标,做一个组件库</li>
-            <li>搭建项目结构</li>
-            <li>添加 storybook</li>
-            <li>集成之前写好的组件</li>
-          </ul>
-        </Timeline.Item>
-      </Timeline>
+      <ChangeLog/>
     </>
   ))

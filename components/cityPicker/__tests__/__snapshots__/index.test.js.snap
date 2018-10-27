@@ -31,7 +31,7 @@ exports[`<CityPicker/> should render CityPicker 1`] = `
     </svg>
   </div>
   <div
-    class="cuke-city-picker-content cuke-city-picker-close"
+    class="cuke-city-picker-content cuke-city-picker-close cuke-ui-no-animate"
   >
     <div
       class="cuke-city-picker-core"

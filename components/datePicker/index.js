@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from "react";
+import React, { PureComponent, createRef } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Input from "../input";
@@ -9,7 +9,7 @@ export default class DataPicker extends PureComponent {
   state = {
     momentSelected: this.props.defaultValue || this.props.value || moment(),
     selectedDate: moment().date(),
-    visible: false,
+    visible: null,
     isSelected: false,
     extraFooter: null
   };
@@ -17,13 +17,15 @@ export default class DataPicker extends PureComponent {
     prefixCls: "cuke-date-picker",
     format: "YYYY-MM-DD",
     onPanelVisibleChange: () => {},
-    onChange: () => {}
+    onChange: () => {},
+    loading: false,
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
     onPanelVisibleChange: PropTypes.func,
     onChange: PropTypes.func,
     format: PropTypes.string,
+    loading: PropTypes.bool,
     overlay: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -32,31 +34,22 @@ export default class DataPicker extends PureComponent {
   };
   constructor(props) {
     super(props);
+    this.toggleContainer = createRef()
   }
 
   componentWillReceiveProps({ value }) {
     this.setState({ momentSelected: value });
   }
 
-  onOpenPanel = () => {
-    this.setState({ visible: true }, () => {
+  onTogglePanel = () => {
+    const visible = !this.state.visible
+    this.setState({ visible }, () => {
       this.content.scrollIntoView({
         behavior: "smooth",
         block: "end"
       });
     });
-    // 	this.content.scrollIntoViewIfNeeded({
-    // 		behavior: 'smooth',
-    // 		block: 'end',
-    // 	})
-    this.props.onPanelVisibleChange(true);
-  };
-
-  onCloseOptionPanel = () => {
-    setTimeout(() => {
-      this.setState({ visible: false });
-      this.props.onPanelVisibleChange(false);
-    }, 100);
+    this.props.onPanelVisibleChange(visible);
   };
 
   onChange = value => {
@@ -103,11 +96,11 @@ export default class DataPicker extends PureComponent {
     const momentLastMonth = momentDateFirst.clone().add(-1, "months");
     const lastMonthDaysInMonth = momentLastMonth.daysInMonth();
 
-    if (this.props.isLoading) {
-      return <LoadingIcon className={cls(`${this.props.prefixCls}-loading`)} />;
+    if (this.props.loading) {
+      return <LoadingIcon className={cls(`${this.props.prefixCls}-loading-icon`)} />;
     } else {
       return (
-        <Fragment>
+        <>
           {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(day => (
             <span
               className={cls(
@@ -148,10 +141,17 @@ export default class DataPicker extends PureComponent {
               {date + 1}
             </span>
           ))}
-        </Fragment>
+        </>
       );
     }
   };
+  onClickOutsideHandler = (e) => {
+    e.stopPropagation()
+    if (this.state.visible && !this.toggleContainer.current.contains(e.target)) {
+      this.setState({ visible: false });
+      this.props.onPanelVisibleChange(false)
+    }
+  }
   render() {
     const { visible } = this.state;
     const {
@@ -161,6 +161,7 @@ export default class DataPicker extends PureComponent {
       placeholder,
       format,
       extraFooter,
+      loading, //eslint-disable-line
       onSelectedDateChange, //eslint-disable-line
       onPanelVisibleChange, //eslint-disable-line
       ...attr
@@ -169,7 +170,7 @@ export default class DataPicker extends PureComponent {
     const { momentSelected } = this.state;
 
     return (
-      <div className={cls(prefixCls, className)} {...attr}>
+      <div className={cls(prefixCls, className)} {...attr} ref={this.toggleContainer}>
         <div
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
@@ -181,14 +182,15 @@ export default class DataPicker extends PureComponent {
             placeholder={placeholder}
             className={cls(`${prefixCls}-input`)}
             value={momentSelected.format(format)}
-            onFocus={this.onOpenPanel}
+            onClick={this.onTogglePanel}
           />
           <DownIcon className={`${prefixCls}-arrow`} />
         </div>
         <div
           className={cls(`${prefixCls}-content`, {
             [`${prefixCls}-open`]: visible,
-            [`${prefixCls}-close`]: !visible
+            [`${prefixCls}-close`]: !visible,
+            ['cuke-ui-no-animate']: visible === null
           })}
           ref={node => (this.content = node)}
         >
@@ -212,12 +214,20 @@ export default class DataPicker extends PureComponent {
               </span>
             </span>
           </div>
-          <div className={cls(`${prefixCls}-items`)}>
+          <div className={cls(`${prefixCls}-items`,{
+            [`${prefixCls}-loading`]: loading,
+          })}>
             {this.renderCalendarContent()}
           </div>
           <div className={cls(`${prefixCls}-footer`)}>{extraFooter}</div>
         </div>
       </div>
     );
+  }
+  componentWillUnmount() {
+    window.removeEventListener('click', this.onClickOutsideHandler, false);
+  }
+  componentDidMount() {
+    window.addEventListener('click', this.onClickOutsideHandler, false);
   }
 }

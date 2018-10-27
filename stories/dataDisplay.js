@@ -567,6 +567,9 @@ storiesOf("数据展示", module)
           <h2>自定义占位符</h2>
           <CityPicker placeholder="请选择城市" cityList={cityList} />
 
+          <h2>面板改变回调</h2>
+          <CityPicker placeholder="请选择城市" cityList={cityList} onPanelVisibleChange={(visible)=> console.log('visible:', visible)}/>
+
           <h2>在任意容器中单独使用 picker</h2>
           <CityPicker.CityPickerCore cityList={cityList} />
         </div>

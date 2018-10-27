@@ -7,12 +7,12 @@ import { DownIcon } from "../icon";
 export default class Select extends PureComponent {
   state = {
     selectedValue: this.props.defaultValue || this.props.value || "",
-    visible: false
+    visible: null
   };
   static defaultProps = {
     prefixCls: "cuke-select",
-    onPanelVisibleChange: () => {},
-    onChange: () => {}
+    onPanelVisibleChange: () => { },
+    onChange: () => { }
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -26,6 +26,7 @@ export default class Select extends PureComponent {
   };
   constructor(props) {
     super(props);
+    this.timeOutId = null;
   }
 
   onOpenOptionPanel = () => {
@@ -44,6 +45,24 @@ export default class Select extends PureComponent {
     this.setState({ selectedValue: value });
     this.props.onChange(value);
   };
+  onClickHandler = () => {
+    const visible = !this.state.visible
+    this.setState({
+      visible
+    })
+    this.props.onPanelVisibleChange(visible);
+  }
+  onBlurHandler = () => {
+    this.timeOutId = setTimeout(() => {
+      this.setState({
+        visible: false
+      });
+      this.props.onPanelVisibleChange(false);
+    },100);
+  }
+  onFocusHandler = () => {
+    clearTimeout(this.timeOutId);
+  }
   render() {
     const { visible } = this.state;
     const {
@@ -64,6 +83,8 @@ export default class Select extends PureComponent {
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
           })}
+          onFocus={this.onFocusHandler} 
+          onBlur={this.onBlurHandler}
         >
           <Input
             disabled={disabled}
@@ -71,15 +92,15 @@ export default class Select extends PureComponent {
             placeholder={placeholder}
             className={cls(`${prefixCls}-input`)}
             value={selectedValue}
-            onFocus={this.onOpenOptionPanel}
-            onBlur={this.onCloseOptionPanel}
+            onClick={this.onClickHandler}
           />
           <DownIcon className={`${prefixCls}-arrow`} />
         </div>
         <div
           className={cls(`${prefixCls}-content`, {
             [`${prefixCls}-open`]: visible,
-            [`${prefixCls}-close`]: !visible
+            [`${prefixCls}-close`]: !visible,
+            ['cuke-ui-no-animate']: visible === null
           })}
         >
           {React.Children.map(children, (element, index) => {

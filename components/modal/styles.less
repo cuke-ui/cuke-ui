@@ -82,7 +82,11 @@
     .flex-center(space-between);
     align-content: center;
     .cuke-button {
-      flex: 0 0 45%;
+      flex: 1;
+
+      &:not(:first-child) {
+        margin-left: 10%;
+      }
     }
   }
   &-confirm {

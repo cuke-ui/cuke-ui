@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { createPortal } from "react-dom"; //传送门 将节点挂载在root 节点之外
 import cls from "classnames";
@@ -12,7 +12,7 @@ export default class Drawer extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-drawer",
     visible: false,
-    target: () => document.body,
+    getTarget: () => document.body,
     title: "",
     onClose: () => {},
     maskClosable: true,
@@ -43,7 +43,7 @@ export default class Drawer extends PureComponent {
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     placement: PropTypes.oneOf(placements),
-    target: PropTypes.func,
+    getTarget: PropTypes.func,
     onClose: PropTypes.func
   };
   constructor(props) {
@@ -76,7 +76,7 @@ export default class Drawer extends PureComponent {
       visible,
       onClose,
       className,
-      target,
+      getTarget,
       closable,
       maskClosable,
       showMask,
@@ -105,7 +105,7 @@ export default class Drawer extends PureComponent {
     const maskClickHandle = maskClosable ? { onClick: onClose } : {};
 
     return createPortal(
-      <Fragment>
+      <>
         {showMask ? (
           <div
             className={cls(`${prefixCls}-mask`, initMaskAnimate)}
@@ -144,8 +144,8 @@ export default class Drawer extends PureComponent {
             <section className={`${prefixCls}-content`}>{children}</section>
           </div>
         </div>
-      </Fragment>,
-      target()
+      </>,
+      getTarget()
     );
   }
 }

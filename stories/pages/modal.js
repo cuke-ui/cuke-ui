@@ -41,6 +41,12 @@ export default class ModalPage extends Component {
               打开
             </Button>
           </Col>
+          <Col span={6}>
+            <h2>自定义 footer</h2>
+            <Button type="primary" onClick={() => this.onShow("visible20")}>
+              打开
+            </Button>
+          </Col>
         </Row>
         <Row>
           <Col span={6}>
@@ -124,9 +130,25 @@ export default class ModalPage extends Component {
           okText="哈哈哈"
           cancelText="嘻嘻嘻"
           onCancel={() => this.onCancel("visible2")}
-          onOk={() => this.onCancel("visible")}
+          onOk={() => this.onCancel("visible2")}
         >
           <span>自定义文字</span>
+        </Modal>
+
+
+        <Modal
+          title="自定义 footer"
+          visible={this.state.visible20}
+          footer={[
+            <Button key="a" onClick={() => this.onCancel("visible20")}>取消</Button>,
+            <Button key="b" disabled>按钮2</Button>,
+            <Button key="c" type="primary" onClick={() => this.onCancel("visible20")}>按钮3</Button>
+          ]
+          }
+          onCancel={() => this.onCancel("visible20")}
+          onOk={() => this.onCancel("visible20")}
+        >
+          我有三个
         </Modal>
 
         <Modal

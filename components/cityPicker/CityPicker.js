@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, createRef } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import CityPickerCore from "./CityPickerCore";
@@ -7,14 +7,17 @@ import { DownIcon } from "../icon";
 
 export default class CityPicker extends PureComponent {
   state = {
-    visible: false
+    visible: null,
+    selectedCityGroup: this.props.defaultActiveGroup || this.props.activeGroup || 0,
+    selectedCityName: ""
   };
   static defaultProps = {
     prefixCls: "cuke-city-picker",
     cityList: [],
     disabled: false,
     placeholder: "请选择",
-    disabledGroups: []
+    disabledGroups: [],
+    onPanelVisibleChange: () => { }
   };
   static propTypes = {
     cityList: PropTypes.arrayOf(
@@ -27,18 +30,18 @@ export default class CityPicker extends PureComponent {
       PropTypes.string,
       PropTypes.number
     ]),
-    disabledGroups: PropTypes.arrayOf([PropTypes.number, PropTypes.string]),
+    disabledGroups: PropTypes.array,
     activeGroup: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     disabled: PropTypes.bool,
     placeholder: PropTypes.string,
     onCityGroupChange: PropTypes.func,
-    onCityChange: PropTypes.func
+    onCityChange: PropTypes.func,
+    onPanelVisibleChange: PropTypes.func
   };
-  state = {
-    selectedCityGroup:
-      this.props.defaultActiveGroup || this.props.activeGroup || 0,
-    selectedCityName: ""
-  };
+  constructor(props) {
+    super(props)
+    this.toggleContainer = createRef()
+  }
 
   onCityGroupChange = (selectedCityGroup, index) => {
     if (this.props.onCityGroupChange) {
@@ -54,12 +57,17 @@ export default class CityPicker extends PureComponent {
   };
 
   onOpenCityPicker = () => {
-    this.setState({ visible: true });
+    const visible = !this.state.visible
+    this.setState({ visible });
+    this.props.onPanelVisibleChange(visible);
   };
-
-  onCloseCityPicker = () => {
-    // this.setState({visible: false})
-  };
+  onClickOutsideHandler = (e) => {
+    e.stopPropagation()
+    if (this.state.visible && !this.toggleContainer.current.contains(e.target)) {
+      this.setState({ visible: false });
+      this.props.onPanelVisibleChange(false);
+    }
+  }
   render() {
     const {
       cityList,
@@ -68,6 +76,7 @@ export default class CityPicker extends PureComponent {
       placeholder,
       className,
       disabledGroups,
+      onPanelVisibleChange, //eslint-disable-line
       defaultActiveGroup, //eslint-disable-line
       onCityGroupChange, //eslint-disable-line
       onCityChange, //eslint-disable-line
@@ -75,7 +84,7 @@ export default class CityPicker extends PureComponent {
     } = this.props;
     const { visible, selectedCityName, selectedCityGroup } = this.state;
     return (
-      <div className={cls(`${prefixCls}`, className)} {...attr}>
+      <div className={cls(`${prefixCls}`, className)} {...attr} ref={this.toggleContainer}>
         <div
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
@@ -86,8 +95,7 @@ export default class CityPicker extends PureComponent {
             readonly
             placeholder={placeholder}
             className={cls(`${prefixCls}-input`)}
-            onFocus={this.onOpenCityPicker}
-            onBlur={this.onCloseCityPicker}
+            onClick={this.onOpenCityPicker}
             value={selectedCityName}
           />
           <DownIcon className={`${prefixCls}-arrow`} />
@@ -95,7 +103,8 @@ export default class CityPicker extends PureComponent {
         <div
           className={cls(`${prefixCls}-content`, {
             [`${prefixCls}-open`]: visible,
-            [`${prefixCls}-close`]: !visible
+            [`${prefixCls}-close`]: !visible,
+            ['cuke-ui-no-animate']: visible === null
           })}
         >
           <CityPickerCore
@@ -108,5 +117,11 @@ export default class CityPicker extends PureComponent {
         </div>
       </div>
     );
+  }
+  componentWillUnmount() {
+    window.removeEventListener('click', this.onClickOutsideHandler, false);
+  }
+  componentDidMount() {
+    window.addEventListener('click', this.onClickOutsideHandler, false);
   }
 }

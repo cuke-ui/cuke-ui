@@ -168,7 +168,7 @@ storiesOf("数据录入", module)
     withInfo()(() => (
       <div>
         <h2>基本使用</h2>
-        <Select>
+        <Select placeholder="请选择">
           <Select.Option value="黄瓜">黄瓜</Select.Option>
           <Select.Option value="茄子">茄子</Select.Option>
           <Select.Option value="番茄">番茄</Select.Option>
@@ -225,6 +225,9 @@ storiesOf("数据录入", module)
 
         <h2>默认值</h2>
         <DatePicker defaultValue={moment('1996/09/25', 'YYYY/MM/DD')} />
+
+        <h2>加载中</h2>
+        <DatePicker format="YYYY-MM-DD HH:mm:ss" loading/>
 
         <h2>自定义格式</h2>
         <DatePicker format="YYYY-MM-DD HH:mm:ss" />

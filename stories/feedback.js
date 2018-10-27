@@ -11,7 +11,7 @@ import ProgressPage from "./pages/progress";
 import Spin from "../components/spin";
 import Progress from "../components/progress";
 
-import { SuccessIcon } from "../components/icon";
+import { SuccessIcon, ErrorIcon, WarningIcon } from "../components/icon";
 import "./styles/feedback.less";
 import "../components/message/styles.less";
 import "../components/button/styles.less";
@@ -353,6 +353,8 @@ storiesOf("操作反馈", module)
 
         <h2>自定义加载图标</h2>
         <Spin indicator={<SuccessIcon />} />
+        <Spin indicator={<ErrorIcon />} style={{ margin: "0 10px" }} />
+        <Spin indicator={<WarningIcon />}/>
       </div>
     ))
   )

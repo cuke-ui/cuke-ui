@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import { createPortal, render } from "react-dom"; //传送门 将节点挂载在root 节点之外
 import cls from "classnames";
@@ -12,7 +12,7 @@ export default class Modal extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-modal",
     visible: false,
-    target: () => document.body,
+    getTarget: () => document.body,
     width: 520,
     title: "",
     onOk: () => {},
@@ -59,7 +59,7 @@ export default class Modal extends PureComponent {
     closable: PropTypes.bool,
     maskClosable: PropTypes.bool,
     showMask: PropTypes.bool,
-    target: PropTypes.func,
+    getTarget: PropTypes.func,
     zIndex: PropTypes.number,
     width: PropTypes.number,
     footer: PropTypes.oneOfType([
@@ -117,7 +117,7 @@ export default class Modal extends PureComponent {
       okText,
       cancelText,
       confirmLoading,
-      target,
+      getTarget,
       centered,
       closable,
       maskClosable,
@@ -145,7 +145,7 @@ export default class Modal extends PureComponent {
     const maskClickHandle = maskClosable ? { onClick: onCancel } : {};
 
     return createPortal(
-      <Fragment>
+      <>
         {showMask ? (
           <div
             className={cls(`${prefixCls}-mask`, initMaskAnimate)}
@@ -203,8 +203,8 @@ export default class Modal extends PureComponent {
             )}
           </div>
         </div>
-      </Fragment>,
-      target()
+      </>,
+      getTarget()
     );
   }
 }

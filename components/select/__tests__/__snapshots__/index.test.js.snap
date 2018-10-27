@@ -31,7 +31,7 @@ exports[`<Select/> should render a <Select/> components 1`] = `
     </svg>
   </div>
   <div
-    class="cuke-select-content cuke-select-close"
+    class="cuke-select-content cuke-select-close cuke-ui-no-animate"
   >
     <div
       class="cuke-select-option"

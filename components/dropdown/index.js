@@ -39,6 +39,7 @@ export default class Dropdown extends PureComponent {
   };
   constructor(props) {
     super(props);
+    this.timeOutId = null
   }
 
   onShowOverlay = () => {
@@ -46,9 +47,21 @@ export default class Dropdown extends PureComponent {
     this.props.onVisibleChange(true);
   };
   onHideOverlay = () => {
-    this.setState({ visible: false });
+    setTimeout(()=>{
+      this.setState({ visible: false });
+    },100)
     this.props.onVisibleChange(false);
   };
+  onFocusHandler = ()=>{
+    clearTimeout(this.timeOutId)
+  }
+  onBlurHandler = ()=>{
+    this.timeOutId = setTimeout(()=>{
+      this.setState({
+        visible: false
+      })
+    })
+  }
   render() {
     const { visible } = this.state;
     const {
@@ -68,7 +81,7 @@ export default class Dropdown extends PureComponent {
     const bindEvents = disabled
       ? {}
       : {
-          [isHover ? "onMouseEnter" : "onMouseDown"]: this.onShowOverlay,
+          [isHover ? "onMouseEnter" : "onFocus"]: this.onShowOverlay,
           [isHover ? "onMouseLeave" : "onBlur"]: this.onHideOverlay
         };
     return (
@@ -77,6 +90,8 @@ export default class Dropdown extends PureComponent {
           [`${prefixCls}-disabled`]: disabled
         })}
         {...attr}
+        onBlur={this.onHideOverlay}
+        onFocus={this.onFocusHandler}
         {...bindEvents}
       >
         {disabled ? (

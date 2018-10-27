@@ -15,7 +15,7 @@ export default class CityPickerCore extends PureComponent {
         resources: PropTypes.arrayOf(PropTypes.object)
       })
     ).isRequired,
-    disabledGroups: PropTypes.arrayOf([PropTypes.number, PropTypes.string]),
+    disabledGroups: PropTypes.array,
     onCityGroupChange: PropTypes.func,
     onCityChange: PropTypes.func,
     defaultActiveGroup: PropTypes.oneOfType([
