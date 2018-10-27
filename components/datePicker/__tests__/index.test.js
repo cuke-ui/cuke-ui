@@ -15,7 +15,7 @@ describe("<DatePicker/>", () => {
     assert(wrapper.find(".cuke-date-picker").length === 1);
   });
   it.skip("should render find .cuke-date-picker-loading classnames", () => {
-    const wrapper = mount(<DatePicker loading/>);
+    const wrapper = mount(<DatePicker loading />);
     assert(wrapper.find(".cuke-date-picker-loading ").length === 1);
   });
   it("should cannot trigger click event when disabled", () => {
