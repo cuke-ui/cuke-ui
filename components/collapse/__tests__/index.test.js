@@ -1,5 +1,5 @@
 import React from "react";
-import { render, shallow, mount } from "enzyme";
+import { render, shallow } from "enzyme";
 import assert from "power-assert";
 import toJson from "enzyme-to-json";
 import Collapse from "../index";
@@ -35,8 +35,8 @@ describe("<Collapse/>", () => {
     assert(wrapper.find(Collapse.Item).length === 2);
   });
 
-  it.skip("should render default active key", () => {
-    const wrapper = mount(
+  it("should render default active key", () => {
+    const wrapper = render(
       <Collapse defaultActiveKey={["1", "2"]}>
         <Collapse.Item title="标题1">内容1</Collapse.Item>
         <Collapse.Item title="标题2">内容2</Collapse.Item>
@@ -45,8 +45,8 @@ describe("<Collapse/>", () => {
     assert(wrapper.find(".cuke-collapse-item-arrow-active").length === 2);
   });
 
-  it.skip("should render active key", () => {
-    const wrapper = mount(
+  it("should render active key", () => {
+    const wrapper = render(
       <Collapse defaultActiveKey={["1"]}>
         <Collapse.Item title="标题1">内容1</Collapse.Item>
         <Collapse.Item title="标题2">内容2</Collapse.Item>
@@ -55,8 +55,8 @@ describe("<Collapse/>", () => {
     assert(wrapper.find(".cuke-collapse-item-arrow-active").length === 1);
   });
 
-  it.skip("should render hide arrow for collapseItem", () => {
-    const wrapper = mount(
+  it("should render hide arrow for collapseItem", () => {
+    const wrapper = render(
       <Collapse>
         <Collapse.Item title="标题1" hideArrow>
           内容1
@@ -67,8 +67,8 @@ describe("<Collapse/>", () => {
     assert(wrapper.find(".cuke-collapse-item-arrow").length === 1);
   });
 
-  it.skip("should render hide arrow for collapse", () => {
-    const wrapper = mount(
+  it("should render hide arrow for collapse", () => {
+    const wrapper = render(
       <Collapse hideArrow>
         <Collapse.Item title="标题1">内容1</Collapse.Item>
         <Collapse.Item title="标题2">内容2</Collapse.Item>

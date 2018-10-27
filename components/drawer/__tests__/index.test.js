@@ -34,8 +34,8 @@ describe("<Drawer/>", () => {
     expect(onCancelClick).not.toHaveBeenCalled();
   });
 
-  it.skip("should render custom direction", () => {
-    const wrapper = mount(
+  it("should render custom direction", () => {
+    const wrapper = render(
       <div>
         <Drawer visible placement="left">
           <span>关闭回调</span>

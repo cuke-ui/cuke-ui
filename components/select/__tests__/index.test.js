@@ -1,6 +1,6 @@
 import React from "react";
 import assert from "power-assert";
-import { render, shallow, mount } from "enzyme";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Select from "../index";
 
@@ -16,8 +16,8 @@ describe("<Select/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it.skip("should find cuke-select classnames", () => {
-    const wrapper = mount(
+  it("should find cuke-select classnames", () => {
+    const wrapper = shallow(
       <Select>
         <Select.Option value="黄瓜">黄瓜</Select.Option>
         <Select.Option value="茄子">茄子</Select.Option>
@@ -25,7 +25,6 @@ describe("<Select/>", () => {
       </Select>
     );
     assert(wrapper.find(".cuke-select").length >= 1);
-    assert(wrapper.find(".cuke-select-option").length >= 1);
   });
 
   it("should cannot click when disabled", () => {

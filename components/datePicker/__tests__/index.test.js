@@ -1,6 +1,6 @@
 import React from "react";
 import assert from "power-assert";
-import { render, shallow, mount } from "enzyme";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import DatePicker from "../index";
 import Button from "../../button";
@@ -14,9 +14,9 @@ describe("<DatePicker/>", () => {
     const wrapper = shallow(<DatePicker />);
     assert(wrapper.find(".cuke-date-picker").length === 1);
   });
-  it.skip("should render find .cuke-date-picker-loading classnames", () => {
-    const wrapper = mount(<DatePicker loading/>);
-    assert(wrapper.find(".cuke-date-picker-loading ").length === 1);
+  it("should render find .cuke-date-picker-loading classnames", () => {
+    const wrapper = shallow(<DatePicker loading />);
+    assert(wrapper.find(".cuke-date-picker-loading").length === 1);
   });
   it("should cannot trigger click event when disabled", () => {
     const onChange = jest.fn();

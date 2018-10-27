@@ -11,8 +11,8 @@ export default class Select extends PureComponent {
   };
   static defaultProps = {
     prefixCls: "cuke-select",
-    onPanelVisibleChange: () => { },
-    onChange: () => { }
+    onPanelVisibleChange: () => {},
+    onChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -46,23 +46,23 @@ export default class Select extends PureComponent {
     this.props.onChange(value);
   };
   onClickHandler = () => {
-    const visible = !this.state.visible
+    const visible = !this.state.visible;
     this.setState({
       visible
-    })
+    });
     this.props.onPanelVisibleChange(visible);
-  }
+  };
   onBlurHandler = () => {
     this.timeOutId = setTimeout(() => {
       this.setState({
         visible: false
       });
       this.props.onPanelVisibleChange(false);
-    },100);
-  }
+    }, 100);
+  };
   onFocusHandler = () => {
     clearTimeout(this.timeOutId);
-  }
+  };
   render() {
     const { visible } = this.state;
     const {
@@ -83,7 +83,7 @@ export default class Select extends PureComponent {
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
           })}
-          onFocus={this.onFocusHandler} 
+          onFocus={this.onFocusHandler}
           onBlur={this.onBlurHandler}
         >
           <Input
@@ -100,7 +100,7 @@ export default class Select extends PureComponent {
           className={cls(`${prefixCls}-content`, {
             [`${prefixCls}-open`]: visible,
             [`${prefixCls}-close`]: !visible,
-            ['cuke-ui-no-animate']: visible === null
+            ["cuke-ui-no-animate"]: visible === null
           })}
         >
           {React.Children.map(children, (element, index) => {

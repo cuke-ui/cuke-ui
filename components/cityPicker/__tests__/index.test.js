@@ -131,7 +131,7 @@ describe("<CityPicker/>", () => {
     assert(wrapper.state().selectedCityGroup === "热门");
   });
 
-  it.skip("should render custom disabled city group and can not trigger click event ", () => {
+  it("should render custom disabled city group and can not trigger click event ", () => {
     const onClick = jest.fn();
     const wrapper = shallow(
       <CityPicker
@@ -140,7 +140,7 @@ describe("<CityPicker/>", () => {
         disabledGroups={[0, 1, 2, 3, 4, 5, 6]}
       />
     );
-    wrapper.find("div").simulate("click");
+    wrapper.find(".cuke-city-picker").simulate("click");
     expect(onClick).not.toHaveBeenCalled();
   });
 });

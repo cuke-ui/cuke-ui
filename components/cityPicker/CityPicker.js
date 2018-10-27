@@ -8,7 +8,8 @@ import { DownIcon } from "../icon";
 export default class CityPicker extends PureComponent {
   state = {
     visible: null,
-    selectedCityGroup: this.props.defaultActiveGroup || this.props.activeGroup || 0,
+    selectedCityGroup:
+      this.props.defaultActiveGroup || this.props.activeGroup || 0,
     selectedCityName: ""
   };
   static defaultProps = {
@@ -17,7 +18,7 @@ export default class CityPicker extends PureComponent {
     disabled: false,
     placeholder: "请选择",
     disabledGroups: [],
-    onPanelVisibleChange: () => { }
+    onPanelVisibleChange: () => {}
   };
   static propTypes = {
     cityList: PropTypes.arrayOf(
@@ -39,8 +40,8 @@ export default class CityPicker extends PureComponent {
     onPanelVisibleChange: PropTypes.func
   };
   constructor(props) {
-    super(props)
-    this.toggleContainer = createRef()
+    super(props);
+    this.toggleContainer = createRef();
   }
 
   onCityGroupChange = (selectedCityGroup, index) => {
@@ -57,17 +58,20 @@ export default class CityPicker extends PureComponent {
   };
 
   onOpenCityPicker = () => {
-    const visible = !this.state.visible
+    const visible = !this.state.visible;
     this.setState({ visible });
     this.props.onPanelVisibleChange(visible);
   };
-  onClickOutsideHandler = (e) => {
-    e.stopPropagation()
-    if (this.state.visible && !this.toggleContainer.current.contains(e.target)) {
+  onClickOutsideHandler = e => {
+    e.stopPropagation();
+    if (
+      this.state.visible &&
+      !this.toggleContainer.current.contains(e.target)
+    ) {
       this.setState({ visible: false });
       this.props.onPanelVisibleChange(false);
     }
-  }
+  };
   render() {
     const {
       cityList,
@@ -84,7 +88,11 @@ export default class CityPicker extends PureComponent {
     } = this.props;
     const { visible, selectedCityName, selectedCityGroup } = this.state;
     return (
-      <div className={cls(`${prefixCls}`, className)} {...attr} ref={this.toggleContainer}>
+      <div
+        className={cls(`${prefixCls}`, className)}
+        {...attr}
+        ref={this.toggleContainer}
+      >
         <div
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
@@ -104,7 +112,7 @@ export default class CityPicker extends PureComponent {
           className={cls(`${prefixCls}-content`, {
             [`${prefixCls}-open`]: visible,
             [`${prefixCls}-close`]: !visible,
-            ['cuke-ui-no-animate']: visible === null
+            ["cuke-ui-no-animate"]: visible === null
           })}
         >
           <CityPickerCore
@@ -119,9 +127,9 @@ export default class CityPicker extends PureComponent {
     );
   }
   componentWillUnmount() {
-    window.removeEventListener('click', this.onClickOutsideHandler, false);
+    window.removeEventListener("click", this.onClickOutsideHandler, false);
   }
   componentDidMount() {
-    window.addEventListener('click', this.onClickOutsideHandler, false);
+    window.addEventListener("click", this.onClickOutsideHandler, false);
   }
 }

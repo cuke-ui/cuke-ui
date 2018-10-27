@@ -39,7 +39,7 @@ export default class Dropdown extends PureComponent {
   };
   constructor(props) {
     super(props);
-    this.timeOutId = null
+    this.timeOutId = null;
   }
 
   onShowOverlay = () => {
@@ -47,21 +47,21 @@ export default class Dropdown extends PureComponent {
     this.props.onVisibleChange(true);
   };
   onHideOverlay = () => {
-    setTimeout(()=>{
+    setTimeout(() => {
       this.setState({ visible: false });
-    },100)
+    }, 100);
     this.props.onVisibleChange(false);
   };
-  onFocusHandler = ()=>{
-    clearTimeout(this.timeOutId)
-  }
-  onBlurHandler = ()=>{
-    this.timeOutId = setTimeout(()=>{
+  onFocusHandler = () => {
+    clearTimeout(this.timeOutId);
+  };
+  onBlurHandler = () => {
+    this.timeOutId = setTimeout(() => {
       this.setState({
         visible: false
-      })
-    })
-  }
+      });
+    });
+  };
   render() {
     const { visible } = this.state;
     const {

@@ -18,7 +18,7 @@ export default class DataPicker extends PureComponent {
     format: "YYYY-MM-DD",
     onPanelVisibleChange: () => {},
     onChange: () => {},
-    loading: false,
+    loading: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -34,7 +34,7 @@ export default class DataPicker extends PureComponent {
   };
   constructor(props) {
     super(props);
-    this.toggleContainer = createRef()
+    this.toggleContainer = createRef();
   }
 
   componentWillReceiveProps({ value }) {
@@ -42,7 +42,7 @@ export default class DataPicker extends PureComponent {
   }
 
   onTogglePanel = () => {
-    const visible = !this.state.visible
+    const visible = !this.state.visible;
     this.setState({ visible }, () => {
       this.content.scrollIntoView({
         behavior: "smooth",
@@ -97,7 +97,9 @@ export default class DataPicker extends PureComponent {
     const lastMonthDaysInMonth = momentLastMonth.daysInMonth();
 
     if (this.props.loading) {
-      return <LoadingIcon className={cls(`${this.props.prefixCls}-loading-icon`)} />;
+      return (
+        <LoadingIcon className={cls(`${this.props.prefixCls}-loading-icon`)} />
+      );
     } else {
       return (
         <>
@@ -145,13 +147,16 @@ export default class DataPicker extends PureComponent {
       );
     }
   };
-  onClickOutsideHandler = (e) => {
-    e.stopPropagation()
-    if (this.state.visible && !this.toggleContainer.current.contains(e.target)) {
+  onClickOutsideHandler = e => {
+    e.stopPropagation();
+    if (
+      this.state.visible &&
+      !this.toggleContainer.current.contains(e.target)
+    ) {
       this.setState({ visible: false });
-      this.props.onPanelVisibleChange(false)
+      this.props.onPanelVisibleChange(false);
     }
-  }
+  };
   render() {
     const { visible } = this.state;
     const {
@@ -170,7 +175,11 @@ export default class DataPicker extends PureComponent {
     const { momentSelected } = this.state;
 
     return (
-      <div className={cls(prefixCls, className)} {...attr} ref={this.toggleContainer}>
+      <div
+        className={cls(prefixCls, className)}
+        {...attr}
+        ref={this.toggleContainer}
+      >
         <div
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
@@ -190,7 +199,7 @@ export default class DataPicker extends PureComponent {
           className={cls(`${prefixCls}-content`, {
             [`${prefixCls}-open`]: visible,
             [`${prefixCls}-close`]: !visible,
-            ['cuke-ui-no-animate']: visible === null
+            ["cuke-ui-no-animate"]: visible === null
           })}
           ref={node => (this.content = node)}
         >
@@ -214,9 +223,11 @@ export default class DataPicker extends PureComponent {
               </span>
             </span>
           </div>
-          <div className={cls(`${prefixCls}-items`,{
-            [`${prefixCls}-loading`]: loading,
-          })}>
+          <div
+            className={cls(`${prefixCls}-items`, {
+              [`${prefixCls}-loading`]: loading
+            })}
+          >
             {this.renderCalendarContent()}
           </div>
           <div className={cls(`${prefixCls}-footer`)}>{extraFooter}</div>
@@ -225,9 +236,9 @@ export default class DataPicker extends PureComponent {
     );
   }
   componentWillUnmount() {
-    window.removeEventListener('click', this.onClickOutsideHandler, false);
+    window.removeEventListener("click", this.onClickOutsideHandler, false);
   }
   componentDidMount() {
-    window.addEventListener('click', this.onClickOutsideHandler, false);
+    window.addEventListener("click", this.onClickOutsideHandler, false);
   }
 }

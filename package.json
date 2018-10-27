@@ -103,7 +103,7 @@
     "coveralls": "^3.0.1",
     "css-loader": "^1.0.0",
     "enzyme": "^3.5.0",
-    "enzyme-adapter-react-16": "^1.2.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "enzyme-to-json": "^3.3.4",
     "eslint": "^4.19.1",
     "eslint-plugin-babel": "^5.1.0",

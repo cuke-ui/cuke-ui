@@ -1,6 +1,6 @@
 import assert from "power-assert";
 import React from "react";
-import { render, shallow, mount } from "enzyme";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Tabs from "../index";
 
@@ -77,8 +77,8 @@ describe("<Tabs/>", () => {
     assert(wrapper.find(".cuke-tabs-line").length === 1);
   });
 
-  it.skip("should render disabled tab", () => {
-    const wrapper = mount(
+  it("should render disabled tab", () => {
+    const wrapper = render(
       <Tabs defaultActiveKey="2">
         <Tabs.TabPane tab="选项1" key="1">
           1

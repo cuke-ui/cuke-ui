@@ -1,6 +1,6 @@
 import React from "react";
 import assert from "power-assert";
-import { render, mount } from "enzyme";
+import { render } from "enzyme";
 import toJson from "enzyme-to-json";
 import Spin from "../index";
 
@@ -27,8 +27,8 @@ describe("<Spin/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it.skip("should find cuke-spin classnames", () => {
-    const wrapper = mount(
+  it("should find cuke-spin classnames", () => {
+    const wrapper = render(
       <div>
         <Spin />
         <Spin size="small" />

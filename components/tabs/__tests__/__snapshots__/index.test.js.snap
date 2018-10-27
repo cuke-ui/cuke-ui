@@ -162,92 +162,51 @@ exports[`<Tabs/> should render custom tab title 1`] = `
 `;
 
 exports[`<Tabs/> should render disabled tab 1`] = `
-<Tabs
-  defaultActiveKey="2"
-  onChange={[Function]}
-  prefixCls="cuke-tabs"
+<div
+  class="cuke-tabs"
 >
   <div
-    className="cuke-tabs"
-    onChange={[Function]}
+    class="cuke-tabs-header"
   >
     <div
-      className="cuke-tabs-header"
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab"
+      role="tab"
     >
-      <div
-        aria-disabled={false}
-        aria-selected={true}
-        className="cuke-tabs-tab"
-        key="0/.$1"
-        onClick={[Function]}
-        role="tab"
-      >
-        选项1
-      </div>
-      <div
-        aria-disabled={false}
-        aria-selected={true}
-        className="cuke-tabs-tab cuke-tabs-tab-active cuke-tabs-tab-disabled"
-        key="1/.$2"
-        onClick={[Function]}
-        role="tab"
-      >
-        选项2
-      </div>
-      <div
-        aria-disabled={false}
-        aria-selected={true}
-        className="cuke-tabs-tab"
-        key="2/.$3"
-        onClick={[Function]}
-        role="tab"
-      >
-        选项3
-      </div>
-      <div
-        className="cuke-tabs-line"
-        style={
-          Object {
-            "transform": "translate3d(0px,0,0)",
-            "width": 0,
-          }
-        }
-      />
+      选项1
     </div>
     <div
-      className="cuke-tabs-content"
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab cuke-tabs-tab-active cuke-tabs-tab-disabled"
+      role="tab"
     >
-      <BreadcrumbItem
-        activeKey={2}
-        key="0/.$1"
-        prefixCls="cuke-tabs-panel"
-        tab="选项1"
-        visible={false}
-      />
-      <BreadcrumbItem
-        activeKey={2}
-        disabled={true}
-        key="1/.$2"
-        prefixCls="cuke-tabs-panel"
-        tab="选项2"
-        visible={true}
-      >
-        <div
-          className="cuke-tabs-panel"
-          disabled={true}
-          tab="选项2"
-        >
-          2
-        </div>
-      </BreadcrumbItem>
-      <BreadcrumbItem
-        activeKey={2}
-        key="2/.$3"
-        prefixCls="cuke-tabs-panel"
-        tab="选项3"
-        visible={false}
-      />
+      选项2
+    </div>
+    <div
+      aria-disabled="false"
+      aria-selected="true"
+      class="cuke-tabs-tab"
+      role="tab"
+    >
+      选项3
+    </div>
+    <div
+      class="cuke-tabs-line"
+      style="width:0;transform:translate3d(0px,0,0)"
+    />
+  </div>
+  <div
+    class="cuke-tabs-content"
+  >
+    <div
+      class="cuke-tabs-panel"
+      disabled=""
+      tab="选项2"
+    >
+      2
     </div>
   </div>
-</Tabs>
+</div>
 `;

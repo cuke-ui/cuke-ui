@@ -27,18 +27,18 @@ describe("<Pagination/>", () => {
   });
 
   //TODO: 比对文字有问题
-  // it('should find custom locale text', () => {
-  // 	const wrapper = mount(
-  // 		<Pagination
-  // 			current={1}
-  // 			total={10}
-  // 			locale={{ prevText: '后退', nextText: '前进' }}
-  // 		/>
-  // 	);
-  // 	expect(wrapper.text()).to.contain('后退');
-  // 	expect(wrapper.text()).to.contain('前进');
-  // 	expect(toJson(wrapper)).toMatchSnapshot();
-  // });
+  it.skip("should find custom locale text", () => {
+    const wrapper = mount(
+      <Pagination
+        current={1}
+        total={10}
+        locale={{ prevText: "后退", nextText: "前进" }}
+      />
+    );
+    expect(wrapper.text()).to.contain("后退");
+    expect(wrapper.text()).to.contain("前进");
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 
   it.skip("should emit onChange events", () => {
     const onChange = jest.fn();

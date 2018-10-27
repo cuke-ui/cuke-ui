@@ -21,8 +21,8 @@ describe("<Tag/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it.skip("should find cuke-tag classnames", () => {
-    const wrapper = shallow(
+  it("should find cuke-tag classnames", () => {
+    const wrapper = render(
       <div>
         <Tag>黄瓜 ui</Tag>
         <Tag type="primary">黄瓜 ui</Tag>
