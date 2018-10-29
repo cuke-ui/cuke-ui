@@ -159,6 +159,7 @@
     "prop-types": "^15.6.2",
     "react-icons": "^3.0.5",
     "react-jinke-music-player": "^4.0.4",
-    "react-turntable": "^1.2.5"
+    "react-turntable": "^1.2.5",
+    "scroll-into-view-if-needed": "^2.2.20"
   }
 }

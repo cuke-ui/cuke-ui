@@ -28,6 +28,9 @@ cuke-ui
   <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
     <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg"/>
   </a>
+  <a href="https://github.com/cuke-ui/cuke-ui">
+    <img src="https://img.shields.io/github/stars/cuke-ui/cuke-ui.svg?style=flat-square" />
+  </a>
 </p>
 
 ### 名字由来

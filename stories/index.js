@@ -55,6 +55,10 @@ storiesOf("综述", module).add("介绍", () => (
       <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
         <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg" />
       </a>
+      {"  "}
+      <a href="https://github.com/cuke-ui/cuke-ui">
+        <img src="https://img.shields.io/github/stars/cuke-ui/cuke-ui.svg?style=flat-square" />
+      </a>
     </p>
     <p>黄瓜UI: 一个即插即用的React UI 库</p>
 
@@ -190,6 +194,6 @@ storiesOf("综述", module).add("介绍", () => (
         Code: CodeBlock,
       }} />
 
-      <ChangeLog/>
+      <ChangeLog />
     </>
   ))

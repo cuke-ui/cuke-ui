@@ -47,5 +47,5 @@ setDefaults({
   maxPropArrayLength: 100
 })
 
-addDecorator(story => <div style={{ padding: "20px 40px 500px 40px" }}>{story()}</div>)
+addDecorator(story => <div style={{ padding: "20px 40px 300px 40px" }}>{story()}</div>)
 configure(loadStories, module);

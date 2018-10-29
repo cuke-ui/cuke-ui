@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import cls from "classnames";
 import Input from "../input";
 import moment from "moment";
+import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
 import { DownIcon, LoadingIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
 
 export default class DataPicker extends PureComponent {
@@ -44,9 +45,11 @@ export default class DataPicker extends PureComponent {
   onTogglePanel = () => {
     const visible = !this.state.visible;
     this.setState({ visible }, () => {
-      this.content.scrollIntoView({
+      scrollIntoViewIfNeeded(this.content, {
+        scrollMode: "if-needed",
         behavior: "smooth",
-        block: "end"
+        block: "nearest",
+        inline: "nearest"
       });
     });
     this.props.onPanelVisibleChange(visible);
