@@ -1,3 +1,4 @@
+import assert from "power-assert";
 import React from "react";
 import { render } from "enzyme";
 import toJson from "enzyme-to-json";
@@ -16,5 +17,13 @@ describe("<Affix/>", () => {
       </div>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+  it("should find cuke-affix classnames", () => {
+    const wrapper = render(
+      <Affix>
+        <div>affix</div>
+      </Affix>
+    );
+    assert(wrapper.find(".cuke-affix").length >= 1);
   });
 });
