@@ -12,7 +12,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       placeholder=""
       readonly=""
       type="text"
-      value="2018-10-29"
+      value="2018-10-30"
     />
     <svg
       class="cuke-date-picker-arrow"
@@ -266,12 +266,12 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         28
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         29
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         30
       </span>
