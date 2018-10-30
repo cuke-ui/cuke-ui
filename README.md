@@ -321,12 +321,12 @@ yarn lint
 > 打包文档
 
 ```
-yarn build:doc
+yarn build:docs
 ```
 
 > 发布文档
 ```
-yarn pub:doc
+yarn pub:docs
 ```
 
 
