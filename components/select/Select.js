@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, createRef } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Input from "../input";
@@ -27,23 +27,13 @@ export default class Select extends PureComponent {
   constructor(props) {
     super(props);
     this.timeOutId = null;
+    this.toggleContainer = createRef();
   }
 
-  onOpenOptionPanel = () => {
-    this.setState({ visible: true });
-    this.props.onPanelVisibleChange(true);
-  };
-
-  onCloseOptionPanel = () => {
-    setTimeout(() => {
-      this.setState({ visible: false });
-      this.props.onPanelVisibleChange(false);
-    }, 120);
-  };
-
   onChange = value => {
-    this.setState({ selectedValue: value });
+    this.setState({ selectedValue: value, visible: false });
     this.props.onChange(value);
+    this.props.onPanelVisibleChange(false);
   };
   onClickHandler = () => {
     const visible = !this.state.visible;
@@ -52,16 +42,15 @@ export default class Select extends PureComponent {
     });
     this.props.onPanelVisibleChange(visible);
   };
-  onBlurHandler = () => {
-    this.timeOutId = setTimeout(() => {
-      this.setState({
-        visible: false
-      });
+  onClickOutsideHandler = e => {
+    e.stopPropagation();
+    if (
+      this.state.visible &&
+      !this.toggleContainer.current.contains(e.target)
+    ) {
+      this.setState({ visible: false });
       this.props.onPanelVisibleChange(false);
-    }, 100);
-  };
-  onFocusHandler = () => {
-    clearTimeout(this.timeOutId);
+    }
   };
   render() {
     const { visible } = this.state;
@@ -78,13 +67,15 @@ export default class Select extends PureComponent {
     const { selectedValue } = this.state;
 
     return (
-      <div className={cls(`${prefixCls}`, className)} {...attr}>
+      <div
+        className={cls(`${prefixCls}`, className)}
+        {...attr}
+        ref={this.toggleContainer}
+      >
         <div
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
           })}
-          onFocus={this.onFocusHandler}
-          onBlur={this.onBlurHandler}
         >
           <Input
             disabled={disabled}
@@ -113,5 +104,11 @@ export default class Select extends PureComponent {
         </div>
       </div>
     );
+  }
+  componentWillUnmount() {
+    window.removeEventListener("click", this.onClickOutsideHandler, false);
+  }
+  componentDidMount() {
+    window.addEventListener("click", this.onClickOutsideHandler, false);
   }
 }
