@@ -139,7 +139,7 @@ exports[`<Tabs/> should render custom tab title 1`] = `
   <div
     className="cuke-tabs-content"
   >
-    <BreadcrumbItem
+    <TabPanel
       activeKey={2}
       key="0/.$1"
       prefixCls="cuke-tabs-panel"
@@ -147,8 +147,8 @@ exports[`<Tabs/> should render custom tab title 1`] = `
       visible={false}
     >
       1
-    </BreadcrumbItem>
-    <BreadcrumbItem
+    </TabPanel>
+    <TabPanel
       activeKey={2}
       key="1/.$2"
       prefixCls="cuke-tabs-panel"
@@ -156,7 +156,7 @@ exports[`<Tabs/> should render custom tab title 1`] = `
       visible={true}
     >
       2
-    </BreadcrumbItem>
+    </TabPanel>
   </div>
 </div>
 `;

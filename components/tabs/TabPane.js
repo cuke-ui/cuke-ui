@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import cls from "classnames";
 
-class BreadcrumbItem extends PureComponent {
+class TabPanel extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-tabs-panel"
   };
@@ -26,4 +26,4 @@ class BreadcrumbItem extends PureComponent {
   }
 }
 
-export default BreadcrumbItem;
+export default TabPanel;

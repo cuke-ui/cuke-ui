@@ -16,6 +16,8 @@ export default class Message extends PureComponent {
     visible: true
   };
   animationTime = 500;
+  _containerRef = null;
+  _currentNodeRef = null;
   constructor(props) {
     super(props);
     this.typeConfig = {
@@ -42,14 +44,6 @@ export default class Message extends PureComponent {
     darkTheme: false,
     onClose: () => {}
   };
-  createContainer() {
-    const { prefixCls } = this.props;
-    if (!this.container) {
-      this.container = document.createElement("div");
-      this.container.className = prefixCls;
-      document.body.appendChild(this.container);
-    }
-  }
   componentDidMount() {
     const { duration, onClose } = this.props;
 
@@ -66,12 +60,12 @@ export default class Message extends PureComponent {
     this.removeNode();
   }
   removeNode = () => {
-    ReactDOM.unmountComponentAtNode(this.container);
-    this.container.remove();
+    ReactDOM.unmountComponentAtNode(this._containerRef);
+    this._currentNodeRef.remove();
   };
   static renderElement = (type, title, duration, onClose, darkTheme) => {
-    let div = document.createElement("div");
-    document.body.appendChild(div);
+    const container = document.createElement("div");
+    const currentNode = document.body.appendChild(container);
     let _message = ReactDOM.render(
       <Message
         type={type}
@@ -80,10 +74,10 @@ export default class Message extends PureComponent {
         duration={duration}
         onClose={onClose}
       />,
-      div
+      container
     );
-    _message._container = div;
-    _message._dom = div;
+    _message._containerRef = container;
+    _message._currentNodeRef = currentNode;
   };
   static error(title, duration, onClose, darkTheme) {
     this.renderElement("error", title, duration, onClose, darkTheme);
