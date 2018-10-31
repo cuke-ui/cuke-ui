@@ -17,6 +17,7 @@ const ChangeLog = () => (
     <Timeline.Item type="loading">
       <h3><a>v0.0.19</a></h3>
       <ul>
+        <li> DatePicker 组件 切换月份 无反应</li>
         <li> Select 组件 disabled 状态时点击 panel 可以关闭</li>
         <li> babelrc format </li>
         <li> DataPicker 增加 scroll-into-view-if-needed </li>

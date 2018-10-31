@@ -4,6 +4,7 @@
 
 ### Bug Fixes
 
+* DatePicker 组件 切换月份 无反应
 * Select 组件 disabled 状态时点击 panel 可以关闭
 * babelrc format ([bc2c810](https://github.com/cuke-ui/cuke-ui/commit/bc2c810))
 * DataPicker 增加 scroll-into-view-if-needed ([963d8cc](https://github.com/cuke-ui/cuke-ui/commit/963d8cc))
