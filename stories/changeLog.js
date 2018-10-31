@@ -14,15 +14,28 @@ const ChangeLog = () => (
         <li>计划年底发布</li>
       </ul>
     </Timeline.Item>
+    <Timeline.Item type="loading">
+      <h3><a>v0.0.19</a></h3>
+      <ul>
+        <li> Select 组件 disabled 状态时点击 panel 可以关闭</li>
+        <li> babelrc format </li>
+        <li> DataPicker 增加 scroll-into-view-if-needed </li>
+        <li> deploy moment </li>
+        <li> 优化 storybook </li>
+        <li> 优化组件通用样式 </li>
+        <li> 修复 Message 组件卸载时报错</li>
+        <li> Drawer 组件增加 height 参数</li>
+      </ul>
+    </Timeline.Item>
     <Timeline.Item>
       <h3><a>v0.0.18</a></h3>
       <ul>
         <li>优化 DropDown, Select, CityPicker, DatePicker 的体验</li>
-        <li> 
-        <ReactMarkDown source={
-          `格式化代码 [#f353c23](https://github.com/cuke-ui/cuke-ui/pull/2/commits/f353c23bc79440c03b0897fa1bb193932e3a2180)([Caraws](https://github.com/Caraws))`
+        <li>
+          <ReactMarkDown source={
+            `格式化代码 [#f353c23](https://github.com/cuke-ui/cuke-ui/pull/2/commits/f353c23bc79440c03b0897fa1bb193932e3a2180)([Caraws](https://github.com/Caraws))`
           }
-        />
+          />
         </li>
         <li>优化示例</li>
         <li>CityPicker 增加 panelVisibleChange 方法</li>

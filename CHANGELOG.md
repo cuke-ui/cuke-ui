@@ -1,3 +1,25 @@
+<a name="0.0.19"></a>
+## 0.0.19 (2018-10-31)
+
+
+### Bug Fixes
+
+* Select 组件 disabled 状态时点击 panel 可以关闭
+* babelrc format ([bc2c810](https://github.com/cuke-ui/cuke-ui/commit/bc2c810))
+* DataPicker 增加 scroll-into-view-if-needed ([963d8cc](https://github.com/cuke-ui/cuke-ui/commit/963d8cc))
+* deploy moment ([b11ef20](https://github.com/cuke-ui/cuke-ui/commit/b11ef20))
+* 优化 storybook ([d85bbd9](https://github.com/cuke-ui/cuke-ui/commit/d85bbd9))
+* 优化组件通用样式 ([8894814](https://github.com/cuke-ui/cuke-ui/commit/8894814))
+* 修复 Message 组件卸载时报错 ([9cb76dd](https://github.com/cuke-ui/cuke-ui/commit/9cb76dd))
+
+
+
+### Features
+
+* Drawer 组件增加 height 参数 ([edbea70](https://github.com/cuke-ui/cuke-ui/commit/edbea70))
+
+
+
 <a name="0.0.13"></a>
 ## 0.0.13 (2018-10-15)
 
@@ -5,7 +27,6 @@
 ### Bug Fixes
 
 * collapse stylelint ([77e0424](https://github.com/cuke-ui/cuke-ui/commit/77e0424))
-* faild test ([eb3e12c](https://github.com/cuke-ui/cuke-ui/commit/eb3e12c))
 * pre commit hook ([fc1afc2](https://github.com/cuke-ui/cuke-ui/commit/fc1afc2))
 * 修复  Proptypes ([1ac4bdf](https://github.com/cuke-ui/cuke-ui/commit/1ac4bdf))
 * 修复 Process 组件 ([c83558d](https://github.com/cuke-ui/cuke-ui/commit/c83558d))
