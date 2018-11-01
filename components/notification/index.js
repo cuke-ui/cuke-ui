@@ -28,6 +28,7 @@ export default class Notification extends PureComponent {
       warning: "warning",
       loading: "loading"
     };
+    this.timer = null;
   }
   static propTypes = {
     title: PropTypes.oneOfType([
@@ -37,17 +38,22 @@ export default class Notification extends PureComponent {
     ]).isRequired,
     duration: PropTypes.number.isRequired,
     darkTheme: PropTypes.bool,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
+    onClick: PropTypes.func
   };
   static defaultProps = {
     prefixCls: "cuke-notification",
     duration: 2,
     darkTheme: false,
-    onClose: () => {}
+    onClose: () => {},
+    onClick: () => {}
   };
   componentDidMount() {
     const { duration, onClose } = this.props;
 
+    if (duration <= 0) {
+      return;
+    }
     this.timer = setTimeout(() => {
       this.setState({ visible: false }, () => {
         setTimeout(() => {
@@ -94,6 +100,8 @@ export default class Notification extends PureComponent {
   }
   onClose = () => {
     this.setState({ visible: false });
+    clearTimeout(this.timer);
+    this.props.onClose();
   };
   render() {
     const {
@@ -104,6 +112,7 @@ export default class Notification extends PureComponent {
       className,
       duration,
       message,
+      onClick,
       ...attr
     } = this.props;
 
@@ -121,23 +130,24 @@ export default class Notification extends PureComponent {
           { [`${prefixCls}-close`]: !visible }
         )}
         {...attr}
+        onClick={onClick}
       >
         <div className={`${prefixCls}-close`} onClick={this.onClose}>
           <CloseIcon />
         </div>
-        <div className={`${prefixCls}-icon`}>
+        <div
+          className={cls(
+            `${prefixCls}-icon`,
+            `${prefixCls}-${typeConfig[type]}`
+          )}
+        >
           {type === typeConfig["info"] ? <InfoIcon /> : undefined}
           {type === typeConfig["success"] ? <SuccessIcon /> : undefined}
           {type === typeConfig["error"] ? <ErrorIcon /> : undefined}
           {type === typeConfig["warning"] ? <WarningIcon /> : undefined}
           {type === typeConfig["loading"] ? <LoadingIcon /> : undefined}
         </div>
-        <div
-          className={cls(
-            `${prefixCls}-title-custom`,
-            `message-${typeConfig[type]}`
-          )}
-        >
+        <div className={cls(`${prefixCls}-title-custom`)}>
           <div className={`${prefixCls}-title`}>
             <span>{title}</span>
           </div>

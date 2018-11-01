@@ -11,6 +11,7 @@
   right: @notification-offset-right;
   top: @notification-offset-top;
   .clearfix();
+  display: flex;
   @media screen and (max-width: 768px) {
     width: auto !important;
   }
@@ -18,15 +19,6 @@
   border-radius: @border-radius;
   box-shadow: @default-shadow;
   background: @notification-theme-light-bg;
-  &-icon {
-    svg,
-    i {
-      font-size: @notification-icon-font-size;
-      @media screen and (max-width: 768px) {
-        font-size: @notification-icon-font-size-sm;
-      }
-    }
-  }
   &-title {
     color: fade(@font-color, 80%);
     font-size: @notification-title-size;
@@ -54,31 +46,44 @@
     .@{prefixCls}-title {
       color: @notification-theme-dark-font-color !important;
     }
+    .@{prefixCls}-message {
+      color: @notification-theme-dark-font-color;
+    }
   }
-  .notification-info {
+  .@{prefixCls}-info {
     svg {
       color: @info-color;
     }
   }
-  .notification-error {
+  .@{prefixCls}-error {
     svg {
       color: @error-color;
     }
   }
-  .notification-success {
+  .@{prefixCls}-success {
     svg {
       color: @success-color;
     }
   }
-  .notification-warning {
+  .@{prefixCls}-warning {
     svg {
       color: @warning-color;
     }
   }
-  .notification-loading {
+  .@{prefixCls}-loading {
     svg {
       color: @loading-color;
       animation: cuke-spin @loading-time linear infinite;
+    }
+  }
+  &-icon {
+    margin-right: 15px;
+    svg,
+    i {
+      font-size: @notification-icon-font-size;
+      @media screen and (max-width: 768px) {
+        font-size: @notification-icon-font-size-sm;
+      }
     }
   }
   &.@{prefixCls}-open {

@@ -394,7 +394,7 @@ storiesOf("操作反馈", module)
   .add(
     "Notification 通知提醒框",
     withInfo()(() => (
-      <div>
+      <div className="notification-example">
         <h2>基本使用</h2>
         <Button type="primary" onClick={
           ()=> notification.open({
@@ -402,6 +402,89 @@ storiesOf("操作反馈", module)
             message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
           })
         }>打开通知</Button>
+
+        <h2>不关闭</h2>
+        <Button type="primary" onClick={
+          ()=> notification.open({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+            duration: 0,
+          })
+        }>打开通知</Button>
+
+        <h2>各种图标</h2>
+        <Button type="success" onClick={
+          ()=> notification.success({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+          })
+        }>Success</Button>
+        <Button type="info" onClick={
+          ()=> notification.info({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+          })
+        }>Info</Button>
+        <Button type="warning" onClick={
+          ()=> notification.warning({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+          })
+        }>Warning</Button>
+        <Button type="error" onClick={
+          ()=> notification.error({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+          })
+        }>Error</Button>
+        <Button type="primary" onClick={
+          ()=> notification.loading({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+          })
+        }>Loading</Button>
+
+        <h2>自定义延迟</h2>
+        <Button type="primary" onClick={
+          ()=> notification.loading({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+            duration: 10,
+          })
+        }>10秒后关闭</Button>
+
+         <h2>关闭回调</h2>
+        <Button type="primary" onClick={
+          ()=> notification.open({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+            onClose: () =>  message.info('关闭')
+          })
+        }>打开通知</Button>
+
+        <h2>点击回调</h2>
+        <Button type="primary" onClick={
+          ()=> notification.success({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+            onClick: () =>  message.success('点击')
+          })
+        }>打开通知</Button>
+
+        <h2>主题</h2>
+        <Button type="primary" onClick={
+          ()=> notification.open({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+          })
+        }>白天</Button>
+        <Button type="primary" onClick={
+          ()=> notification.success({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+            darkTheme: true,
+          })
+        }>黑夜</Button>
       </div>
     ))
   );
