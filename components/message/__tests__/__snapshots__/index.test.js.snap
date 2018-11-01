@@ -3,13 +3,13 @@
 exports[`<Message/> should render a <Message/> components 1`] = `
 <div>
   <div
-    class="cuke-message open"
+    class="cuke-message cuke-message-open"
   >
     <div
       class="cuke-message-title-custom message-success"
     >
       <p
-        class="icon"
+        class="cuke-message-icon"
       >
         <svg
           fill="none"
@@ -30,24 +30,22 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         </svg>
       </p>
       <p
-        class="text"
+        class="cuke-message-title"
       >
-        <span
-          class="title"
-        >
+        <span>
           哈哈
         </span>
       </p>
     </div>
   </div>
   <div
-    class="cuke-message open"
+    class="cuke-message cuke-message-open"
   >
     <div
       class="cuke-message-title-custom message-error"
     >
       <p
-        class="icon"
+        class="cuke-message-icon"
       >
         <svg
           fill="none"
@@ -79,24 +77,22 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         </svg>
       </p>
       <p
-        class="text"
+        class="cuke-message-title"
       >
-        <span
-          class="title"
-        >
+        <span>
           哈哈
         </span>
       </p>
     </div>
   </div>
   <div
-    class="cuke-message open"
+    class="cuke-message cuke-message-open"
   >
     <div
       class="cuke-message-title-custom message-info"
     >
       <p
-        class="icon"
+        class="cuke-message-icon"
       >
         <svg
           fill="none"
@@ -117,24 +113,22 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         </svg>
       </p>
       <p
-        class="text"
+        class="cuke-message-title"
       >
-        <span
-          class="title"
-        >
+        <span>
           哈哈
         </span>
       </p>
     </div>
   </div>
   <div
-    class="cuke-message open"
+    class="cuke-message cuke-message-open"
   >
     <div
       class="cuke-message-title-custom message-warning"
     >
       <p
-        class="icon"
+        class="cuke-message-icon"
       >
         <svg
           fill="none"
@@ -166,24 +160,22 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         </svg>
       </p>
       <p
-        class="text"
+        class="cuke-message-title"
       >
-        <span
-          class="title"
-        >
+        <span>
           哈哈
         </span>
       </p>
     </div>
   </div>
   <div
-    class="cuke-message open"
+    class="cuke-message cuke-message-open"
   >
     <div
       class="cuke-message-title-custom message-loading"
     >
       <p
-        class="icon"
+        class="cuke-message-icon"
       >
         <svg
           fill="none"
@@ -246,11 +238,9 @@ exports[`<Message/> should render a <Message/> components 1`] = `
         </svg>
       </p>
       <p
-        class="text"
+        class="cuke-message-title"
       >
-        <span
-          class="title"
-        >
+        <span>
           哈哈
         </span>
       </p>

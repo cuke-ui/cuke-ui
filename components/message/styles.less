@@ -24,7 +24,7 @@
   box-shadow: @default-shadow;
   background: @message-theme-light-bg;
   text-align: center;
-  .icon {
+  &-icon {
     svg,
     i {
       font-size: @message-icon-font-size;
@@ -33,19 +33,19 @@
       }
     }
   }
-  .text {
+  &-title {
     color: @font-color;
     font-size: @message-title-size;
     @media screen and (max-width: 768px) {
       font-size: @message-title-size-sm;
     }
   }
-  &.theme-dark {
+  &.@{prefixCls}-theme-dark {
     background: @message-theme-dark-bg;
     color: @message-theme-dark-font-color;
     svg,
     i,
-    .text {
+    .@{prefixCls}-title {
       color: @message-theme-dark-font-color !important;
     }
   }
@@ -75,11 +75,11 @@
       animation: cuke-spin @loading-time linear infinite;
     }
   }
-  &.open {
+  &.@{prefixCls}-open {
     pointer-events: auto;
     animation: cuke-fade-in @message-show-time @animate-type forwards;
   }
-  &.close {
+  &.@{prefixCls}-close {
     pointer-events: none;
     animation: cuke-fade-out @message-show-time @animate-type forwards;
   }

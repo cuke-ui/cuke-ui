@@ -10,6 +10,7 @@ import DrawerPage from "./pages/drawer";
 import ProgressPage from "./pages/progress";
 import Spin from "../components/spin";
 import Progress from "../components/progress";
+import notification from "../components/notification";
 
 import { SuccessIcon, ErrorIcon, WarningIcon } from "../components/icon";
 import "./styles/feedback.less";
@@ -20,6 +21,7 @@ import "../components/modal/styles.less";
 import "../components/drawer/styles.less";
 import "../components/spin/styles.less";
 import "../components/progress/styles.less";
+import "../components/notification/styles.less";
 
 storiesOf("操作反馈", module)
   .add(
@@ -386,6 +388,20 @@ storiesOf("操作反馈", module)
 
         <h2>动态改变</h2>
         <ProgressPage />
+      </div>
+    ))
+  )
+  .add(
+    "Notification 通知提醒框",
+    withInfo()(() => (
+      <div>
+        <h2>基本使用</h2>
+        <Button type="primary" onClick={
+          ()=> notification.open({
+            title: '通知标题',
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+          })
+        }>打开通知</Button>
       </div>
     ))
   );

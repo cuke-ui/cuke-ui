@@ -1,0 +1,92 @@
+@import '../styles/vars.less';
+@import '../styles/mixins.less';
+@import '../styles/animate.less';
+
+@prefixCls: cuke-notification;
+.@{prefixCls} {
+  position: fixed;
+  z-index: @notification-z-index;
+  width: @notification-width;
+  transform: translate3d(0, 0, 0);
+  right: @notification-offset-right;
+  top: @notification-offset-top;
+  .clearfix();
+  @media screen and (max-width: 768px) {
+    width: auto !important;
+  }
+  padding: @notification-padding;
+  border-radius: @border-radius;
+  box-shadow: @default-shadow;
+  background: @notification-theme-light-bg;
+  &-icon {
+    svg,
+    i {
+      font-size: @notification-icon-font-size;
+      @media screen and (max-width: 768px) {
+        font-size: @notification-icon-font-size-sm;
+      }
+    }
+  }
+  &-title {
+    color: fade(@font-color, 80%);
+    font-size: @notification-title-size;
+    margin-bottom: 10px;
+    @media screen and (max-width: 768px) {
+      font-size: @notification-title-size-sm;
+    }
+  }
+  &-message {
+    color: @font-color;
+  }
+  &-close {
+    position: absolute;
+    right: 22px;
+    top: 14px;
+    color: fade(@font-color, 45%);
+    font-size: @font-size + 2px;
+    cursor: pointer;
+  }
+  &.@{prefixCls}-theme-dark {
+    background: @notification-theme-dark-bg;
+    color: @notification-theme-dark-font-color;
+    svg,
+    i,
+    .@{prefixCls}-title {
+      color: @notification-theme-dark-font-color !important;
+    }
+  }
+  .notification-info {
+    svg {
+      color: @info-color;
+    }
+  }
+  .notification-error {
+    svg {
+      color: @error-color;
+    }
+  }
+  .notification-success {
+    svg {
+      color: @success-color;
+    }
+  }
+  .notification-warning {
+    svg {
+      color: @warning-color;
+    }
+  }
+  .notification-loading {
+    svg {
+      color: @loading-color;
+      animation: cuke-spin @loading-time linear infinite;
+    }
+  }
+  &.@{prefixCls}-open {
+    pointer-events: auto;
+    animation: cuke-notification-open @cuke-drawer-animate-type forwards;
+  }
+  &.@{prefixCls}-close {
+    pointer-events: none;
+    animation: cuke-notification-close @cuke-drawer-animate-type forwards;
+  }
+}

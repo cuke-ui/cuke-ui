@@ -8,10 +8,11 @@ import {
   LoadingIcon,
   SuccessIcon,
   ErrorIcon,
-  WarningIcon
+  WarningIcon,
+  CloseIcon
 } from "../icon";
 
-export default class Message extends PureComponent {
+export default class Notification extends PureComponent {
   state = {
     visible: true
   };
@@ -39,7 +40,7 @@ export default class Message extends PureComponent {
     onClose: PropTypes.func
   };
   static defaultProps = {
-    prefixCls: "cuke-message",
+    prefixCls: "cuke-notification",
     duration: 2,
     darkTheme: false,
     onClose: () => {}
@@ -63,22 +64,19 @@ export default class Message extends PureComponent {
     ReactDOM.unmountComponentAtNode(this._containerRef);
     this._currentNodeRef.remove();
   };
-  static renderElement = (type, title, duration, onClose, darkTheme) => {
+  static renderElement = (type, options) => {
     const container = document.createElement("div");
     const currentNode = document.body.appendChild(container);
-    const _message = ReactDOM.render(
-      <Message
-        type={type}
-        title={title}
-        darkTheme={darkTheme}
-        duration={duration}
-        onClose={onClose}
-      />,
+    const _notification = ReactDOM.render(
+      <Notification type={type} {...options} />,
       container
     );
-    _message._containerRef = container;
-    _message._currentNodeRef = currentNode;
+    _notification._containerRef = container;
+    _notification._currentNodeRef = currentNode;
   };
+  static open(options) {
+    this.renderElement("open", options);
+  }
   static error(title, duration, onClose, darkTheme) {
     this.renderElement("error", title, duration, onClose, darkTheme);
   }
@@ -94,6 +92,9 @@ export default class Message extends PureComponent {
   static loading(title, duration, onClose, darkTheme) {
     this.renderElement("loading", title, duration, onClose, darkTheme);
   }
+  onClose = () => {
+    this.setState({ visible: false });
+  };
   render() {
     const {
       prefixCls,
@@ -102,6 +103,7 @@ export default class Message extends PureComponent {
       title,
       className,
       duration,
+      message,
       ...attr
     } = this.props;
 
@@ -120,23 +122,26 @@ export default class Message extends PureComponent {
         )}
         {...attr}
       >
+        <div className={`${prefixCls}-close`} onClick={this.onClose}>
+          <CloseIcon />
+        </div>
+        <div className={`${prefixCls}-icon`}>
+          {type === typeConfig["info"] ? <InfoIcon /> : undefined}
+          {type === typeConfig["success"] ? <SuccessIcon /> : undefined}
+          {type === typeConfig["error"] ? <ErrorIcon /> : undefined}
+          {type === typeConfig["warning"] ? <WarningIcon /> : undefined}
+          {type === typeConfig["loading"] ? <LoadingIcon /> : undefined}
+        </div>
         <div
           className={cls(
             `${prefixCls}-title-custom`,
             `message-${typeConfig[type]}`
           )}
         >
-          <p className={`${prefixCls}-icon`}>
-            {type === typeConfig["info"] ? <InfoIcon /> : undefined}
-            {type === typeConfig["success"] ? <SuccessIcon /> : undefined}
-            {type === typeConfig["error"] ? <ErrorIcon /> : undefined}
-            {type === typeConfig["warning"] ? <WarningIcon /> : undefined}
-            {type === typeConfig["loading"] ? <LoadingIcon /> : undefined}
-          </p>
-
-          <p className={`${prefixCls}-title`}>
+          <div className={`${prefixCls}-title`}>
             <span>{title}</span>
-          </p>
+          </div>
+          <div className={`${prefixCls}-message`}>{message}</div>
         </div>
       </div>
     );

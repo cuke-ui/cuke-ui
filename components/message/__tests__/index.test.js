@@ -18,7 +18,7 @@ describe("<Message/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it("should find cuke-turn-table classnames", () => {
+  it("should find cuke-message classnames", () => {
     const wrapper = shallow(<Message title="哈哈" type="success" />);
     assert(wrapper.find(".cuke-message").length === 1);
     assert(wrapper.find(".message-success").length === 1);
