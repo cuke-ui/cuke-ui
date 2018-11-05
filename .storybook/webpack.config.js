@@ -84,5 +84,8 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".js", ".json"]
-  }
+  },
+  plugins: [
+    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn|en-gb/),
+  ]
 }
