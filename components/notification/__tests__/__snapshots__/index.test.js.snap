@@ -4,9 +4,10 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
 <div>
   <div
     class="cuke-notification cuke-notification-open"
+    style="top:20px"
   >
     <div
-      class="cuke-notification-close"
+      class="cuke-notification-close-btn"
     >
       <svg
         fill="none"
@@ -70,9 +71,10 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
   </div>
   <div
     class="cuke-notification cuke-notification-open"
+    style="top:20px"
   >
     <div
-      class="cuke-notification-close"
+      class="cuke-notification-close-btn"
     >
       <svg
         fill="none"
@@ -147,9 +149,10 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
   </div>
   <div
     class="cuke-notification cuke-notification-open"
+    style="top:20px"
   >
     <div
-      class="cuke-notification-close"
+      class="cuke-notification-close-btn"
     >
       <svg
         fill="none"
@@ -213,9 +216,10 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
   </div>
   <div
     class="cuke-notification cuke-notification-open"
+    style="top:20px"
   >
     <div
-      class="cuke-notification-close"
+      class="cuke-notification-close-btn"
     >
       <svg
         fill="none"
@@ -290,9 +294,10 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
   </div>
   <div
     class="cuke-notification cuke-notification-open"
+    style="top:20px"
   >
     <div
-      class="cuke-notification-close"
+      class="cuke-notification-close-btn"
     >
       <svg
         fill="none"
@@ -398,9 +403,10 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
   </div>
   <div
     class="cuke-notification cuke-notification-open"
+    style="top:20px"
   >
     <div
-      class="cuke-notification-close"
+      class="cuke-notification-close-btn"
     >
       <svg
         fill="none"

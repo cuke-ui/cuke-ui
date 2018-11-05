@@ -81,3 +81,16 @@
   background: repeating-linear-gradient(-45deg, @bg-color 25%, @primaryColor 0, @primaryColor 50%, @bg-color 0, @bg-color 75%, @primaryColor 0);
   background-size: @progress-bg-offset;
 }
+
+.ellipsis(@n: 2) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  & when ( @n >= 2 ) {
+    display: -webkit-box;
+    -webkit-line-clamp: @n;
+    -webkit-box-orient: vertical;
+  }
+  & when ( @n = 1 ) {
+    white-space: nowrap;
+  }
+}
