@@ -13,7 +13,11 @@
   .clearfix();
   display: flex;
   @media screen and (max-width: 768px) {
-    width: auto !important;
+    width: 95% !important;
+    left: 50%;
+    top: @notification-offset-top;
+    right: 0;
+    transform: translateX(-50%);
   }
   padding: @notification-padding;
   border-radius: @border-radius;
@@ -30,7 +34,7 @@
   &-message {
     color: @font-color;
   }
-  &-close {
+  &-close-btn {
     position: absolute;
     right: 22px;
     top: 14px;

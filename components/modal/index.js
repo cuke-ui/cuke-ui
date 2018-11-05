@@ -96,6 +96,7 @@ export default class Modal extends PureComponent {
   componentWillReceiveProps({ visible }) {
     if (visible === true) {
       this.disableScroll();
+      console.log(1);
       this.setState({
         init: true
       });

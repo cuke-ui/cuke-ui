@@ -38,6 +38,7 @@ export default class Notification extends PureComponent {
     ]).isRequired,
     duration: PropTypes.number.isRequired,
     darkTheme: PropTypes.bool,
+    top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onClose: PropTypes.func,
     onClick: PropTypes.func
   };
@@ -45,6 +46,7 @@ export default class Notification extends PureComponent {
     prefixCls: "cuke-notification",
     duration: 2,
     darkTheme: false,
+    top: 20,
     onClose: () => {},
     onClick: () => {}
   };
@@ -65,6 +67,21 @@ export default class Notification extends PureComponent {
   }
   componentWillUnmount() {
     this.removeNode();
+  }
+  disableScroll = () => {
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = "15px";
+  };
+  enableScroll = () => {
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = 0;
+  };
+  componentDidUpdate() {
+    if (this.state.visible === true) {
+      this.disableScroll();
+    } else {
+      this.enableScroll();
+    }
   }
   removeNode = () => {
     ReactDOM.unmountComponentAtNode(this._containerRef);
@@ -113,6 +130,8 @@ export default class Notification extends PureComponent {
       duration,
       message,
       onClick,
+      top,
+      style,
       ...attr
     } = this.props;
 
@@ -126,13 +145,17 @@ export default class Notification extends PureComponent {
           prefixCls,
           className,
           { [`${prefixCls}-theme-dark`]: darkTheme },
-          { [`${prefixCls}-open`]: visible && duration },
+          { [`${prefixCls}-open`]: visible && duration >= 0 },
           { [`${prefixCls}-close`]: !visible }
         )}
         {...attr}
+        style={{
+          ...style,
+          top
+        }}
         onClick={onClick}
       >
-        <div className={`${prefixCls}-close`} onClick={this.onClose}>
+        <div className={`${prefixCls}-close-btn`} onClick={this.onClose}>
           <CloseIcon />
         </div>
         <div

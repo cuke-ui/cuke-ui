@@ -94,6 +94,22 @@ export default class Message extends PureComponent {
   static loading(title, duration, onClose, darkTheme) {
     this.renderElement("loading", title, duration, onClose, darkTheme);
   }
+  disableScroll = () => {
+    document.body.style.overflow = "hidden";
+    //滚动条的宽度 防止鬼畜
+    document.body.style.paddingRight = "15px";
+  };
+  enableScroll = () => {
+    document.body.style.overflow = "";
+    document.body.style.paddingRight = 0;
+  };
+  componentDidUpdate() {
+    if (this.state.visible === true) {
+      this.disableScroll();
+    } else {
+      this.enableScroll();
+    }
+  }
   render() {
     const {
       prefixCls,
