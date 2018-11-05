@@ -14,7 +14,14 @@ const ChangeLog = () => (
         <li>计划年底发布</li>
       </ul>
     </Timeline.Item>
-    <Timeline.Item type="loading">
+    <Timeline.Item>
+      <h3><a>v0.0.20</a></h3>
+      <ul>
+        <li> 新增 Notification 组件</li>
+        <li> 完善 文档</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h3><a>v0.0.19</a></h3>
       <ul>
         <li> DatePicker 组件 切换月份 无反应</li>
