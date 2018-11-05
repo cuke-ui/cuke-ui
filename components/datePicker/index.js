@@ -37,9 +37,11 @@ export default class DataPicker extends PureComponent {
     super(props);
     this.toggleContainer = createRef();
   }
-
-  componentWillReceiveProps({ value }) {
-    this.setState({ momentSelected: value });
+  static getDerivedStateFromProps({ value }, { momentSelected }) {
+    if (!value || value.valueOf() === momentSelected.valueOf()) {
+      return null;
+    }
+    return { momentSelected: value };
   }
 
   onTogglePanel = () => {

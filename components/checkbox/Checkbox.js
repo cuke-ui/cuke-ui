@@ -37,6 +37,7 @@ export default class Checkbox extends PureComponent {
       disabled,
       children,
       value,
+      onChange, //eslint-disable-line
       indeterminate,
       ...attr
     } = this.props;

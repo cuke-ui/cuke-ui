@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 export default class Radio extends PureComponent {
   state = {
-    checked: this.props.checked || this.props.defaultChecked
+    checked: this.props.checked || this.props.defaultChecked || false
   };
   static defaultProps = {
     prefixCls: "cuke-radio",
@@ -24,7 +24,6 @@ export default class Radio extends PureComponent {
     super(props);
   }
 
-  //TODO: onChange 会触发两次
   onChange = e => {
     this.setState({
       checked: true
@@ -34,11 +33,12 @@ export default class Radio extends PureComponent {
     }
   };
 
-  componentWillReceiveProps({ checked }) {
-    //当 RadioGroup 像父元素传值时 改变当前选中状态
-    this.setState({
-      checked
-    });
+  componentWillReceiveProps({ checked, defaultChecked }) {
+    if (checked !== this.state.checked) {
+      this.setState({
+        checked: defaultChecked || checked
+      });
+    }
   }
 
   render() {
@@ -48,6 +48,7 @@ export default class Radio extends PureComponent {
       className,
       children,
       disabled,
+      onChange, //eslint-disable-line
       ...attr
     } = this.props;
 
@@ -66,7 +67,7 @@ export default class Radio extends PureComponent {
             value={value}
             checked={checked}
             className={cls(`${prefixCls}-input`)}
-            onChange={e => this.onChange(e)}
+            onChange={this.onChange}
             disabled={disabled}
           />
           <span className={cls(`${prefixCls}-inner`)} />

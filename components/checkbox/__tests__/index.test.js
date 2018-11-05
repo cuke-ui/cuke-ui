@@ -1,3 +1,4 @@
+import assert from "power-assert";
 import React from "react";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
@@ -13,6 +14,18 @@ describe("<Checkbox/>", () => {
       </div>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+  it("should render cuke-checkbox classnames", () => {
+    const wrapper = render(
+      <div>
+        <Checkbox>黄瓜 ui</Checkbox>
+        <Checkbox disabled>黄瓜 ui</Checkbox>
+        <Checkbox checked disabled />
+      </div>
+    );
+    assert(wrapper.find(".cuke-checkbox").length === 3);
+    assert(wrapper.find(".cuke-checkbox-disabled").length === 2);
+    assert(wrapper.find(".cuke-checkbox-checked").length === 1);
   });
   it("should can trigger change event", () => {
     const onChange = jest.fn();

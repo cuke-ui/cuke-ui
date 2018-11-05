@@ -1,3 +1,4 @@
+import assert from "power-assert";
 import React from "react";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
@@ -31,19 +32,31 @@ describe("<Radio/>", () => {
     );
     expect(toJson(wrapper)).toMatchSnapshot();
   });
-  // it('should trigger change event width RadioGroup', () => {
-  // 	const onChange = jest.fn();
-  // 	const wrapper = shallow(
-  // 		<Radio.Group value={'小红'} onChange={onChange}>
-  // 			<Radio value="小红">小红</Radio>
-  // 			<Radio value="小明">小明</Radio>
-  // 			<Radio value="小美">小美</Radio>
-  // 			<Radio value="小芳">小芳</Radio>
-  // 		</Radio.Group>
-  // 	);
-  // 	wrapper.find('input').simulate('change');
-  // 	expect(onChange).toHaveBeenCalled();
-  // });
+  it("should render cuke-radio classnames", () => {
+    const wrapper = render(
+      <div>
+        <Radio>黄瓜 ui</Radio>
+        <Radio disabled>黄瓜 ui</Radio>
+        <Radio checked disabled />
+      </div>
+    );
+    assert(wrapper.find(".cuke-radio").length === 3);
+    assert(wrapper.find(".cuke-radio-disabled").length === 2);
+    assert(wrapper.find(".cuke-radio-checked").length === 1);
+  });
+  it("should can not trigger change event width RadioGroup disabled", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Radio.Group value={"小红"} disabled onChange={onChange}>
+        <Radio value="小红">小红</Radio>
+        <Radio value="小明">小明</Radio>
+        <Radio value="小美">小美</Radio>
+        <Radio value="小芳">小芳</Radio>
+      </Radio.Group>
+    );
+    wrapper.find("div").simulate("click");
+    expect(onChange).not.toHaveBeenCalled();
+  });
   it("should can trigger change event", () => {
     const onChange = jest.fn();
     const wrapper = shallow(<Radio onChange={onChange}>黄瓜 ui</Radio>);

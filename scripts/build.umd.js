@@ -101,9 +101,6 @@ const config = {
             drop_debugger: true,
             drop_console: false
           },
-          output: {
-            comments: false,
-          },
         }
       }),
       new OptimizeCSSAssetsPlugin({
@@ -131,6 +128,7 @@ const config = {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
+    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn|en-gb/),
   ]
 };
 

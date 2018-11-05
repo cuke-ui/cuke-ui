@@ -23,31 +23,42 @@ export default class RadioGroup extends PureComponent {
     super(props);
   }
 
-  onRadioChange(e) {
+  onRadioChange = e => {
     this.setState({
       value: e.target.value
     });
     this.props.onChange(e);
-  }
+  };
 
-  componentWillReceiveProps({ value }) {
+  static getDerivedStateFromProps({ value }, state) {
     //当传入的 value 值改变时 重置下 value 值
-    this.setState({
+    if (value === state.value) {
+      return null;
+    }
+    return {
       value
-    });
+    };
   }
 
   render() {
-    const { children, prefixCls, disabled, className, ...attr } = this.props;
+    const {
+      children,
+      prefixCls,
+      disabled,
+      className,
+      onChange, //eslint-disable-line
+      ...attr
+    } = this.props;
     const { value } = this.state;
 
     // 变量子节点 对比当前value 和  子节点 value 是否相同
-    const radios = React.Children.map(children, radio => {
+    const radios = React.Children.map(children, (radio, index) => {
       return (
         <Radio
+          key={index}
           disabled={disabled}
           {...radio.props}
-          onChange={e => this.onRadioChange(e)}
+          onChange={this.onRadioChange}
           checked={value === radio.props.value}
         />
       );

@@ -91,9 +91,12 @@ export default class Pagination extends PureComponent {
       current: this.props.current
     });
   }
-  componentWillReceiveProps({ current }) {
-    this.setState({
-      current
-    });
+  static getDerivedStateFromProps({ current }, state) {
+    if (current === state.current) {
+      return null;
+    }
+    return {
+      current: state.current
+    };
   }
 }

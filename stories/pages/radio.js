@@ -23,7 +23,7 @@ export default class RadioPage extends PureComponent {
         <Radio checked disabled>
           黄瓜 ui
         </Radio>
-        <h2>老板需要几号技师</h2>
+        <h2>组合使用: 老板需要几号技师</h2>
         <p> 选中 : {this.state.value} </p>
         <Radio.Group value={this.state.value} onChange={this.onChange}>
           <Radio value="小红">小红</Radio>

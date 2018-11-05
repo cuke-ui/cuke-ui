@@ -15,6 +15,16 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h3><a>v0.0.21</a></h3>
+      <ul>
+        <li> 组件生命周期 componentWillReceiveProps => getDerivedStateFromProps</li>
+        <li> 修复 Radio onChange 触发两次</li>
+        <li> 修复 Checkbox onChange 触发两次</li>
+        <li> 优化 webpack moment 打包体积</li>
+        <li> 修复 Notification 组件 淡出动画异常</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h3><a>v0.0.20</a></h3>
       <ul>
         <li> 新增 Notification 组件</li>

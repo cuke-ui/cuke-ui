@@ -41,7 +41,6 @@ export default class CheckboxGroup extends PureComponent {
     return checkedValue;
   }
 
-  //TODO: 这里会执行两次 ???
   onCheckboxChange = e => {
     const currentValue = e.target.value;
     const { value } = this.state;
@@ -63,6 +62,7 @@ export default class CheckboxGroup extends PureComponent {
       prefixCls,
       disabled,
       className,
+      onChange, //eslint-disable-line
       value: currentValue,
       ...attr
     } = this.props;
@@ -70,9 +70,10 @@ export default class CheckboxGroup extends PureComponent {
     const isChecked = value.find(v => v === currentValue);
 
     // 变量子节点 对比当前value 和  子节点 value 是否相同
-    const items = React.Children.map(children, checkbox => {
+    const items = React.Children.map(children, (checkbox, index) => {
       return (
         <Checkbox
+          key={index}
           disabled={disabled}
           {...checkbox.props}
           onChange={this.onCheckboxChange}
