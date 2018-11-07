@@ -403,7 +403,7 @@ storiesOf("操作反馈", module)
           })
         }>打开通知</Button>
 
-        <h2>不关闭</h2>
+        <h2>不自动关闭</h2>
         <Button type="primary" onClick={
           ()=> notification.open({
             title: '通知标题',
@@ -411,6 +411,15 @@ storiesOf("操作反馈", module)
             duration: 0,
           })
         }>打开通知</Button>
+
+        <h2>不显示关闭图标</h2>
+        <Button type="success" onClick={
+          ()=> notification.success({
+            title: '通知标题',
+            closable: false,
+            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+          })
+        }>Success</Button>
 
         <h2>各种图标</h2>
         <Button type="success" onClick={

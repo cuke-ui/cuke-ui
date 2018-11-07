@@ -39,6 +39,7 @@ export default class Notification extends PureComponent {
     duration: PropTypes.number.isRequired,
     darkTheme: PropTypes.bool,
     top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    closable: PropTypes.bool,
     onClose: PropTypes.func,
     onClick: PropTypes.func
   };
@@ -47,6 +48,7 @@ export default class Notification extends PureComponent {
     duration: 2,
     darkTheme: false,
     top: 20,
+    closable: true,
     onClose: () => {},
     onClick: () => {}
   };
@@ -130,6 +132,7 @@ export default class Notification extends PureComponent {
       duration,
       message,
       onClick,
+      closable,
       top,
       style,
       ...attr
@@ -155,9 +158,11 @@ export default class Notification extends PureComponent {
         }}
         onClick={onClick}
       >
-        <div className={`${prefixCls}-close-btn`} onClick={this.onClose}>
-          <CloseIcon />
-        </div>
+        {closable && (
+          <div className={`${prefixCls}-close-btn`} onClick={this.onClose}>
+            <CloseIcon />
+          </div>
+        )}
         <div
           className={cls(
             `${prefixCls}-icon`,
