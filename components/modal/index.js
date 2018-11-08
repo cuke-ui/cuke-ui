@@ -21,6 +21,7 @@ export default class Modal extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-modal",
     visible: false,
+    isStaticMethod: false, // 用来区分 是 Modal.xx() 还是 <Modal/>
     getTarget: () => document.body,
     width: 520,
     title: "",
@@ -98,6 +99,7 @@ export default class Modal extends PureComponent {
         showMask={false}
         closable={false}
         visible
+        isStaticMethod
         {...options}
       />,
       container
@@ -113,11 +115,16 @@ export default class Modal extends PureComponent {
     return this.renderElement(options);
   }
   _onOk = () => {
-    this.destroy();
+    // 如果是 Modal.xx() 的方式 调用 直接销毁节点
+    if (this.props.isStaticMethod) {
+      this.destroy();
+    }
     this.props.onOk();
   };
   _onCancel = () => {
-    this.destroy();
+    if (this.props.isStaticMethod) {
+      this.destroy();
+    }
     this.props.onCancel();
   };
   disableScroll = () => {
@@ -163,6 +170,7 @@ export default class Modal extends PureComponent {
       zIndex,
       okButtonProps,
       cancelButtonProps,
+      isStaticMethod, //eslint-disable-line
       ...attr
     } = this.props;
 
