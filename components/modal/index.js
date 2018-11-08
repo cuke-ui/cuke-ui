@@ -3,7 +3,23 @@ import PropTypes from "prop-types";
 import { createPortal, render, unmountComponentAtNode } from "react-dom";
 import cls from "classnames";
 import Button from "../button";
-import { CloseIcon } from "../icon";
+import {
+  InfoIcon,
+  LoadingIcon,
+  SuccessIcon,
+  ErrorIcon,
+  WarningIcon,
+  CloseIcon
+} from "../icon";
+
+const typeConfig = {
+  info: "info",
+  success: "success",
+  error: "error",
+  warning: "warning",
+  loading: "loading",
+  confirm: "confirm"
+};
 
 /**
  * const modal = Modal.confirm()  // 得到当前 Modal 引用
@@ -90,17 +106,27 @@ export default class Modal extends PureComponent {
     unmountComponentAtNode(this._containerRef);
     this._currentNodeRef.remove();
   };
-  static renderElement = options => {
+  static renderElement = (type, options = {}) => {
     const container = document.createElement("div");
     const currentNode = document.body.appendChild(container);
+    const defaultProps = Modal.defaultProps;
+    const prefixCls = defaultProps.prefixCls;
     const _modal = render(
       <Modal
-        className={cls(`${Modal.defaultProps.prefixCls}-confirm`)}
+        className={cls(`${prefixCls}-method`, `${prefixCls}-${type}`)}
         showMask={false}
         closable={false}
         visible
         isStaticMethod
         {...options}
+        title={
+          <>
+            <span className={cls(`${prefixCls}-method-icon`)}>
+              {Modal.renderStaticMethodIcon(type)}
+            </span>
+            <span>{options.title}</span>
+          </>
+        }
       />,
       container
     );
@@ -112,7 +138,40 @@ export default class Modal extends PureComponent {
     };
   };
   static confirm(options) {
-    return this.renderElement(options);
+    return this.renderElement(typeConfig.confirm, options);
+  }
+  static success(options) {
+    return this.renderElement(typeConfig.success, options);
+  }
+  static info(options) {
+    return this.renderElement(typeConfig.info, options);
+  }
+  static error(options) {
+    return this.renderElement(typeConfig.error, options);
+  }
+  static warning(options) {
+    return this.renderElement(typeConfig.warning, options);
+  }
+  static loading(options) {
+    return this.renderElement(typeConfig.loading, options);
+  }
+  static renderStaticMethodIcon(type) {
+    switch (type) {
+      case typeConfig["info"]:
+        return <InfoIcon />;
+      case typeConfig["success"]:
+        return <SuccessIcon />;
+      case typeConfig["error"]:
+        return <ErrorIcon />;
+      case typeConfig["warning"]:
+        return <WarningIcon />;
+      case typeConfig["confirm"]:
+        return <WarningIcon />;
+      case typeConfig["loading"]:
+        return <LoadingIcon />;
+      default:
+        return null;
+    }
   }
   _onOk = () => {
     // 如果是 Modal.xx() 的方式 调用 直接销毁节点

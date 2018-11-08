@@ -100,14 +100,14 @@ export default class ModalPage extends Component {
             </Button>
           </Col>
         </Row>
+        <h2>信息提示</h2>
         <Row>
-          <Col span={6}>
-            <h2>确认框</h2>
+          <Col span={4}>
             <Button
               onClick={() => {
                 Modal.confirm({
-                  title: "确认领钱?",
-                  content: "请于2020年前往高老庄领取1个比特币",
+                  title: "黄瓜ui",
+                  content: "即插即用",
                   onOk() {
                     console.log("ok!");
                     message.success("你点击了确定");
@@ -120,6 +120,66 @@ export default class ModalPage extends Component {
               }}
             >
               Modal.confirm()
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button
+              onClick={() => {
+                Modal.success({
+                  title: "黄瓜ui",
+                  content: "即插即用"
+                })
+              }}
+            >
+              Modal.success()
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button
+              onClick={() => {
+                Modal.info({
+                  title: "黄瓜ui",
+                  content: "即插即用"
+                })
+              }}
+            >
+              Modal.info()
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button
+              onClick={() => {
+                Modal.error({
+                  title: "黄瓜ui",
+                  content: "即插即用"
+                })
+              }}
+            >
+              Modal.error()
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button
+              onClick={() => {
+                Modal.warning({
+                  title: "黄瓜ui",
+                  content: "即插即用"
+                })
+              }}
+            >
+              Modal.warning()
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button
+              onClick={() => {
+                Modal.loading({
+                  title: "黄瓜ui",
+                  content: "即插即用"
+                })
+              }}
+            >
+              Modal.loading()
             </Button>
           </Col>
         </Row>

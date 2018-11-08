@@ -83,14 +83,61 @@
     align-content: center;
     .cuke-button {
       flex: 1;
-
       &:not(:first-child) {
         margin-left: 10%;
       }
     }
   }
-  &-confirm {
-    width: @modal-confirm-width !important;
+  &-method {
+    width: @modal-method-width  !important;
+    &-icon {
+      margin-right: @modal-method-icon-offset;
+      vertical-align: middle;
+      font-size: @modal-method-icon-size;
+    }
+    &:not(.@{prefixCls}-confirm) {
+      .@{prefixCls}-footer {
+        .cuke-button {
+          margin: 0;
+          &:first-child {
+            display: none;
+          }
+        }
+      }
+    }
+    &.@{prefixCls}-confirm {
+      .@{prefixCls}-method-icon {
+        color: @warning-color;
+      }
+    }
+    &.@{prefixCls}-info {
+      .@{prefixCls}-method-icon {
+        color: @info-color;
+      }
+    }
+    &.@{prefixCls}-success {
+      .@{prefixCls}-method-icon {
+        color: @success-color;
+      }
+    }
+    &.@{prefixCls}-error {
+      .@{prefixCls}-method-icon {
+        color: @error-color;
+      }
+    }
+    &.@{prefixCls}-warning {
+      .@{prefixCls}-method-icon {
+        color: @warning-color;
+      }
+    }
+    &.@{prefixCls}-loading {
+      .@{prefixCls}-method-icon {
+        color: @loading-color;
+        svg {
+          animation: cuke-spin @loading-time linear infinite;
+        }
+      }
+    }
   }
 }
 
