@@ -18,6 +18,8 @@ const ChangeLog = () => (
       <h3><a>v0.0.22</a></h3>
       <ul>
         <li> Modal 组件 增加 okButtonProps 和 cancelButtonProps 属性</li>
+        <li> Modal 组件 增加 confirm, info, success, error, warning 静态 方法</li>
+        <li> Modal, Message, Notification 统一 增加 xx.destroy() 的引用</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

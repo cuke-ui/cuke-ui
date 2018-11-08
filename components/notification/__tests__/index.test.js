@@ -34,6 +34,11 @@ describe("<Notification/>", () => {
     }, 2000);
   });
 
+  it("should render destroy reference", () => {
+    const notification = Notification.success();
+    assert(notification.destroy && notification.destroy instanceof Function);
+  });
+
   it("should 2s ago emit onClick", () => {
     const onClick = jest.fn();
     const wrapper = shallow(

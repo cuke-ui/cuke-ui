@@ -104,7 +104,7 @@ export default class ModalPage extends Component {
           <Col span={6}>
             <h2>确认框</h2>
             <Button
-              onClick={() =>
+              onClick={() => {
                 Modal.confirm({
                   title: "确认领钱?",
                   content: "请于2020年前往高老庄领取1个比特币",
@@ -113,10 +113,11 @@ export default class ModalPage extends Component {
                     message.success("你点击了确定");
                   },
                   onCancel() {
+                    console.log("cancel!");
                     message.info("你点击了取消");
                   }
                 })
-              }
+              }}
             >
               Modal.confirm()
             </Button>

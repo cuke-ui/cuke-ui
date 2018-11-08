@@ -1,10 +1,17 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
-import { createPortal, render } from "react-dom"; //传送门 将节点挂载在root 节点之外
+import { createPortal, render, unmountComponentAtNode } from "react-dom";
 import cls from "classnames";
 import Button from "../button";
 import { CloseIcon } from "../icon";
 
+/**
+ * const modal = Modal.confirm()  // 得到当前 Modal 引用
+ * modal.destroy()   // 手动关闭
+ * @export
+ * @class Modal
+ * @extends {PureComponent}
+ */
 export default class Modal extends PureComponent {
   state = {
     init: false
@@ -78,7 +85,11 @@ export default class Modal extends PureComponent {
   constructor(props) {
     super(props);
   }
-  static renderElement(options) {
+  destroy = () => {
+    unmountComponentAtNode(this._containerRef);
+    this._currentNodeRef.remove();
+  };
+  static renderElement = options => {
     const container = document.createElement("div");
     const currentNode = document.body.appendChild(container);
     const _modal = render(
@@ -88,16 +99,27 @@ export default class Modal extends PureComponent {
         closable={false}
         visible
         {...options}
-        onOk={Modal._onOk}
       />,
       container
     );
     _modal._containerRef = container;
     _modal._currentNodeRef = currentNode;
-  }
+
+    return {
+      destroy: _modal.destroy
+    };
+  };
   static confirm(options) {
-    this.renderElement(options);
+    return this.renderElement(options);
   }
+  _onOk = () => {
+    this.destroy();
+    this.props.onOk();
+  };
+  _onCancel = () => {
+    this.destroy();
+    this.props.onCancel();
+  };
   disableScroll = () => {
     document.body.style.overflow = "hidden";
     //滚动条的宽度 防止鬼畜
@@ -124,8 +146,8 @@ export default class Modal extends PureComponent {
       content,
       title,
       visible,
-      onCancel,
-      onOk,
+      onCancel, //eslint-disable-line
+      onOk, //eslint-disable-line
       className,
       footer,
       okText,
@@ -158,7 +180,7 @@ export default class Modal extends PureComponent {
         }
       : { [`${prefixCls}-mask-show`]: visible };
 
-    const maskClickHandle = maskClosable ? { onClick: onCancel } : {};
+    const maskClickHandle = maskClosable ? { onClick: this._onCancel } : {};
 
     return createPortal(
       <>
@@ -194,7 +216,7 @@ export default class Modal extends PureComponent {
               {closable ? (
                 <CloseIcon
                   className={`${prefixCls}-close`}
-                  onClick={onCancel}
+                  onClick={this._onCancel}
                 />
               ) : (
                 undefined
@@ -210,14 +232,14 @@ export default class Modal extends PureComponent {
             ) : (
               footer instanceof Array && (
                 <section className={`${prefixCls}-footer`}>
-                  <Button {...cancelButtonProps} onClick={onCancel}>
+                  <Button {...cancelButtonProps} onClick={this._onCancel}>
                     {cancelText}
                   </Button>
                   <Button
                     type="primary"
                     loading={confirmLoading}
                     {...okButtonProps}
-                    onClick={onOk}
+                    onClick={this._onOk}
                   >
                     {okText}
                   </Button>

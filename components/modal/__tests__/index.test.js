@@ -49,21 +49,26 @@ describe("<Modal/>", () => {
   });
 
   it("should render custom ok button props", () => {
-    const wrapper = shallow(
+    const wrapper = render(
       <Modal visible okButtonProps={{ disabled: true }}>
         <span>基本使用</span>
       </Modal>
     );
-    assert(wrapper.find(".cuke-button-disabled").length === 1);
+    assert(wrapper.find(".cuke-button.btn-disabled").length === 1);
   });
 
   it("should render custom cancel button props", () => {
-    const wrapper = shallow(
-      <Modal visible okCancelProps={{ disabled: true }}>
+    const wrapper = render(
+      <Modal visible cancelButtonProps={{ disabled: true }}>
         <span>基本使用</span>
       </Modal>
     );
-    assert(wrapper.find(".cuke-button-disabled").length === 1);
+    assert(wrapper.find(".cuke-button.btn-disabled").length === 1);
+  });
+
+  it("should render destroy reference", () => {
+    const modal = Modal.confirm();
+    assert(modal.destroy && modal.destroy instanceof Function);
   });
 
   it("should render confirm mode width <Modal/> ", () => {

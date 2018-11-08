@@ -61,14 +61,14 @@ export default class Notification extends PureComponent {
     this.timer = setTimeout(() => {
       this.setState({ visible: false }, () => {
         setTimeout(() => {
-          this.removeNode();
+          this.destroy();
         }, this.animationTime);
         onClose();
       });
     }, duration * 1000);
   }
   componentWillUnmount() {
-    this.removeNode();
+    this.destroy();
   }
   disableScroll = () => {
     document.body.style.overflow = "hidden";
@@ -85,7 +85,7 @@ export default class Notification extends PureComponent {
       this.enableScroll();
     }
   }
-  removeNode = () => {
+  destroy = () => {
     ReactDOM.unmountComponentAtNode(this._containerRef);
     this._currentNodeRef.remove();
   };
@@ -98,24 +98,28 @@ export default class Notification extends PureComponent {
     );
     _notification._containerRef = container;
     _notification._currentNodeRef = currentNode;
+
+    return {
+      destroy: _notification.destroy
+    };
   };
   static open(options) {
-    this.renderElement("open", options);
+    return this.renderElement("open", options);
   }
-  static error(title, duration, onClose, darkTheme) {
-    this.renderElement("error", title, duration, onClose, darkTheme);
+  static error(options) {
+    return this.renderElement("error", options);
   }
-  static info(title, duration, onClose, darkTheme) {
-    this.renderElement("info", title, duration, onClose, darkTheme);
+  static info(options) {
+    return this.renderElement("info", options);
   }
-  static success(title, duration, onClose, darkTheme) {
-    this.renderElement("success", title, duration, onClose, darkTheme);
+  static success(options) {
+    return this.renderElement("success", options);
   }
-  static warning(title, duration, onClose, darkTheme) {
-    this.renderElement("warning", title, duration, onClose, darkTheme);
+  static warning(options) {
+    return this.renderElement("warning", options);
   }
-  static loading(title, duration, onClose, darkTheme) {
-    this.renderElement("loading", title, duration, onClose, darkTheme);
+  static loading(options) {
+    return this.renderElement("loading", options);
   }
   onClose = () => {
     this.setState({ visible: false });

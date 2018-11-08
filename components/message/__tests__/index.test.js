@@ -24,6 +24,11 @@ describe("<Message/>", () => {
     assert(wrapper.find(".message-success").length === 1);
   });
 
+  it("should render destroy reference", () => {
+    const message = Message.success();
+    assert(message.destroy && message.destroy instanceof Function);
+  });
+
   it.skip("should 2s ago emit callback", () => {
     const wrapper = mount(
       <Message

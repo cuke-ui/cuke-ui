@@ -50,16 +50,16 @@ export default class Message extends PureComponent {
     this.timer = setTimeout(() => {
       this.setState({ visible: false }, () => {
         setTimeout(() => {
-          this.removeNode();
+          this.destroy();
         }, this.animationTime);
         onClose();
       });
     }, duration * 1000);
   }
   componentWillUnmount() {
-    this.removeNode();
+    this.destroy();
   }
-  removeNode = () => {
+  destroy = () => {
     ReactDOM.unmountComponentAtNode(this._containerRef);
     this._currentNodeRef.remove();
   };
@@ -78,21 +78,25 @@ export default class Message extends PureComponent {
     );
     _message._containerRef = container;
     _message._currentNodeRef = currentNode;
+
+    return {
+      destroy: _message.destroy
+    };
   };
   static error(title, duration, onClose, darkTheme) {
-    this.renderElement("error", title, duration, onClose, darkTheme);
+    return this.renderElement("error", title, duration, onClose, darkTheme);
   }
   static info(title, duration, onClose, darkTheme) {
-    this.renderElement("info", title, duration, onClose, darkTheme);
+    return this.renderElement("info", title, duration, onClose, darkTheme);
   }
   static success(title, duration, onClose, darkTheme) {
-    this.renderElement("success", title, duration, onClose, darkTheme);
+    return this.renderElement("success", title, duration, onClose, darkTheme);
   }
   static warning(title, duration, onClose, darkTheme) {
-    this.renderElement("warning", title, duration, onClose, darkTheme);
+    return this.renderElement("warning", title, duration, onClose, darkTheme);
   }
   static loading(title, duration, onClose, darkTheme) {
-    this.renderElement("loading", title, duration, onClose, darkTheme);
+    return this.renderElement("loading", title, duration, onClose, darkTheme);
   }
   disableScroll = () => {
     document.body.style.overflow = "hidden";
