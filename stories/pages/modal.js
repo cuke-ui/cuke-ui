@@ -94,6 +94,14 @@ export default class ModalPage extends Component {
             </Button>
           </Col>
           <Col span={6}>
+            <h2>自定按钮属性</h2>
+            <Button type="primary" onClick={() => this.onShow("visible30")}>
+              打开
+            </Button>
+          </Col>
+        </Row>
+        <Row>
+          <Col span={6}>
             <h2>确认框</h2>
             <Button
               onClick={() =>
@@ -113,7 +121,6 @@ export default class ModalPage extends Component {
               Modal.confirm()
             </Button>
           </Col>
-          <Col span={6} />
         </Row>
         <Modal
           title="基本使用"
@@ -234,6 +241,22 @@ export default class ModalPage extends Component {
           onOk={() => this.onCancel("visible10")}
         >
           <span>没有标题</span>
+        </Modal>
+
+        <Modal
+          title="自定义按钮属性"
+          visible={this.state.visible30}
+          onCancel={() => this.onCancel("visible30")}
+          onOk={() => this.onCancel("visible30")}
+          okButtonProps={{
+            disabled: true,
+            loading: true,
+          }}
+          cancelButtonProps={{
+            type: 'info',
+          }}
+        >
+          <span>自定义按钮属性</span>
         </Modal>
       </div>
     );

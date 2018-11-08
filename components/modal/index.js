@@ -9,6 +9,8 @@ export default class Modal extends PureComponent {
   state = {
     init: false
   };
+  _containerRef = null;
+  _currentNodeRef = null;
   static defaultProps = {
     prefixCls: "cuke-modal",
     visible: false,
@@ -26,7 +28,9 @@ export default class Modal extends PureComponent {
     centered: false,
     closable: true,
     showMask: true,
-    zIndex: 999
+    zIndex: 999,
+    okButtonProps: {},
+    cancelButtonProps: {}
   };
   static propTypes = {
     onCancel: PropTypes.func,
@@ -67,23 +71,33 @@ export default class Modal extends PureComponent {
       PropTypes.array,
       PropTypes.bool,
       PropTypes.object
-    ])
+    ]),
+    okProps: PropTypes.object,
+    cancelProps: PropTypes.object
   };
   constructor(props) {
     super(props);
   }
-  static confirm = options => {
-    render(
+  static renderElement(options) {
+    const container = document.createElement("div");
+    const currentNode = document.body.appendChild(container);
+    const _modal = render(
       <Modal
-        className="cuke-modal-confirm"
+        className={cls(`${Modal.defaultProps.prefixCls}-confirm`)}
         showMask={false}
         closable={false}
         visible
         {...options}
+        onOk={Modal._onOk}
       />,
-      document.getElementById("root")
+      container
     );
-  };
+    _modal._containerRef = container;
+    _modal._currentNodeRef = currentNode;
+  }
+  static confirm(options) {
+    this.renderElement(options);
+  }
   disableScroll = () => {
     document.body.style.overflow = "hidden";
     //滚动条的宽度 防止鬼畜
@@ -125,6 +139,8 @@ export default class Modal extends PureComponent {
       style,
       width,
       zIndex,
+      okButtonProps,
+      cancelButtonProps,
       ...attr
     } = this.props;
 
@@ -191,15 +207,22 @@ export default class Modal extends PureComponent {
               <section className={`${prefixCls}-footer`}>
                 {footer.map(buttonGroup => buttonGroup)}
               </section>
-            ) : footer instanceof Array ? (
-              <section className={`${prefixCls}-footer`}>
-                <Button onClick={onCancel}>{cancelText}</Button>
-                <Button type="primary" loading={confirmLoading} onClick={onOk}>
-                  {okText}
-                </Button>
-              </section>
             ) : (
-              undefined
+              footer instanceof Array && (
+                <section className={`${prefixCls}-footer`}>
+                  <Button {...cancelButtonProps} onClick={onCancel}>
+                    {cancelText}
+                  </Button>
+                  <Button
+                    type="primary"
+                    loading={confirmLoading}
+                    {...okButtonProps}
+                    onClick={onOk}
+                  >
+                    {okText}
+                  </Button>
+                </section>
+              )
             )}
           </div>
         </div>

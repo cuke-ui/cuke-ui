@@ -48,6 +48,24 @@ describe("<Modal/>", () => {
     assert(wrapper.find(Button).length === 2);
   });
 
+  it("should render custom ok button props", () => {
+    const wrapper = shallow(
+      <Modal visible okButtonProps={{ disabled: true }}>
+        <span>基本使用</span>
+      </Modal>
+    );
+    assert(wrapper.find(".cuke-button-disabled").length === 1);
+  });
+
+  it("should render custom cancel button props", () => {
+    const wrapper = shallow(
+      <Modal visible okCancelProps={{ disabled: true }}>
+        <span>基本使用</span>
+      </Modal>
+    );
+    assert(wrapper.find(".cuke-button-disabled").length === 1);
+  });
+
   it("should render confirm mode width <Modal/> ", () => {
     const wrapper = render(
       <Modal

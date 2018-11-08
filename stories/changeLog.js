@@ -15,6 +15,12 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h3><a>v0.0.22</a></h3>
+      <ul>
+        <li> Modal 组件 增加 okButtonProps 和 cancelButtonProps 属性</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h3><a>v0.0.21</a></h3>
       <ul>
         <li> 组件生命周期 componentWillReceiveProps => getDerivedStateFromProps</li>

@@ -90,29 +90,7 @@
     }
   }
   &-confirm {
-    width: @modal-confirm-width;
-    .@{prefixCls}-footer {
-      padding: 0;
-      .cuke-button {
-        flex: 1;
-        &:first-child {
-          border-right-color: transparent;
-          border-left-color: transparent;
-          border-bottom-color: transparent;
-          border-top-left-radius: 0;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          &:hover {
-            border-color: @border-color;
-          }
-        }
-        &:last-child {
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          border-top-right-radius: 0;
-        }
-      }
-    }
+    width: @modal-confirm-width !important;
   }
 }
 
