@@ -6,7 +6,10 @@ import Turntable from '../components/turnTable';
 import message from '../components/message';
 import Col from '../components/col';
 import Row from '../components/row';
+import Button from '../components/message';
+import Modal from '../components/modal';
 import "../components/message/styles.less";
+import "../components/modal/styles.less";
 
 const prizes = new Array(8).fill(0).map((_, i) => `奖品${i + 1}`)
 
@@ -47,11 +50,6 @@ storiesOf('娱乐', module)
           <Turntable
             {...{
               prizes,
-              onStart() {
-                //在转动之前 会触发 返回 false 会停止转动  可以再这个方法里面做一些判断
-                console.log('start...')
-                return true
-              },
               onComplete(prize) {
                 console.log(prize)
                 message.success(prize)
@@ -93,6 +91,25 @@ storiesOf('娱乐', module)
               fontStyle: {
                 color: "#fff",
                 fontVertical: true,
+              },
+              onComplete(prize) {
+                console.log(prize)
+                message.success(prize)
+              }
+            }}
+          />
+        </Col>
+        <Col>
+          <h2>自定义行为</h2>
+          <Turntable
+            {...{
+              prizes,
+              onStart(){
+                Modal.confirm({
+                  title: '请充值',
+                  content: '充值500元才可以转转盘',
+                })
+                return false
               },
               onComplete(prize) {
                 console.log(prize)
