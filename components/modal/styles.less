@@ -90,6 +90,10 @@
   }
   &-method {
     width: @modal-method-width  !important;
+    @media screen and (max-width: 767px) {
+      width: auto !important;
+      margin: 10px;
+    }
     &-icon {
       margin-right: @modal-method-icon-offset;
       vertical-align: middle;
