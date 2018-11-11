@@ -16,7 +16,7 @@
   bottom: 0;
   .flex-center();
   .clearfix();
-  @media screen and (max-width: 768px) {
+  @media @mobile {
     width: auto !important;
   }
   padding: @message-padding;
@@ -28,7 +28,7 @@
     svg,
     i {
       font-size: @message-icon-font-size;
-      @media screen and (max-width: 768px) {
+      @media @mobile {
         font-size: @message-icon-font-size-sm;
       }
     }
@@ -36,7 +36,7 @@
   &-title {
     color: @font-color;
     font-size: @message-title-size;
-    @media screen and (max-width: 768px) {
+    @media @mobile {
       font-size: @message-title-size-sm;
     }
   }

@@ -12,7 +12,7 @@
   top: @notification-offset-top;
   .clearfix();
   display: flex;
-  @media screen and (max-width: 768px) {
+  @media @mobile {
     width: 95% !important;
     left: 50%;
     top: @notification-offset-top;
@@ -27,7 +27,7 @@
     color: fade(@font-color, 80%);
     font-size: @notification-title-size;
     margin-bottom: 10px;
-    @media screen and (max-width: 768px) {
+    @media @mobile {
       font-size: @notification-title-size-sm;
     }
   }
@@ -85,7 +85,7 @@
     svg,
     i {
       font-size: @notification-icon-font-size;
-      @media screen and (max-width: 768px) {
+      @media @mobile {
         font-size: @notification-icon-font-size-sm;
       }
     }
