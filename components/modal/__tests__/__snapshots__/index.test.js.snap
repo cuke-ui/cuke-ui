@@ -50,9 +50,11 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <span>
-          基本使用
-        </span>
+        <input
+          class="cuke-input"
+          placeholder="请输入"
+          type="text"
+        />
       </section>
       <section
         class="cuke-modal-footer"
@@ -124,9 +126,11 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <span>
-          自定义文本 
-        </span>
+        <input
+          class="cuke-input"
+          placeholder="请输入"
+          type="text"
+        />
       </section>
       <section
         class="cuke-modal-footer"
@@ -198,9 +202,11 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <span>
-          无 footer
-        </span>
+        <input
+          class="cuke-input"
+          placeholder="请输入"
+          type="text"
+        />
       </section>
     </div>
   </div>
@@ -252,9 +258,11 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <span>
-          居中
-        </span>
+        <input
+          class="cuke-input"
+          placeholder="请输入"
+          type="text"
+        />
       </section>
       <section
         class="cuke-modal-footer"
@@ -301,9 +309,11 @@ exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
     <section
       class="cuke-modal-content"
     >
-      <p>
-        confirm
-      </p>
+      <input
+        class="cuke-input"
+        placeholder="请输入"
+        type="text"
+      />
     </section>
     <section
       class="cuke-modal-footer"
@@ -379,9 +389,11 @@ Array [
       <section
         class="cuke-modal-content"
       >
-        <span>
-           其实我是高仿 ant-design 的 
-        </span>
+        <input
+          class="cuke-input"
+          placeholder="请输入"
+          type="text"
+        />
       </section>
       <section
         class="cuke-modal-footer"

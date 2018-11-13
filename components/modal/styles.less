@@ -99,7 +99,7 @@
       vertical-align: middle;
       font-size: @modal-method-icon-size;
     }
-    &:not(.@{prefixCls}-confirm) {
+    &:not(.@{prefixCls}-confirm):not(.@{prefixCls}-prompt) {
       .@{prefixCls}-footer {
         .cuke-button {
           margin: 0;
@@ -132,6 +132,11 @@
     &.@{prefixCls}-warning {
       .@{prefixCls}-method-icon {
         color: @warning-color;
+      }
+    }
+    &.@{prefixCls}-prompt {
+      .@{prefixCls}-method-icon {
+        color: @primary-color;
       }
     }
     &.@{prefixCls}-loading {

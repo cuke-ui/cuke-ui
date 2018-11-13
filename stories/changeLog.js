@@ -15,6 +15,17 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h3><a>v0.0.23</a></h3>
+      <ul>
+        <li> Modal 组件 footer 属性 支持  React.Fragment </li>
+        <li> 增加 Modal.prompt() api </li>
+        <li> Modal.xx() 新增  iconType 属性 自定义图标类型 </li>
+        <li> 增加 TurnTable 示例</li>
+        <li> 修改 手机端响应式断点为576px </li>
+        <li> 修复 Modal 组件 在手机端时 没居中 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h3><a>v0.0.22</a></h3>
       <ul>
         <li> Modal 组件 增加 okButtonProps 和 cancelButtonProps 属性</li>

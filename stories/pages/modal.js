@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Modal from "../../components/modal";
 import message from "../../components/message";
 import Button from "../../components/button";
+import Checkbox from "../../components/checkbox";
 import Col from "../../components/col";
 import Row from "../../components/row";
 
@@ -158,6 +159,8 @@ export default class ModalPage extends Component {
               Modal.error()
             </Button>
           </Col>
+        </Row>
+        <Row style={{margin: "20px 0"}}>
           <Col span={4}>
             <Button
               onClick={() => {
@@ -180,6 +183,66 @@ export default class ModalPage extends Component {
               }}
             >
               Modal.loading()
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button
+              onClick={() => {
+                Modal.prompt({
+                  title: "黄瓜ui",
+                  onOk({value, checked}) {
+                    console.log(value,checked)
+                  }
+                })
+              }}
+            >
+              Modal.prompt()
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button
+              onClick={() => {
+                Modal.prompt({
+                  title: "为以下商品付款",
+                  content: <Checkbox/>,
+                  onOk({value, checked}) {
+                    console.log(value,checked)
+                  }
+                })
+              }}
+            >
+              自定义内容的 Modal.prompt()
+            </Button>
+          </Col>
+        </Row>
+
+        <h2>自定义图标类型</h2>
+        <Row>
+          <Col span={4}>
+            <Button
+              type="success"
+              onClick={() => {
+                Modal.info({
+                  iconType:"success",
+                  title: "黄瓜 ui",
+                })
+              }}
+            >
+              success
+            </Button>
+          </Col>
+          <Col span={4}>
+            <Button
+              type="error"
+              onClick={() => {
+                Modal.loading({
+                  iconType:"error",
+                  title: "黄瓜 ui",
+                  content: "即插即用"
+                })
+              }}
+            >
+              error
             </Button>
           </Col>
         </Row>
@@ -207,11 +270,12 @@ export default class ModalPage extends Component {
         <Modal
           title="自定义 footer"
           visible={this.state.visible20}
-          footer={[
-            <Button key="a" onClick={() => this.onCancel("visible20")}>取消</Button>,
-            <Button key="b" disabled>按钮2</Button>,
-            <Button key="c" type="primary" onClick={() => this.onCancel("visible20")}>按钮3</Button>
-          ]
+          footer={
+            <>
+              <Button key="a" onClick={() => this.onCancel("visible20")}>取消</Button>
+              <Button key="b" disabled>按钮2</Button>
+              <Button key="c" type="primary" onClick={() => this.onCancel("visible20")}>按钮3</Button>
+            </>
           }
           onCancel={() => this.onCancel("visible20")}
           onOk={() => this.onCancel("visible20")}

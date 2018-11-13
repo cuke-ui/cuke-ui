@@ -1,8 +1,9 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, cloneElement, isValidElement } from "react";
 import PropTypes from "prop-types";
 import { createPortal, render, unmountComponentAtNode } from "react-dom";
 import cls from "classnames";
 import Button from "../button";
+import Input from "../input";
 import {
   InfoIcon,
   LoadingIcon,
@@ -18,7 +19,8 @@ const typeConfig = {
   error: "error",
   warning: "warning",
   loading: "loading",
-  confirm: "confirm"
+  confirm: "confirm",
+  prompt: "prompt"
 };
 
 /**
@@ -30,7 +32,8 @@ const typeConfig = {
  */
 export default class Modal extends PureComponent {
   state = {
-    init: false
+    init: false,
+    promptValue: {}
   };
   _containerRef = null;
   _currentNodeRef = null;
@@ -46,7 +49,7 @@ export default class Modal extends PureComponent {
     okText: "确定",
     cancelText: "取消",
     footer: [],
-    content: "",
+    content: <Input placeholder="请输入" />,
     confirmLoading: false,
     maskClosable: true,
     centered: false,
@@ -81,6 +84,7 @@ export default class Modal extends PureComponent {
       PropTypes.string,
       PropTypes.object
     ]),
+    iconType: PropTypes.oneOf(Object.values(typeConfig)),
     confirmLoading: PropTypes.bool,
     visible: PropTypes.bool,
     centered: PropTypes.bool,
@@ -111,18 +115,20 @@ export default class Modal extends PureComponent {
     const currentNode = document.body.appendChild(container);
     const defaultProps = Modal.defaultProps;
     const prefixCls = defaultProps.prefixCls;
+    const iconType = options.iconType || type;
     const _modal = render(
       <Modal
-        className={cls(`${prefixCls}-method`, `${prefixCls}-${type}`)}
+        className={cls(`${prefixCls}-method`, `${prefixCls}-${iconType}`)}
         showMask={false}
         closable={false}
         visible
+        staticMethodType={type}
         isStaticMethod
         {...options}
         title={
           <>
             <span className={cls(`${prefixCls}-method-icon`)}>
-              {Modal.renderStaticMethodIcon(type)}
+              {Modal.renderStaticMethodIcon(iconType)}
             </span>
             <span>{options.title}</span>
           </>
@@ -155,6 +161,9 @@ export default class Modal extends PureComponent {
   static loading(options) {
     return this.renderElement(typeConfig.loading, options);
   }
+  static prompt(options) {
+    return this.renderElement(typeConfig.prompt, options);
+  }
   static renderStaticMethodIcon(type) {
     switch (type) {
       case typeConfig["info"]:
@@ -169,6 +178,8 @@ export default class Modal extends PureComponent {
         return <WarningIcon />;
       case typeConfig["loading"]:
         return <LoadingIcon />;
+      case typeConfig["prompt"]:
+        return <InfoIcon />;
       default:
         return null;
     }
@@ -178,13 +189,13 @@ export default class Modal extends PureComponent {
     if (this.props.isStaticMethod) {
       this.destroy();
     }
-    this.props.onOk();
+    this.props.onOk(this.state.promptValue);
   };
   _onCancel = () => {
     if (this.props.isStaticMethod) {
       this.destroy();
     }
-    this.props.onCancel();
+    this.props.onCancel(this.state.promptValue);
   };
   disableScroll = () => {
     document.body.style.overflow = "hidden";
@@ -194,6 +205,14 @@ export default class Modal extends PureComponent {
   enableScroll = () => {
     document.body.style.overflow = "";
     document.body.style.paddingRight = 0;
+  };
+  onPromptChange = e => {
+    this.setState({
+      promptValue: {
+        value: e.target.value,
+        checked: e.target.checked
+      }
+    });
   };
   componentWillReceiveProps({ visible }) {
     if (visible === true) {
@@ -229,6 +248,8 @@ export default class Modal extends PureComponent {
       zIndex,
       okButtonProps,
       cancelButtonProps,
+      iconType, //eslint-disable-line
+      staticMethodType, //eslint-disable-line
       isStaticMethod, //eslint-disable-line
       ...attr
     } = this.props;
@@ -290,29 +311,32 @@ export default class Modal extends PureComponent {
               )}
             </section>
             <section className={`${prefixCls}-content`}>
-              {content || children}
+              {staticMethodType === typeConfig.prompt &&
+              content &&
+              isValidElement(content)
+                ? cloneElement(content, { onChange: this.onPromptChange })
+                : content || children}
             </section>
-            {footer && footer.length >= 1 ? (
-              <section className={`${prefixCls}-footer`}>
-                {footer.map(buttonGroup => buttonGroup)}
-              </section>
-            ) : (
-              footer instanceof Array && (
-                <section className={`${prefixCls}-footer`}>
-                  <Button {...cancelButtonProps} onClick={this._onCancel}>
-                    {cancelText}
-                  </Button>
-                  <Button
-                    type="primary"
-                    loading={confirmLoading}
-                    {...okButtonProps}
-                    onClick={this._onOk}
-                  >
-                    {okText}
-                  </Button>
-                </section>
-              )
-            )}
+            {footer &&
+              (footer.length !== 0 ? (
+                <section className={`${prefixCls}-footer`}>{footer}</section>
+              ) : (
+                footer.length === 0 && (
+                  <section className={`${prefixCls}-footer`}>
+                    <Button {...cancelButtonProps} onClick={this._onCancel}>
+                      {cancelText}
+                    </Button>
+                    <Button
+                      type="primary"
+                      loading={confirmLoading}
+                      {...okButtonProps}
+                      onClick={this._onOk}
+                    >
+                      {okText}
+                    </Button>
+                  </section>
+                )
+              ))}
           </div>
         </div>
       </>,
