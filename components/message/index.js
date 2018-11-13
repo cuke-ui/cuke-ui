@@ -58,6 +58,7 @@ export default class Message extends PureComponent {
   }
   componentWillUnmount() {
     this.destroy();
+    clearTimeout(this.timer);
   }
   destroy = () => {
     ReactDOM.unmountComponentAtNode(this._containerRef);

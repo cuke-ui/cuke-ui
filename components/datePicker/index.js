@@ -19,7 +19,8 @@ export default class DataPicker extends PureComponent {
     format: "YYYY-MM-DD",
     onPanelVisibleChange: () => {},
     onChange: () => {},
-    loading: false
+    loading: false,
+    showToday: true
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -27,6 +28,7 @@ export default class DataPicker extends PureComponent {
     onChange: PropTypes.func,
     format: PropTypes.string,
     loading: PropTypes.bool,
+    showToday: PropTypes.bool,
     overlay: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -152,6 +154,9 @@ export default class DataPicker extends PureComponent {
       );
     }
   };
+  onSelectToday = () => {
+    this.selectedDate(moment().date());
+  };
   onClickOutsideHandler = e => {
     e.stopPropagation();
     if (
@@ -171,6 +176,7 @@ export default class DataPicker extends PureComponent {
       placeholder,
       format,
       extraFooter,
+      showToday,
       loading, //eslint-disable-line
       onSelectedDateChange, //eslint-disable-line
       onPanelVisibleChange, //eslint-disable-line
@@ -235,7 +241,25 @@ export default class DataPicker extends PureComponent {
           >
             {this.renderCalendarContent()}
           </div>
-          <div className={cls(`${prefixCls}-footer`)}>{extraFooter}</div>
+          {extraFooter ||
+            (showToday && (
+              <div
+                className={cls(`${prefixCls}-footer`, {
+                  [`${prefixCls}-has-extra-footer`]: extraFooter,
+                  [`${prefixCls}-has-border`]: extraFooter || showToday
+                })}
+              >
+                {extraFooter}
+                {showToday && (
+                  <div
+                    className={cls(`${prefixCls}-footer-today`)}
+                    onClick={this.onSelectToday}
+                  >
+                    今天
+                  </div>
+                )}
+              </div>
+            ))}
         </div>
       </div>
     );

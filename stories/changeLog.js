@@ -15,6 +15,13 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h3><a>v0.0.24</a></h3>
+      <ul>
+        <li> 调整 DatePicker 组件 宽高 </li>
+        <li> 修改 Notification 组件 的弹出行为 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h3><a>v0.0.23</a></h3>
       <ul>
         <li> Modal 组件 footer 属性 支持  React.Fragment </li>

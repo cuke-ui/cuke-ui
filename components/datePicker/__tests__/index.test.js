@@ -18,6 +18,14 @@ describe("<DatePicker/>", () => {
     const wrapper = shallow(<DatePicker loading />);
     assert(wrapper.find(".cuke-date-picker-loading").length === 1);
   });
+  it("should render today button", () => {
+    const wrapper = shallow(<DatePicker />);
+    assert(wrapper.find(".cuke-date-picker-footer-today").length === 1);
+  });
+  it("should cannot render today button", () => {
+    const wrapper = shallow(<DatePicker showToday={false} />);
+    assert(wrapper.find(".cuke-date-picker-footer-today").length === 0);
+  });
   it("should cannot trigger click event when disabled", () => {
     const onChange = jest.fn();
     const wrapper = shallow(<DatePicker disabled onChange={onChange} />);

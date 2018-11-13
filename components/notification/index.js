@@ -78,6 +78,19 @@ export default class Notification extends PureComponent {
     document.body.style.overflow = "";
     document.body.style.paddingRight = 0;
   };
+  resetNotificationHeight = () => {
+    window.requestAnimationFrame(() => {
+      [...document.querySelectorAll(`.${this.props.prefixCls}`)].forEach(
+        instance => {
+          const instanceTop = parseInt(instance.style.top, 10);
+          const { height } = this.notificationRef.getBoundingClientRect();
+          if (instanceTop > this.props.top) {
+            instance.style.top = `${instanceTop - height - this.props.top}px`;
+          }
+        }
+      );
+    });
+  };
   componentDidUpdate() {
     if (this.state.visible === true) {
       this.disableScroll();
@@ -88,6 +101,11 @@ export default class Notification extends PureComponent {
   destroy = () => {
     ReactDOM.unmountComponentAtNode(this._containerRef);
     this._currentNodeRef.remove();
+  };
+  getOffsetTop = () => {
+    const length = [...document.querySelectorAll(`.${this.props.prefixCls}`)]
+      .length;
+    return length * this.notificationRef.offsetHeight + this.props.top;
   };
   static renderElement = (type, options) => {
     const container = document.createElement("div");

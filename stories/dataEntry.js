@@ -223,6 +223,9 @@ storiesOf("数据录入", module)
         <h2>禁用</h2>
         <DatePicker placeholder="请选择" disabled />
 
+        <h2>不显示今天</h2>
+        <DatePicker placeholder="请选择" showToday={false}/>
+
         <h2>默认值</h2>
         <DatePicker defaultValue={moment('1996/09/25', 'YYYY/MM/DD')} />
 
