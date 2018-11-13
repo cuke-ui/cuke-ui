@@ -6,7 +6,6 @@ import Turntable from '../components/turnTable';
 import message from '../components/message';
 import Col from '../components/col';
 import Row from '../components/row';
-import Button from '../components/message';
 import Modal from '../components/modal';
 import "../components/message/styles.less";
 import "../components/modal/styles.less";
