@@ -104,6 +104,15 @@ storiesOf("数据录入", module)
     ))
   )
   .add(
+    "NumberInput 输入框",
+    withInfo()(() => (
+      <div style={{ width: 400 }}>
+        <h2>基本使用</h2>
+        // TODO: 
+      </div>
+    ))
+  )
+  .add(
     "Radio 单选框",
     withInfo(`
       <div>
@@ -240,6 +249,15 @@ storiesOf("数据录入", module)
 
         <h2>扩展</h2>
         <DatePicker extraFooter={<Button type="primary" block>黄瓜ui</Button>} />
+      </div>
+    ))
+  )
+  .add(
+    "Upload 上传",
+    withInfo()(() => (
+      <div>
+        <h2>基本使用</h2>
+        // TODO: 
       </div>
     ))
   )

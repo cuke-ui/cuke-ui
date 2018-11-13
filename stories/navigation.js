@@ -218,3 +218,12 @@ storiesOf('导航', module)
       </div>
     ))
   )
+  .add(
+    'Steps 步骤条',
+    withInfo()(() => (
+      <div>
+        <h2>基本使用</h2>
+        // TODO: 
+      </div>
+    ))
+  )
