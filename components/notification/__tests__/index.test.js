@@ -39,6 +39,21 @@ describe("<Notification/>", () => {
     assert(notification.destroy && notification.destroy instanceof Function);
   });
 
+  it("should cannot find <Notification/> when destroy", () => {
+    const message = Notification.success();
+    message.destroy();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-notification-success").length === 0);
+    }, 10);
+  });
+
+  it("should render <Notification/> when call notification static method", () => {
+    Notification.success();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-notification-success").length === 1);
+    }, 10);
+  });
+
   it("should 2s ago emit onClick", () => {
     const onClick = jest.fn();
     const wrapper = shallow(

@@ -4,6 +4,8 @@ import assert from "power-assert";
 import toJson from "enzyme-to-json";
 import Modal from "../index";
 import Button from "../../button";
+import Input from "../../input";
+import { ErrorIcon } from "../../icon";
 
 describe("<Modal/>", () => {
   it("should render a <Modal/> components", () => {
@@ -107,5 +109,81 @@ describe("<Modal/>", () => {
     wrapper.find(".cuke-modal").simulate("click");
     expect(onClick).not.toHaveBeenCalled();
     expect(onCancelClick).not.toHaveBeenCalled();
+  });
+
+  it("should cannot find <Modal/> when destroy", () => {
+    const message = Modal.success();
+    message.destroy();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-modal").length === 0);
+    }, 10);
+  });
+
+  it("should render <Modal/> when call modal static method", () => {
+    Modal.success();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-modal").length === 1);
+    }, 10);
+  });
+
+  it("should render prompt when call modal static method", () => {
+    const wrapper = render(
+      <Modal visible staticMethodType="prompt" isStaticMethod>
+        1111
+      </Modal>
+    );
+    setTimeout(() => {
+      assert(wrapper.find(".cuke-modal-method").length === 1);
+      assert(wrapper.find(<Input />).length === 1);
+    }, 10);
+  });
+
+  it("should render custom content when call modal.prompt() static method", () => {
+    const wrapper = render(
+      <Modal
+        visible
+        staticMethodType="prompt"
+        isStaticMethod
+        content={<Button />}
+      >
+        1111
+      </Modal>
+    );
+    setTimeout(() => {
+      assert(wrapper.find(Button).length === 1);
+    }, 10);
+  });
+
+  it("should render custom icon type when call modal.prompt() static method", () => {
+    const wrapper = render(
+      <Modal visible staticMethodType="prompt" isStaticMethod iconType="error">
+        1111
+      </Modal>
+    );
+    setTimeout(() => {
+      assert(wrapper.find(ErrorIcon).length === 1);
+    }, 10);
+  });
+
+  it("should render have two button when call modal.confirm() static method", () => {
+    const wrapper = render(
+      <Modal visible staticMethodType="confirm" isStaticMethod>
+        1111
+      </Modal>
+    );
+    setTimeout(() => {
+      assert(wrapper.find(Button).length === 2);
+    }, 10);
+  });
+
+  it("should render have only one button when call not is modal.confirm() static method", () => {
+    const wrapper = render(
+      <Modal visible staticMethodType="error" isStaticMethod>
+        1111
+      </Modal>
+    );
+    setTimeout(() => {
+      assert(wrapper.find(Button).length === 1);
+    }, 10);
   });
 });

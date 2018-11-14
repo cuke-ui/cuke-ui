@@ -1,6 +1,6 @@
 import React from "react";
 import assert from "power-assert";
-import { render, shallow, mount } from "enzyme";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Message from "../index";
 
@@ -29,8 +29,16 @@ describe("<Message/>", () => {
     assert(message.destroy && message.destroy instanceof Function);
   });
 
-  it.skip("should 2s ago emit callback", () => {
-    const wrapper = mount(
+  it("should cannot find <Message/> when destroy", () => {
+    const message = Message.success();
+    message.destroy();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-message").length === 0);
+    }, 10);
+  });
+
+  it("should 2s ago emit callback", () => {
+    const wrapper = shallow(
       <Message
         title="哈哈"
         type="success"
@@ -42,5 +50,12 @@ describe("<Message/>", () => {
     setTimeout(() => {
       assert(wrapper.props().title === "回调");
     }, 2000);
+  });
+
+  it("should render <Message/> when call message static method", () => {
+    Message.success();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-message").length === 1);
+    }, 10);
   });
 });

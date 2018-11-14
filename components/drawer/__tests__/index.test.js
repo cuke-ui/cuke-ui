@@ -1,6 +1,5 @@
 import React from "react";
-import { render, shallow, mount } from "enzyme";
-import assert from "power-assert";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Drawer from "../index";
 
@@ -22,15 +21,14 @@ describe("<Drawer/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  it.skip("should can not clicked with set maskClosable false", () => {
+  it("should can not clicked with set maskClosable false", () => {
     const onCancelClick = jest.fn();
-    const wrapper = mount(
-      <Drawer visible={true} onCancel={onCancelClick}>
+    const wrapper = shallow(
+      <Drawer visible={true} maskClosable={false} onCancel={onCancelClick}>
         <span>关闭回调</span>
       </Drawer>
     );
     wrapper.find(".cuke-drawer").simulate("click");
-    assert(wrapper.props().visible === true);
     expect(onCancelClick).not.toHaveBeenCalled();
   });
 
@@ -61,7 +59,7 @@ describe("<Drawer/>", () => {
         <span>关闭回调</span>
       </Drawer>
     );
-    wrapper.find(".cuke-drawer").simulate("click");
-    expect(onCancelClick).not.toHaveBeenCalled();
+    wrapper.find(".cuke-drawer-close").simulate("click");
+    expect(onCancelClick).toHaveBeenCalled();
   });
 });
