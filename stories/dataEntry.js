@@ -17,8 +17,10 @@ import "../components/radio/styles.less";
 import "../components/checkbox/styles.less";
 import "../components/select/styles.less";
 import "../components/datePicker/styles.less";
+import "../components/numberInput/styles.less";
 import "./styles/dataEntry.less";
 import Select from "../components/select";
+import NumberInput from '../components/numberInput';
 
 storiesOf("数据录入", module)
   .add(
@@ -108,7 +110,7 @@ storiesOf("数据录入", module)
     withInfo()(() => (
       <div style={{ width: 400 }}>
         <h2>基本使用</h2>
-        // TODO: 
+        <NumberInput/>
       </div>
     ))
   )

@@ -51,6 +51,41 @@ exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
 </section>
 `;
 
+exports[`<Pagination/> should find custom locale text 1`] = `
+<section
+  class="cuke-pagination"
+  current="1"
+>
+  <button
+    class="cuke-button btn-default btn-disabled"
+    disabled=""
+    type="button"
+  >
+    <span>
+      后退
+    </span>
+  </button>
+  <span
+    class="cuke-pagination-pages"
+  >
+    <span
+      class="cuke-pagination-page-index"
+    >
+      1
+    </span>
+     / 10
+  </span>
+  <button
+    class="cuke-button btn-primary"
+    type="button"
+  >
+    <span>
+      前进
+    </span>
+  </button>
+</section>
+`;
+
 exports[`<Pagination/> should render Pagination 1`] = `
 <div>
   <section

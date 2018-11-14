@@ -1,17 +1,13 @@
 import React from "react";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
-import Input from "../index";
+import NumberInput from "../index";
 
-describe("<Input/>", () => {
-  it("should render Input", () => {
+describe("<NumberInput/>", () => {
+  it("should render NumberInput", () => {
     const wrapper = render(
       <div>
-        <Input type="text" />
-        <Input type="password" placeholder="请输入" />
-        <Input type="number" placeholder="请输入" />
-        <Input readonly value="我是只读" />
-        <Input disabled placeholder="禁用" />
+        <NumberInput />
       </div>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -20,9 +16,9 @@ describe("<Input/>", () => {
   it("should render addon with input", () => {
     const wrapper = render(
       <div>
-        <Input addonBefore={"www"} placeholder="请输入" />
-        <Input addonAfter={".com"} placeholder="填写网址" />
-        <Input
+        <NumberInput addonBefore={"www"} placeholder="请输入" />
+        <NumberInput addonAfter={".com"} placeholder="填写网址" />
+        <NumberInput
           addonBefore={"https://"}
           addonAfter={".cn"}
           placeholder="www.lijinke"
@@ -36,10 +32,9 @@ describe("<Input/>", () => {
     const onChange = jest.fn();
     const wrapper = shallow(
       <div>
-        <Input onChange={onChange} type="text" />
+        <NumberInput onChange={onChange} type="text" />
       </div>
     );
-
     setTimeout(() => {
       wrapper.find("input").simulate("change");
       expect(onChange).toHaveBeenCalled();
