@@ -1,43 +1,50 @@
+import assert from "power-assert";
 import React from "react";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
-import NumberInput from "../index";
+import NumberInput, {
+  getCleanString,
+  getTheValueLengthAfterTheDecimalPoint
+} from "../index";
 
 describe("<NumberInput/>", () => {
   it("should render NumberInput", () => {
-    const wrapper = render(
-      <div>
-        <NumberInput />
-      </div>
-    );
-    expect(toJson(wrapper)).toMatchSnapshot();
-  });
-
-  it("should render addon with input", () => {
-    const wrapper = render(
-      <div>
-        <NumberInput addonBefore={"www"} placeholder="请输入" />
-        <NumberInput addonAfter={".com"} placeholder="填写网址" />
-        <NumberInput
-          addonBefore={"https://"}
-          addonAfter={".cn"}
-          placeholder="www.lijinke"
-        />
-      </div>
-    );
+    const wrapper = render(<NumberInput />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it("should emit onChange events", () => {
     const onChange = jest.fn();
-    const wrapper = shallow(
-      <div>
-        <NumberInput onChange={onChange} type="text" />
-      </div>
-    );
+    const wrapper = shallow(<NumberInput onChange={onChange} />);
     setTimeout(() => {
       wrapper.find("input").simulate("change");
       expect(onChange).toHaveBeenCalled();
     }, 20);
+  });
+
+  it("should cannot emit onChange events when disabled", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(<NumberInput onChange={onChange} disabled />);
+    setTimeout(() => {
+      wrapper.find("input").simulate("change");
+      expect(onChange).not.toHaveBeenCalled();
+    }, 20);
+  });
+
+  it("getTheValueLengthAfterTheDecimalPoint", () => {
+    assert(getTheValueLengthAfterTheDecimalPoint("19.222", 2) === "19.22");
+    assert(getTheValueLengthAfterTheDecimalPoint("199", 2) === "199");
+    assert(
+      getTheValueLengthAfterTheDecimalPoint("19.222.222.22", 2) ===
+        "19.22.22.22"
+    );
+  });
+
+  it("should get clean string", () => {
+    assert(getCleanString(123) === "123");
+    assert(getCleanString("123") === "123");
+    assert(getCleanString("123abc") === "123");
+    assert(getCleanString("123abc.3") === "123.3");
+    assert(getCleanString([]) === "");
   });
 });

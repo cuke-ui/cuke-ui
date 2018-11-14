@@ -108,9 +108,27 @@ storiesOf("数据录入", module)
   .add(
     "NumberInput 输入框",
     withInfo()(() => (
-      <div style={{ width: 400 }}>
+      <div className="date-entry-example">
         <h2>基本使用</h2>
-        <NumberInput/>
+        <NumberInput placeholder="请输入"/>
+
+        <h2>默认值(自动去除非数字)</h2>
+        <NumberInput value="123sdfdj"/>
+        <NumberInput defaultValue={'abc'}/>
+
+        <h2>禁用</h2>
+        <NumberInput disabled value={6666}/>
+
+        <h2>最小值和最大值 (例如:1-99)</h2>
+        <NumberInput value={11} min={1} max={99}/>
+
+        <h2>数字经度(小数点保留后几位)</h2>
+        <NumberInput value={11.1} decimal={2}/>
+        <NumberInput placeholder="IP 地址" decimal={3} style={{width: 200}}/>
+
+        <h2>加减按钮</h2>
+        <NumberInput value={1} min={1} showStepper/>
+        <NumberInput value={1} min={1} showStepper disabled/>
       </div>
     ))
   )

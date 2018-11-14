@@ -1,63 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<NumberInput/> should render NumberInput 1`] = `
-<div>
-  <input
-    class="cuke-input cuke-number-input"
-    placeholder=""
-    type="text"
-  />
-</div>
-`;
-
-exports[`<NumberInput/> should render addon with input 1`] = `
-<div>
-  <span
-    class="cuke-number-input-group cuke-number-input-group-addon-before"
-  >
-    <span
-      class="cuke-number-input-group-addon"
-    >
-      www
-    </span>
-    <input
-      class="cuke-input cuke-number-input"
-      placeholder="请输入"
-      type="text"
-    />
-  </span>
-  <span
-    class="cuke-number-input-group cuke-number-input-group-addon-after"
-  >
-    <input
-      class="cuke-input cuke-number-input"
-      placeholder="填写网址"
-      type="text"
-    />
-    <span
-      class="cuke-number-input-group-addon"
-    >
-      .com
-    </span>
-  </span>
-  <span
-    class="cuke-number-input-group cuke-number-input-group-addon-before cuke-number-input-group-addon-after cuke-number-input-group-addon-all"
-  >
-    <span
-      class="cuke-number-input-group-addon"
-    >
-      https://
-    </span>
-    <input
-      class="cuke-input cuke-number-input"
-      placeholder="www.lijinke"
-      type="text"
-    />
-    <span
-      class="cuke-number-input-group-addon"
-    >
-      .cn
-    </span>
-  </span>
-</div>
+<input
+  class="cuke-input cuke-number-input"
+  placeholder=""
+  type="text"
+  value=""
+/>
 `;

@@ -19,6 +19,7 @@ export default class Input extends PureComponent {
       PropTypes.string,
       PropTypes.object
     ]),
+    addonClassName: PropTypes.string,
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,
     type: PropTypes.oneOf([
@@ -49,6 +50,7 @@ export default class Input extends PureComponent {
       readonly,
       addonBefore,
       addonAfter,
+      addonClassName,
       ...attr
     } = this.props;
 
@@ -73,7 +75,8 @@ export default class Input extends PureComponent {
             `${prefixCls}-group`,
             { [`${prefixCls}-group-addon-before`]: !!addonBefore },
             { [`${prefixCls}-group-addon-after`]: !!addonAfter },
-            { [`${prefixCls}-group-addon-all`]: !!addonAfter && !!addonBefore }
+            { [`${prefixCls}-group-addon-all`]: !!addonAfter && !!addonBefore },
+            addonClassName
           )}
         >
           {addonBefore ? (
