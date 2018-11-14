@@ -35,5 +35,6 @@ export { default as Collapse } from "./collapse";
 export { default as Select } from "./select";
 export { default as DatePicker } from "./datePicker";
 export { default as notification } from "./notification";
+export { default as NumberInput } from "./numberInput";
 
 export { default as version } from "./version";

@@ -15,6 +15,13 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h3><a>v0.0.25</a></h3>
+      <ul>
+        <li> 新增  NumberInput 组件 </li>
+        <li> Input 组件 增加 addonClassName 属性</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h3><a>v0.0.24</a></h3>
       <ul>
         <li> 调整 DatePicker 组件 宽高 </li>
