@@ -65,7 +65,6 @@ describe("<Alert/>", () => {
   });
 
   it("should can trigger onClose event", () => {
-    const onClick = jest.fn();
     const wrapper = shallow(
       <Alert
         type="error"
@@ -75,10 +74,16 @@ describe("<Alert/>", () => {
         onClose={() => wrapper.setState({ message: "关闭" })}
       />
     );
-    wrapper.find(".cuke-alert").simulate("click");
-    expect(onClick).not.toHaveBeenCalled();
+    wrapper.find(".cuke-alert-close").simulate("click");
     setTimeout(() => {
       assert(wrapper.state().message === "关闭");
+    });
+  });
+
+  it("should can not render <Alert/> when visible is false", () => {
+    const wrapper = shallow(<Alert type="info" message="有一个 bug?" />);
+    wrapper.setState({ visible: false }, () => {
+      assert(wrapper.find(".cuke-alert").length === 0);
     });
   });
 });

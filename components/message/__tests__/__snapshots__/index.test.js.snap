@@ -6,7 +6,7 @@ exports[`<Message/> should render a <Message/> components 1`] = `
     class="cuke-message cuke-message-open"
   >
     <div
-      class="cuke-message-title-custom message-success"
+      class="cuke-message-title-custom cuke-message-success"
     >
       <p
         class="cuke-message-icon"
@@ -42,7 +42,7 @@ exports[`<Message/> should render a <Message/> components 1`] = `
     class="cuke-message cuke-message-open"
   >
     <div
-      class="cuke-message-title-custom message-error"
+      class="cuke-message-title-custom cuke-message-error"
     >
       <p
         class="cuke-message-icon"
@@ -89,7 +89,7 @@ exports[`<Message/> should render a <Message/> components 1`] = `
     class="cuke-message cuke-message-open"
   >
     <div
-      class="cuke-message-title-custom message-info"
+      class="cuke-message-title-custom cuke-message-info"
     >
       <p
         class="cuke-message-icon"
@@ -125,7 +125,7 @@ exports[`<Message/> should render a <Message/> components 1`] = `
     class="cuke-message cuke-message-open"
   >
     <div
-      class="cuke-message-title-custom message-warning"
+      class="cuke-message-title-custom cuke-message-warning"
     >
       <p
         class="cuke-message-icon"
@@ -172,7 +172,7 @@ exports[`<Message/> should render a <Message/> components 1`] = `
     class="cuke-message cuke-message-open"
   >
     <div
-      class="cuke-message-title-custom message-loading"
+      class="cuke-message-title-custom cuke-message-loading"
     >
       <p
         class="cuke-message-icon"

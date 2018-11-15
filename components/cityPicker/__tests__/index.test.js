@@ -132,15 +132,37 @@ describe("<CityPicker/>", () => {
   });
 
   it("should render custom disabled city group and can not trigger click event ", () => {
-    const onClick = jest.fn();
+    const onChange = jest.fn();
     const wrapper = shallow(
       <CityPicker
-        onCityGroupChange={onClick}
+        onCityGroupChange={onChange}
         cityList={cityList}
         disabledGroups={[0, 1, 2, 3, 4, 5, 6]}
       />
     );
     wrapper.find(".cuke-city-picker").simulate("click");
-    expect(onClick).not.toHaveBeenCalled();
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it("should render can trigger city group change event ", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <CityPicker onCityGroupChange={onChange} cityList={cityList} />
+    );
+    wrapper.find(".cuke-city-picker").simulate("click");
+    setTimeout(() => {
+      expect(onChange).toHaveBeenCalled();
+    });
+  });
+
+  it("should render can trigger city group change event ", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <CityPicker onCityChange={onChange} cityList={cityList} />
+    );
+    wrapper.find(".cuke-city-picker").simulate("click");
+    setTimeout(() => {
+      expect(onChange).toHaveBeenCalled();
+    });
   });
 });

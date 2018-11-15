@@ -98,7 +98,7 @@ describe("<Modal/>", () => {
     expect(onCancelClick).not.toHaveBeenCalled();
   });
 
-  it("should can trigger onClose event", () => {
+  it("should can trigger onCancel event", () => {
     const onClick = jest.fn();
     const onCancelClick = jest.fn();
     const wrapper = shallow(
@@ -106,23 +106,73 @@ describe("<Modal/>", () => {
         <span>关闭回调</span>
       </Modal>
     );
-    wrapper.find(".cuke-modal").simulate("click");
+    wrapper.find(".cuke-modal-mask").simulate("click");
     expect(onClick).not.toHaveBeenCalled();
-    expect(onCancelClick).not.toHaveBeenCalled();
+    expect(onCancelClick).toHaveBeenCalled();
+  });
+
+  it("should can trigger onOk event", () => {
+    const onClick = jest.fn();
+    const wrapper = shallow(
+      <Modal title="关闭回调" visible onOk={onClick}>
+        <span>关闭回调</span>
+      </Modal>
+    );
+    wrapper.find(".cuke-modal-footer").simulate("click");
+    setTimeout(() => {
+      expect(onClick).toHaveBeenCalled();
+    });
   });
 
   it("should cannot find <Modal/> when destroy", () => {
     const message = Modal.success();
     message.destroy();
     setTimeout(() => {
-      assert(document.querySelector(".cuke-modal").length === 0);
+      assert(document.querySelector(".cuke-modal-success").length === 0);
     }, 10);
   });
 
-  it("should render <Modal/> when call modal static method", () => {
+  it("should render <Modal/> when call modal success static method", () => {
     Modal.success();
     setTimeout(() => {
-      assert(document.querySelector(".cuke-modal").length === 1);
+      assert(document.querySelector(".cuke-modal-success").length === 1);
+    }, 10);
+  });
+
+  it("should render <Modal/> when call modal error static method", () => {
+    Modal.error();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-modal-error").length === 1);
+    }, 10);
+  });
+  it("should render <Modal/> when call modal info static method", () => {
+    Modal.info();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-modal-info").length === 1);
+    }, 10);
+  });
+  it("should render <Modal/> when call modal warning static method", () => {
+    Modal.warning();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-modal-warning").length === 1);
+    }, 10);
+  });
+  it("should render <Modal/> when call modal confirm static method", () => {
+    Modal.confirm();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-modal-confirm").length === 1);
+    }, 10);
+  });
+  it("should render <Modal/> when call modal loading static method", () => {
+    Modal.loading();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-modal-loading").length === 1);
+    }, 10);
+  });
+  it("should render <Modal/> when call modal prompt static method", () => {
+    Modal.prompt();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-modal-prompt").length === 1);
     }, 10);
   });
 

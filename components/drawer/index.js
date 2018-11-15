@@ -123,7 +123,6 @@ export default class Drawer extends PureComponent {
               `${prefixCls}-${placement}`,
               { "no-title": !title }
             )}
-            ref={node => (this.modal = node)}
             style={{
               ...style,
               width,

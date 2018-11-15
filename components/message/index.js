@@ -61,8 +61,12 @@ export default class Message extends PureComponent {
     clearTimeout(this.timer);
   }
   destroy = () => {
-    ReactDOM.unmountComponentAtNode(this._containerRef);
-    this._currentNodeRef.remove();
+    if (this._containerRef) {
+      ReactDOM.unmountComponentAtNode(this._containerRef);
+    }
+    if (this._currentNodeRef) {
+      this._currentNodeRef.remove();
+    }
   };
   static renderElement = (type, title, duration, onClose, darkTheme) => {
     const container = document.createElement("div");
@@ -77,11 +81,15 @@ export default class Message extends PureComponent {
       />,
       container
     );
-    _message._containerRef = container;
-    _message._currentNodeRef = currentNode;
-
+    if (_message) {
+      _message._containerRef = container;
+      _message._currentNodeRef = currentNode;
+      return {
+        destroy: _message.destroy
+      };
+    }
     return {
-      destroy: _message.destroy
+      destroy: () => {}
     };
   };
   static error(title, duration, onClose, darkTheme) {
@@ -144,7 +152,7 @@ export default class Message extends PureComponent {
         <div
           className={cls(
             `${prefixCls}-title-custom`,
-            `message-${typeConfig[type]}`
+            `${prefixCls}-${typeConfig[type]}`
           )}
         >
           <p className={`${prefixCls}-icon`}>

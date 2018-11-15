@@ -40,12 +40,6 @@ export default class TurnTable extends PureComponent {
     fontStyle: PropTypes.object
   };
 
-  onChange = e => {
-    if (!this.props.disabled) {
-      this.props.onChange(e.target.value);
-    }
-  };
-
   render() {
     const { prefixCls, className, ...attr } = this.props;
 

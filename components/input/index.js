@@ -36,10 +36,6 @@ export default class Input extends PureComponent {
     onChange: PropTypes.func
   };
 
-  onChange = e => {
-    this.props.onChange(e);
-  };
-
   render() {
     const {
       type,
@@ -63,7 +59,6 @@ export default class Input extends PureComponent {
           [`${prefixCls}-disabled`]: disabled
         })}
         placeholder={placeholder}
-        onChange={this.onChange}
         {...attr}
       />
     );

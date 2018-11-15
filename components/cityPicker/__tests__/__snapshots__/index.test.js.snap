@@ -96,7 +96,7 @@ exports[`<CityPicker/> should render CityPicker 1`] = `
             class="cuke-city-picker-core-panel-content-wrap"
           >
             <li
-              class="city"
+              class="cuke-city-picker-core-city"
             >
               成都
             </li>

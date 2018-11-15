@@ -104,8 +104,9 @@ export default class CityPickerCore extends PureComponent {
                 ).map((city, i) => {
                   return (
                     <li
-                      className={cls("city", {
-                        selected: selectedCityName === city.name
+                      className={cls(`${prefixCls}-city`, {
+                        [`${prefixCls}-city-selected`]:
+                          selectedCityName === city.name
                       })}
                       key={i}
                       onClick={() => this.onCityChange(city)}

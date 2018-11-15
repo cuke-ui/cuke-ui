@@ -28,6 +28,10 @@ export default class Tabs extends PureComponent {
     ]),
     onChange: PropTypes.func
   };
+  constructor(props) {
+    super(props);
+    this.tabsHeader = React.createRef();
+  }
 
   componentDidMount() {
     if (this.props.type !== cardType) {
@@ -47,7 +51,9 @@ export default class Tabs extends PureComponent {
   setActiveLineStyle = () => {
     const activeElement = this.activeTab;
     const { width, left } = activeElement.getBoundingClientRect();
-    const { left: headerOffset } = this.tabsHeader.getBoundingClientRect();
+    const {
+      left: headerOffset
+    } = this.tabsHeader.current.getBoundingClientRect();
     this.setState({
       lineWidth: width,
       lineOffsetLeft: left - headerOffset
@@ -117,7 +123,7 @@ export default class Tabs extends PureComponent {
           className={cls(`${prefixCls}-header`, {
             [`${prefixCls}-card`]: isCardType
           })}
-          ref={node => (this.tabsHeader = node)}
+          ref={this.tabsHeader}
         >
           {header}
           {!isCardType ? (

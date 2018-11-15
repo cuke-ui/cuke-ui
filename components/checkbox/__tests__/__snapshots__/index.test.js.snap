@@ -60,3 +60,87 @@ exports[`<Checkbox/> should render Checkbox 1`] = `
   </label>
 </div>
 `;
+
+exports[`<Checkbox/> should render CheckboxGroup 1`] = `
+<div
+  class="cuke-checkbox-group"
+>
+  <label
+    class="cuke-checkbox-wrapper"
+  >
+    <span
+      class="cuke-checkbox"
+    >
+      <input
+        class="cuke-checkbox-input"
+        type="checkbox"
+        value="黄瓜"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span>
+      黄瓜
+    </span>
+  </label>
+  <label
+    class="cuke-checkbox-wrapper"
+  >
+    <span
+      class="cuke-checkbox"
+    >
+      <input
+        class="cuke-checkbox-input"
+        type="checkbox"
+        value="茄子"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span>
+      茄子
+    </span>
+  </label>
+  <label
+    class="cuke-checkbox-wrapper"
+  >
+    <span
+      class="cuke-checkbox"
+    >
+      <input
+        class="cuke-checkbox-input"
+        type="checkbox"
+        value="玉米"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span>
+      玉米
+    </span>
+  </label>
+  <label
+    class="cuke-checkbox-wrapper"
+  >
+    <span
+      class="cuke-checkbox cuke-checkbox-disabled"
+    >
+      <input
+        class="cuke-checkbox-input"
+        disabled=""
+        type="checkbox"
+        value="番茄"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span>
+      番茄
+    </span>
+  </label>
+</div>
+`;

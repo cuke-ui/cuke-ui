@@ -30,6 +30,14 @@ describe("<NumberInput/>", () => {
       expect(onChange).not.toHaveBeenCalled();
     }, 20);
   });
+  it("should can emit onChange events when disabled", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(<NumberInput onChange={onChange} />);
+    setTimeout(() => {
+      wrapper.find("input").simulate("change");
+      expect(onChange).toHaveBeenCalled();
+    }, 20);
+  });
 
   it("should cannot emit onChange events when stepper disabled", () => {
     const onChange = jest.fn();

@@ -38,6 +38,7 @@ export default class DataPicker extends PureComponent {
   constructor(props) {
     super(props);
     this.toggleContainer = createRef();
+    this.panel = createRef();
   }
   static getDerivedStateFromProps({ value }, { momentSelected }) {
     if (!value || value.valueOf() === momentSelected.valueOf()) {
@@ -49,7 +50,7 @@ export default class DataPicker extends PureComponent {
   onTogglePanel = () => {
     const visible = !this.state.visible;
     this.setState({ visible }, () => {
-      scrollIntoViewIfNeeded(this.content, {
+      scrollIntoViewIfNeeded(this.panel.current, {
         scrollMode: "if-needed",
         behavior: "smooth",
         block: "nearest",
@@ -212,7 +213,7 @@ export default class DataPicker extends PureComponent {
             [`${prefixCls}-close`]: !visible,
             ["cuke-ui-no-animate"]: visible === null
           })}
-          ref={node => (this.content = node)}
+          ref={this.panel}
         >
           <div className={cls(`${prefixCls}-header`)}>
             <span className={cls(`${prefixCls}-date`)}>

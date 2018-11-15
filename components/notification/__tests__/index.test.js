@@ -34,6 +34,20 @@ describe("<Notification/>", () => {
     }, 2000);
   });
 
+  it("should trigger onClose event", () => {
+    const onClose = jest.fn();
+    const wrapper = shallow(
+      <Notification
+        title="哈哈"
+        type="success"
+        duration={2}
+        onClose={onClose}
+      />
+    );
+    wrapper.find(".cuke-notification-close-btn").simulate("click");
+    expect(onClose).toHaveBeenCalled();
+  });
+
   it("should render destroy reference", () => {
     const notification = Notification.success();
     assert(notification.destroy && notification.destroy instanceof Function);
@@ -47,10 +61,34 @@ describe("<Notification/>", () => {
     }, 10);
   });
 
-  it("should render <Notification/> when call notification static method", () => {
+  it("should render <Notification/> when call notification success static method", () => {
     Notification.success();
     setTimeout(() => {
       assert(document.querySelector(".cuke-notification-success").length === 1);
+    }, 10);
+  });
+  it("should render <Notification/> when call notification error static method", () => {
+    Notification.error();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-notification-error").length === 1);
+    }, 10);
+  });
+  it("should render <Notification/> when call notification info static method", () => {
+    Notification.info();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-notification-info").length === 1);
+    }, 10);
+  });
+  it("should render <Notification/> when call notification warning static method", () => {
+    Notification.warning();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-notification-warning").length === 1);
+    }, 10);
+  });
+  it("should render <Notification/> when call notification loading static method", () => {
+    Notification.loading();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-notification-loading").length === 1);
     }, 10);
   });
 
@@ -66,5 +104,10 @@ describe("<Notification/>", () => {
     );
     wrapper.find(".cuke-notification").simulate("click");
     expect(onClick).toHaveBeenCalled();
+  });
+  it("should disabled scroll when did update", () => {
+    const wrapper = shallow(<Notification title="关闭回调" />);
+    wrapper.update();
+    assert(document.body.style.overflow === "");
   });
 });

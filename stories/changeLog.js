@@ -15,6 +15,16 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h3><a>v0.0.26</a></h3>
+      <ul>
+        <li> 修复 CityPicker classNames 样式被覆盖的问题</li>
+        <li> 完善单元测试 提升覆盖率 </li>
+        <li> 修复 Message 组件 偶尔卸载失败的问题</li>
+        <li> 文档增加 WordPad 的 清除示例 </li>
+        <li> 去除 所有组件多余的 onChange 事件</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h3><a>v0.0.25</a></h3>
       <ul>
         <li> 新增  NumberInput 组件 </li>

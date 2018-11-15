@@ -1,3 +1,4 @@
+import assert from "power-assert";
 import React from "react";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
@@ -61,5 +62,15 @@ describe("<Drawer/>", () => {
     );
     wrapper.find(".cuke-drawer-close").simulate("click");
     expect(onCancelClick).toHaveBeenCalled();
+  });
+
+  it("should disabled scroll when did update", () => {
+    const wrapper = shallow(
+      <Drawer title="关闭回调" visible>
+        <span>关闭回调</span>
+      </Drawer>
+    );
+    wrapper.update();
+    assert(document.body.style.overflow === "");
   });
 });

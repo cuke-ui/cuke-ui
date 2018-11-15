@@ -48,4 +48,12 @@ describe("<BackTop/>", () => {
     wrapper.find(".cuke-back-top-inner").simulate("click");
     expect(onClick).toHaveBeenCalled();
   });
+
+  it("should show back to element when scroll", () => {
+    const wrapper = shallow(<BackTop visibilityHeight={100} />);
+    window.scrollTo(0, 200);
+    setTimeout(() => {
+      assert(wrapper.find(".cuke-back-top-open").length === 1);
+    });
+  });
 });

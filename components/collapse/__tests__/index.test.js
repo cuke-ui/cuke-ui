@@ -89,6 +89,20 @@ describe("<Collapse/>", () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
+  it("should trigger onChange event", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Collapse onChange={onChange}>
+        <Collapse.Item title="标题1">内容1</Collapse.Item>
+        <Collapse.Item title="标题2">内容2</Collapse.Item>
+      </Collapse>
+    );
+    wrapper.find(".cuke-collapse").simulate("click");
+    setTimeout(() => {
+      expect(onChange).toHaveBeenCalled();
+    });
+  });
+
   it("should accordion mode", () => {
     const wrapper = shallow(
       <Collapse accordion>

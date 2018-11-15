@@ -76,14 +76,22 @@ describe("<Tag/>", () => {
     const onClick = jest.fn();
     const onClose = jest.fn();
     const wrapper = shallow(
-      <Tag onClick={onClick} onClose={onClose}>
+      <Tag onClick={onClick} onClose={onClose} closable>
         黄瓜ui
       </Tag>
     );
     wrapper.find(".cuke-tag").simulate("click");
+    wrapper.find(".cuke-tag-close").simulate("click");
     expect(onClick).toHaveBeenCalled();
     setTimeout(() => {
       expect(onClose).toHaveBeenCalled();
     }, 200);
+  });
+
+  it("should can not show Tag when visible is false", () => {
+    const wrapper = shallow(<Tag>黄瓜ui</Tag>);
+    wrapper.setState({ visible: false }, () => {
+      assert(wrapper.find("cuke-tag").length === 0);
+    });
   });
 });

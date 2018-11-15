@@ -20,7 +20,8 @@ export default class WordPad extends PureComponent {
     lineJoin: "round",
     strokeWidth: 10,
     strokeColor: "#444",
-    getCanvas: () => {}
+    getCanvas: () => {},
+    onClearComplete: () => {}
   };
   static propTypes = {
     width: propTypes.number.isRequired,
@@ -30,6 +31,7 @@ export default class WordPad extends PureComponent {
     lineJoin: propTypes.string,
     lineCap: propTypes.string,
     getCanvas: propTypes.func,
+    onClearComplete: propTypes.func,
     prefixCls: propTypes.string.isRequired
   };
   constructor(props) {
@@ -42,7 +44,9 @@ export default class WordPad extends PureComponent {
         className={cls(prefixCls, className)}
         style={{
           ...style,
-          display: "block"
+          display: "block",
+          border: "1px solid #444",
+          margin: "10px 0"
         }}
         ref={node => (this.canvas = node)}
       >
@@ -103,9 +107,12 @@ export default class WordPad extends PureComponent {
       }
     };
   }
-  componentWillReceiveProps({ clear }) {
-    if (clear) {
+  componentWillReceiveProps(nextProps) {
+    if (nextProps) {
       this.clear();
+      if (nextProps.onClearComplete) {
+        nextProps.onClearComplete();
+      }
     }
   }
   componentDidMount() {
