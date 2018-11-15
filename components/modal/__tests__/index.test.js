@@ -50,6 +50,15 @@ describe("<Modal/>", () => {
     assert(wrapper.find(Button).length === 2);
   });
 
+  it("should cannot render when is not prompt static prompt", () => {
+    const wrapper = shallow(
+      <Modal title="基本使用" visible>
+        <span>基本使用</span>
+      </Modal>
+    );
+    assert(wrapper.find(Input).length === 0);
+  });
+
   it("should render custom ok button props", () => {
     const wrapper = render(
       <Modal visible okButtonProps={{ disabled: true }}>

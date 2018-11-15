@@ -49,7 +49,7 @@ export default class Modal extends PureComponent {
     okText: "确定",
     cancelText: "取消",
     footer: [],
-    content: <Input placeholder="请输入" />,
+    content: "",
     confirmLoading: false,
     maskClosable: true,
     centered: false,
@@ -311,11 +311,12 @@ export default class Modal extends PureComponent {
               )}
             </section>
             <section className={`${prefixCls}-content`}>
-              {staticMethodType === typeConfig.prompt &&
+              {isStaticMethod &&
+              staticMethodType === typeConfig.prompt &&
               content &&
               isValidElement(content)
                 ? cloneElement(content, { onChange: this.onPromptChange })
-                : content || children}
+                : content || children || <Input placeholder="请输入" />}
             </section>
             {footer &&
               (footer.length !== 0 ? (

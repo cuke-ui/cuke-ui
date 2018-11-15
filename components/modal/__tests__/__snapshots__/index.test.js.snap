@@ -50,11 +50,9 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <input
-          class="cuke-input"
-          placeholder="请输入"
-          type="text"
-        />
+        <span>
+          基本使用
+        </span>
       </section>
       <section
         class="cuke-modal-footer"
@@ -126,11 +124,9 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <input
-          class="cuke-input"
-          placeholder="请输入"
-          type="text"
-        />
+        <span>
+          自定义文本 
+        </span>
       </section>
       <section
         class="cuke-modal-footer"
@@ -202,11 +198,9 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <input
-          class="cuke-input"
-          placeholder="请输入"
-          type="text"
-        />
+        <span>
+          无 footer
+        </span>
       </section>
     </div>
   </div>
@@ -258,11 +252,9 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
       <section
         class="cuke-modal-content"
       >
-        <input
-          class="cuke-input"
-          placeholder="请输入"
-          type="text"
-        />
+        <span>
+          居中
+        </span>
       </section>
       <section
         class="cuke-modal-footer"
@@ -309,11 +301,9 @@ exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
     <section
       class="cuke-modal-content"
     >
-      <input
-        class="cuke-input"
-        placeholder="请输入"
-        type="text"
-      />
+      <p>
+        confirm
+      </p>
     </section>
     <section
       class="cuke-modal-footer"
@@ -389,11 +379,9 @@ Array [
       <section
         class="cuke-modal-content"
       >
-        <input
-          class="cuke-input"
-          placeholder="请输入"
-          type="text"
-        />
+        <span>
+           其实我是高仿 ant-design 的 
+        </span>
       </section>
       <section
         class="cuke-modal-footer"

@@ -22,6 +22,7 @@ const ChangeLog = () => (
         <li> 修复 Message 组件 偶尔卸载失败的问题</li>
         <li> 文档增加 WordPad 的 清除示例 </li>
         <li> 去除 所有组件多余的 onChange 事件</li>
+        <li> 修复 Modal 组件  content 为  Input 的 bug</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>
