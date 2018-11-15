@@ -3,6 +3,8 @@ import cls from "classnames";
 import PropTypes from "prop-types";
 import Input from "../input";
 
+const DEFAULT_POINT = ".";
+const DEFUALT_DECIMAL = 2;
 //保留 数字 和 小数点
 export const getCleanString = (str = "") => {
   return str.toString().replace(/[^\d|\\.]/g, "");
@@ -12,7 +14,7 @@ export const getCleanString = (str = "") => {
 export const getTheValueLengthAfterTheDecimalPoint = (
   value = "",
   decimal,
-  point = "."
+  point = DEFAULT_POINT
 ) => {
   if (!decimal || !value.includes(point) || value.endsWith(point)) {
     return value;
@@ -43,6 +45,9 @@ export default class NumberInput extends PureComponent {
     readonly: false,
     placeholder: "",
     showStepper: false,
+    min: -Infinity,
+    max: Infinity,
+    step: 1,
     onChange: () => {}
   };
 
@@ -58,6 +63,7 @@ export default class NumberInput extends PureComponent {
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     decimal: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    step: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     showStepper: PropTypes.bool,
     value: PropTypes.string,
     defaultValue: PropTypes.string,
@@ -75,9 +81,14 @@ export default class NumberInput extends PureComponent {
     }
   }
 
-  getValue = () => {
-    const { min, max } = this.props;
-    return Math.min(max, Math.max(min, this.state.value));
+  getValue = (value = this.state.value) => {
+    const { min, max, showStepper, decimal } = this.props;
+    const _value = Math.min(max, Math.max(min, value));
+    if (showStepper && _value.toString().includes(DEFAULT_POINT)) {
+      // 0.1 + 0.2 = 0.3300000....4
+      return _value.toFixed(decimal || DEFUALT_DECIMAL);
+    }
+    return _value;
   };
 
   onChange = e => {
@@ -104,12 +115,12 @@ export default class NumberInput extends PureComponent {
 
   add = () => {
     this.setState(({ value }) => ({
-      value: Number(value) + 1
+      value: this.getValue(Number(value) + this.props.step)
     }));
   };
   subtract = () => {
     this.setState(({ value }) => ({
-      value: Number(value) - 1
+      value: this.getValue(Number(value) - this.props.step)
     }));
   };
   render() {
@@ -120,6 +131,7 @@ export default class NumberInput extends PureComponent {
       disabled,
       readonly,
       showStepper,
+      step, //eslint-disable-line
       decimal, //eslint-disable-line
       min, //eslint-disable-line
       max, //eslint-disable-line
@@ -158,9 +170,11 @@ export default class NumberInput extends PureComponent {
         {...attr}
         onChange={this.onChange}
         value={value}
-        addonBefore={showStepper ? <SubtractStepper /> : undefined}
-        addonAfter={showStepper ? <AddStepper /> : undefined}
-        addonClassName={`${prefixCls}-group`}
+        addonBefore={showStepper && <SubtractStepper />}
+        addonAfter={showStepper && <AddStepper />}
+        addonClassName={cls(`${prefixCls}-group`, {
+          [`${prefixCls}-group-disabled`]: disabled
+        })}
       />
     );
   }

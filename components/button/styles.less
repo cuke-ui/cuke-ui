@@ -73,7 +73,7 @@
   }
   &.btn-disabled {
     .btn-hover(@disabled-color);
-    cursor: no-drop;
+    cursor: not-allowed;
     color: @disabled-font-color;
     border-color: @border-color;
     &.btn-hollow {
@@ -86,7 +86,7 @@
   }
   &.btn-loading {
     opacity: @loading-opacity;
-    cursor: no-drop;
+    cursor: not-allowed;
     >.cuke-loading {
       display: inline-block;
       vertical-align: middle;

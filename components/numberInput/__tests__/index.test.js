@@ -31,6 +31,28 @@ describe("<NumberInput/>", () => {
     }, 20);
   });
 
+  it("should cannot emit onChange events when stepper disabled", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <NumberInput showStepper onChange={onChange} disabled />
+    );
+    setTimeout(() => {
+      wrapper.find(".cuke-input-group-addon").simulate("click");
+      expect(onChange).not.toHaveBeenCalled();
+    }, 20);
+  });
+
+  it("should render custom step", () => {
+    const wrapper = shallow(<NumberInput value={1} showStepper step={2} />);
+    setTimeout(() => {
+      wrapper
+        .find(".cuke-input-group-addon")
+        .at(1)
+        .simulate("click");
+      expect(wrapper.state().value).toBe(3);
+    }, 20);
+  });
+
   it("getTheValueLengthAfterTheDecimalPoint", () => {
     assert(getTheValueLengthAfterTheDecimalPoint("19.222", 2) === "19.22");
     assert(getTheValueLengthAfterTheDecimalPoint("199", 2) === "199");

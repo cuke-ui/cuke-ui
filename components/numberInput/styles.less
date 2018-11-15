@@ -6,6 +6,8 @@
 .@{prefixCls} {
   width: @cuke-number-input-width;
   &-group {
+    width: @cuke-number-input-group-width;
+    display: inline-flex;
     .cuke-input-group-addon {
       cursor: pointer;
     }
@@ -14,5 +16,23 @@
     background: transparent;
     border: none;
     cursor: pointer;
+    transition: color @default-transition;
+    font-size: 20px;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+  &-group-disabled {
+    .cuke-input-group-addon {
+      background-color: @disabled-color;
+      color: @disabled-font-color;
+      cursor: not-allowed;
+    }
+    .@{prefixCls}-stepper {
+      cursor: not-allowed;
+      &:hover {
+        color: @disabled-font-color;
+      }
+    }
   }
 }

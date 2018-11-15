@@ -102,6 +102,12 @@ storiesOf("数据录入", module)
           addonAfter={".cn"}
           placeholder="www.lijinke"
         />
+        <Input
+          disabled
+          addonAfter={".com"}
+          placeholder="填写网址"
+          style={{ margin: "10px 0" }}
+        />
       </div>
     ))
   )
@@ -127,8 +133,12 @@ storiesOf("数据录入", module)
         <NumberInput placeholder="IP 地址" decimal={3} style={{width: 200}}/>
 
         <h2>加减按钮</h2>
-        <NumberInput value={1} min={1} showStepper/>
-        <NumberInput value={1} min={1} showStepper disabled/>
+        <NumberInput value={2} min={1} showStepper/>
+        <NumberInput value={2} min={1} showStepper disabled/>
+
+        <h2>自定义步数</h2>
+        <NumberInput value={2} min={1} showStepper step={10}/>
+        <NumberInput value={2.22} min={1} showStepper step={0.1}/>
       </div>
     ))
   )
