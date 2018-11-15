@@ -15,6 +15,12 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h3><a>v0.0.27</a></h3>
+      <ul>
+        <li> 修复 Modal.prompt() 获取不到 value 的问题</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h3><a>v0.0.26</a></h3>
       <ul>
         <li> 修复 CityPicker classNames 样式被覆盖的问题</li>

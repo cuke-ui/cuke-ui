@@ -270,6 +270,8 @@ export default class Modal extends PureComponent {
 
     const maskClickHandle = maskClosable ? { onClick: this._onCancel } : {};
 
+    const defaultPromptContent = content || <Input placeholder="请输入" />;
+
     return createPortal(
       <>
         {showMask ? (
@@ -313,10 +315,11 @@ export default class Modal extends PureComponent {
             <section className={`${prefixCls}-content`}>
               {isStaticMethod &&
               staticMethodType === typeConfig.prompt &&
-              content &&
-              isValidElement(content)
-                ? cloneElement(content, { onChange: this.onPromptChange })
-                : content || children || <Input placeholder="请输入" />}
+              isValidElement(defaultPromptContent)
+                ? cloneElement(defaultPromptContent, {
+                    onChange: this.onPromptChange
+                  })
+                : content || children}
             </section>
             {footer &&
               (footer.length !== 0 ? (
