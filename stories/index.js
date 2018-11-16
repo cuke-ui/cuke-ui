@@ -7,9 +7,10 @@ import { FaGithub } from "react-icons/fa";
 import ReactMarkDown from "react-markdown"
 import CodeBlock from "./codeBlock"
 import ChangeLog from "./changeLog";
+import "./styles/index.less"
 
 storiesOf("综述", module).add("介绍", () => (
-  <article style={{ padding: 20 }}>
+  <article style={{ padding: 20 }} className="index-page">
     <h1 style={{ fontSize: 40, padding: 0, margin: 0 }}>
       {name}
 
@@ -20,53 +21,33 @@ storiesOf("综述", module).add("介绍", () => (
     <p>
       <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
         <img
-          src="https://img.shields.io/npm/dm/cuke-ui.svg?style=flat-square"
+          src="https://img.shields.io/npm/dm/cuke-ui.svg?style=for-the-badge"
           alt="npm"
         />
       </a>
       {"  "}
       <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
         <img
-          src="https://img.shields.io/npm/l/cuke-ui.svg?style=flat-square"
+          src="https://img.shields.io/npm/l/cuke-ui.svg?style=for-the-badge"
           alt="npm"
         />
       </a>
       {"  "}
-      <a
-        href="https://travis-ci.org/cuke-ui/cuke-ui.svg?branch=master"
-        title="npm"
-      >
-        <img
-          src="https://travis-ci.org/cuke-ui/cuke-ui.svg?branch=master"
-          alt="travis"
-        />
-      </a>
-      {"  "}
-      <a
-        href="https://coveralls.io/github/cuke-ui/cuke-ui?branch=master"
-        title="Coverage Status"
-      >
-        <img
-          src="https://coveralls.io/repos/github/cuke-ui/cuke-ui/badge.svg?branch=master"
-          alt="Coverage Status"
-        />
-      </a>
-      {"  "}
       <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
-        <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg" />
+        <img src="https://img.shields.io/github/issues/cuke-ui/cuke-ui.svg?style=for-the-badge" />
       </a>
       {"  "}
       <a href="https://github.com/cuke-ui/cuke-ui">
-        <img src="https://img.shields.io/github/stars/cuke-ui/cuke-ui.svg?style=flat-square" />
+        <img src="https://img.shields.io/github/stars/cuke-ui/cuke-ui.svg?style=for-the-badge" />
       </a>
     </p>
-    <p>黄瓜UI: 一个即插即用的React UI 库</p>
+    <p>🥒 黄瓜UI: 一个即插即用的React UI 库</p>
 
     <h2>当前版本</h2>
     <p>
       <a href="https://badge.fury.io/js/cuke-ui" title="npm">
         <img
-          src="https://img.shields.io/npm/v/cuke-ui.svg?style=flat-square"
+          src="https://img.shields.io/npm/v/cuke-ui.svg?style=for-the-badge"
           alt="npm version"
         />
       </a>
@@ -116,8 +97,8 @@ storiesOf("综述", module).add("介绍", () => (
     />
 
     <h2>贡献</h2>
-    <p>如果你在使用 <Tag>cuke-ui</Tag> 时遇到了问题,或者想骂我, 欢迎 给我提
-			<a href="https://github.com/cuke-ui/cuke-ui/issues">Issue</a> 或 <a href="https://github.com/cuke-ui/cuke-ui/pulls">Pull Request</a>
+    <p>如果你在使用 <Tag type="primary">cuke-ui</Tag> 时遇到了问题,或者想骂我, 欢迎 给我提
+			<a href="https://github.com/cuke-ui/cuke-ui/issues"> Issue</a> 或 <a href="https://github.com/cuke-ui/cuke-ui/pulls">Pull Request</a>
     </p>
 
     <h2>开发交流</h2>
