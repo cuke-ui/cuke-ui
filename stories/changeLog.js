@@ -4,7 +4,7 @@ import ReactMarkDown from "react-markdown"
 
 
 const ChangeLog = () => (
-  <Timeline type="info">
+  <Timeline>
     <Timeline.Item type="loading">
       <h3><a>v1.0.0</a></h3>
       <ul>
@@ -15,7 +15,7 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.27</a></h3>
+      <h3><a>v0.0.27 - v0.0.28</a></h3>
       <ul>
         <li> 修复 Modal.prompt() 获取不到 value 的问题</li>
       </ul>
