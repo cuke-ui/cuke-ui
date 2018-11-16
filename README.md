@@ -8,28 +8,31 @@ cuke-ui
 
 <p align="center">
   <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
-    <img src="https://img.shields.io/npm/dm/cuke-ui.svg?style=flat-square" alt="npm"/>
+    <img src="https://img.shields.io/npm/dm/cuke-ui.svg?style=for-the-badge" alt="npm"/>
   </a>
   <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
-    <img src="https://img.shields.io/npm/l/cuke-ui.svg?style=flat-square" alt="npm"/>
+    <img src="https://img.shields.io/npm/l/cuke-ui.svg?style=for-the-badge" alt="npm"/>
   </a>
    <a href="https://badge.fury.io/js/cuke-ui" title="npm">
-    <img src="https://img.shields.io/npm/v/cuke-ui.svg?style=flat-square" alt="npm version"/>
+    <img src="https://img.shields.io/npm/v/cuke-ui.svg?style=for-the-badge" alt="npm version"/>
   </a>
+  <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
+    <img src="https://img.shields.io/github/issues/cuke-ui/cuke-ui.svg?style=for-the-badge"/>
+  </a>
+  <a href="https://github.com/cuke-ui/cuke-ui">
+    <img src="https://img.shields.io/github/stars/cuke-ui/cuke-ui.svg?style=for-the-badge" />
+  </a>
+</p>
+
+<p align="center">
    <a href="https://travis-ci.org/cuke-ui/cuke-ui.svg?branch=master" title="npm">
     <img src="https://travis-ci.org/cuke-ui/cuke-ui.svg?branch=master" alt="travis"/>
   </a>
-   <a href="https://coveralls.io/github/cuke-ui/cuke-ui?branch=master" title="Coverage Status">
+   <a href="https://coveralls.io/github/cuke-ui/cuke-ui?branch=master?style=for-the-badge" title="Coverage Status">
     <img src="https://coveralls.io/repos/github/cuke-ui/cuke-ui/badge.svg?branch=master" alt="Coverage Status"/>
   </a>
   <a href="https://david-dm.org/cuke-ui/cuke-ui" title="dependencies status">
     <img src="https://david-dm.org/cuke-ui/cuke-ui/status.svg"/>
-  </a>
-  <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
-    <img src="http://isitmaintained.com/badge/open/cuke-ui/cuke-ui.svg"/>
-  </a>
-  <a href="https://github.com/cuke-ui/cuke-ui">
-    <img src="https://img.shields.io/github/stars/cuke-ui/cuke-ui.svg?style=flat-square" />
   </a>
 </p>
 
