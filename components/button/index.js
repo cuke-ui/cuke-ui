@@ -1,4 +1,4 @@
-import React, { PureComponent, Fragment } from "react";
+import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import { LoadingIcon } from "../icon";
@@ -14,7 +14,8 @@ export default class Button extends PureComponent {
     block: false,
     disabled: false,
     hollow: false,
-    dashed: false
+    dashed: false,
+    circle: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -23,6 +24,7 @@ export default class Button extends PureComponent {
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
     dashed: PropTypes.bool,
+    circle: PropTypes.bool,
     htmlType: PropTypes.string,
     href: PropTypes.string,
     type: PropTypes.oneOf([
@@ -51,6 +53,7 @@ export default class Button extends PureComponent {
       size,
       href,
       dashed,
+      circle,
       ...attr
     } = this.props;
 
@@ -66,28 +69,29 @@ export default class Button extends PureComponent {
       type: htmlType,
       className: cls(
         prefixCls,
-        { "btn-primary": checkType("primary") },
-        { "btn-warning": checkType("warning") },
-        { "btn-success": checkType("success") },
-        { "btn-error": checkType("error") },
-        { "btn-default": checkType("default") },
-        { "btn-info": checkType("info") },
-        { "btn-disabled": disabled },
-        { "btn-loading": loading },
-        { "btn-block": block },
-        { "btn-hollow": hollow },
-        { "btn-large": size === "large" },
-        { "btn-small": size === "small" },
-        { "btn-dashed": dashed },
+        { [`${prefixCls}-primary`]: checkType("primary") },
+        { [`${prefixCls}-warning`]: checkType("warning") },
+        { [`${prefixCls}-success`]: checkType("success") },
+        { [`${prefixCls}-error`]: checkType("error") },
+        { [`${prefixCls}-default`]: checkType("default") },
+        { [`${prefixCls}-info`]: checkType("info") },
+        { [`${prefixCls}-disabled`]: disabled },
+        { [`${prefixCls}-loading`]: loading },
+        { [`${prefixCls}-block`]: block },
+        { [`${prefixCls}-hollow`]: hollow },
+        { [`${prefixCls}-large`]: size === "large" },
+        { [`${prefixCls}-small`]: size === "small" },
+        { [`${prefixCls}-dashed`]: dashed },
+        { [`${prefixCls}-circle`]: circle },
         className
       )
     };
 
     const content = (
-      <Fragment>
+      <>
         {loading && <LoadingIcon className="cuke-loading" />}
         <span>{children}</span>
-      </Fragment>
+      </>
     );
     if (href) {
       return (

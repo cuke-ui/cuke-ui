@@ -6,6 +6,7 @@ import Button from '../components/button';
 import './styles/button.less';
 
 import "../components/button/styles.less";
+import { UpIcon } from '../components/icon';
 
 storiesOf('普通', module).add(
   'Button 按钮',
@@ -100,13 +101,27 @@ storiesOf('普通', module).add(
           大
       </Button>
 
-        <Button type="info">
+        <Button type="primary">
           中
       </Button>
 
-        <Button type="warning" size="small">
+        <Button type="primary" size="small">
           小
       </Button>
+
+        <h2>圆形按钮</h2>
+
+        <Button type="primary" circle>
+        <UpIcon/>
+        </Button>
+
+        <Button type="info" circle>
+        <UpIcon/>
+        </Button>
+
+        <Button type="primary" circle>
+          <UpIcon/>
+        </Button>
 
         <h2>链接</h2>
         <Button href="#">主页</Button>

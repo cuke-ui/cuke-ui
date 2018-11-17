@@ -58,7 +58,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         class="cuke-modal-footer"
       >
         <button
-          class="cuke-button btn-default"
+          class="cuke-button cuke-button-default"
           type="button"
         >
           <span>
@@ -66,7 +66,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
           </span>
         </button>
         <button
-          class="cuke-button btn-primary"
+          class="cuke-button cuke-button-primary"
           type="button"
         >
           <span>
@@ -132,7 +132,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         class="cuke-modal-footer"
       >
         <button
-          class="cuke-button btn-default"
+          class="cuke-button cuke-button-default"
           type="button"
         >
           <span>
@@ -140,7 +140,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
           </span>
         </button>
         <button
-          class="cuke-button btn-primary"
+          class="cuke-button cuke-button-primary"
           type="button"
         >
           <span>
@@ -260,7 +260,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         class="cuke-modal-footer"
       >
         <button
-          class="cuke-button btn-default"
+          class="cuke-button cuke-button-default"
           type="button"
         >
           <span>
@@ -268,7 +268,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
           </span>
         </button>
         <button
-          class="cuke-button btn-primary"
+          class="cuke-button cuke-button-primary"
           type="button"
         >
           <span>
@@ -309,7 +309,7 @@ exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
       class="cuke-modal-footer"
     >
       <button
-        class="cuke-button btn-default"
+        class="cuke-button cuke-button-default"
         type="button"
       >
         <span>
@@ -317,7 +317,7 @@ exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
         </span>
       </button>
       <button
-        class="cuke-button btn-primary"
+        class="cuke-button cuke-button-primary"
         type="button"
       >
         <span>

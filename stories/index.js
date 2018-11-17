@@ -41,7 +41,7 @@ storiesOf("综述", module).add("介绍", () => (
         <img src="https://img.shields.io/github/stars/cuke-ui/cuke-ui.svg?style=for-the-badge" />
       </a>
     </p>
-    <p>🥒 黄瓜UI: 一个即插即用的React UI 库</p>
+    <h3 className="description">🥒 黄瓜UI: 一个即插即用的React UI 库</h3>
 
     <h2>当前版本</h2>
     <p>

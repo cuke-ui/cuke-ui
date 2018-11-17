@@ -15,8 +15,9 @@ describe("<Button/>", () => {
         <Button type="error">你好</Button>
         <Button type="success">你好</Button>
         <Button disabled>你好</Button>
-        <Button loading>加载中...</Button>
+        <Button loading>加载中..</Button>
         <Button block>100%</Button>
+        <Button circle>圆形</Button>
         <Button type="primary" size="large">
           大
         </Button>
@@ -41,19 +42,21 @@ describe("<Button/>", () => {
         <Button type="error">你好</Button>
         <Button type="success">你好</Button>
         <Button disabled>你好</Button>
-        <Button loading>加载中...</Button>
+        <Button loading>加载中..</Button>
         <Button block>100%</Button>
+        <Button circle>100%</Button>
       </div>
     );
     assert(wrapper.find(".cuke-button").length >= 1);
-    assert(wrapper.find(".btn-primary").length === 1);
-    assert(wrapper.find(".btn-info").length === 1);
-    assert(wrapper.find(".btn-warning").length === 1);
-    assert(wrapper.find(".btn-error").length === 1);
-    assert(wrapper.find(".btn-success").length === 1);
-    assert(wrapper.find(".btn-disabled").length === 1);
-    assert(wrapper.find(".btn-loading").length === 1);
-    assert(wrapper.find(".btn-block").length === 1);
+    assert(wrapper.find(".cuke-button-primary").length === 1);
+    assert(wrapper.find(".cuke-button-info").length === 1);
+    assert(wrapper.find(".cuke-button-warning").length === 1);
+    assert(wrapper.find(".cuke-button-error").length === 1);
+    assert(wrapper.find(".cuke-button-success").length === 1);
+    assert(wrapper.find(".cuke-button-disabled").length === 1);
+    assert(wrapper.find(".cuke-button-loading").length === 1);
+    assert(wrapper.find(".cuke-button-block").length === 1);
+    assert(wrapper.find(".cuke-button-circle").length === 1);
   });
 
   it("should can trigger click event", () => {

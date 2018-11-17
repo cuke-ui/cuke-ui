@@ -1,8 +1,8 @@
-.btn-hover(@color: @default-color, @lighten: 5%, @font-color: #fff) {
+.cuke-button-hover(@color: @default-color, @lighten: 5%, @font-color: #fff) {
   color: @font-color;
   background-color: @color;
   border: 1px solid @color;
-  &:not(.btn-disabled):not(.btn-default) {
+  &:not(.cuke-button-disabled):not(.cuke-button-default) {
     &:hover,
     &:active,
     &:focus {
@@ -28,10 +28,10 @@
 //   }
 }
 
-.btn-hollow(@color, @lighten : 5%) {
+.cuke-button-hollow(@color, @lighten : 5%) {
   color: @color;
   background: transparent;
-  &:not(.btn-disabled) {
+  &:not(.cuke-button-disabled) {
     &:hover,
     &:active,
     &:focus {

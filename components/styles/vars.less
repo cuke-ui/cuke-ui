@@ -18,15 +18,16 @@
 @disabled-font-color: fade(@font-color, 25%);
 @font-size: 14px;
 @border-radius: 4px;
-@default-shadow:0 4px 12px rgba(0, 0, 0, 0.15);
+@default-shadow: 0 4px 22px 0 rgba(15, 35, 95, 0.12);
 @picker-offset-top: 5px;
+@mask-bg-color: rgba(0, 0, 0, .5);
 
 // 响应式断点
 @media-screen-xs-max : 576px;
 @mobile: ~ "screen and (max-width: @{media-screen-xs-max})";
 
 //动画时间
-@loading-time: 1s;
+@loading-time: 1.5s;
 @loading-opacity: .7;
 @animate-time : .5s;
 @animate-type: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -34,6 +35,7 @@
 
 
 //Button 按钮
+@button-default-width: 40px;
 @button-default-height: 40px;
 @button-small-height: 30px;
 @button-large-height: 50px;
@@ -43,11 +45,12 @@
 @button-small-padding: 0 10px;
 @button-large-padding: 0 40px;
 @button-default-padding: 0 30px;
+@button-box-shadow: 0 2px 0 rgba(0, 0, 0, .01);
 
 //Input 输入框
 @input-height: 40px;
 @input-padding: 4px 10px;
-@input-box-shadow:0 0 0 2px fade(@primary-color, 20%);
+@input-box-shadow: 0 0 0 2px fade(@primary-color, 20%);
 
 //Grid
 @max-col-length : 24;
@@ -55,7 +58,7 @@
 
 //message 消息提示
 @message-show-time: @animate-time;
-@message-theme-dark-bg: rgba(0, 0, 0, .5);
+@message-theme-dark-bg: @mask-bg-color;
 @message-theme-light-bg: #fff;
 @message-theme-dark-font-color: #fff;
 @message-z-index: 999;
@@ -70,7 +73,7 @@
 
 //message 消息提示
 @notification-show-time: @animate-time;
-@notification-theme-dark-bg: rgba(0, 0, 0, .5);
+@notification-theme-dark-bg: @mask-bg-color;
 @notification-theme-light-bg: #fff;
 @notification-theme-dark-font-color: #fff;
 @notification-z-index: 999;
@@ -109,8 +112,8 @@
 @modal-title-font-size: 16px;
 @modal-header-padding: 5px 10px;
 @modal-close-font-size: 20px;
-@modal-close-font-color: rgba(0, 0, 0, .45);
-@modal-mask-color: rgba(0, 0, 0, .65);
+@modal-close-font-color: fade(@font-color, 45%);
+@modal-mask-color: @mask-bg-color;
 @modal-offset-top: 100px;
 @modal-width : 520px;
 @modal-method-width : 420px;

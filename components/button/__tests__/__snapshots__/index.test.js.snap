@@ -3,7 +3,7 @@
 exports[`<Button/> should render a <Button/> components 1`] = `
 <div>
   <button
-    class="cuke-button btn-default"
+    class="cuke-button cuke-button-default"
     type="button"
   >
     <span>
@@ -11,7 +11,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-primary"
+    class="cuke-button cuke-button-primary"
     type="button"
   >
     <span>
@@ -19,7 +19,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-info"
+    class="cuke-button cuke-button-info"
     type="button"
   >
     <span>
@@ -27,7 +27,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-warning"
+    class="cuke-button cuke-button-warning"
     type="button"
   >
     <span>
@@ -35,7 +35,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-error"
+    class="cuke-button cuke-button-error"
     type="button"
   >
     <span>
@@ -43,7 +43,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-success"
+    class="cuke-button cuke-button-success"
     type="button"
   >
     <span>
@@ -51,7 +51,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-default btn-disabled"
+    class="cuke-button cuke-button-default cuke-button-disabled"
     disabled=""
     type="button"
   >
@@ -60,7 +60,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-default btn-loading"
+    class="cuke-button cuke-button-default cuke-button-loading"
     disabled=""
     type="button"
   >
@@ -125,11 +125,11 @@ exports[`<Button/> should render a <Button/> components 1`] = `
       />
     </svg>
     <span>
-      加载中...
+      加载中..
     </span>
   </button>
   <button
-    class="cuke-button btn-default btn-block"
+    class="cuke-button cuke-button-default cuke-button-block"
     type="button"
   >
     <span>
@@ -137,7 +137,15 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-primary btn-large"
+    class="cuke-button cuke-button-default cuke-button-circle"
+    type="button"
+  >
+    <span>
+      圆形
+    </span>
+  </button>
+  <button
+    class="cuke-button cuke-button-primary cuke-button-large"
     type="button"
   >
     <span>
@@ -145,7 +153,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-info"
+    class="cuke-button cuke-button-info"
     type="button"
   >
     <span>
@@ -153,7 +161,7 @@ exports[`<Button/> should render a <Button/> components 1`] = `
     </span>
   </button>
   <button
-    class="cuke-button btn-warning btn-small"
+    class="cuke-button cuke-button-warning cuke-button-small"
     type="button"
   >
     <span>

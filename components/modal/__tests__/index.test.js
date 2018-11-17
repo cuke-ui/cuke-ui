@@ -65,7 +65,7 @@ describe("<Modal/>", () => {
         <span>基本使用</span>
       </Modal>
     );
-    assert(wrapper.find(".cuke-button.btn-disabled").length === 1);
+    assert(wrapper.find(".cuke-button.cuke-button-disabled").length === 1);
   });
 
   it("should render custom cancel button props", () => {
@@ -74,7 +74,7 @@ describe("<Modal/>", () => {
         <span>基本使用</span>
       </Modal>
     );
-    assert(wrapper.find(".cuke-button.btn-disabled").length === 1);
+    assert(wrapper.find(".cuke-button-disabled").length === 1);
   });
 
   it("should render destroy reference", () => {

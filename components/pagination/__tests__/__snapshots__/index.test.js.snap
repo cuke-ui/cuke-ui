@@ -8,6 +8,7 @@ exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
 >
   <Button
     block={false}
+    circle={false}
     dashed={false}
     disabled={true}
     hollow={false}
@@ -35,6 +36,7 @@ exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
   </span>
   <Button
     block={false}
+    circle={false}
     dashed={false}
     disabled={false}
     hollow={false}
@@ -57,7 +59,7 @@ exports[`<Pagination/> should find custom locale text 1`] = `
   current="1"
 >
   <button
-    class="cuke-button btn-default btn-disabled"
+    class="cuke-button cuke-button-default cuke-button-disabled"
     disabled=""
     type="button"
   >
@@ -76,7 +78,7 @@ exports[`<Pagination/> should find custom locale text 1`] = `
      / 10
   </span>
   <button
-    class="cuke-button btn-primary"
+    class="cuke-button cuke-button-primary"
     type="button"
   >
     <span>
@@ -93,7 +95,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
     current="1"
   >
     <button
-      class="cuke-button btn-default btn-disabled"
+      class="cuke-button cuke-button-default cuke-button-disabled"
       disabled=""
       type="button"
     >
@@ -112,7 +114,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
        / 10
     </span>
     <button
-      class="cuke-button btn-primary"
+      class="cuke-button cuke-button-primary"
       type="button"
     >
       <span>
@@ -125,7 +127,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
     current="1"
   >
     <button
-      class="cuke-button btn-default btn-disabled"
+      class="cuke-button cuke-button-default cuke-button-disabled"
       disabled=""
       type="button"
     >
@@ -144,7 +146,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
        / 10
     </span>
     <button
-      class="cuke-button btn-primary"
+      class="cuke-button cuke-button-primary"
       type="button"
     >
       <span>
@@ -157,7 +159,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
     current="1"
   >
     <button
-      class="cuke-button btn-default btn-disabled"
+      class="cuke-button cuke-button-default cuke-button-disabled"
       disabled=""
       type="button"
     >
@@ -176,7 +178,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
        | 10
     </span>
     <button
-      class="cuke-button btn-primary"
+      class="cuke-button cuke-button-primary"
       type="button"
     >
       <span>

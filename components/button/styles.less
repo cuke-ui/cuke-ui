@@ -1,6 +1,7 @@
 @import "../styles/vars.less";
 @import "../styles/animate.less";
 @import "../styles/mixins.less";
+
 @prefixCls : cuke-button;
 .@{prefixCls} {
   display: inline-block;
@@ -24,88 +25,95 @@
   border-color: @border-color;
   border-radius: @border-radius;
   outline: none;
+  box-shadow: @button-box-shadow;
 
-  .btn-hover(@default-color);
-  &.btn-primary {
-    .btn-hover(@primary-color);
-    &.btn-hollow {
-      .btn-hollow(@primary-color)
+  .cuke-button-hover(@default-color);
+  &.@{prefixCls}-primary {
+    .cuke-button-hover(@primary-color);
+    &.@{prefixCls}-hollow {
+      .cuke-button-hollow(@primary-color)
     }
   }
-  &.btn-default {
+  &.@{prefixCls}-default {
     color: @font-color;
     background-color: #fff;
     border: 1px solid @default-color;
-    &:not(.btn-disabled) {
+    &:not(.@{prefixCls}-disabled):not(.@{prefixCls}-loading) {
       &:hover,
       &:active {
         border: 1px solid @primary-color;
         color: @primary-color;
       }
     }
-    &.btn-hollow {
-      .btn-hollow(@default-color)
+    &.@{prefixCls}-hollow {
+      .cuke-button-hollow(@default-color)
     }
   }
-  &.btn-warning {
-    .btn-hover(@warning-color);
-    &.btn-hollow {
-      .btn-hollow(@warning-color)
+  &.@{prefixCls}-warning {
+    .cuke-button-hover(@warning-color);
+    &.@{prefixCls}-hollow {
+      .cuke-button-hollow(@warning-color)
     }
   }
-  &.btn-error {
-    .btn-hover(@error-color);
-    &.btn-hollow {
-      .btn-hollow(@error-color)
+  &.@{prefixCls}-error {
+    .cuke-button-hover(@error-color);
+    &.@{prefixCls}-hollow {
+      .cuke-button-hollow(@error-color)
     }
   }
-  &.btn-success {
-    .btn-hover(@success-color);
-    &.btn-hollow {
-      .btn-hollow(@success-color)
+  &.@{prefixCls}-success {
+    .cuke-button-hover(@success-color);
+    &.@{prefixCls}-hollow {
+      .cuke-button-hollow(@success-color)
     }
   }
-  &.btn-info {
-    .btn-hover(@info-color);
-    &.btn-hollow {
-      .btn-hollow(@info-color)
+  &.@{prefixCls}-info {
+    .cuke-button-hover(@info-color);
+    &.@{prefixCls}-hollow {
+      .cuke-button-hollow(@info-color)
     }
   }
-  &.btn-disabled {
-    .btn-hover(@disabled-color);
+  &.@{prefixCls}-disabled {
+    .cuke-button-hover(@disabled-color);
     cursor: not-allowed;
     color: @disabled-font-color;
     border-color: @border-color;
-    &.btn-hollow {
+    &.@{prefixCls}-hollow {
       color: @disabled-font-color;
     }
   }
-  &.btn-block {
+  &.@{prefixCls}-block {
     width: 100%;
     display: block;
   }
-  &.btn-loading {
+  &.@{prefixCls}-loading {
     opacity: @loading-opacity;
     cursor: not-allowed;
     >.cuke-loading {
       display: inline-block;
       vertical-align: middle;
-      margin: -2px 10px 0 0;
+      margin: -3px 10px 0 0;
       animation: cuke-spin @loading-time linear infinite;
     }
   }
-  &.btn-large {
+  &.@{prefixCls}-large {
     font-size: @button-large-font-size;
     padding: @button-large-padding;
     height: @button-large-height;
   }
-  &.btn-small {
+  &.@{prefixCls}-small {
     font-size: @button-small-font-size;
     padding: @button-small-padding;
     height: @button-small-height;
   }
-  &.btn-dashed {
+  &.@{prefixCls}-dashed {
     border: 1px dashed;
+  }
+  &.@{prefixCls}-circle {
+    width: 40px;
+    height: @button-default-height;
+    border-radius: 50%;
+    padding: 0;
   }
   &-link {
     cursor: pointer;
