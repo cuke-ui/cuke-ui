@@ -89,7 +89,7 @@ export default class Button extends PureComponent {
 
     const content = (
       <>
-        {loading && <LoadingIcon className="cuke-loading" />}
+        {loading && !circle && <LoadingIcon className="cuke-loading" />}
         <span>{children}</span>
       </>
     );
@@ -97,7 +97,10 @@ export default class Button extends PureComponent {
       return (
         <a
           href={href}
-          className={cls(`${prefixCls}-link`, className)}
+          disabled
+          className={cls(`${prefixCls}-link`, className, {
+            [`${prefixCls}-link-disabled`]: disabled
+          })}
           {...attr}
         >
           {content}

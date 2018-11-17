@@ -63,7 +63,7 @@ export default class DrawerPage extends Component {
           </Col>
           <Col span={4}>
             <h2>自定义 footer</h2>
-            <Button type="info" onClick={() => this.onShow("visible20")}>
+            <Button type="info" onClick={() => this.onShow("visible21")}>
               打开
             </Button>
           </Col>
@@ -152,12 +152,12 @@ export default class DrawerPage extends Component {
         </Drawer>
         <Drawer
           title="自定义高度"
-          visible={this.state.visible20}
-          onClose={() => this.onClose("visible20")}
+          visible={this.state.visible21}
+          onClose={() => this.onClose("visible21")}
           footer={
             <>
-              <Button onClick={() => this.onClose("visible20")}>取消</Button>
-              <Button style={{marginLeft: 10}} type="primary" onClick={() => this.onClose("visible20")}>确定</Button>
+              <Button onClick={() => this.onClose("visible21")}>取消</Button>
+              <Button style={{marginLeft: 10}} type="primary" onClick={() => this.onClose("visible21")}>确定</Button>
             </>
           }
         >

@@ -107,15 +107,45 @@
     height: @button-small-height;
   }
   &.@{prefixCls}-dashed {
-    border: 1px dashed;
+    border-style: dashed;
   }
   &.@{prefixCls}-circle {
-    width: 40px;
+    width: @button-default-width;
     height: @button-default-height;
     border-radius: 50%;
     padding: 0;
+    &.@{prefixCls}-large {
+      width: @button-large-width;
+      height: @button-large-height;
+    }
+    &.@{prefixCls}-small {
+      width: @button-small-width;
+      height: @button-small-height;
+    }
+    &.@{prefixCls}-loading {
+      position: relative;
+      &:before {
+        content: " ";
+        width: @button-default-width + 8px;
+        height: @button-default-width + 8px;
+        position: absolute;
+        border: 1px solid @primary-color;
+        border-radius: 50%;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        animation: cuke-spin @loading-time @animate-type-easy-in-out infinite;
+        left: -5px;
+        top: -5px;
+      }
+    }
   }
   &-link {
     cursor: pointer;
+    &.@{prefixCls}-link-disabled {
+      cursor: not-allowed;
+      color: @disabled-font-color;
+      pointer-events: none;
+    }
   }
 }

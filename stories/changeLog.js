@@ -22,6 +22,7 @@ const ChangeLog = () => (
         <li> Button 组件增加阴影 </li>
         <li> 修改全局阴影为 0 4px 22px 0 rgba(15, 35, 95, 0.12)</li>
         <li> 全局 loading 时间 修改为 1s => 1.5s </li>
+        <li> 修复 Button 组件 link 模式下 disabled 无效</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>
