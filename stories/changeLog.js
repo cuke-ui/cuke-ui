@@ -6,7 +6,7 @@ import ReactMarkDown from "react-markdown"
 const ChangeLog = () => (
   <Timeline>
     <Timeline.Item type="loading">
-      <h3><a>v1.0.0</a></h3>
+      <h2><a>v1.0.0</a></h2>
       <ul>
         <li>开发中</li>
         <li>完成剩余未完成组件</li>
@@ -15,13 +15,23 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.27 - v0.0.28</a></h3>
+      <h2><a>v0.0.29</a></h2>
+      <ul>
+        <li> Drawer 组件 增加 footer 属性 </li>
+        <li> Button 组件 增加 circle 圆形按钮属性 </li>
+        <li> Button 组件增加阴影 </li>
+        <li> 修改全局阴影为 0 4px 22px 0 rgba(15, 35, 95, 0.12)</li>
+        <li> 全局 loading 时间 修改为 1s => 1.5s </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
+      <h2><a>v0.0.27 - v0.0.28</a></h2>
       <ul>
         <li> 修复 Modal.prompt() 获取不到 value 的问题</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.26</a></h3>
+      <h2><a>v0.0.26</a></h2>
       <ul>
         <li> 修复 CityPicker classNames 样式被覆盖的问题</li>
         <li> 完善单元测试 提升覆盖率 </li>
@@ -32,21 +42,21 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.25</a></h3>
+      <h2><a>v0.0.25</a></h2>
       <ul>
         <li> 新增  NumberInput 组件 </li>
         <li> Input 组件 增加 addonClassName 属性</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.24</a></h3>
+      <h2><a>v0.0.24</a></h2>
       <ul>
         <li> 调整 DatePicker 组件 宽高 </li>
         <li> 修改 Notification 组件 的弹出行为 </li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.23</a></h3>
+      <h2><a>v0.0.23</a></h2>
       <ul>
         <li> Modal 组件 footer 属性 支持  React.Fragment </li>
         <li> 增加 Modal.prompt() api </li>
@@ -57,7 +67,7 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.22</a></h3>
+      <h2><a>v0.0.22</a></h2>
       <ul>
         <li> Modal 组件 增加 okButtonProps 和 cancelButtonProps 属性</li>
         <li> Modal 组件 增加 confirm, info, success, error, warning, loading 静态 方法</li>
@@ -66,7 +76,7 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.21</a></h3>
+      <h2><a>v0.0.21</a></h2>
       <ul>
         <li> 组件生命周期 componentWillReceiveProps => getDerivedStateFromProps</li>
         <li> 修复 Radio onChange 触发两次</li>
@@ -76,14 +86,14 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.20</a></h3>
+      <h2><a>v0.0.20</a></h2>
       <ul>
         <li> 新增 Notification 组件</li>
         <li> 完善 文档</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.19</a></h3>
+      <h2><a>v0.0.19</a></h2>
       <ul>
         <li> DatePicker 组件 切换月份 无反应</li>
         <li> Select 组件 disabled 状态时点击 panel 可以关闭</li>
@@ -97,7 +107,7 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.18</a></h3>
+      <h2><a>v0.0.18</a></h2>
       <ul>
         <li>优化 DropDown, Select, CityPicker, DatePicker 的体验</li>
         <li>
@@ -115,7 +125,7 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.17</a></h3>
+      <h2><a>v0.0.17</a></h2>
       <ul>
         <li>增加各种组件,完善列表</li>
         <li>修复超多 bug</li>
@@ -126,7 +136,7 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.2 - v0.0.16</a></h3>
+      <h2><a>v0.0.2 - v0.0.16</a></h2>
       <ul>
         <li>下班有空更新迭代</li>
         <li>修复发布到 npm 遇到的各种问题</li>
@@ -136,7 +146,7 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h3><a>v0.0.1</a></h3>
+      <h2><a>v0.0.1</a></h2>
       <ul>
         <li>年底的一个目标,做一个组件库</li>
         <li>搭建项目结构</li>

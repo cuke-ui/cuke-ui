@@ -53,9 +53,17 @@ export default class DrawerPage extends Component {
               打开
             </Button>
           </Col>
-          <Col span={4}>
+        </Row>
+        <Row>
+          <Col span={6}>
             <h2>自定义宽度和zIndex</h2>
             <Button type="info" onClick={() => this.onShow("visible12")}>
+              打开
+            </Button>
+          </Col>
+          <Col span={4}>
+            <h2>自定义 footer</h2>
+            <Button type="info" onClick={() => this.onShow("visible20")}>
               打开
             </Button>
           </Col>
@@ -141,6 +149,19 @@ export default class DrawerPage extends Component {
           onClose={() => this.onClose("visible15")}
         >
           <span>高度400px</span>
+        </Drawer>
+        <Drawer
+          title="自定义高度"
+          visible={this.state.visible20}
+          onClose={() => this.onClose("visible20")}
+          footer={
+            <>
+              <Button onClick={() => this.onClose("visible20")}>取消</Button>
+              <Button style={{marginLeft: 10}} type="primary" onClick={() => this.onClose("visible20")}>确定</Button>
+            </>
+          }
+        >
+          <span>我有两只脚</span>
         </Drawer>
       </div>
     );

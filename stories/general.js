@@ -119,7 +119,12 @@ storiesOf('普通', module).add(
         <UpIcon/>
         </Button>
 
-        <Button type="primary" circle>
+        <Button type="primary" disabled circle>
+          <UpIcon/>
+        </Button>
+
+
+        <Button type="error" hollow circle>
           <UpIcon/>
         </Button>
 

@@ -14,6 +14,8 @@
   height: 100%;
   list-style: none;
   transform: scale(0);
+  display: flex;
+  flex-direction: column;
   &.@{prefixCls}-open {
     pointer-events: auto;
   }
@@ -104,12 +106,19 @@
   &-content {
     padding: @modal-padding;
     background-clip: padding-box;
-    height: auto;
     overflow-y: auto;
     margin: 0 auto;
     line-height: 1.5;
     word-wrap: break-word;
-    max-height: 100vh;
+    width: 100%;
+    height: 100vh;
+  }
+  &-footer {
+    border-top: 1px solid @border-color;
+    height: 65px;
+    line-height: 65px;
+    padding: 0 @modal-padding;
+    text-align: right;
   }
 }
 

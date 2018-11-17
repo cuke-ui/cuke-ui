@@ -3,6 +3,7 @@ import React from "react";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Drawer from "../index";
+import Button from "../../button";
 
 describe("<Drawer/>", () => {
   it("should render a <Drawer/> components", () => {
@@ -62,6 +63,25 @@ describe("<Drawer/>", () => {
     );
     wrapper.find(".cuke-drawer-close").simulate("click");
     expect(onCancelClick).toHaveBeenCalled();
+  });
+
+  it("should render custom footer", () => {
+    const wrapper = shallow(
+      <Drawer title="关闭回调" visible footer={<Button>11</Button>}>
+        <span>关闭回调</span>
+      </Drawer>
+    );
+    assert(wrapper.find(".cuke-drawer-footer").length === 1);
+    assert(wrapper.find(Button).length === 1);
+  });
+
+  it("should can not render custom footer", () => {
+    const wrapper = shallow(
+      <Drawer title="关闭回调" visible footer={null}>
+        <span>关闭回调</span>
+      </Drawer>
+    );
+    assert(wrapper.find(".cuke-drawer-footer").length === 0);
   });
 
   it("should disabled scroll when did update", () => {

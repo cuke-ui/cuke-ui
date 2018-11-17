@@ -21,7 +21,8 @@ export default class Drawer extends PureComponent {
     width: 300,
     height: 300,
     zIndex: 999,
-    placement: placements[0]
+    placement: placements[0],
+    footer: null
   };
   static propTypes = {
     title: PropTypes.oneOfType([
@@ -85,6 +86,7 @@ export default class Drawer extends PureComponent {
       zIndex,
       placement,
       style,
+      footer,
       ...attr
     } = this.props;
 
@@ -141,6 +143,9 @@ export default class Drawer extends PureComponent {
               )}
             </section>
             <section className={`${prefixCls}-content`}>{children}</section>
+            {footer && (
+              <section className={`${prefixCls}-footer`}>{footer}</section>
+            )}
           </div>
         </div>
       </>,
