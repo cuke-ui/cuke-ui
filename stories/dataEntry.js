@@ -23,6 +23,8 @@ import "../components/numberInput/styles.less";
 import "../components/numberInput/styles.less";
 import "../components/wordPad/styles.less";
 import "./styles/dataEntry.less";
+import Col from '../components/col';
+import Row from '../components/row';
 
 storiesOf("数据录入", module)
   .add(
@@ -118,29 +120,29 @@ storiesOf("数据录入", module)
     withInfo()(() => (
       <div className="date-entry-example">
         <h2>基本使用</h2>
-        <NumberInput placeholder="请输入"/>
+        <NumberInput placeholder="请输入" />
 
         <h2>默认值(自动去除非数字)</h2>
-        <NumberInput value="123sdfdj"/>
-        <NumberInput defaultValue={'abc'}/>
+        <NumberInput value="123sdfdj" />
+        <NumberInput defaultValue={'abc'} />
 
         <h2>禁用</h2>
-        <NumberInput disabled value={6666}/>
+        <NumberInput disabled value={6666} />
 
         <h2>最小值和最大值 (例如:1-99)</h2>
-        <NumberInput value={11} min={1} max={99}/>
+        <NumberInput value={11} min={1} max={99} />
 
         <h2>数字经度(小数点保留后几位)</h2>
-        <NumberInput value={11.1} decimal={2}/>
-        <NumberInput placeholder="IP 地址" decimal={3} style={{width: 200}}/>
+        <NumberInput value={11.1} decimal={2} />
+        <NumberInput placeholder="IP 地址" decimal={3} style={{ width: 200 }} />
 
         <h2>加减按钮</h2>
-        <NumberInput value={2} min={1} showStepper/>
-        <NumberInput value={2} min={1} showStepper disabled/>
+        <NumberInput value={2} min={1} showStepper />
+        <NumberInput value={2} min={1} showStepper disabled />
 
         <h2>自定义步数</h2>
-        <NumberInput value={2} min={1} showStepper step={10}/>
-        <NumberInput value={2.22} min={1} showStepper step={0.1}/>
+        <NumberInput value={2} min={1} showStepper step={10} />
+        <NumberInput value={2.22} min={1} showStepper step={0.1} />
       </div>
     ))
   )
@@ -256,31 +258,57 @@ storiesOf("数据录入", module)
     "DatePicker 日期选择器",
     withInfo()(() => (
       <div>
-        <h2>基本使用</h2>
-        <DatePicker
-          placeholder="请选择"
-          onChange={(currentDay, date, dateString) => console.log(currentDay, date, dateString)} />
+        <Row>
+          <Col span={5}>
+            <h2>基本使用</h2>
+            <DatePicker
+              placeholder="请选择"
+              onChange={(currentDay, date, dateString) => console.log(currentDay, date, dateString)}
+            />
+          </Col>
+          <Col span={5}>
+            <h2>禁用</h2>
+            <DatePicker placeholder="请选择" disabled />
+          </Col>
+          <Col span={5}>
+            <h2>不显示今天</h2>
+            <DatePicker placeholder="请选择" showToday={false} />
+          </Col>
+          <Col span={5}>
+            <h2>默认值</h2>
+            <DatePicker defaultValue={moment('1996/09/25', 'YYYY/MM/DD')} />
+          </Col>
+        </Row>
 
-        <h2>禁用</h2>
-        <DatePicker placeholder="请选择" disabled />
+        <Row style={{margin: "30px 0"}}>
+          <Col span={5}>
+            <h2>加载中</h2>
+            <DatePicker format="YYYY-MM-DD HH:mm:ss" loading />
+          </Col>
+          <Col span={5}>
+            <h2>自定义格式</h2>
+            <DatePicker format="YYYY年/MM月/DD天 HH:mm:ss" />
+          </Col>
+          <Col span={5}>
+            <h2>面板改变回调</h2>
+            <DatePicker onPanelVisibleChange={(visible) => console.log('visible change', visible)} />
+          </Col>
+          <Col span={5}>
+            <h2>扩展</h2>
+            <DatePicker extraFooter={<Button type="primary" block>黄瓜ui</Button>} />
+          </Col>
+        </Row>
 
-        <h2>不显示今天</h2>
-        <DatePicker placeholder="请选择" showToday={false}/>
-
-        <h2>默认值</h2>
-        <DatePicker defaultValue={moment('1996/09/25', 'YYYY/MM/DD')} />
-
-        <h2>加载中</h2>
-        <DatePicker format="YYYY-MM-DD HH:mm:ss" loading/>
-
-        <h2>自定义格式</h2>
-        <DatePicker format="YYYY-MM-DD HH:mm:ss" />
-
-        <h2>面板改变回调</h2>
-        <DatePicker onPanelVisibleChange={(visible) => console.log('visible change', visible)} />
-
-        <h2>扩展</h2>
-        <DatePicker extraFooter={<Button type="primary" block>黄瓜ui</Button>} />
+        <Row style={{marginTop: "30px"}}>
+          <Col span={5}>
+            <h2>自定义加载文案</h2>
+            <DatePicker format="YYYY-MM-DD HH:mm:ss" loading tip="加载中..."/>
+          </Col>
+          <Col span={5}>
+            <h2>不显示今天和清除按钮</h2>
+            <DatePicker showToday={false} showClear={false}/>
+          </Col>
+        </Row>
       </div>
     ))
   )
@@ -289,7 +317,7 @@ storiesOf("数据录入", module)
     withInfo()(() => (
       <div>
         <h2>基本使用</h2>
-        // TODO: 
+      // TODO: 
       </div>
     ))
   )

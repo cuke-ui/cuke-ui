@@ -9,10 +9,10 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
   >
     <input
       class="cuke-input cuke-date-picker-input"
-      placeholder=""
+      placeholder="请选择"
       readonly=""
       type="text"
-      value="2018-11-18"
+      value=""
     />
     <svg
       class="cuke-date-picker-arrow"
@@ -39,7 +39,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       <span
         class="cuke-date-picker-date"
       >
-        2018   11月
+        2018年   11月
       </span>
       <span
         class="cuke-date-picker-switch"
@@ -298,6 +298,11 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         class="cuke-date-picker-footer-today"
       >
         今天
+      </div>
+      <div
+        class="cuke-date-picker-footer-clear"
+      >
+        清除
       </div>
     </div>
   </div>

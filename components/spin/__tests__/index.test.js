@@ -1,8 +1,9 @@
 import React from "react";
 import assert from "power-assert";
-import { render } from "enzyme";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Spin from "../index";
+import Button from "../../button";
 
 describe("<Spin/>", () => {
   it("should render a <Spin/> components", () => {
@@ -44,5 +45,27 @@ describe("<Spin/>", () => {
     assert(wrapper.find(".cuke-spin-blur").length >= 1);
     assert(wrapper.find(".cuke-spin-small").length >= 1);
     assert(wrapper.find(".cuke-spin-large").length >= 1);
+  });
+
+  it("should can not render spin when spinning is false", () => {
+    const wrapper = shallow(<Spin spinning={false} />);
+    assert(wrapper.find(".cuke-spin").length === 0);
+    wrapper.setProps(
+      {
+        spinning: true
+      },
+      () => {
+        assert(wrapper.find(".cuke-spin").length === 1);
+      }
+    );
+  });
+
+  it("should render Button when spinning is false", () => {
+    const wrapper = shallow(
+      <Spin spinning={false}>
+        <Button>测试</Button>
+      </Spin>
+    );
+    assert(wrapper.find(Button).length === 1);
   });
 });

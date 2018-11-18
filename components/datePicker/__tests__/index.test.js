@@ -36,5 +36,11 @@ describe("<DatePicker/>", () => {
     const Footer = () => <Button>1</Button>;
     const wrapper = shallow(<DatePicker extraFooter={<Footer />} />);
     assert(wrapper.find(Footer).length === 1);
+    assert(wrapper.find(".cuke-date-picker-footer-extra").length === 1);
+  });
+  it("should can not render today and clear when showToday and showClear is false", () => {
+    const wrapper = shallow(<DatePicker showToday={false} showClear={false} />);
+    assert(wrapper.find(".cuke-date-picker-footer-today").length === 0);
+    assert(wrapper.find(".cuke-date-picker-footer-clear").length === 0);
   });
 });

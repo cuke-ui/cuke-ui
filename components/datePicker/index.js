@@ -2,9 +2,10 @@ import React, { PureComponent, createRef } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Input from "../input";
+import Spin from "../spin";
 import moment from "moment";
 import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
-import { DownIcon, LoadingIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
+import { DownIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
 
 export default class DataPicker extends PureComponent {
   state = {
@@ -12,15 +13,20 @@ export default class DataPicker extends PureComponent {
     selectedDate: moment().date(),
     visible: null,
     isSelected: false,
-    extraFooter: null
+    extraFooter: null,
+    //第一次没选择日期 并且没有初始值 就显示 placeholder
+    isSelectedMoment: !!(this.props.defaultValue || this.props.value)
   };
   static defaultProps = {
     prefixCls: "cuke-date-picker",
     format: "YYYY-MM-DD",
     onPanelVisibleChange: () => {},
     onChange: () => {},
+    placeholder: "请选择",
     loading: false,
-    showToday: true
+    showToday: true,
+    showClear: true,
+    tip: ""
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -28,6 +34,8 @@ export default class DataPicker extends PureComponent {
     onChange: PropTypes.func,
     format: PropTypes.string,
     loading: PropTypes.bool,
+    showClear: PropTypes.bool,
+    tip: PropTypes.any,
     showToday: PropTypes.bool,
     overlay: PropTypes.oneOfType([
       PropTypes.element,
@@ -44,7 +52,7 @@ export default class DataPicker extends PureComponent {
     if (!value || value.valueOf() === momentSelected.valueOf()) {
       return null;
     }
-    return { momentSelected: value };
+    return { momentSelected: value, isSelectedMoment: !!this.props.value };
   }
 
   onTogglePanel = () => {
@@ -83,7 +91,8 @@ export default class DataPicker extends PureComponent {
         selectedDate: date,
         isSelected: true,
         momentSelected: this.state.momentSelected.clone().date(date),
-        visible: false
+        visible: false,
+        isSelectedMoment: true
       },
       () => {
         this.props.onPanelVisibleChange(true);
@@ -104,56 +113,50 @@ export default class DataPicker extends PureComponent {
     const momentLastMonth = momentDateFirst.clone().add(-1, "months");
     const lastMonthDaysInMonth = momentLastMonth.daysInMonth();
 
-    if (this.props.loading) {
-      return (
-        <LoadingIcon className={cls(`${this.props.prefixCls}-loading-icon`)} />
-      );
-    } else {
-      return (
-        <>
-          {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(day => (
-            <span
-              className={cls(
-                `${this.props.prefixCls}-item`,
-                `${this.props.prefixCls}-day-title`
-              )}
-              key={day}
-            >
-              {day}
-            </span>
-          ))}
+    return (
+      <>
+        {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(day => (
+          <span
+            className={cls(
+              `${this.props.prefixCls}-item`,
+              `${this.props.prefixCls}-day-title`
+            )}
+            key={day}
+          >
+            {day}
+          </span>
+        ))}
 
-          {new Array(dayOfFirstDate).fill().map((_, index) => (
-            <span
-              className={cls(
-                `${this.props.prefixCls}-item`,
-                `${this.props.prefixCls}-last-month`
-              )}
-              key={`first-date-${index}`}
-            >
-              {lastMonthDaysInMonth - dayOfFirstDate + index + 1}
-            </span>
-          ))}
+        {new Array(dayOfFirstDate).fill().map((_, index) => (
+          <span
+            className={cls(
+              `${this.props.prefixCls}-item`,
+              `${this.props.prefixCls}-last-month`
+            )}
+            key={`first-date-${index}`}
+          >
+            {lastMonthDaysInMonth - dayOfFirstDate + index + 1}
+          </span>
+        ))}
 
-          {new Array(daysInMonth).fill().map((_, date) => (
-            <span
-              className={cls(
-                `${this.props.prefixCls}-item`,
-                `${this.props.prefixCls}-current-month`,
-                {
-                  [`${this.props.prefixCls}-selected-date`]:
-                    this.state.selectedDate === date + 1
-                }
-              )}
-              key={`date-${date}`}
-              onClick={() => this.selectedDate(date + 1)}
-            >
-              {date + 1}
-            </span>
-          ))}
-        </>
-      );
-    }
+        {new Array(daysInMonth).fill().map((_, date) => (
+          <span
+            className={cls(
+              `${this.props.prefixCls}-item`,
+              `${this.props.prefixCls}-current-month`,
+              {
+                [`${this.props.prefixCls}-selected-date`]:
+                  this.state.selectedDate === date + 1
+              }
+            )}
+            key={`date-${date}`}
+            onClick={() => this.selectedDate(date + 1)}
+          >
+            {date + 1}
+          </span>
+        ))}
+      </>
+    );
   };
   onSelectToday = () => {
     this.selectedDate(moment().date());
@@ -168,6 +171,22 @@ export default class DataPicker extends PureComponent {
       this.props.onPanelVisibleChange(false);
     }
   };
+  clearDate = () => {
+    const momentSelected = moment();
+    const selectedDate = momentSelected.date();
+    this.setState(
+      {
+        momentSelected,
+        selectedDate,
+        visible: false,
+        isSelectedMoment: false
+      },
+      () => {
+        this.props.onChange(undefined, undefined, "");
+        this.props.onPanelVisibleChange(false);
+      }
+    );
+  };
   render() {
     const { visible } = this.state;
     const {
@@ -178,13 +197,15 @@ export default class DataPicker extends PureComponent {
       format,
       extraFooter,
       showToday,
+      showClear,
+      tip,
       loading, //eslint-disable-line
       onSelectedDateChange, //eslint-disable-line
       onPanelVisibleChange, //eslint-disable-line
       ...attr
     } = this.props;
 
-    const { momentSelected } = this.state;
+    const { momentSelected, isSelectedMoment } = this.state;
 
     return (
       <div
@@ -202,7 +223,7 @@ export default class DataPicker extends PureComponent {
             readonly
             placeholder={placeholder}
             className={cls(`${prefixCls}-input`)}
-            value={momentSelected.format(format)}
+            value={isSelectedMoment ? momentSelected.format(format) : ""}
             onClick={this.onTogglePanel}
           />
           <DownIcon className={`${prefixCls}-arrow`} />
@@ -215,42 +236,45 @@ export default class DataPicker extends PureComponent {
           })}
           ref={this.panel}
         >
-          <div className={cls(`${prefixCls}-header`)}>
-            <span className={cls(`${prefixCls}-date`)}>
-              {this.state.momentSelected.year()} {"  "}
-              {this.state.momentSelected.month() + 1}月
-            </span>
-            <span className={cls(`${prefixCls}-switch`)}>
-              <span
-                className={cls(`${prefixCls}-switch-group`)}
-                onClick={this.subtractMonth}
-              >
-                <ArrowLeftIcon />
+          <Spin size="large" spinning={loading} tip={tip}>
+            <div className={cls(`${prefixCls}-header`)}>
+              <span className={cls(`${prefixCls}-date`)}>
+                {this.state.momentSelected.year()}年 {"  "}
+                {this.state.momentSelected.month() + 1}月
               </span>
-              <span
-                className={cls(`${prefixCls}-switch-group`)}
-                onClick={this.addMonth}
-              >
-                <ArrowRightIcon />
+              <span className={cls(`${prefixCls}-switch`)}>
+                <span
+                  className={cls(`${prefixCls}-switch-group`)}
+                  onClick={this.subtractMonth}
+                >
+                  <ArrowLeftIcon />
+                </span>
+                <span
+                  className={cls(`${prefixCls}-switch-group`)}
+                  onClick={this.addMonth}
+                >
+                  <ArrowRightIcon />
+                </span>
               </span>
-            </span>
-          </div>
-          <div
-            className={cls(`${prefixCls}-items`, {
-              [`${prefixCls}-loading`]: loading
-            })}
-          >
-            {this.renderCalendarContent()}
-          </div>
-          {extraFooter ||
-            (showToday && (
+            </div>
+            <div
+              className={cls(`${prefixCls}-items`, {
+                [`${prefixCls}-loading`]: loading
+              })}
+            >
+              {this.renderCalendarContent()}
+            </div>
+            {extraFooter && (
+              <div className={`${prefixCls}-footer-extra`}>{extraFooter}</div>
+            )}
+            {showToday || showClear ? (
               <div
                 className={cls(`${prefixCls}-footer`, {
                   [`${prefixCls}-has-extra-footer`]: extraFooter,
-                  [`${prefixCls}-has-border`]: extraFooter || showToday
+                  [`${prefixCls}-has-border`]:
+                    extraFooter || showToday || showClear
                 })}
               >
-                {extraFooter}
                 {showToday && (
                   <div
                     className={cls(`${prefixCls}-footer-today`)}
@@ -259,8 +283,19 @@ export default class DataPicker extends PureComponent {
                     今天
                   </div>
                 )}
+                {showClear && (
+                  <div
+                    className={cls(`${prefixCls}-footer-clear`)}
+                    onClick={this.clearDate}
+                  >
+                    清除
+                  </div>
+                )}
               </div>
-            ))}
+            ) : (
+              undefined
+            )}
+          </Spin>
         </div>
       </div>
     );

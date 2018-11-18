@@ -28,6 +28,13 @@ const ChangeLog = () => (
         <li> NumberInput stepper 模式 新增 disabled</li>
         <li> 修复 WordPad 生命周期触发两次的问题</li>
         <li> 修复 Tabs 非卡片模式 active 的样式问题 和 动画效果</li>
+        <li> DatePicker 日历样式美化 更好看了 </li>
+        <li> DatePicker loading 效果 使用 Spin 组件 </li>
+        <li> DatePicker 增加 showClear 选项 支持清除 </li>
+        <li> 修复 Collapse 圆角溢出 问题</li>
+        <li> 修复 CityPicker 没有圆角的问题</li>
+        <li> 修复 BackTop 组件 第一次会触发动画的 bug </li>
+        <li> 修复 BackTop 组件 onClick 事件 会触发两次的 bug </li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

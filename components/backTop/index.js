@@ -16,7 +16,8 @@ const scrollToTop = () => {
 
 export default class BackTop extends PureComponent {
   state = {
-    visible: null
+    visible: null,
+    animateLock: true
   };
   static propsTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -41,6 +42,7 @@ export default class BackTop extends PureComponent {
       className,
       prefixCls,
       children,
+      onClick, //eslint-disable-line
       visibilityHeight, //eslint-disable-line
       ...attr
     } = this.props;
@@ -69,7 +71,12 @@ export default class BackTop extends PureComponent {
       window.onscroll();
     } else {
       const c = document.documentElement.scrollTop || document.body.scrollTop;
-      this.setState({ visible: c >= this.props.visibilityHeight });
+      const visible = c >= this.props.visibilityHeight;
+      if (!visible && this.state.animateLock) {
+        this.setState({ visible: null });
+      } else {
+        this.setState({ visible, animateLock: false });
+      }
     }
   };
   componentDidMount() {

@@ -11,11 +11,13 @@ export default class Spin extends PureComponent {
     prefixCls: "cuke-spin",
     size: "",
     tip: "",
+    spinning: true,
     indicator: <LoadingIcon />
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
     tip: PropTypes.string,
+    spinning: PropTypes.bool,
     indicator: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -34,8 +36,13 @@ export default class Spin extends PureComponent {
       size,
       tip,
       children,
+      spinning,
       ...attr
     } = this.props;
+
+    if (!spinning) {
+      return children;
+    }
 
     if (children) {
       return (

@@ -8,7 +8,7 @@ exports[`<Collapse/> should render Collapse 1`] = `
     class="cuke-collapse-item"
   >
     <div
-      class="cuke-collapse-item-header"
+      class="cuke-collapse-item-header cuke-collapse-item-header-has-radius"
     >
       <span
         class="cuke-collapse-item-arrow"
@@ -40,7 +40,7 @@ exports[`<Collapse/> should render Collapse 1`] = `
     class="cuke-collapse-item"
   >
     <div
-      class="cuke-collapse-item-header"
+      class="cuke-collapse-item-header cuke-collapse-item-header-has-radius"
     >
       <span
         class="cuke-collapse-item-arrow"

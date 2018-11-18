@@ -10,12 +10,18 @@
     .flex-center(flex-start);
 
     &.@{prefixCls}-card {
-
       .@{prefixCls}-tab {
         border: 1px solid @border-color;
-        border-bottom: none;
         background-color: @bg-color;
         margin-right: @tabs-card-tab-offset;
+        border-top-right-radius: @border-radius;
+        border-top-left-radius: @border-radius;
+
+        &.@{prefixCls}-tab-active {
+          color: @primary-color;
+          background-color: #fff;
+          border-bottom: 1px solid transparent;
+        }
       }
     }
   }
@@ -32,7 +38,6 @@
 
     &.@{prefixCls}-tab-active {
       color: @primary-color;
-      background-color: #fff !important;
     }
 
     &.@{prefixCls}-tab-disabled {

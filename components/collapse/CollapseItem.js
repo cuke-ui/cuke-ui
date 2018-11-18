@@ -59,7 +59,9 @@ export default class CollapseItem extends React.PureComponent {
         {...attr}
       >
         <div
-          className={cls(`${prefixCls}-header`)}
+          className={cls(`${prefixCls}-header`, {
+            [`${prefixCls}-header-has-radius`]: !visible
+          })}
           onClick={disabled ? undefined : this.toggleContentPanel}
         >
           {hideArrow ? (
@@ -73,7 +75,6 @@ export default class CollapseItem extends React.PureComponent {
               <ArrowRightIcon />
             </span>
           )}
-
           {title}
         </div>
         <div
