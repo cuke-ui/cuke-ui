@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import Input from "../input";
 
 const DEFAULT_POINT = ".";
-const DEFUALT_DECIMAL = 2;
+const DEFAULT_DECIMAL = 2;
 //保留 数字 和 小数点
 export const getCleanString = (str = "") => {
   return str.toString().replace(/[^\d|\\.]/g, "");
@@ -36,7 +36,9 @@ export default class NumberInput extends PureComponent {
     value: getTheValueLengthAfterTheDecimalPoint(
       getCleanString(this.props.defaultValue || this.props.value || ""),
       this.props.decimal
-    )
+    ),
+    isDisabledSubTract: false,
+    isDisabledSubAdd: false
   };
 
   static defaultProps = {
@@ -86,7 +88,7 @@ export default class NumberInput extends PureComponent {
     const _value = Math.min(max, Math.max(min, value));
     if (showStepper && _value.toString().includes(DEFAULT_POINT)) {
       // 0.1 + 0.2 = 0.3300000....4
-      return _value.toFixed(decimal || DEFUALT_DECIMAL);
+      return _value.toFixed(decimal || DEFAULT_DECIMAL);
     }
     return _value;
   };
@@ -114,14 +116,24 @@ export default class NumberInput extends PureComponent {
   };
 
   add = () => {
-    this.setState(({ value }) => ({
-      value: this.getValue(Number(value) + this.props.step)
-    }));
+    this.setState(({ value }) => {
+      const newValue = this.getValue(Number(value) + this.props.step);
+      return {
+        value: newValue,
+        isDisabledAdd: newValue === this.props.max,
+        isDisabledSubTract: newValue === this.props.min
+      };
+    });
   };
   subtract = () => {
-    this.setState(({ value }) => ({
-      value: this.getValue(Number(value) - this.props.step)
-    }));
+    this.setState(({ value }) => {
+      const newValue = this.getValue(Number(value) - this.props.step);
+      return {
+        value: newValue,
+        isDisabledSubTract: newValue === this.props.min,
+        isDisabledAdd: newValue === this.props.max
+      };
+    });
   };
   render() {
     const {
@@ -140,7 +152,9 @@ export default class NumberInput extends PureComponent {
 
     const AddStepper = () => (
       <button
-        className={`${prefixCls}-stepper`}
+        className={cls(`${prefixCls}-stepper`, {
+          [`${prefixCls}-disabled`]: this.state.isDisabledAdd
+        })}
         onClick={this.add}
         disabled={disabled}
       >
@@ -149,7 +163,9 @@ export default class NumberInput extends PureComponent {
     );
     const SubtractStepper = () => (
       <button
-        className={`${prefixCls}-stepper`}
+        className={cls(`${prefixCls}-stepper`, {
+          [`${prefixCls}-disabled`]: this.state.isDisabledSubTract
+        })}
         onClick={this.subtract}
         disabled={disabled}
       >
@@ -169,11 +185,13 @@ export default class NumberInput extends PureComponent {
         placeholder={placeholder}
         {...attr}
         onChange={this.onChange}
-        value={value}
+        value={value.toString()}
         addonBefore={showStepper && <SubtractStepper />}
         addonAfter={showStepper && <AddStepper />}
         addonClassName={cls(`${prefixCls}-group`, {
-          [`${prefixCls}-group-disabled`]: disabled
+          [`${prefixCls}-group-disabled`]: disabled,
+          [`${prefixCls}-disabled-subtract`]: this.state.isDisabledSubTract,
+          [`${prefixCls}-disabled-add`]: this.state.isDisabledAdd
         })}
       />
     );

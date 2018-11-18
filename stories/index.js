@@ -168,7 +168,7 @@ storiesOf("综述", module).add("介绍", () => (
       Code: CodeBlock,
     }} />
   ))
-  .add("更新日志", () => (
+  .add(`更新日志`, () => (
     <>
       <ReactMarkDown source={require('./markdown/changelog.md')} renderers={{
         CodeBlock,

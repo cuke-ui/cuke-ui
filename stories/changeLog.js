@@ -1,6 +1,7 @@
 import React from "react"
 import Timeline from "../components/timeline";
 import ReactMarkDown from "react-markdown"
+import "./styles/changeLog.less"
 
 
 const ChangeLog = () => (
@@ -23,6 +24,8 @@ const ChangeLog = () => (
         <li> 修改全局阴影为 0 4px 22px 0 rgba(15, 35, 95, 0.12)</li>
         <li> 全局 loading 时间 修改为 1s => 1.5s </li>
         <li> 修复 Button 组件 link 模式下 disabled 无效</li>
+        <li> 修复 NumberInput value 值 string 警告</li>
+        <li> NumberInput stepper 模式 新增 disabled</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

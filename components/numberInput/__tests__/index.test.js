@@ -61,6 +61,34 @@ describe("<NumberInput/>", () => {
     }, 20);
   });
 
+  it("should render disabled subtract button when showStepper is true and disabled", () => {
+    const wrapper = shallow(<NumberInput value={2} min={1} showStepper />);
+    setTimeout(() => {
+      wrapper
+        .find(".cuke-input-group-addon")
+        .at(0)
+        .simulate("click");
+      assert(
+        wrapper.find(".cuke-number-input-stepper.cuke-number-input-disabled")
+          .length === 1
+      );
+    }, 20);
+  });
+
+  it("should render disabled add button when showStepper is true and disabled", () => {
+    const wrapper = shallow(<NumberInput value={2} max={3} showStepper />);
+    setTimeout(() => {
+      wrapper
+        .find(".cuke-input-group-addon")
+        .at(1)
+        .simulate("click");
+      assert(
+        wrapper.find(".cuke-number-input-stepper.cuke-number-input-disabled")
+          .length === 1
+      );
+    }, 20);
+  });
+
   it("getTheValueLengthAfterTheDecimalPoint", () => {
     assert(getTheValueLengthAfterTheDecimalPoint("19.222", 2) === "19.22");
     assert(getTheValueLengthAfterTheDecimalPoint("199", 2) === "199");

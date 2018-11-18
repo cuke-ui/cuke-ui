@@ -1,19 +1,21 @@
 @import "../styles/vars.less";
 @prefixCls : cuke-collapse;
+
 .@{prefixCls} {
   border: 1px solid @border-color;
   border-radius: @border-radius;
   font-size: @font-size;
   position: relative;
   .@{prefixCls}-item-disabled {
-
     .@{prefixCls}-item-header {
       cursor: not-allowed;
       color: @disabled-font-color;
     }
   }
   &-item {
-    border-bottom: 1px solid @border-color;
+    &:not(:last-child) {
+      border-bottom: 1px solid @border-color;
+    }
     &-arrow {
       font-size: 16px;
       vertical-align: middle;

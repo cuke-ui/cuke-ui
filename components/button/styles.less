@@ -25,7 +25,6 @@
   border-color: @border-color;
   border-radius: @border-radius;
   outline: none;
-  box-shadow: @button-box-shadow;
 
   .cuke-button-hover(@default-color);
   &.@{prefixCls}-primary {
@@ -114,6 +113,7 @@
     height: @button-default-height;
     border-radius: 50%;
     padding: 0;
+    box-shadow: @default-section-shadow;
     &.@{prefixCls}-large {
       width: @button-large-width;
       height: @button-large-height;

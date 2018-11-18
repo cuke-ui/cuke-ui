@@ -18,8 +18,34 @@
     cursor: pointer;
     transition: color @default-transition;
     font-size: 20px;
-    &:hover {
+    &:not(.@{prefixCls}-disabled):hover {
       color: @primary-color;
+    }
+    &.@{prefixCls}-disabled {
+      cursor: not-allowed;
+      color: @disabled-font-color;
+      border-color: @border-color;
+    }
+    .@{prefixCls}-stepper-disabled {
+      cursor: not-allowed;
+      color: @disabled-font-color;
+      border-color: @border-color;
+    }
+  }
+  &-disabled-subtract {
+    .cuke-input-group-addon:first-child {
+      cursor: not-allowed;
+      color: @disabled-font-color;
+      border-color: @border-color;
+      background-color: @disabled-color;
+    }
+  }
+  &-disabled-add {
+    .cuke-input-group-addon:last-child {
+      cursor: not-allowed;
+      color: @disabled-font-color;
+      border-color: @border-color;
+      background-color: @disabled-color;
     }
   }
   &-group-disabled {
