@@ -8,6 +8,7 @@ import Dropdown from '../components/dropdown';
 import Affix from '../components/affix';
 import Row from '../components/row';
 import Col from '../components/col';
+import Steps from '../components/steps';
 
 import { DownIcon } from '../components/icon';
 
@@ -15,6 +16,7 @@ import '../components/breadcrumb/styles.less';
 import '../components/pagination/styles.less';
 import '../components/dropdown/styles.less';
 import '../components/affix/styles.less';
+import '../components/steps/styles.less';
 import './styles/navigation.less';
 
 const overlay = (
@@ -224,6 +226,12 @@ storiesOf('导航', module)
       <div>
         <h2>基本使用</h2>
         // TODO: 
+
+        <Steps>
+          <Steps.Step tab="选项1">1</Steps.Step>
+          <Steps.Step tab="选项2">2</Steps.Step>
+          <Steps.Step tab="选项3">3</Steps.Step>
+        </Steps>
       </div>
     ))
   )

@@ -40,19 +40,19 @@ storiesOf("操作反馈", module)
     )(() => (
       <div className="message-example">
         <h2>基本使用</h2>
-        <Button type="primary" onClick={() => message.success("我是渣渣辉!")}>
+        <Button type="primary" onClick={() => message.success("我是渣渣辉")}>
           成功
         </Button>
-        <Button type="error" onClick={() => message.error("我是渣渣辉!")}>
+        <Button type="error" onClick={() => message.error("我是渣渣辉")}>
           错误
         </Button>
-        <Button type="warning" onClick={() => message.warning("真香警告!")}>
+        <Button type="warning" onClick={() => message.warning("真香警告")}>
           警告
         </Button>
-        <Button type="info" onClick={() => message.info("黄瓜 ui!")}>
+        <Button type="info" onClick={() => message.info("黄瓜 ui")}>
           信息
         </Button>
-        <Button type="primary" onClick={() => message.loading("我是渣渣辉!")}>
+        <Button type="primary" onClick={() => message.loading("我是渣渣辉")}>
           加载中
         </Button>
 
