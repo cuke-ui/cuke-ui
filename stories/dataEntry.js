@@ -11,6 +11,8 @@ import DatePicker from "../components/datePicker";
 import Button from "../components/button";
 import { withInfo } from "@storybook/addon-info";
 import { IoIosAddCircleOutline } from "react-icons/io";
+import Select from "../components/select";
+import NumberInput from '../components/numberInput';
 
 import "../components/input/styles.less";
 import "../components/radio/styles.less";
@@ -18,9 +20,9 @@ import "../components/checkbox/styles.less";
 import "../components/select/styles.less";
 import "../components/datePicker/styles.less";
 import "../components/numberInput/styles.less";
+import "../components/numberInput/styles.less";
+import "../components/wordPad/styles.less";
 import "./styles/dataEntry.less";
-import Select from "../components/select";
-import NumberInput from '../components/numberInput';
 
 storiesOf("数据录入", module)
   .add(

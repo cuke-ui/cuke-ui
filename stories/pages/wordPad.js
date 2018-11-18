@@ -34,7 +34,7 @@ export default class WordPadPage extends Component {
             height={300}
             getCanvas={(canvas, ctx) => this.canvas = canvas}
           />
-          <Button type="primary" onClick={this.onGetImage}>获取文字</Button>
+          <Button type="primary" onClick={this.onGetImage} style={{marginTop: 20}}>获取文字</Button>
           {
             imgUrl ? <img src={imgUrl} /> : undefined
           }
@@ -60,7 +60,7 @@ export default class WordPadPage extends Component {
             clear={this.state.clear}
             onClearComplete={()=> Message.success('清除成功')}
           />
-          <Button type="primary" onClick={this.clearWordPad}>清除</Button>
+          <Button type="primary" onClick={this.clearWordPad} style={{marginTop: 20}}>清除</Button>
         </Col>
       </Row>
     )

@@ -1,9 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<WordPad/> should clear canvas when clear props is true 1`] = `
+<canvas
+  class="cuke-word-pad"
+>
+  你的浏览器不支持 canvas
+</canvas>
+`;
+
 exports[`<WordPad/> should render a <WordPad/> components 1`] = `
 <canvas
   class="cuke-word-pad"
-  style="display:block;border:1px solid #444;margin:10px 0"
+>
+  你的浏览器不支持 canvas
+</canvas>
+`;
+
+exports[`<WordPad/> should render custom style 1`] = `
+<canvas
+  class="cuke-word-pad"
+  style="border:1px solid #dcdcdc;margin:10px 0"
 >
   你的浏览器不支持 canvas
 </canvas>

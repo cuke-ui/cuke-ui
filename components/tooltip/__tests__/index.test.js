@@ -39,30 +39,30 @@ describe("<Tooltip/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-  // it('should render custom position', () => {
-  // 	const wrapper = mount(
-  // 		<div>
-  // 			<Tooltip title="黄瓜ui" position="top">
-  // 				<Button>上</Button>
-  // 			</Tooltip>
-  // 			<Tooltip title="黄瓜ui" position="bottom">
-  // 				<Button>下</Button>
-  // 			</Tooltip>
-  // 			<Tooltip title="黄瓜ui" position="left">
-  // 				<Button>左</Button>
-  // 			</Tooltip>
-  // 			<Tooltip title="黄瓜ui" position="right">
-  // 				<Button>右</Button>
-  // 			</Tooltip>
-  // 		</div>
-  // 	);
-  // 	expect(toJson(wrapper)).toMatchSnapshot();
-  // 	assert(wrapper.find('.position-top').length === 0);
+  it.skip("should render custom position", () => {
+    const wrapper = shallow(
+      <div>
+        <Tooltip title="黄瓜ui" position="top">
+          <Button>上</Button>
+        </Tooltip>
+        <Tooltip title="黄瓜ui" position="bottom">
+          <Button>下</Button>
+        </Tooltip>
+        <Tooltip title="黄瓜ui" position="left">
+          <Button>左</Button>
+        </Tooltip>
+        <Tooltip title="黄瓜ui" position="right">
+          <Button>右</Button>
+        </Tooltip>
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+    assert(wrapper.find(".position-top").length === 0);
 
-  // 	wrapper.setState({ visible: true })
-  // 	assert(wrapper.find('.position-top').length === 1);
-  // 	assert(wrapper.find('.position-bottom').length === 1);
-  // 	assert(wrapper.find('.position-left').length === 1);
-  // 	assert(wrapper.find('.position-right').length === 1);
-  // });
+    wrapper.setState({ visible: true });
+    assert(wrapper.find(".position-top").length === 1);
+    assert(wrapper.find(".position-bottom").length === 1);
+    assert(wrapper.find(".position-left").length === 1);
+    assert(wrapper.find(".position-right").length === 1);
+  });
 });

@@ -22,4 +22,8 @@ global.cancelAnimationFrame = function (cb) {
 };
 ReactDOM.createPortal = node => node
 
+HTMLCanvasElement.prototype.getContext = () => { 
+  return {}
+};
+
 Enzyme.configure({ adapter: new Adapter() });

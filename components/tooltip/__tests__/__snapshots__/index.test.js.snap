@@ -97,3 +97,92 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
   </div>
 </div>
 `;
+
+exports[`<Tooltip/> should render custom position 1`] = `
+<div>
+  <Tooltip
+    position="top"
+    prefixCls="cuke-tooltip"
+    title="黄瓜ui"
+  >
+    <Button
+      block={false}
+      circle={false}
+      dashed={false}
+      disabled={false}
+      hollow={false}
+      href=""
+      htmlType="button"
+      loading={false}
+      prefixCls="cuke-button"
+      size="default"
+      type="default"
+    >
+      上
+    </Button>
+  </Tooltip>
+  <Tooltip
+    position="bottom"
+    prefixCls="cuke-tooltip"
+    title="黄瓜ui"
+  >
+    <Button
+      block={false}
+      circle={false}
+      dashed={false}
+      disabled={false}
+      hollow={false}
+      href=""
+      htmlType="button"
+      loading={false}
+      prefixCls="cuke-button"
+      size="default"
+      type="default"
+    >
+      下
+    </Button>
+  </Tooltip>
+  <Tooltip
+    position="left"
+    prefixCls="cuke-tooltip"
+    title="黄瓜ui"
+  >
+    <Button
+      block={false}
+      circle={false}
+      dashed={false}
+      disabled={false}
+      hollow={false}
+      href=""
+      htmlType="button"
+      loading={false}
+      prefixCls="cuke-button"
+      size="default"
+      type="default"
+    >
+      左
+    </Button>
+  </Tooltip>
+  <Tooltip
+    position="right"
+    prefixCls="cuke-tooltip"
+    title="黄瓜ui"
+  >
+    <Button
+      block={false}
+      circle={false}
+      dashed={false}
+      disabled={false}
+      hollow={false}
+      href=""
+      htmlType="button"
+      loading={false}
+      prefixCls="cuke-button"
+      size="default"
+      type="default"
+    >
+      右
+    </Button>
+  </Tooltip>
+</div>
+`;

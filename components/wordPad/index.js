@@ -32,7 +32,8 @@ export default class WordPad extends PureComponent {
     lineCap: propTypes.string,
     getCanvas: propTypes.func,
     onClearComplete: propTypes.func,
-    prefixCls: propTypes.string.isRequired
+    prefixCls: propTypes.string.isRequired,
+    clear: propTypes.bool
   };
   constructor(props) {
     super(props);
@@ -42,12 +43,7 @@ export default class WordPad extends PureComponent {
     return (
       <canvas
         className={cls(prefixCls, className)}
-        style={{
-          ...style,
-          display: "block",
-          border: "1px solid #444",
-          margin: "10px 0"
-        }}
+        style={style}
         ref={node => (this.canvas = node)}
       >
         你的浏览器不支持 canvas
@@ -108,7 +104,7 @@ export default class WordPad extends PureComponent {
     };
   }
   componentWillReceiveProps(nextProps) {
-    if (nextProps) {
+    if (nextProps.clear !== this.props.clear) {
       this.clear();
       if (nextProps.onClearComplete) {
         nextProps.onClearComplete();

@@ -26,6 +26,8 @@ const ChangeLog = () => (
         <li> 修复 Button 组件 link 模式下 disabled 无效</li>
         <li> 修复 NumberInput value 值 string 警告</li>
         <li> NumberInput stepper 模式 新增 disabled</li>
+        <li> 修复 WordPad 生命周期触发两次的问题</li>
+        <li> 修复 Tabs 非卡片模式 active 的样式问题 和 动画效果</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>
