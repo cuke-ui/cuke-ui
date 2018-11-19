@@ -17,7 +17,7 @@ describe("<NumberInput/>", () => {
     const onChange = jest.fn();
     const wrapper = shallow(<NumberInput onChange={onChange} />);
     setTimeout(() => {
-      wrapper.find("input").simulate("change");
+      wrapper.find(".cuke-number-input").simulate("change");
       expect(onChange).toHaveBeenCalled();
     }, 20);
   });
@@ -26,7 +26,7 @@ describe("<NumberInput/>", () => {
     const onChange = jest.fn();
     const wrapper = shallow(<NumberInput onChange={onChange} disabled />);
     setTimeout(() => {
-      wrapper.find("input").simulate("change");
+      wrapper.find(".cuke-number-input").simulate("change");
       expect(onChange).not.toHaveBeenCalled();
     }, 20);
   });
@@ -34,9 +34,9 @@ describe("<NumberInput/>", () => {
     const onChange = jest.fn();
     const wrapper = shallow(<NumberInput onChange={onChange} />);
     setTimeout(() => {
-      wrapper.find("input").simulate("change");
+      wrapper.find(".cuke-number-input").simulate("change");
       expect(onChange).toHaveBeenCalled();
-    }, 20);
+    });
   });
 
   it("should cannot emit onChange events when stepper disabled", () => {
@@ -104,5 +104,10 @@ describe("<NumberInput/>", () => {
     assert(getCleanString("123abc") === "123");
     assert(getCleanString("123abc.3") === "123.3");
     assert(getCleanString([]) === "");
+  });
+
+  it("should call getValue", () => {
+    const numberInput = new NumberInput({}, {});
+    expect(numberInput.getValue()).toEqual(NaN);
   });
 });

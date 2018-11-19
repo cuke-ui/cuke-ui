@@ -58,4 +58,12 @@ describe("<BackTop/>", () => {
       assert(wrapper.find(".cuke-back-top-open").length === 1);
     });
   });
+
+  it("should window cannot trigger click event when un mount", () => {
+    const onClick = jest.fn();
+    const wrapper = shallow(<BackTop />);
+    wrapper.unmount();
+    window.onclick = () => onClick;
+    expect(onClick).not.toHaveBeenCalled();
+  });
 });

@@ -97,8 +97,8 @@ describe("<Collapse/>", () => {
         <Collapse.Item title="标题2">内容2</Collapse.Item>
       </Collapse>
     );
-    wrapper.find(".cuke-collapse").simulate("click");
     setTimeout(() => {
+      wrapper.find(".cuke-collapse-item-header").simulate("click");
       expect(onChange).toHaveBeenCalled();
     });
   });

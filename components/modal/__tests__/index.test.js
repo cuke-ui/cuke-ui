@@ -107,6 +107,23 @@ describe("<Modal/>", () => {
     expect(onCancelClick).not.toHaveBeenCalled();
   });
 
+  it("should enable scroll and disabled scroll", () => {
+    const wrapper = shallow(
+      <Modal visible={false}>
+        <span>1</span>
+      </Modal>
+    );
+    wrapper.update();
+    expect(document.body.style.paddingRight).toBe("");
+    wrapper.setState({
+      visible: true
+    });
+    wrapper.update();
+    setTimeout(() => {
+      expect(document.body.style.paddingRight).toBe("15px");
+    });
+  });
+
   it("should can trigger onCancel event", () => {
     const onClick = jest.fn();
     const onCancelClick = jest.fn();

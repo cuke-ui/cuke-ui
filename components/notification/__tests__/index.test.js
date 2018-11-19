@@ -53,6 +53,23 @@ describe("<Notification/>", () => {
     assert(notification.destroy && notification.destroy instanceof Function);
   });
 
+  it("should enable scroll and disabled scroll", () => {
+    const wrapper = shallow(
+      <Notification visible={false}>
+        <span>1</span>
+      </Notification>
+    );
+    wrapper.update();
+    expect(document.body.style.paddingRight).toBe("0px");
+    wrapper.setState({
+      visible: true
+    });
+    wrapper.update();
+    setTimeout(() => {
+      expect(document.body.style.paddingRight).toBe("15px");
+    });
+  });
+
   it("should cannot find <Notification/> when destroy", () => {
     const message = Notification.success();
     message.destroy();

@@ -110,7 +110,9 @@ describe("<Tabs/>", () => {
         </Tabs.TabPane>
       </Tabs>
     );
-    wrapper.find(".cuke-tabs").simulate("change");
-    expect(onChange).toHaveBeenCalled();
+    setTimeout(() => {
+      wrapper.find(".cuke-tabs-tab").simulate("click");
+      expect(onChange).toHaveBeenCalled();
+    });
   });
 });

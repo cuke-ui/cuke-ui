@@ -149,8 +149,8 @@ describe("<CityPicker/>", () => {
     const wrapper = shallow(
       <CityPicker onCityGroupChange={onChange} cityList={cityList} />
     );
-    wrapper.find(".cuke-city-picker").simulate("click");
     setTimeout(() => {
+      wrapper.find(".cuke-city-picker-core-item").simulate("click");
       expect(onChange).toHaveBeenCalled();
     });
   });
@@ -160,8 +160,8 @@ describe("<CityPicker/>", () => {
     const wrapper = shallow(
       <CityPicker onCityChange={onChange} cityList={cityList} />
     );
-    wrapper.find(".cuke-city-picker").simulate("click");
     setTimeout(() => {
+      wrapper.find(".cuke-city-picker-core-city").simulate("click");
       expect(onChange).toHaveBeenCalled();
     });
   });
@@ -180,8 +180,8 @@ describe("<CityPicker/>", () => {
     const wrapper = shallow(
       <CityPickerCore onCityGroupChange={onChange} cityList={cityList} />
     );
-    wrapper.find(".cuke-city-picker-core-panel-header").simulate("click");
     setTimeout(() => {
+      wrapper.find(".cuke-city-picker-core-item").simulate("click");
       expect(onChange).toHaveBeenCalled();
     });
   });
@@ -204,6 +204,31 @@ describe("<CityPicker/>", () => {
     );
     wrapper.find(".cuke-city-picker-input").simulate("click");
     expect(onPanelVisibleChange).toHaveBeenCalled();
+  });
+
+  it("should trigger onCityChange by CityPickerCore", () => {
+    const onCityChange = jest.fn();
+    const wrapper = shallow(
+      <CityPickerCore cityList={cityList} onCityChange={onCityChange} />
+    );
+    setTimeout(() => {
+      wrapper.find(".cuke-city-picker-core-city").simulate("click");
+      expect(onCityChange).toHaveBeenCalled();
+    });
+  });
+
+  it("should trigger onCityGroupChange by CityPickerCore", () => {
+    const onCityGroupChange = jest.fn();
+    const wrapper = shallow(
+      <CityPickerCore
+        cityList={cityList}
+        onCityGroupChange={onCityGroupChange}
+      />
+    );
+    setTimeout(() => {
+      wrapper.find(".cuke-city-picker-core-item").simulate("click");
+      expect(onCityGroupChange).toHaveBeenCalled();
+    });
   });
 
   it("should cannot trigger panel visible change when disabled groups", () => {

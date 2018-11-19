@@ -93,4 +93,20 @@ describe("<Drawer/>", () => {
     wrapper.update();
     assert(document.body.style.overflow === "");
   });
+  it("should enable scroll and disabled scroll", () => {
+    const wrapper = shallow(
+      <Drawer visible={false}>
+        <span>1</span>
+      </Drawer>
+    );
+    wrapper.update();
+    expect(document.body.style.paddingRight).toBe("");
+    wrapper.setState({
+      visible: true
+    });
+    wrapper.update();
+    setTimeout(() => {
+      expect(document.body.style.paddingRight).toBe("15px");
+    });
+  });
 });

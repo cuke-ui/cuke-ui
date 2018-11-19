@@ -8,6 +8,11 @@ module.exports = {
     "jsx",
     "json"
   ],
+  "coveragePathIgnorePatterns": [
+    "/components/index.js",
+    "/components/styles",
+    "/components/version",
+  ],
   "transformIgnorePatterns": [
     "/node_modules/",
     ".history/*",
