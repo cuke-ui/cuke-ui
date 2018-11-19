@@ -51,6 +51,8 @@ describe("<BackTop/>", () => {
 
   it("should show back to element when scroll", () => {
     const wrapper = shallow(<BackTop visibilityHeight={100} />);
+    assert(wrapper.find(".cuke-back-top-close").length === 1);
+
     window.scrollTo(0, 200);
     setTimeout(() => {
       assert(wrapper.find(".cuke-back-top-open").length === 1);

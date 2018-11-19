@@ -68,11 +68,6 @@ export default class DataPicker extends PureComponent {
     this.props.onPanelVisibleChange(visible);
   };
 
-  onChange = value => {
-    this.setState({ selectedValue: value });
-    this.props.onChange(value);
-  };
-
   addMonth = () => {
     this.setState({
       momentSelected: this.state.momentSelected.clone().add(1, "months")

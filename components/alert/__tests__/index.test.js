@@ -3,6 +3,13 @@ import assert from "power-assert";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Alert from "../index";
+import {
+  SuccessIcon,
+  WarningIcon,
+  InfoIcon,
+  ErrorIcon,
+  CloseIcon
+} from "../../icon";
 
 describe("<Alert/>", () => {
   it("should render a <Alert/> components", () => {
@@ -62,22 +69,51 @@ describe("<Alert/>", () => {
     assert(wrapper.find(".cuke-alert-message").length >= 1);
     assert(wrapper.find(".cuke-alert-close").length === 1);
     assert(wrapper.find(".cuke-alert-description").length >= 1);
+    assert(wrapper.find(".cuke-alert-icon").length === 0);
+  });
+
+  it("should render icons", () => {
+    const wrapper = shallow(
+      <div>
+        <Alert type="success" message="一等奖" showIcon />
+        <Alert type="warning" message="一等奖" showIcon />
+        <Alert showIcon type="error" message="一等奖" />
+        <Alert showIcon type="info" message="一等奖" closable />
+      </div>
+    );
+    setTimeout(() => {
+      assert(wrapper.find(SuccessIcon).length === 1);
+      assert(wrapper.find(WarningIcon).length === 1);
+      assert(wrapper.find(InfoIcon).length === 1);
+      assert(wrapper.find(ErrorIcon).length === 1);
+      assert(wrapper.find(CloseIcon).length === 1);
+    });
   });
 
   it("should can trigger onClose event", () => {
+    const onClose = jest.fn();
     const wrapper = shallow(
       <Alert
         type="error"
         showIcon
         closable
         message="有一个 bug?"
-        onClose={() => wrapper.setState({ message: "关闭" })}
+        onClose={onClose}
       />
     );
     wrapper.find(".cuke-alert-close").simulate("click");
     setTimeout(() => {
-      assert(wrapper.state().message === "关闭");
-    });
+      expect(onClose).toHaveBeenCalled();
+    }, 500);
+  });
+
+  it("should find icon when call renderIcon function", () => {
+    const alert = new Alert();
+    expect(alert.renderIcon("success")).toEqual(<SuccessIcon />);
+    expect(alert.renderIcon("info")).toEqual(<InfoIcon />);
+    expect(alert.renderIcon("error")).toEqual(<ErrorIcon />);
+    expect(alert.renderIcon("warning")).toEqual(<WarningIcon />);
+    expect(alert.renderIcon()).toEqual(<SuccessIcon />);
   });
 
   it("should can not render <Alert/> when visible is false", () => {

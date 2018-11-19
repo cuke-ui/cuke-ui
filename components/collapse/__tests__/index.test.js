@@ -110,7 +110,21 @@ describe("<Collapse/>", () => {
         <Collapse.Item title="标题2">内容2</Collapse.Item>
       </Collapse>
     );
+    wrapper.setProps({
+      accordion: true
+    });
     wrapper.find(".cuke-collapse").simulate("click");
     assert(wrapper.find(".cuke-collapse-accordion").length === 1);
+  });
+
+  it("should accordion mode", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Collapse.Item title="标题2" onChange={onChange}>
+        内容2
+      </Collapse.Item>
+    );
+    wrapper.find(".cuke-collapse-item-header").simulate("click");
+    expect(onChange).toHaveBeenCalled();
   });
 });

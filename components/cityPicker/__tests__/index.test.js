@@ -144,7 +144,7 @@ describe("<CityPicker/>", () => {
     expect(onChange).not.toHaveBeenCalled();
   });
 
-  it("should render can trigger city group change event ", () => {
+  it("should can trigger city group change event ", () => {
     const onChange = jest.fn();
     const wrapper = shallow(
       <CityPicker onCityGroupChange={onChange} cityList={cityList} />
@@ -155,7 +155,7 @@ describe("<CityPicker/>", () => {
     });
   });
 
-  it("should render can trigger city group change event ", () => {
+  it("should can trigger city group change event ", () => {
     const onChange = jest.fn();
     const wrapper = shallow(
       <CityPicker onCityChange={onChange} cityList={cityList} />
@@ -164,5 +164,58 @@ describe("<CityPicker/>", () => {
     setTimeout(() => {
       expect(onChange).toHaveBeenCalled();
     });
+  });
+
+  it("should can trigger city group change event in CityPickerCore ", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <CityPickerCore onCityChange={onChange} cityList={cityList} />
+    );
+    wrapper.find(".cuke-city-picker-core-city").simulate("click");
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it("should can trigger city group change event in CityPickerCore ", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <CityPickerCore onCityGroupChange={onChange} cityList={cityList} />
+    );
+    wrapper.find(".cuke-city-picker-core-panel-header").simulate("click");
+    setTimeout(() => {
+      expect(onChange).toHaveBeenCalled();
+    });
+  });
+
+  it("should window cannot trigger click event when un mount", () => {
+    const onClick = jest.fn();
+    const wrapper = shallow(<CityPicker cityList={cityList} />);
+    wrapper.unmount();
+    window.onclick = () => onClick;
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it("should trigger panel visible change", () => {
+    const onPanelVisibleChange = jest.fn();
+    const wrapper = shallow(
+      <CityPicker
+        cityList={cityList}
+        onPanelVisibleChange={onPanelVisibleChange}
+      />
+    );
+    wrapper.find(".cuke-city-picker-input").simulate("click");
+    expect(onPanelVisibleChange).toHaveBeenCalled();
+  });
+
+  it("should cannot trigger panel visible change when disabled groups", () => {
+    const onPanelVisibleChange = jest.fn();
+    const wrapper = shallow(
+      <CityPicker
+        cityList={cityList}
+        disabled
+        onPanelVisibleChange={onPanelVisibleChange}
+      />
+    );
+    wrapper.find(".cuke-city-picker").simulate("click");
+    expect(onPanelVisibleChange).not.toHaveBeenCalled();
   });
 });

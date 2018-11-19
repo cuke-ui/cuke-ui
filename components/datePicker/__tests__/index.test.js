@@ -1,3 +1,4 @@
+import moment from "moment";
 import React from "react";
 import assert from "power-assert";
 import { render, shallow } from "enzyme";
@@ -42,5 +43,114 @@ describe("<DatePicker/>", () => {
     const wrapper = shallow(<DatePicker showToday={false} showClear={false} />);
     assert(wrapper.find(".cuke-date-picker-footer-today").length === 0);
     assert(wrapper.find(".cuke-date-picker-footer-clear").length === 0);
+  });
+  it.skip("should trigger panel visible change", () => {
+    const onPanelVisibleChange = jest.fn();
+    const wrapper = shallow(
+      <DatePicker onPanelVisibleChange={onPanelVisibleChange} />
+    );
+    wrapper.find(".cuke-date-picker-input").simulate("click");
+    expect(onPanelVisibleChange).toHaveBeenCalled();
+  });
+
+  it.skip("should cannot trigger panel visible change when disabled", () => {
+    const onPanelVisibleChange = jest.fn();
+    const wrapper = shallow(
+      <DatePicker disabled onPanelVisibleChange={onPanelVisibleChange} />
+    );
+    wrapper.find(".cuke-date-picker-input").simulate("click");
+    expect(onPanelVisibleChange).not.toHaveBeenCalled();
+  });
+
+  it("should trigger today date", () => {
+    const wrapper = shallow(<DatePicker />);
+    wrapper.find(".cuke-date-picker-footer-today").simulate("click");
+    expect(
+      wrapper
+        .state()
+        .momentSelected.day(0)
+        .minute(0)
+        .second(0)
+        .millisecond(0)
+    ).toEqual(
+      moment()
+        .day(0)
+        .minute(0)
+        .second(0)
+        .millisecond(0)
+    );
+  });
+
+  it("should render prev month when subtract btn clicked", () => {
+    const wrapper = shallow(<DatePicker />);
+    wrapper
+      .find(".cuke-date-picker-switch-group")
+      .at(0)
+      .simulate("click");
+    expect(
+      wrapper
+        .state()
+        .momentSelected.day(0)
+        .minute(0)
+        .second(0)
+        .millisecond(0)
+    ).toEqual(
+      moment()
+        .subtract(1, "month")
+        .day(0)
+        .minute(0)
+        .second(0)
+        .millisecond(0)
+    );
+  });
+
+  it("should render add month when subtract btn clicked", () => {
+    const wrapper = shallow(<DatePicker />);
+    wrapper
+      .find(".cuke-date-picker-switch-group")
+      .at(1)
+      .simulate("click");
+    expect(
+      wrapper
+        .state()
+        .momentSelected.day(0)
+        .minute(0)
+        .second(0)
+        .millisecond(0)
+    ).toEqual(
+      moment()
+        .add(1, "month")
+        .day(0)
+        .minute(0)
+        .second(0)
+        .millisecond(0)
+    );
+  });
+
+  it("should clear date when clear btn clicked", () => {
+    const wrapper = shallow(<DatePicker />);
+    wrapper.find(".cuke-date-picker-footer-clear").simulate("click");
+    expect(
+      wrapper
+        .state()
+        .momentSelected.day(0)
+        .minute(0)
+        .second(0)
+        .millisecond(0)
+    ).toEqual(
+      moment()
+        .day(0)
+        .minute(0)
+        .second(0)
+        .millisecond(0)
+    );
+  });
+
+  it("should window cannot trigger click event when un mount", () => {
+    const onClick = jest.fn();
+    const wrapper = shallow(<DatePicker />);
+    wrapper.unmount();
+    window.onclick = () => onClick;
+    expect(onClick).not.toHaveBeenCalled();
   });
 });
