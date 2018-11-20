@@ -16,6 +16,14 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v0.0.30</a></h2>
+      <ul>
+        <li> 优化 Button 组件 样式 </li>
+        <li> 新增 Steps 组件 </li>
+        <li> 修复 Pagination 组件 onChange 会触发两次的bug </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.29</a></h2>
       <ul>
         <li> Drawer 组件 增加 footer 属性 </li>

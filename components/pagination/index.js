@@ -10,7 +10,8 @@ export default class Pagination extends PureComponent {
     next: "next"
   };
   state = {
-    current: 1
+    current:
+      this.props.defaultCurrent || this.props.current || this.defaultCurrentPage
   };
   static defaultProps = {
     prefixCls: "cuke-pagination",
@@ -36,9 +37,10 @@ export default class Pagination extends PureComponent {
     ]), //总数
     current: PropTypes.oneOfType([
       //当前索引
-      PropTypes.number.isRequired,
-      PropTypes.string.isRequired
+      PropTypes.number,
+      PropTypes.string
     ]),
+    defaultCurrent: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     locale: PropTypes.object, //自定义按钮
     onChange: PropTypes.func //回调(type,current)
   };
@@ -58,6 +60,7 @@ export default class Pagination extends PureComponent {
       separator,
       locale: { prevText, nextText },
       className,
+      onChange, //eslint-disable-line
       ...attr
     } = this.props;
     const { prev, next } = this.typeConfig;
@@ -65,38 +68,33 @@ export default class Pagination extends PureComponent {
 
     return (
       <section className={cls(prefixCls, className)} {...attr}>
-        {current <= this.defaultCurrentPage ? (
-          <Button disabled>{prevText}</Button>
-        ) : (
-          <Button type="primary" onClick={() => this.getPageList(prev)}>
-            {prevText}
-          </Button>
-        )}
+        <Button
+          type="primary"
+          disabled={current <= this.defaultCurrentPage}
+          onClick={() => this.getPageList(prev)}
+        >
+          {prevText}
+        </Button>
         <span className={`${prefixCls}-pages`}>
           <span className={`${prefixCls}-page-index`}>{current}</span>{" "}
           {separator} {total}
         </span>
-        {current >= total ? (
-          <Button disabled>{nextText}</Button>
-        ) : (
-          <Button type="primary" onClick={() => this.getPageList(next)}>
-            {nextText}
-          </Button>
-        )}
+        <Button
+          type="primary"
+          disabled={current >= total}
+          onClick={() => this.getPageList(next)}
+        >
+          {nextText}
+        </Button>
       </section>
     );
   }
-  componentDidMount() {
-    this.setState({
-      current: this.props.current
-    });
-  }
   static getDerivedStateFromProps({ current }, state) {
-    if (current === state.current) {
-      return null;
+    if (current !== state.current) {
+      return {
+        current: state.current
+      };
     }
-    return {
-      current: state.current
-    };
+    return null;
   }
 }

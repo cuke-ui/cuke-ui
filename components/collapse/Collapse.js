@@ -62,9 +62,9 @@ export default class Collapse extends React.PureComponent {
         disabled: element.props.disabled || disabled,
         hideArrow: element.props.hideArrow || hideArrow,
         visible: accordion
-          ? currentActiveKey === String(index + 1)
-          : defaultActiveKey.includes(String(index + 1)) ||
-            activeKey.includes(String(index + 1)), //eslint-disable-line
+          ? String(currentActiveKey) === String(index)
+          : String(defaultActiveKey).includes(String(index)) ||
+            String(activeKey).includes(String(index)), //eslint-disable-line
         onChange: this.onChange
       });
     });

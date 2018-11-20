@@ -6,7 +6,16 @@
     &:hover,
     &:active,
     &:focus {
+      border: 1px solid @color;
       background-color: lighten(@color, @lighten);
+      color: lighten(@font-color, @lighten);
+    }
+  }
+  &.cuke-button-default {
+    &:active,
+    &:focus {
+      border: 1px solid @primary-color;
+      color: lighten(@primary-color, @lighten);
     }
   }
 }
@@ -33,6 +42,15 @@
     &:focus {
       background-color: transparent;
       border-color: lighten(@color, @lighten);
+      color: lighten(@color, @lighten);
+    }
+  }
+  &.cuke-button-dashed {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent;
+      border: 1px dashed lighten(@color, @lighten);
       color: lighten(@color, @lighten);
     }
   }

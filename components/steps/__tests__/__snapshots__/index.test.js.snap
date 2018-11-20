@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Steps/> should render Steps 1`] = `
+<div
+  class="cuke-steps"
+>
+  <div
+    class="cuke-steps-header"
+  >
+    <div
+      aria-selected="true"
+      class="cuke-steps-step cuke-steps-step-active cuke-steps-step-process"
+      role="step"
+    >
+      <div
+        class="cuke-steps-step-icon"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <line
+            x1="12"
+            x2="12"
+            y1="2"
+            y2="6"
+          />
+          <line
+            x1="12"
+            x2="12"
+            y1="18"
+            y2="22"
+          />
+          <line
+            x1="4.93"
+            x2="7.76"
+            y1="4.93"
+            y2="7.76"
+          />
+          <line
+            x1="16.24"
+            x2="19.07"
+            y1="16.24"
+            y2="19.07"
+          />
+          <line
+            x1="2"
+            x2="6"
+            y1="12"
+            y2="12"
+          />
+          <line
+            x1="18"
+            x2="22"
+            y1="12"
+            y2="12"
+          />
+          <line
+            x1="4.93"
+            x2="7.76"
+            y1="19.07"
+            y2="16.24"
+          />
+          <line
+            x1="16.24"
+            x2="19.07"
+            y1="7.76"
+            y2="4.93"
+          />
+        </svg>
+      </div>
+      <div
+        class="cuke-steps-step-content"
+      >
+        <div
+          class="cuke-steps-step-content-title"
+        >
+          第一步
+        </div>
+        <p
+          class="cuke-steps-step-content-description"
+        >
+          打开冰箱111111
+        </p>
+      </div>
+    </div>
+    <div
+      aria-selected="true"
+      class="cuke-steps-step cuke-steps-step-wait"
+      role="step"
+    >
+      <div
+        class="cuke-steps-step-icon"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+          />
+          <polyline
+            points="22 4 12 14.01 9 11.01"
+          />
+        </svg>
+      </div>
+      <div
+        class="cuke-steps-step-content"
+      >
+        <div
+          class="cuke-steps-step-content-title"
+        >
+          第二步
+        </div>
+        <p
+          class="cuke-steps-step-content-description"
+        >
+          放入大象22222
+        </p>
+      </div>
+    </div>
+    <div
+      aria-selected="true"
+      class="cuke-steps-step cuke-steps-step-wait"
+      role="step"
+    >
+      <div
+        class="cuke-steps-step-icon"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <path
+            d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+          />
+          <polyline
+            points="22 4 12 14.01 9 11.01"
+          />
+        </svg>
+      </div>
+      <div
+        class="cuke-steps-step-content"
+      >
+        <div
+          class="cuke-steps-step-content-title"
+        >
+          第三步
+        </div>
+        <p
+          class="cuke-steps-step-content-description"
+        >
+          关上冰箱33333
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cuke-steps-content"
+  />
+</div>
+`;

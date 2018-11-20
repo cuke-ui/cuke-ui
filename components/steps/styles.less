@@ -1,74 +1,105 @@
 @import "../styles/vars.less";
 @import "../styles/mixins.less";
-
 @prefixCls : cuke-steps;
 .@{prefixCls} {
   &-header {
     overflow: hidden;
-    margin-bottom: -1px;
     position: relative;
-    .flex-center(flex-start);
-
-    &.@{prefixCls}-card {
-      .@{prefixCls}-tab {
-        border: 1px solid @border-color;
-        background-color: @bg-color;
-        margin-right: @tabs-card-tab-offset;
-        border-top-right-radius: @border-radius;
-        border-top-left-radius: @border-radius;
-
-        &.@{prefixCls}-tab-active {
-          color: @primary-color;
-          background-color: #fff;
-          border-bottom: 1px solid transparent;
-        }
-      }
-    }
+    display: flex;
+    .flex-center(space-between)
   }
-
-  &-tab {
+  &-step {
     height: 100%;
     position: relative;
     box-sizing: border-box;
     text-decoration: none;
-    cursor: pointer;
     text-align: center;
     transition: all @default-transition;
-    padding: @tabs-tab-padding;
-
-    &.@{prefixCls}-tab-active {
-      color: @primary-color;
-    }
-
-    &.@{prefixCls}-tab-disabled {
-      color: @default-color;
-      cursor: not-allowed;
-    }
-  }
-
-  &-content {
-    border-top: 1px solid @border-color;
-    padding: @tabs-content-padding;
+    display: inline-flex;
     overflow: hidden;
-  }
-
-  &-line {
-    position: absolute;
-    bottom: 0;
-    border-bottom: 2px solid @primary-color;
-    left: 0;
-    width: auto;
-    transition: transform @default-transition;
-  }
-
-  &-panel {
-    width: 100%;
-    float: left;
-  }
-
-  &-extra {
-    position: absolute;
-    right: 0;
-    top: 0;
+    flex: 1 1 auto;
+    margin-right: 35px;
+    &.@{prefixCls}-step-error {
+      .@{prefixCls}-step-icon {
+        color: @error-color;
+      }
+      .@{prefixCls}-step-content {
+        &-title {
+          color: @error-color;
+          &::after {
+            background-color: @error-color;
+          }
+        }
+        &-description {
+          color: @error-color;
+        }
+      }
+    }
+    &.@{prefixCls}-step-active {
+      color: @primary-color;
+      .@{prefixCls}-content-title {
+        &::after {
+          background-color: @primary-color;
+        }
+      }
+    }
+    &-icon {
+      margin-right: 10px;
+      &, svg {
+        font-size: 40px;
+        transition: color @default-transition;
+      }
+    }
+    &-done {
+      .@{prefixCls}-step-icon {
+        color: @primary-color;
+      }
+      .@{prefixCls}-step-content {
+        &-title {
+          color: fade(@font-color, 75%);
+          &::after {
+            background-color: @primary-color;
+          }
+        }
+      }
+    }
+    &-wait {
+      color: @disabled-font-color;
+    }
+    &-process {
+      .@{prefixCls}-step-content {
+        &-title {
+          font-weight: bold;
+        }
+        &-description {
+          color: @font-color;
+        }
+      }
+    }
+    &-content {
+      // .flex-center()
+      text-align: left;
+      &-title {
+        position: relative;
+        padding-top: 14px;
+        &.@{prefixCls}-no-description {
+          padding-right: 35px;
+        }
+        &::after {
+          content: " ";
+          height: 1px;
+          width: 9999px;
+          background-color: @border-color;
+          position: absolute;
+          top: 23px;
+          left: 100%;
+          transition: background-color @default-transition;
+        }
+      }
+      &-description {
+        color: @disabled-font-color;
+        transition: color @default-transition;
+      }
+    }
   }
 }

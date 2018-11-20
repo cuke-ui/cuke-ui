@@ -4,7 +4,6 @@ exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
 <section
   className="cuke-pagination"
   current={1}
-  onChange={[Function]}
 >
   <Button
     block={false}
@@ -15,9 +14,10 @@ exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
     href=""
     htmlType="button"
     loading={false}
+    onClick={[Function]}
     prefixCls="cuke-button"
     size="default"
-    type="default"
+    type="primary"
   >
     上一页
   </Button>
@@ -59,7 +59,7 @@ exports[`<Pagination/> should find custom locale text 1`] = `
   current="1"
 >
   <button
-    class="cuke-button cuke-button-default cuke-button-disabled"
+    class="cuke-button cuke-button-primary cuke-button-disabled"
     disabled=""
     type="button"
   >
@@ -95,7 +95,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
     current="1"
   >
     <button
-      class="cuke-button cuke-button-default cuke-button-disabled"
+      class="cuke-button cuke-button-primary cuke-button-disabled"
       disabled=""
       type="button"
     >
@@ -127,7 +127,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
     current="1"
   >
     <button
-      class="cuke-button cuke-button-default cuke-button-disabled"
+      class="cuke-button cuke-button-primary cuke-button-disabled"
       disabled=""
       type="button"
     >
@@ -159,7 +159,7 @@ exports[`<Pagination/> should render Pagination 1`] = `
     current="1"
   >
     <button
-      class="cuke-button cuke-button-default cuke-button-disabled"
+      class="cuke-button cuke-button-primary cuke-button-disabled"
       disabled=""
       type="button"
     >

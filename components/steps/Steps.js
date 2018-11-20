@@ -1,120 +1,152 @@
-import React, { PureComponent, cloneElement } from "react";
+import React, { PureComponent } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
+import Spin from "../spin";
+
+import { LoadingIcon, SuccessIcon, ErrorIcon } from "../icon";
+
+const statusConfig = {
+  wait: "wait",
+  process: "process",
+  error: "error",
+  done: "done"
+};
 
 export default class Steps extends PureComponent {
-  state = {
-    activeKey: ~~(this.props.activeKey || this.props.defaultActiveKey),
-    lineWidth: 0,
-    lineOffsetLeft: 0
-  };
   static defaultProps = {
     prefixCls: "cuke-steps",
-    defaultActiveKey: "1",
-    onChange: () => {}
+    current: 0,
+    onChange: () => {},
+    showProcessSpin: false
   };
 
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
-    defaultActiveKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    activeKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    tabBarExtraContent: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.object
-    ]),
-    onChange: PropTypes.func
+    description: PropTypes.any,
+    title: PropTypes.any,
+    icon: PropTypes.any,
+    status: PropTypes.string,
+    showProcessSpin: PropTypes.bool
   };
   constructor(props) {
     super(props);
-    this.tabsHeader = React.createRef();
   }
 
-  componentWillReceiveProps({ activeKey }) {
-    const _activeKey = ~~activeKey;
-    if (_activeKey !== this.props.activeKey) {
-      this.setState({ activeKey: _activeKey });
+  renderStatusIcon(status) {
+    switch (status) {
+      case statusConfig["wait"]:
+        return <SuccessIcon />;
+      case statusConfig["process"]:
+        return <LoadingIcon />;
+      case statusConfig["error"]:
+        return <ErrorIcon />;
+      case statusConfig["done"]:
+        return <SuccessIcon />;
+      default:
+        return <SuccessIcon />;
     }
   }
-
-  setActiveLineStyle = () => {
-    const activeElement = this.activeTab;
-    const { width, left } = activeElement.getBoundingClientRect();
-    const {
-      left: headerOffset
-    } = this.tabsHeader.current.getBoundingClientRect();
-    this.setState({
-      lineWidth: width,
-      lineOffsetLeft: left - headerOffset
-    });
-  };
-  onTabChange = key => {
-    this.setState({ activeKey: key }, () => {
-      this.setActiveLineStyle();
-    });
-    this.props.onChange(key);
-  };
 
   render() {
     const {
       prefixCls,
       className,
-      tabBarExtraContent,
       children,
-      activeKey: _activeKey, //eslint-disable-line
-      defaultActiveKey, //eslint-disable-line
+      current,
+      icon: stepsIcon,
+      status: stepsStatus,
+      showProcessSpin,
       ...attr
     } = this.props;
-
-    const { activeKey } = this.state;
-
-    const content = React.Children.map(children, (element, index) => {
-      const key = (index + 1) >> 0;
-      return cloneElement(element, {
-        activeKey,
-        visible: activeKey === key,
-        key: index
-      });
-    });
-
-    const header = React.Children.map(
-      children,
-      ({ props: { tab, disabled } }, index) => {
-        const key = (index + 1) >> 0;
-        const bindActiveRef =
-          activeKey === key ? { ref: node => (this[`activeTab`] = node) } : {};
-        return (
-          <div
-            key={index}
-            role="tab"
-            aria-disabled={false}
-            aria-selected={true}
-            className={cls(`${prefixCls}-tab`, {
-              [`${prefixCls}-tab-active`]: activeKey === key,
-              [`${prefixCls}-tab-disabled`]: !!disabled
-            })}
-            {...bindActiveRef}
-            onClick={() => !disabled && this.onTabChange(key)}
-          >
-            {tab}
-          </div>
-        );
-      }
-    );
 
     return (
       <div className={cls(prefixCls, className)} {...attr}>
         <div className={cls(`${prefixCls}-header`)} ref={this.tabsHeader}>
-          {header}
-          {tabBarExtraContent ? (
-            <div className={cls(`${prefixCls}-extra`)}>
-              {tabBarExtraContent}
-            </div>
-          ) : (
-            undefined
+          {React.Children.map(
+            children,
+            ({ props: { title, description, status, icon } }, index) => {
+              const isDone =
+                stepsStatus === statusConfig["done"] ||
+                status === statusConfig["done"] ||
+                index < current;
+              const isProcess =
+                stepsStatus === statusConfig["process"] ||
+                status === statusConfig["process"] ||
+                index === current;
+              const isWait =
+                stepsStatus === statusConfig["wait"] ||
+                status === statusConfig["wait"] ||
+                index > current;
+
+              const hasCustomStatus =
+                !!(stepsStatus || status) && index === current;
+
+              return (
+                <div
+                  key={index}
+                  role="step"
+                  aria-selected={true}
+                  className={cls(`${prefixCls}-step`, {
+                    [`${prefixCls}-step-active`]: current === index,
+                    [`${prefixCls}-step-done`]: isDone,
+                    [`${prefixCls}-step-wait`]: isWait,
+                    [`${prefixCls}-step-process`]: isProcess,
+                    [`${prefixCls}-step-${stepsStatus ||
+                      status}`]: hasCustomStatus
+                  })}
+                >
+                  <div className={cls(`${prefixCls}-step-icon`)}>
+                    {isDone &&
+                      (stepsIcon ||
+                        icon ||
+                        (hasCustomStatus ? (
+                          this.renderStatusIcon(stepsStatus || status)
+                        ) : (
+                          <SuccessIcon />
+                        )))}
+                    {isProcess &&
+                      (stepsIcon ||
+                        icon ||
+                        (hasCustomStatus ? (
+                          this.renderStatusIcon(stepsStatus || status)
+                        ) : showProcessSpin ? (
+                          <Spin />
+                        ) : (
+                          <LoadingIcon />
+                        )))}
+                    {isWait &&
+                      (stepsIcon ||
+                        icon ||
+                        (hasCustomStatus ? (
+                          this.renderStatusIcon(stepsStatus || status)
+                        ) : (
+                          <SuccessIcon />
+                        )))}
+                  </div>
+                  <div className={cls(`${prefixCls}-step-content`)}>
+                    <div
+                      className={cls(`${prefixCls}-step-content-title`, {
+                        [`${prefixCls}-no-description`]: !description
+                      })}
+                    >
+                      {title}
+                    </div>
+                    {description && (
+                      <p
+                        className={cls(`${prefixCls}-step-content-description`)}
+                      >
+                        {description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              );
+            }
           )}
         </div>
-        <div className={cls(`${prefixCls}-content`)}>{content}</div>
+        <div className={cls(`${prefixCls}-content`)}>
+          {this.props.children instanceof Function && this.props.children()}
+        </div>
       </div>
     );
   }

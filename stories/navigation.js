@@ -18,6 +18,7 @@ import '../components/dropdown/styles.less';
 import '../components/affix/styles.less';
 import '../components/steps/styles.less';
 import './styles/navigation.less';
+import StepsPage from './pages/stepsPage';
 
 const overlay = (
   <ul className="example-dropdown-list">
@@ -64,6 +65,12 @@ storiesOf('导航', module)
           current={1}
           total={10}
           locale={{ prevText: '后退', nextText: '前进' }}
+        />
+
+        <h2>默认页数</h2>
+        <Pagination
+          current={3}
+          total={10}
         />
 
         <h2>自定义分隔符</h2>
@@ -223,15 +230,6 @@ storiesOf('导航', module)
   .add(
     'Steps 步骤条',
     withInfo()(() => (
-      <div>
-        <h2>基本使用</h2>
-        // TODO: 
-
-        <Steps>
-          <Steps.Step tab="选项1">1</Steps.Step>
-          <Steps.Step tab="选项2">2</Steps.Step>
-          <Steps.Step tab="选项3">3</Steps.Step>
-        </Steps>
-      </div>
+      <StepsPage/>
     ))
   )

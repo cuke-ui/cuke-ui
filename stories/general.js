@@ -119,11 +119,19 @@ storiesOf('普通', module).add(
           <SuccessIcon />
         </Button>
 
+        <Button type="error" circle>
+          <SuccessIcon />
+        </Button>
+
+         <Button type="success" circle>
+          <SuccessIcon />
+        </Button>
+
         <Button type="primary" disabled circle>
           <SuccessIcon />
         </Button>
 
-        <Button type="primary" dashed circle>
+        <Button type="warning" dashed circle>
           <SuccessIcon />
         </Button>
 

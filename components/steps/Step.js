@@ -7,14 +7,7 @@ class Step extends PureComponent {
   };
 
   render() {
-    const {
-      prefixCls,
-      className,
-      children,
-      visible,
-      activeKey, //eslint-disable-line
-      ...attr
-    } = this.props;
+    const { prefixCls, className, children, visible, ...attr } = this.props;
     if (!visible) {
       return null;
     }

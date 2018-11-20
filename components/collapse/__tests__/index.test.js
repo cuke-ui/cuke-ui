@@ -37,7 +37,17 @@ describe("<Collapse/>", () => {
 
   it("should render default active key", () => {
     const wrapper = render(
-      <Collapse defaultActiveKey={["1", "2"]}>
+      <Collapse defaultActiveKey={[0, 1]}>
+        <Collapse.Item title="标题1">内容1</Collapse.Item>
+        <Collapse.Item title="标题2">内容2</Collapse.Item>
+      </Collapse>
+    );
+    assert(wrapper.find(".cuke-collapse-item-arrow-active").length === 2);
+  });
+
+  it("should render default active key with string", () => {
+    const wrapper = render(
+      <Collapse defaultActiveKey={["0", "1"]}>
         <Collapse.Item title="标题1">内容1</Collapse.Item>
         <Collapse.Item title="标题2">内容2</Collapse.Item>
       </Collapse>

@@ -8,7 +8,6 @@ exports[`<Tabs/> should render Tabs 1`] = `
     class="cuke-tabs-header"
   >
     <div
-      aria-disabled="false"
       aria-selected="true"
       class="cuke-tabs-tab cuke-tabs-tab-active"
       role="tab"
@@ -16,7 +15,6 @@ exports[`<Tabs/> should render Tabs 1`] = `
       选项1
     </div>
     <div
-      aria-disabled="false"
       aria-selected="true"
       class="cuke-tabs-tab"
       role="tab"
@@ -24,7 +22,6 @@ exports[`<Tabs/> should render Tabs 1`] = `
       选项2
     </div>
     <div
-      aria-disabled="false"
       aria-selected="true"
       class="cuke-tabs-tab"
       role="tab"
@@ -57,7 +54,6 @@ exports[`<Tabs/> should render custom active key 1`] = `
     class="cuke-tabs-header"
   >
     <div
-      aria-disabled="false"
       aria-selected="true"
       class="cuke-tabs-tab"
       role="tab"
@@ -65,7 +61,6 @@ exports[`<Tabs/> should render custom active key 1`] = `
       选项1
     </div>
     <div
-      aria-disabled="false"
       aria-selected="true"
       class="cuke-tabs-tab cuke-tabs-tab-active"
       role="tab"
@@ -73,7 +68,6 @@ exports[`<Tabs/> should render custom active key 1`] = `
       选项2
     </div>
     <div
-      aria-disabled="false"
       aria-selected="true"
       class="cuke-tabs-tab"
       role="tab"
@@ -107,7 +101,6 @@ exports[`<Tabs/> should render custom tab title 1`] = `
     className="cuke-tabs-header"
   >
     <div
-      aria-disabled={false}
       aria-selected={true}
       className="cuke-tabs-tab"
       key="0/.$1"
@@ -117,7 +110,6 @@ exports[`<Tabs/> should render custom tab title 1`] = `
       <SuccessIcon />
     </div>
     <div
-      aria-disabled={false}
       aria-selected={true}
       className="cuke-tabs-tab cuke-tabs-tab-active"
       key="1/.$2"
@@ -169,7 +161,6 @@ exports[`<Tabs/> should render disabled tab 1`] = `
     class="cuke-tabs-header"
   >
     <div
-      aria-disabled="false"
       aria-selected="true"
       class="cuke-tabs-tab"
       role="tab"
@@ -177,7 +168,7 @@ exports[`<Tabs/> should render disabled tab 1`] = `
       选项1
     </div>
     <div
-      aria-disabled="false"
+      aria-disabled="true"
       aria-selected="true"
       class="cuke-tabs-tab cuke-tabs-tab-active cuke-tabs-tab-disabled"
       role="tab"
@@ -185,7 +176,6 @@ exports[`<Tabs/> should render disabled tab 1`] = `
       选项2
     </div>
     <div
-      aria-disabled="false"
       aria-selected="true"
       class="cuke-tabs-tab"
       role="tab"

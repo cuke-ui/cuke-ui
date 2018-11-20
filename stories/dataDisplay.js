@@ -489,7 +489,7 @@ storiesOf("数据展示", module)
         </Collapse>
 
         <h2>默认展开</h2>
-        <Collapse defaultActiveKey={["1", "2"]}>
+        <Collapse defaultActiveKey={[0,1]}>
           <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="标题3">内容3</Collapse.Item>

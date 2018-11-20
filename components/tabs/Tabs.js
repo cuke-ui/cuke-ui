@@ -101,7 +101,7 @@ export default class Tabs extends PureComponent {
           <div
             key={index}
             role="tab"
-            aria-disabled={false}
+            aria-disabled={disabled}
             aria-selected={true}
             className={cls(`${prefixCls}-tab`, {
               [`${prefixCls}-tab-active`]: activeKey === key,
