@@ -14,8 +14,8 @@ const statusConfig = {
 
 export default class Steps extends PureComponent {
   state = {
-    current: 0,
-  }
+    current: 0
+  };
   static defaultProps = {
     prefixCls: "cuke-steps",
     current: 0,
@@ -163,9 +163,7 @@ export default class Steps extends PureComponent {
             }
           )}
         </div>
-        <div className={cls(`${prefixCls}-content`)}>
-          {content}
-        </div>
+        <div className={cls(`${prefixCls}-content`)}>{content}</div>
       </div>
     );
   }
