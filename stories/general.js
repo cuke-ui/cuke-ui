@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
 import Button from '../components/button';
 import './styles/button.less';
@@ -10,14 +9,7 @@ import { SuccessIcon } from '../components/icon';
 
 storiesOf('普通', module).add(
   'Button 按钮',
-  withInfo(`
-      代码演示
-    
-      ~~~js
-      <Button>点我</Button>
-      ~~~
-    
-    `)(() => (
+  () => (
       <div className="button-example">
         <h2>基本使用</h2>
 
@@ -162,5 +154,5 @@ storiesOf('普通', module).add(
         <Button type="primary" href="https://github.com/cuke-ui/cuke-ui.git">GITHUB</Button>
         <Button href="#" disabled>禁用</Button>
       </div>
-    ))
+    )
 );

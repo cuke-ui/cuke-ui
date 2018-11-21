@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, cloneElement } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
 import Spin from "../spin";
@@ -13,11 +13,14 @@ const statusConfig = {
 };
 
 export default class Steps extends PureComponent {
+  state = {
+    current: 0,
+  }
   static defaultProps = {
     prefixCls: "cuke-steps",
     current: 0,
     onChange: () => {},
-    showProcessSpin: false
+    showProcessSpin: true
   };
 
   static propTypes = {
@@ -30,6 +33,15 @@ export default class Steps extends PureComponent {
   };
   constructor(props) {
     super(props);
+  }
+
+  static getDerivedStateFromProps({ current }, state) {
+    if (current !== state.current) {
+      return {
+        current
+      };
+    }
+    return null;
   }
 
   renderStatusIcon(status) {
@@ -58,6 +70,13 @@ export default class Steps extends PureComponent {
       showProcessSpin,
       ...attr
     } = this.props;
+
+    const content = React.Children.map(children, (element, index) => {
+      return cloneElement(element, {
+        visible: this.state.current === index,
+        key: index
+      });
+    });
 
     return (
       <div className={cls(prefixCls, className)} {...attr}>
@@ -145,7 +164,7 @@ export default class Steps extends PureComponent {
           )}
         </div>
         <div className={cls(`${prefixCls}-content`)}>
-          {this.props.children instanceof Function && this.props.children()}
+          {content}
         </div>
       </div>
     );

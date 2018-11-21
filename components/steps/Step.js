@@ -8,7 +8,7 @@ class Step extends PureComponent {
 
   render() {
     const { prefixCls, className, children, visible, ...attr } = this.props;
-    if (!visible) {
+    if (!visible || !children) {
       return null;
     }
     return (

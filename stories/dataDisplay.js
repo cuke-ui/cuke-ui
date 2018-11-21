@@ -10,7 +10,6 @@ import Timeline from "../components/timeline";
 import Tag from "../components/tag";
 import CityPicker from "../components/cityPicker";
 import { SuccessIcon, InfoIcon } from "../components/icon";
-import { withInfo } from "@storybook/addon-info";
 import Collapse from "../components/collapse";
 
 import "../components/tooltip/styles.less";
@@ -107,7 +106,7 @@ const cityList = [
 storiesOf("数据展示", module)
   .add(
     "Tooltip 文字提示",
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
 
@@ -134,104 +133,96 @@ storiesOf("数据展示", module)
           <Button>右</Button>
         </Tooltip>
       </div>
-    ))
+    )
   )
   .add(
     "Tabs 选项卡",
-    withInfo(`
-  
-  <Tabs defaultActiveKey="1" onChange={(key)=> console.log(key)}>
-    <Tabs.TabPane tab="选项1" key="1">1</Tabs.TabPane>
-    <Tabs.TabPane tab="选项2" key="2">2</Tabs.TabPane>
-    <Tabs.TabPane tab="选项3" key="3">3</Tabs.TabPane>
-  </Tabs>
+    () => (
+      <div>
+        <h2>基本使用</h2>
 
-  `)(() => (
-        <div>
-          <h2>基本使用</h2>
+        <Tabs defaultActiveKey="1" onChange={key => console.log(key)}>
+          <Tabs.TabPane tab="选项1" key="1">
+            1
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="选项2" key="2">
+            2
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="选项3" key="3">
+            3
+          </Tabs.TabPane>
+          <Tabs.TabPane tab="第4个选项" key="4">
+            动态计算宽度
+          </Tabs.TabPane>
+        </Tabs>
 
-          <Tabs defaultActiveKey="1" onChange={key => console.log(key)}>
-            <Tabs.TabPane tab="选项1" key="1">
-              1
+        <h2>默认选中</h2>
+        <Tabs defaultActiveKey="2">
+          <Tabs.TabPane tab="选项1" key="1">
+            1
           </Tabs.TabPane>
-            <Tabs.TabPane tab="选项2" key="2">
-              2
+          <Tabs.TabPane tab="选项2" key="2">
+            2
           </Tabs.TabPane>
-            <Tabs.TabPane tab="选项3" key="3">
-              3
+          <Tabs.TabPane tab="选项3" key="3">
+            3
           </Tabs.TabPane>
-            <Tabs.TabPane tab="第4个选项" key="4">
-              动态计算宽度
-          </Tabs.TabPane>
-          </Tabs>
+        </Tabs>
 
-          <h2>默认选中</h2>
-          <Tabs defaultActiveKey="2">
-            <Tabs.TabPane tab="选项1" key="1">
-              1
+        <h2>禁用某一项</h2>
+        <Tabs activeKey="1">
+          <Tabs.TabPane tab="选项1" key="1">
+            1
           </Tabs.TabPane>
-            <Tabs.TabPane tab="选项2" key="2">
-              2
+          <Tabs.TabPane tab="选项2" key="2" disabled>
+            2
           </Tabs.TabPane>
-            <Tabs.TabPane tab="选项3" key="3">
-              3
+          <Tabs.TabPane tab="选项3" key="3">
+            3
           </Tabs.TabPane>
-          </Tabs>
+        </Tabs>
 
-          <h2>禁用某一项</h2>
-          <Tabs activeKey="1">
-            <Tabs.TabPane tab="选项1" key="1">
-              1
+        <h2>自定义标题</h2>
+        <Tabs defaultActiveKey="1">
+          <Tabs.TabPane tab={<SuccessIcon />} key="1">
+            已完成
           </Tabs.TabPane>
-            <Tabs.TabPane tab="选项2" key="2" disabled>
-              2
+          <Tabs.TabPane tab={<InfoIcon />} key="2">
+            待完成
           </Tabs.TabPane>
-            <Tabs.TabPane tab="选项3" key="3">
-              3
-          </Tabs.TabPane>
-          </Tabs>
+        </Tabs>
 
-          <h2>自定义标题</h2>
-          <Tabs defaultActiveKey="1">
-            <Tabs.TabPane tab={<SuccessIcon />} key="1">
-              已完成
+        <h2>扩展内容</h2>
+        <Tabs defaultActiveKey="1" tabBarExtraContent={<Button>更多</Button>}>
+          <Tabs.TabPane tab={<SuccessIcon />} key="1">
+            已完成
           </Tabs.TabPane>
-            <Tabs.TabPane tab={<InfoIcon />} key="2">
-              待完成
+          <Tabs.TabPane tab={<InfoIcon />} key="2">
+            待完成
           </Tabs.TabPane>
-          </Tabs>
+        </Tabs>
 
-          <h2>扩展内容</h2>
-          <Tabs defaultActiveKey="1" tabBarExtraContent={<Button>更多</Button>}>
-            <Tabs.TabPane tab={<SuccessIcon />} key="1">
-              已完成
+        <h2>卡片风格</h2>
+        <Tabs defaultActiveKey="1" type="card">
+          <Tabs.TabPane tab="选项1" key="1">
+            1
           </Tabs.TabPane>
-            <Tabs.TabPane tab={<InfoIcon />} key="2">
-              待完成
+          <Tabs.TabPane tab="选项2" key="2">
+            2
           </Tabs.TabPane>
-          </Tabs>
-
-          <h2>卡片风格</h2>
-          <Tabs defaultActiveKey="1" type="card">
-            <Tabs.TabPane tab="选项1" key="1">
-              1
+          <Tabs.TabPane tab="选项3" key="3">
+            3
           </Tabs.TabPane>
-            <Tabs.TabPane tab="选项2" key="2">
-              2
+          <Tabs.TabPane tab="选项4" key="4" disabled>
+            4
           </Tabs.TabPane>
-            <Tabs.TabPane tab="选项3" key="3">
-              3
-          </Tabs.TabPane>
-            <Tabs.TabPane tab="选项4" key="4" disabled>
-              4
-          </Tabs.TabPane>
-          </Tabs>
-        </div>
-      ))
+        </Tabs>
+      </div>
+    ),
   )
   .add(
     "Badge 徽标数",
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
 
@@ -293,11 +284,11 @@ storiesOf("数据展示", module)
           <InfoIcon style={{ fontSize: 30 }} />
         </Badge>
       </div>
-    ))
+    )
   )
   .add(
     "Timeline 时间轴",
-    withInfo()(() => (
+    () => (
       <div>
         <Row>
           <Col span={7}>
@@ -389,11 +380,11 @@ storiesOf("数据展示", module)
           </Col>
         </Row>
       </div>
-    ))
+    )
   )
   .add(
     "Tag 标签",
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
         <Tag>黄瓜 ui</Tag>
@@ -461,11 +452,11 @@ storiesOf("数据展示", module)
         <Tag color="pink">黄瓜 ui</Tag>
         <Tag color="#f63">黄瓜 ui</Tag>
       </div>
-    ))
+    )
   )
   .add(
     "Collapse 折叠面板",
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
         <Collapse>
@@ -489,7 +480,7 @@ storiesOf("数据展示", module)
         </Collapse>
 
         <h2>默认展开</h2>
-        <Collapse defaultActiveKey={[0,1]}>
+        <Collapse defaultActiveKey={[0, 1]}>
           <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="标题3">内容3</Collapse.Item>
@@ -522,29 +513,11 @@ storiesOf("数据展示", module)
           <Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
         </Collapse>
       </div>
-    ))
+    )
   )
   .add(
     "CityPicker 城市选择框",
-    withInfo(`
-    #### cityList 数据结构
-    [
-      {
-        group:"热门",
-        resources:[{
-          id:1,
-          name:'成都'
-        }]
-      },
-      {
-        group:"ABCDE",
-        resources:[{
-          id:2,
-          name:'成都'
-        }]
-      }
-    ]
-    `)(() => (
+    () => (
         <div>
           <h2>基本使用</h2>
           <CityPicker
@@ -568,10 +541,33 @@ storiesOf("数据展示", module)
           <CityPicker placeholder="请选择城市" cityList={cityList} />
 
           <h2>面板改变回调</h2>
-          <CityPicker placeholder="请选择城市" cityList={cityList} onPanelVisibleChange={(visible)=> console.log('visible:', visible)}/>
+          <CityPicker placeholder="请选择城市" cityList={cityList} onPanelVisibleChange={(visible) => console.log('visible:', visible)} />
 
           <h2>在任意容器中单独使用 picker</h2>
           <CityPicker.CityPickerCore cityList={cityList} />
         </div>
-      ))
+    ),
+    {
+      info: {
+        text : `
+        cityList 数据结构
+        [
+          {
+            group:"热门",
+            resources:[{
+              id:1,
+              name:'成都'
+            }]
+          },
+          {
+            group:"ABCDE",
+            resources:[{
+              id:2,
+              name:'成都'
+            }]
+          }
+        ]
+        `
+      }
+    }
   );

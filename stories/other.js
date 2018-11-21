@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import BackTop from '../components/backTop';
 import Button from '../components/button';
 
 storiesOf('其他', module)
-  .add('BackTop 回到顶部', withInfo()(() => (
+  .add('BackTop 回到顶部', () => (
     <div style={{ height: 2000 }}>
       <h2>基本使用: 往下滚动</h2>
 
@@ -25,4 +24,4 @@ storiesOf('其他', module)
         <Button type="primary">自定义</Button>
       </BackTop>
     </div>
-  )))
+  ))

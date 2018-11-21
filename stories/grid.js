@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import Row from '../components/row';
 import Col from '../components/col';
 import Container from '../components/container';
@@ -12,7 +11,7 @@ import '../components/container/styles.less';
 storiesOf('布局', module)
   .add(
     'Grid 栅栏',
-    withInfo()(() => (
+    () => (
       <div>
         <h2>24格网格</h2>
         {[8, 6, 4, 2].map((span, i) => {
@@ -65,11 +64,11 @@ storiesOf('布局', module)
 					</Col>
         </Row>
       </div>
-    ))
+    )
   )
   .add(
     'Container 包裹容器',
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
 
@@ -84,5 +83,5 @@ storiesOf('布局', module)
 
         <Container width={500} center>内容垂直水平居中</Container>
       </div>
-    ))
+    )
   );

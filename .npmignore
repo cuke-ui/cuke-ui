@@ -16,3 +16,4 @@ postcss.config.json
 logos
 .out
 lib/*/**/__tests__
+components/*/**/__tests__

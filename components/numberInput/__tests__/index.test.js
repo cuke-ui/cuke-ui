@@ -54,7 +54,7 @@ describe("<NumberInput/>", () => {
     const wrapper = shallow(<NumberInput value={1} showStepper step={2} />);
     setTimeout(() => {
       wrapper
-        .find(".cuke-input-group-addon")
+        .find(".cuke-number-input-stepper")
         .at(1)
         .simulate("click");
       expect(wrapper.state().value).toBe(3);
@@ -65,7 +65,7 @@ describe("<NumberInput/>", () => {
     const wrapper = shallow(<NumberInput value={2} min={1} showStepper />);
     setTimeout(() => {
       wrapper
-        .find(".cuke-input-group-addon")
+        .find(".cuke-number-input-stepper")
         .at(0)
         .simulate("click");
       assert(

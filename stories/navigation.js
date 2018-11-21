@@ -8,7 +8,6 @@ import Dropdown from '../components/dropdown';
 import Affix from '../components/affix';
 import Row from '../components/row';
 import Col from '../components/col';
-import Steps from '../components/steps';
 
 import { DownIcon } from '../components/icon';
 
@@ -31,7 +30,7 @@ const overlay = (
 storiesOf('导航', module)
   .add(
     'Breadcrumb 面包屑',
-    withInfo()(() => (
+    () => (
       <div>
         <h2>默认导航</h2>
         <Breadcrumb>
@@ -51,11 +50,11 @@ storiesOf('导航', module)
           <Breadcrumb.Item>导航</Breadcrumb.Item>
         </Breadcrumb>
       </div>
-    ))
+    )
   )
   .add(
     'Pagination 分页器',
-    withInfo()(() => (
+    () => (
       <div>
         <h2>默认分页</h2>
         <Pagination current={1} total={10} />
@@ -83,7 +82,7 @@ storiesOf('导航', module)
           onChange={(type, pageIndex) => console.log(type, pageIndex)}
         />
       </div>
-    ))
+    )
   )
   .add(
     'Dropdown 下拉菜单',
@@ -208,7 +207,7 @@ storiesOf('导航', module)
   )
   .add(
     'Affix 固钉',
-    withInfo()(() => (
+    () => (
       <div style={{ minHeight: 1000 }}>
         <h2>基本使用</h2>
         <Affix>
@@ -225,11 +224,11 @@ storiesOf('导航', module)
           <Button type="primary">状态改变回调</Button>
         </Affix>
       </div>
-    ))
+    )
   )
   .add(
     'Steps 步骤条',
-    withInfo()(() => (
+    () => (
       <StepsPage/>
-    ))
+    )
   )

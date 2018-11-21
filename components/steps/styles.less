@@ -1,12 +1,13 @@
 @import "../styles/vars.less";
 @import "../styles/mixins.less";
 @prefixCls : cuke-steps;
+@step-prefixCls : cuke-step;
 .@{prefixCls} {
   &-header {
     overflow: hidden;
     position: relative;
     display: flex;
-    .flex-center(space-between)
+    .flex-center(space-between);
   }
   &-step {
     height: 100%;
@@ -18,7 +19,7 @@
     display: inline-flex;
     overflow: hidden;
     flex: 1 1 auto;
-    margin-right: 35px;
+    margin-right: @cuke-steps-offset-right;
     &.@{prefixCls}-step-error {
       .@{prefixCls}-step-icon {
         color: @error-color;
@@ -44,10 +45,9 @@
       }
     }
     &-icon {
-      margin-right: 10px;
+      margin-right: @cuke-steps-icon-offset;
       &, svg {
-        font-size: 40px;
-        transition: color @default-transition;
+        font-size: @cuke-steps-icon-font-size;
       }
     }
     &-done {
@@ -56,7 +56,7 @@
       }
       .@{prefixCls}-step-content {
         &-title {
-          color: fade(@font-color, 75%);
+          color: @cuke-steps-done-title-color;
           &::after {
             background-color: @primary-color;
           }
@@ -77,13 +77,12 @@
       }
     }
     &-content {
-      // .flex-center()
       text-align: left;
       &-title {
         position: relative;
         padding-top: 14px;
         &.@{prefixCls}-no-description {
-          padding-right: 35px;
+          padding-right: @cuke-steps-offset-right;
         }
         &::after {
           content: " ";
@@ -101,5 +100,11 @@
         transition: color @default-transition;
       }
     }
+  }
+  .@{step-prefixCls} {
+    margin-top: @cuke-step-offset-top;
+    border: 1px solid @border-color;
+    border-radius: @border-radius;
+    padding: @cuke-step-padding;
   }
 }

@@ -16,6 +16,15 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v0.0.31</a></h2>
+      <ul>
+        <li> Steps 组件增加 content 模式 </li>
+        <li> 发布 npm 时 移除 单元测试 </li>
+        <li> CityPicker 增加 loading 属性 </li>
+        <li> 升级 storybook 版本 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.30</a></h2>
       <ul>
         <li> 优化 Button 组件 样式 </li>

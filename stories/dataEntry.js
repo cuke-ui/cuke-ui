@@ -73,7 +73,7 @@ storiesOf("数据录入", module)
   )
   .add(
     "Input 输入框",
-    withInfo()(() => (
+    () => (
       <div style={{ width: 400 }}>
         <h2>基本使用</h2>
         <Input
@@ -113,11 +113,11 @@ storiesOf("数据录入", module)
           style={{ margin: "10px 0" }}
         />
       </div>
-    ))
+    )
   )
   .add(
     "NumberInput 输入框",
-    withInfo()(() => (
+    () => (
       <div className="date-entry-example">
         <h2>基本使用</h2>
         <NumberInput placeholder="请输入" />
@@ -144,7 +144,7 @@ storiesOf("数据录入", module)
         <NumberInput value={2} min={1} showStepper step={10} />
         <NumberInput value={2.22} min={1} showStepper step={0.1} />
       </div>
-    ))
+    )
   )
   .add(
     "Radio 单选框",
@@ -174,12 +174,24 @@ storiesOf("数据录入", module)
       </Radio.Group>
     </div>
 `)(() => <RadioPage />),
-    { notes: "test" }
+    { notes: {
+      markdown: `
+      <Radio.Group value={this.state.value} onChange={this.onChange}>
+        <Radio value="小红">小红</Radio>
+        <Radio value="小明">小明</Radio>
+        <Radio value="小美">小美</Radio>
+        <Radio value="小芳">小芳</Radio>
+        <Radio value="小黑" disabled>
+          小黑
+        </Radio>
+      </Radio.Group>
+      `
+    } }
   )
-  .add("Checkbox 复选框", withInfo()(() => <CheckboxPage />))
+  .add("Checkbox 复选框", () => <CheckboxPage />)
   .add(
     "Switch 开关",
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
         <Switch onChange={checked => console.log("checked", checked)} />
@@ -204,11 +216,11 @@ storiesOf("数据录入", module)
         <Switch defaultChecked size="default" />
         <Switch defaultChecked size="small" />
       </div>
-    ))
+    )
   )
   .add(
     "Select 选择器",
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
         <Select placeholder="请选择">
@@ -252,11 +264,11 @@ storiesOf("数据录入", module)
           <Select.Option value="番茄">番茄</Select.Option>
         </Select>
       </div>
-    ))
+    )
   )
   .add(
     "DatePicker 日期选择器",
-    withInfo()(() => (
+    () => (
       <div>
         <Row>
           <Col span={5}>
@@ -310,14 +322,14 @@ storiesOf("数据录入", module)
           </Col>
         </Row>
       </div>
-    ))
+    )
   )
   .add(
     "Upload 上传",
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
       // TODO: 
       </div>
-    ))
+    )
   )

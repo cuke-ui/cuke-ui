@@ -89,7 +89,7 @@ storiesOf("操作反馈", module)
   )
   .add(
     "Alert 警告提示",
-    withInfo()(() => (
+    () => (
       <div style={{ width: "50%" }}>
         <h2>基本使用</h2>
         <Alert type="success" message="恭喜你获得5元兰博基尼购车优惠券" />
@@ -158,7 +158,7 @@ storiesOf("操作反馈", module)
           onClose={() => console.log("关闭了")}
         />
       </div>
-    ))
+    )
   )
   .add(
     "Modal 对话框",
@@ -328,7 +328,7 @@ storiesOf("操作反馈", module)
   )
   .add(
     "Spin 加载中",
-    withInfo()(() => (
+    () => (
       <div>
         <h2>基本使用</h2>
         <Spin />
@@ -358,11 +358,11 @@ storiesOf("操作反馈", module)
         <Spin indicator={<ErrorIcon />} style={{ margin: "0 10px" }} />
         <Spin indicator={<WarningIcon />}/>
       </div>
-    ))
+    )
   )
   .add(
     "Progress 进度条",
-    withInfo()(() => (
+    () => (
       <div className="progress-example">
         <h2>基本使用</h2>
         <Progress percent={70} />
@@ -389,11 +389,11 @@ storiesOf("操作反馈", module)
         <h2>动态改变</h2>
         <ProgressPage />
       </div>
-    ))
+    )
   )
   .add(
     "Notification 通知提醒框",
-    withInfo()(() => (
+    () => (
       <div className="notification-example">
         <h2>基本使用</h2>
         <Button type="primary" onClick={
@@ -495,5 +495,5 @@ storiesOf("操作反馈", module)
           })
         }>黑夜</Button>
       </div>
-    ))
+    )
   );
