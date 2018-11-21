@@ -21,6 +21,7 @@ const ChangeLog = () => (
         <li> Steps 组件增加 content 模式 </li>
         <li> 发布 npm 时 移除 单元测试 </li>
         <li> CityPicker 增加 loading 属性 </li>
+        <li> 修改 Modal 和 Message 的动画弧度, 让其看起来更柔和 </li>
         <li> 升级 storybook 版本 </li>
       </ul>
     </Timeline.Item>

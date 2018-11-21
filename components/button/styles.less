@@ -5,8 +5,7 @@
 @prefixCls : cuke-button;
 .@{prefixCls} {
   display: inline-block;
-  margin-bottom: 0;
-  font-weight: 500;
+  margin: 0;
   text-align: center;
   touch-action: manipulation;
   cursor: pointer;
@@ -25,6 +24,7 @@
   border-color: @border-color;
   border-radius: @border-radius;
   outline: none;
+  text-shadow: @default-text-shadow;
 
   .cuke-button-hover(@default-color);
   &.@{prefixCls}-primary {
@@ -37,6 +37,7 @@
     color: @font-color;
     background-color: #fff;
     border: 1px solid @default-color;
+    text-shadow: none;
     &:not(.@{prefixCls}-disabled):not(.@{prefixCls}-loading) {
       &:hover,
       &:active {
@@ -77,6 +78,7 @@
     cursor: not-allowed;
     color: @disabled-font-color;
     border-color: @border-color;
+    text-shadow: none;
     &.@{prefixCls}-hollow {
       color: @disabled-font-color;
     }
