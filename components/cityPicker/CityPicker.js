@@ -18,6 +18,7 @@ export default class CityPicker extends PureComponent {
     disabled: false,
     placeholder: "请选择",
     disabledGroups: [],
+    loading: false,
     onPanelVisibleChange: () => {}
   };
   static propTypes = {
@@ -37,7 +38,9 @@ export default class CityPicker extends PureComponent {
     placeholder: PropTypes.string,
     onCityGroupChange: PropTypes.func,
     onCityChange: PropTypes.func,
-    onPanelVisibleChange: PropTypes.func
+    onPanelVisibleChange: PropTypes.func,
+    loading: PropTypes.bool,
+    tip: PropTypes.any
   };
   constructor(props) {
     super(props);
@@ -80,13 +83,17 @@ export default class CityPicker extends PureComponent {
       placeholder,
       className,
       disabledGroups,
+      loading,
+      tip,
       onPanelVisibleChange, //eslint-disable-line
       defaultActiveGroup, //eslint-disable-line
       onCityGroupChange, //eslint-disable-line
       onCityChange, //eslint-disable-line
       ...attr
     } = this.props;
+
     const { visible, selectedCityName, selectedCityGroup } = this.state;
+
     return (
       <div
         className={cls(`${prefixCls}`, className)}
@@ -112,7 +119,7 @@ export default class CityPicker extends PureComponent {
           className={cls(`${prefixCls}-content`, {
             [`${prefixCls}-open`]: visible,
             [`${prefixCls}-close`]: !visible,
-            ["cuke-ui-no-animate"]: visible === null
+            "cuke-ui-no-animate": visible === null
           })}
         >
           <CityPickerCore
@@ -121,6 +128,8 @@ export default class CityPicker extends PureComponent {
             defaultActiveGroup={selectedCityGroup}
             onCityGroupChange={this.onCityGroupChange}
             disabledGroups={disabledGroups}
+            loading={loading}
+            tip={tip}
           />
         </div>
       </div>

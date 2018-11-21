@@ -15,8 +15,10 @@ const types = [
 
 export default class Tag extends PureComponent {
   state = {
-    visible: true
+    visible: true,
+    animation: false
   };
+  ANIMATE_END_TIME = 500;
   static defaultProps = {
     prefixCls: "cuke-tag",
     type: types[0],
@@ -26,6 +28,7 @@ export default class Tag extends PureComponent {
     disabled: false,
     size: "default",
     closable: false,
+    circle: false,
     onClose: () => {}
   };
 
@@ -37,13 +40,18 @@ export default class Tag extends PureComponent {
     disabled: PropTypes.bool,
     dashed: PropTypes.bool,
     closable: PropTypes.bool,
+    circle: PropTypes.bool,
     onClose: PropTypes.func,
     size: PropTypes.oneOf(["small", "default", "large"])
   };
 
   onClose = () => {
-    this.setState({ visible: false });
-    this.props.onClose();
+    this.setState({ animation: true }, () => {
+      setTimeout(() => {
+        this.setState({ visible: false });
+        this.props.onClose();
+      }, this.ANIMATE_END_TIME);
+    });
   };
 
   render() {
@@ -60,10 +68,13 @@ export default class Tag extends PureComponent {
       color,
       onClick,
       closable,
+      circle,
       ...attr
     } = this.props;
 
-    if (!this.state.visible) {
+    const { visible, animation } = this.state;
+
+    if (!visible) {
       return null;
     }
     return (
@@ -75,7 +86,9 @@ export default class Tag extends PureComponent {
           [`${prefixCls}-large`]: size === "large",
           [`${prefixCls}-small`]: size === "small",
           [`${prefixCls}-dashed`]: dashed,
-          [`${prefixCls}-color`]: color
+          [`${prefixCls}-color`]: color,
+          [`${prefixCls}-circle`]: circle,
+          [`${prefixCls}-hide`]: animation
         })}
         style={{
           backgroundColor: color,

@@ -67,24 +67,23 @@ export default class Button extends PureComponent {
       ...attr,
       ...isDisabled,
       type: htmlType,
-      className: cls(
-        prefixCls,
-        { [`${prefixCls}-primary`]: checkType("primary") },
-        { [`${prefixCls}-warning`]: checkType("warning") },
-        { [`${prefixCls}-success`]: checkType("success") },
-        { [`${prefixCls}-error`]: checkType("error") },
-        { [`${prefixCls}-default`]: checkType("default") },
-        { [`${prefixCls}-info`]: checkType("info") },
-        { [`${prefixCls}-disabled`]: disabled },
-        { [`${prefixCls}-loading`]: loading },
-        { [`${prefixCls}-block`]: block },
-        { [`${prefixCls}-hollow`]: hollow },
-        { [`${prefixCls}-large`]: size === "large" },
-        { [`${prefixCls}-small`]: size === "small" },
-        { [`${prefixCls}-dashed`]: dashed },
-        { [`${prefixCls}-circle`]: circle },
+      className: cls(prefixCls, {
+        [`${prefixCls}-primary`]: checkType("primary"),
+        [`${prefixCls}-warning`]: checkType("warning"),
+        [`${prefixCls}-success`]: checkType("success"),
+        [`${prefixCls}-error`]: checkType("error"),
+        [`${prefixCls}-default`]: checkType("default"),
+        [`${prefixCls}-info`]: checkType("info"),
+        [`${prefixCls}-disabled`]: disabled,
+        [`${prefixCls}-loading`]: loading,
+        [`${prefixCls}-block`]: block,
+        [`${prefixCls}-hollow`]: hollow,
+        [`${prefixCls}-large`]: size === "large",
+        [`${prefixCls}-small`]: size === "small",
+        [`${prefixCls}-dashed`]: dashed,
+        [`${prefixCls}-circle`]: circle,
         className
-      )
+      })
     };
 
     const content = (

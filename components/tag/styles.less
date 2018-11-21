@@ -1,5 +1,6 @@
 @import '../styles/vars.less';
 @import "../styles/mixins.less";
+@import "../styles/animate.less";
 @prefixCls : cuke-tag;
 .@{prefixCls} {
   line-height: 1.5;
@@ -15,12 +16,15 @@
   border-radius: @border-radius;
   padding: 0 12px;
   cursor: pointer;
-  // .tag-hover(@default-color);
+  .ellipsis(1);
   &-primary {
     .tag-hover(@primary-color);
     &.@{prefixCls}-hollow {
       .tag-hollow(@primary-color)
     }
+  }
+  &.@{prefixCls}-hide {
+    animation: cuke-hide @default-transition forwards;
   }
   &-default {
     color: @font-color;
@@ -35,8 +39,8 @@
     }
     &.@{prefixCls}-hollow {
       .tag-hollow(@primary-color)
-		}
-		&.@{prefixCls}-dashed:not(.@{prefixCls}-disabled):not(.@{prefixCls}-color):hover {
+    }
+    &.@{prefixCls}-dashed:not(.@{prefixCls}-disabled):not(.@{prefixCls}-color):hover {
       .tag-hollow(@primary-color)
     }
   }
@@ -65,13 +69,13 @@
     }
   }
   &-disabled {
-		.tag-hover(@disabled-color);
-		cursor: not-allowed;
+    .tag-hover(@disabled-color);
+    cursor: not-allowed;
     color: @disabled-font-color;
     border-color: @border-color;
     &.@{prefixCls}-hollow {
-			color: @disabled-font-color;
-			background-color: transparent;
+      color: @disabled-font-color;
+      background-color: transparent;
     }
   }
   &-large {
@@ -87,6 +91,26 @@
   &-dashed {
     border: 1px dashed;
   }
+  &-circle {
+    width: @tag-default-width;
+    height: @tag-default-height;
+    border-radius: 50%;
+    line-height: @tag-default-height;
+    box-shadow: @default-section-shadow;
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+    &.@{prefixCls}-large {
+      width: @tag-large-width;
+      height: @tag-large-height;
+      line-height: @tag-large-height;
+    }
+    &.@{prefixCls}-small {
+      width: @tag-small-width;
+      height: @tag-small-height;
+      line-height: @tag-small-height;
+    }
+  }
   &-color {
     .tag-hover(transparent);
     &:hover,
@@ -97,12 +121,12 @@
     &.@{prefixCls}-hollow {
       .tag-hollow(transparent)
     }
-	}
-	&-close {
-		margin-left: 6px;
-		cursor: pointer;
-		display: inline-block;
-		vertical-align: sub;
-		font-size: @font-size + 2px;
-	}
+  }
+  &-close {
+    margin-left: 6px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: sub;
+    font-size: @font-size + 2px;
+  }
 }

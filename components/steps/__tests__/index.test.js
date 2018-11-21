@@ -199,4 +199,9 @@ describe("<Steps/>", () => {
     );
     assert(wrapper.find(".cuke-step").length === 0);
   });
+
+  it("should render default status icon", () => {
+    const icon = new Steps().renderStatusIcon();
+    expect(icon).toEqual(<SuccessIcon />);
+  });
 });

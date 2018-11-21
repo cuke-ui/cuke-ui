@@ -3,6 +3,7 @@
 exports[`<Tag/> should render custom color 1`] = `
 <div>
   <Tag
+    circle={false}
     closable={false}
     color="#666"
     dashed={false}
@@ -16,6 +17,7 @@ exports[`<Tag/> should render custom color 1`] = `
     黄瓜 ui
   </Tag>
   <Tag
+    circle={false}
     closable={false}
     color="pink"
     dashed={false}
@@ -29,6 +31,7 @@ exports[`<Tag/> should render custom color 1`] = `
     黄瓜 ui
   </Tag>
   <Tag
+    circle={false}
     closable={false}
     color="#f63"
     dashed={false}
@@ -88,6 +91,30 @@ exports[`<Tag/> should render tag 1`] = `
   </span>
   <span
     class="cuke-tag cuke-tag-warning"
+    style="background-color:"
+  >
+    <span>
+      黄瓜 ui
+    </span>
+  </span>
+  <span
+    class="cuke-tag cuke-tag-warning cuke-tag-hollow cuke-tag-circle"
+    style="background-color:"
+  >
+    <span>
+      黄瓜 ui
+    </span>
+  </span>
+  <span
+    class="cuke-tag cuke-tag-warning cuke-tag-hollow"
+    style="background-color:"
+  >
+    <span>
+      黄瓜 ui
+    </span>
+  </span>
+  <span
+    class="cuke-tag cuke-tag-warning cuke-tag-disabled cuke-tag-circle"
     style="background-color:"
   >
     <span>

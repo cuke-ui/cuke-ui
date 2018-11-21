@@ -3,7 +3,7 @@
 exports[`<Notification/> should render a <Notification/> components 1`] = `
 <div>
   <div
-    class="cuke-notification cuke-notification-open"
+    class="cuke-notification cuke-notification-open cuke-notification-open-top-right"
     style="top:20px"
   >
     <div
@@ -70,7 +70,7 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
     </div>
   </div>
   <div
-    class="cuke-notification cuke-notification-open"
+    class="cuke-notification cuke-notification-open cuke-notification-open-top-right"
     style="top:20px"
   >
     <div
@@ -148,7 +148,7 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
     </div>
   </div>
   <div
-    class="cuke-notification cuke-notification-open"
+    class="cuke-notification cuke-notification-open cuke-notification-open-top-right"
     style="top:20px"
   >
     <div
@@ -215,7 +215,7 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
     </div>
   </div>
   <div
-    class="cuke-notification cuke-notification-open"
+    class="cuke-notification cuke-notification-open cuke-notification-open-top-right"
     style="top:20px"
   >
     <div
@@ -293,7 +293,7 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
     </div>
   </div>
   <div
-    class="cuke-notification cuke-notification-open"
+    class="cuke-notification cuke-notification-open cuke-notification-open-top-right"
     style="top:20px"
   >
     <div
@@ -402,7 +402,7 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
     </div>
   </div>
   <div
-    class="cuke-notification cuke-notification-open"
+    class="cuke-notification cuke-notification-open cuke-notification-open-top-right"
     style="top:20px"
   >
     <div
@@ -433,7 +433,7 @@ exports[`<Notification/> should render a <Notification/> components 1`] = `
       </svg>
     </div>
     <div
-      class="cuke-notification-icon cuke-notification-undefined"
+      class="cuke-notification-icon cuke-notification-open"
     />
     <div
       class="cuke-notification-title-custom"

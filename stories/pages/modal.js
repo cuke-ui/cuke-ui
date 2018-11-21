@@ -225,6 +225,7 @@ export default class ModalPage extends Component {
                 Modal.info({
                   iconType:"success",
                   title: "黄瓜 ui",
+                  content: "即插即用"
                 })
               }}
             >

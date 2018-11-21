@@ -9,7 +9,7 @@
   width: @notification-width;
   transform: translate3d(0, 0, 0);
   right: @notification-offset-right;
-  top: @notification-offset-top;
+  // top: @notification-offset-top;
   .clearfix();
   display: flex;
   @media @mobile {
@@ -92,10 +92,24 @@
   }
   &.@{prefixCls}-open {
     pointer-events: auto;
-    animation: cuke-notification-open @cuke-drawer-animate-type forwards;
+    &.@{prefixCls}-open-top-right,
+    &.@{prefixCls}-open-bottom-right {
+      animation: cuke-notification-open @cuke-drawer-animate-type forwards;
+    }
+    &.@{prefixCls}-open-top-left,
+    &.@{prefixCls}-open-bottom-left {
+      animation: cuke-notification-open-from-left @cuke-drawer-animate-type forwards;
+    }
   }
   &.@{prefixCls}-close {
     pointer-events: none;
-    animation: cuke-notification-close @cuke-drawer-animate-type forwards;
+    &.@{prefixCls}-close-top-right,
+    &.@{prefixCls}-close-bottom-right {
+      animation: cuke-notification-close @cuke-drawer-animate-type forwards;
+    }
+    &.@{prefixCls}-close-top-left,
+    &.@{prefixCls}-close-bottom-left {
+      animation: cuke-notification-close-from-left @cuke-drawer-animate-type forwards;
+    }
   }
 }

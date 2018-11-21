@@ -18,11 +18,17 @@ const ChangeLog = () => (
     <Timeline.Item>
       <h2><a>v0.0.31</a></h2>
       <ul>
+        <li> 调整 主色调 </li>
         <li> Steps 组件增加 content 模式 </li>
         <li> 发布 npm 时 移除 单元测试 </li>
         <li> CityPicker 增加 loading 属性 </li>
         <li> 修改 Modal 和 Message 的动画弧度, 让其看起来更柔和 </li>
         <li> 升级 storybook 版本 </li>
+        <li> 修复 Breadcrumb 为 链接时  颜色不对</li>
+        <li> 修复 Notification 组件 点击 关闭图标 会触发 onClick 的 问题</li>
+        <li> Notification 组件 新增 四个方向 </li>
+        <li> Tag 组件 增加 circle 属性</li>
+        <li> Tag 组件 增加 删除动画 </li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

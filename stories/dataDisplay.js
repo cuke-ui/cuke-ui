@@ -437,6 +437,21 @@ storiesOf("数据展示", module)
           黄瓜 ui
         </Tag>
 
+        <h2>圆形</h2>
+        <Tag circle>特</Tag>
+        <Tag type="primary" circle>皮</Tag>
+        <Tag type="error" circle>惨</Tag>
+        <Tag type="info" circle>李</Tag>
+        <Tag type="warning" circle>哈</Tag>
+        <Tag type="info" hollow circle>逗</Tag>
+        <Tag type="primary" hollow circle>逗</Tag>
+        <Tag type="error" hollow circle>逗</Tag>
+        <Tag type="warning" hollow circle>逗</Tag>
+        <Tag type="primary" disabled circle>倍</Tag>
+        <Tag type="primary" size="small" circle>小</Tag>
+        <Tag type="primary" circle>中</Tag>
+        <Tag type="primary" size="large" circle>大</Tag>
+
         <h2>可关闭</h2>
         <Tag type="primary" closable onClose={() => console.log("关闭")}>
           点击关闭
@@ -530,6 +545,12 @@ storiesOf("数据展示", module)
 
           <h2>默认选中分组</h2>
           <CityPicker defaultActiveGroup={1} cityList={cityList} />
+
+          <h2>加载中</h2>
+          <CityPicker cityList={cityList} loading/>
+
+          <h2>自定义加载文案</h2>
+          <CityPicker cityList={cityList} loading tip="拼命加载中..."/>
 
           <h2>禁用</h2>
           <CityPicker disabled cityList={cityList} />

@@ -14,6 +14,15 @@ describe("<Tag/>", () => {
         <Tag type="success">黄瓜 ui</Tag>
         <Tag type="error">黄瓜 ui</Tag>
         <Tag type="warning">黄瓜 ui</Tag>
+        <Tag type="warning" circle hollow>
+          黄瓜 ui
+        </Tag>
+        <Tag type="warning" hollow>
+          黄瓜 ui
+        </Tag>
+        <Tag type="warning" circle disabled>
+          黄瓜 ui
+        </Tag>
         <Tag dashed>黄瓜 ui</Tag>
         <Tag disabled>黄瓜 ui</Tag>
       </div>

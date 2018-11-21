@@ -1,11 +1,13 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
+import Spin from "../spin";
 
 export default class CityPickerCore extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-city-picker-core",
     disabledGroups: [],
+    loading: false,
     cityList: []
   };
   static propTypes = {
@@ -18,6 +20,8 @@ export default class CityPickerCore extends PureComponent {
     disabledGroups: PropTypes.array,
     onCityGroupChange: PropTypes.func,
     onCityChange: PropTypes.func,
+    loading: PropTypes.bool,
+    tip: PropTypes.any,
     defaultActiveGroup: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number
@@ -30,14 +34,14 @@ export default class CityPickerCore extends PureComponent {
     selectedCityName: ""
   };
 
-  onCityGroupChange = (selectedCityGroup, index) => {
+  onCityGroupChange = (selectedCityGroup, index) => () => {
     this.setState({ selectedCityGroup });
 
     if (this.props.onCityGroupChange) {
       this.props.onCityGroupChange(selectedCityGroup, index);
     }
   };
-  onCityChange = selectedCity => {
+  onCityChange = selectedCity => () => {
     this.setState({ selectedCityName: selectedCity.name });
     if (this.props.onCityChange) {
       this.props.onCityChange(selectedCity);
@@ -53,6 +57,8 @@ export default class CityPickerCore extends PureComponent {
       onCityGroupChange, //eslint-disable-line
       onCityChange, //eslint-disable-line
       disabledGroups,
+      loading,
+      tip,
       ...attr
     } = this.props;
     const { selectedCityGroup, selectedCityName } = this.state;
@@ -61,63 +67,65 @@ export default class CityPickerCore extends PureComponent {
 
     return (
       <div className={cls(prefixCls, className)} {...attr}>
-        <div className={cls(`${prefixCls}-panel`)}>
-          <div className={cls(`${prefixCls}-panel-header`)}>
-            <ul className={cls(`${prefixCls}-panel-header-wrap`)}>
-              {cityGroups.map((cityGroup, i) => {
-                const isDisabled = disabledGroups.some(
-                  group => group === cityGroup || group === i
-                );
-                return (
-                  <li
-                    onClick={
-                      isDisabled
-                        ? undefined
-                        : () => this.onCityGroupChange(cityGroup, i)
-                    }
-                    className={cls(`${prefixCls}-item`, {
-                      [`${prefixCls}-active`]:
-                        !isDisabled &&
-                        (selectedCityGroup === cityGroup ||
-                          selectedCityGroup === i),
-                      [`${prefixCls}-disabled`]: isDisabled
-                    })}
-                    key={i}
-                  >
-                    <span>{cityGroup}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className={cls(`${prefixCls}-panel-content`)}>
-            <ul className={cls(`${prefixCls}-panel-content-wrap`)}>
-              {cityList.length >= 1 &&
-                (
-                  (
-                    cityList.find(
-                      (item, i) =>
-                        item.group === selectedCityGroup ||
-                        i === selectedCityGroup
-                    ) || {}
-                  ).resources || []
-                ).map((city, i) => {
+        <Spin size="large" spinning={loading} tip={tip}>
+          <div className={cls(`${prefixCls}-panel`)}>
+            <div className={cls(`${prefixCls}-panel-header`)}>
+              <ul className={cls(`${prefixCls}-panel-header-wrap`)}>
+                {cityGroups.map((cityGroup, i) => {
+                  const isDisabled = disabledGroups.some(
+                    group => group === cityGroup || group === i
+                  );
                   return (
                     <li
-                      className={cls(`${prefixCls}-city`, {
-                        [`${prefixCls}-city-selected`]:
-                          selectedCityName === city.name
+                      onClick={
+                        isDisabled
+                          ? undefined
+                          : this.onCityGroupChange(cityGroup, i)
+                      }
+                      className={cls(`${prefixCls}-item`, {
+                        [`${prefixCls}-active`]:
+                          !isDisabled &&
+                          (selectedCityGroup === cityGroup ||
+                            selectedCityGroup === i),
+                        [`${prefixCls}-disabled`]: isDisabled
                       })}
                       key={i}
-                      onClick={() => this.onCityChange(city)}
                     >
-                      {city.name}
+                      <span>{cityGroup}</span>
                     </li>
                   );
                 })}
-            </ul>
+              </ul>
+            </div>
+            <div className={cls(`${prefixCls}-panel-content`)}>
+              <ul className={cls(`${prefixCls}-panel-content-wrap`)}>
+                {cityList.length >= 1 &&
+                  (
+                    (
+                      cityList.find(
+                        (item, i) =>
+                          item.group === selectedCityGroup ||
+                          i === selectedCityGroup
+                      ) || {}
+                    ).resources || []
+                  ).map((city, i) => {
+                    return (
+                      <li
+                        className={cls(`${prefixCls}-city`, {
+                          [`${prefixCls}-city-selected`]:
+                            selectedCityName === city.name
+                        })}
+                        key={i}
+                        onClick={this.onCityChange(city)}
+                      >
+                        {city.name}
+                      </li>
+                    );
+                  })}
+              </ul>
+            </div>
           </div>
-        </div>
+        </Spin>
       </div>
     );
   }

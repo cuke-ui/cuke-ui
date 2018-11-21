@@ -12,6 +12,10 @@ import {
   CloseIcon
 } from "../icon";
 
+const positions = ["top-right", "top-left", "bottom-right", "bottom-left"];
+
+const DEFAULT_OFFSET = 20;
+
 export default class Notification extends PureComponent {
   state = {
     visible: true
@@ -22,6 +26,7 @@ export default class Notification extends PureComponent {
   constructor(props) {
     super(props);
     this.typeConfig = {
+      open: "open",
       info: "info",
       success: "success",
       error: "error",
@@ -36,6 +41,7 @@ export default class Notification extends PureComponent {
       PropTypes.string,
       PropTypes.object
     ]).isRequired,
+    position: PropTypes.oneOf(positions),
     duration: PropTypes.number.isRequired,
     darkTheme: PropTypes.bool,
     top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -47,7 +53,8 @@ export default class Notification extends PureComponent {
     prefixCls: "cuke-notification",
     duration: 2,
     darkTheme: false,
-    top: 20,
+    offset: DEFAULT_OFFSET,
+    position: "top-right",
     closable: true,
     onClose: () => {},
     onClick: () => {}
@@ -121,10 +128,45 @@ export default class Notification extends PureComponent {
   static loading(options) {
     return this.renderElement("loading", options);
   }
-  onClose = () => {
+  onClose = e => {
+    // 防止 onClick 事件  触发
+    e.stopPropagation();
     this.setState({ visible: false });
     clearTimeout(this.timer);
     this.props.onClose();
+  };
+  getPositionStyle = () => {
+    const { position, offset } = this.props;
+    let style = {
+      top: offset
+    };
+    switch (position) {
+      case "top-right":
+        style = {
+          top: offset
+        };
+        break;
+      case "top-left":
+        style = {
+          left: offset,
+          top: offset
+        };
+        break;
+      case "bottom-right":
+        style = {
+          bottom: offset
+        };
+        break;
+      case "bottom-left":
+        style = {
+          bottom: offset,
+          left: offset
+        };
+        break;
+      default:
+        break;
+    }
+    return style;
   };
   render() {
     const {
@@ -135,9 +177,10 @@ export default class Notification extends PureComponent {
       className,
       duration,
       message,
-      onClick,
+      onClick, //eslint-disable-line
       closable,
-      top,
+      position,
+      offset, //eslint-disable-line
       style,
       ...attr
     } = this.props;
@@ -145,6 +188,7 @@ export default class Notification extends PureComponent {
     const { visible } = this.state;
 
     const typeConfig = this.typeConfig;
+    const isShow = visible && duration >= 0;
 
     return (
       <div
@@ -152,13 +196,15 @@ export default class Notification extends PureComponent {
           prefixCls,
           className,
           { [`${prefixCls}-theme-dark`]: darkTheme },
-          { [`${prefixCls}-open`]: visible && duration >= 0 },
-          { [`${prefixCls}-close`]: !visible }
+          { [`${prefixCls}-open`]: isShow },
+          { [`${prefixCls}-open-${position}`]: isShow },
+          { [`${prefixCls}-close`]: !visible },
+          { [`${prefixCls}-close-${position}`]: !visible }
         )}
         {...attr}
         style={{
           ...style,
-          top
+          ...this.getPositionStyle()
         }}
         onClick={onClick}
       >

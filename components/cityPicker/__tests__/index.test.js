@@ -5,6 +5,7 @@ import toJson from "enzyme-to-json";
 import CityPicker from "../index";
 import Input from "../../input";
 import CityPickerCore from "../CityPickerCore";
+import Spin from "../../spin";
 
 const cityList = [
   {
@@ -215,6 +216,18 @@ describe("<CityPicker/>", () => {
       wrapper.find(".cuke-city-picker-core-city").simulate("click");
       expect(onCityChange).toHaveBeenCalled();
     });
+  });
+
+  it("should render spin when loading is true", () => {
+    const wrapper = shallow(
+      <CityPickerCore cityList={cityList} loading={true} />
+    );
+    assert(wrapper.find(Spin).length === 1);
+  });
+
+  it("should render spin when loading is true", () => {
+    const wrapper = shallow(<CityPicker cityList={cityList} loading={true} />);
+    assert(wrapper.find(Spin).length === 0);
   });
 
   it("should trigger onCityGroupChange by CityPickerCore", () => {
