@@ -137,4 +137,24 @@ describe("<Collapse/>", () => {
     wrapper.find(".cuke-collapse-item-header").simulate("click");
     expect(onChange).toHaveBeenCalled();
   });
+
+  it("should render right arrow mode", () => {
+    const wrapper = render(
+      <Collapse rightArrow>
+        <Collapse.Item title="标题1">内容1</Collapse.Item>
+        <Collapse.Item title="标题2">内容2</Collapse.Item>
+      </Collapse>
+    );
+    expect(wrapper.find(".cuke-collapse-item-right-arrow").length).toBe(2);
+  });
+
+  it("should cannot find right arrow", () => {
+    const wrapper = render(
+      <Collapse>
+        <Collapse.Item title="标题1">内容1</Collapse.Item>
+        <Collapse.Item title="标题2">内容2</Collapse.Item>
+      </Collapse>
+    );
+    expect(wrapper.find(".cuke-collapse-item-right-arrow").length).toBe(0);
+  });
 });

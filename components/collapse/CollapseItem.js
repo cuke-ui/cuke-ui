@@ -10,12 +10,16 @@ export default class CollapseItem extends React.PureComponent {
   static defaultProps = {
     prefixCls: "cuke-collapse-item",
     hideArrow: false,
-    disabled: false
+    disabled: false,
+    rightArrow: false,
+    icon: <ArrowRightIcon />
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
-    hideArrow: PropTypes.bool
+    hideArrow: PropTypes.bool,
+    rightArrow: PropTypes.bool,
+    icon: PropTypes.any
   };
   toggleContentPanel = () => {
     this.setState({
@@ -27,7 +31,7 @@ export default class CollapseItem extends React.PureComponent {
   };
 
   // 通过父组件 改变 非当前 active item 状态 实现手风琴效果
-  static getDerivedStateFromProps({ visible, accordion }) {
+  static getDerivedStateFromProps({ visible, accordion }, state) {
     if (accordion) {
       return {
         visible
@@ -43,6 +47,8 @@ export default class CollapseItem extends React.PureComponent {
       prefixCls,
       disabled,
       hideArrow,
+      rightArrow,
+      icon,
       visible: collapseVisible, //eslint-disable-line
       accordion, //eslint-disable-line
       defaultActiveKey, //eslint-disable-line
@@ -54,7 +60,8 @@ export default class CollapseItem extends React.PureComponent {
     return (
       <div
         className={cls(prefixCls, className, {
-          [`${prefixCls}-disabled`]: disabled
+          [`${prefixCls}-disabled`]: disabled,
+          [`${prefixCls}-right-arrow`]: rightArrow
         })}
         {...attr}
       >
@@ -72,7 +79,7 @@ export default class CollapseItem extends React.PureComponent {
                 [`${prefixCls}-arrow-active`]: visible
               })}
             >
-              <ArrowRightIcon />
+              {icon}
             </span>
           )}
           {title}

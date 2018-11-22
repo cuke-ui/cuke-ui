@@ -37,6 +37,11 @@
         transform: rotate(90deg);
       }
     }
+    &-right-arrow {
+      .@{prefixCls}-item-arrow {
+        float: right;
+      }
+    }
     &-header {
       padding: 15px 20px;
       cursor: pointer;
@@ -49,7 +54,7 @@
       padding: 20px;
       color: @font-color;
       overflow: hidden;
-      transition: all @default-transition;
+      transition: all @collapse-animate-time;
     }
     &-hide {
       padding-bottom: 0;

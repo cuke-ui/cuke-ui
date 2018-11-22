@@ -13,7 +13,8 @@ export default class Collapse extends React.PureComponent {
     activeKey: [],
     disabled: false,
     hideArrow: false,
-    accordion: false
+    accordion: false,
+    rightArrow: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -22,7 +23,9 @@ export default class Collapse extends React.PureComponent {
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
     hideArrow: PropTypes.bool,
-    accordion: PropTypes.bool
+    accordion: PropTypes.bool,
+    rightArrow: PropTypes.bool,
+    icon: PropTypes.any
   };
 
   onChange = key => {
@@ -49,6 +52,7 @@ export default class Collapse extends React.PureComponent {
       activeKey,
       disabled,
       hideArrow,
+      rightArrow,
       ...attr
     } = this.props;
 
@@ -58,7 +62,8 @@ export default class Collapse extends React.PureComponent {
       return React.cloneElement(element, {
         key: index,
         accordion,
-        activeKey: String(index + 1),
+        rightArrow,
+        activeKey: String(index),
         disabled: element.props.disabled || disabled,
         hideArrow: element.props.hideArrow || hideArrow,
         visible: accordion

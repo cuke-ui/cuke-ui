@@ -9,7 +9,7 @@ import Col from "../components/col";
 import Timeline from "../components/timeline";
 import Tag from "../components/tag";
 import CityPicker from "../components/cityPicker";
-import { SuccessIcon, InfoIcon } from "../components/icon";
+import { SuccessIcon, InfoIcon, ErrorIcon } from "../components/icon";
 import Collapse from "../components/collapse";
 
 import "../components/tooltip/styles.less";
@@ -501,6 +501,13 @@ storiesOf("数据展示", module)
           <Collapse.Item title="标题3">内容3</Collapse.Item>
         </Collapse>
 
+        <h2>箭头显示在右边</h2>
+        <Collapse rightArrow>
+           <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
+          <Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
+          <Collapse.Item title="标题3">内容3</Collapse.Item>
+        </Collapse>
+
         <h2>隐藏箭头</h2>
         <Collapse>
           <Collapse.Item title="黄瓜ui" hideArrow>
@@ -520,6 +527,17 @@ storiesOf("数据展示", module)
           <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="标题3">内容3</Collapse.Item>
+        </Collapse>
+
+        <h2>自定义图标</h2>
+        <Collapse icon={<SuccessIcon/>}>
+           <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
+          <Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
+        </Collapse>
+
+        <Collapse>
+           <Collapse.Item title="黄瓜ui" icon={<SuccessIcon/>}>内容1xxxxxxxxxxxxx</Collapse.Item>
+          <Collapse.Item title="即插即用" icon={<ErrorIcon/>}>内容2xxxxxxxxxxx</Collapse.Item>
         </Collapse>
 
         <h2>回调函数</h2>

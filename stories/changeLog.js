@@ -16,6 +16,15 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v0.0.32 - v0.0.33</a></h2>
+      <ul>
+        <li> 优化 Collapse 过渡效果 </li>
+        <li> 修复 Collapse 手风琴模式 点击 当前展开的面板后 再次点击 不能收回</li>
+        <li> Collapse 增加 rightArrow 箭头在右边显示</li>
+        <li> Collapse 增加 icon 支持自定义图标 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.31</a></h2>
       <ul>
         <li> 调整 主色调 </li>
