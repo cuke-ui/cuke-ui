@@ -159,6 +159,19 @@ export default class ModalPage extends Component {
               Modal.error()
             </Button>
           </Col>
+          <Col span={4}>
+            <Button
+              onClick={() => {
+                Modal.info({
+                  title: "为以下商品付款",
+                  content: '1',
+                  showMask: true,
+                })
+              }}
+            >
+              显示蒙版
+            </Button>
+          </Col>
         </Row>
         <Row style={{margin: "20px 0"}}>
           <Col span={4}>

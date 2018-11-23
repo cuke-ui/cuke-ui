@@ -33,10 +33,12 @@ const typeConfig = {
 export default class Modal extends PureComponent {
   state = {
     init: false,
+    visible: true,
     promptValue: {}
   };
   _containerRef = null;
   _currentNodeRef = null;
+  animationTime = 500;
   static defaultProps = {
     prefixCls: "cuke-modal",
     visible: false,
@@ -187,13 +189,21 @@ export default class Modal extends PureComponent {
   _onOk = () => {
     // 如果是 Modal.xx() 的方式 调用 直接销毁节点
     if (this.props.isStaticMethod) {
-      this.destroy();
+      this.setState({ visible: false }, () => {
+        setTimeout(() => {
+          this.destroy();
+        }, this.animationTime);
+      });
     }
     this.props.onOk(this.state.promptValue);
   };
   _onCancel = () => {
     if (this.props.isStaticMethod) {
-      this.destroy();
+      this.setState({ visible: false }, () => {
+        setTimeout(() => {
+          this.destroy();
+        }, this.animationTime);
+      });
     }
     this.props.onCancel(this.state.promptValue);
   };
@@ -256,17 +266,7 @@ export default class Modal extends PureComponent {
 
     const { init } = this.state;
 
-    const initModalAnimate = init
-      ? { [`${prefixCls}-open`]: visible, [`${prefixCls}-close`]: !visible }
-      : { [`${prefixCls}-open`]: visible };
-
-    /*eslint no-mixed-spaces-and-tabs: ["error", "smart-tabs"]*/
-    const initMaskAnimate = init
-      ? {
-          [`${prefixCls}-mask-show`]: visible,
-          [`${prefixCls}-mask-hide`]: !visible
-        }
-      : { [`${prefixCls}-mask-show`]: visible };
+    const _visible = isStaticMethod ? this.state.visible : visible;
 
     const maskClickHandle = maskClosable ? { onClick: this._onCancel } : {};
 
@@ -276,7 +276,12 @@ export default class Modal extends PureComponent {
       <>
         {showMask ? (
           <div
-            className={cls(`${prefixCls}-mask`, initMaskAnimate)}
+            className={cls(`${prefixCls}-mask`, {
+              [`${prefixCls}-mask-show`]: _visible,
+              [`${prefixCls}-mask-hide`]: isStaticMethod
+                ? !_visible
+                : init && !_visible
+            })}
             {...maskClickHandle}
           />
         ) : (
@@ -290,7 +295,11 @@ export default class Modal extends PureComponent {
           })}
         >
           <div
-            className={cls(prefixCls, className, initModalAnimate, {
+            className={cls(prefixCls, className, {
+              [`${prefixCls}-open`]: _visible,
+              [`${prefixCls}-close`]: isStaticMethod
+                ? !_visible
+                : init && !_visible,
               "no-title": !title
             })}
             ref={node => (this.modal = node)}

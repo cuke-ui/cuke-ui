@@ -16,6 +16,12 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v0.0.34</a></h2>
+      <ul>
+        <li> 修复 Modal.xx() 关闭时无动画的问题 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.32 - v0.0.33</a></h2>
       <ul>
         <li> 优化 Collapse 过渡效果 </li>

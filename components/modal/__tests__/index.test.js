@@ -252,7 +252,7 @@ describe("<Modal/>", () => {
     }, 10);
   });
 
-  it("should render have only one button when call not is modal.confirm() static method", () => {
+  it("should render have only one button when call not is modal.error() static method", () => {
     const wrapper = render(
       <Modal visible staticMethodType="error" isStaticMethod>
         1111
@@ -261,5 +261,14 @@ describe("<Modal/>", () => {
     setTimeout(() => {
       assert(wrapper.find(Button).length === 1);
     }, 10);
+  });
+
+  it("should find .cuke-modal-close is modal.xx() static method", () => {
+    const wrapper = shallow(
+      <Modal visible staticMethodType="error" isStaticMethod>
+        1111
+      </Modal>
+    );
+    expect(wrapper.find(".cuke-modal-close").length).toBe(1);
   });
 });

@@ -207,10 +207,12 @@ yarn run build
 	- `cuke-ui.min.js`
 	- `cuke-ui.css`
 	- `cuke-ui.min.css`
+
 - `lib`
 	- `button`
 	  - `index.js`
-    - `style.less`
+      - `style.less`
+      
   - `其他组件`
 	- `index.js`
 
