@@ -265,10 +265,23 @@ describe("<Modal/>", () => {
 
   it("should find .cuke-modal-close is modal.xx() static method", () => {
     const wrapper = shallow(
-      <Modal visible staticMethodType="error" isStaticMethod>
+      <Modal visible staticMethodType="error">
         1111
       </Modal>
     );
+    wrapper.setProps({ isStaticMethod: true });
     expect(wrapper.find(".cuke-modal-close").length).toBe(1);
+  });
+
+  it("should set body style when did update", () => {
+    const wrapper = shallow(<Modal visible={false}>1111</Modal>);
+    wrapper.setProps({ visible: true });
+    wrapper.update();
+    expect(document.body.style.overflow).toEqual("hidden");
+    expect(document.body.style.paddingRight).toEqual("15px");
+    wrapper.setProps({ visible: false });
+    wrapper.update();
+    expect(document.body.style.overflow).toEqual("");
+    expect(document.body.style.paddingRight).toEqual("0px");
   });
 });

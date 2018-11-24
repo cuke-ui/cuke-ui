@@ -224,12 +224,17 @@ export default class Modal extends PureComponent {
       }
     });
   };
-  componentWillReceiveProps({ visible }) {
+  static getDerivedStateFromProps({ visible }) {
     if (visible === true) {
-      this.disableScroll();
-      this.setState({
+      return {
         init: true
-      });
+      };
+    }
+    return null;
+  }
+  componentDidUpdate() {
+    if (this.props.visible === true) {
+      this.disableScroll();
     } else {
       this.enableScroll();
     }
@@ -274,7 +279,7 @@ export default class Modal extends PureComponent {
 
     return createPortal(
       <>
-        {showMask ? (
+        {showMask && (
           <div
             className={cls(`${prefixCls}-mask`, {
               [`${prefixCls}-mask-show`]: _visible,
@@ -284,8 +289,6 @@ export default class Modal extends PureComponent {
             })}
             {...maskClickHandle}
           />
-        ) : (
-          undefined
         )}
         <div
           role="dialog"
@@ -312,13 +315,11 @@ export default class Modal extends PureComponent {
           >
             <section className={`${prefixCls}-header`}>
               <h2 className={`${prefixCls}-title`}>{title}</h2>
-              {closable ? (
+              {closable && (
                 <CloseIcon
                   className={`${prefixCls}-close`}
                   onClick={this._onCancel}
                 />
-              ) : (
-                undefined
               )}
             </section>
             <section className={`${prefixCls}-content`}>

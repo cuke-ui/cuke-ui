@@ -59,12 +59,17 @@ export default class Drawer extends PureComponent {
     document.body.style.overflow = "";
     document.body.style.paddingRight = 0;
   };
-  componentWillReceiveProps({ visible }) {
+  static getDerivedStateFromProps({ visible }) {
     if (visible === true) {
-      this.disableScroll();
-      this.setState({
+      return {
         init: true
-      });
+      };
+    }
+    return null;
+  }
+  componentDidUpdate() {
+    if (this.props.visible === true) {
+      this.disableScroll();
     } else {
       this.enableScroll();
     }
@@ -92,36 +97,28 @@ export default class Drawer extends PureComponent {
 
     const { init } = this.state;
 
-    const initModalAnimate = init
-      ? { [`${prefixCls}-open`]: visible, [`${prefixCls}-close`]: !visible }
-      : { [`${prefixCls}-open`]: visible };
-
-    /*eslint no-mixed-spaces-and-tabs: ["error", "smart-tabs"]*/
-    const initMaskAnimate = init
-      ? {
-          [`${prefixCls}-mask-show`]: visible,
-          [`${prefixCls}-mask-hide`]: !visible
-        }
-      : { [`${prefixCls}-mask-show`]: visible };
-
     const maskClickHandle = maskClosable ? { onClick: onClose } : {};
 
     return createPortal(
       <>
-        {showMask ? (
+        {showMask && (
           <div
-            className={cls(`${prefixCls}-mask`, initMaskAnimate)}
+            className={cls(`${prefixCls}-mask`, {
+              [`${prefixCls}-mask-show`]: visible,
+              [`${prefixCls}-mask-hide`]: init && !visible
+            })}
             {...maskClickHandle}
           />
-        ) : (
-          undefined
         )}
         <div role="dialog" tabIndex="-1" className={cls(`${prefixCls}-wrap`)}>
           <div
             className={cls(
               prefixCls,
               className,
-              initModalAnimate,
+              {
+                [`${prefixCls}-open`]: visible,
+                [`${prefixCls}-close`]: init && !visible
+              },
               `${prefixCls}-${placement}`,
               { "no-title": !title }
             )}
@@ -136,10 +133,8 @@ export default class Drawer extends PureComponent {
           >
             <section className={`${prefixCls}-header`}>
               <h2 className={`${prefixCls}-title`}>{title}</h2>
-              {closable ? (
+              {closable && (
                 <CloseIcon className={`${prefixCls}-close`} onClick={onClose} />
-              ) : (
-                undefined
               )}
             </section>
             <section className={`${prefixCls}-content`}>{children}</section>

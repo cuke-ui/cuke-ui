@@ -109,4 +109,19 @@ describe("<Drawer/>", () => {
       expect(document.body.style.paddingRight).toBe("15px");
     });
   });
+  it("should set body style when did update", () => {
+    const wrapper = shallow(
+      <Drawer visible={false}>
+        <span>1</span>
+      </Drawer>
+    );
+    wrapper.setProps({ visible: true });
+    wrapper.update();
+    expect(document.body.style.overflow).toEqual("hidden");
+    expect(document.body.style.paddingRight).toEqual("15px");
+    wrapper.setProps({ visible: false });
+    wrapper.update();
+    expect(document.body.style.overflow).toEqual("");
+    expect(document.body.style.paddingRight).toEqual("0px");
+  });
 });

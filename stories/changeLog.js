@@ -16,6 +16,13 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v0.0.35</a></h2>
+      <ul>
+        <li> 优化 Modal, Drawer 的 生命周期处理 </li>
+        <li> 增加 Upload 组件</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.34</a></h2>
       <ul>
         <li> 修复 Modal.xx() 关闭时无动画的问题 </li>

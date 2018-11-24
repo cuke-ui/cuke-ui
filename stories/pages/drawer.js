@@ -73,14 +73,14 @@ export default class DrawerPage extends Component {
           可长可短
         </Button>
         <h2>四个方向</h2>
-        <p>
+        <div>
           <Radio.Group value={this.state.placement} onChange={this.onPlacementChange}>
             <Radio value="right">右</Radio>
             <Radio value="left">左</Radio>
             <Radio value="top">上</Radio>
             <Radio value="bottom">下</Radio>
           </Radio.Group>
-        </p>
+        </div>
         <Row>
           <Col span={6}>
             <Button type="primary" onClick={() => this.onShow("visible2")}>
