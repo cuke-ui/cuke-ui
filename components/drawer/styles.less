@@ -16,13 +16,14 @@
   transform: scale(0);
   display: flex;
   flex-direction: column;
+  box-shadow: @default-shadow;
   &.@{prefixCls}-open {
     pointer-events: auto;
   }
   &.@{prefixCls}-close {
     pointer-events: none;
   }
-  &.no-title {
+  &.@{prefixCls}-no-title {
     .@{prefixCls}-header {
       border-bottom: 1px solid transparent;
     }

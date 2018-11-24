@@ -117,10 +117,10 @@ export default class Drawer extends PureComponent {
               className,
               {
                 [`${prefixCls}-open`]: visible,
-                [`${prefixCls}-close`]: init && !visible
+                [`${prefixCls}-close`]: init && !visible,
+                [`${prefixCls}-no-title`]: !title
               },
-              `${prefixCls}-${placement}`,
-              { "no-title": !title }
+              `${prefixCls}-${placement}`
             )}
             style={{
               ...style,

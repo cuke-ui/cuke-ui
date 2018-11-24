@@ -178,7 +178,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
     tabindex="-1"
   >
     <div
-      class="cuke-drawer cuke-drawer-open cuke-drawer-left no-title"
+      class="cuke-drawer cuke-drawer-open cuke-drawer-no-title cuke-drawer-left"
       style="width:300px;height:100%;z-index:999"
     >
       <section
@@ -230,7 +230,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
     tabindex="-1"
   >
     <div
-      class="cuke-drawer cuke-drawer-open cuke-drawer-top no-title"
+      class="cuke-drawer cuke-drawer-open cuke-drawer-no-title cuke-drawer-top"
       style="width:300px;height:300px;z-index:999"
     >
       <section
@@ -282,7 +282,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
     tabindex="-1"
   >
     <div
-      class="cuke-drawer cuke-drawer-open cuke-drawer-right no-title"
+      class="cuke-drawer cuke-drawer-open cuke-drawer-no-title cuke-drawer-right"
       style="width:300px;height:100%;z-index:999"
     >
       <section
@@ -334,7 +334,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
     tabindex="-1"
   >
     <div
-      class="cuke-drawer cuke-drawer-open cuke-drawer-bottom no-title"
+      class="cuke-drawer cuke-drawer-open cuke-drawer-no-title cuke-drawer-bottom"
       style="width:300px;height:300px;z-index:999"
     >
       <section

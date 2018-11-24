@@ -273,6 +273,69 @@ describe("<Modal/>", () => {
     expect(wrapper.find(".cuke-modal-close").length).toBe(1);
   });
 
+  it("should render custom footer", () => {
+    const wrapper = shallow(
+      <Modal
+        visible
+        footer={
+          <>
+            <Button>1</Button>
+            <Button>2</Button>
+          </>
+        }
+      >
+        1111
+      </Modal>
+    );
+    expect(wrapper.find(Button)).toHaveLength(2);
+  });
+
+  it("should trigger onOk and onCancel click event", () => {
+    const onOk = jest.fn();
+    const onCancel = jest.fn();
+    const wrapper = shallow(
+      <Modal visible onOk={onOk} onCancel={onCancel}>
+        1111
+      </Modal>
+    );
+    wrapper
+      .find(Button)
+      .at(1)
+      .simulate("click");
+    wrapper
+      .find(Button)
+      .at(0)
+      .simulate("click");
+    expect(onOk).toHaveBeenCalled();
+    expect(onCancel).toHaveBeenCalled();
+  });
+
+  it("should cannot trigger onOk and onCancel click event when disabled", () => {
+    const onOk = jest.fn();
+    const onCancel = jest.fn();
+    const wrapper = shallow(
+      <Modal
+        visible
+        onOk={onOk}
+        onCancel={onCancel}
+        okButtonProps={{ disabled: true }}
+        cancelButtonProps={{ disabled: true }}
+      >
+        1111
+      </Modal>
+    );
+    wrapper
+      .find(Button)
+      .at(1)
+      .simulate("click");
+    wrapper
+      .find(Button)
+      .at(0)
+      .simulate("click");
+    expect(onOk).toHaveBeenCalled();
+    expect(onCancel).toHaveBeenCalled();
+  });
+
   it("should set body style when did update", () => {
     const wrapper = shallow(<Modal visible={false}>1111</Modal>);
     wrapper.setProps({ visible: true });

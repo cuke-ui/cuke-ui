@@ -75,6 +75,24 @@ describe("<Drawer/>", () => {
     assert(wrapper.find(Button).length === 1);
   });
 
+  it("should can not render title", () => {
+    const wrapper = shallow(
+      <Drawer visible>
+        <span>关闭回调</span>
+      </Drawer>
+    );
+    assert(wrapper.find(".cuke-drawer-no-title").length === 1);
+  });
+
+  it("should can not find cuke-drawer-no-title when title exist", () => {
+    const wrapper = shallow(
+      <Drawer visible title="test">
+        <span>关闭回调</span>
+      </Drawer>
+    );
+    assert(wrapper.find(".cuke-drawer-no-title").length === 0);
+  });
+
   it("should can not render custom footer", () => {
     const wrapper = shallow(
       <Drawer title="关闭回调" visible footer={null}>

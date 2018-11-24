@@ -67,13 +67,19 @@ export default class DrawerPage extends Component {
               打开
             </Button>
           </Col>
+          <Col span={4}>
+            <h2>不显示蒙版</h2>
+            <Button type="info" onClick={() => this.onShow("visible22")}>
+              打开
+            </Button>
+          </Col>
         </Row>
         <h2>自定义高度 (方向为 top | bottom 有效)</h2>
         <Button type="primary" onClick={() => this.onShow("visible15")}>
           可长可短
         </Button>
         <h2>四个方向</h2>
-        <div>
+        <div style={{marginBottom: 20}}>
           <Radio.Group value={this.state.placement} onChange={this.onPlacementChange}>
             <Radio value="right">右</Radio>
             <Radio value="left">左</Radio>
@@ -162,6 +168,14 @@ export default class DrawerPage extends Component {
           }
         >
           <span>我有两只脚</span>
+        </Drawer>
+        <Drawer
+          title="不显示蒙版"
+          showMask={false}
+          visible={this.state.visible22}
+          onClose={() => this.onClose("visible22")}
+        >
+          <span>孩子别翻了,没钱</span>
         </Drawer>
       </div>
     );
