@@ -72,7 +72,7 @@ export default class Button extends PureComponent {
         [`${prefixCls}-warning`]: checkType("warning"),
         [`${prefixCls}-success`]: checkType("success"),
         [`${prefixCls}-error`]: checkType("error"),
-        [`${prefixCls}-default`]: checkType("default"),
+        [`${prefixCls}-default`]: !disabled && checkType("default"),
         [`${prefixCls}-info`]: checkType("info"),
         [`${prefixCls}-disabled`]: disabled,
         [`${prefixCls}-loading`]: loading,

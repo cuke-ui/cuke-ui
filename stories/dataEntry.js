@@ -333,8 +333,18 @@ storiesOf("数据录入", module)
     () => (
       <div>
         <h2>基本使用</h2>
-        <Upload>
-          <FiUploadCloud/> 选择文件
+        <Upload accept="image/*">
+          <FiUploadCloud/> 选择图片
+        </Upload>
+
+        <h2>文件大小限制 (100KB)</h2>
+        <Upload maxSize={100} accept="image/*">
+          <FiUploadCloud/> 选择图片
+        </Upload>
+
+        <h2>禁用</h2>
+        <Upload disabled>
+          <FiUploadCloud/> 选择图片
         </Upload>
       </div>
     )
