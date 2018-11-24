@@ -12,6 +12,8 @@ module.exports = {
     "/components/index.js",
     "/components/styles",
     "/components/version",
+    "/components/icon",
+    "/components/upload",
   ],
   "transformIgnorePatterns": [
     "/node_modules/",

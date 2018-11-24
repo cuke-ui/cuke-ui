@@ -37,5 +37,6 @@ export { default as DatePicker } from "./datePicker";
 export { default as notification } from "./notification";
 export { default as NumberInput } from "./numberInput";
 export { default as Steps } from "./steps";
+export { default as Upload } from "./upload";
 
 export { default as version } from "./version";

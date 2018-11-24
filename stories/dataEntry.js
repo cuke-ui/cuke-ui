@@ -13,6 +13,7 @@ import { withInfo } from "@storybook/addon-info";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import Select from "../components/select";
 import NumberInput from '../components/numberInput';
+import Upload from '../components/upload';
 
 import "../components/input/styles.less";
 import "../components/radio/styles.less";
@@ -22,9 +23,12 @@ import "../components/datePicker/styles.less";
 import "../components/numberInput/styles.less";
 import "../components/numberInput/styles.less";
 import "../components/wordPad/styles.less";
+import "../components/upload/styles.less";
 import "./styles/dataEntry.less";
 import Col from '../components/col';
 import Row from '../components/row';
+import { FiFile } from '../components/icon';
+import { FiUploadCloud } from 'react-icons/fi';
 
 storiesOf("数据录入", module)
   .add(
@@ -329,7 +333,9 @@ storiesOf("数据录入", module)
     () => (
       <div>
         <h2>基本使用</h2>
-      // TODO: 
+        <Upload>
+          <FiUploadCloud/> 选择文件
+        </Upload>
       </div>
     )
   )

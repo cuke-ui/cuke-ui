@@ -310,6 +310,26 @@ describe("<Modal/>", () => {
     expect(onCancel).toHaveBeenCalled();
   });
 
+  it("should trigger onOk and onCancel click event when isStaticMethod exist", () => {
+    const onOk = jest.fn();
+    const onCancel = jest.fn();
+    const wrapper = shallow(
+      <Modal visible onOk={onOk} onCancel={onCancel} isStaticMethod>
+        1111
+      </Modal>
+    );
+    wrapper
+      .find(Button)
+      .at(1)
+      .simulate("click");
+    wrapper
+      .find(Button)
+      .at(0)
+      .simulate("click");
+    expect(onOk).toHaveBeenCalled();
+    expect(onCancel).toHaveBeenCalled();
+  });
+
   it("should cannot trigger onOk and onCancel click event when disabled", () => {
     const onOk = jest.fn();
     const onCancel = jest.fn();
