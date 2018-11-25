@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Upload/> should render a <Upload/> components 1`] = `
+<div
+  class="cuke-upload"
+  name="file"
+>
+  <input
+    hidden=""
+    type="file"
+  />
+  <button
+    class="cuke-button cuke-button-default"
+    type="button"
+  >
+    <span />
+  </button>
+  <ul
+    class="cuke-upload-upload-list"
+  />
+</div>
+`;
