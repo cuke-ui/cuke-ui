@@ -38,7 +38,7 @@
   &-header {
     padding: @modal-header-padding;
     border-bottom: 1px solid @border-color;
-    line-height: 40px;
+    line-height: @modal-header-height;
     text-align: center;
     position: relative;
     .@{prefixCls}-title {
@@ -46,6 +46,8 @@
       color: @font-color;
       margin: 0;
       font-weight: 500;
+      padding: @modal-header-title-padding;
+      .ellipsis(1);
     }
     .@{prefixCls}-close {
       position: absolute;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Progress from '../../components/progress';
 import Button from '../../components/button';
 
-export default class ModalPage extends Component {
+export default class ProgressPage extends Component {
   state = {
     percent: 50
   };

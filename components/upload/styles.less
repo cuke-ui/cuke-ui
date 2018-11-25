@@ -2,4 +2,70 @@
 @prefixCls : cuke-upload;
 .@{prefixCls} {
   display: inline-block;
+  &-preview {
+    width: @cuke-upload-list-preview-width;
+    height: @cuke-upload-list-preview-height;
+    overflow: auto;
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+  }
+  &-upload-list {
+    width: @cuke-upload-list-width;
+    margin-top: 10px;
+  }
+  &-upload-item {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-file-info {
+      color: @font-color;
+      margin-bottom: 5px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      span {
+        & + span {
+          margin-left: 10px;
+        }
+      }
+    }
+    &-progress {
+      margin: 0 !important;
+    }
+    &-has-cover {
+      border: 1px solid @border-color;
+      border-radius: @border-radius;
+      padding: 10px;
+      box-shadow: @default-shadow;
+      transition: all @default-transition;
+      &:hover {
+        border-color: @primary-color;
+      }
+      .@{prefixCls}-upload-item-content {
+        display: flex;
+        flex-direction: column;
+        .@{prefixCls}-upload-item-file-info,
+        .@{prefixCls}-upload-item-progress {
+          flex: 1;
+        }
+      }
+    }
+    &-content {
+      width: 100%;
+      height: 57px;
+    }
+    &-cover {
+      width: @cuke-upload-list-cover-width;
+      height: @cuke-upload-list-cover-height;
+      margin-right: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+  }
 }

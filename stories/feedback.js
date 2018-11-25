@@ -372,13 +372,13 @@ storiesOf("操作反馈", module)
         <h2>5种状态</h2>
         <Progress percent={20} type="default" />
         <Progress percent={30} type="success" />
-        <Progress percent={40} type="info" />
+        <Progress percent={40} type="progress" />
         <Progress percent={50} type="warning" />
         <Progress percent={60} type="error" />
 
         <Progress percent={20} type="default" animation={true} />
         <Progress percent={30} type="success" animation={true} />
-        <Progress percent={40} type="info" animation={true} />
+        <Progress percent={40} type="progress" animation={true} />
         <Progress percent={50} type="warning" animation={true} />
         <Progress percent={60} type="error" animation={true} />
 

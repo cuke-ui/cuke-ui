@@ -10,7 +10,7 @@ import {
   FiChevronDown,
   FiChevronRight,
   FiChevronLeft,
-  FiFile
+  FiUploadCloud
 } from "react-icons/fi";
 
 export const InfoIcon = props => <FiVolume2 {...props} />;
@@ -23,4 +23,4 @@ export const UpIcon = props => <FiChevronUp {...props} />;
 export const DownIcon = props => <FiChevronDown {...props} />;
 export const ArrowRightIcon = props => <FiChevronRight {...props} />;
 export const ArrowLeftIcon = props => <FiChevronLeft {...props} />;
-export const FileIcon = props => <FiFile {...props} />;
+export const FileUploadIcon = props => <FiUploadCloud {...props} />;

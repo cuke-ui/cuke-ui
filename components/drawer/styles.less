@@ -73,9 +73,9 @@
     }
   }
   &-header {
-    padding: @modal-header-padding;
+    padding: @cuke-drawer-header-padding;
     border-bottom: 1px solid @border-color;
-    line-height: 40px;
+    line-height: @cuke-drawer-header-height;
     text-align: center;
     position: relative;
     .@{prefixCls}-title {
@@ -83,6 +83,8 @@
       color: @font-color;
       margin: 0;
       font-weight: 500;
+      padding: @cuke-drawer-header-title-padding;
+      .ellipsis(1);
     }
     .@{prefixCls}-close {
       position: absolute;

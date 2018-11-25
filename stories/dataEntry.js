@@ -12,6 +12,7 @@ import Button from "../components/button";
 import { withInfo } from "@storybook/addon-info";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import Select from "../components/select";
+import message from "../components/message";
 import NumberInput from '../components/numberInput';
 import Upload from '../components/upload';
 
@@ -27,9 +28,29 @@ import "../components/upload/styles.less";
 import "./styles/dataEntry.less";
 import Col from '../components/col';
 import Row from '../components/row';
-import { FiFile } from '../components/icon';
-import { FiUploadCloud } from 'react-icons/fi';
+import { FileUploadIcon } from '../components/icon';
 
+const uploadProps = {
+  action:"/test",
+  onComplete: (res) => { 
+    console.log(res)
+    message.success('上传成功')
+  },
+  onError: (err) => { 
+    console.log( err)
+    message.error('上传失败')
+  },
+  onStart: () => { 
+    console.log('上传开始')
+  },
+  onTimeOut: ( err) => { 
+    console.log( err)
+    message.error('上传超时')
+  },
+  onProgress: (e, progress) => {
+    console.log(e, progress)
+   }
+}
 storiesOf("数据录入", module)
   .add(
     "WordPad 写字板",
@@ -331,20 +352,51 @@ storiesOf("数据录入", module)
   .add(
     "Upload 上传",
     () => (
-      <div>
+      <div className="upload-page">
         <h2>基本使用</h2>
-        <Upload accept="image/*">
-          <FiUploadCloud/> 选择图片
+        <Upload {...uploadProps} accept="image/*">
+          <FileUploadIcon/> 选择文件
         </Upload>
 
-        <h2>文件大小限制 (100KB)</h2>
-        <Upload maxSize={100} accept="image/*">
-          <FiUploadCloud/> 选择图片
+        <h2>文件大小限制 (10KB)</h2>
+        <Upload {...uploadProps} maxSize={10}>
+          <FileUploadIcon/> 选择文件
+        </Upload>
+
+        <h2>上传图片</h2>
+        <Upload {...uploadProps} type="image" accept="image/*">
+          <FileUploadIcon/> 选择图片
+        </Upload>
+
+        <h2>上传多个图片</h2>
+        <Upload {...uploadProps} type="image" multiple accept="image/*">
+          <FileUploadIcon/> 选择图片
+        </Upload>
+
+        <h2>自定义上传前行为</h2>
+        <Upload {...uploadProps} beforeUpload={(file)=> {
+          if(file.name !== "js 从入门到放弃") {
+            message.warning('请上传 << js 从入门到放弃 >>')
+            return false
+          }
+          return true
+        }}>
+          <FileUploadIcon/> 选择文件
+        </Upload>
+
+        <h2>点击图片预览</h2>
+        <Upload {...uploadProps} type="image" accept="image/*">
+          <FileUploadIcon/> 选择图片
+        </Upload>
+
+        <h2>不显示上传列表</h2>
+        <Upload {...uploadProps} showUploadList={false}>
+          <FileUploadIcon/> 选择文件
         </Upload>
 
         <h2>禁用</h2>
         <Upload disabled>
-          <FiUploadCloud/> 选择图片
+          <FileUploadIcon/> 选择图片
         </Upload>
       </div>
     )

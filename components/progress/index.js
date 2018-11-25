@@ -2,7 +2,7 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 
-const types = ["default", "warning", "success", "error", "info"];
+const types = ["default", "warning", "success", "error", "progress"];
 
 export default class Progress extends PureComponent {
   static defaultProps = {

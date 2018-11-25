@@ -22,6 +22,8 @@ const ChangeLog = () => (
         <li> 增加 Upload 组件</li>
         <li> Drawer 增加 阴影 & 无蒙版模式 </li>
         <li> 修复 Button 组件 disabled 还有 active 效果的 bug</li>
+        <li> 优化 Modal 和 Drawer 的一些 less 变量定义</li>
+        <li> 修复 Modal 和 Drawer title 过长 会导致换行的 bug</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

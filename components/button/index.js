@@ -58,7 +58,7 @@ export default class Button extends PureComponent {
     } = this.props;
 
     const checkType = btnType => {
-      return type.indexOf(btnType) !== -1;
+      return type === btnType;
     };
 
     const isDisabled = disabled || loading ? { disabled: true } : { onClick };

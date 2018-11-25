@@ -233,10 +233,12 @@ export default class Modal extends PureComponent {
     return null;
   }
   componentDidUpdate() {
-    if (this.props.visible === true) {
-      this.disableScroll();
-    } else {
-      this.enableScroll();
+    if (!this.props.isStaticMethod) {
+      if (this.props.visible === true) {
+        this.disableScroll();
+      } else {
+        this.enableScroll();
+      }
     }
   }
   render() {
