@@ -2,16 +2,21 @@
 .example-row {
   margin: 10px 0;
   .example-col {
-    height: 50px;
-    border: 1px solid @border-color;
-    background:@primary-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color:#fff;
+    span {
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background-color: @primary-color;
+    }
+    & +.example-col {
+      span {
+        border-left: 1px solid @border-color;
+      }
+    }
   }
 }
-
 
 .cuke-container {
   border: 1px solid @border-color;

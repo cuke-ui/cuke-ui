@@ -23,10 +23,13 @@ export default class Row extends PureComponent {
       ...attr
     } = this.props;
 
-    const rowStyle = {
-      marginLeft: `${-gutter / 2}px`,
-      marginRight: `${-gutter / 2}px`
-    };
+    const rowStyle = gutter
+      ? {
+          marginLeft: -gutter / 2,
+          marginRight: -gutter / 2
+        }
+      : {};
+
     return (
       <div
         className={cls(prefixCls, className)}

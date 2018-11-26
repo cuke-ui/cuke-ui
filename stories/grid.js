@@ -19,7 +19,7 @@ storiesOf('布局', module)
             <Row className="example-row" key={i}>
               {new Array(24 / span).fill().map((_, j) => (
                 <Col className="example-col" span={span} key={j}>
-                  {span}
+                  <span>{span}</span>
                 </Col>
               ))}
             </Row>
@@ -28,39 +28,39 @@ storiesOf('布局', module)
 
         <h2>设置 gutter</h2>
 
-        <Row className="example-row" gutter={10}>
+        <Row className="example-row" gutter={16}>
           <Col span={8} className="example-col">
-            8
+            <span>8</span>
 					</Col>
           <Col span={8} className="example-col">
-            8
+            <span>8</span>
 					</Col>
           <Col span={8} className="example-col">
-            8
+            <span>8</span>
 					</Col>
         </Row>
 
         <h2>设置间隙</h2>
         <Row className="example-row">
           <Col span={8} className="example-col">
-            8
+            <span>8</span>
 					</Col>
           <Col span={8} offset={8} className="example-col">
-            8
+            <span>8</span>
 					</Col>
         </Row>
         <Row className="example-row">
           <Col span={10} className="example-col">
-            10
+            <span>10</span>
 					</Col>
           <Col span={2} offset={2} className="example-col">
-            2
+            <span>2</span>
 					</Col>
           <Col span={2} offset={2} className="example-col">
-            2
+            <span>2</span>
 					</Col>
           <Col span={5} offset={1} className="example-col">
-            5
+            <span>5</span>
 					</Col>
         </Row>
       </div>

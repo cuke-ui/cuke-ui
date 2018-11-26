@@ -2,21 +2,27 @@
 
 exports[`<Upload/> should render a <Upload/> components 1`] = `
 <div
-  class="cuke-upload"
+  className="cuke-upload"
   name="file"
+  onError={[Function]}
+  onPreview={[Function]}
+  onProgress={[Function]}
+  onSelect={[Function]}
 >
   <input
-    hidden=""
+    hidden={true}
+    multiple={false}
+    onChange={[Function]}
     type="file"
   />
-  <button
-    class="cuke-button cuke-button-default"
-    type="button"
+  <div
+    className="cuke-upload-inner"
+    onClick={[Function]}
   >
-    <span />
-  </button>
+    选择文件
+  </div>
   <ul
-    class="cuke-upload-upload-list"
+    className="cuke-upload-upload-list"
   />
 </div>
 `;

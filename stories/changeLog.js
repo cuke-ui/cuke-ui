@@ -22,6 +22,9 @@ const ChangeLog = () => (
         <li> 修复 DatePicker 组件 onPanelVisibleChange 状态错误 </li>
         <li> 修复 DatePicker 默认值更新 selectedDate 错误的问题 </li>
         <li> 修复 DatePicker 有扩展 今天 文字没对齐 </li>
+        <li> 修改 DatePicker 非当前月 日期 颜色</li>
+        <li> 新增 Calendar 组件</li>
+        <li> 修复 Grid gutter 不生效的问题 </li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

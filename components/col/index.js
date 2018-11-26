@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 export default class Col extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-col",
-    gutter: 24
+    gutter: 0
   };
 
   static propTypes = {
@@ -25,10 +25,12 @@ export default class Col extends PureComponent {
       ...attr
     } = this.props;
 
-    const colStyle = {
-      paddingLeft: `${-gutter / 2}px`,
-      paddingRight: `${-gutter / 2}px`
-    };
+    const colStyle = gutter
+      ? {
+          paddingLeft: gutter / 2,
+          paddingRight: gutter / 2
+        }
+      : {};
 
     return (
       <div

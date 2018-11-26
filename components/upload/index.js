@@ -1,12 +1,11 @@
 import React, { PureComponent, createRef } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
-import Button from "../button";
 import message from "../message";
 import Progress from "../progress";
 import Modal from "../modal";
 
-const formatFileSize = fileSize => {
+export const formatFileSize = fileSize => {
   const sizeUnitArr = ["Byte", "KB", "MB", "GB"];
   if (fileSize === 0) {
     return "0 KB";
@@ -54,7 +53,9 @@ export default class Upload extends PureComponent {
     onError: () => {},
     onStart: () => {},
     onTimeOut: () => {},
-    onProgress: () => {}
+    onProgress: () => {},
+    onPreview: () => {},
+    onSelect: () => {}
   };
 
   static propTypes = {
@@ -111,6 +112,7 @@ export default class Upload extends PureComponent {
         }
       );
     });
+    this.props.onSelect(this.state.uploadList);
   };
 
   changeUploadStatus = (status, index) => {
@@ -220,6 +222,7 @@ export default class Upload extends PureComponent {
         </div>
       )
     });
+    this.props.onPreview(cover);
   };
 
   render() {
@@ -228,7 +231,6 @@ export default class Upload extends PureComponent {
       className,
       children,
       multiple,
-      disabled,
       accept,
       directory,
       type,
@@ -260,9 +262,9 @@ export default class Upload extends PureComponent {
           onChange={this.onSelect}
           {...isDirectory}
         />
-        <Button onClick={this._onSelect} disabled={disabled}>
+        <div className={cls(`${prefixCls}-inner`)} onClick={this._onSelect}>
           {children}
-        </Button>
+        </div>
         {showUploadList && (
           <ul className={cls(`${prefixCls}-upload-list`)}>
             {uploadList.map(
