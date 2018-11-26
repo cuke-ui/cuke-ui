@@ -18,6 +18,15 @@ const ChangeLog = () => (
     <Timeline.Item>
       <h2><a>v0.0.35</a></h2>
       <ul>
+        <li> 修复 Upload 文件名过长 显示问题 </li>
+        <li> 修复 DatePicker 组件 onPanelVisibleChange 状态错误 </li>
+        <li> 修复 DatePicker 默认值更新 selectedDate 错误的问题 </li>
+        <li> 修复 DatePicker 有扩展 今天 文字没对齐 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
+      <h2><a>v0.0.35</a></h2>
+      <ul>
         <li> 优化 Modal, Drawer 的 生命周期处理 </li>
         <li> 增加 Upload 组件</li>
         <li> Drawer 增加 阴影 & 无蒙版模式 </li>

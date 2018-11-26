@@ -181,10 +181,11 @@ describe("<CityPicker/>", () => {
     const wrapper = shallow(
       <CityPickerCore onCityGroupChange={onChange} cityList={cityList} />
     );
-    setTimeout(() => {
-      wrapper.find(".cuke-city-picker-core-item").simulate("click");
-      expect(onChange).toHaveBeenCalled();
-    });
+    wrapper
+      .find(".cuke-city-picker-core-item")
+      .at(0)
+      .simulate("click");
+    expect(onChange).toHaveBeenCalled();
   });
 
   it("should window cannot trigger click event when un mount", () => {
@@ -212,10 +213,11 @@ describe("<CityPicker/>", () => {
     const wrapper = shallow(
       <CityPickerCore cityList={cityList} onCityChange={onCityChange} />
     );
-    setTimeout(() => {
-      wrapper.find(".cuke-city-picker-core-city").simulate("click");
-      expect(onCityChange).toHaveBeenCalled();
-    });
+    wrapper
+      .find(".cuke-city-picker-core-city")
+      .at(0)
+      .simulate("click");
+    expect(onCityChange).toHaveBeenCalled();
   });
 
   it("should render spin when loading is true", () => {
@@ -238,10 +240,11 @@ describe("<CityPicker/>", () => {
         onCityGroupChange={onCityGroupChange}
       />
     );
-    setTimeout(() => {
-      wrapper.find(".cuke-city-picker-core-item").simulate("click");
-      expect(onCityGroupChange).toHaveBeenCalled();
-    });
+    wrapper
+      .find(".cuke-city-picker-core-item")
+      .at(0)
+      .simulate("click");
+    expect(onCityGroupChange).toHaveBeenCalled();
   });
 
   it("should cannot trigger panel visible change when disabled groups", () => {

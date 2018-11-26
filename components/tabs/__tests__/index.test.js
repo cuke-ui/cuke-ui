@@ -98,7 +98,7 @@ describe("<Tabs/>", () => {
   it("should can trigger onChange event", () => {
     const onChange = jest.fn();
     const wrapper = shallow(
-      <Tabs defaultActiveKey="2" onChange={onChange}>
+      <Tabs defaultActiveKey="2" onChange={onChange} type="card">
         <Tabs.TabPane tab="选项1" key="1">
           1
         </Tabs.TabPane>
@@ -110,9 +110,52 @@ describe("<Tabs/>", () => {
         </Tabs.TabPane>
       </Tabs>
     );
-    setTimeout(() => {
-      wrapper.find(".cuke-tabs-tab").simulate("click");
-      expect(onChange).toHaveBeenCalled();
+    wrapper
+      .find(".cuke-tabs-tab")
+      .at(0)
+      .simulate("click");
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it("should can not trigger onChange event when every tab disabled", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Tabs defaultActiveKey="2" onChange={onChange} type="card">
+        <Tabs.TabPane tab="选项1" disabled key="1">
+          1
+        </Tabs.TabPane>
+        <Tabs.TabPane tab="选项2" disabled key="2">
+          2
+        </Tabs.TabPane>
+        <Tabs.TabPane tab="选项3" disabled key="3">
+          3
+        </Tabs.TabPane>
+      </Tabs>
+    );
+    wrapper
+      .find(".cuke-tabs-tab")
+      .at(0)
+      .simulate("click");
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it("should find new activeKey when component update", () => {
+    const wrapper = shallow(
+      <Tabs activeKey="2" type="card">
+        <Tabs.TabPane tab="选项1" disabled key="1">
+          1
+        </Tabs.TabPane>
+        <Tabs.TabPane tab="选项2" disabled key="2">
+          2
+        </Tabs.TabPane>
+        <Tabs.TabPane tab="选项3" disabled key="3">
+          3
+        </Tabs.TabPane>
+      </Tabs>
+    );
+    wrapper.setProps({
+      activeKey: "3"
     });
+    expect(wrapper.state().activeKey).toEqual(3);
   });
 });

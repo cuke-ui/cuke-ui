@@ -52,7 +52,11 @@ export default class DataPicker extends PureComponent {
     if (!value || value.valueOf() === momentSelected.valueOf()) {
       return null;
     }
-    return { momentSelected: value, isSelectedMoment: !!this.props.value };
+    return {
+      momentSelected: value,
+      isSelectedMoment: !!value,
+      selectedDate: value.date()
+    };
   }
 
   onTogglePanel = () => {
@@ -80,7 +84,7 @@ export default class DataPicker extends PureComponent {
     });
   };
 
-  selectedDate = date => {
+  selectedDate = date => () => {
     this.setState(
       {
         selectedDate: date,
@@ -90,7 +94,7 @@ export default class DataPicker extends PureComponent {
         isSelectedMoment: true
       },
       () => {
-        this.props.onPanelVisibleChange(true);
+        this.props.onPanelVisibleChange(false);
         this.props.onChange(
           date,
           this.state.momentSelected,
@@ -145,7 +149,7 @@ export default class DataPicker extends PureComponent {
               }
             )}
             key={`date-${date}`}
-            onClick={() => this.selectedDate(date + 1)}
+            onClick={this.selectedDate(date + 1)}
           >
             {date + 1}
           </span>

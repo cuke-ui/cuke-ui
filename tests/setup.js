@@ -26,4 +26,6 @@ HTMLCanvasElement.prototype.getContext = () => {
   return {}
 };
 
+HTMLDivElement.prototype.getBoundingClientRect = () => {}
+
 Enzyme.configure({ adapter: new Adapter() });

@@ -108,7 +108,10 @@ describe("<Collapse/>", () => {
       </Collapse>
     );
     setTimeout(() => {
-      wrapper.find(".cuke-collapse-item-header").simulate("click");
+      wrapper
+        .find(".cuke-collapse-item-header")
+        .at(0)
+        .simulate("click");
       expect(onChange).toHaveBeenCalled();
     });
   });

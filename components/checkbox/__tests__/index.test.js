@@ -68,10 +68,11 @@ describe("<Checkbox/>", () => {
         </Checkbox>
       </Checkbox.Group>
     );
-    setTimeout(() => {
-      wrapper.find(".cuke-checkbox-input").simulate("change");
-      expect(onChange).toHaveBeenCalled();
-    });
+    wrapper
+      .find(Checkbox)
+      .at(0)
+      .simulate("change", { target: {} });
+    expect(onChange).toHaveBeenCalled();
   });
   it("should can not trigger change event for checkbox group", () => {
     const onChange = jest.fn();

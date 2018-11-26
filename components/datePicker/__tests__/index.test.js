@@ -153,4 +153,20 @@ describe("<DatePicker/>", () => {
     window.onclick = () => onClick;
     expect(onClick).not.toHaveBeenCalled();
   });
+  it("should set new moment selected value when did update ", () => {
+    const wrapper = shallow(<DatePicker value={moment()} />);
+    wrapper.setProps({
+      value: moment("1996-08-25")
+    });
+    wrapper.update();
+    expect(wrapper.state().momentSelected).toEqual(moment("1996-08-25"));
+  });
+  it("should can not update when set equal value ", () => {
+    const wrapper = shallow(<DatePicker value={moment("1996-08-25")} />);
+    wrapper.setProps({
+      value: moment("1996-08-25")
+    });
+    wrapper.update();
+    expect(wrapper.state().isSelectedMoment).toEqual(true);
+  });
 });

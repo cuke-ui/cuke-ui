@@ -59,13 +59,15 @@ export default class Tabs extends PureComponent {
       lineOffsetLeft: left - headerOffset
     });
   };
-  onTabChange = key => {
-    this.setState({ activeKey: key }, () => {
-      if (this.props.type !== cardType) {
-        this.setActiveLineStyle();
-      }
-    });
-    this.props.onChange(key);
+  onTabChange = disabled => key => () => {
+    if (!disabled) {
+      this.setState({ activeKey: key }, () => {
+        if (this.props.type !== cardType) {
+          this.setActiveLineStyle();
+        }
+      });
+      this.props.onChange(key);
+    }
   };
 
   render() {
@@ -108,7 +110,7 @@ export default class Tabs extends PureComponent {
               [`${prefixCls}-tab-disabled`]: !!disabled
             })}
             {...bindActiveRef}
-            onClick={() => !disabled && this.onTabChange(key)}
+            onClick={this.onTabChange(disabled)(key)}
           >
             {tab}
           </div>
@@ -126,7 +128,7 @@ export default class Tabs extends PureComponent {
           ref={this.tabsHeader}
         >
           {header}
-          {!isCardType ? (
+          {!isCardType && (
             <div
               className={cls(`${prefixCls}-line`)}
               style={{
@@ -134,15 +136,11 @@ export default class Tabs extends PureComponent {
                 transform: `translate3d(${lineOffsetLeft}px,0,0)`
               }}
             />
-          ) : (
-            undefined
           )}
-          {tabBarExtraContent ? (
+          {tabBarExtraContent && (
             <div className={cls(`${prefixCls}-extra`)}>
               {tabBarExtraContent}
             </div>
-          ) : (
-            undefined
           )}
         </div>
         <div className={cls(`${prefixCls}-content`)}>{content}</div>

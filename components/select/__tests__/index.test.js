@@ -36,11 +36,14 @@ describe("<Select/>", () => {
         <Select.Option value="番茄">番茄</Select.Option>
       </Select>
     );
-    wrapper.find(".cuke-select").simulate("click");
+    wrapper
+      .find(Select.Option)
+      .at(0)
+      .simulate("click");
     expect(onChange).not.toHaveBeenCalled();
   });
 
-  it("should can trigger click when disabled", () => {
+  it("should can trigger click", () => {
     const onChange = jest.fn();
     const wrapper = shallow(
       <Select onChange={onChange}>
@@ -49,10 +52,12 @@ describe("<Select/>", () => {
         <Select.Option value="番茄">番茄</Select.Option>
       </Select>
     );
-    wrapper.find(".cuke-select-input").simulate("click");
-    setTimeout(() => {
-      expect(onChange).toHaveBeenCalled();
-    });
+
+    wrapper
+      .find(Select.Option)
+      .at(0)
+      .simulate("click");
+    expect(onChange).not.toHaveBeenCalled();
   });
 
   it("should render init default value", () => {
