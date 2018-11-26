@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import Tooltip from "../components/tooltip";
@@ -19,8 +20,10 @@ import "../components/timeline/styles.less";
 import "../components/tag/styles.less";
 import "../components/cityPicker/styles.less";
 import "../components/collapse/styles.less";
+import "../components/calendar/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
+import { Calendar } from "../components";
 
 const cityList = [
   {
@@ -219,7 +222,7 @@ storiesOf("数据展示", module)
         </Tabs>
       </div>
     ),
-  )
+)
   .add(
     "Badge 徽标数",
     () => (
@@ -503,7 +506,7 @@ storiesOf("数据展示", module)
 
         <h2>箭头显示在右边</h2>
         <Collapse rightArrow>
-           <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
+          <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="标题3">内容3</Collapse.Item>
         </Collapse>
@@ -530,14 +533,14 @@ storiesOf("数据展示", module)
         </Collapse>
 
         <h2>自定义图标</h2>
-        <Collapse icon={<SuccessIcon/>}>
-           <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
+        <Collapse icon={<SuccessIcon />}>
+          <Collapse.Item title="黄瓜ui">内容1xxxxxxxxxxxxx</Collapse.Item>
           <Collapse.Item title="即插即用">内容2xxxxxxxxxxx</Collapse.Item>
         </Collapse>
 
         <Collapse>
-           <Collapse.Item title="黄瓜ui" icon={<SuccessIcon/>}>内容1xxxxxxxxxxxxx</Collapse.Item>
-          <Collapse.Item title="即插即用" icon={<ErrorIcon/>}>内容2xxxxxxxxxxx</Collapse.Item>
+          <Collapse.Item title="黄瓜ui" icon={<SuccessIcon />}>内容1xxxxxxxxxxxxx</Collapse.Item>
+          <Collapse.Item title="即插即用" icon={<ErrorIcon />}>内容2xxxxxxxxxxx</Collapse.Item>
         </Collapse>
 
         <h2>回调函数</h2>
@@ -551,44 +554,44 @@ storiesOf("数据展示", module)
   .add(
     "CityPicker 城市选择框",
     () => (
-        <div>
-          <h2>基本使用</h2>
-          <CityPicker
-            onCityChange={city => console.log("selected city:", city)}
-            onCityGroupChange={(cityGroup, index) =>
-              console.log("selected cityGroup:", cityGroup, index)
-            }
-            cityList={cityList}
-          />
+      <div>
+        <h2>基本使用</h2>
+        <CityPicker
+          onCityChange={city => console.log("selected city:", city)}
+          onCityGroupChange={(cityGroup, index) =>
+            console.log("selected cityGroup:", cityGroup, index)
+          }
+          cityList={cityList}
+        />
 
-          <h2>默认选中分组</h2>
-          <CityPicker defaultActiveGroup={1} cityList={cityList} />
+        <h2>默认选中分组</h2>
+        <CityPicker defaultActiveGroup={1} cityList={cityList} />
 
-          <h2>加载中</h2>
-          <CityPicker cityList={cityList} loading/>
+        <h2>加载中</h2>
+        <CityPicker cityList={cityList} loading />
 
-          <h2>自定义加载文案</h2>
-          <CityPicker cityList={cityList} loading tip="拼命加载中..."/>
+        <h2>自定义加载文案</h2>
+        <CityPicker cityList={cityList} loading tip="拼命加载中..." />
 
-          <h2>禁用</h2>
-          <CityPicker disabled cityList={cityList} />
+        <h2>禁用</h2>
+        <CityPicker disabled cityList={cityList} />
 
-          <h2>禁用分组</h2>
-          <CityPicker cityList={cityList} disabledGroups={[1, 2, 3]} />
+        <h2>禁用分组</h2>
+        <CityPicker cityList={cityList} disabledGroups={[1, 2, 3]} />
 
-          <h2>自定义占位符</h2>
-          <CityPicker placeholder="请选择城市" cityList={cityList} />
+        <h2>自定义占位符</h2>
+        <CityPicker placeholder="请选择城市" cityList={cityList} />
 
-          <h2>面板改变回调</h2>
-          <CityPicker placeholder="请选择城市" cityList={cityList} onPanelVisibleChange={(visible) => console.log('visible:', visible)} />
+        <h2>面板改变回调</h2>
+        <CityPicker placeholder="请选择城市" cityList={cityList} onPanelVisibleChange={(visible) => console.log('visible:', visible)} />
 
-          <h2>在任意容器中单独使用 picker</h2>
-          <CityPicker.CityPickerCore cityList={cityList} />
-        </div>
+        <h2>在任意容器中单独使用 picker</h2>
+        <CityPicker.CityPickerCore cityList={cityList} />
+      </div>
     ),
     {
       info: {
-        text : `
+        text: `
         cityList 数据结构
         [
           {
@@ -609,4 +612,39 @@ storiesOf("数据展示", module)
         `
       }
     }
+  )
+  .add(
+    "Calendar 日历",
+    () => (
+      <div>
+        <h2>基本使用</h2>
+        <Calendar
+          onChange={(date, month) => console.log(date, month)}
+          onMonthChange={(month) => console.log(month)}
+        />
+
+        <h2>自定义渲染内容</h2>
+        <Calendar
+          dateCellRender={(date) => {
+            if (date <= 5) {
+              return "唱歌"
+            }
+            return <Badge count={20} dot>
+              购物
+              </Badge>
+          }}
+        />
+
+        <h2>默认日期</h2>
+        <Calendar
+          value={moment('1996-08-25')}
+        />
+
+        <h2>加载中</h2>
+        <Calendar
+          loading={true}
+          tip="加载中..."
+        />
+      </div>
+    )
   );

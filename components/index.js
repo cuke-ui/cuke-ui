@@ -38,5 +38,6 @@ export { default as notification } from "./notification";
 export { default as NumberInput } from "./numberInput";
 export { default as Steps } from "./steps";
 export { default as Upload } from "./upload";
+export { default as Calendar } from "./calendar";
 
 export { default as version } from "./version";

@@ -52,6 +52,7 @@
     box-shadow: @default-shadow;
     padding: 15px;
     border-radius: @border-radius;
+    transition: all @default-transition;
   }
   &-header {
     margin-left: 12px;
@@ -101,7 +102,7 @@
   }
   &-last-month,
   &-next-month {
-    color: @disabled-color;
+    color: @disabled-font-color;
   }
   &-day-title {
     color: @font-color;
@@ -119,7 +120,9 @@
       cursor: pointer;
       border: 1px solid transparent;
       transition: all @default-transition;
-      &:not(.@{prefixCls}-day-title):not(.@{prefixCls}-last-month):hover {
+      &:not(.@{prefixCls}-day-title),
+      :not(.@{prefixCls}-last-month),
+      :not(.@{prefixCls}-next-month):hover {
         border: 1px solid @primary-color;
       }
     }

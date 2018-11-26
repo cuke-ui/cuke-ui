@@ -290,6 +290,11 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       >
         30
       </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-next-month"
+      >
+         1
+      </span>
     </div>
     <div
       class="cuke-date-picker-footer cuke-date-picker-has-border"

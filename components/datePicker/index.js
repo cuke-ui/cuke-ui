@@ -112,6 +112,9 @@ export default class DataPicker extends PureComponent {
     const momentLastMonth = momentDateFirst.clone().add(-1, "months");
     const lastMonthDaysInMonth = momentLastMonth.daysInMonth();
 
+    const weekdayInMonth = momentDateFirst.isoWeekday();
+    const lastDaysInMonth = (daysInMonth + weekdayInMonth - 1) % 7;
+
     return (
       <>
         {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(day => (
@@ -154,6 +157,20 @@ export default class DataPicker extends PureComponent {
             {date + 1}
           </span>
         ))}
+        {new Array(lastDaysInMonth === 0 ? 0 : 6 - lastDaysInMonth)
+          .fill()
+          .map((_, date) => (
+            <span
+              className={cls(
+                `${this.props.prefixCls}-item`,
+                `${this.props.prefixCls}-next-month`
+              )}
+              key={`placeholder-${date}`}
+            >
+              {" "}
+              {date + 1}
+            </span>
+          ))}
       </>
     );
   };

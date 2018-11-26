@@ -1,0 +1,353 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Calendar/> should render a <Calendar/> components 1`] = `
+<div
+  class="cuke-calendar"
+>
+  <div
+    class="cuke-calendar-header"
+  >
+    <svg
+      class="cuke-calendar-button-icon"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <polyline
+        points="15 18 9 12 15 6"
+      />
+    </svg>
+    <span
+      class="cuke-calendar-date"
+    >
+      2018年   11月
+    </span>
+    <svg
+      class="cuke-calendar-button-icon"
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <polyline
+        points="9 18 15 12 9 6"
+      />
+    </svg>
+  </div>
+  <div
+    class="cuke-calendar-list"
+  >
+    <div
+      class="cuke-calendar-day-header"
+    >
+      <span
+        class="cuke-calendar-item cuke-calendar-day-title"
+      >
+        一
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-day-title"
+      >
+        二
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-day-title"
+      >
+        三
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-day-title"
+      >
+        四
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-day-title"
+      >
+        五
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-day-title"
+      >
+        六
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-day-title"
+      >
+        日
+      </span>
+    </div>
+    <div
+      class="cuke-calendar-content"
+    >
+      <span
+        class="cuke-calendar-item"
+      />
+      <span
+        class="cuke-calendar-item"
+      />
+      <span
+        class="cuke-calendar-item"
+      />
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        1
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        2
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        3
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        4
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        5
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        6
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        7
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        8
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        9
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        10
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        11
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        12
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        13
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        14
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        15
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        16
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        17
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        18
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        19
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        20
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        21
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        22
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        23
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        24
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        25
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
+      >
+        26
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        27
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        28
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        29
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        30
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        1
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        2
+      </span>
+    </div>
+  </div>
+</div>
+`;
