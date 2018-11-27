@@ -1,6 +1,26 @@
 import React, { PureComponent } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
+import ReactDOM from "react-dom";
+
+class TooltipPortal extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.el = document.createElement("div");
+  }
+
+  componentDidMount() {
+    document.body.appendChild(this.el);
+  }
+
+  componentWillUnmount() {
+    document.body.removeChild(this.el);
+  }
+
+  render() {
+    return ReactDOM.createPortal(this.props.children, this.el);
+  }
+}
 
 export default class Tooltip extends PureComponent {
   state = {
@@ -27,20 +47,26 @@ export default class Tooltip extends PureComponent {
       top,
       left
     } = this.triggerWrapper.getBoundingClientRect();
-    const { height: wrapperHeight } = this.wrapper.getBoundingClientRect();
+    const {
+      height: wrapperHeight,
+      width: wrapperWidth
+    } = this.wrapper.getBoundingClientRect();
     const { scrollX, scrollY } = window;
     const positions = {
-      top: { top: top + scrollY - wrapperHeight, left: left + scrollX },
+      top: {
+        top: top + scrollY - wrapperHeight,
+        left: left + scrollX + width / 2 - wrapperWidth / 2
+      },
       bottom: {
         top: top + height + scrollY,
-        left: left + scrollX
+        left: left + scrollX + width / 2 - wrapperWidth / 2
       },
       left: {
-        top: top + scrollY - wrapperHeight / 2,
-        left: left + scrollX
+        top: top + scrollY + height / 2 - wrapperHeight / 2,
+        left: left + scrollX - width
       },
       right: {
-        top: top + scrollY - wrapperHeight / 2,
+        top: top + scrollY + height / 2 - wrapperHeight / 2,
         left: left + scrollX + width
       }
     };
@@ -68,16 +94,18 @@ export default class Tooltip extends PureComponent {
         {...attr}
       >
         {visible ? (
-          <div
-            className={cls(`${prefixCls}-wrapper`, `position-${position}`)}
-            ref={node => (this.wrapper = node)}
-            style={{
-              left,
-              top
-            }}
-          >
-            {title}
-          </div>
+          <TooltipPortal>
+            <div
+              className={cls(`${prefixCls}-wrapper`, `position-${position}`)}
+              style={{
+                left,
+                top
+              }}
+              ref={node => (this.wrapper = node)}
+            >
+              {title}
+            </div>
+          </TooltipPortal>
         ) : (
           undefined
         )}
