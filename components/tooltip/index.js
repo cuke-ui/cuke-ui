@@ -45,6 +45,7 @@ export default class Tooltip extends PureComponent {
   constructor(props) {
     super(props);
     this.wrapper = createRef();
+    this.triggerWrapper = createRef();
   }
 
   getBounding = () => {
@@ -53,11 +54,11 @@ export default class Tooltip extends PureComponent {
       height,
       top,
       left
-    } = this.triggerWrapper.getBoundingClientRect();
+    } = this.triggerWrapper.current.getBoundingClientRect();
     const {
       height: wrapperHeight,
       width: wrapperWidth
-    } = this.wrapper.getBoundingClientRect();
+    } = this.wrapper.current.getBoundingClientRect();
 
     const { scrollX, scrollY } = window;
 
@@ -121,7 +122,7 @@ export default class Tooltip extends PureComponent {
           </div>
         </TooltipPortal>
         <span
-          ref={node => (this.triggerWrapper = node)}
+          ref={this.triggerWrapper}
           className={cls(`${prefixCls}-trigger-wrapper`)}
         >
           {this.props.children}

@@ -16,6 +16,12 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v0.0.38</a></h2>
+      <ul>
+        <li> 修复 Tooltip createRef 的问题</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.37</a></h2>
       <ul>
         <li> 重构 Tooltip 组件, 修复位置计算错误的问题 感谢 @licc 同学</li>
