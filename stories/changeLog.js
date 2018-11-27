@@ -16,6 +16,16 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v1.0.0-beta.1</a></h2>
+      <ul>
+        <li> 重构 Tooltip 组件, 修复位置计算错误的问题 感谢 @licc 同学</li>
+        <li> 增加 Tooltip 的显示动画 </li>
+        <li> 增加官网主页 <a href="https://cuke-ui.github.io/cuke-ui-landing/">(cuke-ui-landing)</a></li>
+        <li> 修复已知问题 </li>
+        <li> 提高测试覆盖率 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.35</a></h2>
       <ul>
         <li> 修复 Upload 文件名过长 显示问题 </li>

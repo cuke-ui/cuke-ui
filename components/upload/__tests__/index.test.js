@@ -34,6 +34,7 @@ describe("<Upload/>", () => {
   });
   it("should format file size", () => {
     expect(formatFileSize(1024)).toEqual("1KB");
+    expect(formatFileSize(0)).toEqual("0 KB");
     expect(formatFileSize(10)).toEqual("10Byte");
     expect(formatFileSize(1024 * 10)).toEqual("10KB");
     expect(formatFileSize(1024 * 1024 * 10)).toEqual("10MB");

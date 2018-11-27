@@ -3,7 +3,6 @@
 
 @prefixCls : cuke-tooltip;
 
-//参考  gulu
 .@{prefixCls} {
   display: inline-block;
   vertical-align: top;
@@ -11,8 +10,36 @@
   &-trigger-wrapper {
     display: inline-block;
   }
+  &-show {
+    &.position-top {
+      animation: cuke-slide-down @default-transition forwards;
+    }
+    &.position-right {
+      animation: cuke-slide-right @default-transition forwards;
+    }
+    &.position-bottom {
+      animation: cuke-slide-up @default-transition forwards;
+    }
+    &.position-left {
+      animation: cuke-slide-left @default-transition forwards;
+    }
+  }
+  &-hide {
+    &.position-top {
+      animation: cuke-slide-down-out @default-transition forwards;
+    }
+    &.position-right {
+      animation: cuke-slide-right-out  @default-transition forwards;
+    }
+    &.position-bottom {
+      animation: cuke-slide-up-out @default-transition forwards;
+    }
+    &.position-left {
+      animation: cuke-slide-left-out @default-transition forwards;
+    }
+    pointer-events: none;
+  }
   &-wrapper {
-    // display: none;
     position: absolute;
     box-shadow: @default-shadow;
     background-color: @tooltip-bg-color;
@@ -21,9 +48,11 @@
     font-size: @font-size;
     border-radius: @border-radius;
     word-break: break-all;
-    z-index: 99;
+    z-index: @tooltip-wrapper-z-index;
+    transform: scale(0);
 
-    &::after,&::before {
+    &::after,
+    &::before {
       content: " ";
       position: absolute;
       width: 0;
@@ -40,7 +69,7 @@
     }
 
     &.position-top {
-      margin-top: -10px;
+      margin-top: -@tooltip-offset;
       &::before, &::after {
         top: 95%;   // 三角形尖尖小一些
         border-top-color: @tooltip-bg-color;
@@ -48,14 +77,14 @@
       }
     }
     &.position-bottom {
-      margin-top: 10px;
+      margin-top: @tooltip-offset;
       &::before, &::after {
         bottom: 95%;   // 三角形尖尖小一些
         border-bottom-color: @tooltip-bg-color;
       }
     }
     &.position-left {
-      margin-left: -4px;
+      margin-left: -8px;
       &::before, &::after {
         transform: translateY(-50%);
         top: 50%;
@@ -65,7 +94,7 @@
       }
     }
     &.position-right {
-      margin-left: 10px;
+      margin-left: @tooltip-offset;
       &::before, &::after {
         transform: translateY(-50%);
         top: 50%;

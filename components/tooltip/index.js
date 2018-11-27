@@ -1,9 +1,9 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, createRef } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
-import ReactDOM from "react-dom";
+import { createPortal } from "react-dom";
 
-class TooltipPortal extends PureComponent {
+export class TooltipPortal extends PureComponent {
   constructor(props) {
     super(props);
     this.el = document.createElement("div");
@@ -18,27 +18,34 @@ class TooltipPortal extends PureComponent {
   }
 
   render() {
-    return ReactDOM.createPortal(this.props.children, this.el);
+    return createPortal(this.props.children, this.el);
   }
 }
 
 export default class Tooltip extends PureComponent {
   state = {
-    visible: false,
+    visible: null,
     left: 0,
     top: 0
   };
   static defaultProps = {
     prefixCls: "cuke-tooltip",
     position: "top",
-    title: ""
+    title: "",
+    onVisibleChange: () => {}
   };
 
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
+    onVisibleChange: PropTypes.func,
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     position: PropTypes.oneOf(["top", "right", "left", "bottom"])
   };
+
+  constructor(props) {
+    super(props);
+    this.wrapper = createRef();
+  }
 
   getBounding = () => {
     const {
@@ -51,7 +58,9 @@ export default class Tooltip extends PureComponent {
       height: wrapperHeight,
       width: wrapperWidth
     } = this.wrapper.getBoundingClientRect();
+
     const { scrollX, scrollY } = window;
+
     const positions = {
       top: {
         top: top + scrollY - wrapperHeight,
@@ -76,10 +85,12 @@ export default class Tooltip extends PureComponent {
     this.setState({ visible: true }, () => {
       const { left, top } = this.getBounding();
       this.setState({ left, top });
+      this.props.onVisibleChange(true);
     });
   };
   onMouseLeave = () => {
     this.setState({ visible: false });
+    this.props.onVisibleChange(false);
   };
 
   render() {
@@ -93,22 +104,22 @@ export default class Tooltip extends PureComponent {
         onMouseLeave={this.onMouseLeave}
         {...attr}
       >
-        {visible ? (
-          <TooltipPortal>
-            <div
-              className={cls(`${prefixCls}-wrapper`, `position-${position}`)}
-              style={{
-                left,
-                top
-              }}
-              ref={node => (this.wrapper = node)}
-            >
-              {title}
-            </div>
-          </TooltipPortal>
-        ) : (
-          undefined
-        )}
+        <TooltipPortal>
+          <div
+            className={cls(`${prefixCls}-wrapper`, `position-${position}`, {
+              [`${prefixCls}-show`]: visible,
+              [`${prefixCls}-hide`]: !visible,
+              [`cuke-ui-no-animate`]: visible === null
+            })}
+            style={{
+              left,
+              top
+            }}
+            ref={this.wrapper}
+          >
+            {title}
+          </div>
+        </TooltipPortal>
         <span
           ref={node => (this.triggerWrapper = node)}
           className={cls(`${prefixCls}-trigger-wrapper`)}
