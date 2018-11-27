@@ -128,4 +128,26 @@ describe("<Tooltip/>", () => {
       expect(document.querySelector("div > #test")).toHaveLength(1);
     });
   });
+
+  it("should remove div when portal un mount", () => {
+    const wrapper = shallow(
+      <TooltipPortal>
+        <div id="test" />
+      </TooltipPortal>
+    );
+    wrapper.unmount();
+  });
+
+  it("should remove div when portal un mount", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <TooltipPortal onChange={onChange}>
+        <div id="test" />
+      </TooltipPortal>
+    );
+    wrapper.setProps({
+      visible: true
+    });
+    expect(onChange).toHaveBeenCalled();
+  });
 });

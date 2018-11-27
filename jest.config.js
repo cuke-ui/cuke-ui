@@ -13,6 +13,7 @@ module.exports = {
     "/components/styles",
     "/components/version",
     "/components/icon",
+    "/components/popover",
   ],
   "transformIgnorePatterns": [
     "/node_modules/",

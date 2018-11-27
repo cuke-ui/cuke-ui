@@ -11,6 +11,9 @@ export class TooltipPortal extends PureComponent {
 
   componentDidMount() {
     document.body.appendChild(this.el);
+    if (this.props.onChange) {
+      this.props.onChange();
+    }
   }
 
   componentWillUnmount() {
@@ -24,7 +27,7 @@ export class TooltipPortal extends PureComponent {
 
 export default class Tooltip extends PureComponent {
   state = {
-    visible: null,
+    visible: this.props.visible || null,
     left: 0,
     top: 0
   };
@@ -48,7 +51,19 @@ export default class Tooltip extends PureComponent {
     this.triggerWrapper = createRef();
   }
 
-  getBounding = () => {
+  static getDerivedStateFromProps({ visible }, state) {
+    // 如果没有指定 visible 并且没有触发过 什么也不改变
+    if (!visible && state.visible === null) {
+      return null;
+    }
+
+    // 否则就更新 初始值
+    return {
+      visible: visible || state.visible
+    };
+  }
+
+  getWrapperBounding = () => {
     const {
       width,
       height,
@@ -82,10 +97,15 @@ export default class Tooltip extends PureComponent {
     };
     return positions[this.props.position];
   };
+
+  setWrapperBounding() {
+    const { left, top } = this.getWrapperBounding();
+    this.setState({ left, top });
+  }
+
   onMouseEnter = () => {
     this.setState({ visible: true }, () => {
-      const { left, top } = this.getBounding();
-      this.setState({ left, top });
+      this.setWrapperBounding();
       this.props.onVisibleChange(true);
     });
   };
@@ -94,8 +114,25 @@ export default class Tooltip extends PureComponent {
     this.props.onVisibleChange(false);
   };
 
+  onRestWrapperPosition = () => {
+    if (this.state.visible) {
+      setTimeout(() => {
+        this.setWrapperBounding();
+      });
+    }
+  };
+
   render() {
-    const { prefixCls, className, title, position, ...attr } = this.props;
+    const {
+      prefixCls,
+      className,
+      title,
+      position,
+      wrapperClassName,
+      onVisibleChange, // eslint-disable-line
+      visible: _visible, // eslint-disable-line
+      ...attr
+    } = this.props;
     const { visible, left, top } = this.state;
 
     return (
@@ -105,13 +142,18 @@ export default class Tooltip extends PureComponent {
         onMouseLeave={this.onMouseLeave}
         {...attr}
       >
-        <TooltipPortal>
+        <TooltipPortal onChange={this.onRestWrapperPosition}>
           <div
-            className={cls(`${prefixCls}-wrapper`, `position-${position}`, {
-              [`${prefixCls}-show`]: visible,
-              [`${prefixCls}-hide`]: !visible,
-              [`cuke-ui-no-animate`]: visible === null
-            })}
+            className={cls(
+              `${prefixCls}-wrapper`,
+              `position-${position}`,
+              wrapperClassName,
+              {
+                [`${prefixCls}-show`]: visible,
+                [`${prefixCls}-hide`]: !visible,
+                [`cuke-ui-no-animate`]: visible === null
+              }
+            )}
             style={{
               left,
               top

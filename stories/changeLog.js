@@ -16,6 +16,13 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v0.0.39</a></h2>
+      <ul>
+        <li> Tooltip 新增 visible 属性 控制默认是否显示 </li>
+        <li> 新增 Popover 组件 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.38</a></h2>
       <ul>
         <li> 修复 Tooltip createRef 的问题</li>

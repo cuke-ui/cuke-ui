@@ -5,9 +5,10 @@ exports[`<Tooltip/> should find cuke-tooltip classnames 1`] = `
   className="cuke-tooltip"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  onVisibleChange={[Function]}
 >
-  <TooltipPortal>
+  <TooltipPortal
+    onChange={[Function]}
+  >
     <div
       className="cuke-tooltip-wrapper position-top cuke-tooltip-hide cuke-ui-no-animate"
       style={

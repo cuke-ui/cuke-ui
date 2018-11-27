@@ -21,9 +21,11 @@ import "../components/tag/styles.less";
 import "../components/cityPicker/styles.less";
 import "../components/collapse/styles.less";
 import "../components/calendar/styles.less";
+import "../components/popover/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
 import { Calendar } from "../components";
+import Popover from '../components/popover';
 
 const cityList = [
   {
@@ -135,6 +137,52 @@ storiesOf("数据展示", module)
         <Tooltip title="黄瓜ui" position="right">
           <Button>右</Button>
         </Tooltip>
+
+        <h2>默认显示</h2>
+        <Tooltip title="黄瓜ui" visible={true} position="right">
+          鼠标放上来
+        </Tooltip>
+
+        <h2>改变回调</h2>
+        <Tooltip title="黄瓜ui" onVisibleChange={(visible)=> console.log('visible', visible)}>
+          鼠标放上来
+        </Tooltip>
+      </div>
+    )
+  )
+  .add(
+    "Popover 气泡卡片",
+    () => (
+      <div>
+        <h2>基本使用</h2>
+
+        <Popover title="黄瓜ui" content="即插即用的 React UI 库">
+          <span> 鼠标放上来 </span>
+        </Popover>
+
+        <h2>配合按钮使用</h2>
+        <Popover title="黄瓜ui" content={<Button>任意内容</Button>}>
+          <Button type="primary"> 鼠标放上来 </Button>
+        </Popover>
+
+        <h2>四个方向</h2>
+        <Popover title="黄瓜ui" position="top" content="即插即用的 React UI 库">
+          <Button>上</Button>
+        </Popover>
+        <Popover title="黄瓜ui" position="bottom" style={{ margin: "0 10px" }} content="即插即用的 React UI 库">
+          <Button>下</Button>
+        </Popover>
+        <Popover title="黄瓜ui" position="left" style={{ margin: "0 10px" }} content="即插即用的 React UI 库">
+          <Button>左</Button>
+        </Popover>
+        <Popover title="黄瓜ui" position="right" content="即插即用的 React UI 库">
+          <Button>右</Button>
+        </Popover>
+
+        <h2>改变回调</h2>
+        <Popover title="黄瓜ui" content="即插即用的 React UI 库" onVisibleChange={(visible)=> console.log('visible', visible)}>
+          鼠标放上来
+        </Popover>
       </div>
     )
   )

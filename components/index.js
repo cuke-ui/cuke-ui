@@ -39,5 +39,6 @@ export { default as NumberInput } from "./numberInput";
 export { default as Steps } from "./steps";
 export { default as Upload } from "./upload";
 export { default as Calendar } from "./calendar";
+export { default as Popover } from "./popover";
 
 export { default as version } from "./version";
