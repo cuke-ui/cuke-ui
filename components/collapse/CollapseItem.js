@@ -32,9 +32,9 @@ export default class CollapseItem extends React.PureComponent {
 
   // 通过父组件 改变 非当前 active item 状态 实现手风琴效果
   static getDerivedStateFromProps({ visible, accordion }, state) {
-    if (accordion) {
+    if (accordion && visible !== state.visible) {
       return {
-        visible
+        visible: visible ? !visible : visible
       };
     }
     return null;
