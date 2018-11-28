@@ -35,7 +35,7 @@ export default class Collapse extends React.PureComponent {
     } else {
       activeKey = activeKey.filter(_activeKey => _activeKey !== key);
     }
-
+    
     this.setState({ activeKey, currentActiveKey: key });
 
     if (this.props.onChange) {
