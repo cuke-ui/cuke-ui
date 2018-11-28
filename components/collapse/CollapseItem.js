@@ -39,7 +39,7 @@ export default class CollapseItem extends React.PureComponent {
     }
     return null;
   }
-  
+
   render() {
     const {
       title,
