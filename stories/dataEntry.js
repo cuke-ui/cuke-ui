@@ -347,6 +347,14 @@ storiesOf("数据录入", module)
             <h2>不显示今天和清除按钮</h2>
             <DatePicker showToday={false} showClear={false} />
           </Col>
+          <Col span={5}>
+            <h2>不显示上个月的日期</h2>
+            <DatePicker showDayInPrevMonth={false} />
+          </Col>
+          <Col span={5}>
+            <h2>不显示下个月的日期</h2>
+            <DatePicker showDayInNextMonth={false} />
+          </Col>
         </Row>
       </div>
     )

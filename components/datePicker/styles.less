@@ -120,9 +120,7 @@
       cursor: pointer;
       border: 1px solid transparent;
       transition: all @default-transition;
-      &:not(.@{prefixCls}-day-title),
-      :not(.@{prefixCls}-last-month),
-      :not(.@{prefixCls}-next-month):hover {
+      &:not(.@{prefixCls}-day-title):not(.@{prefixCls}-last-month):not(.@{prefixCls}-next-month):hover {
         border: 1px solid @primary-color;
       }
     }

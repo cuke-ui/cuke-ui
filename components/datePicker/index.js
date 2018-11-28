@@ -26,7 +26,9 @@ export default class DataPicker extends PureComponent {
     loading: false,
     showToday: true,
     showClear: true,
-    tip: ""
+    tip: "",
+    showDayInPrevMonth: true,
+    showDayInNextMonth: true
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -37,6 +39,8 @@ export default class DataPicker extends PureComponent {
     showClear: PropTypes.bool,
     tip: PropTypes.any,
     showToday: PropTypes.bool,
+    showDayInPrevMonth: PropTypes.bool,
+    showDayInNextMonth: PropTypes.bool,
     overlay: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -137,7 +141,8 @@ export default class DataPicker extends PureComponent {
             )}
             key={`first-date-${index}`}
           >
-            {lastMonthDaysInMonth - dayOfFirstDate + index + 1}
+            {this.props.showDayInPrevMonth &&
+              lastMonthDaysInMonth - dayOfFirstDate + index + 1}
           </span>
         ))}
 
@@ -157,20 +162,21 @@ export default class DataPicker extends PureComponent {
             {date + 1}
           </span>
         ))}
-        {new Array(lastDaysInMonth === 0 ? 0 : 6 - lastDaysInMonth)
-          .fill()
-          .map((_, date) => (
-            <span
-              className={cls(
-                `${this.props.prefixCls}-item`,
-                `${this.props.prefixCls}-next-month`
-              )}
-              key={`placeholder-${date}`}
-            >
-              {" "}
-              {date + 1}
-            </span>
-          ))}
+        {this.props.showDayInNextMonth &&
+          new Array(lastDaysInMonth === 0 ? 0 : 6 - lastDaysInMonth)
+            .fill()
+            .map((_, date) => (
+              <span
+                className={cls(
+                  `${this.props.prefixCls}-item`,
+                  `${this.props.prefixCls}-next-month`
+                )}
+                key={`placeholder-${date}`}
+              >
+                {" "}
+                {date + 1}
+              </span>
+            ))}
       </>
     );
   };
@@ -215,6 +221,8 @@ export default class DataPicker extends PureComponent {
       showToday,
       showClear,
       tip,
+      showDayInPrevMonth, //eslint-disable-line
+      showDayInNextMonth, //eslint-disable-line
       loading, //eslint-disable-line
       onSelectedDateChange, //eslint-disable-line
       onPanelVisibleChange, //eslint-disable-line

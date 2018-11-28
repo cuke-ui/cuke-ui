@@ -169,4 +169,20 @@ describe("<DatePicker/>", () => {
     wrapper.update();
     expect(wrapper.state().isSelectedMoment).toEqual(true);
   });
+  it("should can not render any text when not show prev and next month day ", () => {
+    const wrapper = shallow(
+      <DatePicker
+        value={moment("2018-11-25")}
+        showDayInPrevMonth={false}
+        showDayInNextMonth={false}
+      />
+    );
+    expect(
+      wrapper
+        .find(".cuke-date-picker-last-month")
+        .at(0)
+        .text()
+    ).toContain("");
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 });

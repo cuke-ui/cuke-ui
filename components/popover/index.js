@@ -11,6 +11,7 @@ export default class Popover extends PureComponent {
     prefixCls: "cuke-popover",
     position: "top",
     title: "",
+    theme: "light",
     onVisibleChange: () => {}
   };
 
@@ -19,7 +20,8 @@ export default class Popover extends PureComponent {
     onVisibleChange: PropTypes.func,
     title: PropTypes.any,
     content: PropTypes.any,
-    position: PropTypes.oneOf(["top", "right", "left", "bottom"])
+    position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
+    theme: PropTypes.oneOf(["light", "dark"])
   };
 
   constructor(props) {
@@ -55,6 +57,7 @@ export default class Popover extends PureComponent {
       className,
       title, // eslint-disable-line
       position,
+      theme,
       wrapperClassName,
       onVisibleChange, // eslint-disable-line
       visible, // eslint-disable-line,
@@ -65,6 +68,7 @@ export default class Popover extends PureComponent {
     return (
       <div className={cls(prefixCls, className)} {...attr}>
         <Tooltip
+          theme={theme}
           visible={visible}
           title={this.renderContent()}
           position={position}

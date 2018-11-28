@@ -65,7 +65,7 @@ describe("<Tooltip/>", () => {
         <Button>上</Button>
       </Tooltip>
     );
-    assert(wrapper.find(".position-top").length === 1);
+    assert(wrapper.find(".cuke-tooltip-position-top").length === 1);
   });
 
   it("should find TooltipPortal", () => {
@@ -149,5 +149,22 @@ describe("<Tooltip/>", () => {
       visible: true
     });
     expect(onChange).toHaveBeenCalled();
+  });
+
+  it("should render custom dark theme", () => {
+    const wrapper = shallow(
+      <Tooltip title="测试" theme="dark">
+        <Button>1</Button>
+      </Tooltip>
+    );
+    expect(wrapper.find(".cuke-tooltip-dark")).toHaveLength(1);
+  });
+  it("should render custom light theme", () => {
+    const wrapper = shallow(
+      <Tooltip title="测试" theme="light">
+        <Button>1</Button>
+      </Tooltip>
+    );
+    expect(wrapper.find(".cuke-tooltip-light")).toHaveLength(1);
   });
 });

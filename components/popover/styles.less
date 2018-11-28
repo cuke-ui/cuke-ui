@@ -1,12 +1,9 @@
 @import '../styles/vars.less';
-@import '../styles/mixins.less';
 @prefixCls : cuke-popover;
 .@{prefixCls} {
   display: inline-block;
   vertical-align: top;
   &-wrapper {
-    background-color: #fff;
-    color: @font-color;
     padding: 0;
     .@{prefixCls}-title {
       min-width: @cuke-popover-content-width;
@@ -19,61 +16,6 @@
     .@{prefixCls}-content {
       min-width: @cuke-popover-content-width;
       padding: @cuke-popover-content-padding;
-    }
-    &::after,
-    &::before {
-      content: " ";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border: @popover-triangle-width solid transparent;
-    }
-    &.position-top,
-    &.position-bottom {
-      &::before,
-      &::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-    &.position-top {
-      margin-top: -@popover-offset;
-      &::before,
-      &::after {
-        top: 95%; // 三角形尖尖小一些
-        border-top-color: @popover-bg-color;
-        border-bottom: none;
-      }
-    }
-    &.position-bottom {
-      margin-top: @popover-offset;
-      &::before,
-      &::after {
-        bottom: 95%; // 三角形尖尖小一些
-        border-bottom-color: @popover-bg-color;
-      }
-    }
-    &.position-left {
-      margin-left: -8px;
-      &::before,
-      &::after {
-        transform: translateY(-50%);
-        top: 50%;
-        border-right: none;
-        border-left-color: @popover-bg-color;
-        left: 100%;
-      }
-    }
-    &.position-right {
-      margin-left: @popover-offset;
-      &::before,
-      &::after {
-        transform: translateY(-50%);
-        top: 50%;
-        border-right-color: @popover-bg-color;
-        border-left: none;
-        right: 100%;
-      }
     }
   }
 }

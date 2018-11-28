@@ -144,8 +144,17 @@ storiesOf("数据展示", module)
         </Tooltip>
 
         <h2>改变回调</h2>
-        <Tooltip title="黄瓜ui" onVisibleChange={(visible)=> console.log('visible', visible)}>
+        <Tooltip title="黄瓜ui" onVisibleChange={(visible) => console.log('visible', visible)}>
           鼠标放上来
+        </Tooltip>
+
+
+        <h2>两种主题</h2>
+        <Tooltip title="light" theme="light" style={{ marginRight: 10 }}>
+          <Button>Light</Button>
+        </Tooltip>
+        <Tooltip title="dark" theme="dark">
+          <Button>Dark</Button>
         </Tooltip>
       </div>
     )
@@ -156,7 +165,7 @@ storiesOf("数据展示", module)
       <div>
         <h2>基本使用</h2>
 
-        <Popover title="黄瓜ui" content="即插即用的 React UI 库">
+        <Popover title="黄瓜ui" content="即插即用" position="right">
           <span> 鼠标放上来 </span>
         </Popover>
 
@@ -180,7 +189,7 @@ storiesOf("数据展示", module)
         </Popover>
 
         <h2>改变回调</h2>
-        <Popover title="黄瓜ui" content="即插即用的 React UI 库" onVisibleChange={(visible)=> console.log('visible', visible)}>
+        <Popover title="黄瓜ui" content="即插即用的 React UI 库" onVisibleChange={(visible) => console.log('visible', visible)}>
           鼠标放上来
         </Popover>
       </div>

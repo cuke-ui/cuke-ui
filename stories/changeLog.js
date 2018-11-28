@@ -18,8 +18,11 @@ const ChangeLog = () => (
     <Timeline.Item>
       <h2><a>v0.0.39</a></h2>
       <ul>
-        <li> Tooltip 新增 visible 属性 控制默认是否显示 </li>
+        <li> 新增 Tooltip visible 属性 控制默认是否显示 </li>
+        <li> 新增 Tooltip theme 属性 支持 dark | light (默认 dark)</li>
         <li> 新增 Popover 组件 </li>
+        <li> 修复 DatePicker 日期显示有边框 </li>
+        <li> 新增 DatePicker showPrevDay showNextDay 选项 控制 是否显示上一月和下一月的 日期</li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

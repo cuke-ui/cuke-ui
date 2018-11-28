@@ -25,6 +25,8 @@ export class TooltipPortal extends PureComponent {
   }
 }
 
+const themes = ["dark", "light"];
+
 export default class Tooltip extends PureComponent {
   state = {
     visible: this.props.visible || null,
@@ -35,6 +37,7 @@ export default class Tooltip extends PureComponent {
     prefixCls: "cuke-tooltip",
     position: "top",
     title: "",
+    theme: themes[0],
     onVisibleChange: () => {}
   };
 
@@ -42,7 +45,8 @@ export default class Tooltip extends PureComponent {
     prefixCls: PropTypes.string.isRequired,
     onVisibleChange: PropTypes.func,
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    position: PropTypes.oneOf(["top", "right", "left", "bottom"])
+    position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
+    theme: PropTypes.oneOf(themes)
   };
 
   constructor(props) {
@@ -127,6 +131,7 @@ export default class Tooltip extends PureComponent {
       prefixCls,
       className,
       title,
+      theme,
       position,
       wrapperClassName,
       onVisibleChange, // eslint-disable-line
@@ -146,7 +151,8 @@ export default class Tooltip extends PureComponent {
           <div
             className={cls(
               `${prefixCls}-wrapper`,
-              `position-${position}`,
+              `${prefixCls}-position-${position}`,
+              `${prefixCls}-${theme}`,
               wrapperClassName,
               {
                 [`${prefixCls}-show`]: visible,

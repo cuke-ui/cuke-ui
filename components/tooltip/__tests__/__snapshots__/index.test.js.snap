@@ -10,7 +10,7 @@ exports[`<Tooltip/> should find cuke-tooltip classnames 1`] = `
     onChange={[Function]}
   >
     <div
-      className="cuke-tooltip-wrapper position-top cuke-tooltip-hide cuke-ui-no-animate"
+      className="cuke-tooltip-wrapper cuke-tooltip-position-top cuke-tooltip-dark cuke-tooltip-hide cuke-ui-no-animate"
       style={
         Object {
           "left": 0,
@@ -37,7 +37,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     class="cuke-tooltip"
   >
     <div
-      class="cuke-tooltip-wrapper position-top cuke-tooltip-hide cuke-ui-no-animate"
+      class="cuke-tooltip-wrapper cuke-tooltip-position-top cuke-tooltip-dark cuke-tooltip-hide cuke-ui-no-animate"
       style="left:0;top:0"
     >
       黄瓜ui
@@ -54,7 +54,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     class="cuke-tooltip"
   >
     <div
-      class="cuke-tooltip-wrapper position-top cuke-tooltip-hide cuke-ui-no-animate"
+      class="cuke-tooltip-wrapper cuke-tooltip-position-top cuke-tooltip-dark cuke-tooltip-hide cuke-ui-no-animate"
       style="left:0;top:0"
     >
       黄瓜ui
@@ -77,7 +77,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     style="margin:0 10px"
   >
     <div
-      class="cuke-tooltip-wrapper position-bottom cuke-tooltip-hide cuke-ui-no-animate"
+      class="cuke-tooltip-wrapper cuke-tooltip-position-bottom cuke-tooltip-dark cuke-tooltip-hide cuke-ui-no-animate"
       style="left:0;top:0"
     >
       黄瓜ui
@@ -100,7 +100,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     style="margin:0 10px"
   >
     <div
-      class="cuke-tooltip-wrapper position-left cuke-tooltip-hide cuke-ui-no-animate"
+      class="cuke-tooltip-wrapper cuke-tooltip-position-left cuke-tooltip-dark cuke-tooltip-hide cuke-ui-no-animate"
       style="left:0;top:0"
     >
       黄瓜ui
@@ -122,7 +122,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
     class="cuke-tooltip"
   >
     <div
-      class="cuke-tooltip-wrapper position-right cuke-tooltip-hide cuke-ui-no-animate"
+      class="cuke-tooltip-wrapper cuke-tooltip-position-right cuke-tooltip-dark cuke-tooltip-hide cuke-ui-no-animate"
       style="left:0;top:0"
     >
       黄瓜ui
@@ -149,6 +149,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     onVisibleChange={[Function]}
     position="top"
     prefixCls="cuke-tooltip"
+    theme="dark"
     title="黄瓜ui"
   >
     <Button
@@ -171,6 +172,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     onVisibleChange={[Function]}
     position="bottom"
     prefixCls="cuke-tooltip"
+    theme="dark"
     title="黄瓜ui"
   >
     <Button
@@ -193,6 +195,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     onVisibleChange={[Function]}
     position="left"
     prefixCls="cuke-tooltip"
+    theme="dark"
     title="黄瓜ui"
   >
     <Button
@@ -215,6 +218,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     onVisibleChange={[Function]}
     position="right"
     prefixCls="cuke-tooltip"
+    theme="dark"
     title="黄瓜ui"
   >
     <Button
