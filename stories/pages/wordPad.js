@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import WordPad from '../../components/wordPad';
 import Button from '../../components/button';
-import Message from '../../components/message';
+import message from '../../components/message';
 import Row from '../../components/row';
 import Col from '../../components/col';
 
@@ -16,12 +16,15 @@ export default class WordPadPage extends Component {
     this.setState({
       imgUrl: img
     })
-    Message.success('获取成功')
+    message.success('获取成功')
   }
   clearWordPad = ()=> {
     this.setState({
       clear: true
     })
+  }
+  getCanvasRef = (canvas) => {
+    this.canvas = canvas
   }
   render() {
     const { imgUrl } = this.state
@@ -32,7 +35,7 @@ export default class WordPadPage extends Component {
           <WordPad
             width={300}
             height={300}
-            getCanvas={(canvas, ctx) => this.canvas = canvas}
+            getCanvasRef={this.getCanvasRef}
           />
           <Button type="primary" onClick={this.onGetImage} style={{marginTop: 20}}>获取文字</Button>
           {
@@ -58,7 +61,7 @@ export default class WordPadPage extends Component {
             width={200}
             height={200}
             clear={this.state.clear}
-            onClearComplete={()=> Message.success('清除成功')}
+            onClearComplete={()=> message.success('清除成功')}
           />
           <Button type="primary" onClick={this.clearWordPad} style={{marginTop: 20}}>清除</Button>
         </Col>

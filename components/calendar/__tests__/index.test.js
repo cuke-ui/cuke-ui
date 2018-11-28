@@ -72,7 +72,7 @@ describe("<Calendar/>", () => {
   it("should render custom data", () => {
     const wrapper = shallow(
       <Calendar
-        dateCellRender={date => {
+        dateCellRender={() => {
           return <Button>购物</Button>;
         }}
       />
@@ -96,5 +96,24 @@ describe("<Calendar/>", () => {
     });
     wrapper.update();
     expect(wrapper.state().momentSelected).toEqual(moment("1996-08-25"));
+  });
+
+  it("should return moment when calendar change", () => {
+    let _currentDate = null;
+    let _date = null;
+    const wrapper = shallow(
+      <Calendar
+        onChange={(currentDate, date) => {
+          _currentDate = currentDate;
+          _date = date;
+        }}
+      />
+    );
+    wrapper
+      .find(".cuke-calendar-item")
+      .at(10)
+      .simulate("click");
+    expect(typeof _currentDate).toEqual("number");
+    expect(typeof _date.format("YYYY-MM-DD")).toEqual("string");
   });
 });

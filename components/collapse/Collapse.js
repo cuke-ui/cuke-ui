@@ -14,7 +14,8 @@ export default class Collapse extends React.PureComponent {
     disabled: false,
     hideArrow: false,
     accordion: false,
-    rightArrow: false
+    rightArrow: false,
+    onChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,

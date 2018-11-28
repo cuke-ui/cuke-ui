@@ -8,8 +8,12 @@
     height: @cuke-calendar-header-height;
     line-height: @cuke-calendar-header-height;
     text-align: center;
-    font-size: 16px;
+    font-size: @cuke-calendar-header-font-size;
     text-shadow: @default-text-shadow;
+    .@{prefixCls}-date,
+    .@{prefixCls}-button-icon {
+      vertical-align: middle;
+    }
     .@{prefixCls}-date {
       margin: 0 47px;
     }
@@ -32,10 +36,11 @@
   }
   &-day-header {
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: @cuke-calendar-day-header-height;
+    line-height: @cuke-calendar-day-header-height;
     display: flex;
-    border-top: 1px solid #fff;
+    text-shadow: @default-text-shadow;
+    box-shadow: @default-shadow;
     .@{prefixCls}-item {
       flex: 1 1 auto;
       text-align: center;
@@ -69,8 +74,9 @@
     border: 1px solid transparent;
   }
   &-selected-date {
-    border-color: @primary-color;
-    background-color: @primary-color;
+    border-color: transparent;
+    background-color: @cuke-calendar-active-color;
     color: #fff;
+    text-shadow: @default-text-shadow;
   }
 }

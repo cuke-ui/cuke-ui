@@ -116,6 +116,21 @@ describe("<Collapse/>", () => {
     });
   });
 
+  it("should trigger onChange event", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Collapse>
+        <Collapse.Item title="标题1">内容1</Collapse.Item>
+        <Collapse.Item title="标题2">内容2</Collapse.Item>
+      </Collapse>
+    );
+    const collapse = new Collapse({
+      onChange
+    });
+    collapse.onChange("");
+    expect(wrapper.state().currentActiveKey).toEqual("");
+  });
+
   it("should accordion mode", () => {
     const wrapper = shallow(
       <Collapse accordion>
@@ -133,7 +148,7 @@ describe("<Collapse/>", () => {
   it("should accordion mode", () => {
     const onChange = jest.fn();
     const wrapper = shallow(
-      <Collapse.Item title="标题2" onChange={onChange}>
+      <Collapse.Item title="标题2" onChange={onChange} accordion>
         内容2
       </Collapse.Item>
     );

@@ -12,7 +12,8 @@ export default class CollapseItem extends React.PureComponent {
     hideArrow: false,
     disabled: false,
     rightArrow: false,
-    icon: <ArrowRightIcon />
+    icon: <ArrowRightIcon />,
+    onChange: () => {}
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -25,9 +26,7 @@ export default class CollapseItem extends React.PureComponent {
     this.setState({
       visible: !this.state.visible
     });
-    if (this.props.onChange) {
-      this.props.onChange(this.props.activeKey);
-    }
+    this.props.onChange(this.props.activeKey);
   };
 
   // 通过父组件 改变 非当前 active item 状态 实现手风琴效果

@@ -676,14 +676,14 @@ storiesOf("数据展示", module)
       <div>
         <h2>基本使用</h2>
         <Calendar
-          onChange={(date, month) => console.log(date, month)}
-          onMonthChange={(month) => console.log(month)}
+          onChange={(currentDate, date) => console.log(currentDate, date.format('YYYY-MM-DD'))}
+          onMonthChange={(date) => console.log(date.format('YYYY-MM-DD'))}
         />
 
         <h2>自定义渲染内容</h2>
         <Calendar
-          dateCellRender={(date) => {
-            if (date <= 5) {
+          dateCellRender={(currentDate, date) => {
+            if (currentDate <= 5) {
               return "唱歌"
             }
             return <Badge count={20} dot>

@@ -113,7 +113,7 @@ export default class Calendar extends React.PureComponent {
                 {this.props.dateCellRender &&
                   this.props.dateCellRender(
                     date + 1,
-                    this.state.momentSelected.month()
+                    this.state.momentSelected.clone()
                   )}
               </div>
             </span>
@@ -144,29 +144,29 @@ export default class Calendar extends React.PureComponent {
     } = this.props;
     return (
       <div className={cls(prefixCls, className)} {...attr}>
-        <div className={cls(`${prefixCls}-header`)}>
-          <ArrowLeftIcon
-            className={`${prefixCls}-button-icon`}
-            onClick={this.subtractMonth}
-          />
-          <span className={cls(`${prefixCls}-date`)}>
-            {this.state.momentSelected.year()}年 {"  "}
-            {this.state.momentSelected.month() + 1}月
-          </span>
-          <ArrowRightIcon
-            className={`${prefixCls}-button-icon`}
-            onClick={this.addMonth}
-          />
-        </div>
-        <div
-          className={cls(`${prefixCls}-list`, {
-            [`${prefixCls}-loading`]: loading
-          })}
-        >
-          <Spin spinning={loading} tip={tip} size="large">
+        <Spin spinning={loading} tip={tip} size="large">
+          <div className={cls(`${prefixCls}-header`)}>
+            <ArrowLeftIcon
+              className={`${prefixCls}-button-icon`}
+              onClick={this.subtractMonth}
+            />
+            <span className={cls(`${prefixCls}-date`)}>
+              {this.state.momentSelected.year()}年 {"  "}
+              {this.state.momentSelected.month() + 1}月
+            </span>
+            <ArrowRightIcon
+              className={`${prefixCls}-button-icon`}
+              onClick={this.addMonth}
+            />
+          </div>
+          <div
+            className={cls(`${prefixCls}-list`, {
+              [`${prefixCls}-loading`]: loading
+            })}
+          >
             {this.renderCalendarContent()}
-          </Spin>
-        </div>
+          </div>
+        </Spin>
       </div>
     );
   }
