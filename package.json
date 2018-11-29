@@ -4,6 +4,7 @@
   "main": "lib/index.js",
   "description": "A React.js UI components for Web",
   "repository": "https://github.com/cuke-ui/cuke-ui.git",
+  "homepage": "https://cuke-ui.github.io/cuke-ui-landing/",
   "author": "Jinke.Li <jkli@thoughtWorks.com>",
   "license": "MIT",
   "private": false,
@@ -67,7 +68,10 @@
     "react",
     "react-ui",
     "component",
-    "lijinke666"
+    "components",
+    "javascript",
+    "es6",
+    "css3"
   ],
   "devDependencies": {
     "@babel/cli": "^7.0.0",
