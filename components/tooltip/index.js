@@ -44,7 +44,7 @@ export default class Tooltip extends PureComponent {
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
     onVisibleChange: PropTypes.func,
-    title: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    title: PropTypes.node,
     position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
     theme: PropTypes.oneOf(themes)
   };
@@ -92,7 +92,7 @@ export default class Tooltip extends PureComponent {
       },
       left: {
         top: top + scrollY + height / 2 - wrapperHeight / 2,
-        left: left + scrollX - width
+        left: left + scrollX - wrapperWidth
       },
       right: {
         top: top + scrollY + height / 2 - wrapperHeight / 2,
