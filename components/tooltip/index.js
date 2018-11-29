@@ -32,10 +32,13 @@ const triggerTypes = {
 const themes = ["dark", "light"];
 
 export default class Tooltip extends PureComponent {
+  closeTimeDelay = 100;
   state = {
     visible: this.props.visible || null,
     left: 0,
-    top: 0
+    top: 0,
+    openLock: false,
+    closeLock: false
   };
   static defaultProps = {
     prefixCls: "cuke-tooltip",
@@ -60,18 +63,15 @@ export default class Tooltip extends PureComponent {
     this.wrapper = createRef();
     this.triggerWrapper = createRef();
     this.toggleContainer = createRef();
+    this.closeTimer = null;
   }
 
-  static getDerivedStateFromProps({ visible }, state) {
-    // 如果没有指定 visible 并且没有触发过 什么也不改变
-    if (!visible && state.visible === null) {
-      return null;
-    }
-
-    // 否则就更新 初始值
-    return {
-      visible: visible || state.visible
-    };
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      visible: nextProps.visible,
+      openLock: !nextProps.visible,
+      closeLock: !nextProps.visible
+    });
   }
 
   getWrapperBounding = () => {
@@ -127,14 +127,29 @@ export default class Tooltip extends PureComponent {
   };
 
   onOpenTooltip = () => {
-    this.setState({ visible: true }, () => {
-      this.setWrapperBounding();
-      this.props.onVisibleChange(true);
+    // 如果 鼠标离开了当前目标 马上 focus 上去 就取消关闭
+    if (this.closeTimer) {
+      clearTimeout(this.closeTimer);
+    }
+    this.setState({ visible: true, closeLock: false }, () => {
+      if (!this.state.openLock) {
+        this.setWrapperBounding();
+        this.props.onVisibleChange(true);
+        this.setState({ openLock: true, closeLock: false });
+      }
     });
   };
+
   onCloseTooltip = () => {
-    this.setState({ visible: false });
-    this.props.onVisibleChange(false);
+    this.closeTimer = setTimeout(() => {
+      this.setState({ visible: false, openLock: false }, () => {
+        if (!this.state.closeLock) {
+          this.setWrapperBounding();
+          this.props.onVisibleChange(false);
+          this.setState({ openLock: false, closeLock: true });
+        }
+      });
+    }, this.closeTimeDelay);
   };
 
   onRestWrapperPosition = () => {
@@ -155,7 +170,7 @@ export default class Tooltip extends PureComponent {
       position,
       wrapperClassName,
       onVisibleChange, // eslint-disable-line
-      visible: _visible, // eslint-disable-line
+      visible: visibleFromProps, // eslint-disable-line
       ...attr
     } = this.props;
     const { visible, left, top } = this.state;
@@ -211,6 +226,7 @@ export default class Tooltip extends PureComponent {
   }
   componentWillUnmount() {
     window.removeEventListener("click", this.onClickOutsideHandler, false);
+    this.closeTimer = undefined;
   }
   componentDidMount() {
     window.addEventListener("click", this.onClickOutsideHandler, false);

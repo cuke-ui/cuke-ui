@@ -49,5 +49,5 @@ addDecorator(withOptions({
   sidebarAnimations: true,
 }))
 
-addDecorator(story => <div style={{ padding: "20px 40px" }}>{story()}</div>)
+addDecorator(story => <div style={{ padding: "0 60px 50px" }}>{story()}</div>)
 configure(loadStories, module);

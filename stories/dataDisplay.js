@@ -22,10 +22,12 @@ import "../components/cityPicker/styles.less";
 import "../components/collapse/styles.less";
 import "../components/calendar/styles.less";
 import "../components/popover/styles.less";
+import "../components/popconfirm/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
-import { Calendar } from "../components";
+import { Calendar, Popconfirm } from "../components";
 import Popover from '../components/popover';
+import PopoverPage from './pages/popover';
 
 const cityList = [
   {
@@ -208,6 +210,44 @@ storiesOf("数据展示", module)
         <Popover title="黄瓜ui" position="right" content="即插即用的 React UI 库" onVisibleChange={(visible) => console.log('visible', visible)}>
           鼠标放上来
         </Popover>
+
+        <h2>手动控制关闭</h2>
+        <PopoverPage/>
+      </div>
+    )
+  )
+  .add(
+    "Popconfirm 气泡确认框",
+    () => (
+      <div>
+        <h2>基本使用</h2>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="right" onOk={()=> console.log('ok')} onConfirm={()=> console.log('confirm')}>
+          <Button type="primary"> 点击领取 🥒 </Button>
+        </Popconfirm>
+
+        <h2>自定义文案</h2>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" okText="不想要" cancelText="再想想">
+          <Button type="primary"> 点击领取 🥒 </Button>
+        </Popconfirm>
+
+        <h2>四个方向</h2>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top">
+          <Button type="primary">上</Button>
+        </Popconfirm>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="bottom" style={{marginLeft: "10px"}}>
+          <Button type="primary">下</Button>
+        </Popconfirm>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="left" style={{margin: "0 10px"}}>
+          <Button type="primary">左</Button>
+        </Popconfirm>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="right">
+          <Button type="primary">右</Button>
+        </Popconfirm>
+
+        <h2>自定义图标</h2>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" icon={<SuccessIcon/>}>
+          <Button type="primary"> 点击领取 🥒 </Button>
+        </Popconfirm>
       </div>
     )
   )

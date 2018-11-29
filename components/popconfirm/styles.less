@@ -1,0 +1,23 @@
+@import '../styles/vars.less';
+@prefixCls : cuke-popconfirm;
+.@{prefixCls} {
+  &-wrapper {
+    padding: @cuke-popconfirm-wrapper-padding;
+    z-index: @cuke-popconfirm-wrapper-z-index;
+    .cuke-popover-title {
+      border: none;
+    }
+    .@{prefixCls}-button-group {
+      margin-top: @cuke-popconfirm-offset;
+      text-align: right;
+      .cuke-button + .cuke-button {
+        margin-left: @cuke-popconfirm-offset;
+      }
+    }
+    .@{prefixCls}-title-icon {
+      margin-right: @cuke-popconfirm-offset;
+      color: @warning-color;
+      vertical-align: middle;
+    }
+  }
+}

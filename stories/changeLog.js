@@ -16,10 +16,12 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
-      <h2><a>v0.0.40</a></h2>
+      <h2><a>v0.0.41</a></h2>
       <ul>
         <li> 修复 Popover 组件 position left 位置不对 </li>
         <li> 新增 Tooltip trigger 属性 支持 hover 和 click 两种触发方式 </li>
+        <li> 优化 Tooltip 和 Popover 的体验 </li>
+        <li> 修复 ToolTip 和 Popover onPanelVisibleChange 会触发多次的问题 </li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

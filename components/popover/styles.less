@@ -18,5 +18,26 @@
       min-width: @cuke-popover-content-width;
       padding: @cuke-popover-content-padding;
     }
+    &.cuke-tooltip-position-top {
+      &::before,
+      &::after {
+        top: 95%;
+      }
+    }
+    &.cuke-tooltip-position-bottom {
+      &::before, &::after {
+        bottom: 95%;
+      }
+    }
+    &.cuke-tooltip-position-left {
+      &::before, &::after {
+        left: 98%;
+      }
+    }
+    &.cuke-tooltip-position-right {
+      &::before, &::after {
+        right: 98%;
+      }
+    }
   }
 }

@@ -32,10 +32,12 @@ export default class Popover extends PureComponent {
 
   static getDerivedStateFromProps({ visible }, state) {
     if (!visible && state.visible === null) {
-      return null;
+      return {
+        visible: false
+      };
     }
     return {
-      visible: visible || state.visible
+      visible
     };
   }
 
@@ -47,7 +49,7 @@ export default class Popover extends PureComponent {
     const { prefixCls, title, content } = this.props;
     return (
       <>
-        <div className={`${prefixCls}-title`}>{title}</div>
+        {title && <div className={`${prefixCls}-title`}>{title}</div>}
         {content && <div className={`${prefixCls}-content`}>{content}</div>}
       </>
     );

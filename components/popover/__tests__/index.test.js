@@ -76,4 +76,38 @@ describe("<Popover/>", () => {
     );
     assert(wrapper.find(Button).length === 1);
   });
+
+  it("should can not render content", () => {
+    const wrapper = shallow(
+      <Popover title="黄瓜ui" position="top">
+        <Button>上</Button>
+      </Popover>
+    );
+    assert(wrapper.find(".cuke-popover-content").length === 0);
+  });
+
+  it("should can not render title", () => {
+    const wrapper = shallow(
+      <Popover content="黄瓜ui" position="top">
+        <Button>上</Button>
+      </Popover>
+    );
+    assert(wrapper.find(".cuke-popover-title").length === 0);
+  });
+
+  it("should update visible state when props visible change", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Popover title="黄瓜ui" position="top" onVisibleChange={onChange}>
+        <Button>上</Button>
+      </Popover>
+    );
+    wrapper.setProps({ visible: true });
+    expect(wrapper.state().visible).toEqual(true);
+    wrapper.setProps({ visible: false });
+    expect(wrapper.state().visible).toEqual(false);
+    setTimeout(() => {
+      expect(onChange).toHaveBeenCalled();
+    }, 100);
+  });
 });

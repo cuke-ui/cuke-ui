@@ -106,7 +106,9 @@ describe("<Tooltip/>", () => {
       </Tooltip>
     );
     wrapper.find(".cuke-tooltip").simulate("mouseleave");
-    expect(onChange).toHaveBeenCalled();
+    setTimeout(() => {
+      expect(onChange).toHaveBeenCalled();
+    }, 100);
   });
 
   it("should find test dom by portal", () => {
@@ -178,6 +180,22 @@ describe("<Tooltip/>", () => {
     wrapper.unmount();
     window.onclick = () => onClick;
     expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it("should update visible state when props visible change", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Tooltip title="测试" visible={false} onVisibleChange={onChange}>
+        <Button>1</Button>
+      </Tooltip>
+    );
+    wrapper.setProps({ visible: true });
+    expect(wrapper.state().visible).toEqual(true);
+    wrapper.setProps({ visible: false });
+    expect(wrapper.state().visible).toEqual(false);
+    setTimeout(() => {
+      expect(onChange).toHaveBeenCalled();
+    }, 100);
   });
 
   it.skip("should panel cannot hidden click event when window click", () => {
