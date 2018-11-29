@@ -314,7 +314,7 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         />
       </span>
       <span
-        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
+        class="cuke-calendar-item cuke-calendar-current-month"
       >
         28
         <div
@@ -322,7 +322,7 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         />
       </span>
       <span
-        class="cuke-calendar-item cuke-calendar-current-month"
+        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
       >
         29
         <div

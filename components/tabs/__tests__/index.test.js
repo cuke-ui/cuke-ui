@@ -98,7 +98,7 @@ describe("<Tabs/>", () => {
   it("should can trigger onChange event", () => {
     const onChange = jest.fn();
     const wrapper = shallow(
-      <Tabs defaultActiveKey="2" onChange={onChange} type="card">
+      <Tabs defaultActiveKey="2" onChange={onChange}>
         <Tabs.TabPane tab="选项1" key="1">
           1
         </Tabs.TabPane>

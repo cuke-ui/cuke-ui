@@ -55,13 +55,6 @@ export default class Dropdown extends PureComponent {
   onFocusHandler = () => {
     clearTimeout(this.timeOutId);
   };
-  onBlurHandler = () => {
-    this.timeOutId = setTimeout(() => {
-      this.setState({
-        visible: false
-      });
-    });
-  };
   render() {
     const { visible } = this.state;
     const {

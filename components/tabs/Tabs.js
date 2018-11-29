@@ -49,11 +49,12 @@ export default class Tabs extends PureComponent {
   }
 
   setActiveLineStyle = () => {
-    const activeElement = this.activeTab;
-    const { width, left } = activeElement.getBoundingClientRect();
-    const {
-      left: headerOffset
-    } = this.tabsHeader.current.getBoundingClientRect();
+    const { width, left } =
+      (this.activeTab && this.activeTab.getBoundingClientRect()) || {};
+    const { left: headerOffset } =
+      (this.tabsHeader.current &&
+        this.tabsHeader.current.getBoundingClientRect()) ||
+      {};
     this.setState({
       lineWidth: width,
       lineOffsetLeft: left - headerOffset

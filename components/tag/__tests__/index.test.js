@@ -94,7 +94,8 @@ describe("<Tag/>", () => {
     expect(onClick).toHaveBeenCalled();
     setTimeout(() => {
       expect(onClose).toHaveBeenCalled();
-    }, 200);
+      expect(wrapper.state().visible).toEqual(false);
+    }, 600);
   });
 
   it("should can not show Tag when visible is false", () => {

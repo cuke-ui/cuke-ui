@@ -6,6 +6,7 @@ import NumberInput, {
   getCleanString,
   getTheValueLengthAfterTheDecimalPoint
 } from "../index";
+import Input from "../../input";
 
 describe("<NumberInput/>", () => {
   it("should render NumberInput", () => {
@@ -30,13 +31,20 @@ describe("<NumberInput/>", () => {
       expect(onChange).not.toHaveBeenCalled();
     }, 20);
   });
-  it("should can emit onChange events when disabled", () => {
+  it("should can emit onChange events", () => {
     const onChange = jest.fn();
     const wrapper = shallow(<NumberInput onChange={onChange} />);
-    setTimeout(() => {
-      wrapper.find(".cuke-number-input").simulate("change");
-      expect(onChange).toHaveBeenCalled();
+    wrapper.find(Input).simulate("change", { target: { value: 2 } });
+    expect(onChange).toHaveBeenCalled();
+  });
+  it("should return three value when set new value", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(<NumberInput onChange={onChange} value={1} />);
+    wrapper.setProps({
+      value: 3
     });
+    wrapper.update();
+    expect(wrapper.state().value).toEqual("3");
   });
 
   it("should cannot emit onChange events when stepper disabled", () => {

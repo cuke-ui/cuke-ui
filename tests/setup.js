@@ -22,10 +22,17 @@ global.cancelAnimationFrame = function (cb) {
 };
 ReactDOM.createPortal = node => node
 
-HTMLCanvasElement.prototype.getContext = () => { 
+Element.prototype.getContext = () => {
   return {}
 };
 
-HTMLDivElement.prototype.getBoundingClientRect = () => {}
+Element.prototype.getBoundingClientRect = jest.fn(() => ({
+  width: 0,
+  height: 0,
+  top: 0,
+  left: 0,
+  bottom: 0,
+  right: 0,
+}))
 
 Enzyme.configure({ adapter: new Adapter() });

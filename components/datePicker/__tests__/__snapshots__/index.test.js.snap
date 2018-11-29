@@ -314,14 +314,14 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           27
         </span>
         <span
-          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+          className="cuke-date-picker-item cuke-date-picker-current-month"
           key="date-27"
           onClick={[Function]}
         >
           28
         </span>
         <span
-          className="cuke-date-picker-item cuke-date-picker-current-month"
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
           key="date-28"
           onClick={[Function]}
         >
@@ -632,12 +632,12 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         27
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         28
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         29
       </span>

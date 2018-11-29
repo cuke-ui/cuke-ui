@@ -34,7 +34,7 @@ describe("<Notification/>", () => {
     }, 2000);
   });
 
-  it.skip("should trigger onClose event", () => {
+  it("should trigger onClose event", () => {
     const onClose = jest.fn();
     const wrapper = shallow(
       <Notification
@@ -44,7 +44,9 @@ describe("<Notification/>", () => {
         onClose={onClose}
       />
     );
-    wrapper.find(".cuke-notification-close-btn").simulate("click");
+    wrapper
+      .find(".cuke-notification-close-btn")
+      .simulate("click", { stopPropagation: () => {} });
     expect(onClose).toHaveBeenCalled();
   });
 
@@ -60,7 +62,7 @@ describe("<Notification/>", () => {
       </Notification>
     );
     wrapper.update();
-    expect(document.body.style.paddingRight).toBe("");
+    expect(document.body.style.paddingRight).toBe("0px");
     wrapper.setState({
       visible: true
     });
@@ -77,7 +79,12 @@ describe("<Notification/>", () => {
       assert(document.querySelector(".cuke-notification-success").length === 0);
     }, 10);
   });
-
+  it("should render <Notification/> when call notification open static method", () => {
+    Notification.open();
+    setTimeout(() => {
+      assert(document.querySelector(".cuke-notification-open").length === 1);
+    }, 10);
+  });
   it("should render <Notification/> when call notification success static method", () => {
     Notification.success();
     setTimeout(() => {

@@ -49,13 +49,31 @@ describe("<Message/>", () => {
 
   it("should disabled scroll when did update", () => {
     const wrapper = shallow(<Message title="哈哈" type="loading" />);
+    wrapper.setState({ visible: false });
     wrapper.update();
-    assert(document.body.style.overflow === "");
+    expect(document.body.style.overflow).toEqual("");
   });
 
   it("should render destroy reference", () => {
     const message = Message.success();
     assert(message.destroy && message.destroy instanceof Function);
+  });
+
+  it("should return destroy reference when call renderElement", () => {
+    const message = Message.renderElement();
+    assert(message.destroy && message.destroy instanceof Function);
+  });
+
+  it("should trigger onClose when did mount 2s ago", () => {
+    const onClose = jest.fn();
+    const wrapper = shallow(
+      <Message title="哈哈" type="loading" onClose={onClose} />
+    );
+    expect(wrapper.state().visible).toEqual(true);
+    setTimeout(() => {
+      expect(wrapper.state().visible).toEqual(false);
+      expect(onClose).toHaveBeenCalled();
+    }, 2000);
   });
 
   it("should cannot find <Message/> when destroy", () => {

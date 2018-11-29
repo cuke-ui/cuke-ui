@@ -164,6 +164,9 @@ export default class Notification extends PureComponent {
         };
         break;
       default:
+        style = {
+          top: offset
+        };
         break;
     }
     return style;

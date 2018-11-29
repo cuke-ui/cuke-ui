@@ -84,4 +84,36 @@ describe("<Dropdown/>", () => {
     assert(wrapper.find(".cuke-dropdown-overlay-slideLeft").length === 1);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+
+  it("should trigger on visible change when hover", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Dropdown overlay={overlay} onVisibleChange={onChange}>
+        <a href="#">今日菜单(有动画)</a>
+      </Dropdown>
+    );
+    wrapper.find(".cuke-dropdown").simulate("blur");
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it("should trigger on visible change when clicked", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Dropdown overlay={overlay} onVisibleChange={onChange} trigger="click">
+        <a href="#">今日菜单(有动画)</a>
+      </Dropdown>
+    );
+    wrapper.find(".cuke-dropdown").simulate("focus");
+    expect(onChange).toHaveBeenCalled();
+  });
+  it("should trigger on visible change when clicked", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Dropdown overlay={overlay} onVisibleChange={onChange} trigger="click">
+        <a href="#">今日菜单(有动画)</a>
+      </Dropdown>
+    );
+    wrapper.find(".cuke-dropdown").simulate("blur");
+    expect(onChange).toHaveBeenCalled();
+  });
 });
