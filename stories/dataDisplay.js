@@ -124,6 +124,14 @@ storiesOf("数据展示", module)
           <Button type="primary"> 鼠标放上来 </Button>
         </Tooltip>
 
+        <h2>两种触发方式</h2>
+        <Tooltip title="黄瓜ui" trigger="hover">
+          <Button type="primary">hover</Button>
+        </Tooltip>
+        <Tooltip title="黄瓜ui" trigger="click" style={{ margin: "0 10px" }}>
+          <Button type="primary">click</Button>
+        </Tooltip>
+
         <h2>四个方向</h2>
         <Tooltip title="黄瓜ui" position="top">
           <Button>上</Button>
@@ -174,6 +182,14 @@ storiesOf("数据展示", module)
           <Button type="primary"> 鼠标放上来 </Button>
         </Popover>
 
+        <h2>两种触发方式</h2>
+        <Popover title="黄瓜ui" content="即插即用" position="bottom" trigger="hover">
+          <Button type="primary"> hover </Button>
+        </Popover>
+        <Popover title="黄瓜ui" content="即插即用" position="top" trigger="click" style={{ margin: "0 10px" }}>
+          <Button type="primary"> click </Button>
+        </Popover>
+
         <h2>四个方向</h2>
         <Popover title="黄瓜ui" position="top" content="即插即用的 React UI 库">
           <Button>上</Button>
@@ -189,7 +205,7 @@ storiesOf("数据展示", module)
         </Popover>
 
         <h2>改变回调</h2>
-        <Popover title="黄瓜ui" content="即插即用的 React UI 库" onVisibleChange={(visible) => console.log('visible', visible)}>
+        <Popover title="黄瓜ui" position="right" content="即插即用的 React UI 库" onVisibleChange={(visible) => console.log('visible', visible)}>
           鼠标放上来
         </Popover>
       </div>

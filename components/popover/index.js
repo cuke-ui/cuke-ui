@@ -12,6 +12,7 @@ export default class Popover extends PureComponent {
     position: "top",
     title: "",
     theme: "light",
+    trigger: "hover",
     onVisibleChange: () => {}
   };
 
@@ -21,6 +22,7 @@ export default class Popover extends PureComponent {
     title: PropTypes.any,
     content: PropTypes.any,
     position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
+    trigger: PropTypes.oneOf(["click", "hover"]),
     theme: PropTypes.oneOf(["light", "dark"])
   };
 
@@ -37,7 +39,7 @@ export default class Popover extends PureComponent {
     };
   }
 
-  onVisibleChange = visible => {
+  _onVisibleChange = visible => {
     this.props.onVisibleChange(visible);
   };
 
@@ -58,6 +60,7 @@ export default class Popover extends PureComponent {
       title, // eslint-disable-line
       position,
       theme,
+      trigger,
       wrapperClassName,
       onVisibleChange, // eslint-disable-line
       visible, // eslint-disable-line,
@@ -70,9 +73,10 @@ export default class Popover extends PureComponent {
         <Tooltip
           theme={theme}
           visible={visible}
+          trigger={trigger}
           title={this.renderContent()}
           position={position}
-          onVisibleChange={this.onVisibleChange}
+          onVisibleChange={this._onVisibleChange}
           wrapperClassName={cls(`${prefixCls}-wrapper`, wrapperClassName)}
         >
           {children}

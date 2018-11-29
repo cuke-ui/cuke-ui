@@ -18,6 +18,13 @@ const ChangeLog = () => (
     <Timeline.Item>
       <h2><a>v0.0.40</a></h2>
       <ul>
+        <li> 修复 Popover 组件 position left 位置不对 </li>
+        <li> 新增 Tooltip trigger 属性 支持 hover 和 click 两种触发方式 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
+      <h2><a>v0.0.40</a></h2>
+      <ul>
         <li> 修复 WordPad 只能清空一次画布的问题 </li>
         <li> 优化 Calendar 的视觉效果 </li>
         <li> 调整 Calendar dateCellRender 的返回值 , 现在返回 当前是哪一天 (currentDate) 和当前日期(date) </li>

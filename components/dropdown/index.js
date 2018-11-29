@@ -23,7 +23,7 @@ export default class Dropdown extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-dropdown",
     animate: animateType[0],
-    trigger: Object.values(triggerTypes)[0],
+    trigger: triggerTypes.hover,
     onVisibleChange: () => {}
   };
   static propTypes = {

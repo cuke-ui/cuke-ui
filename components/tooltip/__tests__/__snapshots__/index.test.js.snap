@@ -11,6 +11,8 @@ exports[`<Tooltip/> should find cuke-tooltip classnames 1`] = `
   >
     <div
       className="cuke-tooltip-wrapper cuke-tooltip-position-top cuke-tooltip-dark cuke-tooltip-hide cuke-ui-no-animate"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
       style={
         Object {
           "left": 0,
@@ -151,6 +153,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     prefixCls="cuke-tooltip"
     theme="dark"
     title="黄瓜ui"
+    trigger="hover"
   >
     <Button
       block={false}
@@ -174,6 +177,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     prefixCls="cuke-tooltip"
     theme="dark"
     title="黄瓜ui"
+    trigger="hover"
   >
     <Button
       block={false}
@@ -197,6 +201,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     prefixCls="cuke-tooltip"
     theme="dark"
     title="黄瓜ui"
+    trigger="hover"
   >
     <Button
       block={false}
@@ -220,6 +225,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     prefixCls="cuke-tooltip"
     theme="dark"
     title="黄瓜ui"
+    trigger="hover"
   >
     <Button
       block={false}

@@ -182,6 +182,7 @@ exports[`<Popover/> should render custom position 1`] = `
     prefixCls="cuke-popover"
     theme="light"
     title="黄瓜ui"
+    trigger="hover"
   >
     <Button
       block={false}
@@ -205,6 +206,7 @@ exports[`<Popover/> should render custom position 1`] = `
     prefixCls="cuke-popover"
     theme="light"
     title="黄瓜ui"
+    trigger="hover"
   >
     <Button
       block={false}
@@ -228,6 +230,7 @@ exports[`<Popover/> should render custom position 1`] = `
     prefixCls="cuke-popover"
     theme="light"
     title="黄瓜ui"
+    trigger="hover"
   >
     <Button
       block={false}
@@ -251,6 +254,7 @@ exports[`<Popover/> should render custom position 1`] = `
     prefixCls="cuke-popover"
     theme="light"
     title="黄瓜ui"
+    trigger="hover"
   >
     <Button
       block={false}

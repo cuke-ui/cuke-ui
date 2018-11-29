@@ -25,6 +25,10 @@ export class TooltipPortal extends PureComponent {
   }
 }
 
+const triggerTypes = {
+  hover: "hover",
+  click: "click"
+};
 const themes = ["dark", "light"];
 
 export default class Tooltip extends PureComponent {
@@ -37,6 +41,7 @@ export default class Tooltip extends PureComponent {
     prefixCls: "cuke-tooltip",
     position: "top",
     title: "",
+    trigger: triggerTypes.hover,
     theme: themes[0],
     onVisibleChange: () => {}
   };
@@ -45,6 +50,7 @@ export default class Tooltip extends PureComponent {
     prefixCls: PropTypes.string.isRequired,
     onVisibleChange: PropTypes.func,
     title: PropTypes.node,
+    trigger: PropTypes.oneOf(Object.values(triggerTypes)),
     position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
     theme: PropTypes.oneOf(themes)
   };
@@ -53,6 +59,7 @@ export default class Tooltip extends PureComponent {
     super(props);
     this.wrapper = createRef();
     this.triggerWrapper = createRef();
+    this.toggleContainer = createRef();
   }
 
   static getDerivedStateFromProps({ visible }, state) {
@@ -107,13 +114,25 @@ export default class Tooltip extends PureComponent {
     this.setState({ left, top });
   }
 
-  onMouseEnter = () => {
+  onClickOutsideHandler = e => {
+    e.stopPropagation();
+    if (
+      this.state.visible &&
+      !this.wrapper.current.contains(e.target) &&
+      !this.toggleContainer.current.contains(e.target)
+    ) {
+      this.setState({ visible: false });
+      this.props.onVisibleChange(false);
+    }
+  };
+
+  onOpenTooltip = () => {
     this.setState({ visible: true }, () => {
       this.setWrapperBounding();
       this.props.onVisibleChange(true);
     });
   };
-  onMouseLeave = () => {
+  onCloseTooltip = () => {
     this.setState({ visible: false });
     this.props.onVisibleChange(false);
   };
@@ -132,6 +151,7 @@ export default class Tooltip extends PureComponent {
       className,
       title,
       theme,
+      trigger,
       position,
       wrapperClassName,
       onVisibleChange, // eslint-disable-line
@@ -140,12 +160,21 @@ export default class Tooltip extends PureComponent {
     } = this.props;
     const { visible, left, top } = this.state;
 
+    const isHover = trigger === triggerTypes["hover"];
+
+    const bindTriggerEvents = isHover
+      ? {
+          onMouseEnter: this.onOpenTooltip,
+          onMouseLeave: this.onCloseTooltip
+        }
+      : { onClick: this.onOpenTooltip };
+
     return (
       <div
         className={cls(prefixCls, className)}
-        onMouseEnter={this.onMouseEnter}
-        onMouseLeave={this.onMouseLeave}
         {...attr}
+        {...bindTriggerEvents}
+        ref={this.toggleContainer}
       >
         <TooltipPortal onChange={this.onRestWrapperPosition}>
           <div
@@ -165,6 +194,8 @@ export default class Tooltip extends PureComponent {
               top
             }}
             ref={this.wrapper}
+            onMouseEnter={isHover ? this.onOpenTooltip : undefined}
+            onMouseLeave={isHover ? this.onCloseTooltip : undefined}
           >
             {title}
           </div>
@@ -177,5 +208,11 @@ export default class Tooltip extends PureComponent {
         </span>
       </div>
     );
+  }
+  componentWillUnmount() {
+    window.removeEventListener("click", this.onClickOutsideHandler, false);
+  }
+  componentDidMount() {
+    window.addEventListener("click", this.onClickOutsideHandler, false);
   }
 }

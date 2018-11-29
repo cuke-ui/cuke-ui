@@ -167,4 +167,53 @@ describe("<Tooltip/>", () => {
     );
     expect(wrapper.find(".cuke-tooltip-light")).toHaveLength(1);
   });
+
+  it("should window cannot trigger click event when un mount", () => {
+    const onClick = jest.fn();
+    const wrapper = shallow(
+      <Tooltip title="测试">
+        <Button>1</Button>
+      </Tooltip>
+    );
+    wrapper.unmount();
+    window.onclick = () => onClick;
+    expect(onClick).not.toHaveBeenCalled();
+  });
+
+  it.skip("should panel cannot hidden click event when window click", () => {
+    const wrapper = shallow(
+      <Tooltip title="测试" trigger="click">
+        <Button>1</Button>
+      </Tooltip>
+    );
+
+    window.onclick();
+    assert(wrapper.state().visible === null);
+    wrapper.find(".cuke-tooltip").simulate("click");
+    assert(wrapper.state().visible === true);
+    window.onclick();
+    assert(wrapper.state().visible === false);
+  });
+
+  it.skip("should trigger on visible change when hover", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Tooltip title="测试" onVisibleChange={onChange}>
+        <Button>1</Button>
+      </Tooltip>
+    );
+    wrapper.find(".cuke-tooltip").simulate("mouseenter");
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it.skip("should trigger on visible change when clicked", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Tooltip title="测试" trigger="click" onVisibleChange={onChange}>
+        <Button>1</Button>
+      </Tooltip>
+    );
+    wrapper.find(".cuke-tooltip").simulate("click");
+    expect(onChange).toHaveBeenCalled();
+  });
 });

@@ -69,6 +69,7 @@
   }
   &-wrapper {
     position: absolute;
+    background-clip: border-box;
     box-shadow: @default-shadow;
     color: @tooltip-font-color;
     padding: @tooltip-padding;
@@ -97,22 +98,23 @@
     }
 
     &.@{prefixCls}-position-top {
-      margin-top: -@tooltip-offset;
+      margin-top: -@tooltip-offset-y;
+
       &::before, &::after {
-        top: 95%;   // 三角形尖尖小一些
+        top: 85%;   // 三角形尖尖小一些
         border-top-color: @tooltip-bg-color;
         border-bottom: none;
       }
     }
     &.@{prefixCls}-position-bottom {
-      margin-top: @tooltip-offset;
+      margin-top: @tooltip-offset-y;
       &::before, &::after {
-        bottom: 95%;   // 三角形尖尖小一些
+        bottom: 85%;   // 三角形尖尖小一些
         border-bottom-color: @tooltip-bg-color;
       }
     }
     &.@{prefixCls}-position-left {
-      margin-left: -@tooltip-offset;
+      margin-left: -@tooltip-offset-x;
       &::before, &::after {
         transform: translateY(-50%);
         top: 50%;
@@ -122,7 +124,7 @@
       }
     }
     &.@{prefixCls}-position-right {
-      margin-left: @tooltip-offset;
+      margin-left: @tooltip-offset-x;
       &::before, &::after {
         transform: translateY(-50%);
         top: 50%;
