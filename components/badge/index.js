@@ -44,8 +44,8 @@ export default class Badge extends PureComponent {
             {dot
               ? undefined
               : count >= overflowCount
-                ? `${overflowCount}+`
-                : count}
+              ? `${overflowCount}+`
+              : count}
           </span>
         ) : (
           undefined

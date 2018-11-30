@@ -1,7 +1,7 @@
 @import '../styles/vars.less';
 @import '../styles/mixins.less';
 
-@prefixCls : cuke-tooltip;
+@prefixcls : cuke-tooltip;
 
 .@{prefixCls} {
   display: inline-block;
@@ -100,7 +100,9 @@
       margin-top: -@tooltip-offset;
       &::before, &::after {
         top: 95%;   // 三角形尖尖小一些
-        border-top-color: @tooltip-bg-color;
+        
+
+border-top-color: @tooltip-bg-color;
         border-bottom: none;
       }
     }
@@ -108,7 +110,9 @@
       margin-top: @tooltip-offset;
       &::before, &::after {
         bottom: 95%;   // 三角形尖尖小一些
-        border-bottom-color: @tooltip-bg-color;
+        
+
+border-bottom-color: @tooltip-bg-color;
       }
     }
     &.@{prefixCls}-position-left {

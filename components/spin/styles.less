@@ -2,7 +2,7 @@
 @import "../styles/animate.less";
 @import "../styles/mixins.less";
 
-@prefixCls : cuke-spin;
+@prefixcls : cuke-spin;
 
 .@{prefixCls} {
   &-indicator {
@@ -36,7 +36,9 @@
       opacity: @spin-blur-opacity;
       overflow: hidden;
       //包裹了子组件 防止影响点击
-      pointer-events: none;
+      
+
+pointer-events: none;
       user-select: none;
       transition: opacity @default-transition;
     }
