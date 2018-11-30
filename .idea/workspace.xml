@@ -2,40 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3cd9cf95-0b38-4397-bd58-c835ea11efef" name="Default" comment="修改气泡卡片中气泡内容居中">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/affix/styles.less" afterPath="$PROJECT_DIR$/components/affix/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/alert/styles.less" afterPath="$PROJECT_DIR$/components/alert/styles.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/backTop/styles.less" afterPath="$PROJECT_DIR$/components/backTop/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/badge/index.js" afterPath="$PROJECT_DIR$/components/badge/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/badge/styles.less" afterPath="$PROJECT_DIR$/components/badge/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/breadcrumb/styles.less" afterPath="$PROJECT_DIR$/components/breadcrumb/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/button/styles.less" afterPath="$PROJECT_DIR$/components/button/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/checkbox/styles.less" afterPath="$PROJECT_DIR$/components/checkbox/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/cityPicker/styles.less" afterPath="$PROJECT_DIR$/components/cityPicker/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/col/styles.less" afterPath="$PROJECT_DIR$/components/col/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/collapse/styles.less" afterPath="$PROJECT_DIR$/components/collapse/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/container/styles.less" afterPath="$PROJECT_DIR$/components/container/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/datePicker/styles.less" afterPath="$PROJECT_DIR$/components/datePicker/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/drawer/styles.less" afterPath="$PROJECT_DIR$/components/drawer/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/dropdown/styles.less" afterPath="$PROJECT_DIR$/components/dropdown/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/input/styles.less" afterPath="$PROJECT_DIR$/components/input/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/modal/styles.less" afterPath="$PROJECT_DIR$/components/modal/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/notification/styles.less" afterPath="$PROJECT_DIR$/components/notification/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/numberInput/styles.less" afterPath="$PROJECT_DIR$/components/numberInput/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/pagination/styles.less" afterPath="$PROJECT_DIR$/components/pagination/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/popover/styles.less" afterPath="$PROJECT_DIR$/components/popover/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/progress/styles.less" afterPath="$PROJECT_DIR$/components/progress/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/radio/styles.less" afterPath="$PROJECT_DIR$/components/radio/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/row/styles.less" afterPath="$PROJECT_DIR$/components/row/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/select/styles.less" afterPath="$PROJECT_DIR$/components/select/styles.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/spin/styles.less" afterPath="$PROJECT_DIR$/components/spin/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/steps/styles.less" afterPath="$PROJECT_DIR$/components/steps/styles.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/styles/vars.less" afterPath="$PROJECT_DIR$/components/styles/vars.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/switch/styles.less" afterPath="$PROJECT_DIR$/components/switch/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/tabs/styles.less" afterPath="$PROJECT_DIR$/components/tabs/styles.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/tag/styles.less" afterPath="$PROJECT_DIR$/components/tag/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/timeline/styles.less" afterPath="$PROJECT_DIR$/components/timeline/styles.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/tooltip/styles.less" afterPath="$PROJECT_DIR$/components/tooltip/styles.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/upload/styles.less" afterPath="$PROJECT_DIR$/components/upload/styles.less" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -93,11 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/popover/styles.less">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/components/backTop/styles.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="61">
+              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -142,6 +124,7 @@
         <option value="$PROJECT_DIR$/stories/dataDisplay.js" />
         <option value="$PROJECT_DIR$/components/styles/vars.less" />
         <option value="$PROJECT_DIR$/components/popover/styles.less" />
+        <option value="$PROJECT_DIR$/components/backTop/styles.less" />
       </list>
     </option>
   </component>
@@ -196,6 +179,12 @@
               <item name="cuke-ui" type="b2602c69:ProjectViewProjectNode" />
               <item name="cuke-ui" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cuke-ui" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cuke-ui" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="backTop" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cuke-ui" type="b2602c69:ProjectViewProjectNode" />
@@ -291,7 +280,7 @@
       <workItem from="1543472967375" duration="7687000" />
       <workItem from="1543482324836" duration="443000" />
       <workItem from="1543483135314" duration="865000" />
-      <workItem from="1543546996698" duration="193000" />
+      <workItem from="1543546996698" duration="796000" />
     </task>
     <task id="LOCAL-00001" summary="修改气泡卡片中气泡内容居中">
       <created>1543481455756</created>
@@ -304,23 +293,23 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13106000" />
+    <option name="totallyTimeSpent" value="13709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="678" y="13" width="1366" height="732" extended-state="6" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18912882" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5870647" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.60033166" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.49585405" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -344,14 +333,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/components/styles/vars.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2052">
-          <caret line="114" column="33" lean-forward="false" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/popover/styles.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -725,6 +706,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="21" lean-forward="false" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/backTop/styles.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="61">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
           <folding />
         </state>
       </provider>
