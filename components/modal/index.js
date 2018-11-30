@@ -33,7 +33,7 @@ const typeConfig = {
 export default class Modal extends PureComponent {
   state = {
     init: false,
-    visible: true,
+    visible: this.props.isStaticMethod || false,
     promptValue: {}
   };
   _containerRef = null;
@@ -121,7 +121,6 @@ export default class Modal extends PureComponent {
     const _modal = render(
       <Modal
         className={cls(`${prefixCls}-method`, `${prefixCls}-${iconType}`)}
-        showMask={false}
         closable={false}
         visible
         staticMethodType={type}
@@ -224,10 +223,12 @@ export default class Modal extends PureComponent {
       }
     });
   };
-  static getDerivedStateFromProps({ visible }) {
-    if (visible === true) {
+
+  static getDerivedStateFromProps({ visible, isStaticMethod }, state) {
+    if (visible === true && !state.visible) {
       return {
-        init: true
+        init: true,
+        visible: isStaticMethod ? false : visible
       };
     }
     return null;

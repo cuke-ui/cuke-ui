@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { Component } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
 import Popover from "../popover";
@@ -6,7 +6,12 @@ import Button from "../button";
 
 import { WarningIcon } from "../icon";
 
-export default class Popconfirm extends PureComponent {
+const triggerTypes = {
+  hover: "hover",
+  click: "click"
+};
+
+export default class Popconfirm extends Component {
   state = {
     visible: null
   };
@@ -17,6 +22,7 @@ export default class Popconfirm extends PureComponent {
     theme: "light",
     okText: "确定",
     cancelText: "取消",
+    trigger: triggerTypes.click,
     onVisibleChange: () => {},
     okButtonProps: {},
     cancelButtonProps: {},
@@ -31,6 +37,7 @@ export default class Popconfirm extends PureComponent {
     title: PropTypes.any,
     okText: PropTypes.any,
     cancelText: PropTypes.any,
+    trigger: PropTypes.oneOf(Object.values(triggerTypes)),
     position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
     theme: PropTypes.oneOf(["light", "dark"]),
     okProps: PropTypes.object,
@@ -43,8 +50,9 @@ export default class Popconfirm extends PureComponent {
   }
 
   _onVisibleChange = visible => {
-    this.setState({ visible });
-    this.props.onVisibleChange(visible);
+    this.setState({ visible }, () => {
+      this.props.onVisibleChange(visible);
+    });
   };
 
   _onCancel = () => {
@@ -76,13 +84,13 @@ export default class Popconfirm extends PureComponent {
           </div>
         )}
         <div className={`${prefixCls}-button-group`}>
-          <Button size="small" {...okButtonProps} onClick={this._onCancel}>
+          <Button size="small" {...cancelButtonProps} onClick={this._onCancel}>
             {cancelText}
           </Button>
           <Button
             size="small"
             type="primary"
-            {...cancelButtonProps}
+            {...okButtonProps}
             onClick={this._onOk}
           >
             {okText}
@@ -98,6 +106,7 @@ export default class Popconfirm extends PureComponent {
       className,
       position,
       theme,
+      trigger,
       wrapperClassName,
       children,
       style
@@ -107,7 +116,7 @@ export default class Popconfirm extends PureComponent {
       <Popover
         theme={theme}
         visible={this.state.visible}
-        trigger="click"
+        trigger={trigger}
         title={this.renderContent()}
         position={position}
         onVisibleChange={this._onVisibleChange}

@@ -16,6 +16,15 @@ const ChangeLog = () => (
       </ul>
     </Timeline.Item>
     <Timeline.Item>
+      <h2><a>v0.0.42</a></h2>
+      <ul>
+        <li> 新增 PopConfirm 组件 </li>
+        <li> 调整 Modal.xx() 默认显示 模板, 设置 showMask = false 手动关闭 </li>
+        <li> 调整 Tooltip 和 Popover light 模式下 title 无阴影 </li>
+        <li> 取消 Button hollow 模式下的文字阴影 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v0.0.41</a></h2>
       <ul>
         <li> 修复 Popover 组件 position left 位置不对 </li>

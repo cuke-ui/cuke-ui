@@ -154,8 +154,11 @@ storiesOf("数据展示", module)
         </Tooltip>
 
         <h2>改变回调</h2>
-        <Tooltip title="黄瓜ui" onVisibleChange={(visible) => console.log('visible', visible)}>
-          鼠标放上来
+        <Tooltip title="黄瓜ui" style={{ marginRight: 10 }} onVisibleChange={(visible) => console.log('visible', visible)}>
+          <Button type="primary" hollow>鼠标放上来</Button>
+        </Tooltip>
+        <Tooltip title="黄瓜ui" trigger="click" onVisibleChange={(visible) => console.log('visible', visible)}>
+          <Button type="primary" hollow>点击</Button>
         </Tooltip>
 
 
@@ -180,7 +183,7 @@ storiesOf("数据展示", module)
         </Popover>
 
         <h2>配合按钮使用</h2>
-        <Popover title="黄瓜ui" content={<Button>任意内容</Button>}>
+        <Popover title="黄瓜ui" content={<Button size="small" type="primary" hollow block>任意内容</Button>}>
           <Button type="primary"> 鼠标放上来 </Button>
         </Popover>
 
@@ -208,7 +211,10 @@ storiesOf("数据展示", module)
 
         <h2>改变回调</h2>
         <Popover title="黄瓜ui" position="right" content="即插即用的 React UI 库" onVisibleChange={(visible) => console.log('visible', visible)}>
-          鼠标放上来
+          <Button type="primary" hollow>hover</Button>
+        </Popover>
+        <Popover title="黄瓜ui" position="left" style={{ margin: "0 10px" }} position="top" trigger="click" content="即插即用的 React UI 库" onVisibleChange={(visible) => console.log('visible', visible)}>
+          <Button type="primary" hollow>click</Button>
         </Popover>
 
         <h2>手动控制关闭</h2>
@@ -221,7 +227,7 @@ storiesOf("数据展示", module)
     () => (
       <div>
         <h2>基本使用</h2>
-        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="right" onOk={()=> console.log('ok')} onConfirm={()=> console.log('confirm')}>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="right" onOk={()=> console.log('ok')} onCancel={()=> console.log('cancel')}>
           <Button type="primary"> 点击领取 🥒 </Button>
         </Popconfirm>
 
@@ -244,8 +250,26 @@ storiesOf("数据展示", module)
           <Button type="primary">右</Button>
         </Popconfirm>
 
+        <h2>两种触发方式</h2>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="bottom" trigger="hover">
+          <Button type="primary" hollow> hover </Button>
+        </Popconfirm>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" trigger="click" style={{ margin: "0 10px" }}>
+          <Button type="primary" hollow> click </Button>
+        </Popconfirm>
+
         <h2>自定义图标</h2>
         <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" icon={<SuccessIcon/>}>
+          <Button type="primary"> 点击领取 🥒 </Button>
+        </Popconfirm>
+
+        <h2>自定义按钮属性</h2>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" okButtonProps={{loading: true}} cancelButtonProps={{disabled: true}}>
+          <Button type="primary"> 点击领取 🥒 </Button>
+        </Popconfirm>
+
+        <h2>改变回调</h2>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" onVisibleChange={(visible) => console.log('visible', visible)}>
           <Button type="primary"> 点击领取 🥒 </Button>
         </Popconfirm>
       </div>

@@ -41,10 +41,12 @@
   }
   &-dark {
     background-color: @tooltip-dark-bg-color;
+    text-shadow: @default-text-shadow;
   }
   &-light {
     background-color: @tooltip-light-bg-color;
     color: @font-color !important;
+    text-shadow: unset;
     &.@{prefixCls}-position-top {
       &::before,
       &::after {
@@ -78,7 +80,6 @@
     word-break: break-all;
     z-index: @tooltip-wrapper-z-index;
     transform: scale(0);
-    text-shadow: @default-text-shadow;
 
     &::after,
     &::before {

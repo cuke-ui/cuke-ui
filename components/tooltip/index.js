@@ -121,7 +121,7 @@ export default class Tooltip extends PureComponent {
       !this.wrapper.current.contains(e.target) &&
       !this.toggleContainer.current.contains(e.target)
     ) {
-      this.setState({ visible: false });
+      this.setState({ visible: false, closeLock: false, openLock: false });
       this.props.onVisibleChange(false);
     }
   };

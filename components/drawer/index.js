@@ -62,7 +62,8 @@ export default class Drawer extends PureComponent {
   static getDerivedStateFromProps({ visible }) {
     if (visible === true) {
       return {
-        init: true
+        init: true,
+        visible
       };
     }
     return null;

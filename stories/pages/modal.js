@@ -135,7 +135,7 @@ export default class ModalPage extends Component {
               Modal.success()
             </Button>
           </Col>
-          <Col span={4}>
+          <Col span={4} offset={1}>
             <Button
               onClick={() => {
                 Modal.info({
@@ -165,11 +165,11 @@ export default class ModalPage extends Component {
                 Modal.info({
                   title: "为以下商品付款",
                   content: '1',
-                  showMask: true,
+                  showMask: false,
                 })
               }}
             >
-              显示蒙版
+              不显示蒙版
             </Button>
           </Col>
         </Row>
