@@ -41,5 +41,6 @@ export { default as Upload } from "./upload";
 export { default as Calendar } from "./calendar";
 export { default as Popover } from "./popover";
 export { default as Popconfirm } from "./popconfirm";
+export { default as Card } from "./card";
 
 export { default as version } from "./version";

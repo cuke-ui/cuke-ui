@@ -213,6 +213,7 @@ describe("<Tooltip/>", () => {
     assert(wrapper.state().visible === false);
   });
 
+  //TODO: TypeError: Cannot read property 'getBoundingClientRect' of null
   it.skip("should trigger on visible change when hover", () => {
     const onChange = jest.fn();
     const wrapper = shallow(

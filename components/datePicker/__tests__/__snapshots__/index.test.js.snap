@@ -125,7 +125,7 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           key="first-date-3"
         />
         <span
-          className="cuke-date-picker-item cuke-date-picker-current-month"
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
           key="date-0"
           onClick={[Function]}
         >
@@ -328,7 +328,7 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           29
         </span>
         <span
-          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+          className="cuke-date-picker-item cuke-date-picker-current-month"
           key="date-29"
           onClick={[Function]}
         >
@@ -395,7 +395,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       <span
         class="cuke-date-picker-date"
       >
-        2018年   11月
+        2018年   12月
       </span>
       <span
         class="cuke-date-picker-switch"
@@ -479,6 +479,21 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       <span
         class="cuke-date-picker-item cuke-date-picker-last-month"
       >
+        25
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-last-month"
+      >
+        26
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-last-month"
+      >
+        27
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-last-month"
+      >
         28
       </span>
       <span
@@ -492,12 +507,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         30
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-last-month"
-      >
-        31
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         1
       </span>
@@ -642,14 +652,39 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         29
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         30
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-current-month"
+      >
+        31
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-next-month"
       >
          1
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-next-month"
+      >
+         2
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-next-month"
+      >
+         3
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-next-month"
+      >
+         4
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-next-month"
+      >
+         5
       </span>
     </div>
     <div

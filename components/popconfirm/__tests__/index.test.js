@@ -1,6 +1,6 @@
 import React from "react";
 import assert from "power-assert";
-import { render, shallow } from "enzyme";
+import { render, shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import Popconfirm from "../index";
 import Button from "../../button";
@@ -109,7 +109,7 @@ describe("<Popconfirm/>", () => {
   it.skip("should trigger onOk and onCancel handle when clicked", () => {
     const onOk = jest.fn();
     const onCancel = jest.fn();
-    const wrapper = shallow(
+    const wrapper = mount(
       <Popconfirm title="黄瓜ui" position="top" onOk={onOk} onCancel={onCancel}>
         <Button>上</Button>
       </Popconfirm>
@@ -117,7 +117,7 @@ describe("<Popconfirm/>", () => {
     wrapper.setProps({ visible: true });
     wrapper.setState({ visible: true });
     wrapper
-      .find(".cuke-popconfirm-button-group")
+      .find(".cuke-button")
       .at(0)
       .simulate("click");
     wrapper

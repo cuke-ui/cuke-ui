@@ -23,11 +23,13 @@ import "../components/collapse/styles.less";
 import "../components/calendar/styles.less";
 import "../components/popover/styles.less";
 import "../components/popconfirm/styles.less";
+import "../components/card/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
 import { Calendar, Popconfirm } from "../components";
 import Popover from '../components/popover';
 import PopoverPage from './pages/popover';
+import Card from '../components/card';
 
 const cityList = [
   {
@@ -782,6 +784,82 @@ storiesOf("数据展示", module)
           loading={true}
           tip="加载中..."
         />
+      </div>
+    )
+  )
+  .add(
+    "Card 卡片",
+    () => (
+      <div>
+        <h2>基本使用</h2>
+        <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>}>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
+        <Card title="黄瓜 ui">
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
+        <h2>超长显示</h2>
+        <Card title={"我要换行".repeat(7)} extra={<Button href="#">更多</Button>}>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
+        <Card title={"我不换行".repeat(7)} extra={<Button href="#">更多</Button>} titleOverflowHidden={false}>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
+        <h2>无阴影</h2>
+        <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} shadow={false}>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
+        <h2>无标题</h2>
+        <Card extra={<Button href="#">更多</Button>}>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+        <Card>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
+        <h2>组合排列</h2>
+        <Row>
+          <Col span={8}>
+            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{width: 300}}>
+              <div> 内容 1</div>
+              <div> 内容 1</div>
+              <div> 内容 1</div>
+            </Card>
+          </Col>
+          <Col span={8}>
+            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{width: 300}}>
+              <div> 内容 1</div>
+              <div> 内容 1</div>
+              <div> 内容 1</div>
+            </Card>
+          </Col>
+          <Col span={8}>
+            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{width: 300}}>
+              <div> 内容 1</div>
+              <div> 内容 1</div>
+              <div> 内容 1</div>
+            </Card>
+          </Col>
+        </Row>
       </div>
     )
   );

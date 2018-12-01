@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card/> should render a <Card/> components 1`] = `
+<section
+  class="cuke-card cuke-card-shadow"
+>
+  <div
+    class="cuke-card-header"
+  >
+    <div
+      class="cuke-card-header-title cuke-card-overflow-hidden"
+    >
+      黄瓜 ui
+    </div>
+    <div
+      class="cuke-card-header-extra"
+    >
+      <a
+        class="cuke-button-link"
+        disabled=""
+        href="#"
+      >
+        <span>
+          更多
+        </span>
+      </a>
+    </div>
+  </div>
+  <div
+    class="cuke-card-content"
+  >
+    <div>
+       内容 1
+    </div>
+    <div>
+       内容 1
+    </div>
+    <div>
+       内容 1
+    </div>
+  </div>
+</section>
+`;

@@ -44,7 +44,7 @@ describe("<DatePicker/>", () => {
     assert(wrapper.find(".cuke-date-picker-footer-today").length === 0);
     assert(wrapper.find(".cuke-date-picker-footer-clear").length === 0);
   });
-  it.skip("should trigger panel visible change", () => {
+  it("should trigger panel visible change", () => {
     const onPanelVisibleChange = jest.fn();
     const wrapper = shallow(
       <DatePicker onPanelVisibleChange={onPanelVisibleChange} />
@@ -53,7 +53,7 @@ describe("<DatePicker/>", () => {
     expect(onPanelVisibleChange).toHaveBeenCalled();
   });
 
-  it.skip("should cannot trigger panel visible change when disabled", () => {
+  it("should cannot trigger panel visible change when disabled", () => {
     const onPanelVisibleChange = jest.fn();
     const wrapper = shallow(
       <DatePicker disabled onPanelVisibleChange={onPanelVisibleChange} />

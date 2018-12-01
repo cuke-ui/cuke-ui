@@ -139,6 +139,7 @@ export default class Calendar extends React.PureComponent {
       loading,
       prefixCls,
       tip,
+      onMonthChange, //eslint-disable-line
       dateCellRender, //eslint-disable-line
       ...attr
     } = this.props;

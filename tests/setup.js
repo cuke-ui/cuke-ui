@@ -35,4 +35,8 @@ Element.prototype.getBoundingClientRect = jest.fn(() => ({
   right: 0,
 }))
 
+jest.mock('scroll-into-view-if-needed', () => {
+  return jest.fn().mockImplementation(() => {});
+});
+
 Enzyme.configure({ adapter: new Adapter() });

@@ -177,7 +177,8 @@ module.exports = {
 - [x] [Upload  上传](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%BD%95%E5%85%A5&selectedStory=Upload%20%E4%B8%8A%E4%BC%A0&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Calendar  日历](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Calendar%20%E6%97%A5%E5%8E%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Popover  气泡卡片](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Popover%20%E6%B0%94%E6%B3%A1%E5%8D%A1%E7%89%87&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
-- [ ] [PopConfirm  气泡确认框](https://cuke-ui.github.io/cuke-ui/?selectedKind=数据展示&selectedStory=Popconfirm%20气泡确认框&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [PopConfirm  气泡确认框](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Popconfirm%20%E6%B0%94%E6%B3%A1%E7%A1%AE%E8%AE%A4%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
+- [x] [Card 卡片](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Card%20%E5%8D%A1%E7%89%87&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 
 ### 设计规范
 

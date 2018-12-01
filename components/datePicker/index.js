@@ -248,7 +248,7 @@ export default class DataPicker extends PureComponent {
             placeholder={placeholder}
             className={cls(`${prefixCls}-input`)}
             value={isSelectedMoment ? momentSelected.format(format) : ""}
-            onClick={this.onTogglePanel}
+            onClick={disabled ? undefined : this.onTogglePanel}
           />
           <DownIcon className={`${prefixCls}-arrow`} />
         </div>

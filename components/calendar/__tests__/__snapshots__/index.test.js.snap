@@ -25,7 +25,7 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
     <span
       class="cuke-calendar-date"
     >
-      2018年   11月
+      2018年   12月
     </span>
     <svg
       class="cuke-calendar-button-icon"
@@ -98,7 +98,13 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         class="cuke-calendar-item"
       />
       <span
-        class="cuke-calendar-item cuke-calendar-current-month"
+        class="cuke-calendar-item"
+      />
+      <span
+        class="cuke-calendar-item"
+      />
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
       >
         1
         <div
@@ -330,9 +336,17 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         />
       </span>
       <span
-        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
+        class="cuke-calendar-item cuke-calendar-current-month"
       >
         30
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        31
         <div
           class="cuke-calendar-item-content"
         />
@@ -346,6 +360,26 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         class="cuke-calendar-item cuke-calendar-next-month"
       >
         2
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        3
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        4
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        5
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        6
       </span>
     </div>
   </div>
