@@ -7,7 +7,7 @@ import "./styles/changeLog.less"
 const ChangeLog = () => (
   <Timeline>
     <Timeline.Item type="loading">
-      <h2><a>v1.0.0</a></h2>
+      <h2><a>v1.0.0-beta.0</a></h2>
       <ul>
         <li> 新增 Radio Button 模式 </li>
         <li> 新增 Checkbox Button 模式 </li>

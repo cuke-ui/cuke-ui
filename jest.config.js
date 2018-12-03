@@ -14,6 +14,7 @@ module.exports = {
     "/components/version",
     "/components/icon",
     "/components/form",
+    "/components/wordPad",
   ],
   "transformIgnorePatterns": [
     "/node_modules/",
