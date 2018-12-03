@@ -25,10 +25,22 @@ import "../components/numberInput/styles.less";
 import "../components/numberInput/styles.less";
 import "../components/wordPad/styles.less";
 import "../components/upload/styles.less";
+import "../components/form/styles.less";
 import "./styles/dataEntry.less";
 import Col from '../components/col';
 import Row from '../components/row';
 import { FileUploadIcon } from '../components/icon';
+import Form from '../components/form';
+import FormInfo from './pages/formInfo';
+
+const formItemLayout = {
+  labelCol: {
+    span: 3
+  },
+  wrapperCol: {
+    span: 21
+  }
+};
 
 const uploadProps = {
   action: "/test",
@@ -404,5 +416,29 @@ storiesOf("数据录入", module)
           <Button> <FileUploadIcon /> 选择文件 </Button>
         </Upload>
       </div>
+    )
+  )
+  .add(
+    "Form 表单",
+    () => (
+      <>
+        <FormInfo />
+        <h2>基本使用</h2>
+        <Form
+          schema={(yup) => ({
+            username: yup.string().required('用户名必填!'),
+            password: yup.string().required('密码必填!'),
+          })}
+          onSubmit={(values) => console.log(values)}
+        >
+          <Form.Item label="用户名:" name="username" {...formItemLayout}>
+            <Input placeholder="请输入用户名" />
+          </Form.Item>
+          <Form.Item label="密码:" name="password" {...formItemLayout}>
+            <Input placeholder="请输入密码" type="password" />
+          </Form.Item>
+          <Button htmlType="submit" type="primary" block>提交</Button>
+        </Form>
+      </>
     )
   )
