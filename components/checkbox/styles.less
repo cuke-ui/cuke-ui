@@ -1,13 +1,13 @@
 @import "../styles/vars.less";
 
 @prefixCls : cuke-checkbox;
+@buttonPrefixCls: cuke-checkbox-button;
 .@{prefixCls} {
   font-size: @font-size;
   color: @font-color;
   outline: none;
   display: inline-block;
   line-height: 1;
-  cursor: pointer;
   vertical-align: sub;
   white-space: nowrap;
 
@@ -15,10 +15,6 @@
 
     .@{prefixCls}-wrapper {
       margin-right: @cuke-checkbox-group-offset-right;
-    }
-
-    &.disabled {
-      color: red;
     }
   }
 
@@ -32,6 +28,10 @@
     right: 0;
     opacity: 0;
     z-index: 1;
+  }
+
+  &.@{prefixCls}-disabled {
+    cursor: not-allowed;
   }
 
   &-disabled {
@@ -122,4 +122,29 @@
   display: inline-block;
   position: relative;
   cursor: pointer;
+  user-select: none;
+  transition: all @default-transition;
+
+  &.@{prefixCls}-disabled {
+    cursor: not-allowed;
+  }
+
+  &.@{buttonPrefixCls}-wrapper {
+    border: 1px solid @border-color;
+    padding: @cuke-checkbox-button-padding;
+    border-radius: @border-radius;
+
+    .@{prefixCls} {
+      display: none;
+    }
+    &.@{prefixCls}-checked {
+      background-color: @primary-color;
+      border-color: @primary-color;
+      color: #fff;
+    }
+    &.@{prefixCls}-disabled {
+      background-color: @disabled-color;
+      color: @disabled-font-color;
+    }
+  }
 }

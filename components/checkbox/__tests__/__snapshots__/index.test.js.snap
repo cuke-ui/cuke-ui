@@ -21,10 +21,10 @@ exports[`<Checkbox/> should render Checkbox 1`] = `
     </span>
   </label>
   <label
-    class="cuke-checkbox-wrapper"
+    class="cuke-checkbox-wrapper cuke-checkbox-disabled"
   >
     <span
-      class="cuke-checkbox cuke-checkbox-disabled"
+      class="cuke-checkbox"
     >
       <input
         class="cuke-checkbox-input"
@@ -41,10 +41,71 @@ exports[`<Checkbox/> should render Checkbox 1`] = `
   </label>
   <label
     checked=""
-    class="cuke-checkbox-wrapper"
+    class="cuke-checkbox-wrapper cuke-checkbox-checked cuke-checkbox-disabled"
   >
     <span
-      class="cuke-checkbox cuke-checkbox-checked cuke-checkbox-disabled"
+      class="cuke-checkbox"
+    >
+      <input
+        checked=""
+        class="cuke-checkbox-input"
+        disabled=""
+        type="checkbox"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span />
+  </label>
+</div>
+`;
+
+exports[`<Checkbox/> should render Checkbox.Button 1`] = `
+<div>
+  <label
+    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper"
+  >
+    <span
+      class="cuke-checkbox cuke-checkbox-button"
+    >
+      <input
+        class="cuke-checkbox-input"
+        type="checkbox"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span>
+      黄瓜 ui
+    </span>
+  </label>
+  <label
+    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper cuke-checkbox-disabled"
+  >
+    <span
+      class="cuke-checkbox cuke-checkbox-button"
+    >
+      <input
+        class="cuke-checkbox-input"
+        disabled=""
+        type="checkbox"
+      />
+      <span
+        class="cuke-checkbox-inner"
+      />
+    </span>
+    <span>
+      黄瓜 ui
+    </span>
+  </label>
+  <label
+    checked=""
+    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper cuke-checkbox-checked cuke-checkbox-disabled"
+  >
+    <span
+      class="cuke-checkbox cuke-checkbox-button"
     >
       <input
         checked=""
@@ -123,10 +184,10 @@ exports[`<Checkbox/> should render CheckboxGroup 1`] = `
     </span>
   </label>
   <label
-    class="cuke-checkbox-wrapper"
+    class="cuke-checkbox-wrapper cuke-checkbox-disabled"
   >
     <span
-      class="cuke-checkbox cuke-checkbox-disabled"
+      class="cuke-checkbox"
     >
       <input
         class="cuke-checkbox-input"

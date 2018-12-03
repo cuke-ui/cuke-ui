@@ -15,6 +15,16 @@ describe("<Checkbox/>", () => {
     );
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+  it("should render Checkbox.Button", () => {
+    const wrapper = render(
+      <div>
+        <Checkbox.Button>黄瓜 ui</Checkbox.Button>
+        <Checkbox.Button disabled>黄瓜 ui</Checkbox.Button>
+        <Checkbox.Button checked disabled />
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
   it("should render CheckboxGroup", () => {
     const wrapper = render(
       <Checkbox.Group>
@@ -88,5 +98,30 @@ describe("<Checkbox/>", () => {
       wrapper.find(".cuke-checkbox-input").simulate("change");
       expect(onChange).not.toHaveBeenCalled();
     });
+  });
+  it("should can not trigger change event for checkbox group", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Checkbox.Group onChange={onChange} disabled>
+        <Checkbox.Button value="黄瓜">黄瓜</Checkbox.Button>
+        <Checkbox.Button value="茄子">茄子</Checkbox.Button>
+        <Checkbox.Button value="玉米">玉米</Checkbox.Button>
+        <Checkbox.Button value="番茄">番茄</Checkbox.Button>
+      </Checkbox.Group>
+    );
+    setTimeout(() => {
+      wrapper.find(".cuke-checkbox-input").simulate("change");
+      expect(onChange).not.toHaveBeenCalled();
+    });
+  });
+  it("should find Checkbox", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Checkbox.Group onChange={onChange}>
+        <Checkbox value="黄瓜">黄瓜</Checkbox>
+        <Checkbox value="茄子">茄子</Checkbox>
+      </Checkbox.Group>
+    );
+    assert(wrapper.find(Checkbox).length === 2);
   });
 });

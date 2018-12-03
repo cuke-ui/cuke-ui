@@ -9,10 +9,11 @@ const ChangeLog = () => (
     <Timeline.Item type="loading">
       <h2><a>v1.0.0</a></h2>
       <ul>
-        <li>开发中</li>
-        <li>完成剩余未完成组件</li>
-        <li>修复已知 bug</li>
-        <li>计划年底发布</li>
+        <li> 新增 Radio Button 模式 </li>
+        <li> 新增 Checkbox Button 模式 </li>
+        <li> 新增 Form 组件 </li>
+        <li> 优化 Checkbox 样式 </li>
+        <li> 修复已知 bug </li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

@@ -8,6 +8,7 @@ export default class Checkbox extends PureComponent {
     defaultChecked: false,
     indeterminate: false,
     checked: false,
+    isButton: false,
     onChange: () => {}
   };
   static propTypes = {
@@ -37,18 +38,25 @@ export default class Checkbox extends PureComponent {
       disabled,
       children,
       value,
+      isButton,
       onChange, //eslint-disable-line
       indeterminate,
       ...attr
     } = this.props;
     const { checked } = this.state;
     return (
-      <label className={cls(`${prefixCls}-wrapper`)} {...attr}>
+      <label
+        className={cls(`${prefixCls}-wrapper`, {
+          [`${prefixCls}-button-wrapper`]: isButton,
+          [`${prefixCls}-checked`]: checked,
+          [`${prefixCls}-disabled`]: disabled,
+          [`${prefixCls}-indeterminate`]: checked && indeterminate
+        })}
+        {...attr}
+      >
         <span
           className={cls(prefixCls, className, {
-            [`${prefixCls}-checked`]: checked,
-            [`${prefixCls}-disabled`]: disabled,
-            [`${prefixCls}-indeterminate`]: checked && indeterminate
+            [`${prefixCls}-button`]: isButton
           })}
         >
           <input
