@@ -16,7 +16,7 @@ export default class CheckboxPage extends PureComponent {
 
         <h2>按钮模式</h2>
         <Checkbox.Button value="黄瓜">黄瓜</Checkbox.Button>
-        <Checkbox.Button value="香蕉" disabled>香蕉</Checkbox.Button>
+        <Checkbox.Button value="香蕉" disabled style={{marginLeft: 15}}>香蕉</Checkbox.Button>
 
         <h2>默认选中</h2>
         <Checkbox checked onChange={this.onChange}>黄瓜 ui</Checkbox>
@@ -25,11 +25,11 @@ export default class CheckboxPage extends PureComponent {
         <Checkbox disabled onChange={this.onChange}>
           黄瓜 ui
         </Checkbox>
-        <Checkbox disabled checked style={{ marginLeft: 20 }}>
+        <Checkbox disabled checked style={{ margin: "0 20px" }}>
           黄瓜 ui
         </Checkbox>
         
-        <Checkbox.Button value="香蕉" disabled>香蕉</Checkbox.Button>
+        <Checkbox.Button value="香蕉" disabled checked>香蕉</Checkbox.Button>
 
         <h2>不确定</h2>
         <Checkbox checked indeterminate>
@@ -58,6 +58,13 @@ export default class CheckboxPage extends PureComponent {
           <Checkbox>黄瓜 ui</Checkbox>
           <Checkbox>黄瓜 ui</Checkbox>
           <Checkbox>黄瓜 ui</Checkbox>
+        </Checkbox.Group>
+
+        <Checkbox.Group disabled style={{marginTop: 25}}>
+          <Checkbox.Button value="黄瓜">黄瓜</Checkbox.Button>
+          <Checkbox.Button value="茄子">茄子</Checkbox.Button>
+          <Checkbox.Button value="玉米">玉米</Checkbox.Button>
+          <Checkbox.Button value="番茄">番茄</Checkbox.Button>
         </Checkbox.Group>
       </div>
     );

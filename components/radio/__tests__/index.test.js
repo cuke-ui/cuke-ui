@@ -15,7 +15,16 @@ describe("<Radio/>", () => {
     );
     expect(toJson(wrapper)).toMatchSnapshot();
   });
-
+  it("should render Radio.Button", () => {
+    const wrapper = render(
+      <Radio.Group>
+        <Radio.Button>黄瓜 ui</Radio.Button>
+        <Radio.Button disabled>黄瓜 ui</Radio.Button>
+        <Radio.Button checked disabled />
+      </Radio.Group>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
   it("should render RadioGroup", () => {
     const wrapper = render(
       <div>

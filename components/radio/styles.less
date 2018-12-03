@@ -1,20 +1,40 @@
 @import "../styles/vars.less";
 
 @prefixCls : cuke-radio;
+@buttonPrefixCls: cuke-radio-button;
 .@{prefixCls} {
   font-size: @font-size;
   color: @font-color;
   outline: none;
   display: inline-block;
   line-height: 1;
-  cursor: pointer;
   vertical-align: sub;
   white-space: nowrap;
 
   &-group {
-
     .@{prefixCls}-wrapper {
       margin-right: @cuke-radio-group-offset-right;
+    }
+
+    .@{buttonPrefixCls}-wrapper {
+      border: 1px solid @border-color;
+      padding: @cuke-checkbox-button-padding;
+      border-radius: 0 !important;
+      margin: 0;
+      &:first-child {
+        border-top-left-radius: @border-radius !important;
+        border-bottom-left-radius: @border-radius !important;
+      }
+      &:last-child {
+        border-bottom-right-radius: @border-radius !important;
+        border-top-right-radius: @border-radius !important;
+      }
+      & + .@{buttonPrefixCls}-wrapper {
+        border-left: 1px solid transparent;
+      }
+      &.@{prefixCls}-disabled:not(:first-child) {
+        border-left: 1px solid transparent !important;
+      }
     }
   }
 
@@ -95,4 +115,48 @@
   display: inline-block;
   position: relative;
   cursor: pointer;
+  &.@{prefixCls}-disabled {
+    cursor: not-allowed;
+  }
+  &-disabled {
+    .@{prefixCls}-inner {
+      border-color: @border-color  !important;
+      background-color: @disabled-color  !important;
+      &::after {
+        border-color: @disabled-color;
+      }
+    }
+    .@{prefixCls}-input {
+      cursor: not-allowed;
+    }
+    & +span {
+      cursor: not-allowed;
+      color: @disabled-font-color;
+    }
+  }
+  &.@{buttonPrefixCls}-wrapper {
+    border: 1px solid @border-color;
+    padding: @cuke-checkbox-button-padding;
+    border-radius: @border-radius;
+    margin: 0;
+    .@{prefixCls} {
+      display: none;
+      & +.@{prefixCls} {
+        margin: 0;
+      }
+    }
+    &.@{prefixCls}-checked {
+      background-color: @primary-color;
+      border-color: @primary-color;
+      color: #fff;
+      & +.@{prefixCls}-checked {
+        border-left: 1px solid fade(@border-color, 70%);
+      }
+    }
+    &.@{prefixCls}-disabled {
+      background-color: @disabled-color;
+      color: @disabled-font-color;
+      border-color: @border-color;
+    }
+  }
 }

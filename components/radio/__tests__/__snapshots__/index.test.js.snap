@@ -21,10 +21,10 @@ exports[`<Radio/> should render Radio 1`] = `
     </span>
   </label>
   <label
-    class="cuke-radio-wrapper"
+    class="cuke-radio-wrapper cuke-radio-disabled"
   >
     <span
-      class="cuke-radio cuke-radio-disabled"
+      class="cuke-radio"
     >
       <input
         class="cuke-radio-input"
@@ -41,10 +41,77 @@ exports[`<Radio/> should render Radio 1`] = `
   </label>
   <label
     checked=""
-    class="cuke-radio-wrapper"
+    class="cuke-radio-wrapper cuke-radio-checked cuke-radio-disabled"
   >
     <span
-      class="cuke-radio cuke-radio-checked cuke-radio-disabled"
+      class="cuke-radio"
+    >
+      <input
+        checked=""
+        class="cuke-radio-input"
+        disabled=""
+        type="radio"
+      />
+      <span
+        class="cuke-radio-inner"
+      />
+    </span>
+    <span />
+  </label>
+</div>
+`;
+
+exports[`<Radio/> should render Radio.Button 1`] = `
+<div
+  class="cuke-radio-group"
+>
+  <label
+    checked=""
+    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked"
+  >
+    <span
+      class="cuke-radio cuke-radio-button"
+    >
+      <input
+        checked=""
+        class="cuke-radio-input"
+        type="radio"
+      />
+      <span
+        class="cuke-radio-inner"
+      />
+    </span>
+    <span>
+      黄瓜 ui
+    </span>
+  </label>
+  <label
+    checked=""
+    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked cuke-radio-disabled"
+  >
+    <span
+      class="cuke-radio cuke-radio-button"
+    >
+      <input
+        checked=""
+        class="cuke-radio-input"
+        disabled=""
+        type="radio"
+      />
+      <span
+        class="cuke-radio-inner"
+      />
+    </span>
+    <span>
+      黄瓜 ui
+    </span>
+  </label>
+  <label
+    checked=""
+    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked cuke-radio-disabled"
+  >
+    <span
+      class="cuke-radio cuke-radio-button"
     >
       <input
         checked=""
@@ -69,10 +136,10 @@ exports[`<Radio/> should render RadioGroup 1`] = `
   >
     <label
       checked=""
-      class="cuke-radio-wrapper"
+      class="cuke-radio-wrapper cuke-radio-checked"
     >
       <span
-        class="cuke-radio cuke-radio-checked"
+        class="cuke-radio"
       >
         <input
           checked=""
@@ -146,10 +213,10 @@ exports[`<Radio/> should render RadioGroup 1`] = `
       </span>
     </label>
     <label
-      class="cuke-radio-wrapper"
+      class="cuke-radio-wrapper cuke-radio-disabled"
     >
       <span
-        class="cuke-radio cuke-radio-disabled"
+        class="cuke-radio"
       >
         <input
           class="cuke-radio-input"

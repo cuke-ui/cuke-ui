@@ -1,5 +1,4 @@
 @import "../styles/vars.less";
-
 @prefixCls : cuke-checkbox;
 @buttonPrefixCls: cuke-checkbox-button;
 .@{prefixCls} {
@@ -10,14 +9,31 @@
   line-height: 1;
   vertical-align: sub;
   white-space: nowrap;
-
   &-group {
-
     .@{prefixCls}-wrapper {
       margin-right: @cuke-checkbox-group-offset-right;
     }
+    .@{buttonPrefixCls}-wrapper {
+      border: 1px solid @border-color;
+      padding: @cuke-checkbox-button-padding;
+      border-radius: 0 !important;
+      margin: 0;
+      &:first-child {
+        border-top-left-radius: @border-radius !important;
+        border-bottom-left-radius: @border-radius !important;
+      }
+      &:last-child {
+        border-bottom-right-radius: @border-radius !important;
+        border-top-right-radius: @border-radius !important;
+      }
+      & + .@{buttonPrefixCls}-wrapper {
+        border-left: 1px solid transparent;
+      }
+      &.@{prefixCls}-disabled:not(:first-child) {
+        border-left: 1px solid transparent !important;
+      }
+    }
   }
-
   &-input {
     box-sizing: border-box;
     padding: 0;
@@ -29,15 +45,13 @@
     opacity: 0;
     z-index: 1;
   }
-
   &.@{prefixCls}-disabled {
     cursor: not-allowed;
   }
-
   &-disabled {
     .@{prefixCls}-inner {
-      border-color: @border-color !important;
-      background-color: @disabled-color !important;
+      border-color: @border-color  !important;
+      background-color: @disabled-color  !important;
       &::after {
         border-color: @disabled-color;
       }
@@ -45,24 +59,20 @@
     .@{prefixCls}-input {
       cursor: not-allowed;
     }
-
-    & + span {
+    & +span {
       cursor: not-allowed;
       color: @disabled-font-color;
     }
   }
-
   &-checked {
     .@{prefixCls}-inner {
       border-color: @primary-color;
       background-color: @primary-color;
       &::after {
-        transform: rotate(45deg) scale(1);
-        //勾√ 晚一点出现
+        transform: rotate(45deg) scale(1); //勾√ 晚一点出现
         transition: all .2s @animate-type .1s;
       }
     }
-
     &.@{prefixCls}-disabled {
       .@{prefixCls}-inner {
         &::after {
@@ -71,7 +81,6 @@
       }
     }
   }
-
   &-inner {
     display: inline-block;
     width: @cuke-checkbox-width;
@@ -83,7 +92,6 @@
     left: 0;
     top: 0;
     border-radius: @border-radius - 2px;
-
     &::after {
       //画一个矩形 旋转45° 形成一个 √
       transform: rotate(45deg) scale(0);
@@ -100,7 +108,6 @@
       transition: all .1s cubic-bezier(.71, -0.46, .88, .6);
     }
   }
-
   &-indeterminate {
     .@{prefixCls}-inner {
       border-color: @primary-color;
@@ -124,27 +131,32 @@
   cursor: pointer;
   user-select: none;
   transition: all @default-transition;
-
   &.@{prefixCls}-disabled {
     cursor: not-allowed;
   }
-
   &.@{buttonPrefixCls}-wrapper {
     border: 1px solid @border-color;
     padding: @cuke-checkbox-button-padding;
     border-radius: @border-radius;
-
+    margin: 0;
     .@{prefixCls} {
       display: none;
+      & +.@{prefixCls} {
+        margin: 0;
+      }
     }
     &.@{prefixCls}-checked {
       background-color: @primary-color;
       border-color: @primary-color;
       color: #fff;
+      & +.@{prefixCls}-checked {
+        border-left: 1px solid fade(@border-color, 70%);
+      }
     }
     &.@{prefixCls}-disabled {
       background-color: @disabled-color;
       color: @disabled-font-color;
+      border-color: @border-color;
     }
   }
 }

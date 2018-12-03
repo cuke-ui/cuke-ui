@@ -48,6 +48,7 @@ export default class Radio extends PureComponent {
       className,
       children,
       disabled,
+      isButton,
       onChange, //eslint-disable-line
       ...attr
     } = this.props;
@@ -55,11 +56,17 @@ export default class Radio extends PureComponent {
     const { checked } = this.state;
 
     return (
-      <label className={cls(`${prefixCls}-wrapper`)} {...attr}>
+      <label
+        className={cls(`${prefixCls}-wrapper`, {
+          [`${prefixCls}-button-wrapper`]: isButton,
+          [`${prefixCls}-checked`]: checked,
+          [`${prefixCls}-disabled`]: disabled
+        })}
+        {...attr}
+      >
         <span
           className={cls(prefixCls, className, {
-            [`${prefixCls}-checked`]: checked,
-            [`${prefixCls}-disabled`]: disabled
+            [`${prefixCls}-button`]: isButton
           })}
         >
           <input

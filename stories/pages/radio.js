@@ -9,6 +9,10 @@ export default class RadioPage extends PureComponent {
     console.log(e.target.value);
     this.setState({ value: e.target.value });
   };
+  onChange2 = e => {
+    console.log(e.target.value);
+    this.setState({ value2: e.target.value });
+  };
   render() {
     return (
       <div>
@@ -18,11 +22,25 @@ export default class RadioPage extends PureComponent {
         </Radio>
         <br />
         <Radio defaultChecked={true}>默认选中</Radio> <br />
+
         <h2>禁用</h2>
         <Radio disabled>黄瓜 ui</Radio> <br />
         <Radio checked disabled>
           黄瓜 ui
         </Radio>
+
+        <h2>按钮模式</h2>
+        <p> 选中 : {this.state.value2} </p>
+        <Radio.Group value={this.state.value2} onChange={this.onChange2}>
+          <Radio.Button value="小红">小红</Radio.Button>
+          <Radio.Button value="小明">小明</Radio.Button>
+          <Radio.Button value="小美">小美</Radio.Button>
+          <Radio.Button value="小芳">小芳</Radio.Button>
+          <Radio.Button value="小黑" disabled>
+            小黑
+          </Radio.Button>
+        </Radio.Group>
+
         <h2>组合使用: 老板需要几号技师</h2>
         <p> 选中 : {this.state.value} </p>
         <Radio.Group value={this.state.value} onChange={this.onChange}>
@@ -43,6 +61,15 @@ export default class RadioPage extends PureComponent {
           <Radio value="小黑">
             小黑
           </Radio>
+        </Radio.Group>
+        <Radio.Group disabled style={{marginTop: 25}}>
+          <Radio.Button value="小红">小红</Radio.Button>
+          <Radio.Button value="小明">小明</Radio.Button>
+          <Radio.Button value="小美">小美</Radio.Button>
+          <Radio.Button value="小芳">小芳</Radio.Button>
+          <Radio.Button value="小黑" disabled>
+            小黑
+          </Radio.Button>
         </Radio.Group>
       </div>
     );
