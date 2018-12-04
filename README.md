@@ -74,6 +74,7 @@ yarn add cuke-ui@next
 <script type="text/javascript" src="https://unpkg.com/cuke-ui@latest/dist/cuke-ui.min.js"></script>
 ```
 
+
 ### 如何使用
 
 > 1. 全部引入
@@ -130,6 +131,10 @@ module.exports = {
 
 
 ```
+
+### 测试版本
+![next](https://img.shields.io/npm/v/cuke-ui/next.svg?style=for-the-badge)
+
 
 ### 更新日志
 
