@@ -53,6 +53,14 @@ storiesOf("综述", module).add("介绍", () => (
       </a>
     </p>
 
+    <h2>测试版本</h2>
+    <a href="https://badge.fury.io/js/cuke-ui" title="npm">
+      <img
+        src="https://img.shields.io/npm/v/cuke-ui/next.svg?style=for-the-badge"
+        alt="npm version"
+      />
+    </a>
+
     <h2>在线示例</h2>
     <iframe
       src="https://codesandbox.io/embed/nn6yr2m94?autoresize=1&hidenavigation=1"

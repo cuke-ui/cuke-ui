@@ -62,6 +62,11 @@ npm i cuke-ui --save
 yarn add cuke-ui
 ```
 
+> 测试版
+```
+yarn add cuke-ui@next
+```
+
 > 使用 cdn
 
 ```html
