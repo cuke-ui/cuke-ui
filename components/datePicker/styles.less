@@ -38,8 +38,8 @@
     transition: @default-transition;
   }
   &-content {
-    width: @cuke-date-picker-content-width;
-    max-height: @cuke-date-picker-content-height;
+    min-width: @cuke-date-picker-content-width;
+    height: auto;
     overflow-y: auto;
     position: absolute;
     left: 0;
@@ -50,7 +50,7 @@
     border: 1px solid @border-color;
     z-index: @cuke-date-picker-z-index;
     box-shadow: @default-shadow;
-    padding: 15px;
+    padding: @cuke-date-picker-padding;
     border-radius: @border-radius;
     transition: all @default-transition;
   }
@@ -84,6 +84,7 @@
         background-color: @primary-color;
         border-color: @primary-color;
         color: #fff;
+        text-shadow: @default-text-shadow;
       }
     }
   }
@@ -109,6 +110,11 @@
     opacity: 0.65;
   }
   &-items {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     .@{prefixCls}-item {
       text-align: center;
       display: inline-block;
@@ -116,7 +122,7 @@
       height: @cuke-date-picker-date-height;
       line-height: @cuke-date-picker-date-height;
       border-radius: 50%;
-      margin: @cuke-date-picker-date-offset;
+      margin-bottom: @cuke-date-picker-date-offset;
       cursor: pointer;
       border: 1px solid transparent;
       transition: all @default-transition;
@@ -133,6 +139,7 @@
     border-color: @primary-color;
     background-color: @primary-color;
     color: #fff;
+    text-shadow: @default-text-shadow;
   }
   &-footer {
     margin-top: 20px;

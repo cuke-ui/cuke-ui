@@ -10,7 +10,10 @@ import { DownIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
 export default class DataPicker extends PureComponent {
   state = {
     momentSelected: this.props.defaultValue || this.props.value || moment(),
-    selectedDate: moment().date(),
+    selectedDate:
+      (this.props.value && this.props.value.date()) ||
+      (this.props.defaultValue && this.props.defaultValue.date()) ||
+      moment().date(),
     visible: null,
     isSelected: false,
     extraFooter: null,
@@ -181,7 +184,7 @@ export default class DataPicker extends PureComponent {
     );
   };
   onSelectToday = () => {
-    this.selectedDate(moment().date());
+    this.selectedDate(moment().date())();
   };
   onClickOutsideHandler = e => {
     e.stopPropagation();

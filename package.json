@@ -1,6 +1,6 @@
 {
   "name": "cuke-ui",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0-beta.1",
   "main": "lib/index.js",
   "description": "A React.js UI components for Web",
   "repository": "https://github.com/cuke-ui/cuke-ui.git",

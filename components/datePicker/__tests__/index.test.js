@@ -185,4 +185,9 @@ describe("<DatePicker/>", () => {
     ).toContain("");
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+
+  it("should can set default Value & defaultValue.date is equal state.selectedDate", () => {
+    const wrapper = shallow(<DatePicker value={moment("2018-11-25")} />);
+    expect(wrapper.state().selectedDate).toEqual(moment("2018-11-25").date());
+  });
 });
