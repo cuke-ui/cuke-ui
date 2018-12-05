@@ -124,4 +124,23 @@ describe("<Checkbox/>", () => {
     );
     assert(wrapper.find(Checkbox).length === 2);
   });
+  it("should render custom size", () => {
+    const wrapper = shallow(
+      <div>
+        <Checkbox.Group size="small">
+          <Checkbox value="黄瓜">黄瓜</Checkbox>
+          <Checkbox value="茄子">茄子</Checkbox>
+        </Checkbox.Group>
+        <Checkbox.Group size="default">
+          <Checkbox value="黄瓜">黄瓜</Checkbox>
+          <Checkbox value="茄子">茄子</Checkbox>
+        </Checkbox.Group>
+        <Checkbox.Group size="large">
+          <Checkbox value="黄瓜">黄瓜</Checkbox>
+          <Checkbox value="茄子">茄子</Checkbox>
+        </Checkbox.Group>
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 });
