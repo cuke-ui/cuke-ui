@@ -36,7 +36,7 @@ export default class Radio extends PureComponent {
   };
 
   componentWillReceiveProps({ checked, defaultChecked }) {
-    if (checked !== this.state.checked) {
+    if (checked !== this.props.checked) {
       this.setState({
         checked: defaultChecked || checked
       });
