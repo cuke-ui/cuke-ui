@@ -10,13 +10,15 @@ export default class RadioGroup extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-radio-group",
     disabled: false,
-    onChange: () => {}
+    onChange: () => {},
+    size: "default"
   };
 
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
     onChange: PropTypes.func,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    size: PropTypes.oneOf(["small", "default", "large"])
   };
 
   constructor(props) {
@@ -45,6 +47,7 @@ export default class RadioGroup extends PureComponent {
       children,
       prefixCls,
       disabled,
+      size,
       className,
       onChange, //eslint-disable-line
       ...attr
@@ -57,6 +60,7 @@ export default class RadioGroup extends PureComponent {
         <Radio
           key={index}
           disabled={disabled}
+          size={size}
           {...radio.props}
           onChange={this.onRadioChange}
           checked={value === radio.props.value}

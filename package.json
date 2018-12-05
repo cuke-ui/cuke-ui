@@ -1,6 +1,6 @@
 {
   "name": "cuke-ui",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "main": "lib/index.js",
   "description": "A React.js UI components for Web",
   "repository": "https://github.com/cuke-ui/cuke-ui.git",
@@ -107,7 +107,7 @@
     "coveralls": "^3.0.1",
     "css-loader": "^1.0.0",
     "enzyme": "^3.5.0",
-    "enzyme-adapter-react-16": "^1.6.0",
+    "enzyme-adapter-react-16": "1.7.0",
     "enzyme-to-json": "^3.3.4",
     "eslint": "^4.19.1",
     "eslint-plugin-babel": "^5.1.0",

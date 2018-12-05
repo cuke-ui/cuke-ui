@@ -54,6 +54,7 @@ export default class CityPicker extends PureComponent {
   };
   onCityChange = selectedCity => {
     this.setState({ visible: false, selectedCityName: selectedCity.name });
+    this.props.onPanelVisibleChange(false);
 
     if (this.props.onCityChange) {
       this.props.onCityChange(selectedCity);

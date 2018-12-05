@@ -115,6 +115,7 @@
   display: inline-block;
   position: relative;
   cursor: pointer;
+  transition: all @default-transition;
   &.@{prefixCls}-disabled {
     cursor: not-allowed;
   }
@@ -139,6 +140,12 @@
     padding: @cuke-checkbox-button-padding;
     border-radius: @border-radius;
     margin: 0;
+    &.@{prefixCls}-large {
+      padding: @cuke-checkbox-button-padding-large;
+    }
+    &.@{prefixCls}-small {
+      padding: @cuke-checkbox-button-padding-small;
+    }
     .@{prefixCls} {
       display: none;
       & +.@{prefixCls} {
@@ -149,6 +156,7 @@
       background-color: @primary-color;
       border-color: @primary-color;
       color: #fff;
+      text-shadow: @default-text-shadow;
       & +.@{prefixCls}-checked {
         border-left: 1px solid fade(@border-color, 70%);
       }

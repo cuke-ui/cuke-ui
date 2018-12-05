@@ -64,7 +64,7 @@ exports[`<Checkbox/> should render Checkbox 1`] = `
 exports[`<Checkbox/> should render Checkbox.Button 1`] = `
 <div>
   <label
-    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper"
+    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper cuke-checkbox-default"
   >
     <span
       class="cuke-checkbox cuke-checkbox-button"
@@ -82,7 +82,7 @@ exports[`<Checkbox/> should render Checkbox.Button 1`] = `
     </span>
   </label>
   <label
-    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper cuke-checkbox-disabled"
+    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper cuke-checkbox-disabled cuke-checkbox-default"
   >
     <span
       class="cuke-checkbox cuke-checkbox-button"
@@ -102,7 +102,7 @@ exports[`<Checkbox/> should render Checkbox.Button 1`] = `
   </label>
   <label
     checked=""
-    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper cuke-checkbox-checked cuke-checkbox-disabled"
+    class="cuke-checkbox-wrapper cuke-checkbox-button-wrapper cuke-checkbox-checked cuke-checkbox-disabled cuke-checkbox-default"
   >
     <span
       class="cuke-checkbox cuke-checkbox-button"

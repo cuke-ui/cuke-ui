@@ -9,7 +9,8 @@ export default class Checkbox extends PureComponent {
     indeterminate: false,
     checked: false,
     isButton: false,
-    onChange: () => {}
+    onChange: () => {},
+    size: "default"
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -17,7 +18,8 @@ export default class Checkbox extends PureComponent {
     disabled: PropTypes.bool,
     checked: PropTypes.bool,
     defaultChecked: PropTypes.bool,
-    indeterminate: PropTypes.bool
+    indeterminate: PropTypes.bool,
+    size: PropTypes.oneOf(["small", "default", "large"])
   };
   state = {
     checked: this.props.checked || this.props.defaultChecked
@@ -39,6 +41,7 @@ export default class Checkbox extends PureComponent {
       children,
       value,
       isButton,
+      size,
       onChange, //eslint-disable-line
       indeterminate,
       ...attr
@@ -50,7 +53,8 @@ export default class Checkbox extends PureComponent {
           [`${prefixCls}-button-wrapper`]: isButton,
           [`${prefixCls}-checked`]: checked,
           [`${prefixCls}-disabled`]: disabled,
-          [`${prefixCls}-indeterminate`]: checked && indeterminate
+          [`${prefixCls}-indeterminate`]: checked && indeterminate,
+          [`${prefixCls}-${size}`]: isButton
         })}
         {...attr}
       >

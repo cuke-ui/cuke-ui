@@ -82,4 +82,26 @@ describe("<Radio/>", () => {
     wrapper.find("input").simulate("click");
     expect(onChange).not.toHaveBeenCalled();
   });
+  it("should render custom size", () => {
+    const wrapper = shallow(
+      <div>
+        <Radio.Group value={"小红"} size="small">
+          <Radio value="小红">小红</Radio>
+          <Radio value="小明">小明</Radio>
+          <Radio value="小美">小美</Radio>
+        </Radio.Group>
+        <Radio.Group value={"小红"}>
+          <Radio value="小红">小红</Radio>
+          <Radio value="小明">小明</Radio>
+          <Radio value="小美">小美</Radio>
+        </Radio.Group>
+        <Radio.Group value={"小红"} size="large">
+          <Radio value="小红">小红</Radio>
+          <Radio value="小明">小明</Radio>
+          <Radio value="小美">小美</Radio>
+        </Radio.Group>
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 });

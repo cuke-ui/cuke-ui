@@ -9,7 +9,8 @@ export default class Radio extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-radio",
     defaultChecked: false,
-    checked: false
+    checked: false,
+    size: "default"
   };
 
   static propTypes = {
@@ -17,7 +18,8 @@ export default class Radio extends PureComponent {
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
     checked: PropTypes.bool,
-    defaultChecked: PropTypes.bool
+    defaultChecked: PropTypes.bool,
+    size: PropTypes.oneOf(["small", "default", "large"])
   };
 
   constructor(props) {
@@ -49,6 +51,7 @@ export default class Radio extends PureComponent {
       children,
       disabled,
       isButton,
+      size,
       onChange, //eslint-disable-line
       ...attr
     } = this.props;
@@ -60,7 +63,8 @@ export default class Radio extends PureComponent {
         className={cls(`${prefixCls}-wrapper`, {
           [`${prefixCls}-button-wrapper`]: isButton,
           [`${prefixCls}-checked`]: checked,
-          [`${prefixCls}-disabled`]: disabled
+          [`${prefixCls}-disabled`]: disabled,
+          [`${prefixCls}-${size}`]: isButton
         })}
         {...attr}
       >

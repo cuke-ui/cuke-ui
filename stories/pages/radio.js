@@ -5,9 +5,9 @@ export default class RadioPage extends PureComponent {
   state = {
     value: '小红'
   };
-  onChange = e => {
+  onChange = (type)=>  e => {
     console.log(e.target.value);
-    this.setState({ value: e.target.value });
+    this.setState({ [type]: e.target.value });
   };
   onChange2 = e => {
     console.log(e.target.value);
@@ -41,9 +41,26 @@ export default class RadioPage extends PureComponent {
           </Radio.Button>
         </Radio.Group>
 
+        <h2>三种大小</h2>
+        <Radio.Group size="large" value={this.state.large} onChange={this.onChange('large')}>
+          <Radio.Button value="小红">小红</Radio.Button>
+          <Radio.Button value="小明">小明</Radio.Button>
+          <Radio.Button value="小美">小美</Radio.Button>
+        </Radio.Group>
+        <Radio.Group value={this.state.default} onChange={this.onChange('default')} style={{margin: "15px 0"}}>
+          <Radio.Button value="小红">小红</Radio.Button>
+          <Radio.Button value="小明">小明</Radio.Button>
+          <Radio.Button value="小美">小美</Radio.Button>
+        </Radio.Group>
+        <Radio.Group size="small" value={this.state.small} onChange={this.onChange('small')}>
+          <Radio.Button value="小红">小红</Radio.Button>
+          <Radio.Button value="小明">小明</Radio.Button>
+          <Radio.Button value="小美">小美</Radio.Button>
+        </Radio.Group>
+
         <h2>组合使用: 老板需要几号技师</h2>
         <p> 选中 : {this.state.value} </p>
-        <Radio.Group value={this.state.value} onChange={this.onChange}>
+        <Radio.Group value={this.state.value} onChange={this.onChange('value')}>
           <Radio value="小红">小红</Radio>
           <Radio value="小明">小明</Radio>
           <Radio value="小美">小美</Radio>

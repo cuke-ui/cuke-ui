@@ -40,8 +40,8 @@ class Page extends React.Component {
 2. 按需引入
 
 ```js
-import Button from 'cuke-ui/lib/Button';
-import 'cuke-ui/lib/Button/style.less';
+import Button from 'cuke-ui/lib/button';
+import 'cuke-ui/lib/button/style.less';
 ```
 
 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)

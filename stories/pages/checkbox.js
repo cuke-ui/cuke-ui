@@ -52,6 +52,23 @@ export default class CheckboxPage extends PureComponent {
           <Checkbox.Button value="番茄" disabled>番茄</Checkbox.Button>
         </Checkbox.Group>
 
+        <h2>三种大小</h2>
+        <Checkbox.Group onChange={this.onGroupChange} size="large">
+          <Checkbox.Button value="黄瓜">黄瓜</Checkbox.Button>
+          <Checkbox.Button value="茄子">茄子</Checkbox.Button>
+          <Checkbox.Button value="玉米">玉米</Checkbox.Button>
+        </Checkbox.Group>
+        <Checkbox.Group onChange={this.onGroupChange} style={{margin: "10px 0"}}>
+          <Checkbox.Button value="黄瓜">黄瓜</Checkbox.Button>
+          <Checkbox.Button value="茄子">茄子</Checkbox.Button>
+          <Checkbox.Button value="玉米">玉米</Checkbox.Button>
+        </Checkbox.Group>
+        <Checkbox.Group onChange={this.onGroupChange} size="small">
+          <Checkbox.Button value="黄瓜">黄瓜</Checkbox.Button>
+          <Checkbox.Button value="茄子">茄子</Checkbox.Button>
+          <Checkbox.Button value="玉米">玉米</Checkbox.Button>
+        </Checkbox.Group>
+
         <h2>全部禁用</h2>
         <Checkbox.Group disabled>
           <Checkbox defaultChecked>黄瓜 ui</Checkbox>

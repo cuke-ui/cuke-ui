@@ -14,13 +14,15 @@ export default class CheckboxGroup extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-checkbox-group",
     disabled: false,
+    size: "default",
     onChange: () => {}
   };
 
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
     onChange: PropTypes.func,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    size: PropTypes.oneOf(["small", "default", "large"])
   };
 
   constructor(props) {
@@ -62,6 +64,7 @@ export default class CheckboxGroup extends PureComponent {
       prefixCls,
       disabled,
       className,
+      size,
       onChange, //eslint-disable-line
       value: currentValue,
       ...attr
@@ -74,6 +77,7 @@ export default class CheckboxGroup extends PureComponent {
       return (
         <Checkbox
           key={index}
+          size={size}
           disabled={disabled}
           {...checkbox.props}
           onChange={this.onCheckboxChange}

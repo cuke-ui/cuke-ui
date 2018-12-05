@@ -3,10 +3,16 @@ import Timeline from "../components/timeline";
 import ReactMarkDown from "react-markdown"
 import "./styles/changeLog.less"
 
-
 const ChangeLog = () => (
   <Timeline>
     <Timeline.Item type="loading">
+      <h2><a>v1.0.0-beta.2</a></h2>
+      <ul>
+        <li> 修复 CityPicker 选择城市后 onPanelVisibleChange 不触发的问题 </li>
+        <li> 新增 Checkbox Radio size 属性 支持 large | default | small </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v1.0.0-beta.1</a></h2>
       <ul>
         <li> 调整 DatePicker 样式 </li>

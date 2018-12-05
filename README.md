@@ -96,8 +96,8 @@ class Page extends React.Component {
 > 2 .按需引入
 
 ```js
-import Button from 'cuke-ui/lib/Button';
-import 'cuke-ui/lib/Button/style.less';
+import Button from 'cuke-ui/lib/button';
+import 'cuke-ui/lib/button/style.less';
 ```
 
 > 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
@@ -189,7 +189,7 @@ module.exports = {
 - [x] [Popover  气泡卡片](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Popover%20%E6%B0%94%E6%B3%A1%E5%8D%A1%E7%89%87&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [PopConfirm  气泡确认框](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Popconfirm%20%E6%B0%94%E6%B3%A1%E7%A1%AE%E8%AE%A4%E6%A1%86&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
 - [x] [Card 卡片](https://cuke-ui.github.io/cuke-ui/?selectedKind=%E6%95%B0%E6%8D%AE%E5%B1%95%E7%A4%BA&selectedStory=Card%20%E5%8D%A1%E7%89%87&full=0&addons=1&stories=1&panelRight=0&addonPanel=storybook%2Factions%2Factions-panel)
-- [ ] [Form 表单]()
+<!-- - [ ] [Form 表单]() -->
 
 ### 设计规范
 

@@ -259,4 +259,17 @@ describe("<CityPicker/>", () => {
     wrapper.find(".cuke-city-picker").simulate("click");
     expect(onPanelVisibleChange).not.toHaveBeenCalled();
   });
+
+  // it("should cannot trigger panel visible change when disabled groups", () => {
+  //   const onPanelVisibleChange = jest.fn();
+  //   const wrapper = mount(
+  //     <CityPicker
+  //       cityList={cityList}
+  //       onPanelVisibleChange={onPanelVisibleChange}
+  //     />
+  //   );
+  //   wrapper.setState({visible: true})
+  //   wrapper.find(".cuke-city-picker-core-item").at(0).simulate("click");
+  //   expect(onPanelVisibleChange).toHaveBeenCalled();
+  // });
 });

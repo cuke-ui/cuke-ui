@@ -15,11 +15,16 @@ export default class FormItem extends PureComponent {
     wrapperCol: {
       span: 21,
       offset: 0
-    }
+    },
+    schema: {}
   };
 
   static propTypes = {
     prefixCls: PropTypes.string.isRequired
+  };
+
+  dispatchSchemaOfFormItem = name => schema => {
+    this.props.dispatchSchemaOfFormItem(name)(schema);
   };
 
   render() {
@@ -31,8 +36,8 @@ export default class FormItem extends PureComponent {
       children,
       labelCol,
       wrapperCol,
-      formProps: { errors, touched },
-      ...attr
+      style,
+      formProps: { errors, touched }
     } = this.props;
 
     const hasError = errors[name] && touched[name];
@@ -41,7 +46,7 @@ export default class FormItem extends PureComponent {
         className={cls(prefixCls, className, {
           [`${prefixCls}-has-error`]: hasError
         })}
-        {...attr}
+        style={style}
       >
         <Col {...labelCol} className={`${prefixCls}-label`}>
           {label}
@@ -62,5 +67,9 @@ export default class FormItem extends PureComponent {
         </Col>
       </Row>
     );
+  }
+
+  componentDidMount() {
+    this.dispatchSchemaOfFormItem(this.props.name)(this.props.schema);
   }
 }

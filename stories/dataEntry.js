@@ -30,17 +30,17 @@ import "./styles/dataEntry.less";
 import Col from '../components/col';
 import Row from '../components/row';
 import { FileUploadIcon } from '../components/icon';
-import Form from '../components/form';
-import FormInfo from './pages/formInfo';
+// import Form from '../components/form';
+// import FormInfo from './pages/formInfo';
 
-const formItemLayout = {
-  labelCol: {
-    span: 3
-  },
-  wrapperCol: {
-    span: 21
-  }
-};
+// const formItemLayout = {
+//   labelCol: {
+//     span: 3
+//   },
+//   wrapperCol: {
+//     span: 21
+//   }
+// };
 
 const uploadProps = {
   action: "/test",
@@ -418,27 +418,33 @@ storiesOf("数据录入", module)
       </div>
     )
   )
-  .add(
-    "Form 表单",
-    () => (
-      <>
-        <FormInfo />
-        <h2>基本使用</h2>
-        <Form
-          schema={(yup) => ({
-            username: yup.string().required('用户名必填!'),
-            password: yup.string().required('密码必填!'),
-          })}
-          onSubmit={(values) => console.log(values)}
-        >
-          <Form.Item label="用户名:" name="username" {...formItemLayout}>
-            <Input placeholder="请输入用户名" />
-          </Form.Item>
-          <Form.Item label="密码:" name="password" {...formItemLayout}>
-            <Input placeholder="请输入密码" type="password" />
-          </Form.Item>
-          <Button htmlType="submit" type="primary" block>提交</Button>
-        </Form>
-      </>
-    )
-  )
+  // .add(
+  //   "Form 表单",
+  //   () => (
+  //     <>
+  //       <FormInfo />
+  //       <h2>基本使用</h2>
+  //       <Form
+  //         onSubmit={(values) => console.log(values)}
+  //       >
+  //         <Form.Item 
+  //           label="用户名:" 
+  //           name="username"
+  //           schema={(form) => form.string().required('用户名不能为空')}
+  //           {...formItemLayout}
+  //         >
+  //           <Input placeholder="请输入用户名" />
+  //         </Form.Item>
+  //         <Form.Item 
+  //           label="密码:" 
+  //           name="password" 
+  //           schema={(form) => form.string().required('密码不能为空')}
+  //           {...formItemLayout}
+  //         >
+  //           <Input placeholder="请输入密码" type="password" />
+  //         </Form.Item>
+  //         <Button htmlType="submit" type="primary" block>提交</Button>
+  //       </Form>
+  //     </>
+  //   )
+  // )

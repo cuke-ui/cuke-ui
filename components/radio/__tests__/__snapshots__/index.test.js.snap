@@ -67,7 +67,7 @@ exports[`<Radio/> should render Radio.Button 1`] = `
 >
   <label
     checked=""
-    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked"
+    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked cuke-radio-default"
   >
     <span
       class="cuke-radio cuke-radio-button"
@@ -87,7 +87,7 @@ exports[`<Radio/> should render Radio.Button 1`] = `
   </label>
   <label
     checked=""
-    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked cuke-radio-disabled"
+    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked cuke-radio-disabled cuke-radio-default"
   >
     <span
       class="cuke-radio cuke-radio-button"
@@ -108,7 +108,7 @@ exports[`<Radio/> should render Radio.Button 1`] = `
   </label>
   <label
     checked=""
-    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked cuke-radio-disabled"
+    class="cuke-radio-wrapper cuke-radio-button-wrapper cuke-radio-checked cuke-radio-disabled cuke-radio-default"
   >
     <span
       class="cuke-radio cuke-radio-button"
@@ -233,5 +233,115 @@ exports[`<Radio/> should render RadioGroup 1`] = `
       </span>
     </label>
   </div>
+</div>
+`;
+
+exports[`<Radio/> should render custom size 1`] = `
+<div>
+  <RadioGroup
+    disabled={false}
+    onChange={[Function]}
+    prefixCls="cuke-radio-group"
+    size="small"
+    value="小红"
+  >
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小红"
+    >
+      小红
+    </Radio>
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小明"
+    >
+      小明
+    </Radio>
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小美"
+    >
+      小美
+    </Radio>
+  </RadioGroup>
+  <RadioGroup
+    disabled={false}
+    onChange={[Function]}
+    prefixCls="cuke-radio-group"
+    size="default"
+    value="小红"
+  >
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小红"
+    >
+      小红
+    </Radio>
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小明"
+    >
+      小明
+    </Radio>
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小美"
+    >
+      小美
+    </Radio>
+  </RadioGroup>
+  <RadioGroup
+    disabled={false}
+    onChange={[Function]}
+    prefixCls="cuke-radio-group"
+    size="large"
+    value="小红"
+  >
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小红"
+    >
+      小红
+    </Radio>
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小明"
+    >
+      小明
+    </Radio>
+    <Radio
+      checked={false}
+      defaultChecked={false}
+      prefixCls="cuke-radio"
+      size="default"
+      value="小美"
+    >
+      小美
+    </Radio>
+  </RadioGroup>
 </div>
 `;
