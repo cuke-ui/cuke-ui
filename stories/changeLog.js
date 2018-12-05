@@ -6,6 +6,13 @@ import "./styles/changeLog.less"
 const ChangeLog = () => (
   <Timeline>
     <Timeline.Item type="loading">
+      <h2><a>v1.0.0</a></h2>
+      <ul>
+        <li> 修复 Radio 默认选择后 被重置的问题  </li>
+        <li> 发布 正式版 !</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v1.0.0-beta.2</a></h2>
       <ul>
         <li> 修复 CityPicker 选择城市后 onPanelVisibleChange 不触发的问题 </li>
