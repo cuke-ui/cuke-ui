@@ -33,14 +33,14 @@ cuke-ui
 </p>
 
 <h4 align="center">
-黄瓜 UI : 一个即插即用的 React UI 库 (** 施工中,请勿用于生产环境... **)
+黄瓜 UI : 一个即插即用的 React UI 库
 </h4>
 
 ### 名字由来
 cuke(黄瓜), 常见的一种蔬菜, 希望这个项目也成为常见的一个依赖(虽然这是不可能的), 
 其中黄瓜也符合 这个组件库的 宗旨 : 即插即用
 其次 cuke 谐音 (cool ke) 很酷的李金珂的 意思
-主题色 采用 黄瓜绿, 清新又可爱, 组件借鉴(抄袭)了 有牌面的  Ant Design, 抱着学习的目的,开发了这个组件库, 所以建议不要用于生产环境,可能心情不好就不维护了
+主题色 采用 黄瓜绿, 清新又可爱, 组件借鉴(抄袭)了 有牌面的  Ant Design, 抱着学习的目的,开发了这个组件库
 
 ### 在线演示
 
@@ -103,7 +103,7 @@ import 'cuke-ui/lib/button/style.less';
 > 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
 
 ```js
-//webpack.config.js
+// webpack.config.js
 module.exports = {
 ...
  module: {
@@ -132,8 +132,8 @@ module.exports = {
 
 ```
 
-### 测试版本
-![next](https://img.shields.io/npm/v/cuke-ui/next.svg?style=for-the-badge)
+<!-- ### 测试版本
+![next](https://img.shields.io/npm/v/cuke-ui/next.svg?style=for-the-badge) -->
 
 
 ### 更新日志
