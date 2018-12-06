@@ -1,7 +1,6 @@
 @import "../styles/vars.less";
 @import "../styles/animate.less";
 @import "../styles/mixins.less";
-
 @prefixCls : cuke-button;
 .@{prefixCls} {
   display: inline-block;
@@ -25,7 +24,6 @@
   border-radius: @border-radius;
   outline: none;
   text-shadow: @default-text-shadow;
-
   .cuke-button-hover(@default-color);
   &.@{prefixCls}-primary {
     .cuke-button-hover(@primary-color);
@@ -74,13 +72,20 @@
     }
   }
   &.@{prefixCls}-disabled {
-    .cuke-button-hover(@disabled-color);
     cursor: not-allowed;
-    color: @disabled-font-color;
-    border-color: @border-color;
-    text-shadow: none;
+    opacity: @button-disabled-opacity;
     &.@{prefixCls}-hollow {
-      color: @disabled-font-color;
+      background-color: transparent !important;
+    }
+    &.@{prefixCls}-normal {
+      .cuke-button-hover(@disabled-color);
+      text-shadow: none;
+      border: 1px solid @border-color;
+      color: @disabled-font-color  !important;
+      opacity: 1;
+      &.@{prefixCls}-hollow {
+        color: @disabled-font-color;
+      }
     }
   }
   &.@{prefixCls}-block {
@@ -147,7 +152,6 @@
     &.@{prefixCls}-link-disabled {
       cursor: not-allowed;
       color: @disabled-font-color;
-      pointer-events: none;
     }
   }
 }

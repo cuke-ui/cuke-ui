@@ -65,7 +65,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
       class="cuke-tooltip-trigger-wrapper"
     >
       <button
-        class="cuke-button cuke-button-default"
+        class="cuke-button cuke-button-default cuke-button-normal"
         type="button"
       >
         <span>
@@ -88,7 +88,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
       class="cuke-tooltip-trigger-wrapper"
     >
       <button
-        class="cuke-button cuke-button-default"
+        class="cuke-button cuke-button-default cuke-button-normal"
         type="button"
       >
         <span>
@@ -111,7 +111,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
       class="cuke-tooltip-trigger-wrapper"
     >
       <button
-        class="cuke-button cuke-button-default"
+        class="cuke-button cuke-button-default cuke-button-normal"
         type="button"
       >
         <span>
@@ -133,7 +133,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
       class="cuke-tooltip-trigger-wrapper"
     >
       <button
-        class="cuke-button cuke-button-default"
+        class="cuke-button cuke-button-default cuke-button-normal"
         type="button"
       >
         <span>

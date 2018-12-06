@@ -56,7 +56,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
             class="cuke-popconfirm-button-group"
           >
             <button
-              class="cuke-button cuke-button-default cuke-button-small"
+              class="cuke-button cuke-button-default cuke-button-normal cuke-button-small"
               type="button"
             >
               <span>
@@ -137,7 +137,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
             class="cuke-popconfirm-button-group"
           >
             <button
-              class="cuke-button cuke-button-default cuke-button-small"
+              class="cuke-button cuke-button-default cuke-button-normal cuke-button-small"
               type="button"
             >
               <span>
@@ -159,7 +159,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
         class="cuke-tooltip-trigger-wrapper"
       >
         <button
-          class="cuke-button cuke-button-default"
+          class="cuke-button cuke-button-default cuke-button-normal"
           type="button"
         >
           <span>
@@ -223,7 +223,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
             class="cuke-popconfirm-button-group"
           >
             <button
-              class="cuke-button cuke-button-default cuke-button-small"
+              class="cuke-button cuke-button-default cuke-button-normal cuke-button-small"
               type="button"
             >
               <span>
@@ -245,7 +245,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
         class="cuke-tooltip-trigger-wrapper"
       >
         <button
-          class="cuke-button cuke-button-default"
+          class="cuke-button cuke-button-default cuke-button-normal"
           type="button"
         >
           <span>
@@ -309,7 +309,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
             class="cuke-popconfirm-button-group"
           >
             <button
-              class="cuke-button cuke-button-default cuke-button-small"
+              class="cuke-button cuke-button-default cuke-button-normal cuke-button-small"
               type="button"
             >
               <span>
@@ -331,7 +331,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
         class="cuke-tooltip-trigger-wrapper"
       >
         <button
-          class="cuke-button cuke-button-default"
+          class="cuke-button cuke-button-default cuke-button-normal"
           type="button"
         >
           <span>
@@ -395,7 +395,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
             class="cuke-popconfirm-button-group"
           >
             <button
-              class="cuke-button cuke-button-default cuke-button-small"
+              class="cuke-button cuke-button-default cuke-button-normal cuke-button-small"
               type="button"
             >
               <span>
@@ -417,7 +417,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
         class="cuke-tooltip-trigger-wrapper"
       >
         <button
-          class="cuke-button cuke-button-default"
+          class="cuke-button cuke-button-default cuke-button-normal"
           type="button"
         >
           <span>

@@ -6,6 +6,13 @@ import "./styles/changeLog.less"
 const ChangeLog = () => (
   <Timeline>
     <Timeline.Item type="loading">
+      <h2><a>v1.0.1</a></h2>
+      <ul>
+        <li> 优化 Button 组件 link 模式 disabled 的效果 </li>
+        <li> 优化 Button 各种 type 下 disabled 的效果 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item type="loading">
       <h2><a>v1.0.0</a></h2>
       <ul>
         <li> 修复 Radio 默认选择后 被重置的问题  </li>

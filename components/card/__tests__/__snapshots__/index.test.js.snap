@@ -17,7 +17,6 @@ exports[`<Card/> should render a <Card/> components 1`] = `
     >
       <a
         class="cuke-button-link"
-        disabled=""
         href="#"
       >
         <span>
