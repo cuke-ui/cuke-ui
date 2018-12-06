@@ -73,6 +73,7 @@ export default class Button extends PureComponent {
         [`${prefixCls}-success`]: checkType("success"),
         [`${prefixCls}-error`]: checkType("error"),
         [`${prefixCls}-default`]: !disabled && checkType("default"),
+        [`${prefixCls}-normal`]: checkType("default"),
         [`${prefixCls}-info`]: checkType("info"),
         [`${prefixCls}-disabled`]: disabled,
         [`${prefixCls}-loading`]: loading,
@@ -95,8 +96,8 @@ export default class Button extends PureComponent {
     if (href) {
       return (
         <a
-          href={href}
-          disabled
+          href={disabled ? "javascript:void(0);" : href}
+          disabled={disabled}
           className={cls(`${prefixCls}-link`, className, {
             [`${prefixCls}-link-disabled`]: disabled
           })}

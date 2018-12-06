@@ -66,11 +66,14 @@ export default class Pagination extends PureComponent {
     const { prev, next } = this.typeConfig;
     const { current } = this.state;
 
+    const isDisabledPrev = current <= this.defaultCurrentPage;
+    const isDisabledNext = current >= total;
+
     return (
       <section className={cls(prefixCls, className)} {...attr}>
         <Button
-          type="primary"
-          disabled={current <= this.defaultCurrentPage}
+          type={isDisabledPrev ? "default" : "primary"}
+          disabled={isDisabledPrev}
           onClick={() => this.getPageList(prev)}
         >
           {prevText}
@@ -80,8 +83,8 @@ export default class Pagination extends PureComponent {
           {separator} {total}
         </span>
         <Button
-          type="primary"
-          disabled={current >= total}
+          type={isDisabledNext ? "default" : "primary"}
+          disabled={isDisabledNext}
           onClick={() => this.getPageList(next)}
         >
           {nextText}

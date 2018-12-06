@@ -58,7 +58,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         class="cuke-modal-footer"
       >
         <button
-          class="cuke-button cuke-button-default"
+          class="cuke-button cuke-button-default cuke-button-normal"
           type="button"
         >
           <span>
@@ -132,7 +132,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         class="cuke-modal-footer"
       >
         <button
-          class="cuke-button cuke-button-default"
+          class="cuke-button cuke-button-default cuke-button-normal"
           type="button"
         >
           <span>
@@ -260,7 +260,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
         class="cuke-modal-footer"
       >
         <button
-          class="cuke-button cuke-button-default"
+          class="cuke-button cuke-button-default cuke-button-normal"
           type="button"
         >
           <span>
@@ -309,7 +309,7 @@ exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
       class="cuke-modal-footer"
     >
       <button
-        class="cuke-button cuke-button-default"
+        class="cuke-button cuke-button-default cuke-button-normal"
         type="button"
       >
         <span>
