@@ -170,6 +170,15 @@ describe("<Tooltip/>", () => {
     expect(wrapper.find(".cuke-tooltip-light")).toHaveLength(1);
   });
 
+  it("should render custom light theme", () => {
+    const wrapper = shallow(
+      <Tooltip title="测试" hiddenArrow>
+        <Button>1</Button>
+      </Tooltip>
+    );
+    expect(wrapper.find(".cuke-tooltip-hidden-arrow")).toHaveLength(1);
+  });
+
   it("should window cannot trigger click event when un mount", () => {
     const onClick = jest.fn();
     const wrapper = shallow(

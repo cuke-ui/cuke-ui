@@ -46,7 +46,8 @@ export default class Tooltip extends PureComponent {
     title: "",
     trigger: triggerTypes.hover,
     theme: themes[0],
-    onVisibleChange: () => {}
+    onVisibleChange: () => {},
+    hiddenArrow: false // 隐藏三角箭头
   };
 
   static propTypes = {
@@ -55,7 +56,8 @@ export default class Tooltip extends PureComponent {
     title: PropTypes.node,
     trigger: PropTypes.oneOf(Object.values(triggerTypes)),
     position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
-    theme: PropTypes.oneOf(themes)
+    theme: PropTypes.oneOf(themes),
+    hiddenArrow: PropTypes.any
   };
 
   constructor(props) {
@@ -127,7 +129,7 @@ export default class Tooltip extends PureComponent {
   };
 
   onOpenTooltip = () => {
-    // 如果 鼠标离开了当前目标 马上 focus 上去 就取消关闭
+    // 如果 鼠标离开了当前目标 (或者划过了间隙) 马上 focus 上去 就取消关闭
     if (this.closeTimer) {
       clearTimeout(this.closeTimer);
     }
@@ -168,6 +170,7 @@ export default class Tooltip extends PureComponent {
       theme,
       trigger,
       position,
+      hiddenArrow,
       wrapperClassName,
       onVisibleChange, // eslint-disable-line
       visible: visibleFromProps, // eslint-disable-line
@@ -201,7 +204,8 @@ export default class Tooltip extends PureComponent {
               {
                 [`${prefixCls}-show`]: visible,
                 [`${prefixCls}-hide`]: !visible,
-                [`cuke-ui-no-animate`]: visible === null
+                [`cuke-ui-no-animate`]: visible === null,
+                [`${prefixCls}-hidden-arrow`]: hiddenArrow
               }
             )}
             style={{

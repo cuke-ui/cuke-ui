@@ -28,6 +28,7 @@ export default class Popconfirm extends Component {
     cancelButtonProps: {},
     onOk: () => {},
     onCancel: () => {},
+    hiddenArrow: false, // 隐藏三角箭头
     icon: <WarningIcon />
   };
 
@@ -42,7 +43,8 @@ export default class Popconfirm extends Component {
     theme: PropTypes.oneOf(["light", "dark"]),
     okProps: PropTypes.object,
     cancelProps: PropTypes.object,
-    icon: PropTypes.any
+    icon: PropTypes.any,
+    hiddenArrow: PropTypes.bool
   };
 
   constructor(props) {
@@ -109,6 +111,7 @@ export default class Popconfirm extends Component {
       trigger,
       wrapperClassName,
       children,
+      hiddenArrow,
       style
     } = this.props;
 
@@ -119,6 +122,7 @@ export default class Popconfirm extends Component {
         trigger={trigger}
         title={this.renderContent()}
         position={position}
+        hiddenArrow={hiddenArrow}
         onVisibleChange={this._onVisibleChange}
         className={cls(prefixCls, className)}
         wrapperClassName={cls(`${prefixCls}-wrapper`, wrapperClassName)}

@@ -6,13 +6,20 @@ import "./styles/changeLog.less"
 const ChangeLog = () => (
   <Timeline>
     <Timeline.Item type="loading">
+      <h2><a>v1.1.0</a></h2>
+      <ul>
+        <li> 新增 Tooltip, Popover, PopConfirm hiddenArrow 属性, 支持隐藏三角箭头 </li>
+        <li> 重构 Dropdown 和 Select 组件 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v1.0.1</a></h2>
       <ul>
         <li> 优化 Button 组件 link 模式 disabled 的效果 </li>
         <li> 优化 Button 各种 type 下 disabled 的效果 </li>
       </ul>
     </Timeline.Item>
-    <Timeline.Item type="loading">
+    <Timeline.Item >
       <h2><a>v1.0.0</a></h2>
       <ul>
         <li> 修复 Radio 默认选择后 被重置的问题  </li>

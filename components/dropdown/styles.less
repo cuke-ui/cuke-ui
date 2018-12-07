@@ -8,7 +8,8 @@
     display: inline-block;
   }
   &-disabled {
-    pointer-events: none;
+    // pointer-events: none;
+    cursor: not-allowed;
     &-mask {
       position: absolute;
       left: 0;
@@ -17,6 +18,7 @@
       bottom: 0;
       top: 0;
       z-index: @cuke-dropdown-z-index + 1;
+      cursor: not-allowed;
     }
   }
   &-overlay {

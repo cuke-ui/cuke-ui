@@ -148,6 +148,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
 exports[`<Tooltip/> should render custom position 1`] = `
 <div>
   <Tooltip
+    hiddenArrow={false}
     onVisibleChange={[Function]}
     position="top"
     prefixCls="cuke-tooltip"
@@ -172,6 +173,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    hiddenArrow={false}
     onVisibleChange={[Function]}
     position="bottom"
     prefixCls="cuke-tooltip"
@@ -196,6 +198,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    hiddenArrow={false}
     onVisibleChange={[Function]}
     position="left"
     prefixCls="cuke-tooltip"
@@ -220,6 +223,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    hiddenArrow={false}
     onVisibleChange={[Function]}
     position="right"
     prefixCls="cuke-tooltip"

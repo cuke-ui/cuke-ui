@@ -137,7 +137,7 @@ storiesOf('导航', module)
             <Col span={5} offset={2}>
               <h2>禁用</h2>
               <Dropdown overlay={overlay} disabled>
-                <Button>
+                <Button disabled>
                   今日菜单 <DownIcon />
                 </Button>
               </Dropdown>

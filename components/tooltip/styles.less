@@ -10,6 +10,17 @@
   &-trigger-wrapper {
     display: inline-block;
   }
+  &-hidden-arrow {
+    &.@{prefixCls}-position-top,
+    &.@{prefixCls}-position-right,
+    &.@{prefixCls}-position-bottom,
+    &.@{prefixCls}-position-left {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
   &-show {
     &.@{prefixCls}-position-top {
       animation: cuke-slide-down @default-transition forwards;

@@ -155,6 +155,11 @@ storiesOf("数据展示", module)
           鼠标放上来
         </Tooltip>
 
+        <h2>隐藏箭头</h2>
+        <Tooltip title="黄瓜ui" hiddenArrow>
+          <Button>hiddenArrow</Button>
+        </Tooltip>
+
         <h2>改变回调</h2>
         <Tooltip title="黄瓜ui" style={{ marginRight: 10 }} onVisibleChange={(visible) => console.log('visible', visible)}>
           <Button type="primary" hollow>鼠标放上来</Button>
@@ -219,6 +224,11 @@ storiesOf("数据展示", module)
           <Button type="primary" hollow>click</Button>
         </Popover>
 
+        <h2>隐藏箭头</h2>
+        <Popover title="黄瓜ui" content="即插即用" position="right" hiddenArrow>
+          <span> 鼠标放上来 </span>
+        </Popover>
+
         <h2>手动控制关闭</h2>
         <PopoverPage/>
       </div>
@@ -272,6 +282,11 @@ storiesOf("数据展示", module)
 
         <h2>改变回调</h2>
         <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" onVisibleChange={(visible) => console.log('visible', visible)}>
+          <Button type="primary"> 点击领取 🥒 </Button>
+        </Popconfirm>
+
+        <h2>隐藏箭头</h2>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" hiddenArrow>
           <Button type="primary"> 点击领取 🥒 </Button>
         </Popconfirm>
       </div>
