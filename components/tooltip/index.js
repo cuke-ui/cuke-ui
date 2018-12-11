@@ -4,20 +4,24 @@ import PropTypes from "prop-types";
 import { createPortal } from "react-dom";
 
 export class TooltipPortal extends PureComponent {
+  static defaultProps = {
+    getPopupContainer: () => document.body
+  };
   constructor(props) {
     super(props);
     this.el = document.createElement("div");
+    this.container = this.props.getPopupContainer();
   }
 
   componentDidMount() {
-    document.body.appendChild(this.el);
+    this.container.appendChild(this.el);
     if (this.props.onChange) {
       this.props.onChange();
     }
   }
 
   componentWillUnmount() {
-    document.body.removeChild(this.el);
+    this.container.removeChild(this.el);
   }
 
   render() {
@@ -47,6 +51,7 @@ export default class Tooltip extends PureComponent {
     trigger: triggerTypes.hover,
     theme: themes[0],
     onVisibleChange: () => {},
+    getPopupContainer: () => document.body,
     hiddenArrow: false // 隐藏三角箭头
   };
 
@@ -57,6 +62,7 @@ export default class Tooltip extends PureComponent {
     trigger: PropTypes.oneOf(Object.values(triggerTypes)),
     position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
     theme: PropTypes.oneOf(themes),
+    getPopupContainer: PropTypes.func,
     hiddenArrow: PropTypes.any
   };
 
@@ -172,6 +178,7 @@ export default class Tooltip extends PureComponent {
       position,
       hiddenArrow,
       wrapperClassName,
+      getPopupContainer,
       onVisibleChange, // eslint-disable-line
       visible: visibleFromProps, // eslint-disable-line
       ...attr
@@ -194,7 +201,10 @@ export default class Tooltip extends PureComponent {
         {...bindTriggerEvents}
         ref={this.toggleContainer}
       >
-        <TooltipPortal onChange={this.onRestWrapperPosition}>
+        <TooltipPortal
+          onChange={this.onRestWrapperPosition}
+          getPopupContainer={getPopupContainer}
+        >
           <div
             className={cls(
               `${prefixCls}-wrapper`,

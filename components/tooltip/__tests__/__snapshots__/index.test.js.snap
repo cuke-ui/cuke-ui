@@ -7,6 +7,7 @@ exports[`<Tooltip/> should find cuke-tooltip classnames 1`] = `
   onMouseLeave={[Function]}
 >
   <TooltipPortal
+    getPopupContainer={[Function]}
     onChange={[Function]}
   >
     <div
@@ -148,6 +149,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
 exports[`<Tooltip/> should render custom position 1`] = `
 <div>
   <Tooltip
+    getPopupContainer={[Function]}
     hiddenArrow={false}
     onVisibleChange={[Function]}
     position="top"
@@ -173,6 +175,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    getPopupContainer={[Function]}
     hiddenArrow={false}
     onVisibleChange={[Function]}
     position="bottom"
@@ -198,6 +201,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    getPopupContainer={[Function]}
     hiddenArrow={false}
     onVisibleChange={[Function]}
     position="left"
@@ -223,6 +227,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    getPopupContainer={[Function]}
     hiddenArrow={false}
     onVisibleChange={[Function]}
     position="right"

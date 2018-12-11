@@ -67,6 +67,7 @@ export default class Popover extends PureComponent {
       trigger,
       hiddenArrow,
       wrapperClassName,
+      content, // eslint-disable-line
       onVisibleChange, // eslint-disable-line
       visible, // eslint-disable-line,
       children,

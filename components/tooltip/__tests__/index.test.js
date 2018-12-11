@@ -207,6 +207,20 @@ describe("<Tooltip/>", () => {
     }, 100);
   });
 
+  it("should custom popup container", () => {
+    const wrapper = shallow(
+      <Tooltip
+        title="测试"
+        getPopupContainer={() => document.querySelector(".cuke-tooltip")}
+      >
+        <Button>1</Button>
+      </Tooltip>
+    );
+    setTimeout(() => {
+      expect(wrapper.find(".cuke-tooltip > div")).toHaveLength(1);
+    }, 100);
+  });
+
   it.skip("should panel cannot hidden click event when window click", () => {
     const wrapper = shallow(
       <Tooltip title="测试" trigger="click">

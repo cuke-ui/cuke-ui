@@ -4,7 +4,6 @@ exports[`<Popover/> should render a <Popover/> components 1`] = `
 <div>
   <div
     class="cuke-popover"
-    content="11"
   >
     <div
       class="cuke-tooltip"
@@ -35,7 +34,6 @@ exports[`<Popover/> should render a <Popover/> components 1`] = `
   </div>
   <div
     class="cuke-popover"
-    content="11"
   >
     <div
       class="cuke-tooltip"
@@ -71,7 +69,6 @@ exports[`<Popover/> should render a <Popover/> components 1`] = `
   </div>
   <div
     class="cuke-popover"
-    content="11"
   >
     <div
       class="cuke-tooltip"
@@ -107,7 +104,6 @@ exports[`<Popover/> should render a <Popover/> components 1`] = `
   </div>
   <div
     class="cuke-popover"
-    content="11"
   >
     <div
       class="cuke-tooltip"
