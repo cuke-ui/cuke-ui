@@ -33,7 +33,7 @@ exports[`<Select/> should render a <Select/> components 1`] = `
   </div>
   <div
     class="cuke-select-content cuke-select-close cuke-ui-no-animate"
-    style="left:0;top:0"
+    style="width:0;left:0;top:0"
   >
     <div
       class="cuke-select-option"

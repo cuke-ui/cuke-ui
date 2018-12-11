@@ -10,6 +10,9 @@ const ChangeLog = () => (
       <ul>
         <li> 新增 Tooltip, Popover, PopConfirm hiddenArrow 属性, 支持隐藏三角箭头 </li>
         <li> 重构 Dropdown 和 Select 组件 </li>
+        <li> 优化 CityPicker 面板 被遮挡 时 自动调整位置 </li>
+        <li> 新增 Select, Tooltip, Popover, PopConfirm, DropDown 的 resize 事件, 自动调整位置 </li>
+        <li> 修复 Select 组件 Option disabled 时 点击 会触发的 面板 关闭的 问题 </li>
       </ul>
     </Timeline.Item>
     <Timeline.Item>

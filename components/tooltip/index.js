@@ -2,6 +2,8 @@ import React, { PureComponent, createRef } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
 import { createPortal } from "react-dom";
+import { debounce } from "../utils";
+import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
 
 export class TooltipPortal extends PureComponent {
   static defaultProps = {
@@ -144,6 +146,12 @@ export default class Tooltip extends PureComponent {
         this.setWrapperBounding();
         this.props.onVisibleChange(true);
         this.setState({ openLock: true, closeLock: false });
+        scrollIntoViewIfNeeded(this.wrapper.current, {
+          scrollMode: "if-needed",
+          behavior: "smooth",
+          block: "nearest",
+          inline: "nearest"
+        });
       }
     });
   };
@@ -167,6 +175,10 @@ export default class Tooltip extends PureComponent {
       });
     }
   };
+
+  onResizeHandler = debounce(() => {
+    this.setWrapperBounding();
+  }, 500);
 
   render() {
     const {
@@ -240,9 +252,11 @@ export default class Tooltip extends PureComponent {
   }
   componentWillUnmount() {
     window.removeEventListener("click", this.onClickOutsideHandler, false);
+    window.removeEventListener("resize", this.onResizeHandler);
     this.closeTimer = undefined;
   }
   componentDidMount() {
     window.addEventListener("click", this.onClickOutsideHandler, false);
+    window.addEventListener("resize", this.onResizeHandler);
   }
 }

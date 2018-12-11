@@ -16,6 +16,7 @@ exports[`<Dropdown/> should render a <Dropdown/> components 1`] = `
     </div>
     <div
       class="cuke-dropdown-overlay cuke-dropdown-overlay-slideUp"
+      style="top:0;left:0"
     >
       <ul>
         <li>
@@ -43,7 +44,8 @@ exports[`<Dropdown/> should render a <Dropdown/> components 1`] = `
       </a>
     </div>
     <div
-      class="cuke-dropdown-overlay cuke-dropdown-overlay-false"
+      class="cuke-dropdown-overlay"
+      style="top:0;left:0"
     >
       <ul>
         <li>
@@ -62,126 +64,38 @@ exports[`<Dropdown/> should render a <Dropdown/> components 1`] = `
 `;
 
 exports[`<Dropdown/> should render many animate type 1`] = `
-<div>
+<div
+  className="cuke-dropdown"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
   <div
-    class="cuke-dropdown"
+    className="cuke-dropdown-wrap"
   >
-    <div
-      class="cuke-dropdown-wrap"
-    >
-      slideDown
-    </div>
-    <div
-      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideUp"
-    >
-      <ul>
-        <li>
-           红烧牛肉 
-        </li>
-        <li>
-           麻辣干锅 
-        </li>
-        <li>
-           仔姜肉丝 
-        </li>
-      </ul>
-    </div>
+    slideUp
   </div>
   <div
-    class="cuke-dropdown"
+    className="cuke-dropdown-overlay cuke-dropdown-overlay-show cuke-dropdown-overlay-slideUp"
+    style={
+      Object {
+        "left": 0,
+        "top": 0,
+      }
+    }
   >
-    <div
-      class="cuke-dropdown-wrap"
-    >
-      slideDown
-    </div>
-    <div
-      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideDown"
-    >
-      <ul>
-        <li>
-           红烧牛肉 
-        </li>
-        <li>
-           麻辣干锅 
-        </li>
-        <li>
-           仔姜肉丝 
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div
-    class="cuke-dropdown"
-  >
-    <div
-      class="cuke-dropdown-wrap"
-    >
-      slideRight
-    </div>
-    <div
-      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideRight"
-    >
-      <ul>
-        <li>
-           红烧牛肉 
-        </li>
-        <li>
-           麻辣干锅 
-        </li>
-        <li>
-           仔姜肉丝 
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div
-    class="cuke-dropdown"
-  >
-    <div
-      class="cuke-dropdown-wrap"
-    >
-      slideLeft
-    </div>
-    <div
-      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideLeft"
-    >
-      <ul>
-        <li>
-           红烧牛肉 
-        </li>
-        <li>
-           麻辣干锅 
-        </li>
-        <li>
-           仔姜肉丝 
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div
-    class="cuke-dropdown"
-  >
-    <div
-      class="cuke-dropdown-wrap"
-    >
-      no animate
-    </div>
-    <div
-      class="cuke-dropdown-overlay cuke-dropdown-overlay-false"
-    >
-      <ul>
-        <li>
-           红烧牛肉 
-        </li>
-        <li>
-           麻辣干锅 
-        </li>
-        <li>
-           仔姜肉丝 
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li>
+         红烧牛肉 
+      </li>
+      <li>
+         麻辣干锅 
+      </li>
+      <li>
+         仔姜肉丝 
+      </li>
+    </ul>
   </div>
 </div>
 `;

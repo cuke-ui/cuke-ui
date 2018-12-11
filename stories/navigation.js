@@ -106,13 +106,11 @@ storiesOf('导航', module)
             <Col span={5}>
               <Dropdown overlay={overlay}>
                 <a href="#">今日菜单(有动画)</a>
-                <DownIcon />
               </Dropdown>
             </Col>
             <Col span={5}>
               <Dropdown overlay={overlay} animate={false}>
                 <a href="#">今日菜单(无动画)</a>
-                <DownIcon />
               </Dropdown>
             </Col>
             <Col span={5}>

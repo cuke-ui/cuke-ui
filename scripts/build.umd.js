@@ -16,6 +16,9 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
+// eslint-disable-next-line
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
+
 const { version, name, description } = require("../package.json");
 
 const config = {
@@ -128,7 +131,8 @@ const config = {
     new webpack.LoaderOptionsPlugin({
       minimize: true
     }),
-    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn|en-gb/),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+    // new BundleAnalyzerPlugin(),
   ]
 };
 

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import cls from "classnames";
 import CityPickerCore from "./CityPickerCore";
 import Input from "../input";
+import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
 import { DownIcon } from "../icon";
 
 export default class CityPicker extends PureComponent {
@@ -45,6 +46,7 @@ export default class CityPicker extends PureComponent {
   constructor(props) {
     super(props);
     this.toggleContainer = createRef();
+    this.wrapper = createRef();
   }
 
   onCityGroupChange = (selectedCityGroup, index) => {
@@ -65,6 +67,14 @@ export default class CityPicker extends PureComponent {
     const visible = !this.state.visible;
     this.setState({ visible });
     this.props.onPanelVisibleChange(visible);
+    if (visible) {
+      scrollIntoViewIfNeeded(this.wrapper.current, {
+        scrollMode: "if-needed",
+        behavior: "smooth",
+        block: "center",
+        inline: "nearest"
+      });
+    }
   };
   onClickOutsideHandler = e => {
     e.stopPropagation();
@@ -122,6 +132,7 @@ export default class CityPicker extends PureComponent {
             [`${prefixCls}-close`]: !visible,
             "cuke-ui-no-animate": visible === null
           })}
+          ref={this.wrapper}
         >
           <CityPickerCore
             cityList={cityList}

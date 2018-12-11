@@ -4,13 +4,16 @@ import PropTypes from "prop-types";
 import cls from "classnames";
 import Input from "../input";
 import { DownIcon } from "../icon";
+import { debounce } from "../utils";
+import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
 
 export default class Select extends PureComponent {
   state = {
     selectedValue: this.props.defaultValue || this.props.value || "",
     visible: null,
     left: 0,
-    top: 0
+    top: 0,
+    width: 0
   };
   static defaultProps = {
     prefixCls: "cuke-select",
@@ -53,6 +56,12 @@ export default class Select extends PureComponent {
     this.props.onPanelVisibleChange(visible);
     if (visible) {
       this.setWrapperBounding();
+      scrollIntoViewIfNeeded(this.wrapper.current, {
+        scrollMode: "if-needed",
+        behavior: "smooth",
+        block: "nearest",
+        inline: "nearest"
+      });
     }
   };
   onClickOutsideHandler = e => {
@@ -99,6 +108,11 @@ export default class Select extends PureComponent {
     const { left, top, width } = this.getWrapperBounding();
     this.setState({ left, top, width });
   }
+
+  onResizeHandler = debounce(() => {
+    this.setWrapperBounding();
+  }, 500);
+
   render() {
     const { visible, left, top, width } = this.state;
     const {
@@ -165,8 +179,10 @@ export default class Select extends PureComponent {
   }
   componentWillUnmount() {
     window.removeEventListener("click", this.onClickOutsideHandler, false);
+    window.removeEventListener("resize", this.onResizeHandler);
   }
   componentDidMount() {
     window.addEventListener("click", this.onClickOutsideHandler, false);
+    window.addEventListener("resize", this.onResizeHandler);
   }
 }
