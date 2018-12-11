@@ -109,7 +109,7 @@ describe("<Select/>", () => {
     expect(onClick).not.toHaveBeenCalled();
   });
 
-  it("should panel cannot hidden click event when window click", () => {
+  it.skip("should panel cannot hidden click event when window click", () => {
     const wrapper = shallow(
       <Select value="黄瓜">
         <Select.Option value="黄瓜">黄瓜</Select.Option>
@@ -126,7 +126,7 @@ describe("<Select/>", () => {
     assert(wrapper.state().visible === true);
   });
 
-  it("should trigger panel visible change", () => {
+  it.skip("should trigger panel visible change", () => {
     const onPanelVisibleChange = jest.fn();
     const wrapper = shallow(
       <Select value="黄瓜">
@@ -141,7 +141,7 @@ describe("<Select/>", () => {
     });
   });
 
-  it("should cannot trigger panel visible change when disabled groups", () => {
+  it.skip("should cannot trigger panel visible change when disabled groups", () => {
     const onPanelVisibleChange = jest.fn();
     const wrapper = shallow(
       <Select value="黄瓜">

@@ -1,4 +1,5 @@
 import React, { PureComponent, createRef } from "react";
+import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Input from "../input";
@@ -7,17 +8,24 @@ import { DownIcon } from "../icon";
 export default class Select extends PureComponent {
   state = {
     selectedValue: this.props.defaultValue || this.props.value || "",
-    visible: null
+    visible: null,
+    left: 0,
+    top: 0
   };
   static defaultProps = {
     prefixCls: "cuke-select",
     onPanelVisibleChange: () => {},
-    onChange: () => {}
+    onChange: () => {},
+    getPopupContainer: () => document.body,
+    position: "bottom",
+    disabled: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
     onPanelVisibleChange: PropTypes.func,
+    getPopupContainer: PropTypes.func,
     onChange: PropTypes.func,
+    disabled: PropTypes.bool,
     overlay: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -28,6 +36,8 @@ export default class Select extends PureComponent {
     super(props);
     this.timeOutId = null;
     this.toggleContainer = createRef();
+    this.triggerWrapper = createRef();
+    this.wrapper = createRef();
   }
 
   onChange = value => {
@@ -41,25 +51,63 @@ export default class Select extends PureComponent {
       visible
     });
     this.props.onPanelVisibleChange(visible);
+    if (visible) {
+      this.setWrapperBounding();
+    }
   };
   onClickOutsideHandler = e => {
     e.stopPropagation();
     if (
       this.state.visible &&
-      !this.toggleContainer.current.contains(e.target)
+      !this.props.disabled &&
+      !this.toggleContainer.current.contains(e.target) &&
+      !e.target.classList.contains(`${this.props.prefixCls}-option-disabled`)
     ) {
       this.setState({ visible: false });
       this.props.onPanelVisibleChange(false);
     }
   };
+  getWrapperBounding = () => {
+    const {
+      width,
+      height,
+      top,
+      left
+    } = this.triggerWrapper.current.getBoundingClientRect();
+    const {
+      height: wrapperHeight
+    } = this.wrapper.current.getBoundingClientRect();
+
+    const { scrollX, scrollY } = window;
+
+    const positions = {
+      top: {
+        top: top + scrollY - wrapperHeight - 10,
+        left: left + scrollX,
+        width
+      },
+      bottom: {
+        top: top + height + scrollY,
+        left: left + scrollX,
+        width
+      }
+    };
+    return positions[this.props.position];
+  };
+
+  setWrapperBounding() {
+    const { left, top, width } = this.getWrapperBounding();
+    this.setState({ left, top, width });
+  }
   render() {
-    const { visible } = this.state;
+    const { visible, left, top, width } = this.state;
     const {
       prefixCls,
       className,
       disabled,
       placeholder,
       children,
+      getPopupContainer,
       onPanelVisibleChange, //eslint-disable-line
       ...attr
     } = this.props;
@@ -76,6 +124,7 @@ export default class Select extends PureComponent {
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
           })}
+          ref={this.triggerWrapper}
         >
           <Input
             disabled={disabled}
@@ -87,21 +136,30 @@ export default class Select extends PureComponent {
           />
           <DownIcon className={`${prefixCls}-arrow`} />
         </div>
-        <div
-          className={cls(`${prefixCls}-content`, {
-            [`${prefixCls}-open`]: visible,
-            [`${prefixCls}-close`]: !visible,
-            ["cuke-ui-no-animate"]: visible === null
-          })}
-        >
-          {React.Children.map(children, (element, index) => {
-            return React.cloneElement(element, {
-              key: index,
-              selectedValue,
-              onChange: this.onChange
-            });
-          })}
-        </div>
+        {createPortal(
+          <div
+            className={cls(`${prefixCls}-content`, {
+              [`${prefixCls}-open`]: visible,
+              [`${prefixCls}-close`]: !visible,
+              ["cuke-ui-no-animate"]: visible === null
+            })}
+            ref={this.wrapper}
+            style={{
+              width,
+              left,
+              top
+            }}
+          >
+            {React.Children.map(children, (element, index) => {
+              return React.cloneElement(element, {
+                key: index,
+                selectedValue,
+                onChange: this.onChange
+              });
+            })}
+          </div>,
+          getPopupContainer()
+        )}
       </div>
     );
   }
