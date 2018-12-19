@@ -2,12 +2,13 @@
 cuke-ui
 </h1>
 
+<h4 align="center">
+黄瓜 UI : 一个即插即用的 React UI 库
+</h4>
+
 <p align="center">
   <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
     <img src="https://img.shields.io/npm/dm/cuke-ui.svg?style=for-the-badge" alt="npm"/>
-  </a>
-  <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
-    <img src="https://img.shields.io/npm/l/cuke-ui.svg?style=for-the-badge" alt="npm"/>
   </a>
    <a href="https://badge.fury.io/js/cuke-ui" title="npm">
     <img src="https://img.shields.io/npm/v/cuke-ui.svg?style=for-the-badge" alt="npm version"/>
@@ -31,10 +32,6 @@ cuke-ui
     <img src="https://david-dm.org/cuke-ui/cuke-ui/status.svg"/>
   </a>
 </p>
-
-<h4 align="center">
-黄瓜 UI : 一个即插即用的 React UI 库
-</h4>
 
 ### 名字由来
 cuke(黄瓜), 常见的一种蔬菜, 希望这个项目也成为常见的一个依赖(虽然这是不可能的), 
