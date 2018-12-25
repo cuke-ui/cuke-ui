@@ -5,7 +5,13 @@ import "./styles/changeLog.less"
 
 const ChangeLog = () => (
   <Timeline>
-    <Timeline.Item type="loading">
+      <Timeline.Item type="loading">
+      <h2><a>v1.2.1</a></h2>
+      <ul>
+        <li> 修复 ToolTip, Popover, Popconfirm 边界情况异常滚动的情况 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v1.2.0</a></h2>
       <ul>
         <li> 新增 Card 组件 loading, cover, actions, showShadowWhenHover 属性, 满足更多场景 </li>
