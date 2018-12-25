@@ -6,6 +6,13 @@ import "./styles/changeLog.less"
 const ChangeLog = () => (
   <Timeline>
     <Timeline.Item type="loading">
+      <h2><a>v1.2.0</a></h2>
+      <ul>
+        <li> 新增 Card 组件 loading, cover, actions, showShadowWhenHover 属性, 满足更多场景 </li>
+        <li> 新增 CityPicker 组件 defaultCityName cityName 属性</li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item >
       <h2><a>v1.1.0</a></h2>
       <ul>
         <li> 新增 Tooltip, Popover, PopConfirm hiddenArrow 属性, 支持隐藏三角箭头 </li>
