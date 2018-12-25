@@ -31,7 +31,7 @@ export default class CityPickerCore extends PureComponent {
   state = {
     selectedCityGroup:
       this.props.defaultActiveGroup || this.props.activeGroup || 0,
-    selectedCityName: ""
+    selectedCityName: this.props.defaultCityName || this.props.cityName || ""
   };
 
   onCityGroupChange = (selectedCityGroup, index) => () => {

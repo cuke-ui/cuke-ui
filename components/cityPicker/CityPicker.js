@@ -11,7 +11,7 @@ export default class CityPicker extends PureComponent {
     visible: null,
     selectedCityGroup:
       this.props.defaultActiveGroup || this.props.activeGroup || 0,
-    selectedCityName: ""
+    selectedCityName: this.props.defaultCityName || this.props.cityName || ""
   };
   static defaultProps = {
     prefixCls: "cuke-city-picker",
@@ -33,6 +33,8 @@ export default class CityPicker extends PureComponent {
       PropTypes.string,
       PropTypes.number
     ]),
+    defaultCityName: PropTypes.string,
+    cityName: PropTypes.string,
     disabledGroups: PropTypes.array,
     activeGroup: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     disabled: PropTypes.bool,
@@ -138,6 +140,7 @@ export default class CityPicker extends PureComponent {
             cityList={cityList}
             onCityChange={this.onCityChange}
             defaultActiveGroup={selectedCityGroup}
+            defaultCityName={selectedCityName}
             onCityGroupChange={this.onCityGroupChange}
             disabledGroups={disabledGroups}
             loading={loading}

@@ -721,6 +721,9 @@ storiesOf("数据展示", module)
         <h2>默认选中分组</h2>
         <CityPicker defaultActiveGroup={1} cityList={cityList} />
 
+        <h2>默认选中城市</h2>
+        <CityPicker defaultActiveGroup={1} cityList={cityList} defaultCityName="成都"/>
+
         <h2>加载中</h2>
         <CityPicker cityList={cityList} loading />
 

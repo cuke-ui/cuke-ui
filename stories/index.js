@@ -26,13 +26,6 @@ storiesOf("综述", module).add("介绍", () => (
         />
       </a>
       {"  "}
-      <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
-        <img
-          src="https://img.shields.io/npm/l/cuke-ui.svg?style=for-the-badge"
-          alt="npm"
-        />
-      </a>
-      {"  "}
       <a href="https://isitmaintained.com/project/cuke-ui/cuke-ui">
         <img src="https://img.shields.io/github/issues/cuke-ui/cuke-ui.svg?style=for-the-badge" />
       </a>

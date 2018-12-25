@@ -118,11 +118,30 @@ describe("<CityPicker/>", () => {
     assert(wrapper.find(CityPickerCore).length === 1);
   });
 
-  it("should render custom number active city group", () => {
+  it("should render custom default active city group", () => {
     const wrapper = shallow(
       <CityPicker cityList={cityList} defaultActiveGroup={2} />
     );
     assert(wrapper.state().selectedCityGroup === 2);
+  });
+
+  it("should render custom active city group", () => {
+    const wrapper = shallow(<CityPicker cityList={cityList} activeGroup={2} />);
+    assert(wrapper.state().selectedCityGroup === 2);
+  });
+
+  it("should render custom default city name", () => {
+    const wrapper = shallow(
+      <CityPicker cityList={cityList} defaultCityName={"成都"} />
+    );
+    assert(wrapper.state().selectedCityName === "成都");
+  });
+
+  it("should render custom city name", () => {
+    const wrapper = shallow(
+      <CityPicker cityList={cityList} cityName={"成都"} />
+    );
+    assert(wrapper.state().selectedCityName === "成都");
   });
 
   it("should render custom string active city group ", () => {
