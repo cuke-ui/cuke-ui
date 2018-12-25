@@ -145,12 +145,13 @@ export default class Tooltip extends PureComponent {
       if (!this.state.openLock) {
         this.setWrapperBounding();
         this.props.onVisibleChange(true);
-        this.setState({ openLock: true, closeLock: false });
-        scrollIntoViewIfNeeded(this.wrapper.current, {
-          scrollMode: "if-needed",
-          behavior: "smooth",
-          block: "nearest",
-          inline: "nearest"
+        this.setState({ openLock: true, closeLock: false }, () => {
+          scrollIntoViewIfNeeded(this.wrapper.current, {
+            scrollMode: "if-needed",
+            behavior: "smooth",
+            block: "nearest",
+            inline: "nearest"
+          });
         });
       }
     });
