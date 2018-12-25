@@ -230,7 +230,7 @@ storiesOf("数据展示", module)
         </Popover>
 
         <h2>手动控制关闭</h2>
-        <PopoverPage/>
+        <PopoverPage />
       </div>
     )
   )
@@ -239,7 +239,7 @@ storiesOf("数据展示", module)
     () => (
       <div>
         <h2>基本使用</h2>
-        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="right" onOk={()=> console.log('ok')} onCancel={()=> console.log('cancel')}>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="right" onOk={() => console.log('ok')} onCancel={() => console.log('cancel')}>
           <Button type="primary"> 点击领取 🥒 </Button>
         </Popconfirm>
 
@@ -252,10 +252,10 @@ storiesOf("数据展示", module)
         <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top">
           <Button type="primary">上</Button>
         </Popconfirm>
-        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="bottom" style={{marginLeft: "10px"}}>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="bottom" style={{ marginLeft: "10px" }}>
           <Button type="primary">下</Button>
         </Popconfirm>
-        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="left" style={{margin: "0 10px"}}>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="left" style={{ margin: "0 10px" }}>
           <Button type="primary">左</Button>
         </Popconfirm>
         <Popconfirm title="确认领取可口美味的黄瓜吗?" position="right">
@@ -271,12 +271,12 @@ storiesOf("数据展示", module)
         </Popconfirm>
 
         <h2>自定义图标</h2>
-        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" icon={<SuccessIcon/>}>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" icon={<SuccessIcon />}>
           <Button type="primary"> 点击领取 🥒 </Button>
         </Popconfirm>
 
         <h2>自定义按钮属性</h2>
-        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" okButtonProps={{loading: true}} cancelButtonProps={{disabled: true}}>
+        <Popconfirm title="确认领取可口美味的黄瓜吗?" position="top" okButtonProps={{ loading: true }} cancelButtonProps={{ disabled: true }}>
           <Button type="primary"> 点击领取 🥒 </Button>
         </Popconfirm>
 
@@ -722,7 +722,7 @@ storiesOf("数据展示", module)
         <CityPicker defaultActiveGroup={1} cityList={cityList} />
 
         <h2>默认选中城市</h2>
-        <CityPicker defaultActiveGroup={1} cityList={cityList} defaultCityName="成都"/>
+        <CityPicker defaultActiveGroup={1} cityList={cityList} defaultCityName="成都" />
 
         <h2>加载中</h2>
         <CityPicker cityList={cityList} loading />
@@ -842,6 +842,13 @@ storiesOf("数据展示", module)
           <div> 内容 1</div>
         </Card>
 
+        <h2>鼠标悬浮显示阴影</h2>
+        <Card title="黄瓜 ui" showShadowWhenHover>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
         <h2>无标题</h2>
         <Card extra={<Button href="#">更多</Button>}>
           <div> 内容 1</div>
@@ -854,24 +861,51 @@ storiesOf("数据展示", module)
           <div> 内容 1</div>
         </Card>
 
+        <h2>配合图片使用</h2>
+
+        <Card title="黄瓜 ui" showShadowWhenHover style={{width: 300}} cover="https://dummyimage.com/300x200/396/fff">
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
+        <h2>加载中</h2>
+
+        <Card title="黄瓜 ui" loading tip="加载中">
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
+        <h2>底部的扩展 action</h2>
+        <Card title="Action" actions={[
+          <SuccessIcon key="1" />,
+          <InfoIcon key="2" />,
+          <ErrorIcon key="3" />
+        ]}>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+          <div> 内容 1</div>
+        </Card>
+
         <h2>组合排列</h2>
         <Row>
           <Col span={8}>
-            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{width: 300}}>
+            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{ width: 300 }}>
               <div> 内容 1</div>
               <div> 内容 1</div>
               <div> 内容 1</div>
             </Card>
           </Col>
           <Col span={8}>
-            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{width: 300}}>
+            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{ width: 300 }}>
               <div> 内容 1</div>
               <div> 内容 1</div>
               <div> 内容 1</div>
             </Card>
           </Col>
           <Col span={8}>
-            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{width: 300}}>
+            <Card title="黄瓜 ui" extra={<Button href="#">更多</Button>} style={{ width: 300 }}>
               <div> 内容 1</div>
               <div> 内容 1</div>
               <div> 内容 1</div>

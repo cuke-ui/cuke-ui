@@ -6,8 +6,27 @@
 .@{prefixCls} {
   border: 1px solid @border-color;
   border-radius: @border-radius;
+  transition: all @default-transition;
   &.@{prefixCls}-shadow {
-    box-shadow: @default-shadow;
+    box-shadow: @default-section-shadow;
+  }
+  &.@{prefixCls}-hover {
+    &:hover {
+      box-shadow: @default-shadow;
+    }
+  }
+  &.@{prefixCls}-cover {
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
+    .@{prefixCls}-header {
+      padding: 0;
+      display: block;
+      &-title {
+        padding: @cuke-card-title-padding;
+      }
+    }
   }
   &-header {
     padding: @cuke-card-header-padding;
@@ -32,5 +51,29 @@
   }
   &-content {
     padding: @cuke-card-content-padding;
+  }
+  &-actions {
+    border-top: 1px solid @border-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-item {
+      text-align: center;
+      padding: 12px 0;
+      flex: 1;
+      background-color: @bg-color;
+      cursor: pointer;
+      font-size: @font-size;
+      color: @font-color;
+      transition: color @default-transition;
+
+      &:hover {
+        color: @primary-color;
+      }
+
+      & + .@{prefixCls}-actions-item {
+        border-left: 1px solid @border-color;
+      }
+    }
   }
 }
