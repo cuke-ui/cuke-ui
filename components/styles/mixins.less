@@ -2,7 +2,7 @@
   color: @font-color;
   background-color: @color;
   border: 1px solid @color;
-  &:not(.cuke-button-disabled):not(.cuke-button-default) {
+  &:not(.cuke-button-disabled):not(.cuke-button-default):not(.cuke-button-dashed) {
     &:hover,
     &:active,
     &:focus {
@@ -18,10 +18,14 @@
       color: lighten(@primary-color, @lighten);
     }
   }
-  &.cuke-button-disabled:not(.cuke-button-default) {
-    // cursor: not-allowed;
-    // color: #fff;
-    // background-color: fade(@color, 10%);
+  &.cuke-button-dashed {
+    border: 1px dashed @border-color;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: lighten(@color, @lighten);
+      color: lighten(@font-color, @lighten);
+    }
   }
 }
 
@@ -52,6 +56,7 @@
     }
   }
   &.cuke-button-dashed {
+    border: 1px dashed @color;
     &:hover,
     &:active,
     &:focus {

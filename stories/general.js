@@ -76,6 +76,14 @@ storiesOf('普通', module).add(
         虚线
       </Button>
 
+      <Button type="info" hollow dashed onClick={action('clicked')}>
+        虚线
+      </Button>
+
+      <Button type="error" hollow dashed disabled onClick={action('clicked')}>
+        禁用
+      </Button>
+
       <Button type="primary" hollow loading={true} onClick={action('clicked')}>
         加载中
       </Button>
