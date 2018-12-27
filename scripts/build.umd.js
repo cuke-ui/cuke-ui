@@ -21,6 +21,15 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer")
 
 const { version, name, description } = require("../package.json");
 
+const LOGO = `
+              __                    _ 
+  _______  __/ /_____        __  __(_)
+ / ___/ / / / //_/ _ \\______/ / / / / 
+/ /__/ /_/ / ,< /  __/_____/ /_/ / /  
+\\___/\\__,_/_/|_|\\___/     \\__,_/_/   
+                                      
+`
+
 const config = {
   mode: "production",
   entry: {
@@ -122,7 +131,7 @@ const config = {
     }),
     // 在打包的文件之前 加上版权说明
     new webpack.BannerPlugin(` \n ${name} v${version} \n ${description}
-    \n ${fs.readFileSync(path.join(process.cwd(), "LICENSE"))}
+    \n ${LOGO}\n ${fs.readFileSync(path.join(process.cwd(), "LICENSE"))}
   `),
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": JSON.stringify("production"),

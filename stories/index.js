@@ -9,6 +9,21 @@ import CodeBlock from "./codeBlock"
 import ChangeLog from "./changeLog";
 import "./styles/index.less"
 
+
+const LOGO = `
+
+              __                    _ 
+  _______  __/ /_____        __  __(_)
+ / ___/ / / / //_/ _ \\______/ / / / / 
+/ /__/ /_/ / ,< /  __/_____/ /_/ / /  
+\\___/\\__,_/_/|_|\\___/      \\__,_/_/   
+                                      
+
+
+`
+console.log('VGhhbmsgeW91IGZvciB1c2luZyBjdWtlIHVp')
+console.log(LOGO)
+
 storiesOf("综述", module).add("介绍", () => (
   <article style={{ padding: 20 }} className="index-page">
     <h1 style={{ fontSize: 40, padding: 0, margin: 0 }}>

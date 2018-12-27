@@ -5,7 +5,15 @@ import "./styles/changeLog.less"
 
 const ChangeLog = () => (
   <Timeline>
-      <Timeline.Item type="loading">
+    <Timeline.Item type="loading">
+      <h2><a>v1.2.2</a></h2>
+      <ul>
+        <li> 重构 Dropdown , 修复光标快速划过按钮范围经常出现菜单不会收缩的bug </li>
+        <li> 修复 Button组件 虚线不显示的问题 </li>
+        <li> 新增 cuke-ui 的背景介绍 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item >
       <h2><a>v1.2.1</a></h2>
       <ul>
         <li> 修复 ToolTip, Popover, Popconfirm 边界情况异常滚动的情况 </li>
