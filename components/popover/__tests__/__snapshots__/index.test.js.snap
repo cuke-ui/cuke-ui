@@ -173,6 +173,7 @@ exports[`<Popover/> should render a <Popover/> components 1`] = `
 exports[`<Popover/> should render custom position 1`] = `
 <div>
   <Popover
+    disabled={false}
     hiddenArrow={false}
     onVisibleChange={[Function]}
     position="top"
@@ -198,6 +199,7 @@ exports[`<Popover/> should render custom position 1`] = `
     </Button>
   </Popover>
   <Popover
+    disabled={false}
     hiddenArrow={false}
     onVisibleChange={[Function]}
     position="bottom"
@@ -223,6 +225,7 @@ exports[`<Popover/> should render custom position 1`] = `
     </Button>
   </Popover>
   <Popover
+    disabled={false}
     hiddenArrow={false}
     onVisibleChange={[Function]}
     position="left"
@@ -248,6 +251,7 @@ exports[`<Popover/> should render custom position 1`] = `
     </Button>
   </Popover>
   <Popover
+    disabled={false}
     hiddenArrow={false}
     onVisibleChange={[Function]}
     position="right"

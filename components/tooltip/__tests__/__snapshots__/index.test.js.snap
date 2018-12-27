@@ -149,6 +149,7 @@ exports[`<Tooltip/> should render a <Tooltip/> components 1`] = `
 exports[`<Tooltip/> should render custom position 1`] = `
 <div>
   <Tooltip
+    disabled={false}
     getPopupContainer={[Function]}
     hiddenArrow={false}
     onVisibleChange={[Function]}
@@ -175,6 +176,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    disabled={false}
     getPopupContainer={[Function]}
     hiddenArrow={false}
     onVisibleChange={[Function]}
@@ -201,6 +203,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    disabled={false}
     getPopupContainer={[Function]}
     hiddenArrow={false}
     onVisibleChange={[Function]}
@@ -227,6 +230,7 @@ exports[`<Tooltip/> should render custom position 1`] = `
     </Button>
   </Tooltip>
   <Tooltip
+    disabled={false}
     getPopupContainer={[Function]}
     hiddenArrow={false}
     onVisibleChange={[Function]}

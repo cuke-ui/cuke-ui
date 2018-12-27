@@ -13,6 +13,7 @@ export default class Popover extends PureComponent {
     title: "",
     theme: "light",
     trigger: "hover",
+    disabled: false,
     onVisibleChange: () => {},
     hiddenArrow: false
   };
@@ -71,6 +72,7 @@ export default class Popover extends PureComponent {
       onVisibleChange, // eslint-disable-line
       visible, // eslint-disable-line,
       children,
+      disabled,
       ...attr
     } = this.props;
 
@@ -80,6 +82,7 @@ export default class Popover extends PureComponent {
           theme={theme}
           visible={visible}
           trigger={trigger}
+          disabled={disabled}
           hiddenArrow={hiddenArrow}
           title={this.renderContent()}
           position={position}

@@ -1,7 +1,6 @@
 @import "../../components/styles/vars.less";
 
 .example-dropdown-list {
-  border: 1px solid @border-color;
   border-radius: @border-radius;
   width: 138px;
   li {
@@ -17,6 +16,13 @@
     }
     &:last-child {
       border-bottom: none;
+    }
+
+    a {
+      color: @font-color;
+      &:hover {
+        color: @primary-color;
+      }
     }
   }
 

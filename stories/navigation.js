@@ -21,9 +21,9 @@ import StepsPage from './pages/stepsPage';
 
 const overlay = (
   <ul className="example-dropdown-list">
-    <li> 红烧牛肉 </li>
-    <li> 麻辣干锅 </li>
-    <li> 仔姜肉丝 </li>
+    <li> <a href="https://github.com/cuke-ui/cuke-ui">红烧牛肉</a></li>
+    <li> <a href="https://github.com/cuke-ui/cuke-ui">麻辣干锅</a></li>
+    <li> <a href="https://github.com/cuke-ui/cuke-ui">子酱肉丝</a></li>
   </ul>
 );
 
@@ -109,11 +109,6 @@ storiesOf('导航', module)
               </Dropdown>
             </Col>
             <Col span={5}>
-              <Dropdown overlay={overlay} animate={false}>
-                <a href="#">今日菜单(无动画)</a>
-              </Dropdown>
-            </Col>
-            <Col span={5}>
               <Dropdown overlay={overlay}>
                 <Button>
                   今日菜单 <DownIcon />
@@ -142,6 +137,41 @@ storiesOf('导航', module)
             </Col>
           </Row>
 
+          <h2>四个方向</h2>
+          <Row>
+            <Col span={3}>
+              <Dropdown overlay={overlay} position="right">
+                <Button type="primary">
+                  right <DownIcon />
+                </Button>
+              </Dropdown>
+            </Col>
+
+            <Col span={3} offset={2}>
+              <Dropdown overlay={overlay} position="top">
+                <Button type="primary">
+                  top <DownIcon />
+                </Button>
+              </Dropdown>
+            </Col>
+
+            <Col span={3} offset={2}>
+              <Dropdown overlay={overlay} position="bottom">
+                <Button type="primary">
+                  bottom <DownIcon />
+                </Button>
+              </Dropdown>
+            </Col>
+
+            <Col span={3} offset={2}>
+              <Dropdown overlay={overlay} position="left">
+                <Button type="primary">
+                  left <DownIcon />
+                </Button>
+              </Dropdown>
+            </Col>
+          </Row>
+
           <h2>触发方式</h2>
           <Row>
             <Col span={8}>
@@ -157,46 +187,6 @@ storiesOf('导航', module)
                 <Button type="primary">
                   hover 触发 <DownIcon />
                 </Button>
-              </Dropdown>
-            </Col>
-          </Row>
-
-          <h2>内置动画</h2>
-          <Row>
-            <Col span={4}>
-              <Dropdown overlay={overlay} animate="slideUp">
-                <Button type="primary">
-                  sliderUp
-							</Button>
-              </Dropdown>
-            </Col>
-
-            <Col span={4}>
-              <Dropdown overlay={overlay} animate="slideDown">
-                <Button type="primary">
-                  sliderDown
-							</Button>
-              </Dropdown>
-            </Col>
-            <Col span={4}>
-              <Dropdown overlay={overlay} animate="slideRight">
-                <Button type="primary">
-                  slideRight
-							</Button>
-              </Dropdown>
-            </Col>
-            <Col span={4}>
-              <Dropdown overlay={overlay} animate="slideLeft">
-                <Button type="primary">
-                  sliderLeft
-							</Button>
-              </Dropdown>
-            </Col>
-            <Col span={4}>
-              <Dropdown overlay={overlay} animate={false}>
-                <Button type="primary">
-                  无动画
-							</Button>
               </Dropdown>
             </Col>
           </Row>

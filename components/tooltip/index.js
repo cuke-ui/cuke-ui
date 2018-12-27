@@ -54,7 +54,8 @@ export default class Tooltip extends PureComponent {
     theme: themes[0],
     onVisibleChange: () => {},
     getPopupContainer: () => document.body,
-    hiddenArrow: false // 隐藏三角箭头
+    hiddenArrow: false, // 隐藏三角箭头
+    disabled: false
   };
 
   static propTypes = {
@@ -65,7 +66,8 @@ export default class Tooltip extends PureComponent {
     position: PropTypes.oneOf(["top", "right", "left", "bottom"]),
     theme: PropTypes.oneOf(themes),
     getPopupContainer: PropTypes.func,
-    hiddenArrow: PropTypes.any
+    hiddenArrow: PropTypes.any,
+    disabled: PropTypes.bool
   };
 
   constructor(props) {
@@ -192,6 +194,7 @@ export default class Tooltip extends PureComponent {
       hiddenArrow,
       wrapperClassName,
       getPopupContainer,
+      disabled,
       onVisibleChange, // eslint-disable-line
       visible: visibleFromProps, // eslint-disable-line
       ...attr
@@ -200,12 +203,14 @@ export default class Tooltip extends PureComponent {
 
     const isHover = trigger === triggerTypes["hover"];
 
-    const bindTriggerEvents = isHover
-      ? {
-          onMouseEnter: this.onOpenTooltip,
-          onMouseLeave: this.onCloseTooltip
-        }
-      : { onClick: this.onOpenTooltip };
+    const bindTriggerEvents =
+      !disabled &&
+      (isHover
+        ? {
+            onMouseEnter: this.onOpenTooltip,
+            onMouseLeave: this.onCloseTooltip
+          }
+        : { onClick: this.onOpenTooltip });
 
     return (
       <div

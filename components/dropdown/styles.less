@@ -1,49 +1,14 @@
 @import "../styles/vars.less";
-@import "../styles/animate.less";
-@import "../styles/mixins.less";
 @prefixCls : cuke-dropdown;
 .@{prefixCls} {
   position: relative;
-  &-wrap {
-    display: inline-block;
-  }
-  &-disabled {
-    // pointer-events: none;
-    cursor: not-allowed;
-    &-mask {
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: auto;
-      bottom: 0;
-      top: 0;
-      z-index: @cuke-dropdown-z-index + 1;
-      cursor: not-allowed;
-    }
-  }
-  &-overlay {
-    position: absolute;
-    top: 105%;
-    left: 0;
-    display: none;
-    z-index: @cuke-dropdown-z-index;
-    &-show {
-      display: block;
-    }
-    &-hide {
-      animation: cuke-picker-close @default-transition forwards;
-    }
-    &-slideUp {
-      animation: cuke-slide-up @default-transition forwards;
-    }
-    &-slideDown {
-      animation: cuke-slide-down @default-transition forwards;
-    }
-    &-slideLeft {
-      animation: cuke-slide-left @default-transition forwards;
-    }
-    &-slideRight {
-      animation: cuke-slide-right @default-transition forwards;
+  &-wrapper {
+    padding: 0 !important;
+    background-color: transparent !important;
+    z-index: @cuke-dropdown-z-index !important;
+    .cuke-popover-content {
+      padding: 0 !important;
+      min-width: unset !important;
     }
   }
 }

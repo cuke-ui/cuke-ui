@@ -15,6 +15,7 @@ module.exports = {
     "/components/icon",
     "/components/form",
     "/components/wordPad",
+    "/components/dropdown",
   ],
   "transformIgnorePatterns": [
     "/node_modules/",

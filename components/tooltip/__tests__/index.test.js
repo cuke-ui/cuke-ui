@@ -179,6 +179,17 @@ describe("<Tooltip/>", () => {
     expect(wrapper.find(".cuke-tooltip-hidden-arrow")).toHaveLength(1);
   });
 
+  it("should can not trigger onVisibleChange when disabled", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Tooltip title="测试" disabled onVisibleChange={onChange}>
+        <Button>1</Button>
+      </Tooltip>
+    );
+    wrapper.find(".cuke-tooltip").simulate("mouseleave");
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
   it("should window cannot trigger click event when un mount", () => {
     const onClick = jest.fn();
     const wrapper = shallow(

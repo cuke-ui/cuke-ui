@@ -433,6 +433,7 @@ exports[`<Popconfirm/> should render a <Popconfirm/> components 1`] = `
 exports[`<Popconfirm/> should render custom icon 1`] = `
 <Popover
   className="cuke-popconfirm"
+  disabled={false}
   hiddenArrow={false}
   onVisibleChange={[Function]}
   position="top"
@@ -515,6 +516,7 @@ exports[`<Popconfirm/> should render custom position 1`] = `
   <Popconfirm
     cancelButtonProps={Object {}}
     cancelText="取消"
+    disabled={false}
     hiddenArrow={false}
     icon={<WarningIcon />}
     okButtonProps={Object {}}
@@ -547,6 +549,7 @@ exports[`<Popconfirm/> should render custom position 1`] = `
   <Popconfirm
     cancelButtonProps={Object {}}
     cancelText="取消"
+    disabled={false}
     hiddenArrow={false}
     icon={<WarningIcon />}
     okButtonProps={Object {}}
@@ -579,6 +582,7 @@ exports[`<Popconfirm/> should render custom position 1`] = `
   <Popconfirm
     cancelButtonProps={Object {}}
     cancelText="取消"
+    disabled={false}
     hiddenArrow={false}
     icon={<WarningIcon />}
     okButtonProps={Object {}}
@@ -611,6 +615,7 @@ exports[`<Popconfirm/> should render custom position 1`] = `
   <Popconfirm
     cancelButtonProps={Object {}}
     cancelText="取消"
+    disabled={false}
     hiddenArrow={false}
     icon={<WarningIcon />}
     okButtonProps={Object {}}

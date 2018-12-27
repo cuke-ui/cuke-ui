@@ -3,99 +3,78 @@
 exports[`<Dropdown/> should render a <Dropdown/> components 1`] = `
 <div>
   <div
-    class="cuke-dropdown"
+    class="cuke-popover cuke-dropdown"
   >
     <div
-      class="cuke-dropdown-wrap"
+      class="cuke-tooltip"
     >
-      <a
-        href="#"
+      <div
+        class="cuke-tooltip-wrapper cuke-tooltip-position-bottom cuke-tooltip-light cuke-popover-wrapper cuke-dropdown-wrapper cuke-tooltip-hide cuke-ui-no-animate"
+        style="left:0;top:0"
       >
-        今日菜单(有动画)
-      </a>
-    </div>
-    <div
-      class="cuke-dropdown-overlay cuke-dropdown-overlay-slideUp"
-      style="top:0;left:0"
-    >
-      <ul>
-        <li>
-           红烧牛肉 
-        </li>
-        <li>
-           麻辣干锅 
-        </li>
-        <li>
-           仔姜肉丝 
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div
-    class="cuke-dropdown"
-  >
-    <div
-      class="cuke-dropdown-wrap"
-    >
-      <a
-        href="#"
+        <div
+          class="cuke-popover-content"
+        >
+          <ul>
+            <li>
+               红烧牛肉 
+            </li>
+            <li>
+               麻辣干锅 
+            </li>
+            <li>
+               仔姜肉丝 
+            </li>
+          </ul>
+        </div>
+      </div>
+      <span
+        class="cuke-tooltip-trigger-wrapper"
       >
-        今日菜单(无动画)
-      </a>
+        <a
+          href="#"
+        >
+          今日菜单(有动画)
+        </a>
+      </span>
     </div>
+  </div>
+  <div
+    class="cuke-popover cuke-dropdown"
+  >
     <div
-      class="cuke-dropdown-overlay"
-      style="top:0;left:0"
+      class="cuke-tooltip"
     >
-      <ul>
-        <li>
-           红烧牛肉 
-        </li>
-        <li>
-           麻辣干锅 
-        </li>
-        <li>
-           仔姜肉丝 
-        </li>
-      </ul>
+      <div
+        class="cuke-tooltip-wrapper cuke-tooltip-position-bottom cuke-tooltip-light cuke-popover-wrapper cuke-dropdown-wrapper cuke-tooltip-hide cuke-ui-no-animate"
+        style="left:0;top:0"
+      >
+        <div
+          class="cuke-popover-content"
+        >
+          <ul>
+            <li>
+               红烧牛肉 
+            </li>
+            <li>
+               麻辣干锅 
+            </li>
+            <li>
+               仔姜肉丝 
+            </li>
+          </ul>
+        </div>
+      </div>
+      <span
+        class="cuke-tooltip-trigger-wrapper"
+      >
+        <a
+          href="#"
+        >
+          今日菜单(无动画)
+        </a>
+      </span>
     </div>
-  </div>
-</div>
-`;
-
-exports[`<Dropdown/> should render many animate type 1`] = `
-<div
-  className="cuke-dropdown"
-  onBlur={[Function]}
-  onFocus={[Function]}
-  onMouseEnter={[Function]}
-  onMouseLeave={[Function]}
->
-  <div
-    className="cuke-dropdown-wrap"
-  >
-    slideUp
-  </div>
-  <div
-    className="cuke-dropdown-overlay cuke-dropdown-overlay-show cuke-dropdown-overlay-slideUp"
-    style={
-      Object {
-        "left": 0,
-        "top": 0,
-      }
-    }
-  >
-    <ul>
-      <li>
-         红烧牛肉 
-      </li>
-      <li>
-         麻辣干锅 
-      </li>
-      <li>
-         仔姜肉丝 
-      </li>
-    </ul>
   </div>
 </div>
 `;
