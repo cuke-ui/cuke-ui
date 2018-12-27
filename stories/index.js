@@ -179,3 +179,11 @@ storiesOf("综述", module).add("介绍", () => (
       <ChangeLog />
     </>
   ))
+  .add(`关于cuke-ui`, () => (
+    <>
+      <ReactMarkDown source={require('./markdown/cuke.md')} renderers={{
+        CodeBlock,
+        Code: CodeBlock,
+      }} />
+    </>
+  ))
