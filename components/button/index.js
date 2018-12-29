@@ -67,23 +67,16 @@ export default class Button extends PureComponent {
       ...attr,
       ...isDisabled,
       type: htmlType,
-      className: cls(prefixCls, {
-        [`${prefixCls}-primary`]: checkType("primary"),
-        [`${prefixCls}-warning`]: checkType("warning"),
-        [`${prefixCls}-success`]: checkType("success"),
-        [`${prefixCls}-error`]: checkType("error"),
-        [`${prefixCls}-default`]: !disabled && checkType("default"),
+      className: cls(prefixCls, className, {
+        [`${prefixCls}-${type}`]: !checkType("default"),
         [`${prefixCls}-normal`]: checkType("default"),
-        [`${prefixCls}-info`]: checkType("info"),
         [`${prefixCls}-disabled`]: disabled,
         [`${prefixCls}-loading`]: loading,
         [`${prefixCls}-block`]: block,
         [`${prefixCls}-hollow`]: hollow,
-        [`${prefixCls}-large`]: size === "large",
-        [`${prefixCls}-small`]: size === "small",
+        [`${prefixCls}-${size}`]: size !== "default",
         [`${prefixCls}-dashed`]: dashed,
-        [`${prefixCls}-circle`]: circle,
-        className
+        [`${prefixCls}-circle`]: circle
       })
     };
 
