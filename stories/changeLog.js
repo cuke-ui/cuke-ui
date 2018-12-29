@@ -306,7 +306,7 @@ const ChangeLog = () => (
         </li>
         <li>优化示例</li>
         <li>CityPicker 增加 panelVisibleChange 方法</li>
-        <li>Modal 和 Drawer 组件 target 方法 替换成 getTarget</li>
+        <li>Modal 和 Drawer 组件 target 方法 替换成 getPopupContainer</li>
         <li>增加 Modal 组件 自定义 footer 的示例</li>
         <li>增加 Select, CityPicker, DatePicker 的关闭动画</li>
         <li>DataPicker 增加 loading 属性</li>

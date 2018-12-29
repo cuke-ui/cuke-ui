@@ -38,12 +38,12 @@
     transition: @default-transition;
   }
   &-content {
-    min-width: @cuke-date-picker-content-width;
+    width: @cuke-date-picker-content-width;
     height: auto;
     overflow-y: auto;
     position: absolute;
     left: 0;
-    top: 100%;
+    top: 0;
     margin-top: @picker-offset-top;
     transform: scale(0);
     background: #fff;
@@ -52,7 +52,6 @@
     box-shadow: @default-shadow;
     padding: @cuke-date-picker-padding;
     border-radius: @border-radius;
-    transition: all @default-transition;
   }
   &-header {
     margin-left: 12px;
@@ -113,7 +112,6 @@
     display: flex;
     align-items: center;
     align-content: center;
-    justify-content: space-between;
     flex-wrap: wrap;
     .@{prefixCls}-item {
       text-align: center;
@@ -122,7 +120,7 @@
       height: @cuke-date-picker-date-height;
       line-height: @cuke-date-picker-date-height;
       border-radius: 50%;
-      margin-bottom: @cuke-date-picker-date-offset;
+      margin: @cuke-date-picker-date-offset;
       cursor: pointer;
       border: 1px solid transparent;
       transition: all @default-transition;

@@ -12,7 +12,7 @@ export default class Drawer extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-drawer",
     visible: false,
-    getTarget: () => document.body,
+    getPopupContainer: () => document.body,
     title: "",
     onClose: () => {},
     maskClosable: true,
@@ -44,7 +44,7 @@ export default class Drawer extends PureComponent {
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     placement: PropTypes.oneOf(placements),
-    getTarget: PropTypes.func,
+    getPopupContainer: PropTypes.func,
     onClose: PropTypes.func
   };
   constructor(props) {
@@ -83,7 +83,7 @@ export default class Drawer extends PureComponent {
       visible,
       onClose,
       className,
-      getTarget,
+      getPopupContainer,
       closable,
       maskClosable,
       showMask,
@@ -145,7 +145,7 @@ export default class Drawer extends PureComponent {
           </div>
         </div>
       </>,
-      getTarget()
+      getPopupContainer()
     );
   }
 }

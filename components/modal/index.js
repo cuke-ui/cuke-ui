@@ -43,7 +43,7 @@ export default class Modal extends PureComponent {
     prefixCls: "cuke-modal",
     visible: false,
     isStaticMethod: false, // 用来区分 是 Modal.xx() 还是 <Modal/>
-    getTarget: () => document.body,
+    getPopupContainer: () => document.body,
     width: 520,
     title: "",
     onOk: () => {},
@@ -93,7 +93,7 @@ export default class Modal extends PureComponent {
     closable: PropTypes.bool,
     maskClosable: PropTypes.bool,
     showMask: PropTypes.bool,
-    getTarget: PropTypes.func,
+    getPopupContainer: PropTypes.func,
     zIndex: PropTypes.number,
     width: PropTypes.number,
     footer: PropTypes.oneOfType([
@@ -256,7 +256,7 @@ export default class Modal extends PureComponent {
       okText,
       cancelText,
       confirmLoading,
-      getTarget,
+      getPopupContainer,
       centered,
       closable,
       maskClosable,
@@ -357,7 +357,7 @@ export default class Modal extends PureComponent {
           </div>
         </div>
       </>,
-      getTarget()
+      getPopupContainer()
     );
   }
 }

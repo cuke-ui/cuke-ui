@@ -1,12 +1,20 @@
 import React, { PureComponent, createRef } from "react";
+import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Input from "../input";
 import Spin from "../spin";
 import moment from "moment";
 import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
+import { debounce } from "../utils";
 import { DownIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
 
+const positions = {
+  top: "top",
+  left: "left",
+  bottom: "bottom",
+  right: "right"
+};
 export default class DataPicker extends PureComponent {
   state = {
     momentSelected: this.props.defaultValue || this.props.value || moment(),
@@ -31,7 +39,9 @@ export default class DataPicker extends PureComponent {
     showClear: true,
     tip: "",
     showDayInPrevMonth: true,
-    showDayInNextMonth: true
+    showDayInNextMonth: true,
+    position: positions.bottom,
+    getPopupContainer: () => document.body
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -53,7 +63,9 @@ export default class DataPicker extends PureComponent {
   constructor(props) {
     super(props);
     this.toggleContainer = createRef();
-    this.panel = createRef();
+    this.wrapper = createRef();
+    this.wrapper = createRef();
+    this.triggerWrapper = createRef();
   }
   static getDerivedStateFromProps({ value }, { momentSelected }) {
     if (!value || value.valueOf() === momentSelected.valueOf()) {
@@ -69,12 +81,16 @@ export default class DataPicker extends PureComponent {
   onTogglePanel = () => {
     const visible = !this.state.visible;
     this.setState({ visible }, () => {
-      scrollIntoViewIfNeeded(this.panel.current, {
-        scrollMode: "if-needed",
-        behavior: "smooth",
-        block: "nearest",
-        inline: "nearest"
-      });
+      if (visible) {
+        this.setWrapperBounding(() => {
+          scrollIntoViewIfNeeded(this.wrapper.current, {
+            scrollMode: "if-needed",
+            behavior: "smooth",
+            block: "nearest",
+            inline: "nearest"
+          });
+        });
+      }
     });
     this.props.onPanelVisibleChange(visible);
   };
@@ -91,12 +107,21 @@ export default class DataPicker extends PureComponent {
     });
   };
 
-  selectedDate = date => () => {
+  selectedDate = date => isNextMonth => () => {
+    let momentSelected = this.state.momentSelected.clone();
+
+    if (isNextMonth === true) {
+      momentSelected.add(1, "month").date(date);
+    } else if (isNextMonth === false) {
+      momentSelected.subtract(1, "month").date(date);
+    } else {
+      momentSelected.date(date);
+    }
     this.setState(
       {
         selectedDate: date,
         isSelected: true,
-        momentSelected: this.state.momentSelected.clone().date(date),
+        momentSelected: momentSelected.date(date),
         visible: false,
         isSelectedMoment: true
       },
@@ -109,6 +134,39 @@ export default class DataPicker extends PureComponent {
         );
       }
     );
+  };
+
+  setWrapperBounding(cb = () => {}) {
+    const { left, top } = this.getWrapperBounding();
+    this.setState({ left, top }, cb);
+  }
+
+  getWrapperBounding = () => {
+    const {
+      width,
+      height,
+      top,
+      left
+    } = this.triggerWrapper.current.getBoundingClientRect();
+    const {
+      height: wrapperHeight
+    } = this.wrapper.current.getBoundingClientRect();
+
+    const { scrollX, scrollY } = window;
+
+    const positions = {
+      top: {
+        top: top + scrollY - wrapperHeight - 10,
+        left: left + scrollX,
+        width
+      },
+      bottom: {
+        top: top + height + scrollY,
+        left: left + scrollX,
+        width
+      }
+    };
+    return positions[this.props.position];
   };
 
   renderCalendarContent = () => {
@@ -124,30 +182,35 @@ export default class DataPicker extends PureComponent {
 
     return (
       <>
-        {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(day => (
-          <span
-            className={cls(
-              `${this.props.prefixCls}-item`,
-              `${this.props.prefixCls}-day-title`
-            )}
-            key={day}
-          >
-            {day}
-          </span>
-        ))}
+        <div>
+          {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(day => (
+            <span
+              className={cls(
+                `${this.props.prefixCls}-item`,
+                `${this.props.prefixCls}-day-title`
+              )}
+              key={day}
+            >
+              {day}
+            </span>
+          ))}
+        </div>
 
-        {new Array(dayOfFirstDate).fill().map((_, index) => (
-          <span
-            className={cls(
-              `${this.props.prefixCls}-item`,
-              `${this.props.prefixCls}-last-month`
-            )}
-            key={`first-date-${index}`}
-          >
-            {this.props.showDayInPrevMonth &&
-              lastMonthDaysInMonth - dayOfFirstDate + index + 1}
-          </span>
-        ))}
+        {new Array(dayOfFirstDate).fill().map((_, date) => {
+          const currentDate = lastMonthDaysInMonth - dayOfFirstDate + date + 1;
+          return (
+            <span
+              className={cls(
+                `${this.props.prefixCls}-item`,
+                `${this.props.prefixCls}-last-month`
+              )}
+              key={`first-date-${date}`}
+              onClick={this.selectedDate(currentDate)(false)}
+            >
+              {this.props.showDayInPrevMonth && currentDate}
+            </span>
+          );
+        })}
 
         {new Array(daysInMonth).fill().map((_, date) => (
           <span
@@ -160,7 +223,7 @@ export default class DataPicker extends PureComponent {
               }
             )}
             key={`date-${date}`}
-            onClick={this.selectedDate(date + 1)}
+            onClick={this.selectedDate(date + 1)()}
           >
             {date + 1}
           </span>
@@ -175,6 +238,7 @@ export default class DataPicker extends PureComponent {
                   `${this.props.prefixCls}-next-month`
                 )}
                 key={`placeholder-${date}`}
+                onClick={this.selectedDate(date + 1)(true)}
               >
                 {" "}
                 {date + 1}
@@ -190,6 +254,7 @@ export default class DataPicker extends PureComponent {
     e.stopPropagation();
     if (
       this.state.visible &&
+      !this.props.disabled &&
       !this.toggleContainer.current.contains(e.target)
     ) {
       this.setState({ visible: false });
@@ -212,8 +277,10 @@ export default class DataPicker extends PureComponent {
       }
     );
   };
+  onResizeHandler = debounce(() => {
+    this.setWrapperBounding();
+  }, 500);
   render() {
-    const { visible } = this.state;
     const {
       prefixCls,
       className,
@@ -229,10 +296,11 @@ export default class DataPicker extends PureComponent {
       loading, //eslint-disable-line
       onSelectedDateChange, //eslint-disable-line
       onPanelVisibleChange, //eslint-disable-line
+      getPopupContainer,
       ...attr
     } = this.props;
 
-    const { momentSelected, isSelectedMoment } = this.state;
+    const { visible, momentSelected, left, top, isSelectedMoment } = this.state;
 
     return (
       <div
@@ -244,6 +312,7 @@ export default class DataPicker extends PureComponent {
           className={cls(`${prefixCls}-inner`, {
             [`${prefixCls}-active`]: visible
           })}
+          ref={this.triggerWrapper}
         >
           <Input
             disabled={disabled}
@@ -255,82 +324,91 @@ export default class DataPicker extends PureComponent {
           />
           <DownIcon className={`${prefixCls}-arrow`} />
         </div>
-        <div
-          className={cls(`${prefixCls}-content`, {
-            [`${prefixCls}-open`]: visible,
-            [`${prefixCls}-close`]: !visible,
-            ["cuke-ui-no-animate"]: visible === null
-          })}
-          ref={this.panel}
-        >
-          <Spin size="large" spinning={loading} tip={tip}>
-            <div className={cls(`${prefixCls}-header`)}>
-              <span className={cls(`${prefixCls}-date`)}>
-                {this.state.momentSelected.year()}年 {"  "}
-                {this.state.momentSelected.month() + 1}月
-              </span>
-              <span className={cls(`${prefixCls}-switch`)}>
-                <span
-                  className={cls(`${prefixCls}-switch-group`)}
-                  onClick={this.subtractMonth}
-                >
-                  <ArrowLeftIcon />
+        {createPortal(
+          <div
+            className={cls(`${prefixCls}-content`, {
+              [`${prefixCls}-open`]: visible,
+              [`${prefixCls}-close`]: !visible,
+              ["cuke-ui-no-animate"]: visible === null
+            })}
+            ref={this.wrapper}
+            style={{
+              left,
+              top
+            }}
+          >
+            <Spin size="large" spinning={loading} tip={tip}>
+              <div className={cls(`${prefixCls}-header`)}>
+                <span className={cls(`${prefixCls}-date`)}>
+                  {this.state.momentSelected.year()}年 {"  "}
+                  {this.state.momentSelected.month() + 1}月
                 </span>
-                <span
-                  className={cls(`${prefixCls}-switch-group`)}
-                  onClick={this.addMonth}
-                >
-                  <ArrowRightIcon />
+                <span className={cls(`${prefixCls}-switch`)}>
+                  <span
+                    className={cls(`${prefixCls}-switch-group`)}
+                    onClick={this.subtractMonth}
+                  >
+                    <ArrowLeftIcon />
+                  </span>
+                  <span
+                    className={cls(`${prefixCls}-switch-group`)}
+                    onClick={this.addMonth}
+                  >
+                    <ArrowRightIcon />
+                  </span>
                 </span>
-              </span>
-            </div>
-            <div
-              className={cls(`${prefixCls}-items`, {
-                [`${prefixCls}-loading`]: loading
-              })}
-            >
-              {this.renderCalendarContent()}
-            </div>
-            {extraFooter && (
-              <div className={`${prefixCls}-footer-extra`}>{extraFooter}</div>
-            )}
-            {showToday || showClear ? (
+              </div>
               <div
-                className={cls(`${prefixCls}-footer`, {
-                  [`${prefixCls}-has-extra-footer`]: extraFooter,
-                  [`${prefixCls}-has-border`]:
-                    extraFooter || showToday || showClear
+                className={cls(`${prefixCls}-items`, {
+                  [`${prefixCls}-loading`]: loading
                 })}
               >
-                {showToday && (
-                  <div
-                    className={cls(`${prefixCls}-footer-today`)}
-                    onClick={this.onSelectToday}
-                  >
-                    今天
-                  </div>
-                )}
-                {showClear && (
-                  <div
-                    className={cls(`${prefixCls}-footer-clear`)}
-                    onClick={this.clearDate}
-                  >
-                    清除
-                  </div>
-                )}
+                {this.renderCalendarContent()}
               </div>
-            ) : (
-              undefined
-            )}
-          </Spin>
-        </div>
+              {extraFooter && (
+                <div className={`${prefixCls}-footer-extra`}>{extraFooter}</div>
+              )}
+              {showToday || showClear ? (
+                <div
+                  className={cls(`${prefixCls}-footer`, {
+                    [`${prefixCls}-has-extra-footer`]: extraFooter,
+                    [`${prefixCls}-has-border`]:
+                      extraFooter || showToday || showClear
+                  })}
+                >
+                  {showToday && (
+                    <div
+                      className={cls(`${prefixCls}-footer-today`)}
+                      onClick={this.onSelectToday}
+                    >
+                      今天
+                    </div>
+                  )}
+                  {showClear && (
+                    <div
+                      className={cls(`${prefixCls}-footer-clear`)}
+                      onClick={this.clearDate}
+                    >
+                      清除
+                    </div>
+                  )}
+                </div>
+              ) : (
+                undefined
+              )}
+            </Spin>
+          </div>,
+          getPopupContainer()
+        )}
       </div>
     );
   }
   componentWillUnmount() {
     window.removeEventListener("click", this.onClickOutsideHandler, false);
+    window.removeEventListener("resize", this.onResizeHandler);
   }
   componentDidMount() {
     window.addEventListener("click", this.onClickOutsideHandler, false);
+    window.addEventListener("resize", this.onResizeHandler);
   }
 }
