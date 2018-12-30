@@ -71,9 +71,8 @@ storiesOf('普通', module).add(
       <Button type="success" hollow onClick={action('clicked')}>
         成功
       </Button>
-
-      <Button type="primary" hollow dashed onClick={action('clicked')}>
-        虚线
+      <Button type="error" hollow disabled onClick={action('clicked')}>
+        禁用
       </Button>
 
       <Button type="info" hollow dashed onClick={action('clicked')}>
@@ -83,6 +82,7 @@ storiesOf('普通', module).add(
       <Button type="error" hollow dashed disabled onClick={action('clicked')}>
         禁用
       </Button>
+
 
       <Button type="primary" hollow loading={true} onClick={action('clicked')}>
         加载中
@@ -126,7 +126,7 @@ storiesOf('普通', module).add(
       <Button type="primary" disabled hollow onClick={action('clicked')}> 主色调 </Button>
 
       <Button type="info" disabled hollow onClick={action('clicked')}> 信息 </Button>
-      <Button type="warning" disabled hollow  onClick={action('clicked')}> 警告 </Button>
+      <Button type="warning" disabled hollow onClick={action('clicked')}> 警告 </Button>
 
       <Button type="error" disabled hollow onClick={action('clicked')}> 错误 </Button>
 
