@@ -12,7 +12,12 @@ import {
   CloseIcon
 } from "../icon";
 
-const positions = ["top-right", "top-left", "bottom-right", "bottom-left"];
+const positions = {
+  "top-right": "top-right",
+  "top-left": "top-left",
+  "bottom-right": "bottom-right",
+  "bottom-left": "bottom-left"
+};
 
 const DEFAULT_OFFSET = 20;
 
@@ -41,7 +46,7 @@ export default class Notification extends PureComponent {
       PropTypes.string,
       PropTypes.object
     ]).isRequired,
-    position: PropTypes.oneOf(positions),
+    position: PropTypes.oneOf(Object.values(positions)),
     duration: PropTypes.number.isRequired,
     darkTheme: PropTypes.bool,
     top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -54,7 +59,7 @@ export default class Notification extends PureComponent {
     duration: 2,
     darkTheme: false,
     offset: DEFAULT_OFFSET,
-    position: "top-right",
+    position: positions["top-right"],
     closable: true,
     onClose: () => {},
     onClick: () => {}
