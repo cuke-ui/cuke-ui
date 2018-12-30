@@ -4,7 +4,13 @@ import { createPortal } from "react-dom"; //传送门 将节点挂载在root 节
 import cls from "classnames";
 import { CloseIcon } from "../icon";
 
-const placements = ["right", "top", "bottom", "left"];
+const placements = {
+  right: "right",
+  top: "top",
+  bottom: "bottom",
+  left: "left"
+};
+
 export default class Drawer extends PureComponent {
   state = {
     init: false
@@ -21,7 +27,7 @@ export default class Drawer extends PureComponent {
     width: 300,
     height: 300,
     zIndex: 999,
-    placement: placements[0],
+    placement: placements.right,
     footer: null
   };
   static propTypes = {
@@ -43,7 +49,7 @@ export default class Drawer extends PureComponent {
     zIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    placement: PropTypes.oneOf(placements),
+    placement: PropTypes.oneOf(Object.values(placements)),
     getPopupContainer: PropTypes.func,
     onClose: PropTypes.func
   };
