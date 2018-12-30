@@ -120,7 +120,7 @@ export default class DataPicker extends PureComponent {
       {
         selectedDate: date,
         isSelected: true,
-        momentSelected: momentSelected.date(date),
+        momentSelected,
         visible: false,
         isSelectedMoment: true
       },
@@ -244,14 +244,24 @@ export default class DataPicker extends PureComponent {
     );
   };
   onSelectToday = () => {
-    this.selectedDate(moment().date())();
+    const currentMoment = moment();
+    this.setState(
+      {
+        momentSelected: currentMoment,
+        selectedDate: currentMoment.date()
+      },
+      () => {
+        this.selectedDate(this.state.selectedDate)()();
+      }
+    );
   };
   onClickOutsideHandler = e => {
     e.stopPropagation();
     if (
       this.state.visible &&
       !this.props.disabled &&
-      !this.toggleContainer.current.contains(e.target)
+      !this.toggleContainer.current.contains(e.target) &&
+      !this.wrapper.current.contains(e.target)
     ) {
       this.setState({ visible: false });
       this.props.onPanelVisibleChange(false);

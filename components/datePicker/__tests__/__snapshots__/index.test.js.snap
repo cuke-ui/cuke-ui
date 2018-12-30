@@ -2,9 +2,8 @@
 
 exports[`<DatePicker/> should can not render any text when not show prev and next month day  1`] = `
 <div
-  className="cuke-date-picker"
+  className="cuke-date-picker cuke-date-picker-position-bottom"
   onChange={[Function]}
-  position="bottom"
   value={"2018-11-24T16:00:00.000Z"}
 >
   <div
@@ -371,8 +370,7 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
 
 exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
 <div
-  class="cuke-date-picker"
-  position="bottom"
+  class="cuke-date-picker cuke-date-picker-position-bottom"
 >
   <div
     class="cuke-date-picker-inner"
@@ -663,12 +661,12 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         28
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         29
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         30
       </span>
