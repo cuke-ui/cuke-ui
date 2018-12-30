@@ -190,4 +190,14 @@ describe("<DatePicker/>", () => {
     const wrapper = shallow(<DatePicker value={moment("2018-11-25")} />);
     expect(wrapper.state().selectedDate).toEqual(moment("2018-11-25").date());
   });
+
+  it("should render custom bottom position", () => {
+    const wrapper = shallow(<DatePicker position="bottom" />);
+    assert(wrapper.find(".cuke-date-picker-position-bottom").length === 1);
+  });
+
+  it("should render custom top position", () => {
+    const wrapper = shallow(<DatePicker position="top" />);
+    assert(wrapper.find(".cuke-date-picker-position-top").length === 1);
+  });
 });

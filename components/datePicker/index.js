@@ -11,9 +11,7 @@ import { DownIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
 
 const positions = {
   top: "top",
-  left: "left",
-  bottom: "bottom",
-  right: "right"
+  bottom: "bottom"
 };
 export default class DataPicker extends PureComponent {
   state = {
@@ -54,6 +52,7 @@ export default class DataPicker extends PureComponent {
     showToday: PropTypes.bool,
     showDayInPrevMonth: PropTypes.bool,
     showDayInNextMonth: PropTypes.bool,
+    position: PropTypes.oneOf(Object.values(positions)),
     overlay: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -143,7 +142,6 @@ export default class DataPicker extends PureComponent {
 
   getWrapperBounding = () => {
     const {
-      width,
       height,
       top,
       left
@@ -152,18 +150,16 @@ export default class DataPicker extends PureComponent {
       height: wrapperHeight
     } = this.wrapper.current.getBoundingClientRect();
 
-    const { scrollX, scrollY } = window;
+    const { scrollY } = window;
 
     const positions = {
       top: {
         top: top + scrollY - wrapperHeight - 10,
-        left: left + scrollX,
-        width
+        left
       },
       bottom: {
         top: top + height + scrollY,
-        left: left + scrollX,
-        width
+        left
       }
     };
     return positions[this.props.position];
@@ -297,6 +293,7 @@ export default class DataPicker extends PureComponent {
       onSelectedDateChange, //eslint-disable-line
       onPanelVisibleChange, //eslint-disable-line
       getPopupContainer,
+      position,
       ...attr
     } = this.props;
 
@@ -304,7 +301,9 @@ export default class DataPicker extends PureComponent {
 
     return (
       <div
-        className={cls(prefixCls, className)}
+        className={cls(prefixCls, className, {
+          [`${prefixCls}-position-${position}`]: position
+        })}
         {...attr}
         ref={this.toggleContainer}
       >
