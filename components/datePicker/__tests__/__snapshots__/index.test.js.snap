@@ -661,7 +661,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         28
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         29
       </span>

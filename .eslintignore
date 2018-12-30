@@ -5,3 +5,4 @@ node_modules
 .history
 dist
 .vscode
+**/*.snap
