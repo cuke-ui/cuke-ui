@@ -5,7 +5,17 @@ import "./styles/changeLog.less"
 
 const ChangeLog = () => (
   <Timeline>
-    <Timeline.Item type="loading">
+     <Timeline.Item type="loading">
+      <h2><a>v1.3.0</a></h2>
+      <ul>
+        <li> 优化 Button type,size 定义 </li>
+        <li> 优化 Notification positions 定义</li>
+        <li> 优化 Drawer 的 placements 定义 </li>
+        <li> DatePicker 新增 position 属性, 支持 top 和 bottom 方向 </li>
+        <li> 优化 DatePicker 组件 & 调整样式 </li>
+      </ul>
+    </Timeline.Item>
+    <Timeline.Item>
       <h2><a>v1.2.2</a></h2>
       <ul>
         <li> 重构 Dropdown , 修复光标快速划过按钮范围经常出现菜单不会收缩的bug </li>
@@ -306,7 +316,7 @@ const ChangeLog = () => (
         </li>
         <li>优化示例</li>
         <li>CityPicker 增加 panelVisibleChange 方法</li>
-        <li>Modal 和 Drawer 组件 target 方法 替换成 getTarget</li>
+        <li>Modal 和 Drawer 组件 target 方法 替换成 getPopupContainer</li>
         <li>增加 Modal 组件 自定义 footer 的示例</li>
         <li>增加 Select, CityPicker, DatePicker 的关闭动画</li>
         <li>DataPicker 增加 loading 属性</li>

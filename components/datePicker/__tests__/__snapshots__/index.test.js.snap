@@ -2,7 +2,7 @@
 
 exports[`<DatePicker/> should can not render any text when not show prev and next month day  1`] = `
 <div
-  className="cuke-date-picker"
+  className="cuke-date-picker cuke-date-picker-position-bottom"
   onChange={[Function]}
   value={"2018-11-24T16:00:00.000Z"}
 >
@@ -26,6 +26,12 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
   </div>
   <div
     className="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
+    style={
+      Object {
+        "left": undefined,
+        "top": undefined,
+      }
+    }
   >
     <Spin
       indicator={<LoadingIcon />}
@@ -66,63 +72,69 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
       <div
         className="cuke-date-picker-items"
       >
-        <span
-          className="cuke-date-picker-item cuke-date-picker-day-title"
-          key="Su"
-        >
-          Su
-        </span>
-        <span
-          className="cuke-date-picker-item cuke-date-picker-day-title"
-          key="Mo"
-        >
-          Mo
-        </span>
-        <span
-          className="cuke-date-picker-item cuke-date-picker-day-title"
-          key="Tu"
-        >
-          Tu
-        </span>
-        <span
-          className="cuke-date-picker-item cuke-date-picker-day-title"
-          key="We"
-        >
-          We
-        </span>
-        <span
-          className="cuke-date-picker-item cuke-date-picker-day-title"
-          key="Th"
-        >
-          Th
-        </span>
-        <span
-          className="cuke-date-picker-item cuke-date-picker-day-title"
-          key="Fr"
-        >
-          Fr
-        </span>
-        <span
-          className="cuke-date-picker-item cuke-date-picker-day-title"
-          key="Sa"
-        >
-          Sa
-        </span>
+        <div>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="Su"
+          >
+            Su
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="Mo"
+          >
+            Mo
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="Tu"
+          >
+            Tu
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="We"
+          >
+            We
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="Th"
+          >
+            Th
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="Fr"
+          >
+            Fr
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="Sa"
+          >
+            Sa
+          </span>
+        </div>
         <span
           className="cuke-date-picker-item cuke-date-picker-last-month"
           key="first-date-0"
+          onClick={[Function]}
         />
         <span
           className="cuke-date-picker-item cuke-date-picker-last-month"
           key="first-date-1"
+          onClick={[Function]}
         />
         <span
           className="cuke-date-picker-item cuke-date-picker-last-month"
           key="first-date-2"
+          onClick={[Function]}
         />
         <span
           className="cuke-date-picker-item cuke-date-picker-last-month"
           key="first-date-3"
+          onClick={[Function]}
         />
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -358,7 +370,7 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
 
 exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
 <div
-  class="cuke-date-picker"
+  class="cuke-date-picker cuke-date-picker-position-bottom"
 >
   <div
     class="cuke-date-picker-inner"
@@ -441,41 +453,43 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
     <div
       class="cuke-date-picker-items"
     >
-      <span
-        class="cuke-date-picker-item cuke-date-picker-day-title"
-      >
-        Su
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-day-title"
-      >
-        Mo
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-day-title"
-      >
-        Tu
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-day-title"
-      >
-        We
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-day-title"
-      >
-        Th
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-day-title"
-      >
-        Fr
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-day-title"
-      >
-        Sa
-      </span>
+      <div>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-day-title"
+        >
+          Su
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-day-title"
+        >
+          Mo
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-day-title"
+        >
+          Tu
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-day-title"
+        >
+          We
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-day-title"
+        >
+          Th
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-day-title"
+        >
+          Fr
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-day-title"
+        >
+          Sa
+        </span>
+      </div>
       <span
         class="cuke-date-picker-item cuke-date-picker-last-month"
       >
@@ -647,12 +661,12 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         28
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         29
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         30
       </span>
