@@ -22,19 +22,23 @@ export default class Calendar extends React.PureComponent {
     miniMode: PropTypes.bool
   };
 
-  componentWillReceiveProps(nextProps) {
-    const { value } = this.props;
-    if (value && value.valueOf() !== nextProps.value.valueOf()) {
-      this.setState({ momentSelected: value, selectedDate: value.date() });
+  static getDerivedStateFromProps({ value }, { momentSelected }) {
+    if (!value || value.valueOf() === momentSelected.valueOf()) {
+      return null;
     }
+    return {
+      momentSelected: value
+    };
   }
+  // componentWillReceiveProps(nextProps) {
+  //   const { value } = this.props;
+  //   if (value && value.valueOf() !== nextProps.value.valueOf()) {
+  //     this.setState({ momentSelected: value, selectedDate: value.date() });
+  //   }
+  // }
 
   state = {
-    momentSelected: this.props.defaultValue || this.props.value || moment(),
-    selectedDate:
-      (this.props.value && this.props.value.date()) ||
-      (this.props.defaultValue && this.props.defaultValue.date()) ||
-      moment().date()
+    momentSelected: this.props.defaultValue || this.props.value || moment()
   };
 
   addMonth = () => {
@@ -52,9 +56,9 @@ export default class Calendar extends React.PureComponent {
     this.setState(
       { momentSelected: this.state.momentSelected.clone().add(-1, "month") },
       () => {
-        // if (this.props.onMonthChange) {
-        //   this.props.onMonthChange(this.state.momentSelected);
-        // }
+        if (this.props.onMonthChange) {
+          this.props.onMonthChange(this.state.momentSelected);
+        }
       }
     );
   };
@@ -70,7 +74,6 @@ export default class Calendar extends React.PureComponent {
     }
     this.setState(
       {
-        selectedDate: date,
         momentSelected
       },
       () => {
@@ -124,7 +127,7 @@ export default class Calendar extends React.PureComponent {
                 `${prefixCls}-current-month`,
                 {
                   [`${prefixCls}-selected-date`]:
-                    this.state.selectedDate === date + 1
+                    this.state.momentSelected.date() === date + 1
                 }
               )}
               key={`date-${date}`}

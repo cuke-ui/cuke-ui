@@ -186,23 +186,12 @@ describe("<DatePicker/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
   it("should from 11 month => 10 month when last month button clicked", () => {
-    const wrapper = shallow(
-      <DatePicker
-        value={moment("2018-11-25")}
-      />
-    );
-    wrapper
-    .find(".cuke-date-picker-last-month")
-    .at(0)
-    .simulate('click')
-    expect(
-      wrapper.state().momentSelected.month()
-    ).toEqual(10)
-  });
-
-  it("should can set default Value & defaultValue.date is equal state.selectedDate", () => {
     const wrapper = shallow(<DatePicker value={moment("2018-11-25")} />);
-    expect(wrapper.state().selectedDate).toEqual(moment("2018-11-25").date());
+    wrapper
+      .find(".cuke-date-picker-last-month")
+      .at(0)
+      .simulate("click");
+    expect(wrapper.state().momentSelected.month()).toEqual(10);
   });
 
   it("should render custom bottom position", () => {

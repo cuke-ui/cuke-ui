@@ -16,10 +16,8 @@ const positions = {
 export default class DataPicker extends PureComponent {
   state = {
     momentSelected: this.props.defaultValue || this.props.value || moment(),
-    selectedDate:
-      (this.props.value && this.props.value.date()) ||
-      (this.props.defaultValue && this.props.defaultValue.date()) ||
-      moment().date(),
+    momentSelectedTemplate:
+      this.props.defaultValue || this.props.value || moment(),
     visible: null,
     isSelected: false,
     extraFooter: null,
@@ -72,8 +70,7 @@ export default class DataPicker extends PureComponent {
     }
     return {
       momentSelected: value,
-      isSelectedMoment: !!value,
-      selectedDate: value.date()
+      isSelectedMoment: !!value
     };
   }
 
@@ -118,9 +115,9 @@ export default class DataPicker extends PureComponent {
     }
     this.setState(
       {
-        selectedDate: date,
         isSelected: true,
         momentSelected,
+        momentSelectedTemplate: momentSelected.clone(),
         visible: false,
         isSelectedMoment: true
       },
@@ -215,7 +212,7 @@ export default class DataPicker extends PureComponent {
               `${this.props.prefixCls}-current-month`,
               {
                 [`${this.props.prefixCls}-selected-date`]:
-                  this.state.selectedDate === date + 1
+                  this.state.momentSelected.date() === date + 1
               }
             )}
             key={`current-date-${date}`}
@@ -307,7 +304,13 @@ export default class DataPicker extends PureComponent {
       ...attr
     } = this.props;
 
-    const { visible, momentSelected, left, top, isSelectedMoment } = this.state;
+    const {
+      visible,
+      left,
+      top,
+      isSelectedMoment,
+      momentSelectedTemplate
+    } = this.state;
 
     return (
       <div
@@ -328,7 +331,9 @@ export default class DataPicker extends PureComponent {
             readonly
             placeholder={placeholder}
             className={cls(`${prefixCls}-input`)}
-            value={isSelectedMoment ? momentSelected.format(format) : ""}
+            value={
+              isSelectedMoment ? momentSelectedTemplate.format(format) : ""
+            }
             onClick={disabled ? undefined : this.onTogglePanel}
           />
           <DownIcon className={`${prefixCls}-arrow`} />

@@ -57,6 +57,7 @@ export default class CityPickerCore extends PureComponent {
       onCityGroupChange, //eslint-disable-line
       onCityChange, //eslint-disable-line
       disabledGroups,
+      defaultCityName, //eslint-disable-line
       loading,
       tip,
       ...attr
