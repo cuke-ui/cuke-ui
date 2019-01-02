@@ -163,12 +163,9 @@ export default class DataPicker extends PureComponent {
   };
 
   renderCalendarContent = () => {
+    const { prefixCls, showDayInNextMonth, showDayInPrevMonth } = this.props;
     const momentDateFirst = this.state.momentSelected.clone().date(1);
     const daysInMonth = momentDateFirst.daysInMonth();
-    const dayOfFirstDate = momentDateFirst.day();
-
-    const momentLastMonth = momentDateFirst.clone().add(-1, "months");
-    const lastMonthDaysInMonth = momentLastMonth.daysInMonth();
 
     const weekdayInMonth = momentDateFirst.isoWeekday();
     const lastDaysInMonth = (daysInMonth + weekdayInMonth - 1) % 7;
@@ -176,12 +173,9 @@ export default class DataPicker extends PureComponent {
     return (
       <>
         <div>
-          {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map(day => (
+          {["一", "二", "三", "四", "五", "六", "日"].map(day => (
             <span
-              className={cls(
-                `${this.props.prefixCls}-item`,
-                `${this.props.prefixCls}-day-title`
-              )}
+              className={cls(`${prefixCls}-item`, `${prefixCls}-day-title`)}
               key={day}
             >
               {day}
@@ -189,54 +183,58 @@ export default class DataPicker extends PureComponent {
           ))}
         </div>
 
-        {new Array(dayOfFirstDate).fill().map((_, date) => {
-          const currentDate = lastMonthDaysInMonth - dayOfFirstDate + date + 1;
+        {new Array(weekdayInMonth - 1).fill(null).map((_, weekday) => {
+          const date = moment()
+            .weekday(weekday)
+            .date();
           return (
             <span
-              className={cls(
-                `${this.props.prefixCls}-item`,
-                `${this.props.prefixCls}-last-month`
-              )}
+              className={cls(`${prefixCls}-item`, `${prefixCls}-last-month`)}
               key={`first-date-${date}`}
-              onClick={this.selectedDate(currentDate)(false)}
+              onClick={
+                showDayInPrevMonth ? this.selectedDate(date)(false) : undefined
+              }
             >
-              {this.props.showDayInPrevMonth && currentDate}
+              {showDayInPrevMonth && date}
             </span>
           );
         })}
 
-        {new Array(daysInMonth).fill().map((_, date) => (
+        {new Array(daysInMonth).fill(null).map((_, date) => (
           <span
-            className={cls(
-              `${this.props.prefixCls}-item`,
-              `${this.props.prefixCls}-current-month`,
-              {
-                [`${this.props.prefixCls}-selected-date`]:
-                  this.state.momentSelected.date() === date + 1
-              }
-            )}
-            key={`current-date-${date}`}
+            className={cls(`${prefixCls}-item`, `${prefixCls}-current-month`, {
+              [`${prefixCls}-selected-date`]:
+                this.state.momentSelected.date() === date + 1
+            })}
+            key={`date-${date}`}
             onClick={this.selectedDate(date + 1)()}
           >
             {date + 1}
+            <div className={cls(`${prefixCls}-item-content`)}>
+              {this.props.dateCellRender &&
+                this.props.dateCellRender(
+                  date + 1,
+                  this.state.momentSelected.clone()
+                )}
+            </div>
           </span>
         ))}
-        {this.props.showDayInNextMonth &&
-          new Array(lastDaysInMonth === 0 ? 0 : 6 - lastDaysInMonth)
-            .fill()
-            .map((_, date) => (
-              <span
-                className={cls(
-                  `${this.props.prefixCls}-item`,
-                  `${this.props.prefixCls}-next-month`
-                )}
-                key={`next-date-${date}`}
-                onClick={this.selectedDate(date + 1)(true)}
-              >
-                {" "}
-                {date + 1}
-              </span>
-            ))}
+
+        {new Array(lastDaysInMonth === 0 ? 0 : 7 - lastDaysInMonth)
+          .fill(null)
+          .map((_, date) => (
+            <span
+              className={cls(`${prefixCls}-item`, `${prefixCls}-next-month`)}
+              key={`next-date-${date}`}
+              onClick={
+                showDayInNextMonth
+                  ? this.selectedDate(date + 1)(true)
+                  : undefined
+              }
+            >
+              {showDayInNextMonth && date + 1}
+            </span>
+          ))}
       </>
     );
   };

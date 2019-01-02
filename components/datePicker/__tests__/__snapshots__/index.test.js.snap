@@ -75,277 +75,367 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
         <div>
           <span
             className="cuke-date-picker-item cuke-date-picker-day-title"
-            key="Su"
+            key="一"
           >
-            Su
+            一
           </span>
           <span
             className="cuke-date-picker-item cuke-date-picker-day-title"
-            key="Mo"
+            key="二"
           >
-            Mo
+            二
           </span>
           <span
             className="cuke-date-picker-item cuke-date-picker-day-title"
-            key="Tu"
+            key="三"
           >
-            Tu
+            三
           </span>
           <span
             className="cuke-date-picker-item cuke-date-picker-day-title"
-            key="We"
+            key="四"
           >
-            We
+            四
           </span>
           <span
             className="cuke-date-picker-item cuke-date-picker-day-title"
-            key="Th"
+            key="五"
           >
-            Th
+            五
           </span>
           <span
             className="cuke-date-picker-item cuke-date-picker-day-title"
-            key="Fr"
+            key="六"
           >
-            Fr
+            六
           </span>
           <span
             className="cuke-date-picker-item cuke-date-picker-day-title"
-            key="Sa"
+            key="日"
           >
-            Sa
+            日
           </span>
         </div>
         <span
           className="cuke-date-picker-item cuke-date-picker-last-month"
-          key="first-date-0"
-          onClick={[Function]}
+          key="first-date-30"
+        />
+        <span
+          className="cuke-date-picker-item cuke-date-picker-last-month"
+          key="first-date-31"
         />
         <span
           className="cuke-date-picker-item cuke-date-picker-last-month"
           key="first-date-1"
-          onClick={[Function]}
-        />
-        <span
-          className="cuke-date-picker-item cuke-date-picker-last-month"
-          key="first-date-2"
-          onClick={[Function]}
-        />
-        <span
-          className="cuke-date-picker-item cuke-date-picker-last-month"
-          key="first-date-3"
-          onClick={[Function]}
         />
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-0"
+          key="date-0"
           onClick={[Function]}
         >
           1
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-1"
+          key="date-1"
           onClick={[Function]}
         >
           2
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-2"
+          key="date-2"
           onClick={[Function]}
         >
           3
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-3"
+          key="date-3"
           onClick={[Function]}
         >
           4
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-4"
+          key="date-4"
           onClick={[Function]}
         >
           5
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-5"
+          key="date-5"
           onClick={[Function]}
         >
           6
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-6"
+          key="date-6"
           onClick={[Function]}
         >
           7
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-7"
+          key="date-7"
           onClick={[Function]}
         >
           8
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-8"
+          key="date-8"
           onClick={[Function]}
         >
           9
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-9"
+          key="date-9"
           onClick={[Function]}
         >
           10
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-10"
+          key="date-10"
           onClick={[Function]}
         >
           11
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-11"
+          key="date-11"
           onClick={[Function]}
         >
           12
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-12"
+          key="date-12"
           onClick={[Function]}
         >
           13
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-13"
+          key="date-13"
           onClick={[Function]}
         >
           14
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-14"
+          key="date-14"
           onClick={[Function]}
         >
           15
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-15"
+          key="date-15"
           onClick={[Function]}
         >
           16
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-16"
+          key="date-16"
           onClick={[Function]}
         >
           17
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-17"
+          key="date-17"
           onClick={[Function]}
         >
           18
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-18"
+          key="date-18"
           onClick={[Function]}
         >
           19
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-19"
+          key="date-19"
           onClick={[Function]}
         >
           20
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-20"
+          key="date-20"
           onClick={[Function]}
         >
           21
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-21"
+          key="date-21"
           onClick={[Function]}
         >
           22
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-22"
+          key="date-22"
           onClick={[Function]}
         >
           23
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-23"
+          key="date-23"
           onClick={[Function]}
         >
           24
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
-          key="current-date-24"
+          key="date-24"
           onClick={[Function]}
         >
           25
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-25"
+          key="date-25"
           onClick={[Function]}
         >
           26
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-26"
+          key="date-26"
           onClick={[Function]}
         >
           27
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-27"
+          key="date-27"
           onClick={[Function]}
         >
           28
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-28"
+          key="date-28"
           onClick={[Function]}
         >
           29
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
-          key="current-date-29"
+          key="date-29"
           onClick={[Function]}
         >
           30
+          <div
+            className="cuke-date-picker-item-content"
+          />
         </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-next-month"
+          key="next-date-0"
+        />
+        <span
+          className="cuke-date-picker-item cuke-date-picker-next-month"
+          key="next-date-1"
+        />
       </div>
       <div
         className="cuke-date-picker-footer cuke-date-picker-has-border"
@@ -457,37 +547,37 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         <span
           class="cuke-date-picker-item cuke-date-picker-day-title"
         >
-          Su
+          一
         </span>
         <span
           class="cuke-date-picker-item cuke-date-picker-day-title"
         >
-          Mo
+          二
         </span>
         <span
           class="cuke-date-picker-item cuke-date-picker-day-title"
         >
-          Tu
+          三
         </span>
         <span
           class="cuke-date-picker-item cuke-date-picker-day-title"
         >
-          We
+          四
         </span>
         <span
           class="cuke-date-picker-item cuke-date-picker-day-title"
         >
-          Th
+          五
         </span>
         <span
           class="cuke-date-picker-item cuke-date-picker-day-title"
         >
-          Fr
+          六
         </span>
         <span
           class="cuke-date-picker-item cuke-date-picker-day-title"
         >
-          Sa
+          日
         </span>
       </div>
       <span
@@ -496,174 +586,267 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         30
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-last-month"
-      >
-        31
-      </span>
-      <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         1
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         2
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         3
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         4
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         5
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         6
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         7
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         8
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         9
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         10
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         11
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         12
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         13
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         14
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         15
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         16
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         17
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         18
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         19
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         20
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         21
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         22
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         23
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         24
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         25
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         26
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         27
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         28
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         29
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         30
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         31
+        <div
+          class="cuke-date-picker-item-content"
+        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-next-month"
       >
-         1
+        1
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-next-month"
       >
-         2
+        2
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-next-month"
+      >
+        3
       </span>
     </div>
     <div
