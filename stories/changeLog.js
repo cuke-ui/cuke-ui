@@ -8,7 +8,7 @@ const ChangeLog = () => (
      <Timeline.Item type="loading">
       <h2><a>v1.3.0</a></h2>
       <ul>
-        <li> 优化 Button type,size 定义 </li>
+        <li> 优化 Button type,size 定义 @caojian123 </li>
         <li> 优化 Notification positions 定义</li>
         <li> 优化 Drawer 的 placements 定义 </li>
         <li> DatePicker 新增 position 属性, 支持 top 和 bottom 方向 </li>
