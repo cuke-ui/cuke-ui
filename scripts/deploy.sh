@@ -23,6 +23,6 @@ git commit -m 'docs:deploy'
 
 git push --force --quiet git@github.com:cuke-ui/cuke-ui.git master:gh-pages
 
-echo "√ publish success"
+echo "√ publish success 🥒"
 
 cd -
