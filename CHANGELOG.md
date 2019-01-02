@@ -1,3 +1,33 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/cuke-ui/cuke-ui/compare/v1.2.2...v1.3.0) (2019-01-02)
+
+
+### Bug Fixes
+
+* calendar test ([67752ec](https://github.com/cuke-ui/cuke-ui/commit/67752ec))
+* notification multiple existence ([bf83cc2](https://github.com/cuke-ui/cuke-ui/commit/bf83cc2))
+* 优化 Button type,size 定义 ([8982d52](https://github.com/cuke-ui/cuke-ui/commit/8982d52))
+* 优化 DatePicker 组件 & 调整样式 ([104f6b8](https://github.com/cuke-ui/cuke-ui/commit/104f6b8))
+* 优化 Drawer 的 placements 定义 ([6d7eb6f](https://github.com/cuke-ui/cuke-ui/commit/6d7eb6f))
+* 优化 Notification positions 定义 ([3a209ac](https://github.com/cuke-ui/cuke-ui/commit/3a209ac))
+* 修复 DatePicker 选择 今天日期不对 ([d7ba35a](https://github.com/cuke-ui/cuke-ui/commit/d7ba35a))
+* **calendar:** 有默认值 时不能切换月份 ([1d3a744](https://github.com/cuke-ui/cuke-ui/commit/1d3a744))
+* **datepicker:** 修复 DatePicker 切换月份导致选中的月份改变的bug ([7d41765](https://github.com/cuke-ui/cuke-ui/commit/7d41765))
+
+
+### Features
+
+* DatePicker 新增 position 属性, 支持top 和 bottom 方向 ([8d352d2](https://github.com/cuke-ui/cuke-ui/commit/8d352d2))
+* **calendar:** Calendar 新增 miniMode 属性 ([298e843](https://github.com/cuke-ui/cuke-ui/commit/298e843))
+* **calendar:** 增加 Calendar 上一个月和下一个月的点击效果 ([26b8edd](https://github.com/cuke-ui/cuke-ui/commit/26b8edd))
+
+
+### Performance Improvements
+
+* button classnames ([d8e69f6](https://github.com/cuke-ui/cuke-ui/commit/d8e69f6))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/cuke-ui/cuke-ui/compare/v1.2.1...v1.2.2) (2018-12-27)
 
