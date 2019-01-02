@@ -1,5 +1,5 @@
-<a name="1.3.0"></a>
-# [1.3.0](https://github.com/cuke-ui/cuke-ui/compare/v1.2.2...v1.3.0) (2019-01-02)
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/cuke-ui/cuke-ui/compare/v1.2.2...v1.3.1) (2019-01-02)
 
 
 ### Bug Fixes
@@ -13,6 +13,7 @@
 * 修复 DatePicker 选择 今天日期不对 ([d7ba35a](https://github.com/cuke-ui/cuke-ui/commit/d7ba35a))
 * **calendar:** 有默认值 时不能切换月份 ([1d3a744](https://github.com/cuke-ui/cuke-ui/commit/1d3a744))
 * **datepicker:** 修复 DatePicker 切换月份导致选中的月份改变的bug ([7d41765](https://github.com/cuke-ui/cuke-ui/commit/7d41765))
+* **datePicker:**  修复 DatePicker 日期星期几显示错误的bug, 调整星期文案为中文 ([3a934c7](https://github.com/cuke-ui/cuke-ui/commit/3a934c7))
 
 
 ### Features
