@@ -113,7 +113,7 @@ describe("<Calendar/>", () => {
       .find(".cuke-calendar-item")
       .at(10)
       .simulate("click");
-    expect(typeof _currentDate).toEqual("object");
+    expect(typeof _currentDate).toEqual("number");
     expect(typeof _date).toEqual("object");
   });
 });
