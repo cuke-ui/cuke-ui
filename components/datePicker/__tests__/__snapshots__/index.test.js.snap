@@ -407,7 +407,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       <span
         class="cuke-date-picker-date"
       >
-        2018年   12月
+        2019年   1月
       </span>
       <span
         class="cuke-date-picker-switch"
@@ -493,32 +493,12 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       <span
         class="cuke-date-picker-item cuke-date-picker-last-month"
       >
-        25
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-last-month"
-      >
-        26
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-last-month"
-      >
-        27
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-last-month"
-      >
-        28
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-last-month"
-      >
-        29
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-last-month"
-      >
         30
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-last-month"
+      >
+        31
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
@@ -526,7 +506,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         1
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         2
       </span>
@@ -666,7 +646,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         29
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         30
       </span>
@@ -684,21 +664,6 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         class="cuke-date-picker-item cuke-date-picker-next-month"
       >
          2
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-next-month"
-      >
-         3
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-next-month"
-      >
-         4
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-next-month"
-      >
-         5
       </span>
     </div>
     <div

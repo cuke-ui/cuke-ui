@@ -120,9 +120,9 @@ export default class Notification extends PureComponent {
 
   static renderElement = (type, options) => {
     // if notification exist , destroy
-    if(SINGLE_NODE.notification){
-       SINGLE_NODE.notification.destroy();
-    } 
+    if (SINGLE_NODE.notification) {
+      SINGLE_NODE.notification.destroy();
+    }
 
     const container = document.createElement("div");
     const currentNode = document.body.appendChild(container);
