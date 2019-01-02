@@ -12,41 +12,48 @@ import {
   CloseIcon
 } from "../icon";
 
-const positions = {
-  "top-right": "top-right",
-  "top-left": "top-left",
-  "bottom-right": "bottom-right",
-  "bottom-left": "bottom-left"
+const POSITIONS = {
+  TOP_RIGHT: "top-right",
+  TOP_LEFT: "top-left",
+  BOTTOM_RIGHT: "bottom-right",
+  BOTTOM_LEFT: "bottom-left"
+};
+
+const TYPES = {
+  OPEN: "open",
+  INFO: "info",
+  SUCCESS: "success",
+  ERROR: "error",
+  WARNING: "warning",
+  LOADING: "loading"
 };
 
 const DEFAULT_OFFSET = 20;
+const ANIMATION_TIME = 500;
+
+const SINGLE_NODE = {
+  notification: null,
+  containerRef: null,
+  currentNodeRef: null
+};
 
 export default class Notification extends PureComponent {
   state = {
     visible: true
   };
-  animationTime = 500;
-  _containerRef = null;
-  _currentNodeRef = null;
+
   constructor(props) {
     super(props);
-    this.typeConfig = {
-      open: "open",
-      info: "info",
-      success: "success",
-      error: "error",
-      warning: "warning",
-      loading: "loading"
-    };
     this.timer = null;
   }
+
   static propTypes = {
     title: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
       PropTypes.object
     ]).isRequired,
-    position: PropTypes.oneOf(Object.values(positions)),
+    position: PropTypes.oneOf(Object.values(POSITIONS)),
     duration: PropTypes.number.isRequired,
     darkTheme: PropTypes.bool,
     top: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -54,16 +61,18 @@ export default class Notification extends PureComponent {
     onClose: PropTypes.func,
     onClick: PropTypes.func
   };
+
   static defaultProps = {
     prefixCls: "cuke-notification",
     duration: 2,
     darkTheme: false,
     offset: DEFAULT_OFFSET,
-    position: positions["top-right"],
+    position: POSITIONS.TOP_RIGHT,
     closable: true,
     onClose: () => {},
     onClick: () => {}
   };
+
   componentDidMount() {
     const { duration, onClose } = this.props;
 
@@ -74,22 +83,26 @@ export default class Notification extends PureComponent {
       this.setState({ visible: false }, () => {
         setTimeout(() => {
           this.destroy();
-        }, this.animationTime);
+        }, ANIMATION_TIME);
         onClose();
       });
     }, duration * 1000);
   }
+
   componentWillUnmount() {
     this.destroy();
   }
+
   disableScroll = () => {
     document.body.style.overflow = "hidden";
     document.body.style.paddingRight = "15px";
   };
+
   enableScroll = () => {
     document.body.style.overflow = "";
     document.body.style.paddingRight = 0;
   };
+
   componentDidUpdate() {
     if (this.state.visible === true) {
       this.disableScroll();
@@ -97,42 +110,60 @@ export default class Notification extends PureComponent {
       this.enableScroll();
     }
   }
+
   destroy = () => {
-    ReactDOM.unmountComponentAtNode(this._containerRef);
-    this._currentNodeRef.remove();
+    if (SINGLE_NODE.containerRef) {
+      ReactDOM.unmountComponentAtNode(SINGLE_NODE.containerRef);
+      SINGLE_NODE.currentNodeRef.remove();
+    }
   };
+
   static renderElement = (type, options) => {
+    // if notification exist , destroy
+    if(SINGLE_NODE.notification){
+       SINGLE_NODE.notification.destroy();
+    } 
+
     const container = document.createElement("div");
     const currentNode = document.body.appendChild(container);
     const _notification = ReactDOM.render(
       <Notification type={type} {...options} />,
       container
     );
-    _notification._containerRef = container;
-    _notification._currentNodeRef = currentNode;
+
+    SINGLE_NODE.containerRef = container;
+    SINGLE_NODE.currentNodeRef = currentNode;
+    SINGLE_NODE.notification = _notification;
 
     return {
       destroy: _notification.destroy
     };
   };
+
   static open(options) {
-    return this.renderElement("open", options);
+    return this.renderElement(TYPES.OPEN, options);
   }
+
   static error(options) {
-    return this.renderElement("error", options);
+    return this.renderElement(TYPES.ERROR, options);
   }
+
   static info(options) {
-    return this.renderElement("info", options);
+    return this.renderElement(TYPES.INFO, options);
   }
+
   static success(options) {
-    return this.renderElement("success", options);
+    return this.renderElement(TYPES.SUCCESS, options);
   }
+
   static warning(options) {
-    return this.renderElement("warning", options);
+    return this.renderElement(TYPES.WARNING, options);
   }
+
   static loading(options) {
-    return this.renderElement("loading", options);
+    return this.renderElement(TYPES.LOADING, options);
   }
+
   onClose = e => {
     // 防止 onClick 事件  触发
     e.stopPropagation();
@@ -140,29 +171,30 @@ export default class Notification extends PureComponent {
     clearTimeout(this.timer);
     this.props.onClose();
   };
+
   getPositionStyle = () => {
     const { position, offset } = this.props;
     let style = {
       top: offset
     };
     switch (position) {
-      case "top-right":
+      case POSITIONS.TOP_RIGHT:
         style = {
           top: offset
         };
         break;
-      case "top-left":
+      case POSITIONS.TOP_LEFT:
         style = {
           left: offset,
           top: offset
         };
         break;
-      case "bottom-right":
+      case POSITIONS.BOTTOM_RIGHT:
         style = {
           bottom: offset
         };
         break;
-      case "bottom-left":
+      case POSITIONS.BOTTOM_LEFT:
         style = {
           bottom: offset,
           left: offset
@@ -176,6 +208,7 @@ export default class Notification extends PureComponent {
     }
     return style;
   };
+
   render() {
     const {
       prefixCls,
@@ -195,7 +228,6 @@ export default class Notification extends PureComponent {
 
     const { visible } = this.state;
 
-    const typeConfig = this.typeConfig;
     const isShow = visible && duration >= 0;
 
     return (
@@ -221,17 +253,12 @@ export default class Notification extends PureComponent {
             <CloseIcon />
           </div>
         )}
-        <div
-          className={cls(
-            `${prefixCls}-icon`,
-            `${prefixCls}-${typeConfig[type]}`
-          )}
-        >
-          {type === typeConfig["info"] ? <InfoIcon /> : undefined}
-          {type === typeConfig["success"] ? <SuccessIcon /> : undefined}
-          {type === typeConfig["error"] ? <ErrorIcon /> : undefined}
-          {type === typeConfig["warning"] ? <WarningIcon /> : undefined}
-          {type === typeConfig["loading"] ? <LoadingIcon /> : undefined}
+        <div className={cls(`${prefixCls}-icon`, `${prefixCls}-${type}`)}>
+          {type === TYPES.INFO ? <InfoIcon /> : undefined}
+          {type === TYPES.SUCCESS ? <SuccessIcon /> : undefined}
+          {type === TYPES.ERROR ? <ErrorIcon /> : undefined}
+          {type === TYPES.WARNING ? <WarningIcon /> : undefined}
+          {type === TYPES.LOADING ? <LoadingIcon /> : undefined}
         </div>
         <div className={cls(`${prefixCls}-title-custom`)}>
           <div className={`${prefixCls}-title`}>
