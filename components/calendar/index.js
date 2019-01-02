@@ -8,7 +8,8 @@ import { ArrowLeftIcon, ArrowRightIcon } from "../icon";
 export default class Calendar extends React.PureComponent {
   static defaultProps = {
     prefixCls: "cuke-calendar",
-    loading: false
+    loading: false,
+    miniMode: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -17,7 +18,8 @@ export default class Calendar extends React.PureComponent {
     dateCellRender: PropTypes.func,
     format: PropTypes.string,
     loading: PropTypes.bool,
-    tip: PropTypes.any
+    tip: PropTypes.any,
+    miniMode: PropTypes.bool
   };
 
   static getDerivedStateFromProps({ value }, { momentSelected }) {
@@ -66,7 +68,7 @@ export default class Calendar extends React.PureComponent {
     this.setState(
       {
         selectedDate: date,
-        momentSelected,
+        momentSelected
       },
       () => {
         if (this.props.onChange) {
@@ -98,16 +100,18 @@ export default class Calendar extends React.PureComponent {
 
         <div className={`${prefixCls}-content`}>
           {new Array(weekdayInMonth - 1).fill(null).map((_, weekday) => {
-            const date = moment().weekday(weekday).date()
+            const date = moment()
+              .weekday(weekday)
+              .date();
             return (
               <span
-                className={cls(`${prefixCls}-item`, `${prefixCls}-last-month`,)}
+                className={cls(`${prefixCls}-item`, `${prefixCls}-last-month`)}
                 key={`first-date-${date}`}
                 onClick={this.selectedDate(date)(false)}
               >
                 {date}
               </span>
-            )
+            );
           })}
 
           {new Array(daysInMonth).fill(null).map((_, date) => (
@@ -157,10 +161,16 @@ export default class Calendar extends React.PureComponent {
       tip,
       onMonthChange, //eslint-disable-line
       dateCellRender, //eslint-disable-line
+      miniMode,
       ...attr
     } = this.props;
     return (
-      <div className={cls(prefixCls, className)} {...attr}>
+      <div
+        className={cls(prefixCls, className, {
+          [`${prefixCls}-mini`]: miniMode
+        })}
+        {...attr}
+      >
         <Spin spinning={loading} tip={tip} size="large">
           <div className={cls(`${prefixCls}-header`)}>
             <ArrowLeftIcon

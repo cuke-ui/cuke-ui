@@ -1,9 +1,31 @@
 @import "../styles/vars.less";
-
 @prefixCls: cuke-calendar;
+
 .@{prefixCls} {
   box-shadow: @default-section-shadow;
   border-radius: @border-radius;
+  &.@{prefixCls}-mini {
+    width: @cuke-calendar-mini-width;
+    @media @mobile {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .@{prefixCls}-header {
+      height: @cuke-calendar-header-mini-height;
+      line-height: @cuke-calendar-header-mini-height;
+    }
+    .@{prefixCls}-day-header {
+      height: @cuke-calendar-day-header-mini-height;
+      line-height: @cuke-calendar-day-header-mini-height;
+    }
+    .@{prefixCls}-list {
+      .@{prefixCls}-content {
+        .@{prefixCls}-item {
+          height: @cuke-calendar-item-mini-height;
+        }
+      }
+    }
+  }
   &-header {
     height: @cuke-calendar-header-height;
     line-height: @cuke-calendar-header-height;
