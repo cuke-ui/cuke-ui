@@ -96,13 +96,13 @@ export default class DataPicker extends PureComponent {
 
   addMonth = () => {
     this.setState({
-      momentSelected: this.state.momentSelected.clone().add(1, "months")
+      momentSelected: this.state.momentSelected.clone().add(1, "month")
     });
   };
 
   subtractMonth = () => {
     this.setState({
-      momentSelected: this.state.momentSelected.clone().add(-1, "months")
+      momentSelected: this.state.momentSelected.clone().add(-1, "month")
     });
   };
 

@@ -22,16 +22,19 @@ export default class Calendar extends React.PureComponent {
     miniMode: PropTypes.bool
   };
 
-  static getDerivedStateFromProps({ value }, { momentSelected }) {
-    if (!value || value.valueOf() === momentSelected.valueOf()) {
-      return null;
+  componentWillReceiveProps(nextProps) {
+    const { value } = this.props;
+    if (value && value.valueOf() !== nextProps.value.valueOf()) {
+      this.setState({ momentSelected: value, selectedDate: value.date() });
     }
-    return { momentSelected: value, selectedDate: value.date() };
   }
 
   state = {
     momentSelected: this.props.defaultValue || this.props.value || moment(),
-    selectedDate: moment().date()
+    selectedDate:
+      (this.props.value && this.props.value.date()) ||
+      (this.props.defaultValue && this.props.defaultValue.date()) ||
+      moment().date()
   };
 
   addMonth = () => {
@@ -49,9 +52,9 @@ export default class Calendar extends React.PureComponent {
     this.setState(
       { momentSelected: this.state.momentSelected.clone().add(-1, "month") },
       () => {
-        if (this.props.onMonthChange) {
-          this.props.onMonthChange(this.state.momentSelected);
-        }
+        // if (this.props.onMonthChange) {
+        //   this.props.onMonthChange(this.state.momentSelected);
+        // }
       }
     );
   };
