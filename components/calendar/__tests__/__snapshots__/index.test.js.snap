@@ -89,8 +89,10 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
       class="cuke-calendar-content"
     >
       <span
-        class="cuke-calendar-item"
-      />
+        class="cuke-calendar-item cuke-calendar-last-month"
+      >
+        30
+      </span>
       <span
         class="cuke-calendar-item cuke-calendar-current-month"
       >

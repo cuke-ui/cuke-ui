@@ -116,4 +116,18 @@ describe("<Calendar/>", () => {
     expect(typeof _currentDate).toEqual("number");
     expect(typeof _date).toEqual("object");
   });
+  it("should from 11 month => 10 month when last month button clicked", () => {
+    const wrapper = shallow(
+      <Calendar
+        value={moment("2019-2-2")}
+      />
+    );
+    wrapper
+    .find(".cuke-calendar-last-month")
+    .at(0)
+    .simulate('click')
+    expect(
+      wrapper.state().momentSelected.month()
+    ).toEqual(1)
+  });
 });

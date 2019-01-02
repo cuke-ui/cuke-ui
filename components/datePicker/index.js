@@ -218,7 +218,7 @@ export default class DataPicker extends PureComponent {
                   this.state.selectedDate === date + 1
               }
             )}
-            key={`date-${date}`}
+            key={`current-date-${date}`}
             onClick={this.selectedDate(date + 1)()}
           >
             {date + 1}
@@ -233,7 +233,7 @@ export default class DataPicker extends PureComponent {
                   `${this.props.prefixCls}-item`,
                   `${this.props.prefixCls}-next-month`
                 )}
-                key={`placeholder-${date}`}
+                key={`next-date-${date}`}
                 onClick={this.selectedDate(date + 1)(true)}
               >
                 {" "}
