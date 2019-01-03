@@ -1583,11 +1583,13 @@
     marked "^0.5.2"
     prop-types "^15.6.2"
 
-"@storybook/addon-options@^4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-4.0.7.tgz#c7a7bb8dcfb4bc2a7c4ece56f96e0f65635cc747"
+"@storybook/addon-options@^4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-options/-/addon-options-4.1.4.tgz#58765a50d7cf8c1b1ff1cf9e257ce29f8b47912e"
+  integrity sha512-+XK72SYStpYlfssHHBw6wJu5+KZ+W5nuOChcgEB9fmpbQVd+69tLv8QWaK95ez0/+3KRC7jrHWAzsd8nitQZBQ==
   dependencies:
-    "@storybook/addons" "4.0.7"
+    "@storybook/addons" "4.1.4"
+    core-js "^2.5.7"
     util-deprecate "^1.0.2"
 
 "@storybook/addon-storysource@^4.1.4":
@@ -1619,15 +1621,6 @@
     prop-types "^15.6.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.0.7.tgz#52a98ebfa862b34ed47368590564a9638b86d211"
-  dependencies:
-    "@storybook/channels" "4.0.7"
-    "@storybook/components" "4.0.7"
-    global "^4.3.2"
-    util-deprecate "^1.0.2"
-
 "@storybook/addons@4.1.4":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@storybook/addons/-/addons-4.1.4.tgz#652c494aa448441f182a36d83d8f05a54f5b5c31"
@@ -1647,10 +1640,6 @@
     global "^4.3.2"
     json-stringify-safe "^5.0.1"
 
-"@storybook/channels@4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-4.0.7.tgz#bb7607c9d0036cbed884c11683d7c168c2663733"
-
 "@storybook/channels@4.1.4":
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-4.1.4.tgz#8ed05f821c55fd359231568d9a94e31ea81a2f82"
@@ -1660,21 +1649,6 @@
   version "4.1.4"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-4.1.4.tgz#c87d8d3357cb3eb582249f43692ea82c7c2461e0"
   integrity sha512-fOrSNPa4Pg8m9UD8fTUFTewTtuzhckrt6zESpj+P7/MnWM+W71umvobb0HpPBGKvwSC8qJZhOwsH7tNI7K0PAw==
-
-"@storybook/components@4.0.7":
-  version "4.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/components/-/components-4.0.7.tgz#f5a51b6999df7bd137a02a968d17795c836bfa5b"
-  dependencies:
-    "@emotion/core" "^0.13.1"
-    "@emotion/provider" "^0.11.2"
-    "@emotion/styled" "^0.10.6"
-    global "^4.3.2"
-    lodash "^4.17.11"
-    prop-types "^15.6.2"
-    react-inspector "^2.3.0"
-    react-split-pane "^0.1.84"
-    react-textarea-autosize "^7.0.4"
-    render-fragment "^0.1.1"
 
 "@storybook/components@4.1.4":
   version "4.1.4"
@@ -9331,9 +9305,10 @@ modify-values@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
 
-moment@^2.22.2:
-  version "2.22.2"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.2.tgz#3c257f9839fc0e93ff53149632239eb90783ff66"
+moment@^2.23.0:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.23.0.tgz#759ea491ac97d54bac5ad776996e2a58cc1bc225"
+  integrity sha512-3IE39bHVqFbWWaPOMHZF98Q9c3LDKGTmypMiTM2QygGXXElkFWIH7GxfmlwmY2vwa+wmNsoYZmG2iusf1ZjJoA==
 
 moo@^0.4.3:
   version "0.4.3"
@@ -11219,14 +11194,15 @@ react-docgen@^3.0.0-rc.1:
     node-dir "^0.1.10"
     recast "^0.16.0"
 
-react-dom@^16.6.3:
-  version "16.6.3"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.6.3.tgz#8fa7ba6883c85211b8da2d0efeffc9d3825cccc0"
+react-dom@^16.7.0:
+  version "16.7.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.7.0.tgz#a17b2a7ca89ee7390bc1ed5eb81783c7461748b8"
+  integrity sha512-D0Ufv1ExCAmF38P2Uh1lwpminZFRXEINJe53zRAbm4KPwSyd6DY/uDoS0Blj9jvPpn1+wivKpZYc8aAAN/nAkg==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.11.2"
+    scheduler "^0.12.0"
 
 react-drag-listview@^0.0.9:
   version "0.0.9"
@@ -11264,9 +11240,10 @@ react-icons@^2.2.5:
   dependencies:
     react-icon-base "2.1.0"
 
-react-icons@^3.0.5:
+react-icons@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.2.2.tgz#7b1dc795004a119a35175e62ecef91e5c9c90962"
+  integrity sha512-0DiXTcECUNoMvze2zcFwYYrHAFgQ2rBM0+HIHfaECKRfE1NZYwfuUSbwyg9s1uVPuy7o/KqQKSwBGMWQFvdrhQ==
 
 react-inspector@^2.3.0:
   version "2.3.1"
@@ -11394,21 +11371,23 @@ react-treebeard@^3.1.0:
     shallowequal "^1.1.0"
     velocity-react "^1.4.1"
 
-react-turntable@^1.2.5:
+react-turntable@^1.2.7:
   version "1.2.7"
   resolved "https://registry.yarnpkg.com/react-turntable/-/react-turntable-1.2.7.tgz#82a6e5c7d92d8e0e102532c9704ca1ef303efd0e"
+  integrity sha512-uba87rCN2XFl22K5P0tWhTYOGKOCPMZB9SgV2/d5TRhSK2zIgeWMDKWJYgh+h5dp3WX2LQQcujGgRGpzkdclXg==
   dependencies:
     classnames "^2.2.6"
     prop-types "^15.6.0"
 
-react@^16.6.3:
-  version "16.6.3"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.6.3.tgz#25d77c91911d6bbdd23db41e70fb094cc1e0871c"
+react@^16.7.0:
+  version "16.7.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.7.0.tgz#b674ec396b0a5715873b350446f7ea0802ab6381"
+  integrity sha512-StCz3QY8lxTb5cl2HJxjwLFOXPIFQp+p+hxQfc8WE0QiLfCtIlKj8/+5tjjKm8uSTlAW+fCPaavGFS06V9Ar3A==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
     prop-types "^15.6.2"
-    scheduler "^0.11.2"
+    scheduler "^0.12.0"
 
 read-cache@^1.0.0:
   version "1.0.0"
@@ -12070,9 +12049,10 @@ scheduler@^0.10.0:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
 
-scheduler@^0.11.2:
-  version "0.11.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.11.2.tgz#a8db5399d06eba5abac51b705b7151d2319d33d3"
+scheduler@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.12.0.tgz#8ab17699939c0aedc5a196a657743c496538647b"
+  integrity sha512-t7MBR28Akcp4Jm+QoR63XgAi9YgCUmgvDHqf5otgAj4QvdoBE4ImCX0ffehefePPG+aitiYHp0g/mW6s4Tp+dw==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"

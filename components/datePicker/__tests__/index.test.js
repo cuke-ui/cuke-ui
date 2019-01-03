@@ -221,4 +221,26 @@ describe("<DatePicker/>", () => {
     });
     expect(wrapper.find(".cuke-date-picker-next-month")).toHaveLength(3);
   });
+
+  it("should set last month moment when last button clicked", () => {
+    const wrapper = shallow(<DatePicker defaultValue={moment("2019-02-03")} />);
+    wrapper
+      .find(".cuke-date-picker-switch-group")
+      .at(0)
+      .simulate("click");
+    expect(wrapper.state().momentSelected.format("YYYY-MM-DD")).toEqual(
+      "2019-01-03"
+    );
+  });
+
+  it("should set next month moment when next button clicked", () => {
+    const wrapper = shallow(<DatePicker defaultValue={moment("2019-02-03")} />);
+    wrapper
+      .find(".cuke-date-picker-switch-group")
+      .at(1)
+      .simulate("click");
+    expect(wrapper.state().momentSelected.format("YYYY-MM-DD")).toEqual(
+      "2019-03-03"
+    );
+  });
 });

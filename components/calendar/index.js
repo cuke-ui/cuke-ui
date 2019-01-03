@@ -26,19 +26,13 @@ export default class Calendar extends React.PureComponent {
   };
 
   static getDerivedStateFromProps({ value }, { momentSelected }) {
-    if (!value || value.valueOf() === momentSelected.valueOf()) {
-      return null;
+    if (value && !momentSelected.isSame(value)) {
+      return {
+        momentSelected: value
+      };
     }
-    return {
-      momentSelected: value
-    };
+    return null;
   }
-  // componentWillReceiveProps(nextProps) {
-  //   const { value } = this.props;
-  //   if (value && value.valueOf() !== nextProps.value.valueOf()) {
-  //     this.setState({ momentSelected: value, selectedDate: value.date() });
-  //   }
-  // }
 
   state = {
     momentSelected: this.props.defaultValue || this.props.value || moment()
