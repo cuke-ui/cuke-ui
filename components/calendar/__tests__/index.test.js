@@ -129,4 +129,22 @@ describe("<Calendar/>", () => {
     const wrapper = shallow(<Calendar miniMode />);
     assert(wrapper.find(".cuke-calendar-mini").length === 1);
   });
+
+  it("should can find only one last month item when moment is 2019-01-03", () => {
+    const wrapper = shallow(<Calendar defaultValue={moment("2019-01-03")} />);
+    expect(wrapper.find(".cuke-calendar-last-month")).toHaveLength(1);
+    wrapper.setProps({
+      value: moment("2019-02-03")
+    });
+    expect(wrapper.find(".cuke-calendar-last-month")).toHaveLength(4);
+  });
+
+  it("should can find only three next month item when moment is 2019-01-03", () => {
+    const wrapper = shallow(<Calendar defaultValue={moment("2019-01-03")} />);
+    expect(wrapper.find(".cuke-calendar-next-month")).toHaveLength(3);
+    wrapper.setProps({
+      value: moment("2019-02-03")
+    });
+    expect(wrapper.find(".cuke-calendar-next-month")).toHaveLength(3);
+  });
 });

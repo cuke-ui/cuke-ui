@@ -203,4 +203,22 @@ describe("<DatePicker/>", () => {
     const wrapper = shallow(<DatePicker position="top" />);
     assert(wrapper.find(".cuke-date-picker-position-top").length === 1);
   });
+
+  it("should can find only one last month item when moment is 2019-01-03", () => {
+    const wrapper = shallow(<DatePicker defaultValue={moment("2019-01-03")} />);
+    expect(wrapper.find(".cuke-date-picker-last-month")).toHaveLength(1);
+    wrapper.setProps({
+      value: moment("2019-02-03")
+    });
+    expect(wrapper.find(".cuke-date-picker-last-month")).toHaveLength(4);
+  });
+
+  it("should can find only three next month item when moment is 2019-01-03", () => {
+    const wrapper = shallow(<DatePicker defaultValue={moment("2019-01-03")} />);
+    expect(wrapper.find(".cuke-date-picker-next-month")).toHaveLength(3);
+    wrapper.setProps({
+      value: moment("2019-02-03")
+    });
+    expect(wrapper.find(".cuke-date-picker-next-month")).toHaveLength(3);
+  });
 });

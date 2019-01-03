@@ -118,15 +118,18 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
         </div>
         <span
           className="cuke-date-picker-item cuke-date-picker-last-month"
-          key="first-date-30"
-        />
-        <span
-          className="cuke-date-picker-item cuke-date-picker-last-month"
-          key="first-date-31"
+          key="first-date-0"
+          onClick={[Function]}
         />
         <span
           className="cuke-date-picker-item cuke-date-picker-last-month"
           key="first-date-1"
+          onClick={[Function]}
+        />
+        <span
+          className="cuke-date-picker-item cuke-date-picker-last-month"
+          key="first-date-2"
+          onClick={[Function]}
         />
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -134,9 +137,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           1
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -144,9 +144,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           2
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -154,9 +151,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           3
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -164,9 +158,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           4
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -174,9 +165,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           5
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -184,9 +172,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           6
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -194,9 +179,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           7
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -204,9 +186,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           8
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -214,9 +193,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           9
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -224,9 +200,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           10
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -234,9 +207,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           11
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -244,9 +214,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           12
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -254,9 +221,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           13
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -264,9 +228,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           14
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -274,9 +235,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           15
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -284,9 +242,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           16
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -294,9 +249,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           17
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -304,9 +256,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           18
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -314,9 +263,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           19
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -324,9 +270,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           20
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -334,9 +277,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           21
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -344,9 +284,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           22
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -354,9 +291,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           23
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -364,9 +298,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           24
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
@@ -374,9 +305,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           25
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -384,9 +312,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           26
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -394,9 +319,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           27
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -404,9 +326,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           28
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -414,9 +333,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           29
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-current-month"
@@ -424,9 +340,6 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
           onClick={[Function]}
         >
           30
-          <div
-            className="cuke-date-picker-item-content"
-          />
         </span>
         <span
           className="cuke-date-picker-item cuke-date-picker-next-month"
@@ -583,255 +496,162 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       <span
         class="cuke-date-picker-item cuke-date-picker-last-month"
       >
-        30
+        31
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         1
-        <div
-          class="cuke-date-picker-item-content"
-        />
-      </span>
-      <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
-      >
-        2
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
+        2
+      </span>
+      <span
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+      >
         3
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         4
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         5
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         6
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         7
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         8
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         9
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         10
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         11
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         12
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         13
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         14
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         15
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         16
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         17
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         18
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         19
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         20
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         21
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         22
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         23
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         24
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         25
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         26
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         27
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         28
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         29
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         30
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         31
-        <div
-          class="cuke-date-picker-item-content"
-        />
       </span>
       <span
         class="cuke-date-picker-item cuke-date-picker-next-month"

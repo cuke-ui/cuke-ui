@@ -5,6 +5,9 @@ import moment from "moment";
 import Spin from "../spin";
 import { ArrowLeftIcon, ArrowRightIcon } from "../icon";
 
+const CALENDAR_HEADERS = ["一", "二", "三", "四", "五", "六", "日"];
+const WEEKDAY = 7;
+
 export default class Calendar extends React.PureComponent {
   static defaultProps = {
     prefixCls: "cuke-calendar",
@@ -87,14 +90,18 @@ export default class Calendar extends React.PureComponent {
     const { prefixCls } = this.props;
     const momentDateFirst = this.state.momentSelected.clone().date(1);
     const daysInMonth = momentDateFirst.daysInMonth();
+    const dayOfFirstDate = momentDateFirst.day();
 
     const weekdayInMonth = momentDateFirst.isoWeekday();
-    const lastDaysInMonth = (daysInMonth + weekdayInMonth - 1) % 7;
+    const lastDaysInMonth = (daysInMonth + weekdayInMonth - 1) % WEEKDAY;
+
+    const momentLastMonth = momentDateFirst.clone().add(-1, "months");
+    const lastMonthDaysInMonth = momentLastMonth.daysInMonth();
 
     return (
       <>
         <div className={`${prefixCls}-day-header`}>
-          {["一", "二", "三", "四", "五", "六", "日"].map(day => (
+          {CALENDAR_HEADERS.map(day => (
             <span
               className={cls(`${prefixCls}-item`, `${prefixCls}-day-title`)}
               key={day}
@@ -105,17 +112,25 @@ export default class Calendar extends React.PureComponent {
         </div>
 
         <div className={`${prefixCls}-content`}>
-          {new Array(weekdayInMonth - 1).fill(null).map((_, weekday) => {
-            const date = moment()
-              .weekday(weekday)
-              .date();
+          {new Array(weekdayInMonth - 1).fill().map((_, date) => {
+            const currentDate =
+              dayOfFirstDate === 0
+                ? lastMonthDaysInMonth - WEEKDAY + date + 2
+                : lastMonthDaysInMonth - dayOfFirstDate + date + 2;
             return (
               <span
                 className={cls(`${prefixCls}-item`, `${prefixCls}-last-month`)}
                 key={`first-date-${date}`}
-                onClick={this.selectedDate(date)(false)}
+                onClick={this.selectedDate(currentDate)(false)}
               >
-                {date}
+                {currentDate}
+                <div className={cls(`${prefixCls}-item-content`)}>
+                  {this.props.dateCellRender &&
+                    this.props.dateCellRender(
+                      currentDate,
+                      this.state.momentSelected.clone()
+                    )}
+                </div>
               </span>
             );
           })}
