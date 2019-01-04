@@ -20,8 +20,8 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
       type="text"
       value="2018-11-25"
     />
-    <DownIcon
-      className="cuke-date-picker-arrow"
+    <CalendarIcon
+      className="cuke-date-picker-suffix"
     />
   </div>
   <div
@@ -386,7 +386,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       value=""
     />
     <svg
-      class="cuke-date-picker-arrow"
+      class="cuke-date-picker-suffix"
       fill="none"
       height="1em"
       stroke="currentColor"
@@ -396,8 +396,31 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
       viewBox="0 0 24 24"
       width="1em"
     >
-      <polyline
-        points="6 9 12 15 18 9"
+      <rect
+        height="18"
+        rx="2"
+        ry="2"
+        width="18"
+        x="3"
+        y="4"
+      />
+      <line
+        x1="16"
+        x2="16"
+        y1="2"
+        y2="6"
+      />
+      <line
+        x1="8"
+        x2="8"
+        y1="2"
+        y2="6"
+      />
+      <line
+        x1="3"
+        x2="21"
+        y1="10"
+        y2="10"
       />
     </svg>
   </div>
@@ -509,12 +532,12 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         2
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         3
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         4
       </span>

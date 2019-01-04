@@ -243,4 +243,9 @@ describe("<DatePicker/>", () => {
       "2019-03-03"
     );
   });
+
+  it("should render custom suffix icon", () => {
+    const wrapper = shallow(<DatePicker suffix={<Button>suffix</Button>} />);
+    assert(wrapper.find(Button).length === 1);
+  });
 });

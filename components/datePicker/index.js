@@ -1,4 +1,4 @@
-import React, { PureComponent, createRef } from "react";
+import React, { PureComponent, createRef, cloneElement } from "react";
 import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import cls from "classnames";
@@ -7,7 +7,7 @@ import Spin from "../spin";
 import moment from "moment";
 import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
 import { debounce } from "../utils";
-import { DownIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
+import { CalendarIcon, ArrowLeftIcon, ArrowRightIcon } from "../icon";
 
 const positions = {
   top: "top",
@@ -42,7 +42,8 @@ export default class DataPicker extends PureComponent {
     showDayInPrevMonth: true,
     showDayInNextMonth: true,
     position: positions.bottom,
-    getPopupContainer: () => document.body
+    getPopupContainer: () => document.body,
+    suffix: <CalendarIcon />
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -66,7 +67,6 @@ export default class DataPicker extends PureComponent {
   constructor(props) {
     super(props);
     this.toggleContainer = createRef();
-    this.wrapper = createRef();
     this.wrapper = createRef();
     this.triggerWrapper = createRef();
   }
@@ -301,6 +301,7 @@ export default class DataPicker extends PureComponent {
       onPanelVisibleChange, //eslint-disable-line
       getPopupContainer,
       position,
+      suffix,
       ...attr
     } = this.props;
 
@@ -336,7 +337,9 @@ export default class DataPicker extends PureComponent {
             }
             onClick={disabled ? undefined : this.onTogglePanel}
           />
-          <DownIcon className={`${prefixCls}-arrow`} />
+          {cloneElement(suffix, {
+            className: `${prefixCls}-suffix`
+          })}
         </div>
         {createPortal(
           <div

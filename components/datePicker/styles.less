@@ -14,11 +14,6 @@
       cursor: pointer;
     }
   }
-  &-active {
-    .@{prefixCls}-arrow {
-      transform: translateY(-50%) rotate(180deg);
-    }
-  }
   &-open {
     animation: cuke-picker-open @default-transition forwards;
   }
@@ -29,9 +24,9 @@
   &-input {
     width: @cuke-select-width;
   }
-  &-arrow {
+  &-suffix {
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 50%;
     transform: translateY(-50%);
     color: @disabled-font-color;
