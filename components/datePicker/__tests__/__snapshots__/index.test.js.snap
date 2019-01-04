@@ -17,6 +17,7 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
       placeholder="请选择"
       prefixCls="cuke-input"
       readonly={true}
+      size="default"
       type="text"
       value="2018-11-25"
     />
@@ -704,6 +705,1019 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         class="cuke-date-picker-footer-clear"
       >
         清除
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<DatePicker/> should render custom size 1`] = `
+<div>
+  <div
+    class="cuke-date-picker cuke-date-picker-position-bottom"
+  >
+    <div
+      class="cuke-date-picker-inner"
+    >
+      <input
+        class="cuke-input cuke-date-picker-input cuke-input-small"
+        placeholder="small"
+        readonly=""
+        type="text"
+        value=""
+      />
+      <svg
+        class="cuke-date-picker-suffix"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <rect
+          height="18"
+          rx="2"
+          ry="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <line
+          x1="16"
+          x2="16"
+          y1="2"
+          y2="6"
+        />
+        <line
+          x1="8"
+          x2="8"
+          y1="2"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="10"
+          y2="10"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
+    >
+      <div
+        class="cuke-date-picker-header"
+      >
+        <span
+          class="cuke-date-picker-date"
+        >
+          2019年   1月
+        </span>
+        <span
+          class="cuke-date-picker-switch"
+        >
+          <span
+            class="cuke-date-picker-switch-group"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <polyline
+                points="15 18 9 12 15 6"
+              />
+            </svg>
+          </span>
+          <span
+            class="cuke-date-picker-switch-group"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <polyline
+                points="9 18 15 12 9 6"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <div
+        class="cuke-date-picker-items"
+      >
+        <div>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            一
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            二
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            三
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            四
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            五
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            六
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            日
+          </span>
+        </div>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-last-month"
+        >
+          31
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          1
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          2
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          3
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        >
+          4
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          5
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          6
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          7
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          8
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          9
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          10
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          11
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          12
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          13
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          14
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          15
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          16
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          17
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          18
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          19
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          20
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          21
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          22
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          23
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          24
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          25
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          26
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          27
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          28
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          29
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          30
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          31
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          1
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          2
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          3
+        </span>
+      </div>
+      <div
+        class="cuke-date-picker-footer cuke-date-picker-has-border"
+      >
+        <div
+          class="cuke-date-picker-footer-today"
+        >
+          今天
+        </div>
+        <div
+          class="cuke-date-picker-footer-clear"
+        >
+          清除
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cuke-date-picker cuke-date-picker-position-bottom"
+  >
+    <div
+      class="cuke-date-picker-inner"
+    >
+      <input
+        class="cuke-input cuke-date-picker-input"
+        placeholder="default"
+        readonly=""
+        type="text"
+        value=""
+      />
+      <svg
+        class="cuke-date-picker-suffix"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <rect
+          height="18"
+          rx="2"
+          ry="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <line
+          x1="16"
+          x2="16"
+          y1="2"
+          y2="6"
+        />
+        <line
+          x1="8"
+          x2="8"
+          y1="2"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="10"
+          y2="10"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
+    >
+      <div
+        class="cuke-date-picker-header"
+      >
+        <span
+          class="cuke-date-picker-date"
+        >
+          2019年   1月
+        </span>
+        <span
+          class="cuke-date-picker-switch"
+        >
+          <span
+            class="cuke-date-picker-switch-group"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <polyline
+                points="15 18 9 12 15 6"
+              />
+            </svg>
+          </span>
+          <span
+            class="cuke-date-picker-switch-group"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <polyline
+                points="9 18 15 12 9 6"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <div
+        class="cuke-date-picker-items"
+      >
+        <div>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            一
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            二
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            三
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            四
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            五
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            六
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            日
+          </span>
+        </div>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-last-month"
+        >
+          31
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          1
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          2
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          3
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        >
+          4
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          5
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          6
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          7
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          8
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          9
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          10
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          11
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          12
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          13
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          14
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          15
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          16
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          17
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          18
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          19
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          20
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          21
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          22
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          23
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          24
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          25
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          26
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          27
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          28
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          29
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          30
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          31
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          1
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          2
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          3
+        </span>
+      </div>
+      <div
+        class="cuke-date-picker-footer cuke-date-picker-has-border"
+      >
+        <div
+          class="cuke-date-picker-footer-today"
+        >
+          今天
+        </div>
+        <div
+          class="cuke-date-picker-footer-clear"
+        >
+          清除
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="cuke-date-picker cuke-date-picker-position-bottom"
+  >
+    <div
+      class="cuke-date-picker-inner"
+    >
+      <input
+        class="cuke-input cuke-date-picker-input cuke-input-large"
+        placeholder="large"
+        readonly=""
+        type="text"
+        value=""
+      />
+      <svg
+        class="cuke-date-picker-suffix"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <rect
+          height="18"
+          rx="2"
+          ry="2"
+          width="18"
+          x="3"
+          y="4"
+        />
+        <line
+          x1="16"
+          x2="16"
+          y1="2"
+          y2="6"
+        />
+        <line
+          x1="8"
+          x2="8"
+          y1="2"
+          y2="6"
+        />
+        <line
+          x1="3"
+          x2="21"
+          y1="10"
+          y2="10"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
+    >
+      <div
+        class="cuke-date-picker-header"
+      >
+        <span
+          class="cuke-date-picker-date"
+        >
+          2019年   1月
+        </span>
+        <span
+          class="cuke-date-picker-switch"
+        >
+          <span
+            class="cuke-date-picker-switch-group"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <polyline
+                points="15 18 9 12 15 6"
+              />
+            </svg>
+          </span>
+          <span
+            class="cuke-date-picker-switch-group"
+          >
+            <svg
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <polyline
+                points="9 18 15 12 9 6"
+              />
+            </svg>
+          </span>
+        </span>
+      </div>
+      <div
+        class="cuke-date-picker-items"
+      >
+        <div>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            一
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            二
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            三
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            四
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            五
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            六
+          </span>
+          <span
+            class="cuke-date-picker-item cuke-date-picker-day-title"
+          >
+            日
+          </span>
+        </div>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-last-month"
+        >
+          31
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          1
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          2
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          3
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        >
+          4
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          5
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          6
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          7
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          8
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          9
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          10
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          11
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          12
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          13
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          14
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          15
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          16
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          17
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          18
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          19
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          20
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          21
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          22
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          23
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          24
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          25
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          26
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          27
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          28
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          29
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          30
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-current-month"
+        >
+          31
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          1
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          2
+        </span>
+        <span
+          class="cuke-date-picker-item cuke-date-picker-next-month"
+        >
+          3
+        </span>
+      </div>
+      <div
+        class="cuke-date-picker-footer cuke-date-picker-has-border"
+      >
+        <div
+          class="cuke-date-picker-footer-today"
+        >
+          今天
+        </div>
+        <div
+          class="cuke-date-picker-footer-clear"
+        >
+          清除
+        </div>
       </div>
     </div>
   </div>

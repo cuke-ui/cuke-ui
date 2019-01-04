@@ -15,6 +15,28 @@ describe("<Select/>", () => {
     );
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+  it("should render custom size", () => {
+    const wrapper = render(
+      <div>
+        <Select placeholder="请选择" size="small">
+          <Select.Option value="黄瓜">黄瓜</Select.Option>
+          <Select.Option value="茄子">茄子</Select.Option>
+          <Select.Option value="番茄">番茄</Select.Option>
+        </Select>
+        <Select placeholder="请选择">
+          <Select.Option value="黄瓜">黄瓜</Select.Option>
+          <Select.Option value="茄子">茄子</Select.Option>
+          <Select.Option value="番茄">番茄</Select.Option>
+        </Select>
+        <Select placeholder="请选择" size="large">
+          <Select.Option value="黄瓜">黄瓜</Select.Option>
+          <Select.Option value="茄子">茄子</Select.Option>
+          <Select.Option value="番茄">番茄</Select.Option>
+        </Select>
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 
   it("should find cuke-select classnames", () => {
     const wrapper = shallow(

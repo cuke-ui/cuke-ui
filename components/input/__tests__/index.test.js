@@ -45,4 +45,17 @@ describe("<Input/>", () => {
       expect(onChange).toHaveBeenCalled();
     }, 20);
   });
+
+  it("should render custom size", () => {
+    const wrapper = render(
+      <div>
+        <Input placeholder="small" size="small" />
+        <Input placeholder="default" />
+        <Input placeholder="large" size="large" />
+      </div>
+    );
+    expect(wrapper.find(".cuke-input-small").length === 1);
+    expect(wrapper.find(".cuke-input-large").length === 1);
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 });

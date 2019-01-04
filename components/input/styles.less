@@ -31,6 +31,14 @@
     box-shadow: @input-box-shadow;
   }
 
+  &-large {
+    height: @input-height-large;
+  }
+
+  &-small {
+    height: @input-height-small;
+  }
+
   &-disabled {
     cursor: not-allowed;
     color: @disabled-font-color;
@@ -65,6 +73,18 @@
   &-group {
     vertical-align: middle;
     .flex-center(space-around);
+
+    &-small {
+      .@{prefixCls}-group-addon {
+        height: @input-height-small;
+      }
+    }
+
+    &-large {
+      .@{prefixCls}-group-addon {
+        height: @input-height-large;
+      }
+    }
 
     > .cuke-input {
       flex: 1 1 auto;

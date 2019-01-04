@@ -6,6 +6,12 @@ import Input from "../input";
 import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
 import { DownIcon } from "../icon";
 
+const sizes = {
+  default: "default",
+  small: "small",
+  large: "large"
+};
+
 export default class CityPicker extends PureComponent {
   state = {
     visible: null,
@@ -20,7 +26,8 @@ export default class CityPicker extends PureComponent {
     placeholder: "请选择",
     disabledGroups: [],
     loading: false,
-    onPanelVisibleChange: () => {}
+    onPanelVisibleChange: () => {},
+    size: sizes.default
   };
   static propTypes = {
     cityList: PropTypes.arrayOf(
@@ -43,7 +50,8 @@ export default class CityPicker extends PureComponent {
     onCityChange: PropTypes.func,
     onPanelVisibleChange: PropTypes.func,
     loading: PropTypes.bool,
-    tip: PropTypes.any
+    tip: PropTypes.any,
+    size: PropTypes.oneOf(Object.values(sizes))
   };
   constructor(props) {
     super(props);
@@ -103,6 +111,7 @@ export default class CityPicker extends PureComponent {
       onCityGroupChange, //eslint-disable-line
       onCityChange, //eslint-disable-line
       defaultCityName, //eslint-disable-line
+      size,
       ...attr
     } = this.props;
 
@@ -126,6 +135,7 @@ export default class CityPicker extends PureComponent {
             className={cls(`${prefixCls}-input`)}
             onClick={this.onOpenCityPicker}
             value={selectedCityName}
+            size={size}
           />
           <DownIcon className={`${prefixCls}-arrow`} />
         </div>

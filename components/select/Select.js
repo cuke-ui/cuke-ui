@@ -7,6 +7,12 @@ import { DownIcon } from "../icon";
 import { debounce } from "../utils";
 import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
 
+const sizes = {
+  default: "default",
+  small: "small",
+  large: "large"
+};
+
 export default class Select extends PureComponent {
   state = {
     selectedValue: this.props.defaultValue || this.props.value || "",
@@ -29,6 +35,7 @@ export default class Select extends PureComponent {
     getPopupContainer: PropTypes.func,
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
+    size: PropTypes.oneOf(Object.values(sizes)),
     overlay: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -55,12 +62,13 @@ export default class Select extends PureComponent {
     });
     this.props.onPanelVisibleChange(visible);
     if (visible) {
-      this.setWrapperBounding();
-      scrollIntoViewIfNeeded(this.wrapper.current, {
-        scrollMode: "if-needed",
-        behavior: "smooth",
-        block: "nearest",
-        inline: "nearest"
+      this.setWrapperBounding(() => {
+        scrollIntoViewIfNeeded(this.wrapper.current, {
+          scrollMode: "if-needed",
+          behavior: "smooth",
+          block: "nearest",
+          inline: "nearest"
+        });
       });
     }
   };
@@ -104,9 +112,9 @@ export default class Select extends PureComponent {
     return positions[this.props.position];
   };
 
-  setWrapperBounding() {
+  setWrapperBounding(cb = () => {}) {
     const { left, top, width } = this.getWrapperBounding();
-    this.setState({ left, top, width });
+    this.setState({ left, top, width }, cb);
   }
 
   onResizeHandler = debounce(() => {
@@ -122,6 +130,8 @@ export default class Select extends PureComponent {
       placeholder,
       children,
       getPopupContainer,
+      size,
+      style,
       onPanelVisibleChange, //eslint-disable-line
       ...attr
     } = this.props;
@@ -132,6 +142,7 @@ export default class Select extends PureComponent {
       <div
         className={cls(`${prefixCls}`, className)}
         {...attr}
+        style={style}
         ref={this.toggleContainer}
       >
         <div
@@ -147,6 +158,10 @@ export default class Select extends PureComponent {
             className={cls(`${prefixCls}-input`)}
             value={selectedValue}
             onClick={this.onClickHandler}
+            size={size}
+            style={{
+              width: style && style.width
+            }}
           />
           <DownIcon className={`${prefixCls}-arrow`} />
         </div>

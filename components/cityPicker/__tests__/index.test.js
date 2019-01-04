@@ -93,6 +93,16 @@ describe("<CityPicker/>", () => {
     const wrapper = render(<CityPicker cityList={cityList} />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+  it("should render custom size", () => {
+    const wrapper = render(
+      <div>
+        <CityPicker cityList={cityList} placeholder="small" size="small" />
+        <CityPicker cityList={cityList} placeholder="default" size="default" />
+        <CityPicker cityList={cityList} placeholder="large" size="large" />
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
 
   it("should render Input when render CityPicker", () => {
     const wrapper = shallow(<CityPicker cityList={cityList} />);

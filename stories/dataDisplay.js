@@ -856,6 +856,17 @@ storiesOf("数据展示", module)
           onPanelVisibleChange={visible => console.log("visible:", visible)}
         />
 
+        <h2>三种大小</h2>
+        <Row style={{ marginTop: "30px" }}>
+          <CityPicker cityList={cityList} placeholder="small" size="small" />
+        </Row>
+        <Row style={{ marginTop: "20px" }}>
+          <CityPicker cityList={cityList} placeholder="default" />
+        </Row>
+        <Row style={{ marginTop: "20px" }}>
+          <CityPicker cityList={cityList} placeholder="large" size="large" />
+        </Row>
+
         <h2>在任意容器中单独使用 picker</h2>
         <CityPicker.CityPickerCore cityList={cityList} />
       </div>

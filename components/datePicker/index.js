@@ -14,6 +14,12 @@ const positions = {
   bottom: "bottom"
 };
 
+const sizes = {
+  default: "default",
+  small: "small",
+  large: "large"
+};
+
 const CALENDAR_HEADERS = ["一", "二", "三", "四", "五", "六", "日"];
 
 const WEEKDAY = 7;
@@ -43,7 +49,8 @@ export default class DataPicker extends PureComponent {
     showDayInNextMonth: true,
     position: positions.bottom,
     getPopupContainer: () => document.body,
-    suffix: <CalendarIcon />
+    suffix: <CalendarIcon />,
+    size: sizes.default
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -57,6 +64,7 @@ export default class DataPicker extends PureComponent {
     showDayInPrevMonth: PropTypes.bool,
     showDayInNextMonth: PropTypes.bool,
     position: PropTypes.oneOf(Object.values(positions)),
+    size: PropTypes.oneOf(Object.values(sizes)),
     overlay: PropTypes.oneOfType([
       PropTypes.element,
       PropTypes.string,
@@ -302,6 +310,7 @@ export default class DataPicker extends PureComponent {
       getPopupContainer,
       position,
       suffix,
+      size,
       ...attr
     } = this.props;
 
@@ -336,6 +345,7 @@ export default class DataPicker extends PureComponent {
               isSelectedMoment ? momentSelectedTemplate.format(format) : ""
             }
             onClick={disabled ? undefined : this.onTogglePanel}
+            size={size}
           />
           {cloneElement(suffix, {
             className: `${prefixCls}-suffix`

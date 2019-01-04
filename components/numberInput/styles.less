@@ -5,11 +5,29 @@
 
 .@{prefixCls} {
   width: @cuke-number-input-width;
+  &.cuke-input-small {
+    width: @cuke-number-input-width-small;
+  }
+  &.cuke-input-large {
+    width: @cuke-number-input-width-large;
+  }
   &-group {
-    width: @cuke-number-input-group-width;
     display: inline-flex;
+    .cuke-input {
+      width: @cuke-number-input-width;
+    }
     .cuke-input-group-addon {
       cursor: pointer;
+    }
+    &.cuke-input-group-small {
+      .cuke-input-group-addon {
+        padding: 4px;
+      }
+    }
+    &.cuke-input-group-large {
+      .cuke-input-group-addon {
+        padding: 4px 15px;
+      }
     }
   }
   &-stepper {

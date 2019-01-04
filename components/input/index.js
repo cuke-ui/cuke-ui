@@ -2,6 +2,11 @@ import React, { PureComponent } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
 
+const sizes = {
+  default: "default",
+  small: "small",
+  large: "large"
+};
 export default class Input extends PureComponent {
   static defaultProps = {
     prefixCls: "cuke-input",
@@ -33,7 +38,8 @@ export default class Input extends PureComponent {
     ]),
     value: PropTypes.string,
     defaultValue: PropTypes.string,
-    onChange: PropTypes.func
+    onChange: PropTypes.func,
+    size: PropTypes.oneOf(Object.values(sizes))
   };
 
   render() {
@@ -47,6 +53,7 @@ export default class Input extends PureComponent {
       addonBefore,
       addonAfter,
       addonClassName,
+      size,
       ...attr
     } = this.props;
 
@@ -56,7 +63,8 @@ export default class Input extends PureComponent {
         disabled={disabled}
         readOnly={readonly}
         className={cls(prefixCls, className, {
-          [`${prefixCls}-disabled`]: disabled
+          [`${prefixCls}-disabled`]: disabled,
+          [`${prefixCls}-${size}`]: size !== sizes.default
         })}
         placeholder={placeholder}
         {...attr}
@@ -68,22 +76,21 @@ export default class Input extends PureComponent {
         <span
           className={cls(
             `${prefixCls}-group`,
-            { [`${prefixCls}-group-addon-before`]: !!addonBefore },
-            { [`${prefixCls}-group-addon-after`]: !!addonAfter },
-            { [`${prefixCls}-group-addon-all`]: !!addonAfter && !!addonBefore },
+            {
+              [`${prefixCls}-group-addon-before`]: !!addonBefore,
+              [`${prefixCls}-group-addon-after`]: !!addonAfter,
+              [`${prefixCls}-group-addon-all`]: !!addonAfter && !!addonBefore,
+              [`${prefixCls}-group-${size}`]: size !== sizes.default
+            },
             addonClassName
           )}
         >
-          {addonBefore ? (
+          {addonBefore && (
             <span className={`${prefixCls}-group-addon`}>{addonBefore}</span>
-          ) : (
-            undefined
           )}
           {inputEle}
-          {addonAfter ? (
+          {addonAfter && (
             <span className={`${prefixCls}-group-addon`}>{addonAfter}</span>
-          ) : (
-            undefined
           )}
         </span>
       );

@@ -9,7 +9,7 @@ exports[`<Select/> should render a <Select/> components 1`] = `
     class="cuke-select-inner"
   >
     <input
-      class="cuke-input cuke-select-input"
+      class="cuke-input cuke-select-input cuke-input-undefined"
       placeholder=""
       readonly=""
       type="text"
@@ -49,6 +49,164 @@ exports[`<Select/> should render a <Select/> components 1`] = `
       class="cuke-select-option"
     >
       番茄
+    </div>
+  </div>
+</div>
+`;
+
+exports[`<Select/> should render custom size 1`] = `
+<div>
+  <div
+    class="cuke-select"
+    position="bottom"
+  >
+    <div
+      class="cuke-select-inner"
+    >
+      <input
+        class="cuke-input cuke-select-input cuke-input-small"
+        placeholder="请选择"
+        readonly=""
+        type="text"
+        value=""
+      />
+      <svg
+        class="cuke-select-arrow"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-select-content cuke-select-close cuke-ui-no-animate"
+      style="width:0;left:0;top:0"
+    >
+      <div
+        class="cuke-select-option"
+      >
+        黄瓜
+      </div>
+      <div
+        class="cuke-select-option"
+      >
+        茄子
+      </div>
+      <div
+        class="cuke-select-option"
+      >
+        番茄
+      </div>
+    </div>
+  </div>
+  <div
+    class="cuke-select"
+    position="bottom"
+  >
+    <div
+      class="cuke-select-inner"
+    >
+      <input
+        class="cuke-input cuke-select-input cuke-input-undefined"
+        placeholder="请选择"
+        readonly=""
+        type="text"
+        value=""
+      />
+      <svg
+        class="cuke-select-arrow"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-select-content cuke-select-close cuke-ui-no-animate"
+      style="width:0;left:0;top:0"
+    >
+      <div
+        class="cuke-select-option"
+      >
+        黄瓜
+      </div>
+      <div
+        class="cuke-select-option"
+      >
+        茄子
+      </div>
+      <div
+        class="cuke-select-option"
+      >
+        番茄
+      </div>
+    </div>
+  </div>
+  <div
+    class="cuke-select"
+    position="bottom"
+  >
+    <div
+      class="cuke-select-inner"
+    >
+      <input
+        class="cuke-input cuke-select-input cuke-input-large"
+        placeholder="请选择"
+        readonly=""
+        type="text"
+        value=""
+      />
+      <svg
+        class="cuke-select-arrow"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <polyline
+          points="6 9 12 15 18 9"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-select-content cuke-select-close cuke-ui-no-animate"
+      style="width:0;left:0;top:0"
+    >
+      <div
+        class="cuke-select-option"
+      >
+        黄瓜
+      </div>
+      <div
+        class="cuke-select-option"
+      >
+        茄子
+      </div>
+      <div
+        class="cuke-select-option"
+      >
+        番茄
+      </div>
     </div>
   </div>
 </div>

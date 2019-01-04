@@ -121,9 +121,9 @@ export default class Tooltip extends PureComponent {
     return positions[this.props.position];
   };
 
-  setWrapperBounding() {
+  setWrapperBounding(cb = () => {}) {
     const { left, top } = this.getWrapperBounding();
-    this.setState({ left, top });
+    this.setState({ left, top }, cb);
   }
 
   onClickOutsideHandler = e => {
@@ -145,14 +145,15 @@ export default class Tooltip extends PureComponent {
     }
     this.setState({ visible: true, closeLock: false }, () => {
       if (!this.state.openLock) {
-        this.setWrapperBounding();
-        this.props.onVisibleChange(true);
-        this.setState({ openLock: true, closeLock: false }, () => {
-          scrollIntoViewIfNeeded(this.wrapper.current, {
-            scrollMode: "if-needed",
-            behavior: "smooth",
-            block: "nearest",
-            inline: "nearest"
+        this.setWrapperBounding(() => {
+          this.props.onVisibleChange(true);
+          this.setState({ openLock: true, closeLock: false }, () => {
+            scrollIntoViewIfNeeded(this.wrapper.current, {
+              scrollMode: "if-needed",
+              behavior: "smooth",
+              block: "nearest",
+              inline: "nearest"
+            });
           });
         });
       }

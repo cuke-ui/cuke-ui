@@ -11,6 +11,16 @@ describe("<DatePicker/>", () => {
     const wrapper = render(<DatePicker />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+  it("should render custom size", () => {
+    const wrapper = render(
+      <div>
+        <DatePicker placeholder="small" size="small" />
+        <DatePicker placeholder="default" />
+        <DatePicker placeholder="large" size="large" />
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+  });
   it("should render find .cuke-date-picker classnames", () => {
     const wrapper = shallow(<DatePicker />);
     assert(wrapper.find(".cuke-date-picker").length === 1);
