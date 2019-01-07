@@ -3,29 +3,29 @@
 exports[`<Input/> should render Input 1`] = `
 <div>
   <input
-    class="cuke-input cuke-input-undefined"
+    class="cuke-input"
     placeholder=""
     type="text"
   />
   <input
-    class="cuke-input cuke-input-undefined"
+    class="cuke-input"
     placeholder="请输入"
     type="password"
   />
   <input
-    class="cuke-input cuke-input-undefined"
+    class="cuke-input"
     placeholder="请输入"
     type="number"
   />
   <input
-    class="cuke-input cuke-input-undefined"
+    class="cuke-input"
     placeholder=""
     readonly=""
     type="text"
     value="我是只读"
   />
   <input
-    class="cuke-input cuke-input-disabled cuke-input-undefined"
+    class="cuke-input cuke-input-disabled"
     disabled=""
     placeholder="禁用"
     type="text"
@@ -36,7 +36,7 @@ exports[`<Input/> should render Input 1`] = `
 exports[`<Input/> should render addon with input 1`] = `
 <div>
   <span
-    class="cuke-input-group cuke-input-group-addon-before cuke-input-group-undefined"
+    class="cuke-input-group cuke-input-group-addon-before"
   >
     <span
       class="cuke-input-group-addon"
@@ -44,16 +44,16 @@ exports[`<Input/> should render addon with input 1`] = `
       www
     </span>
     <input
-      class="cuke-input cuke-input-undefined"
+      class="cuke-input"
       placeholder="请输入"
       type="text"
     />
   </span>
   <span
-    class="cuke-input-group cuke-input-group-addon-after cuke-input-group-undefined"
+    class="cuke-input-group cuke-input-group-addon-after"
   >
     <input
-      class="cuke-input cuke-input-undefined"
+      class="cuke-input"
       placeholder="填写网址"
       type="text"
     />
@@ -64,7 +64,7 @@ exports[`<Input/> should render addon with input 1`] = `
     </span>
   </span>
   <span
-    class="cuke-input-group cuke-input-group-addon-before cuke-input-group-addon-after cuke-input-group-addon-all cuke-input-group-undefined"
+    class="cuke-input-group cuke-input-group-addon-before cuke-input-group-addon-after cuke-input-group-addon-all"
   >
     <span
       class="cuke-input-group-addon"
@@ -72,7 +72,7 @@ exports[`<Input/> should render addon with input 1`] = `
       https://
     </span>
     <input
-      class="cuke-input cuke-input-undefined"
+      class="cuke-input"
       placeholder="www.lijinke"
       type="text"
     />
@@ -93,7 +93,7 @@ exports[`<Input/> should render custom size 1`] = `
     type="text"
   />
   <input
-    class="cuke-input cuke-input-undefined"
+    class="cuke-input"
     placeholder="default"
     type="text"
   />

@@ -2,7 +2,7 @@
 
 exports[`<NumberInput/> should render NumberInput 1`] = `
 <input
-  class="cuke-input cuke-number-input cuke-input-undefined"
+  class="cuke-input cuke-number-input"
   placeholder=""
   type="text"
   value=""

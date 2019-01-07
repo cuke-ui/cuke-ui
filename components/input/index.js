@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent /* isValidElement */ } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
 
@@ -8,13 +8,20 @@ const sizes = {
   large: "large"
 };
 export default class Input extends PureComponent {
+  state = {
+    value: this.props.defaultValue || this.props.value || ""
+  };
   static defaultProps = {
     prefixCls: "cuke-input",
     disabled: false,
     readonly: false,
     placeholder: "",
     type: "text",
-    onChange: () => {}
+    size: sizes.default,
+    onChange: () => {},
+    allowClear: false,
+    suffix: null,
+    prefix: null
   };
 
   static propTypes = {
@@ -36,10 +43,36 @@ export default class Input extends PureComponent {
       "color",
       "email"
     ]),
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     defaultValue: PropTypes.string,
     onChange: PropTypes.func,
-    size: PropTypes.oneOf(Object.values(sizes))
+    size: PropTypes.oneOf(Object.values(sizes)),
+    allowClear: PropTypes.bool,
+    suffix: PropTypes.any,
+    prefix: PropTypes.any
+  };
+
+  static getDerivedStateFromProps({ value }, state) {
+    if (value !== state.value) {
+      return {
+        value
+      };
+    }
+    return null;
+  }
+
+  _onChange = e => {
+    e.persist();
+    this.setState(
+      {
+        value: e.target.value
+      },
+      () => {
+        if (this.props.onChange) {
+          this.props.onChange(e);
+        }
+      }
+    );
   };
 
   render() {
@@ -54,6 +87,9 @@ export default class Input extends PureComponent {
       addonAfter,
       addonClassName,
       size,
+      // allowClear,
+      // suffix,
+      // prefix,
       ...attr
     } = this.props;
 
@@ -68,6 +104,8 @@ export default class Input extends PureComponent {
         })}
         placeholder={placeholder}
         {...attr}
+        value={this.state.value}
+        onChange={this._onChange}
       />
     );
 

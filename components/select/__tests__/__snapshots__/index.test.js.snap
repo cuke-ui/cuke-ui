@@ -9,7 +9,7 @@ exports[`<Select/> should render a <Select/> components 1`] = `
     class="cuke-select-inner"
   >
     <input
-      class="cuke-input cuke-select-input cuke-input-undefined"
+      class="cuke-input cuke-select-input"
       placeholder=""
       readonly=""
       type="text"
@@ -115,7 +115,7 @@ exports[`<Select/> should render custom size 1`] = `
       class="cuke-select-inner"
     >
       <input
-        class="cuke-input cuke-select-input cuke-input-undefined"
+        class="cuke-input cuke-select-input"
         placeholder="请选择"
         readonly=""
         type="text"

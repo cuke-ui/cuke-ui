@@ -34,16 +34,15 @@ describe("<Input/>", () => {
 
   it("should emit onChange events", () => {
     const onChange = jest.fn();
-    const wrapper = shallow(
-      <div>
-        <Input onChange={onChange} type="text" />
-      </div>
-    );
+    const wrapper = shallow(<Input onChange={onChange} type="text" />);
 
-    setTimeout(() => {
-      wrapper.find("input").simulate("change");
-      expect(onChange).toHaveBeenCalled();
-    }, 20);
+    wrapper.find(".cuke-input").simulate("change", {
+      persist: () => {},
+      target: {
+        value: null
+      }
+    });
+    expect(onChange).toHaveBeenCalled();
   });
 
   it("should render custom size", () => {
@@ -57,5 +56,18 @@ describe("<Input/>", () => {
     expect(wrapper.find(".cuke-input-small").length === 1);
     expect(wrapper.find(".cuke-input-large").length === 1);
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it("should set new state when props value update", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Input onChange={onChange} type="text" value={1} />
+    );
+
+    expect(wrapper.state().value).toBe(1);
+    wrapper.setProps({
+      value: 3
+    });
+    expect(wrapper.state().value).toBe(3);
   });
 });
