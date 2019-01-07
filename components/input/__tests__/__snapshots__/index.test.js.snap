@@ -6,16 +6,19 @@ exports[`<Input/> should render Input 1`] = `
     class="cuke-input"
     placeholder=""
     type="text"
+    value=""
   />
   <input
     class="cuke-input"
     placeholder="请输入"
     type="password"
+    value=""
   />
   <input
     class="cuke-input"
     placeholder="请输入"
     type="number"
+    value=""
   />
   <input
     class="cuke-input"
@@ -29,6 +32,7 @@ exports[`<Input/> should render Input 1`] = `
     disabled=""
     placeholder="禁用"
     type="text"
+    value=""
   />
 </div>
 `;
@@ -47,6 +51,7 @@ exports[`<Input/> should render addon with input 1`] = `
       class="cuke-input"
       placeholder="请输入"
       type="text"
+      value=""
     />
   </span>
   <span
@@ -56,6 +61,7 @@ exports[`<Input/> should render addon with input 1`] = `
       class="cuke-input"
       placeholder="填写网址"
       type="text"
+      value=""
     />
     <span
       class="cuke-input-group-addon"
@@ -75,6 +81,7 @@ exports[`<Input/> should render addon with input 1`] = `
       class="cuke-input"
       placeholder="www.lijinke"
       type="text"
+      value=""
     />
     <span
       class="cuke-input-group-addon"
@@ -91,16 +98,139 @@ exports[`<Input/> should render custom size 1`] = `
     class="cuke-input cuke-input-small"
     placeholder="small"
     type="text"
+    value=""
   />
   <input
     class="cuke-input"
     placeholder="default"
     type="text"
+    value=""
   />
   <input
     class="cuke-input cuke-input-large"
     placeholder="large"
     type="text"
+    value=""
   />
+</div>
+`;
+
+exports[`<Input/> should render prefix and suffix with input 1`] = `
+<div>
+  <div
+    class="cuke-input-wrapper"
+  >
+    <span
+      class="cuke-input-prefix"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+        />
+        <polyline
+          points="22 4 12 14.01 9 11.01"
+        />
+      </svg>
+    </span>
+    <input
+      class="cuke-input"
+      placeholder="请输入"
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    class="cuke-input-wrapper"
+  >
+    <input
+      class="cuke-input"
+      placeholder="请输入"
+      style="margin:10px 0"
+      type="text"
+      value=""
+    />
+    <span
+      class="cuke-input-suffix"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+        />
+        <polyline
+          points="22 4 12 14.01 9 11.01"
+        />
+      </svg>
+    </span>
+  </div>
+  <div
+    class="cuke-input-wrapper"
+  >
+    <span
+      class="cuke-input-prefix"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+        />
+        <polyline
+          points="22 4 12 14.01 9 11.01"
+        />
+      </svg>
+    </span>
+    <input
+      class="cuke-input"
+      placeholder="请输入"
+      type="text"
+      value=""
+    />
+    <span
+      class="cuke-input-suffix"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M22 11.08V12a10 10 0 1 1-5.93-9.14"
+        />
+        <polyline
+          points="22 4 12 14.01 9 11.01"
+        />
+      </svg>
+    </span>
+  </div>
 </div>
 `;

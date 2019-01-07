@@ -29,7 +29,7 @@ import "../components/form/styles.less";
 import "./styles/dataEntry.less";
 import Col from "../components/col";
 import Row from "../components/row";
-import { FileUploadIcon } from "../components/icon";
+import { FileUploadIcon, SuccessIcon } from "../components/icon";
 // import Form from '../components/form';
 // import FormInfo from './pages/formInfo';
 
@@ -145,6 +145,19 @@ storiesOf("数据录入", module)
         style={{ margin: "10px 0" }}
       />
 
+      <h2>前缀/后缀</h2>
+      <Input prefix={<IoIosAddCircleOutline />} placeholder="请输入" />
+      <Input
+        suffix={<IoIosAddCircleOutline />}
+        placeholder="请输入"
+        style={{ margin: "10px 0" }}
+      />
+      <Input
+        prefix={<IoIosAddCircleOutline />}
+        suffix={<SuccessIcon />}
+        placeholder="请输入"
+      />
+
       <h2>三种大小</h2>
       <Input placeholder="small" size="small" />
       <Input placeholder="default" style={{ margin: "10px 0" }} />
@@ -171,6 +184,9 @@ storiesOf("数据录入", module)
         size="large"
         style={{ margin: "10px 0" }}
       />
+
+      <h2>允许删除</h2>
+      <Input allowClear placeholder="请输入" />
     </div>
   ))
   .add("NumberInput 输入框", () => (

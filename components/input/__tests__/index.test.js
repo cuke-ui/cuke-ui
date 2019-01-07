@@ -1,7 +1,8 @@
 import React from "react";
-import { render, shallow } from "enzyme";
+import { render, shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import Input from "../index";
+import { SuccessIcon } from "../../icon";
 
 describe("<Input/>", () => {
   it("should render Input", () => {
@@ -30,6 +31,26 @@ describe("<Input/>", () => {
       </div>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+  it("should render prefix and suffix with input", () => {
+    const wrapper = render(
+      <div>
+        <Input prefix={<SuccessIcon />} placeholder="请输入" />
+        <Input
+          suffix={<SuccessIcon />}
+          placeholder="请输入"
+          style={{ margin: "10px 0" }}
+        />
+        <Input
+          prefix={<SuccessIcon />}
+          suffix={<SuccessIcon />}
+          placeholder="请输入"
+        />
+      </div>
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.find(".cuke-input-prefix")).toHaveLength(2);
+    expect(wrapper.find(".cuke-input-suffix")).toHaveLength(2);
   });
 
   it("should emit onChange events", () => {
@@ -69,5 +90,32 @@ describe("<Input/>", () => {
       value: 3
     });
     expect(wrapper.state().value).toBe(3);
+  });
+
+  it("should allow clear and render close icon when has value", () => {
+    const wrapper = shallow(<Input allowClear placeholder="请输入" />);
+    expect(wrapper.find(".cuke-input-clear")).toHaveLength(0);
+    wrapper.setProps({
+      value: 111
+    });
+    expect(wrapper.find(".cuke-input-clear")).toHaveLength(1);
+    wrapper.setProps({
+      allowClear: false,
+      value: undefined
+    });
+    expect(wrapper.find(".cuke-input-clear")).toHaveLength(0);
+  });
+
+  it.skip("should clear value when clear button clicked", () => {
+    const wrapper = mount(
+      <Input allowClear placeholder="请输入" value={333} />
+    );
+    expect(wrapper.find(".cuke-input-clear")).toHaveLength(1);
+    const { inputRef } = wrapper.instance();
+
+    jest.spyOn(inputRef.current, "focus");
+    wrapper.instance().onClearValue();
+
+    expect(wrapper.state().value).toBe("");
   });
 });

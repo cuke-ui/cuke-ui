@@ -53,19 +53,19 @@
   }
 
   &-group-addon-before {
-    > .cuke-input {
+    > .@{prefixCls} {
       border-bottom-right-radius: @border-radius !important;
       border-top-right-radius: @border-radius !important;
     }
   }
   &-group-addon-after {
-    > .cuke-input {
+    > .@{prefixCls} {
       border-bottom-left-radius: @border-radius !important;
       border-top-left-radius: @border-radius !important;
     }
   }
   &-group-addon-all {
-    > .cuke-input {
+    > .@{prefixCls} {
       border-radius: 0 !important;
     }
   }
@@ -86,7 +86,7 @@
       }
     }
 
-    > .cuke-input {
+    > .@{prefixCls} {
       flex: 1 1 auto;
       width: 100%;
       margin-bottom: 0;
@@ -120,5 +120,33 @@
         border-left: none;
       }
     }
+  }
+
+  &-wrapper {
+    position: relative;
+  }
+
+  &-prefix,
+  &-suffix {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    .flex-center();
+    cursor: pointer;
+    &, svg {
+      color: @font-color;
+    }
+  }
+
+  &-prefix {
+    left: 10px;
+    & + .@{prefixCls} {
+      padding: 0 28px;
+    }
+  }
+
+  &-suffix {
+    right: 10px;
   }
 }

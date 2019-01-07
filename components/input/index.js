@@ -1,6 +1,7 @@
-import React, { PureComponent /* isValidElement */ } from "react";
+import React, { PureComponent, isValidElement, createRef } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
+import { CloseIcon } from "../icon";
 
 const sizes = {
   default: "default",
@@ -11,6 +12,7 @@ export default class Input extends PureComponent {
   state = {
     value: this.props.defaultValue || this.props.value || ""
   };
+
   static defaultProps = {
     prefixCls: "cuke-input",
     disabled: false,
@@ -53,7 +55,7 @@ export default class Input extends PureComponent {
   };
 
   static getDerivedStateFromProps({ value }, state) {
-    if (value !== state.value) {
+    if (value && state.value !== value) {
       return {
         value
       };
@@ -61,19 +63,27 @@ export default class Input extends PureComponent {
     return null;
   }
 
+  constructor(props) {
+    super(props);
+    this.inputRef = createRef();
+  }
+
   _onChange = e => {
-    e.persist();
-    this.setState(
-      {
-        value: e.target.value
-      },
-      () => {
-        if (this.props.onChange) {
-          this.props.onChange(e);
-        }
-      }
-    );
+    this.setState({ value: e.target.value });
+    if (this.props.onChange) {
+      this.props.onChange(e);
+    }
   };
+
+  onClearValue = () => {
+    this.setState({ value: "" }, () => {
+      this.inputRef.current.focus();
+    });
+  };
+
+  componentWillUnmount() {
+    this.inputRef = undefined;
+  }
 
   render() {
     const {
@@ -87,11 +97,17 @@ export default class Input extends PureComponent {
       addonAfter,
       addonClassName,
       size,
-      // allowClear,
-      // suffix,
-      // prefix,
+      defaultValue, //eslint-disable-line
+      allowClear,
+      suffix,
+      prefix,
       ...attr
     } = this.props;
+
+    const { value } = this.state;
+
+    const isShowWrapper =
+      allowClear || isValidElement(prefix) || isValidElement(suffix);
 
     const inputEle = (
       <input
@@ -104,9 +120,29 @@ export default class Input extends PureComponent {
         })}
         placeholder={placeholder}
         {...attr}
-        value={this.state.value}
+        value={value}
         onChange={this._onChange}
+        ref={this.inputRef}
       />
+    );
+
+    const inputWrapper = (
+      <div className={`${prefixCls}-wrapper`}>
+        {prefix && <span className={`${prefixCls}-prefix`}>{prefix}</span>}
+        {inputEle}
+        {(suffix || allowClear) && (
+          <span className={`${prefixCls}-suffix`}>
+            {allowClear && value ? (
+              <CloseIcon
+                className={`${prefixCls}-clear`}
+                onClick={this.onClearValue}
+              />
+            ) : (
+              suffix
+            )}
+          </span>
+        )}
+      </div>
     );
 
     if (addonBefore || addonAfter) {
@@ -126,12 +162,16 @@ export default class Input extends PureComponent {
           {addonBefore && (
             <span className={`${prefixCls}-group-addon`}>{addonBefore}</span>
           )}
-          {inputEle}
+          {(isShowWrapper && inputWrapper) || inputEle}
           {addonAfter && (
             <span className={`${prefixCls}-group-addon`}>{addonAfter}</span>
           )}
         </span>
       );
+    }
+
+    if (isShowWrapper) {
+      return inputWrapper;
     }
     return inputEle;
   }

@@ -67,7 +67,7 @@ export default class NumberInput extends PureComponent {
     decimal: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     step: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     showStepper: PropTypes.bool,
-    value: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     defaultValue: PropTypes.string,
     onChange: PropTypes.func
   };
