@@ -1,5 +1,33 @@
-<a name="1.3.2"></a>
-## [1.3.2](https://github.com/cuke-ui/cuke-ui/compare/v1.2.2...v1.3.2) (2019-01-03)
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/cuke-ui/cuke-ui/compare/v1.3.1...v1.4.0) (2019-01-08)
+
+
+### Bug Fixes
+
+* **datepicker:** 优化calendar,datePicker 的显示逻辑 ([671eb6d](https://github.com/cuke-ui/cuke-ui/commit/671eb6d))
+* **input:** input 改为受控组件 ([4da998f](https://github.com/cuke-ui/cuke-ui/commit/4da998f))
+
+
+### Features
+
+* cityPicker, datePicker, input, numberInput, select 增加 size 属性 ([541ef0a](https://github.com/cuke-ui/cuke-ui/commit/541ef0a))
+* **input:** Input 组件新增 prefix,suffix, allowClear 属性, 支持前后缀和 删除 ([bedec0c](https://github.com/cuke-ui/cuke-ui/commit/bedec0c))
+* **progress:** Progress 新增 环形进度条, format 属性 ([b96cecf](https://github.com/cuke-ui/cuke-ui/commit/b96cecf))
+
+
+
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/cuke-ui/cuke-ui/compare/v1.3.0...v1.3.1) (2019-01-02)
+
+
+### Bug Fixes
+
+* **datePicker:**  修复 DatePicker 日期星期几显示错误的bug, 调整星期文案为中文 ([3a934c7](https://github.com/cuke-ui/cuke-ui/commit/3a934c7))
+
+
+
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/cuke-ui/cuke-ui/compare/v1.2.2...v1.3.0) (2019-01-02)
 
 
 ### Bug Fixes
@@ -12,9 +40,7 @@
 * 优化 Notification positions 定义 ([3a209ac](https://github.com/cuke-ui/cuke-ui/commit/3a209ac))
 * 修复 DatePicker 选择 今天日期不对 ([d7ba35a](https://github.com/cuke-ui/cuke-ui/commit/d7ba35a))
 * **calendar:** 有默认值 时不能切换月份 ([1d3a744](https://github.com/cuke-ui/cuke-ui/commit/1d3a744))
-* **datepicker:** 优化calendar,datePicker 的显示逻辑 ([671eb6d](https://github.com/cuke-ui/cuke-ui/commit/671eb6d))
 * **datepicker:** 修复 DatePicker 切换月份导致选中的月份改变的bug ([7d41765](https://github.com/cuke-ui/cuke-ui/commit/7d41765))
-* **datePicker:**  修复 DatePicker 日期星期几显示错误的bug, 调整星期文案为中文 ([3a934c7](https://github.com/cuke-ui/cuke-ui/commit/3a934c7))
 
 
 ### Features
