@@ -2,8 +2,6 @@
  * 组件打包入口
  */
 
-import * as Icon from "./icon";
-
 export { default as Button } from "./button";
 export { default as BreadCrumb } from "./breadcrumb";
 export { default as MusicPlayer } from "./musicPlayer";
@@ -43,7 +41,6 @@ export { default as Calendar } from "./calendar";
 export { default as Popover } from "./popover";
 export { default as Popconfirm } from "./popconfirm";
 export { default as Card } from "./card";
-export { Icon };
 // export { default as Form } from "./form";
 
 export { default as version } from "./version";

@@ -1,8 +1,6 @@
 {
   "name": "cuke-ui",
   "version": "1.3.2",
-  "main": "lib/index.js",
-  "module": "es/index.js",
   "description": "A React.js UI components for Web",
   "repository": "https://github.com/cuke-ui/cuke-ui.git",
   "homepage": "https://cuke-ui.github.io/cuke-ui-landing/",
@@ -15,6 +13,8 @@
     "dist",
     "LICENSE"
   ],
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "scripts": {
     "start": "yarn dev",
     "clean": "rimraf dist lib es",
@@ -68,6 +68,8 @@
   },
   "sideEffects": [
     "dist/*",
+    "lib/*",
+    "es/*",
     "*.less"
   ],
   "commitizen": {
