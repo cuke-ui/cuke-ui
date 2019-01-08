@@ -3,79 +3,119 @@
 @import "../styles/mixins.less";
 @prefixCls : cuke-progress;
 .@{prefixCls} {
+  width: 100%;
+  height: @cuke-progress-height;
+  border-radius: @cuke-progress-border-radius;
+  overflow: hidden;
+  position: relative;
+  .flex-center(space-between);
+  &-enter {
     width: 100%;
-    height: @progress-height;
-    border-radius: @progress-border-radius;
+    height: inherit;
+    background: @bg-color;
     overflow: hidden;
-    position: relative;
-    .flex-center(space-between);
-    &-enter {
-        width: 100%;
-        height: inherit;
-        background: @bg-color;
-        overflow: hidden;
-        border-radius: @progress-border-radius;
+    border-radius: @cuke-progress-border-radius;
+  }
+  &-num {
+    margin-left: 10px;
+    font-size: 12px;
+    color: @font-color;
+  }
+  &-bg {
+    height: inherit;
+    border-radius: @cuke-progress-border-radius;
+    background-color: @primary-color;
+    transition: width @default-transition;
+    &-animation {
+      background-size: @cuke-progress-bg-offset;
+      animation: panoramic @cuke-progress-animate-time linear infinite;
     }
-    &-num {
-        margin-left: 10px;
-        font-size: 12px;
-        color: @font-color;
+  }
+  &-default {
+    .@{prefixCls}-bg {
+      background-color: @primary-color;
+      &-animation {
+        .set-progress-bar-bg(@primary-color);
+      }
+    }
+  }
+  &-success {
+    .@{prefixCls}-bg {
+      background-color: @success-color;
+      &-animation {
+        .set-progress-bar-bg(@success-color);
+      }
+    }
+  }
+  &-progress {
+    .@{prefixCls}-bg {
+      background-color: @info-color;
+      &-animation {
+        .set-progress-bar-bg(@info-color);
+      }
+    }
+  }
+  &-warning {
+    .@{prefixCls}-bg {
+      background-color: @warning-color;
+      &-animation {
+        .set-progress-bar-bg(@warning-color);
+      }
+    }
+  }
+  &-error {
+    .@{prefixCls}-bg {
+      background-color: @error-color;
+      &-animation {
+        .set-progress-bar-bg(@error-color);
+      }
+    }
+  }
+  &-circle {
+    circle {
+      transition: stroke-dasharray @default-transition;
+      // transform: matrix(0, -1, 1, 0, 0, 250);
+      stroke-width: @cuke-progress-stroke-width;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    &-wrapper {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+    &-percent {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      font-size: @cuke-progress-circle-percent-font-size;
+      z-index: 1;
+      color: @font-color;
     }
     &-bg {
-        height: inherit;
-        border-radius: @progress-border-radius;
-        background-color: @primary-color;
-        transition: width @default-transition;
-        &-animation {
-            background-size: @progress-bg-offset;
-            animation: panoramic @progress-animate-time linear infinite;
-        }
+      stroke: @bg-color;
     }
-    &-default {
-        .@{prefixCls}-bg {
-            background-color: @primary-color;
-            &-animation {
-                .set-progress-bar-bg(@primary-color);
-            }
-        }
+    &-stroke-default {
+      stroke: @primary-color;
     }
-    &-success {
-        .@{prefixCls}-bg {
-            background-color: @success-color;
-            &-animation {
-                .set-progress-bar-bg(@success-color);
-            }
-        }
+    &-stroke-error {
+      stroke: @error-color;
     }
-    &-progress {
-        .@{prefixCls}-bg {
-            background-color: @info-color;
-            &-animation {
-                .set-progress-bar-bg(@info-color);
-            }
-        }
+    &-stroke-warning {
+      stroke: @warning-color;
     }
-
-    &-warning {
-        .@{prefixCls}-bg {
-            background-color: @warning-color;
-            &-animation {
-                .set-progress-bar-bg(@warning-color);
-            }
-        }
+    &-stroke-success {
+      stroke: @success-color;
     }
-
-    &-error {
-        .@{prefixCls}-bg {
-            background-color: @error-color;
-            &-animation {
-                .set-progress-bar-bg(@error-color);
-            }
-        }
+    &-stroke-progress {
+      stroke: @info-color;
     }
-    @keyframes panoramic {
-        to {
-            background-position: 200%;
-        }
+  }
+  @keyframes panoramic {
+    to {
+      background-position: 200%;
     }
+  }
 }

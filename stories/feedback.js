@@ -87,79 +87,72 @@ storiesOf("操作反馈", module)
       </div>
     ))
   )
-  .add(
-    "Alert 警告提示",
-    () => (
-      <div style={{ width: "50%" }}>
-        <h2>基本使用</h2>
-        <Alert type="success" message="恭喜你获得5元兰博基尼购车优惠券" />
+  .add("Alert 警告提示", () => (
+    <div style={{ width: "50%" }}>
+      <h2>基本使用</h2>
+      <Alert type="success" message="恭喜你获得5元兰博基尼购车优惠券" />
 
-        <h2>多种类型</h2>
-        <Alert type="success" message="黄瓜 ui 开发中" />
-        <Alert type="info" message="恭喜你获得充气女友一个" />
-        <Alert type="error" message="网费不足,请立即充值,不要坑队友" />
-        <Alert type="warning" message="有电危险" />
+      <h2>多种类型</h2>
+      <Alert type="success" message="黄瓜 ui 开发中" />
+      <Alert type="info" message="恭喜你获得充气女友一个" />
+      <Alert type="error" message="网费不足,请立即充值,不要坑队友" />
+      <Alert type="warning" message="有电危险" />
 
-        <h2>描述</h2>
-        <Alert
-          type="success"
-          message="一等奖"
-          description="获得5元兰博基尼购车优惠券"
-        />
-        <Alert
-          type="info"
-          message="通知"
-          description="请李时珍的皮同学赶快回家,你妈在找你"
-        />
-        <Alert type="error" message="错误" description="发生了未知的错误" />
-        <Alert
-          type="warning"
-          message="警告"
-          description="不要在写代码了,快要猝死了"
-        />
+      <h2>描述</h2>
+      <Alert
+        type="success"
+        message="一等奖"
+        description="获得5元兰博基尼购车优惠券"
+      />
+      <Alert
+        type="info"
+        message="通知"
+        description="请李时珍的皮同学赶快回家,你妈在找你"
+      />
+      <Alert type="error" message="错误" description="发生了未知的错误" />
+      <Alert
+        type="warning"
+        message="警告"
+        description="不要在写代码了,快要猝死了"
+      />
 
-        <h2>显示图标</h2>
-        <Alert
-          type="success"
-          showIcon
-          message="恭喜你获得5元兰博基尼购车优惠券"
-        />
-        <Alert type="info" showIcon message="恭喜你获得5元兰博基尼购车优惠券" />
-        <Alert
-          type="error"
-          showIcon
-          message="恭喜你获得5元兰博基尼购车优惠券"
-        />
-        <Alert
-          type="warning"
-          showIcon
-          message="大哥"
-          description="求求你不要在秀了"
-        />
+      <h2>显示图标</h2>
+      <Alert
+        type="success"
+        showIcon
+        message="恭喜你获得5元兰博基尼购车优惠券"
+      />
+      <Alert type="info" showIcon message="恭喜你获得5元兰博基尼购车优惠券" />
+      <Alert type="error" showIcon message="恭喜你获得5元兰博基尼购车优惠券" />
+      <Alert
+        type="warning"
+        showIcon
+        message="大哥"
+        description="求求你不要在秀了"
+      />
 
-        <h2>可关闭的</h2>
-        <Alert type="success" showIcon closable message="有本事关掉我?" />
+      <h2>可关闭的</h2>
+      <Alert type="success" showIcon closable message="有本事关掉我?" />
 
-        <h2>自定义关闭文字</h2>
-        <Alert
-          type="error"
-          showIcon
-          closable
-          closeText="忽略"
-          message="有一个 bug?"
-        />
+      <h2>自定义关闭文字</h2>
+      <Alert
+        type="error"
+        showIcon
+        closable
+        closeText="忽略"
+        message="有一个 bug?"
+      />
 
-        <h2>关闭回调</h2>
-        <Alert
-          type="error"
-          showIcon
-          closable
-          message="有一个 bug?"
-          onClose={() => console.log("关闭了")}
-        />
-      </div>
-    )
-  )
+      <h2>关闭回调</h2>
+      <Alert
+        type="error"
+        showIcon
+        closable
+        message="有一个 bug?"
+        onClose={() => console.log("关闭了")}
+      />
+    </div>
+  ))
   .add(
     "Modal 对话框",
     withInfo(
@@ -326,213 +319,315 @@ storiesOf("操作反馈", module)
       </div>
     ))
   )
-  .add(
-    "Spin 加载中",
-    () => (
-      <div>
-        <h2>基本使用</h2>
-        <Spin />
+  .add("Spin 加载中", () => (
+    <div>
+      <h2>基本使用</h2>
+      <Spin />
 
-        <h2>三种尺寸</h2>
-        <Spin size="small" />
-        <Spin style={{ margin: "0 10px" }} />
-        <Spin size="large" />
+      <h2>三种尺寸</h2>
+      <Spin size="small" />
+      <Spin style={{ margin: "0 10px" }} />
+      <Spin size="large" />
 
-        <h2>在容器中显示</h2>
-        <Spin tip="拼了老命加载中...">
-          <Alert
-            style={{ margin: 0 }}
-            message="通知"
-            description={
-              <div>
-                <p> 系统错误,正在重新尝试,请稍后</p>
-                <p> 请各部门做好准备</p>
-              </div>
-            }
-            type="warning"
-          />
-        </Spin>
+      <h2>在容器中显示</h2>
+      <Spin tip="拼了老命加载中...">
+        <Alert
+          style={{ margin: 0 }}
+          message="通知"
+          description={
+            <div>
+              <p> 系统错误,正在重新尝试,请稍后</p>
+              <p> 请各部门做好准备</p>
+            </div>
+          }
+          type="warning"
+        />
+      </Spin>
 
-        <h2>自定义加载图标</h2>
-        <Spin indicator={<SuccessIcon />} />
-        <Spin indicator={<ErrorIcon />} style={{ margin: "0 10px" }} />
-        <Spin indicator={<WarningIcon />} />
-      </div>
-    )
-  )
-  .add(
-    "Progress 进度条",
-    () => (
-      <div className="progress-example">
-        <h2>基本使用</h2>
-        <Progress percent={70} />
+      <h2>自定义加载图标</h2>
+      <Spin indicator={<SuccessIcon />} />
+      <Spin indicator={<ErrorIcon />} style={{ margin: "0 10px" }} />
+      <Spin indicator={<WarningIcon />} />
+    </div>
+  ))
+  .add("Progress 进度条", () => (
+    <div className="progress-example">
+      <h2>基本使用</h2>
+      <Progress percent={70} />
 
-        <Progress percent={70} animation={true} />
+      <Progress percent={70} animation={true} />
 
-        <h2>5种状态</h2>
-        <Progress percent={20} type="default" />
-        <Progress percent={30} type="success" />
-        <Progress percent={40} type="progress" />
-        <Progress percent={50} type="warning" />
-        <Progress percent={60} type="error" />
+      <h2>圆形进度条</h2>
+      <Progress percent={70} circle />
 
-        <Progress percent={20} type="default" animation={true} />
-        <Progress percent={30} type="success" animation={true} />
-        <Progress percent={40} type="progress" animation={true} />
-        <Progress percent={50} type="warning" animation={true} />
-        <Progress percent={60} type="error" animation={true} />
+      <h2>自定义大小</h2>
+      <Progress percent={20} width={100} circle />
+      <Progress percent={50} width={150} type="warning" circle />
+      <Progress percent={70} width={200} type="error" circle />
 
+      <h2>5种状态</h2>
+      <Progress percent={20} type="default" />
+      <Progress percent={30} type="success" />
+      <Progress percent={40} type="progress" />
+      <Progress percent={50} type="warning" />
+      <Progress percent={60} type="error" />
 
-        <h2>隐藏信息</h2>
-        <Progress percent={20} showInfo={false} />
+      <Progress percent={20} type="default" animation={true} />
+      <Progress percent={30} type="success" animation={true} />
+      <Progress percent={40} type="progress" animation={true} />
+      <Progress percent={50} type="warning" animation={true} />
+      <Progress percent={60} type="error" animation={true} />
 
-        <h2>动态改变</h2>
-        <ProgressPage />
-      </div>
-    )
-  )
-  .add(
-    "Notification 通知提醒框",
-    () => (
-      <div className="notification-example">
-        <h2>基本使用</h2>
-        <Button type="primary" onClick={
-          () => notification.open({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+      <Progress percent={20} type="default" circle />
+      <Progress percent={30} type="success" circle />
+      <Progress percent={40} type="progress" circle />
+      <Progress percent={50} type="warning" circle />
+      <Progress percent={60} type="error" circle />
+
+      <h2>隐藏信息</h2>
+      <Progress percent={20} showInfo={false} />
+
+      <h2>自定义文字</h2>
+      <Progress
+        percent={20}
+        width={150}
+        circle
+        format={percent => `我已经${percent}斤了`}
+      />
+
+      <h2>动态改变</h2>
+      <ProgressPage />
+    </div>
+  ))
+  .add("Notification 通知提醒框", () => (
+    <div className="notification-example">
+      <h2>基本使用</h2>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.open({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>打开通知</Button>
+        }
+      >
+        打开通知
+      </Button>
 
-        <h2>不自动关闭</h2>
-        <Button type="primary" onClick={
-          () => notification.open({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
-            duration: 0,
+      <h2>不自动关闭</h2>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.open({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
+            duration: 0
           })
-        }>打开通知</Button>
+        }
+      >
+        打开通知
+      </Button>
 
-        <h2>不显示关闭图标</h2>
-        <Button type="success" onClick={
-          () => notification.success({
-            title: '通知标题',
+      <h2>不显示关闭图标</h2>
+      <Button
+        type="success"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
             closable: false,
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>Success</Button>
+        }
+      >
+        Success
+      </Button>
 
-        <h2>各种图标</h2>
-        <Button type="success" onClick={
-          () => notification.success({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+      <h2>各种图标</h2>
+      <Button
+        type="success"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>Success</Button>
-        <Button type="info" onClick={
-          () => notification.info({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+        }
+      >
+        Success
+      </Button>
+      <Button
+        type="info"
+        onClick={() =>
+          notification.info({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>Info</Button>
-        <Button type="warning" onClick={
-          () => notification.warning({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+        }
+      >
+        Info
+      </Button>
+      <Button
+        type="warning"
+        onClick={() =>
+          notification.warning({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>Warning</Button>
-        <Button type="error" onClick={
-          () => notification.error({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+        }
+      >
+        Warning
+      </Button>
+      <Button
+        type="error"
+        onClick={() =>
+          notification.error({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>Error</Button>
-        <Button type="primary" onClick={
-          () => notification.loading({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中'
+        }
+      >
+        Error
+      </Button>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.loading({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>Loading</Button>
+        }
+      >
+        Loading
+      </Button>
 
-        <h2>自定义延迟</h2>
-        <Button type="primary" onClick={
-          () => notification.loading({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
-            duration: 10,
+      <h2>自定义延迟</h2>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.loading({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
+            duration: 10
           })
-        }>10秒后关闭</Button>
+        }
+      >
+        10秒后关闭
+      </Button>
 
-        <h2>关闭回调</h2>
-        <Button type="primary" onClick={
-          () => notification.open({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
-            onClose: () => message.info('关闭')
+      <h2>关闭回调</h2>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.open({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
+            onClose: () => message.info("关闭")
           })
-        }>打开通知</Button>
+        }
+      >
+        打开通知
+      </Button>
 
-        <h2>点击回调</h2>
-        <Button type="primary" onClick={
-          () => notification.success({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
-            onClick: () => message.success('点击')
+      <h2>点击回调</h2>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
+            onClick: () => message.success("点击")
           })
-        }>打开通知</Button>
+        }
+      >
+        打开通知
+      </Button>
 
-        <h2>四个方向</h2>
-        <Button type="primary" onClick={
-          () => notification.success({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+      <h2>四个方向</h2>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>默认 top-right</Button>
+        }
+      >
+        默认 top-right
+      </Button>
 
-        <Button type="primary" onClick={
-          () => notification.success({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
             position: "bottom-right"
           })
-        }>bottom-right</Button>
-        <Button type="primary" onClick={
-          () => notification.success({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+        }
+      >
+        bottom-right
+      </Button>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
             position: "top-left"
           })
-        }>top-left</Button>
-        <Button type="primary" onClick={
-          () => notification.success({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+        }
+      >
+        top-left
+      </Button>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
             position: "bottom-left"
           })
-        }>bottom-left</Button>
+        }
+      >
+        bottom-left
+      </Button>
 
-        <h2>自定义偏移值</h2>
-        <Button type="primary" onClick={
-          () => notification.success({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
-            offset: 150,
+      <h2>自定义偏移值</h2>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
+            offset: 150
           })
-        }>150px</Button>
+        }
+      >
+        150px
+      </Button>
 
-        <h2>主题</h2>
-        <Button type="primary" onClick={
-          () => notification.open({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
+      <h2>主题</h2>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.open({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中"
           })
-        }>白天</Button>
-        <Button type="primary" onClick={
-          () => notification.success({
-            title: '通知标题',
-            message: '黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中',
-            darkTheme: true,
+        }
+      >
+        白天
+      </Button>
+      <Button
+        type="primary"
+        onClick={() =>
+          notification.success({
+            title: "通知标题",
+            message: "黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中黄瓜 ui 开发中",
+            darkTheme: true
           })
-        }>黑夜</Button>
-      </div>
-    )
-  );
+        }
+      >
+        黑夜
+      </Button>
+    </div>
+  ));

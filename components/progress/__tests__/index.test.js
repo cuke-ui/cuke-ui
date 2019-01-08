@@ -1,6 +1,6 @@
 import React from "react";
 import assert from "power-assert";
-import { render } from "enzyme";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Progress from "../index";
 
@@ -9,8 +9,8 @@ describe("<Progress/>", () => {
     const wrapper = render(
       <div>
         <Progress percent={70} />
-
         <Progress percent={70} animation={false} />
+        <Progress percent={70} circle />
       </div>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -47,6 +47,39 @@ describe("<Progress/>", () => {
     assert(wrapper.find(".cuke-progress-bg-animation").length === 1);
     assert(wrapper.find(".cuke-progress-bg").length >= 1);
     assert(wrapper.find(".cuke-progress-num").length >= 1);
+  });
+
+  it("should find cuke-progress-circle classnames", () => {
+    const wrapper = shallow(<Progress percent={20} circle={true} />);
+    assert(wrapper.find(".cuke-progress-circle").length >= 1);
+    assert(wrapper.find(".cuke-progress-circle-wrapper").length === 1);
+  });
+
+  it("should render custom format", () => {
+    const wrapper = shallow(
+      <Progress percent={20} circle format={percent => `自定义${percent}`} />
+    );
+    expect(wrapper.text()).toContain("自定义20");
+  });
+
+  it("should render max and min limit [0-100]", () => {
+    const wrapper = shallow(<Progress percent={20} />);
+    wrapper.setProps({
+      percent: 110
+    });
+    expect(wrapper.state().percent).toBe(100);
+    wrapper.setProps({
+      percent: -10
+    });
+    expect(wrapper.state().percent).toBe(0);
+  });
+
+  it("should update state percent when props change", () => {
+    const wrapper = shallow(<Progress percent={20} />);
+    wrapper.setProps({
+      percent: 30
+    });
+    expect(wrapper.state().percent).toBe(30);
   });
 
   it("should can not render info when set showInfo with false", () => {
