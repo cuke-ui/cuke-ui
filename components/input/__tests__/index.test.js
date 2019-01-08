@@ -1,5 +1,5 @@
 import React from "react";
-import { render, shallow, mount } from "enzyme";
+import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Input from "../index";
 import { SuccessIcon } from "../../icon";
@@ -106,16 +106,15 @@ describe("<Input/>", () => {
     expect(wrapper.find(".cuke-input-clear")).toHaveLength(0);
   });
 
-  it.skip("should clear value when clear button clicked", () => {
-    const wrapper = mount(
+  it("should clear value when clear button clicked", () => {
+    const wrapper = shallow(
       <Input allowClear placeholder="请输入" value={333} />
     );
     expect(wrapper.find(".cuke-input-clear")).toHaveLength(1);
-    const { inputRef } = wrapper.instance();
-
-    jest.spyOn(inputRef.current, "focus");
-    wrapper.instance().onClearValue();
-
-    expect(wrapper.state().value).toBe("");
+    wrapper.setProps({ value: 111 });
+    wrapper.find(".cuke-input-clear").simulate("click");
+    setTimeout(() => {
+      expect(wrapper.state().value).toBe("");
+    });
   });
 });

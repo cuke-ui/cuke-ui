@@ -76,9 +76,7 @@ export default class Input extends PureComponent {
   };
 
   onClearValue = () => {
-    this.setState({ value: "" }, () => {
-      this.inputRef.current.focus();
-    });
+    this.setState({ value: "" });
   };
 
   componentWillUnmount() {

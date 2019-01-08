@@ -2,6 +2,7 @@
   "name": "cuke-ui",
   "version": "1.3.2",
   "main": "lib/index.js",
+  "module": "es/index.js",
   "description": "A React.js UI components for Web",
   "repository": "https://github.com/cuke-ui/cuke-ui.git",
   "homepage": "https://cuke-ui.github.io/cuke-ui-landing/",
@@ -10,27 +11,29 @@
   "private": false,
   "files": [
     "lib",
+    "es",
     "dist",
     "LICENSE"
   ],
   "scripts": {
     "start": "yarn dev",
-    "clean": "rimraf dist && rimraf lib",
+    "clean": "rimraf dist lib es",
     "dev": "start-storybook -p 8080 -c .storybook",
     "upgrade": "yarn upgrade",
     "stylelint:fix": "stylelint 'components/**/*.less' --syntax less --fix",
     "eslint:fix": "eslint ./components --fix",
     "lint": "prettier --write \"components/**/*.js\" && yarn eslint:fix && yarn stylelint:fix",
-    "test": "jest --config jest.config.js",
+    "test": "cross-env BABEL_ENV=test jest --config jest.config.js",
     "test:update": "yarn test -u",
     "coverage": "yarn test --coverage",
     "ci": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:docs": "build-storybook -c .storybook -o .out",
     "pub:docs": "yarn build:docs && storybook-to-ghpages --existing-output-dir=.out",
     "prepublish": "yarn build",
-    "build": "yarn run clean && yarn build:lib && yarn build:umd && yarn build:css",
+    "build": "yarn run clean && yarn build:lib && yarn build:es && yarn build:umd && yarn build:css",
     "build:css": "cd scripts && gulp",
-    "build:lib": "babel components -d lib",
+    "build:lib": "cross-env OUTPUT_MODULE=commonjs babel components -d lib --ignore **/__tests__",
+    "build:es": "babel components -d es --ignore **/__tests__",
     "build:umd": "webpack --config ./scripts/build.umd.js",
     "deploy": "./scripts/deploy.sh",
     "commit": "git-cz",
@@ -64,7 +67,8 @@
     "react-dom": ">=16.0.0"
   },
   "sideEffects": [
-    "dist/*"
+    "dist/*",
+    "*.less"
   ],
   "commitizen": {
     "path": "cz-conventional-changelog"
@@ -93,7 +97,9 @@
     "component",
     "components",
     "ui",
-    "web"
+    "web",
+    "framework",
+    "frontend"
   ],
   "tags": [
     "cuke",
@@ -140,6 +146,7 @@
     "conventional-changelog-cli": "^2.0.5",
     "copy-webpack-plugin": "latest",
     "coveralls": "^3.0.1",
+    "cross-env": "^5.2.0",
     "css-loader": "^1.0.0",
     "cz-conventional-changelog": "2.1.0",
     "enzyme": "^3.5.0",
