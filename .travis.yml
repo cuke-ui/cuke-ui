@@ -24,27 +24,22 @@ before_script : "yarn test -- -u"
 script: 
   - yarn lint
   - yarn test
-  - yarn build:docs
 
 after_script: 
   - yarn ci
-  - cd .out
-  - git init
-  - git add .
-  - git config --global user.name "Jinke.Li"
-  - git config --global user.password "$GITHUB_TOKEN"
-  - git commit -m 'docs:deploy'
-  - git push --force --quiet "https://${GH_REF}" master:gh-pages
-  - echo "√ publish success 🥒"
+
+
+before_deploy: 
+  - yarn build:docs
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: .out
+  on:
+    branch: master
 
 env:
   global:
     - GH_REF: github.com/cuke-ui/cuke-ui.git
-
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN
-#   local_dir: .out
-#   on:
-#     branch: master
