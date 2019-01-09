@@ -2,7 +2,7 @@ import React from "react";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Input from "../index";
-import { SuccessIcon } from "../../icon";
+import { SuccessIcon, CloseCircleIcon } from "../../icon";
 
 describe("<Input/>", () => {
   it("should render Input", () => {
@@ -51,6 +51,14 @@ describe("<Input/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
     expect(wrapper.find(".cuke-input-prefix")).toHaveLength(2);
     expect(wrapper.find(".cuke-input-suffix")).toHaveLength(2);
+  });
+
+  it("should render CloseCircleIcon", () => {
+    const wrapper = shallow(
+      <Input allowClear value={1} placeholder="请输入" />
+    );
+
+    expect(wrapper.find(CloseCircleIcon)).toHaveLength(1);
   });
 
   it("should emit onChange events", () => {

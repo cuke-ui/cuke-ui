@@ -1,7 +1,7 @@
 import React, { PureComponent, isValidElement, createRef } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
-import { CloseIcon } from "../icon";
+import { CloseCircleIcon } from "../icon";
 
 const sizes = {
   default: "default",
@@ -131,8 +131,8 @@ export default class Input extends PureComponent {
         {(suffix || allowClear) && (
           <span className={`${prefixCls}-suffix`}>
             {allowClear && value ? (
-              <CloseIcon
-                className={`${prefixCls}-clear`}
+              <CloseCircleIcon
+                className={cls(`${prefixCls}-clear`)}
                 onClick={this.onClearValue}
               />
             ) : (

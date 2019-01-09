@@ -148,5 +148,19 @@
 
   &-suffix {
     right: 10px;
+    svg {
+      opacity: .5;
+      color: @font-color;
+      transition: @default-transition;
+    }
+    &:hover {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-clear {
+    animation: cuke-zoom-in @default-transition forwards;
   }
 }
