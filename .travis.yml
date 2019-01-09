@@ -31,10 +31,20 @@ after_script:
   - cd .out
   - git init
   - git add .
+  - git config --user.name "Jinke.Li"
+  - git config --user.name "$GITHUB_TOKEN"
   - git commit -m 'docs:deploy'
-  - git push --force --quiet "https://${GITHUB_TOKEN}${GH_REF}" master:gh-pages
+  - git push --force --quiet "https://${GH_REF}" master:gh-pages
   - echo "√ publish success 🥒"
 
 env:
   global:
     - GH_REF: github.com/cuke-ui/cuke-ui.git
+
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN
+#   local_dir: .out
+#   on:
+#     branch: master
