@@ -22,8 +22,8 @@ cuke-ui
 </p>
 
 <p align="center">
-   <a href="https://travis-ci.org/cuke-ui/cuke-ui.svg?branch=master" title="npm">
-    <img src="https://travis-ci.org/cuke-ui/cuke-ui.svg?branch=master" alt="travis"/>
+   <a href="https://travis-ci.com/cuke-ui/cuke-ui" title="npm">
+    <img src="https://travis-ci.com/cuke-ui/cuke-ui.svg?branch=master" alt="travis"/>
   </a>
    <a href="https://coveralls.io/github/cuke-ui/cuke-ui?branch=master?style=for-the-badge" title="Coverage Status">
     <img src="https://coveralls.io/repos/github/cuke-ui/cuke-ui/badge.svg?branch=master" alt="Coverage Status"/>
