@@ -32,9 +32,9 @@ after_script:
   - git init
   - git add .
   - git commit -m 'docs:deploy'
-  - git push --force --quiet "https://${GITHUB_TOKEN}@${GH_REF}" master:gh-pages
+  - git push --force --quiet "https://${GITHUB_TOKEN}${GH_REF}" master:gh-pages
   - echo "√ publish success 🥒"
 
 env:
   global:
-    - GH_REF: github.com:cuke-ui/cuke-ui.git
+    - GH_REF: github.com/cuke-ui/cuke-ui.git
