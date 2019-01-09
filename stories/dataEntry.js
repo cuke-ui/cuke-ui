@@ -185,7 +185,7 @@ storiesOf("数据录入", module)
         style={{ margin: "10px 0" }}
       />
 
-      <h2>允许删除</h2>
+      <h2>可清空</h2>
       <Input allowClear placeholder="请输入" />
     </div>
   ))
@@ -225,6 +225,9 @@ storiesOf("数据录入", module)
       <NumberInput size="small" placeholder="小" showStepper />
       <NumberInput placeholder="默认" showStepper />
       <NumberInput size="large" placeholder="大" showStepper />
+
+      <h2>可清空</h2>
+      <NumberInput allowClear />
     </div>
   ))
   .add(
@@ -356,6 +359,13 @@ storiesOf("数据录入", module)
         <Select.Option value="茄子">茄子</Select.Option>
         <Select.Option value="番茄">番茄</Select.Option>
       </Select>
+
+      <h2>可以清空</h2>
+      <Select placeholder="请选择" allowClear>
+        <Select.Option value="黄瓜">黄瓜</Select.Option>
+        <Select.Option value="茄子">茄子</Select.Option>
+        <Select.Option value="番茄">番茄</Select.Option>
+      </Select>
     </div>
   ))
   .add("DatePicker 日期选择器", () => (
@@ -432,7 +442,7 @@ storiesOf("数据录入", module)
         </Col>
         <Col span={5}>
           <h2>不显示今天和清除按钮</h2>
-          <DatePicker showToday={false} showClear={false} />
+          <DatePicker showToday={false} allowClear={false} />
         </Col>
         <Col span={5}>
           <h2>不显示上个月的日期</h2>

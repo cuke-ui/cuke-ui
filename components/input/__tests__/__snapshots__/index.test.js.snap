@@ -118,7 +118,7 @@ exports[`<Input/> should render custom size 1`] = `
 exports[`<Input/> should render prefix and suffix with input 1`] = `
 <div>
   <div
-    class="cuke-input-wrapper"
+    class="cuke-input-wrapper cuke-input-has-prefix"
   >
     <span
       class="cuke-input-prefix"
@@ -149,7 +149,7 @@ exports[`<Input/> should render prefix and suffix with input 1`] = `
     />
   </div>
   <div
-    class="cuke-input-wrapper"
+    class="cuke-input-wrapper cuke-input-has-suffix"
   >
     <input
       class="cuke-input"
@@ -181,7 +181,7 @@ exports[`<Input/> should render prefix and suffix with input 1`] = `
     </span>
   </div>
   <div
-    class="cuke-input-wrapper"
+    class="cuke-input-wrapper cuke-input-has-prefix cuke-input-has-suffix"
   >
     <span
       class="cuke-input-prefix"

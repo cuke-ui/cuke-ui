@@ -1,4 +1,4 @@
-import React, { PureComponent, createRef, cloneElement } from "react";
+import React, { PureComponent, createRef } from "react";
 import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import cls from "classnames";
@@ -43,7 +43,7 @@ export default class DataPicker extends PureComponent {
     placeholder: "请选择",
     loading: false,
     showToday: true,
-    showClear: true,
+    allowClear: true,
     tip: "",
     showDayInPrevMonth: true,
     showDayInNextMonth: true,
@@ -58,7 +58,7 @@ export default class DataPicker extends PureComponent {
     onChange: PropTypes.func,
     format: PropTypes.string,
     loading: PropTypes.bool,
-    showClear: PropTypes.bool,
+    allowClear: PropTypes.bool,
     tip: PropTypes.any,
     showToday: PropTypes.bool,
     showDayInPrevMonth: PropTypes.bool,
@@ -279,7 +279,7 @@ export default class DataPicker extends PureComponent {
       {
         momentSelected,
         selectedDate,
-        visible: false,
+        visible: this.state.visible === null ? null : false,
         isSelectedMoment: false
       },
       () => {
@@ -291,6 +291,7 @@ export default class DataPicker extends PureComponent {
   onResizeHandler = debounce(() => {
     this.setWrapperBounding();
   }, 500);
+
   render() {
     const {
       prefixCls,
@@ -300,7 +301,7 @@ export default class DataPicker extends PureComponent {
       format,
       extraFooter,
       showToday,
-      showClear,
+      allowClear,
       tip,
       showDayInPrevMonth, //eslint-disable-line
       showDayInNextMonth, //eslint-disable-line
@@ -346,10 +347,10 @@ export default class DataPicker extends PureComponent {
             }
             onClick={disabled ? undefined : this.onTogglePanel}
             size={size}
+            suffix={suffix}
+            allowClear={allowClear}
+            onClear={this.clearDate}
           />
-          {cloneElement(suffix, {
-            className: `${prefixCls}-suffix`
-          })}
         </div>
         {createPortal(
           <div
@@ -395,12 +396,12 @@ export default class DataPicker extends PureComponent {
               {extraFooter && (
                 <div className={`${prefixCls}-footer-extra`}>{extraFooter}</div>
               )}
-              {showToday || showClear ? (
+              {showToday || allowClear ? (
                 <div
                   className={cls(`${prefixCls}-footer`, {
                     [`${prefixCls}-has-extra-footer`]: extraFooter,
                     [`${prefixCls}-has-border`]:
-                      extraFooter || showToday || showClear
+                      extraFooter || showToday || allowClear
                   })}
                 >
                   {showToday && (
@@ -411,7 +412,7 @@ export default class DataPicker extends PureComponent {
                       今天
                     </div>
                   )}
-                  {showClear && (
+                  {allowClear && (
                     <div
                       className={cls(`${prefixCls}-footer-clear`)}
                       onClick={this.clearDate}

@@ -49,8 +49,10 @@ describe("<DatePicker/>", () => {
     assert(wrapper.find(Footer).length === 1);
     assert(wrapper.find(".cuke-date-picker-footer-extra").length === 1);
   });
-  it("should can not render today and clear when showToday and showClear is false", () => {
-    const wrapper = shallow(<DatePicker showToday={false} showClear={false} />);
+  it("should can not render today and clear when showToday and allowClear is false", () => {
+    const wrapper = shallow(
+      <DatePicker showToday={false} allowClear={false} />
+    );
     assert(wrapper.find(".cuke-date-picker-footer-today").length === 0);
     assert(wrapper.find(".cuke-date-picker-footer-clear").length === 0);
   });
@@ -252,10 +254,5 @@ describe("<DatePicker/>", () => {
     expect(wrapper.state().momentSelected.format("YYYY-MM-DD")).toEqual(
       "2019-03-03"
     );
-  });
-
-  it("should render custom suffix icon", () => {
-    const wrapper = shallow(<DatePicker suffix={<Button>suffix</Button>} />);
-    assert(wrapper.find(Button).length === 1);
   });
 });

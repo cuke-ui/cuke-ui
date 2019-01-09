@@ -51,6 +51,8 @@ describe("<Input/>", () => {
     expect(toJson(wrapper)).toMatchSnapshot();
     expect(wrapper.find(".cuke-input-prefix")).toHaveLength(2);
     expect(wrapper.find(".cuke-input-suffix")).toHaveLength(2);
+    expect(wrapper.find(".cuke-input-has-prefix")).toHaveLength(2);
+    expect(wrapper.find(".cuke-input-has-suffix")).toHaveLength(2);
   });
 
   it("should render CloseCircleIcon", () => {
@@ -72,6 +74,16 @@ describe("<Input/>", () => {
       }
     });
     expect(onChange).toHaveBeenCalled();
+  });
+
+  it("should emit onChange events", () => {
+    const onClear = jest.fn();
+    const wrapper = shallow(
+      <Input onClear={onClear} allowClear value={1} suffix={1} type="text" />
+    );
+
+    wrapper.find(".cuke-input-clear").simulate("click");
+    expect(onClear).toHaveBeenCalled();
   });
 
   it("should render custom size", () => {

@@ -10,22 +10,20 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
     className="cuke-date-picker-inner"
   >
     <Input
-      allowClear={false}
+      allowClear={true}
       className="cuke-date-picker-input"
       disabled={false}
       onChange={[Function]}
+      onClear={[Function]}
       onClick={[Function]}
       placeholder="请选择"
       prefix={null}
       prefixCls="cuke-input"
       readonly={true}
       size="default"
-      suffix={null}
+      suffix={<CalendarIcon />}
       type="text"
       value="2018-11-25"
-    />
-    <CalendarIcon
-      className="cuke-date-picker-suffix"
     />
   </div>
   <div
@@ -382,51 +380,58 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
   <div
     class="cuke-date-picker-inner"
   >
-    <input
-      class="cuke-input cuke-date-picker-input"
-      placeholder="请选择"
-      readonly=""
-      type="text"
-      value=""
-    />
-    <svg
-      class="cuke-date-picker-suffix"
-      fill="none"
-      height="1em"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      viewBox="0 0 24 24"
-      width="1em"
+    <div
+      class="cuke-input-wrapper cuke-input-has-suffix"
     >
-      <rect
-        height="18"
-        rx="2"
-        ry="2"
-        width="18"
-        x="3"
-        y="4"
+      <input
+        class="cuke-input cuke-date-picker-input"
+        placeholder="请选择"
+        readonly=""
+        type="text"
+        value=""
       />
-      <line
-        x1="16"
-        x2="16"
-        y1="2"
-        y2="6"
-      />
-      <line
-        x1="8"
-        x2="8"
-        y1="2"
-        y2="6"
-      />
-      <line
-        x1="3"
-        x2="21"
-        y1="10"
-        y2="10"
-      />
-    </svg>
+      <span
+        class="cuke-input-suffix"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <rect
+            height="18"
+            rx="2"
+            ry="2"
+            width="18"
+            x="3"
+            y="4"
+          />
+          <line
+            x1="16"
+            x2="16"
+            y1="2"
+            y2="6"
+          />
+          <line
+            x1="8"
+            x2="8"
+            y1="2"
+            y2="6"
+          />
+          <line
+            x1="3"
+            x2="21"
+            y1="10"
+            y2="10"
+          />
+        </svg>
+      </span>
+    </div>
   </div>
   <div
     class="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
@@ -722,51 +727,58 @@ exports[`<DatePicker/> should render custom size 1`] = `
     <div
       class="cuke-date-picker-inner"
     >
-      <input
-        class="cuke-input cuke-date-picker-input cuke-input-small"
-        placeholder="small"
-        readonly=""
-        type="text"
-        value=""
-      />
-      <svg
-        class="cuke-date-picker-suffix"
-        fill="none"
-        height="1em"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="1em"
+      <div
+        class="cuke-input-wrapper cuke-input-has-suffix"
       >
-        <rect
-          height="18"
-          rx="2"
-          ry="2"
-          width="18"
-          x="3"
-          y="4"
+        <input
+          class="cuke-input cuke-date-picker-input cuke-input-small"
+          placeholder="small"
+          readonly=""
+          type="text"
+          value=""
         />
-        <line
-          x1="16"
-          x2="16"
-          y1="2"
-          y2="6"
-        />
-        <line
-          x1="8"
-          x2="8"
-          y1="2"
-          y2="6"
-        />
-        <line
-          x1="3"
-          x2="21"
-          y1="10"
-          y2="10"
-        />
-      </svg>
+        <span
+          class="cuke-input-suffix"
+        >
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <rect
+              height="18"
+              rx="2"
+              ry="2"
+              width="18"
+              x="3"
+              y="4"
+            />
+            <line
+              x1="16"
+              x2="16"
+              y1="2"
+              y2="6"
+            />
+            <line
+              x1="8"
+              x2="8"
+              y1="2"
+              y2="6"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="10"
+              y2="10"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
     <div
       class="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
@@ -1058,51 +1070,58 @@ exports[`<DatePicker/> should render custom size 1`] = `
     <div
       class="cuke-date-picker-inner"
     >
-      <input
-        class="cuke-input cuke-date-picker-input"
-        placeholder="default"
-        readonly=""
-        type="text"
-        value=""
-      />
-      <svg
-        class="cuke-date-picker-suffix"
-        fill="none"
-        height="1em"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="1em"
+      <div
+        class="cuke-input-wrapper cuke-input-has-suffix"
       >
-        <rect
-          height="18"
-          rx="2"
-          ry="2"
-          width="18"
-          x="3"
-          y="4"
+        <input
+          class="cuke-input cuke-date-picker-input"
+          placeholder="default"
+          readonly=""
+          type="text"
+          value=""
         />
-        <line
-          x1="16"
-          x2="16"
-          y1="2"
-          y2="6"
-        />
-        <line
-          x1="8"
-          x2="8"
-          y1="2"
-          y2="6"
-        />
-        <line
-          x1="3"
-          x2="21"
-          y1="10"
-          y2="10"
-        />
-      </svg>
+        <span
+          class="cuke-input-suffix"
+        >
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <rect
+              height="18"
+              rx="2"
+              ry="2"
+              width="18"
+              x="3"
+              y="4"
+            />
+            <line
+              x1="16"
+              x2="16"
+              y1="2"
+              y2="6"
+            />
+            <line
+              x1="8"
+              x2="8"
+              y1="2"
+              y2="6"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="10"
+              y2="10"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
     <div
       class="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
@@ -1394,51 +1413,58 @@ exports[`<DatePicker/> should render custom size 1`] = `
     <div
       class="cuke-date-picker-inner"
     >
-      <input
-        class="cuke-input cuke-date-picker-input cuke-input-large"
-        placeholder="large"
-        readonly=""
-        type="text"
-        value=""
-      />
-      <svg
-        class="cuke-date-picker-suffix"
-        fill="none"
-        height="1em"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="1em"
+      <div
+        class="cuke-input-wrapper cuke-input-has-suffix"
       >
-        <rect
-          height="18"
-          rx="2"
-          ry="2"
-          width="18"
-          x="3"
-          y="4"
+        <input
+          class="cuke-input cuke-date-picker-input cuke-input-large"
+          placeholder="large"
+          readonly=""
+          type="text"
+          value=""
         />
-        <line
-          x1="16"
-          x2="16"
-          y1="2"
-          y2="6"
-        />
-        <line
-          x1="8"
-          x2="8"
-          y1="2"
-          y2="6"
-        />
-        <line
-          x1="3"
-          x2="21"
-          y1="10"
-          y2="10"
-        />
-      </svg>
+        <span
+          class="cuke-input-suffix"
+        >
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <rect
+              height="18"
+              rx="2"
+              ry="2"
+              width="18"
+              x="3"
+              y="4"
+            />
+            <line
+              x1="16"
+              x2="16"
+              y1="2"
+              y2="6"
+            />
+            <line
+              x1="8"
+              x2="8"
+              y1="2"
+              y2="6"
+            />
+            <line
+              x1="3"
+              x2="21"
+              y1="10"
+              y2="10"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
     <div
       class="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"

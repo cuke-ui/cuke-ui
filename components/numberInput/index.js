@@ -50,7 +50,8 @@ export default class NumberInput extends PureComponent {
     min: -Infinity,
     max: Infinity,
     step: 1,
-    onChange: () => {}
+    onChange: () => {},
+    allowClear: false
   };
 
   static propTypes = {
@@ -62,6 +63,7 @@ export default class NumberInput extends PureComponent {
     ]),
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,
+    allowClear: PropTypes.bool,
     max: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     min: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     decimal: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -135,6 +137,11 @@ export default class NumberInput extends PureComponent {
       };
     });
   };
+
+  onClear = () => {
+    this.setState({ value: "" });
+    this.props.onChange("");
+  };
   render() {
     const {
       placeholder,
@@ -143,6 +150,7 @@ export default class NumberInput extends PureComponent {
       disabled,
       readonly,
       showStepper,
+      allowClear,
       step, //eslint-disable-line
       decimal, //eslint-disable-line
       min, //eslint-disable-line
@@ -186,6 +194,8 @@ export default class NumberInput extends PureComponent {
         {...attr}
         onChange={this.onChange}
         value={value.toString()}
+        allowClear={allowClear}
+        onClear={this.onClear}
         addonBefore={showStepper && <SubtractStepper />}
         addonAfter={showStepper && <AddStepper />}
         addonClassName={cls(`${prefixCls}-group`, {
@@ -193,6 +203,7 @@ export default class NumberInput extends PureComponent {
           [`${prefixCls}-disabled-subtract`]: this.state.isDisabledSubTract,
           [`${prefixCls}-disabled-add`]: this.state.isDisabledAdd
         })}
+        wrapperClassName={`${prefixCls}-wrapper`}
       />
     );
   }

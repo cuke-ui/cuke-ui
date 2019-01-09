@@ -867,6 +867,9 @@ storiesOf("数据展示", module)
           <CityPicker cityList={cityList} placeholder="large" size="large" />
         </Row>
 
+        <h2>可以清除</h2>
+        <CityPicker allowClear cityList={cityList} />
+
         <h2>在任意容器中单独使用 picker</h2>
         <CityPicker.CityPickerCore cityList={cityList} />
       </div>

@@ -31,7 +31,8 @@ export default class Button extends PureComponent {
     disabled: false,
     hollow: false,
     dashed: false,
-    circle: false
+    circle: false,
+    plain: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -41,6 +42,7 @@ export default class Button extends PureComponent {
     disabled: PropTypes.bool,
     dashed: PropTypes.bool,
     circle: PropTypes.bool,
+    plain: PropTypes.bool,
     htmlType: PropTypes.string,
     href: PropTypes.string,
     type: PropTypes.oneOf(Object.values(types)),
@@ -62,6 +64,7 @@ export default class Button extends PureComponent {
       href,
       dashed,
       circle,
+      plain,
       ...attr
     } = this.props;
 
@@ -81,7 +84,8 @@ export default class Button extends PureComponent {
         [`${prefixCls}-hollow`]: hollow,
         [`${prefixCls}-size-${size}`]: size !== sizes.default,
         [`${prefixCls}-dashed`]: dashed,
-        [`${prefixCls}-circle`]: circle
+        [`${prefixCls}-circle`]: circle,
+        [`${prefixCls}-plain`]: plain
       })
     };
 

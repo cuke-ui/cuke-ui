@@ -193,7 +193,7 @@ storiesOf("综述", module)
     />
   ))
   .add(`更新日志`, () => (
-    <>
+    <div className="change-log">
       <ReactMarkDown
         source={require("./markdown/changelog.md")}
         renderers={{
@@ -209,7 +209,7 @@ storiesOf("综述", module)
           Code: CodeBlock
         }}
       />
-    </>
+    </div>
   ))
   .add(`关于cuke-ui`, () => (
     <>

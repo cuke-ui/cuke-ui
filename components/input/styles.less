@@ -124,6 +124,23 @@
 
   &-wrapper {
     position: relative;
+    .@{prefixCls}-clear {
+      opacity: .5;
+      transition: @default-transition;
+      &:hover {
+        opacity: .7;
+      }
+    }
+    &.@{prefixCls}-has-prefix {
+      .@{prefixCls} {
+        padding-left: @input-prefix-offset + 20px;
+      }
+    }
+    &.@{prefixCls}-has-suffix {
+      .@{prefixCls} {
+        padding-right: @input-prefix-offset + 20px;
+      }
+    }
   }
 
   &-prefix,
@@ -135,32 +152,21 @@
     .flex-center();
     cursor: pointer;
     &, svg {
-      color: @font-color;
+      color: @disabled-font-color;
+      font-size: @font-size;
     }
   }
 
   &-prefix {
-    left: 10px;
-    & + .@{prefixCls} {
-      padding: 0 28px;
-    }
+    left: @input-prefix-offset;
   }
 
   &-suffix {
-    right: 10px;
-    svg {
-      opacity: .5;
-      color: @font-color;
-      transition: @default-transition;
-    }
-    &:hover {
-      svg {
-        opacity: 1;
-      }
-    }
+    right: @input-suffix-offset;
   }
 
   &-clear {
     animation: cuke-zoom-in @default-transition forwards;
+    color: @font-color !important;
   }
 }

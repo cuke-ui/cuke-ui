@@ -18,3 +18,26 @@ h2 {
   background-color: #31c27c;
   color: #fff;
 }
+
+.change-log {
+  h1 {
+    position: relative;
+    padding-left: 40px;
+    &::before {
+      content: "🥒";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  h3 {
+    position: relative;
+    padding-left: 28px;
+    &::before {
+      content: "😁";
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}

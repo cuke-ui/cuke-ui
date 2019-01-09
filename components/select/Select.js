@@ -27,7 +27,8 @@ export default class Select extends PureComponent {
     onChange: () => {},
     getPopupContainer: () => document.body,
     position: "bottom",
-    disabled: false
+    disabled: false,
+    allowClear: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -35,6 +36,7 @@ export default class Select extends PureComponent {
     getPopupContainer: PropTypes.func,
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
+    allowClear: PropTypes.bool,
     size: PropTypes.oneOf(Object.values(sizes)),
     overlay: PropTypes.oneOfType([
       PropTypes.element,
@@ -121,6 +123,11 @@ export default class Select extends PureComponent {
     this.setWrapperBounding();
   }, 500);
 
+  onClear = () => {
+    this.setState({ selectedValue: "", visible: false });
+    this.props.onChange("");
+  };
+
   render() {
     const { visible, left, top, width } = this.state;
     const {
@@ -132,6 +139,7 @@ export default class Select extends PureComponent {
       getPopupContainer,
       size,
       style,
+      allowClear,
       onPanelVisibleChange, //eslint-disable-line
       ...attr
     } = this.props;
@@ -162,8 +170,10 @@ export default class Select extends PureComponent {
             style={{
               width: style && style.width
             }}
+            suffix={<DownIcon className={`${prefixCls}-arrow`} />}
+            allowClear={allowClear}
+            onClear={this.onClear}
           />
-          <DownIcon className={`${prefixCls}-arrow`} />
         </div>
         {createPortal(
           <div

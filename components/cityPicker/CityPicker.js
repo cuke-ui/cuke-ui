@@ -27,7 +27,8 @@ export default class CityPicker extends PureComponent {
     disabledGroups: [],
     loading: false,
     onPanelVisibleChange: () => {},
-    size: sizes.default
+    size: sizes.default,
+    allowClear: false
   };
   static propTypes = {
     cityList: PropTypes.arrayOf(
@@ -50,6 +51,7 @@ export default class CityPicker extends PureComponent {
     onCityChange: PropTypes.func,
     onPanelVisibleChange: PropTypes.func,
     loading: PropTypes.bool,
+    allowClear: PropTypes.bool,
     tip: PropTypes.any,
     size: PropTypes.oneOf(Object.values(sizes))
   };
@@ -96,6 +98,13 @@ export default class CityPicker extends PureComponent {
       this.props.onPanelVisibleChange(false);
     }
   };
+
+  onClear = () => {
+    this.setState({ selectedCityName: "" });
+    if (this.props.onCityChange) {
+      this.props.onCityChange({});
+    }
+  };
   render() {
     const {
       cityList,
@@ -112,6 +121,7 @@ export default class CityPicker extends PureComponent {
       onCityChange, //eslint-disable-line
       defaultCityName, //eslint-disable-line
       size,
+      allowClear,
       ...attr
     } = this.props;
 
@@ -136,8 +146,10 @@ export default class CityPicker extends PureComponent {
             onClick={this.onOpenCityPicker}
             value={selectedCityName}
             size={size}
+            suffix={<DownIcon className={`${prefixCls}-arrow`} />}
+            onClear={this.onClear}
+            allowClear={allowClear}
           />
-          <DownIcon className={`${prefixCls}-arrow`} />
         </div>
         <div
           className={cls(`${prefixCls}-content`, {

@@ -21,6 +21,7 @@ export default class Input extends PureComponent {
     type: "text",
     size: sizes.default,
     onChange: () => {},
+    onClear: () => {},
     allowClear: false,
     suffix: null,
     prefix: null
@@ -34,6 +35,7 @@ export default class Input extends PureComponent {
       PropTypes.object
     ]),
     addonClassName: PropTypes.string,
+    wrapperClassName: PropTypes.string,
     disabled: PropTypes.bool,
     readonly: PropTypes.bool,
     type: PropTypes.oneOf([
@@ -48,16 +50,17 @@ export default class Input extends PureComponent {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     defaultValue: PropTypes.string,
     onChange: PropTypes.func,
+    onClear: PropTypes.func,
     size: PropTypes.oneOf(Object.values(sizes)),
     allowClear: PropTypes.bool,
     suffix: PropTypes.any,
     prefix: PropTypes.any
   };
 
-  static getDerivedStateFromProps({ value }, state) {
-    if (value && state.value !== value) {
+  static getDerivedStateFromProps(nextProps) {
+    if (Reflect.has(nextProps, "value")) {
       return {
-        value
+        value: nextProps.value
       };
     }
     return null;
@@ -77,6 +80,9 @@ export default class Input extends PureComponent {
 
   onClearValue = () => {
     this.setState({ value: "" });
+    if (this.props.onClear) {
+      this.props.onClear();
+    }
   };
 
   componentWillUnmount() {
@@ -94,8 +100,10 @@ export default class Input extends PureComponent {
       addonBefore,
       addonAfter,
       addonClassName,
+      wrapperClassName,
       size,
       defaultValue, //eslint-disable-line
+      onClear, //eslint-disable-line
       allowClear,
       suffix,
       prefix,
@@ -106,6 +114,8 @@ export default class Input extends PureComponent {
 
     const isShowWrapper =
       allowClear || isValidElement(prefix) || isValidElement(suffix);
+
+    const hasSuffix = suffix || allowClear;
 
     const inputEle = (
       <input
@@ -125,10 +135,15 @@ export default class Input extends PureComponent {
     );
 
     const inputWrapper = (
-      <div className={`${prefixCls}-wrapper`}>
+      <div
+        className={cls(`${prefixCls}-wrapper`, wrapperClassName, {
+          [`${prefixCls}-has-prefix`]: prefix,
+          [`${prefixCls}-has-suffix`]: hasSuffix
+        })}
+      >
         {prefix && <span className={`${prefixCls}-prefix`}>{prefix}</span>}
         {inputEle}
-        {(suffix || allowClear) && (
+        {hasSuffix && (
           <span className={`${prefixCls}-suffix`}>
             {allowClear && value ? (
               <CloseCircleIcon

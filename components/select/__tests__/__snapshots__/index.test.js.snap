@@ -8,28 +8,36 @@ exports[`<Select/> should render a <Select/> components 1`] = `
   <div
     class="cuke-select-inner"
   >
-    <input
-      class="cuke-input cuke-select-input"
-      placeholder=""
-      readonly=""
-      type="text"
-      value=""
-    />
-    <svg
-      class="cuke-select-arrow"
-      fill="none"
-      height="1em"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="2"
-      viewBox="0 0 24 24"
-      width="1em"
+    <div
+      class="cuke-input-wrapper cuke-input-has-suffix"
     >
-      <polyline
-        points="6 9 12 15 18 9"
+      <input
+        class="cuke-input cuke-select-input"
+        placeholder=""
+        readonly=""
+        type="text"
+        value=""
       />
-    </svg>
+      <span
+        class="cuke-input-suffix"
+      >
+        <svg
+          class="cuke-select-arrow"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <polyline
+            points="6 9 12 15 18 9"
+          />
+        </svg>
+      </span>
+    </div>
   </div>
   <div
     class="cuke-select-content cuke-select-close cuke-ui-no-animate"
@@ -63,28 +71,36 @@ exports[`<Select/> should render custom size 1`] = `
     <div
       class="cuke-select-inner"
     >
-      <input
-        class="cuke-input cuke-select-input cuke-input-small"
-        placeholder="请选择"
-        readonly=""
-        type="text"
-        value=""
-      />
-      <svg
-        class="cuke-select-arrow"
-        fill="none"
-        height="1em"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="1em"
+      <div
+        class="cuke-input-wrapper cuke-input-has-suffix"
       >
-        <polyline
-          points="6 9 12 15 18 9"
+        <input
+          class="cuke-input cuke-select-input cuke-input-small"
+          placeholder="请选择"
+          readonly=""
+          type="text"
+          value=""
         />
-      </svg>
+        <span
+          class="cuke-input-suffix"
+        >
+          <svg
+            class="cuke-select-arrow"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <polyline
+              points="6 9 12 15 18 9"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
     <div
       class="cuke-select-content cuke-select-close cuke-ui-no-animate"
@@ -114,28 +130,36 @@ exports[`<Select/> should render custom size 1`] = `
     <div
       class="cuke-select-inner"
     >
-      <input
-        class="cuke-input cuke-select-input"
-        placeholder="请选择"
-        readonly=""
-        type="text"
-        value=""
-      />
-      <svg
-        class="cuke-select-arrow"
-        fill="none"
-        height="1em"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="1em"
+      <div
+        class="cuke-input-wrapper cuke-input-has-suffix"
       >
-        <polyline
-          points="6 9 12 15 18 9"
+        <input
+          class="cuke-input cuke-select-input"
+          placeholder="请选择"
+          readonly=""
+          type="text"
+          value=""
         />
-      </svg>
+        <span
+          class="cuke-input-suffix"
+        >
+          <svg
+            class="cuke-select-arrow"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <polyline
+              points="6 9 12 15 18 9"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
     <div
       class="cuke-select-content cuke-select-close cuke-ui-no-animate"
@@ -165,28 +189,36 @@ exports[`<Select/> should render custom size 1`] = `
     <div
       class="cuke-select-inner"
     >
-      <input
-        class="cuke-input cuke-select-input cuke-input-large"
-        placeholder="请选择"
-        readonly=""
-        type="text"
-        value=""
-      />
-      <svg
-        class="cuke-select-arrow"
-        fill="none"
-        height="1em"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        width="1em"
+      <div
+        class="cuke-input-wrapper cuke-input-has-suffix"
       >
-        <polyline
-          points="6 9 12 15 18 9"
+        <input
+          class="cuke-input cuke-select-input cuke-input-large"
+          placeholder="请选择"
+          readonly=""
+          type="text"
+          value=""
         />
-      </svg>
+        <span
+          class="cuke-input-suffix"
+        >
+          <svg
+            class="cuke-select-arrow"
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+          >
+            <polyline
+              points="6 9 12 15 18 9"
+            />
+          </svg>
+        </span>
+      </div>
     </div>
     <div
       class="cuke-select-content cuke-select-close cuke-ui-no-animate"
