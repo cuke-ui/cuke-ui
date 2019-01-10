@@ -1,0 +1,22 @@
+@import '../styles/vars.less';
+@import '../styles/mixins.less';
+
+@prefixCls : cuke-empty;
+
+.@{prefixCls} {
+  text-align: center;
+  height: @cuke-empty-height;
+  .flex-center();
+  flex-direction: column;
+  color: @font-color;
+  &-icon {
+    margin-bottom: @cuke-empty-offset;
+    font-size: @cuke-empty-icon-size;
+    height: @cuke-empty-icon-height;
+  }
+  &-description {
+    font-size: @font-size;
+    color: @font-color;
+    margin-bottom: @cuke-empty-offset;
+  }
+}

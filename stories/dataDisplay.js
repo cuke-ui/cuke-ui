@@ -24,9 +24,10 @@ import "../components/calendar/styles.less";
 import "../components/popover/styles.less";
 import "../components/popconfirm/styles.less";
 import "../components/card/styles.less";
+import "../components/empty/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
-import { Calendar, Popconfirm } from "../components";
+import { Calendar, Popconfirm, Empty } from "../components";
 import Popover from "../components/popover";
 import PopoverPage from "./pages/popover";
 import Card from "../components/card";
@@ -1065,5 +1066,22 @@ storiesOf("数据展示", module)
           </Card>
         </Col>
       </Row>
+    </div>
+  ))
+  .add("Empty 空状态", () => (
+    <div>
+      <h2>基本使用</h2>
+      <Empty />
+
+      <h2>自定义高度</h2>
+      <Empty height={120} />
+
+      <h2>自定义图标和描述</h2>
+      <Empty icon={<ErrorIcon />} description="这里空空如也" />
+
+      <h2>自定义附属内容</h2>
+      <Empty icon={"🥒"} description="这里没有黄瓜">
+        <Button type="primary">点击购买</Button>
+      </Empty>
     </div>
   ));

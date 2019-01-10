@@ -1,0 +1,166 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Empty/> should render a <Empty/> components 1`] = `
+<div>
+  <div
+    class="cuke-empty"
+    style="height:200px"
+  >
+    <div
+      class="cuke-empty-icon"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <line
+          x1="22"
+          x2="2"
+          y1="12"
+          y2="12"
+        />
+        <path
+          d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+        />
+        <line
+          x1="6"
+          x2="6"
+          y1="16"
+          y2="16"
+        />
+        <line
+          x1="10"
+          x2="10"
+          y1="16"
+          y2="16"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-empty-description"
+    >
+      暂无数据
+    </div>
+  </div>
+  <div
+    class="cuke-empty"
+    style="height:200px"
+  >
+    <div
+      class="cuke-empty-icon"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="10"
+        />
+        <line
+          x1="15"
+          x2="9"
+          y1="9"
+          y2="15"
+        />
+        <line
+          x1="9"
+          x2="15"
+          y1="9"
+          y2="15"
+        />
+      </svg>
+    </div>
+    <div
+      class="cuke-empty-description"
+    >
+      这里空空如也
+    </div>
+  </div>
+  <div
+    class="cuke-empty"
+    style="height:200px"
+  >
+    <div
+      class="cuke-empty-icon"
+    >
+      🥒
+    </div>
+    <div
+      class="cuke-empty-description"
+    >
+      这里没有黄瓜
+    </div>
+    <button
+      class="cuke-button cuke-button-primary"
+      type="button"
+    >
+      <span>
+        点击购买
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`<Empty/> should render custom height 1`] = `
+<div
+  class="cuke-empty"
+  style="height:500px"
+>
+  <div
+    class="cuke-empty-icon"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <line
+        x1="22"
+        x2="2"
+        y1="12"
+        y2="12"
+      />
+      <path
+        d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"
+      />
+      <line
+        x1="6"
+        x2="6"
+        y1="16"
+        y2="16"
+      />
+      <line
+        x1="10"
+        x2="10"
+        y1="16"
+        y2="16"
+      />
+    </svg>
+  </div>
+  <div
+    class="cuke-empty-description"
+  >
+    暂无数据
+  </div>
+</div>
+`;
