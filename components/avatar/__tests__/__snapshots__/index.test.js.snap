@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Avatar/> should render a <Avatar/> components 1`] = `
+<div>
+  <span
+    class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default cuke-avatar-icon"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+      />
+      <circle
+        cx="12"
+        cy="7"
+        r="4"
+      />
+    </svg>
+  </span>
+  <span
+    class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default"
+  >
+    <span
+      class="cuke-avatar-text"
+    >
+      黄瓜ui
+    </span>
+  </span>
+  <span
+    class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default cuke-avatar-image"
+  >
+    <img
+      alt="cuke-avatar"
+      src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+    />
+  </span>
+  <span
+    class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default cuke-avatar-icon"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+      />
+      <circle
+        cx="12"
+        cy="7"
+        r="4"
+      />
+    </svg>
+  </span>
+  <span
+    class="cuke-avatar cuke-avatar-square cuke-avatar-size-default cuke-avatar-icon"
+  >
+    <svg
+      fill="none"
+      height="1em"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+      />
+      <circle
+        cx="12"
+        cy="7"
+        r="4"
+      />
+    </svg>
+  </span>
+  <span
+    class="cuke-avatar cuke-avatar-circle cuke-avatar-size-large"
+  >
+    <span
+      class="cuke-avatar-text"
+    >
+      大
+    </span>
+  </span>
+  <span
+    class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default"
+  >
+    <span
+      class="cuke-avatar-text"
+    >
+      中
+    </span>
+  </span>
+  <span
+    class="cuke-avatar cuke-avatar-circle cuke-avatar-size-small"
+  >
+    <span
+      class="cuke-avatar-text"
+    >
+      小
+    </span>
+  </span>
+</div>
+`;
