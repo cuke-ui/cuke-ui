@@ -3,6 +3,7 @@
 exports[`<Avatar/> should render a <Avatar/> components 1`] = `
 <div>
   <span
+    alt="cuke-avatar"
     class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default cuke-avatar-icon"
   >
     <svg
@@ -26,7 +27,9 @@ exports[`<Avatar/> should render a <Avatar/> components 1`] = `
     </svg>
   </span>
   <span
+    alt="cuke-avatar"
     class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default"
+    text="黄瓜ui"
   >
     <span
       class="cuke-avatar-text"
@@ -35,6 +38,7 @@ exports[`<Avatar/> should render a <Avatar/> components 1`] = `
     </span>
   </span>
   <span
+    alt="cuke-avatar"
     class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default cuke-avatar-image"
   >
     <img
@@ -43,6 +47,7 @@ exports[`<Avatar/> should render a <Avatar/> components 1`] = `
     />
   </span>
   <span
+    alt="cuke-avatar"
     class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default cuke-avatar-icon"
   >
     <svg
@@ -66,6 +71,7 @@ exports[`<Avatar/> should render a <Avatar/> components 1`] = `
     </svg>
   </span>
   <span
+    alt="cuke-avatar"
     class="cuke-avatar cuke-avatar-square cuke-avatar-size-default cuke-avatar-icon"
   >
     <svg
@@ -89,7 +95,9 @@ exports[`<Avatar/> should render a <Avatar/> components 1`] = `
     </svg>
   </span>
   <span
+    alt="cuke-avatar"
     class="cuke-avatar cuke-avatar-circle cuke-avatar-size-large"
+    text="大"
   >
     <span
       class="cuke-avatar-text"
@@ -98,7 +106,9 @@ exports[`<Avatar/> should render a <Avatar/> components 1`] = `
     </span>
   </span>
   <span
+    alt="cuke-avatar"
     class="cuke-avatar cuke-avatar-circle cuke-avatar-size-default"
+    text="中"
   >
     <span
       class="cuke-avatar-text"
@@ -107,7 +117,9 @@ exports[`<Avatar/> should render a <Avatar/> components 1`] = `
     </span>
   </span>
   <span
+    alt="cuke-avatar"
     class="cuke-avatar cuke-avatar-circle cuke-avatar-size-small"
+    text="小"
   >
     <span
       class="cuke-avatar-text"

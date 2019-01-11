@@ -1106,7 +1106,7 @@ storiesOf("数据展示", module)
         <Avatar icon={<UserIcon />} shape="square" size="small" />
       </div>
       <h2>三种类型：图片、icon、文字</h2>
-      <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png" />
+      <Avatar src="https://cdn.lijinke.cn/1387583682387727.jpg" />
       <Avatar icon={<UserIcon />} />
       <Avatar text="黄瓜ui" />
       <h2>带徽标的头像</h2>
@@ -1115,6 +1115,9 @@ storiesOf("数据展示", module)
       </Badge>
       <Badge count={1} dot>
         <Avatar icon={<UserIcon />} shape="square" />
+      </Badge>
+      <Badge count={999}>
+        <Avatar icon={<UserIcon />} />
       </Badge>
     </div>
   ));
