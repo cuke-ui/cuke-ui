@@ -1,0 +1,58 @@
+@import "../styles/vars.less";
+@import "../styles/animate.less";
+@import "../styles/mixins.less";
+
+@prefixCls: cuke-avatar;
+
+.@{prefixCls} {
+  display: inline-block;
+  text-align: center;
+  background: @cuke-avatar-bg;
+  color: @cuke-avatar-color;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  vertical-align: middle;
+  &.cuke-avatar-circle {
+    border-radius: 50%;
+  }
+  &.cuke-avatar-square {
+    border-radius: @cuke-avatar-border-radius;
+  }
+
+  .avatar-size(@cuke-avatar-size-base, @cuke-avatar-font-size-base);
+
+  &-size-large {
+    .avatar-size(@cuke-avatar-size-lg, @cuke-avatar-font-size-lg);
+  }
+
+  &-size-small {
+    .avatar-size(@cuke-avatar-size-sm, @cuke-avatar-font-size-sm);
+  }
+
+  &-image {
+    background: transparent;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &-text {
+    position: absolute;
+    left: 50%;
+    transform-origin: 0 center;
+  }
+}
+
+.avatar-size(@size, @font-size) {
+  width: @size;
+  height: @size;
+  line-height: @size;
+  border-radius: 50%;
+
+  &.@{prefixCls}-icon {
+    font-size: @font-size;
+  }
+}

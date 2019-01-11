@@ -10,7 +10,7 @@ import Col from "../components/col";
 import Timeline from "../components/timeline";
 import Tag from "../components/tag";
 import CityPicker from "../components/cityPicker";
-import { SuccessIcon, InfoIcon, ErrorIcon } from "../components/icon";
+import { SuccessIcon, InfoIcon, ErrorIcon, UserIcon } from "../components/icon";
 import Collapse from "../components/collapse";
 
 import "../components/tooltip/styles.less";
@@ -31,6 +31,7 @@ import { Calendar, Popconfirm, Empty } from "../components";
 import Popover from "../components/popover";
 import PopoverPage from "./pages/popover";
 import Card from "../components/card";
+import Avatar from "../components/avatar";
 
 const cityList = [
   {
@@ -1083,5 +1084,37 @@ storiesOf("数据展示", module)
       <Empty icon={"🥒"} description="这里没有黄瓜">
         <Button type="primary">点击购买</Button>
       </Empty>
+    </div>
+  ))
+  .add("Avatar 头像", () => (
+    <div className="cuke-avatar-example">
+      <h2>基本使用</h2>
+      <div>
+        <Avatar icon={<UserIcon />} />
+        <Avatar
+          icon={<UserIcon />}
+          style={{ backgroundColor: "#31c27c", color: "#fff" }}
+        />
+      </div>
+      <h2>两种形状、三种基本大小</h2>
+      <div>
+        <Avatar icon={<UserIcon />} size="large" />
+        <Avatar icon={<UserIcon />} />
+        <Avatar icon={<UserIcon />} size="small" />
+        <Avatar icon={<UserIcon />} shape="square" size="large" />
+        <Avatar icon={<UserIcon />} shape="square" />
+        <Avatar icon={<UserIcon />} shape="square" size="small" />
+      </div>
+      <h2>三种类型：图片、icon、文字</h2>
+      <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png" />
+      <Avatar icon={<UserIcon />} />
+      <Avatar text="黄瓜ui" />
+      <h2>带徽标的头像</h2>
+      <Badge count={1}>
+        <Avatar icon={<UserIcon />} shape="square" />
+      </Badge>
+      <Badge count={1} dot>
+        <Avatar icon={<UserIcon />} shape="square" />
+      </Badge>
     </div>
   ));
