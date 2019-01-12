@@ -1,3 +1,22 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/cuke-ui/cuke-ui/compare/v1.4.0...v1.5.0) (2019-01-12)
+
+
+### Bug Fixes
+
+* **avatar:** 优化 Avatar 组件 ([8037e4b](https://github.com/cuke-ui/cuke-ui/commit/8037e4b))
+
+
+### Features
+
+* cityPicker, datePicker, numberInput, select, input 增加 allowClear 属性 ([e93c666](https://github.com/cuke-ui/cuke-ui/commit/e93c666))
+* **empty:** 新增 Empty 组件 ([45f14ce](https://github.com/cuke-ui/cuke-ui/commit/45f14ce))
+* **input:** 调整 删除图标的样式 ([6f40334](https://github.com/cuke-ui/cuke-ui/commit/6f40334))
+* 新增 Select, CityPicker 的 notFoundContent 属性 ([3602806](https://github.com/cuke-ui/cuke-ui/commit/3602806))
+* 新增Avatar组件 ([463da17](https://github.com/cuke-ui/cuke-ui/commit/463da17))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/cuke-ui/cuke-ui/compare/v1.3.1...v1.4.0) (2019-01-08)
 
