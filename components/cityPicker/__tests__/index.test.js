@@ -6,6 +6,8 @@ import CityPicker from "../index";
 import Input from "../../input";
 import CityPickerCore from "../CityPickerCore";
 import Spin from "../../spin";
+import Empty from "../../empty";
+import Button from "../../button";
 
 const cityList = [
   {
@@ -289,6 +291,18 @@ describe("<CityPicker/>", () => {
     expect(onPanelVisibleChange).not.toHaveBeenCalled();
   });
 
+  it("should render not found content when cityList is Empty", () => {
+    const wrapper = shallow(<CityPickerCore cityList={[]} />);
+    assert(wrapper.find(Empty).length === 1);
+    assert(wrapper.find(".cuke-city-picker-panel-header").length === 0);
+  });
+
+  it("should render custom not found content", () => {
+    const wrapper = shallow(
+      <CityPickerCore cityList={[]} notFoundContent={<Button>111</Button>} />
+    );
+    assert(wrapper.find(Button).length === 1);
+  });
   // it("should cannot trigger panel visible change when disabled groups", () => {
   //   const onPanelVisibleChange = jest.fn();
   //   const wrapper = mount(

@@ -3,6 +3,8 @@ import assert from "power-assert";
 import { render, shallow } from "enzyme";
 import toJson from "enzyme-to-json";
 import Select from "../index";
+import Empty from "../../empty";
+import Button from "../../button";
 
 describe("<Select/>", () => {
   it("should render a <Select/> components", () => {
@@ -174,5 +176,18 @@ describe("<Select/>", () => {
     );
     wrapper.find(".cuke-select-input").simulate("click");
     expect(onPanelVisibleChange).not.toHaveBeenCalled();
+  });
+
+  it("should render not found content when option is Empty", () => {
+    const wrapper = shallow(<Select value="黄瓜" />);
+    assert(wrapper.find(Empty).length === 1);
+    assert(wrapper.find(".cuke-select-option").length === 0);
+  });
+
+  it("should render custom not found content", () => {
+    const wrapper = shallow(
+      <Select value="黄瓜" notFoundContent={<Button>111</Button>} />
+    );
+    assert(wrapper.find(Button).length === 1);
   });
 });

@@ -11,7 +11,7 @@ describe("<Avatar/>", () => {
       <div>
         <Avatar icon={<UserIcon />} />
         <Avatar text="黄瓜ui" />
-        <Avatar src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png" />
+        <Avatar src="https://www.test.jpg" />
         <Avatar icon={<UserIcon />} />
         <Avatar icon={<UserIcon />} shape="square" />
         <Avatar text="大" size="large" />
@@ -50,8 +50,7 @@ describe("<Avatar/>", () => {
   });
 
   it("should render a image", () => {
-    const src =
-      "https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png";
+    const src = "https://www.test.png";
     const wrapper = shallow(<Avatar src={src} alt="user" />);
     assert(wrapper.find(".cuke-avatar-image").length === 1);
     assert(wrapper.find("img").length === 1);

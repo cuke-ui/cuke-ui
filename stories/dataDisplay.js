@@ -33,6 +33,50 @@ import PopoverPage from "./pages/popover";
 import Card from "../components/card";
 import Avatar from "../components/avatar";
 
+const emptyCityList = [
+  {
+    group: "热门",
+    resources: []
+  },
+  {
+    group: "ABCDE",
+    resources: [
+      {
+        id: 1,
+        name: "成都"
+      },
+      {
+        id: 2,
+        name: "资阳"
+      }
+    ]
+  },
+  {
+    group: "FGHIJ",
+    resources: [
+      {
+        id: 3,
+        name: "上海"
+      },
+      {
+        id: 4,
+        name: "乐至"
+      }
+    ]
+  },
+  {
+    group: "KLMNO",
+    resources: []
+  },
+  {
+    group: "PQRST",
+    resources: []
+  },
+  {
+    group: "UVWXYZ",
+    resources: []
+  }
+];
 const cityList = [
   {
     group: "热门",
@@ -871,6 +915,10 @@ storiesOf("数据展示", module)
 
         <h2>可以清除</h2>
         <CityPicker allowClear cityList={cityList} />
+
+        <h2>空数据</h2>
+        <CityPicker cityList={[]} style={{ margin: "0 10px" }} />
+        <CityPicker cityList={emptyCityList} />
 
         <h2>在任意容器中单独使用 picker</h2>
         <CityPicker.CityPickerCore cityList={cityList} />

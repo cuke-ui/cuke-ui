@@ -43,7 +43,7 @@ exports[`<Avatar/> should render a <Avatar/> components 1`] = `
   >
     <img
       alt="cuke-avatar"
-      src="https://gw.alipayobjects.com/zos/rmsportal/BiazfanxmamNRoxxVxka.png"
+      src="https://www.test.jpg"
     />
   </span>
   <span

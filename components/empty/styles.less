@@ -4,6 +4,7 @@
 @prefixCls : cuke-empty;
 
 .@{prefixCls} {
+  width: 100%;
   text-align: center;
   height: @cuke-empty-height;
   .flex-center();
@@ -13,6 +14,9 @@
     margin-bottom: @cuke-empty-offset;
     font-size: @cuke-empty-icon-size;
     height: @cuke-empty-icon-height;
+    svg {
+      stroke-width: 1px;
+    }
   }
   &-description {
     font-size: @font-size;

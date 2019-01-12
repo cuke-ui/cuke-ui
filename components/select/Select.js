@@ -6,6 +6,7 @@ import Input from "../input";
 import { DownIcon } from "../icon";
 import { debounce } from "../utils";
 import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
+import Empty from "../empty";
 
 const sizes = {
   default: "default",
@@ -28,7 +29,8 @@ export default class Select extends PureComponent {
     getPopupContainer: () => document.body,
     position: "bottom",
     disabled: false,
-    allowClear: false
+    allowClear: false,
+    notFoundContent: <Empty height={120} />
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -140,6 +142,7 @@ export default class Select extends PureComponent {
       size,
       style,
       allowClear,
+      notFoundContent,
       onPanelVisibleChange, //eslint-disable-line
       ...attr
     } = this.props;
@@ -189,13 +192,15 @@ export default class Select extends PureComponent {
               top
             }}
           >
-            {React.Children.map(children, (element, index) => {
-              return React.cloneElement(element, {
-                key: index,
-                selectedValue,
-                onChange: this.onChange
-              });
-            })}
+            {children
+              ? React.Children.map(children, (element, index) => {
+                  return React.cloneElement(element, {
+                    key: index,
+                    selectedValue,
+                    onChange: this.onChange
+                  });
+                })
+              : notFoundContent}
           </div>,
           getPopupContainer()
         )}

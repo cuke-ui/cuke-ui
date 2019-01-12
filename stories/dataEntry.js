@@ -366,6 +366,9 @@ storiesOf("数据录入", module)
         <Select.Option value="茄子">茄子</Select.Option>
         <Select.Option value="番茄">番茄</Select.Option>
       </Select>
+
+      <h2>空数据</h2>
+      <Select placeholder="请选择" />
     </div>
   ))
   .add("DatePicker 日期选择器", () => (
