@@ -1,6 +1,6 @@
 import assert from "power-assert";
 import React from "react";
-import { render, shallow } from "enzyme";
+import { render, shallow, mount } from "enzyme";
 import toJson from "enzyme-to-json";
 import CityPicker from "../index";
 import Input from "../../input";
@@ -303,6 +303,56 @@ describe("<CityPicker/>", () => {
     );
     assert(wrapper.find(Button).length === 1);
   });
+
+  it.skip("should emit onCityGroupChange when group clicked ", () => {
+    const onChange = jest.fn();
+    const wrapper = mount(
+      <CityPicker onCityGroupChange={onChange} cityList={cityList} />
+    );
+    wrapper.setState({
+      visible: true
+    });
+    wrapper
+      .find(".cuke-city-picker-core-item")
+      .at(1)
+      .simulate("click");
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it.skip("should emit onCityChange when group clicked ", () => {
+    const onChange = jest.fn();
+    const wrapper = mount(
+      <CityPicker onCityChange={onChange} cityList={cityList} />
+    );
+    wrapper.setState({
+      visible: true
+    });
+    wrapper
+      .find(".cuke-city-picker-core-city")
+      .at(0)
+      .simulate("click");
+    expect(onChange).toHaveBeenCalled();
+  });
+
+  it.skip("should emit onClear ", () => {
+    const onChange = jest.fn();
+    const wrapper = mount(
+      <CityPicker
+        allowClear
+        onCityChange={onChange}
+        cityList={cityList}
+        selectedCityName="成都"
+      />
+    );
+    wrapper.setState({ selectedCityName: "成都" });
+    wrapper
+      .find(".cuke-input-clear")
+      .at(0)
+      .simulate("click");
+    expect(wrapper.state().selectedCityName).toBe("");
+    expect(onChange).toHaveBeenCalled();
+  });
+
   // it("should cannot trigger panel visible change when disabled groups", () => {
   //   const onPanelVisibleChange = jest.fn();
   //   const wrapper = mount(

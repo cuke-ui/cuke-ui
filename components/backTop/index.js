@@ -67,16 +67,12 @@ export default class BackTop extends PureComponent {
     );
   }
   bindScroll = () => {
-    if (window.onscroll) {
-      window.onscroll();
+    const c = document.documentElement.scrollTop || document.body.scrollTop;
+    const visible = c >= this.props.visibilityHeight;
+    if (!visible && this.state.animateLock) {
+      this.setState({ visible: null });
     } else {
-      const c = document.documentElement.scrollTop || document.body.scrollTop;
-      const visible = c >= this.props.visibilityHeight;
-      if (!visible && this.state.animateLock) {
-        this.setState({ visible: null });
-      } else {
-        this.setState({ visible, animateLock: false });
-      }
+      this.setState({ visible, animateLock: false });
     }
   };
   componentDidMount() {

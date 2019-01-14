@@ -80,19 +80,16 @@ export default class Avatar extends PureComponent {
   setScale = () => {
     const childrenNode = this.avatarChildren.current;
     if (childrenNode) {
-      const childrenWidth = childrenNode.offsetWidth;
+      const { width: childrenWidth } = childrenNode.getBoundingClientRect();
       const {
         width: avatarWidth
       } = this.avatar.current.getBoundingClientRect();
-      if (avatarWidth - 8 < childrenWidth) {
-        this.setState({
-          scale: (avatarWidth - 8) / childrenWidth
-        });
-      } else {
-        this.setState({
-          scale: 1
-        });
-      }
+
+      const scale =
+        avatarWidth < childrenWidth ? avatarWidth / childrenWidth : 1;
+      this.setState({
+        scale
+      });
     }
   };
 

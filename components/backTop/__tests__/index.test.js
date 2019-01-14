@@ -66,4 +66,10 @@ describe("<BackTop/>", () => {
     window.onclick = () => onClick;
     expect(onClick).not.toHaveBeenCalled();
   });
+
+  it("should emit bind scroll", () => {
+    const wrapper = new BackTop({ visibilityHeight: 100 }, { visible: null });
+    wrapper.bindScroll();
+    assert(true);
+  });
 });

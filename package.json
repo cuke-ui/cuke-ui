@@ -26,7 +26,7 @@
     "test": "cross-env BABEL_ENV=test jest --config jest.config.js",
     "test:update": "yarn test -u",
     "coverage": "yarn test --coverage",
-    "ci": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "ci:coverage": "yarn coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build:docs": "build-storybook -c .storybook -o .out",
     "pub:docs": "yarn build:docs && storybook-to-ghpages --existing-output-dir=.out",
     "prepublish": "yarn build",
