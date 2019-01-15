@@ -321,6 +321,16 @@ storiesOf("数据展示", module)
         </Button>
       </Popover>
 
+      <h2>默认显示</h2>
+      <Popover
+        title="黄瓜ui"
+        content="即插即用"
+        visible={true}
+        position="right"
+      >
+        鼠标放上来
+      </Popover>
+
       <h2>隐藏箭头</h2>
       <Popover title="黄瓜ui" content="即插即用" position="right" hiddenArrow>
         <span> 鼠标放上来 </span>
@@ -917,7 +927,7 @@ storiesOf("数据展示", module)
         <CityPicker allowClear cityList={cityList} />
 
         <h2>空数据</h2>
-        <CityPicker cityList={[]} style={{ margin: "0 10px" }} />
+        <CityPicker cityList={[]} style={{ marginRight: 10 }} />
         <CityPicker cityList={emptyCityList} />
 
         <h2>在任意容器中单独使用 picker</h2>
@@ -1118,7 +1128,7 @@ storiesOf("数据展示", module)
     </div>
   ))
   .add("Empty 空状态", () => (
-    <div>
+    <div className="empty-example">
       <h2>基本使用</h2>
       <Empty />
 
