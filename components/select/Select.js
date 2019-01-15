@@ -44,7 +44,8 @@ export default class Select extends PureComponent {
       PropTypes.element,
       PropTypes.string,
       PropTypes.object
-    ])
+    ]),
+    popupContainerClassName: PropTypes.string
   };
   constructor(props) {
     super(props);
@@ -143,6 +144,7 @@ export default class Select extends PureComponent {
       style,
       allowClear,
       notFoundContent,
+      popupContainerClassName,
       onPanelVisibleChange, //eslint-disable-line
       ...attr
     } = this.props;
@@ -180,7 +182,7 @@ export default class Select extends PureComponent {
         </div>
         {createPortal(
           <div
-            className={cls(`${prefixCls}-content`, {
+            className={cls(`${prefixCls}-content`, popupContainerClassName, {
               [`${prefixCls}-open`]: visible,
               [`${prefixCls}-close`]: !visible,
               ["cuke-ui-no-animate"]: visible === null

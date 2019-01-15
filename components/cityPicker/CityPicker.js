@@ -53,6 +53,7 @@ export default class CityPicker extends PureComponent {
     loading: PropTypes.bool,
     allowClear: PropTypes.bool,
     tip: PropTypes.any,
+    popupContainerClassName: PropTypes.string,
     size: PropTypes.oneOf(Object.values(sizes))
   };
   constructor(props) {
@@ -120,6 +121,7 @@ export default class CityPicker extends PureComponent {
       onCityGroupChange, //eslint-disable-line
       onCityChange, //eslint-disable-line
       defaultCityName, //eslint-disable-line
+      popupContainerClassName,
       size,
       allowClear,
       ...attr
@@ -152,7 +154,7 @@ export default class CityPicker extends PureComponent {
           />
         </div>
         <div
-          className={cls(`${prefixCls}-content`, {
+          className={cls(`${prefixCls}-content`, popupContainerClassName, {
             [`${prefixCls}-open`]: visible,
             [`${prefixCls}-close`]: !visible,
             "cuke-ui-no-animate": visible === null

@@ -142,4 +142,13 @@ describe("<Drawer/>", () => {
     expect(document.body.style.overflow).toEqual("");
     expect(document.body.style.paddingRight).toEqual("0px");
   });
+
+  it("should find custom wrapperClassName ", () => {
+    const wrapper = shallow(
+      <Drawer wrapperClassName="test" visible>
+        1111
+      </Drawer>
+    );
+    assert(wrapper.find(".test").length === 1);
+  });
 });

@@ -190,4 +190,11 @@ describe("<Select/>", () => {
     );
     assert(wrapper.find(Button).length === 1);
   });
+
+  it("should find custom popup container class name ", () => {
+    const wrapper = shallow(
+      <Select value="黄瓜" popupContainerClassName="test" />
+    );
+    assert(wrapper.find(".test").length === 1);
+  });
 });

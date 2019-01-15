@@ -365,4 +365,9 @@ describe("<CityPicker/>", () => {
   //   wrapper.find(".cuke-city-picker-core-item").at(0).simulate("click");
   //   expect(onPanelVisibleChange).toHaveBeenCalled();
   // });
+
+  it("should find custom popup container class name ", () => {
+    const wrapper = shallow(<CityPicker popupContainerClassName="test" />);
+    assert(wrapper.find(".test").length === 1);
+  });
 });

@@ -26,7 +26,8 @@ export default class Dropdown extends PureComponent {
     onVisibleChange: PropTypes.func,
     trigger: PropTypes.oneOf(Object.values(triggerTypes)),
     getPopupContainer: PropTypes.func,
-    overlay: PropTypes.any
+    overlay: PropTypes.any,
+    popupContainerClassName: PropTypes.string
   };
 
   constructor(props) {

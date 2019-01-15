@@ -51,7 +51,8 @@ export default class Drawer extends PureComponent {
     height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     placement: PropTypes.oneOf(Object.values(placements)),
     getPopupContainer: PropTypes.func,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
+    wrapperClassName: PropTypes.string
   };
   constructor(props) {
     super(props);
@@ -99,6 +100,7 @@ export default class Drawer extends PureComponent {
       placement,
       style,
       footer,
+      wrapperClassName,
       ...attr
     } = this.props;
 
@@ -117,7 +119,11 @@ export default class Drawer extends PureComponent {
             {...maskClickHandle}
           />
         )}
-        <div role="dialog" tabIndex="-1" className={cls(`${prefixCls}-wrap`)}>
+        <div
+          role="dialog"
+          tabIndex="-1"
+          className={cls(`${prefixCls}-wrap`, wrapperClassName)}
+        >
           <div
             className={cls(
               prefixCls,

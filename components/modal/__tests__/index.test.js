@@ -367,4 +367,13 @@ describe("<Modal/>", () => {
     expect(document.body.style.overflow).toEqual("");
     expect(document.body.style.paddingRight).toEqual("0px");
   });
+
+  it("should find custom wrapperClassName ", () => {
+    const wrapper = shallow(
+      <Modal wrapperClassName="test" visible>
+        1111
+      </Modal>
+    );
+    assert(wrapper.find(".test").length === 1);
+  });
 });

@@ -103,7 +103,8 @@ export default class Modal extends PureComponent {
       PropTypes.object
     ]),
     okProps: PropTypes.object,
-    cancelProps: PropTypes.object
+    cancelProps: PropTypes.object,
+    wrapperClassName: PropTypes.string
   };
   constructor(props) {
     super(props);
@@ -266,6 +267,7 @@ export default class Modal extends PureComponent {
       zIndex,
       okButtonProps,
       cancelButtonProps,
+      wrapperClassName,
       iconType, //eslint-disable-line
       staticMethodType, //eslint-disable-line
       isStaticMethod, //eslint-disable-line
@@ -296,7 +298,7 @@ export default class Modal extends PureComponent {
         <div
           role="dialog"
           tabIndex="-1"
-          className={cls(`${prefixCls}-wrap`, {
+          className={cls(`${prefixCls}-wrap`, wrapperClassName, {
             [`${prefixCls}-centered`]: centered
           })}
         >
