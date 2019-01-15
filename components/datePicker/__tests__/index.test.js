@@ -255,4 +255,48 @@ describe("<DatePicker/>", () => {
       "2019-03-03"
     );
   });
+  it("should find custom popup container class name", () => {
+    const wrapper = shallow(
+      <DatePicker popupContainerClassName="popup-class-name" />
+    );
+    expect(wrapper.find(".popup-class-name")).toHaveLength(1);
+  });
+
+  it("should can not trigger when date is disabled", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <DatePicker disabledDate={() => true} onChange={onChange} />
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+    wrapper
+      .find(".cuke-date-picker-current-month")
+      .at(0)
+      .simulate("click");
+    expect(onChange).not.toHaveBeenCalled();
+  });
+
+  it("should can not trigger when range date is disabled", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <DatePicker
+        disabledDate={currentDate =>
+          !currentDate.isBetween(moment("2019-01-01"), moment("2019-01-03"))
+        }
+        defaultValue={moment("2019-01-01")}
+        onChange={onChange}
+      />
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+    wrapper
+      .find(".cuke-date-picker-current-month")
+      .at(0)
+      .simulate("click");
+    expect(onChange).not.toHaveBeenCalled();
+    wrapper
+      .find(".cuke-date-picker-current-month")
+      .at(1)
+      .simulate("click");
+    expect(onChange).toHaveBeenCalled();
+    expect(wrapper.find(".cuke-date-picker-disabled-date")).toHaveLength(34);
+  });
 });

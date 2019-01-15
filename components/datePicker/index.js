@@ -50,10 +50,12 @@ export default class DataPicker extends PureComponent {
     position: positions.bottom,
     getPopupContainer: () => document.body,
     suffix: <CalendarIcon />,
-    size: sizes.default
+    size: sizes.default,
+    disabledDate: () => false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
+    popupContainerClassName: PropTypes.string,
     onPanelVisibleChange: PropTypes.func,
     onChange: PropTypes.func,
     format: PropTypes.string,
@@ -177,7 +179,12 @@ export default class DataPicker extends PureComponent {
   };
 
   renderCalendarContent = () => {
-    const { prefixCls, showDayInNextMonth, showDayInPrevMonth } = this.props;
+    const {
+      prefixCls,
+      showDayInNextMonth,
+      showDayInPrevMonth,
+      disabledDate
+    } = this.props;
     const momentDateFirst = this.state.momentSelected.clone().date(1);
     const daysInMonth = momentDateFirst.daysInMonth();
     const dayOfFirstDate = momentDateFirst.day();
@@ -206,45 +213,76 @@ export default class DataPicker extends PureComponent {
             dayOfFirstDate === 0
               ? lastMonthDaysInMonth - WEEKDAY + date + 2
               : lastMonthDaysInMonth - dayOfFirstDate + date + 2;
+          const isDisabled = disabledDate(
+            momentDateFirst.clone().date(date + 1)
+          );
           return (
             <span
-              className={cls(`${prefixCls}-item`, `${prefixCls}-last-month`)}
+              className={cls(`${prefixCls}-item`, `${prefixCls}-last-month`, {
+                [`${prefixCls}-disabled-date`]: isDisabled
+              })}
               key={`first-date-${date}`}
-              onClick={this.selectedDate(currentDate)(false)}
+              onClick={
+                !isDisabled ? this.selectedDate(currentDate)(false) : undefined
+              }
             >
               {showDayInPrevMonth && currentDate}
             </span>
           );
         })}
 
-        {new Array(daysInMonth).fill(null).map((_, date) => (
-          <span
-            className={cls(`${prefixCls}-item`, `${prefixCls}-current-month`, {
-              [`${prefixCls}-selected-date`]:
-                this.state.momentSelected.date() === date + 1
-            })}
-            key={`date-${date}`}
-            onClick={this.selectedDate(date + 1)()}
-          >
-            {date + 1}
-          </span>
-        ))}
-
-        {new Array(lastDaysInMonth === 0 ? 0 : 7 - lastDaysInMonth)
-          .fill(null)
-          .map((_, date) => (
+        {new Array(daysInMonth).fill(null).map((_, date) => {
+          const currentDate = date + 1;
+          const isDisabled = disabledDate(
+            momentDateFirst.clone().date(currentDate)
+          );
+          return (
             <span
-              className={cls(`${prefixCls}-item`, `${prefixCls}-next-month`)}
-              key={`next-date-${date}`}
+              className={cls(
+                `${prefixCls}-item`,
+                `${prefixCls}-current-month`,
+                {
+                  [`${prefixCls}-selected-date`]:
+                    this.state.momentSelected.date() === currentDate,
+                  [`${prefixCls}-disabled-date`]: isDisabled
+                }
+              )}
+              key={`date-${date}`}
               onClick={
-                showDayInNextMonth
-                  ? this.selectedDate(date + 1)(true)
-                  : undefined
+                !isDisabled ? this.selectedDate(currentDate)() : undefined
               }
             >
-              {showDayInNextMonth && date + 1}
+              {currentDate}
             </span>
-          ))}
+          );
+        })}
+
+        {new Array(lastDaysInMonth === 0 ? 0 : WEEKDAY - lastDaysInMonth)
+          .fill(null)
+          .map((_, date) => {
+            const currentDate = date + 1;
+            const isDisabled = disabledDate(
+              momentDateFirst
+                .clone()
+                .add(1, "month")
+                .date(currentDate)
+            );
+            return (
+              <span
+                className={cls(`${prefixCls}-item`, `${prefixCls}-next-month`, {
+                  [`${prefixCls}-disabled-date`]: isDisabled
+                })}
+                key={`next-date-${date}`}
+                onClick={
+                  showDayInNextMonth && !isDisabled
+                    ? this.selectedDate(currentDate)(true)
+                    : undefined
+                }
+              >
+                {showDayInNextMonth && currentDate}
+              </span>
+            );
+          })}
       </>
     );
   };
@@ -308,10 +346,12 @@ export default class DataPicker extends PureComponent {
       loading, //eslint-disable-line
       onSelectedDateChange, //eslint-disable-line
       onPanelVisibleChange, //eslint-disable-line
+      disabledDate, //eslint-disable-line
       getPopupContainer,
       position,
       suffix,
       size,
+      popupContainerClassName,
       ...attr
     } = this.props;
 
@@ -354,7 +394,7 @@ export default class DataPicker extends PureComponent {
         </div>
         {createPortal(
           <div
-            className={cls(`${prefixCls}-content`, {
+            className={cls(`${prefixCls}-content`, popupContainerClassName, {
               [`${prefixCls}-open`]: visible,
               [`${prefixCls}-close`]: !visible,
               ["cuke-ui-no-animate"]: visible === null

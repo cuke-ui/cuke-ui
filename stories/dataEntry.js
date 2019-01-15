@@ -426,6 +426,28 @@ storiesOf("数据录入", module)
         </Col>
       </Row>
 
+      <h2>禁用</h2>
+      <Row style={{ marginTop: "30px" }}>
+        <Col span={5}>
+          <h3>只能选今天以后</h3>
+          <DatePicker
+            disabledDate={currentDate => currentDate < moment().endOf("day")}
+          />
+        </Col>
+        <Col span={5}>
+          <h3>禁用所有日期</h3>
+          <DatePicker disabledDate={() => true} />
+        </Col>
+        <Col span={5}>
+          <h3>禁用日期范围</h3>
+          <DatePicker
+            disabledDate={currentDate =>
+              !currentDate.isBetween(moment(), moment().add(1, "month"))
+            }
+          />
+        </Col>
+      </Row>
+
       <h2>两个方向</h2>
       <Row style={{ marginTop: "30px" }}>
         <Col span={5}>

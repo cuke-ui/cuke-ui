@@ -113,7 +113,7 @@
       cursor: pointer;
       border: 1px solid transparent;
       transition: all @default-transition;
-      &:not(.@{prefixCls}-day-title):not(.@{prefixCls}-last-month):not(.@{prefixCls}-next-month):hover {
+      &:not(.@{prefixCls}-day-title):not(.@{prefixCls}-last-month):not(.@{prefixCls}-next-month):not(.@{prefixCls}-disabled-date):hover {
         border: 1px solid @primary-color;
       }
     }
@@ -158,6 +158,16 @@
     }
     &.@{prefixCls}-has-border {
       border-top: 1px solid @border-color;
+    }
+  }
+
+  &-disabled-date {
+    background-color: @disabled-color;
+    color: @disabled-font-color;
+    &.@{prefixCls}-item {
+      cursor: not-allowed;
+      border-radius: @border-radius;
+      transition: none !important;
     }
   }
 }

@@ -373,6 +373,706 @@ exports[`<DatePicker/> should can not render any text when not show prev and nex
 </div>
 `;
 
+exports[`<DatePicker/> should can not trigger when date is disabled 1`] = `
+<div
+  className="cuke-date-picker cuke-date-picker-position-bottom"
+  onChange={[MockFunction]}
+>
+  <div
+    className="cuke-date-picker-inner"
+  >
+    <Input
+      allowClear={true}
+      className="cuke-date-picker-input"
+      disabled={false}
+      onChange={[Function]}
+      onClear={[Function]}
+      onClick={[Function]}
+      placeholder="请选择"
+      prefix={null}
+      prefixCls="cuke-input"
+      readonly={true}
+      size="default"
+      suffix={<CalendarIcon />}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
+    style={
+      Object {
+        "left": undefined,
+        "top": undefined,
+      }
+    }
+  >
+    <Spin
+      indicator={<LoadingIcon />}
+      prefixCls="cuke-spin"
+      size="large"
+      spinning={false}
+      tip=""
+    >
+      <div
+        className="cuke-date-picker-header"
+      >
+        <span
+          className="cuke-date-picker-date"
+        >
+          2019
+          年 
+            
+          1
+          月
+        </span>
+        <span
+          className="cuke-date-picker-switch"
+        >
+          <span
+            className="cuke-date-picker-switch-group"
+            onClick={[Function]}
+          >
+            <ArrowLeftIcon />
+          </span>
+          <span
+            className="cuke-date-picker-switch-group"
+            onClick={[Function]}
+          >
+            <ArrowRightIcon />
+          </span>
+        </span>
+      </div>
+      <div
+        className="cuke-date-picker-items"
+      >
+        <div>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="一"
+          >
+            一
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="二"
+          >
+            二
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="三"
+          >
+            三
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="四"
+          >
+            四
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="五"
+          >
+            五
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="六"
+          >
+            六
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="日"
+          >
+            日
+          </span>
+        </div>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-last-month cuke-date-picker-disabled-date"
+          key="first-date-0"
+        >
+          31
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-0"
+        >
+          1
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-1"
+        >
+          2
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-2"
+        >
+          3
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-3"
+        >
+          4
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-4"
+        >
+          5
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-5"
+        >
+          6
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-6"
+        >
+          7
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-7"
+        >
+          8
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-8"
+        >
+          9
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-9"
+        >
+          10
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-10"
+        >
+          11
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-11"
+        >
+          12
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-12"
+        >
+          13
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-13"
+        >
+          14
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date cuke-date-picker-disabled-date"
+          key="date-14"
+        >
+          15
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-15"
+        >
+          16
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-16"
+        >
+          17
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-17"
+        >
+          18
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-18"
+        >
+          19
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-19"
+        >
+          20
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-20"
+        >
+          21
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-21"
+        >
+          22
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-22"
+        >
+          23
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-23"
+        >
+          24
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-24"
+        >
+          25
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-25"
+        >
+          26
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-26"
+        >
+          27
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-27"
+        >
+          28
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-28"
+        >
+          29
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-29"
+        >
+          30
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-30"
+        >
+          31
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-next-month cuke-date-picker-disabled-date"
+          key="next-date-0"
+        >
+          1
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-next-month cuke-date-picker-disabled-date"
+          key="next-date-1"
+        >
+          2
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-next-month cuke-date-picker-disabled-date"
+          key="next-date-2"
+        >
+          3
+        </span>
+      </div>
+      <div
+        className="cuke-date-picker-footer cuke-date-picker-has-border"
+      >
+        <div
+          className="cuke-date-picker-footer-today"
+          onClick={[Function]}
+        >
+          今天
+        </div>
+        <div
+          className="cuke-date-picker-footer-clear"
+          onClick={[Function]}
+        >
+          清除
+        </div>
+      </div>
+    </Spin>
+  </div>
+</div>
+`;
+
+exports[`<DatePicker/> should can not trigger when range date is disabled 1`] = `
+<div
+  className="cuke-date-picker cuke-date-picker-position-bottom"
+  defaultValue={"2018-12-31T16:00:00.000Z"}
+  onChange={[MockFunction]}
+>
+  <div
+    className="cuke-date-picker-inner"
+  >
+    <Input
+      allowClear={true}
+      className="cuke-date-picker-input"
+      disabled={false}
+      onChange={[Function]}
+      onClear={[Function]}
+      onClick={[Function]}
+      placeholder="请选择"
+      prefix={null}
+      prefixCls="cuke-input"
+      readonly={true}
+      size="default"
+      suffix={<CalendarIcon />}
+      type="text"
+      value="2019-01-01"
+    />
+  </div>
+  <div
+    className="cuke-date-picker-content cuke-date-picker-close cuke-ui-no-animate"
+    style={
+      Object {
+        "left": undefined,
+        "top": undefined,
+      }
+    }
+  >
+    <Spin
+      indicator={<LoadingIcon />}
+      prefixCls="cuke-spin"
+      size="large"
+      spinning={false}
+      tip=""
+    >
+      <div
+        className="cuke-date-picker-header"
+      >
+        <span
+          className="cuke-date-picker-date"
+        >
+          2019
+          年 
+            
+          1
+          月
+        </span>
+        <span
+          className="cuke-date-picker-switch"
+        >
+          <span
+            className="cuke-date-picker-switch-group"
+            onClick={[Function]}
+          >
+            <ArrowLeftIcon />
+          </span>
+          <span
+            className="cuke-date-picker-switch-group"
+            onClick={[Function]}
+          >
+            <ArrowRightIcon />
+          </span>
+        </span>
+      </div>
+      <div
+        className="cuke-date-picker-items"
+      >
+        <div>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="一"
+          >
+            一
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="二"
+          >
+            二
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="三"
+          >
+            三
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="四"
+          >
+            四
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="五"
+          >
+            五
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="六"
+          >
+            六
+          </span>
+          <span
+            className="cuke-date-picker-item cuke-date-picker-day-title"
+            key="日"
+          >
+            日
+          </span>
+        </div>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-last-month cuke-date-picker-disabled-date"
+          key="first-date-0"
+        >
+          31
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date cuke-date-picker-disabled-date"
+          key="date-0"
+        >
+          1
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month"
+          key="date-1"
+          onClick={[Function]}
+        >
+          2
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-2"
+        >
+          3
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-3"
+        >
+          4
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-4"
+        >
+          5
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-5"
+        >
+          6
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-6"
+        >
+          7
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-7"
+        >
+          8
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-8"
+        >
+          9
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-9"
+        >
+          10
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-10"
+        >
+          11
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-11"
+        >
+          12
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-12"
+        >
+          13
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-13"
+        >
+          14
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-14"
+        >
+          15
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-15"
+        >
+          16
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-16"
+        >
+          17
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-17"
+        >
+          18
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-18"
+        >
+          19
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-19"
+        >
+          20
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-20"
+        >
+          21
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-21"
+        >
+          22
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-22"
+        >
+          23
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-23"
+        >
+          24
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-24"
+        >
+          25
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-25"
+        >
+          26
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-26"
+        >
+          27
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-27"
+        >
+          28
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-28"
+        >
+          29
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-29"
+        >
+          30
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          key="date-30"
+        >
+          31
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-next-month cuke-date-picker-disabled-date"
+          key="next-date-0"
+        >
+          1
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-next-month cuke-date-picker-disabled-date"
+          key="next-date-1"
+        >
+          2
+        </span>
+        <span
+          className="cuke-date-picker-item cuke-date-picker-next-month cuke-date-picker-disabled-date"
+          key="next-date-2"
+        >
+          3
+        </span>
+      </div>
+      <div
+        className="cuke-date-picker-footer cuke-date-picker-has-border"
+      >
+        <div
+          className="cuke-date-picker-footer-today"
+          onClick={[Function]}
+        >
+          今天
+        </div>
+        <div
+          className="cuke-date-picker-footer-clear"
+          onClick={[Function]}
+        >
+          清除
+        </div>
+      </div>
+    </Spin>
+  </div>
+</div>
+`;
+
 exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
 <div
   class="cuke-date-picker cuke-date-picker-position-bottom"
@@ -596,12 +1296,12 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         13
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         14
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         15
       </span>
@@ -943,12 +1643,12 @@ exports[`<DatePicker/> should render custom size 1`] = `
           13
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+          class="cuke-date-picker-item cuke-date-picker-current-month"
         >
           14
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month"
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
         >
           15
         </span>
@@ -1286,12 +1986,12 @@ exports[`<DatePicker/> should render custom size 1`] = `
           13
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+          class="cuke-date-picker-item cuke-date-picker-current-month"
         >
           14
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month"
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
         >
           15
         </span>
@@ -1629,12 +2329,12 @@ exports[`<DatePicker/> should render custom size 1`] = `
           13
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+          class="cuke-date-picker-item cuke-date-picker-current-month"
         >
           14
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month"
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
         >
           15
         </span>
