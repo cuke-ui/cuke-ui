@@ -1,17 +1,20 @@
-<a name="1.5.0"></a>
-# [1.5.0](https://github.com/cuke-ui/cuke-ui/compare/v1.4.0...v1.5.0) (2019-01-12)
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/cuke-ui/cuke-ui/compare/v1.4.0...v1.6.0) (2019-01-15)
 
 
 ### Bug Fixes
 
 * **avatar:** 优化 Avatar 组件 ([8037e4b](https://github.com/cuke-ui/cuke-ui/commit/8037e4b))
+* 修复 Tooltip visible 默认是 true 时 会闪烁的问题 ([c278cb0](https://github.com/cuke-ui/cuke-ui/commit/c278cb0))
 
 
 ### Features
 
 * cityPicker, datePicker, numberInput, select, input 增加 allowClear 属性 ([e93c666](https://github.com/cuke-ui/cuke-ui/commit/e93c666))
+* **datePicker:** 新增 disabledDate 属性 ([a66e1a8](https://github.com/cuke-ui/cuke-ui/commit/a66e1a8))
 * **empty:** 新增 Empty 组件 ([45f14ce](https://github.com/cuke-ui/cuke-ui/commit/45f14ce))
 * **input:** 调整 删除图标的样式 ([6f40334](https://github.com/cuke-ui/cuke-ui/commit/6f40334))
+* CityPicker, Drawer, Modal, Select 新增 wrapperClassName ([5eda0e6](https://github.com/cuke-ui/cuke-ui/commit/5eda0e6))
 * 新增 Select, CityPicker 的 notFoundContent 属性 ([3602806](https://github.com/cuke-ui/cuke-ui/commit/3602806))
 * 新增Avatar组件 ([463da17](https://github.com/cuke-ui/cuke-ui/commit/463da17))
 
