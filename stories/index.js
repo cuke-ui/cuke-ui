@@ -33,6 +33,9 @@ storiesOf("综述", module)
         </a>
       </h1>
       <p>
+        <img src="https://cdn.lijinke.cn/logo.png" width={120} />
+      </p>
+      <p>
         <a href="https://www.npmjs.com/package/cuke-ui" title="npm">
           <img
             src="https://img.shields.io/npm/dm/cuke-ui.svg?style=for-the-badge"
