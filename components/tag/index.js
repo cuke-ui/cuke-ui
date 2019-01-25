@@ -34,7 +34,7 @@ export default class Tag extends PureComponent {
 
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
-    types: PropTypes.oneOf(types),
+    type: PropTypes.oneOf(types),
     color: PropTypes.string,
     hollow: PropTypes.bool,
     disabled: PropTypes.bool,
