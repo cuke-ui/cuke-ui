@@ -2,8 +2,6 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 
-import "./styles.less";
-
 export default class Affix extends PureComponent {
   state = {
     visible: false

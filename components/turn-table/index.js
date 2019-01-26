@@ -2,7 +2,6 @@ import React, { PureComponent } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
 import ReactTurntable from "react-turntable";
-import "react-turntable/assets/index.css";
 
 export default class TurnTable extends PureComponent {
   static defaultProps = {

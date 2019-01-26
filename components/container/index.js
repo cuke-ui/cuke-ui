@@ -1,7 +1,6 @@
 import React from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
-import "./styles.less";
 
 export default class Container extends React.PureComponent {
   static defaultProps = {

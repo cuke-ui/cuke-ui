@@ -1,7 +1,6 @@
 import React, { PureComponent, createRef } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
-import "./styles.less";
 
 const sizes = {
   small: "small",

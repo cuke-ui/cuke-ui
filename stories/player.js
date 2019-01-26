@@ -1,20 +1,20 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
-import MusicPlayer from '../components/musicPlayer';
-import Turntable from '../components/turnTable';
-import message from '../components/message';
-import Col from '../components/col';
-import Row from '../components/row';
-import Modal from '../components/modal';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { withInfo } from "@storybook/addon-info";
+import MusicPlayer from "../components/music-player";
+import Turntable from "../components/turn-table";
+import message from "../components/message";
+import Col from "../components/col";
+import Row from "../components/row";
+import Modal from "../components/modal";
 import "../components/message/styles.less";
 import "../components/modal/styles.less";
 
-const prizes = new Array(8).fill(0).map((_, i) => `奖品${i + 1}`)
+const prizes = new Array(8).fill(0).map((_, i) => `奖品${i + 1}`);
 
-storiesOf('娱乐', module)
+storiesOf("娱乐", module)
   .add(
-    'MusicPlayer 音乐播放器',
+    "MusicPlayer 音乐播放器",
     withInfo(
       `
   详细文档请查看 [https://github.com/lijinke666/react-music-player](https://github.com/lijinke666/react-music-player)
@@ -24,11 +24,11 @@ storiesOf('娱乐', module)
       <MusicPlayer
         audioLists={[
           {
-            name: '星球坠落',
-            singer: '中国新说唱',
-            musicSrc: 'http://mp3.flash127.com/public/t/id/45169.html',
+            name: "星球坠落",
+            singer: "中国新说唱",
+            musicSrc: "http://mp3.flash127.com/public/t/id/45169.html",
             cover:
-              'http://p1.music.126.net/4k-pMEO-en8IE6PdJoAYfg==/109951163429466895.jpg?param=130y130'
+              "http://p1.music.126.net/4k-pMEO-en8IE6PdJoAYfg==/109951163429466895.jpg?param=130y130"
           }
         ]}
       />
@@ -36,7 +36,7 @@ storiesOf('娱乐', module)
   )
 
   .add(
-    'TurnTable 抽奖转盘',
+    "TurnTable 抽奖转盘",
     withInfo(
       `
   详细文档请查看 [https://github.com/lijinke666/react-turntable)
@@ -50,8 +50,8 @@ storiesOf('娱乐', module)
             {...{
               prizes,
               onComplete(prize) {
-                console.log(prize)
-                message.success(prize)
+                console.log(prize);
+                message.success(prize);
               }
             }}
           />
@@ -76,8 +76,8 @@ storiesOf('娱乐', module)
                 fontFamily: "Microsoft YaHei"
               },
               onComplete(prize) {
-                console.log(prize)
-                message.success(prize)
+                console.log(prize);
+                message.success(prize);
               }
             }}
           />
@@ -89,11 +89,11 @@ storiesOf('娱乐', module)
               prizes,
               fontStyle: {
                 color: "#fff",
-                fontVertical: true,
+                fontVertical: true
               },
               onComplete(prize) {
-                console.log(prize)
-                message.success(prize)
+                console.log(prize);
+                message.success(prize);
               }
             }}
           />
@@ -103,16 +103,16 @@ storiesOf('娱乐', module)
           <Turntable
             {...{
               prizes,
-              onStart(){
+              onStart() {
                 Modal.confirm({
-                  title: '请充值',
-                  content: '充值500元才可以转转盘',
-                })
-                return false
+                  title: "请充值",
+                  content: "充值500元才可以转转盘"
+                });
+                return false;
               },
               onComplete(prize) {
-                console.log(prize)
-                message.success(prize)
+                console.log(prize);
+                message.success(prize);
               }
             }}
           />

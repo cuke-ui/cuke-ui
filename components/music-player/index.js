@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import ReactMusicPlayer from "react-jinke-music-player";
-import "react-jinke-music-player/assets/index.css";
 
 export default class MusicPlayer extends Component {
   static propTypes = {

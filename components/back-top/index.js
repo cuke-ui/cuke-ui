@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import cls from "classnames";
 
 import { UpIcon } from "../icon";
-import "./styles.less";
 
 const scrollToTop = () => {
   const c = document.documentElement.scrollTop || document.body.scrollTop;

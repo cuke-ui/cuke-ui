@@ -2,7 +2,6 @@ import React from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
 import { LoadingIcon } from "../icon";
-import "./styles.less";
 
 const SWITCH_SIZES = ["default", "large", "small"];
 
