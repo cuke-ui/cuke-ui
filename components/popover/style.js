@@ -1,3 +1,3 @@
-import "../../styles";
+import "../styles";
 import "../tooltip/style";
 import "./styles.less";

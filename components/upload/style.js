@@ -1,4 +1,4 @@
-import "../../styles";
+import "../styles";
 import "../message/style";
 import "../progress/style";
 import "../modal/style";

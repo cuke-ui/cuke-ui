@@ -1,4 +1,4 @@
-import "../../styles";
+import "../styles";
 import "../input/style";
 import "../spin/style";
 import "../empty/style";

@@ -1,2 +1,2 @@
-import "../../styles";
+import "../styles";
 import "./styles.less";

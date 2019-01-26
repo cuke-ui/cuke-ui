@@ -115,6 +115,23 @@ module.exports = {
   ]
 }
 
+// 多个组件库
+module.exports = {
+  plugins: [
+    ["babel-plugin-import", {
+      "libraryName": "cuke-ui",
+      "libraryDirectory": "es",
+      "style": true
+    },'cuke-ui'], 
+    
+    ["babel-plugin-import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": true
+    },'antd'], 
+  ]
+}
+
 
 ```
 
