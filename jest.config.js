@@ -10,7 +10,8 @@ module.exports = {
     "/components/form",
     "/components/wordPad",
     "/components/dropdown",
-    "/components/styles"
+    "/components/styles",
+    "/components/**/style.js"
   ],
   transformIgnorePatterns: ["/node_modules/", ".history/*", "lib", "dist"],
   modulePathIgnorePatterns: ["/.history/", "lib", "dist"],

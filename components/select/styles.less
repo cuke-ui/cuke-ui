@@ -5,6 +5,7 @@
 .@{prefixCls} {
   position: relative;
   display: inline-block;
+  width: @cuke-select-width;
   &-inner {
     display: inline-block;
     position: relative;
@@ -24,9 +25,6 @@
   &-close {
     animation: cuke-picker-close @default-transition forwards;
     pointer-events: none;
-  }
-  &-input {
-    width: @cuke-select-width;
   }
   &-arrow {
     position: absolute;
@@ -55,7 +53,7 @@
   &-option {
     width: 100%;
     border-bottom: 1px solid @border-color;
-    padding: 10px 30px;
+    padding: 10px 8px;
     background: #fff;
     transition: all @default-transition;
     cursor: pointer;
@@ -73,6 +71,7 @@
       background-color: @primary-color;
       border-color: @primary-color;
       border-bottom: 1px solid @primary-color;
+      text-shadow: @default-text-shadow;
       &:hover {
         border-color: transparent;
         background-color: @primary-color;

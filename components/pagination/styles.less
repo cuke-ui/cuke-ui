@@ -1,13 +1,108 @@
 @import '../styles/vars.less';
+@import '../styles/mixins.less';
 
 @prefixCls : cuke-pagination;
 .@{prefixCls} {
-  &-pages {
-    margin: @pagination-offset;
+  display: flex;
+  align-items: center;
+  &-simple-pages {
+    margin: @pagination-simple-offset;
     color: @font-color;
   }
-  &-page-index {
+  &-simple-page-index {
     font-weight: bold;
     color: @primary-color;
+  }
+
+  &-simple-page-separator {
+    margin: 0 5px;
+  }
+
+  &-show-total {
+    margin-right: 10px;
+    color: @font-color;
+  }
+
+  &-item {
+    cursor: pointer;
+    border-radius: @border-radius;
+    user-select: none;
+    min-width: @pagination-item-size-default;
+    height: @pagination-item-size-default;
+    text-align: center;
+    list-style: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    border: 1px solid @border-color;
+    background-color: #fff;
+    margin-right: @pagination-item-offset;
+    padding: @pagination-item-padding;
+    outline: 0;
+    transition: all @default-transition;
+    font-size: @font-size;
+
+    &.@{prefixCls}-item-large {
+      min-width: @pagination-item-size-large;
+      height: @pagination-item-size-large;
+    }
+
+    &.@{prefixCls}-item-small {
+      min-width: @pagination-item-size-small;
+      height: @pagination-item-size-small;
+    }
+
+    &-disabled {
+      cursor: not-allowed;
+      color: @disabled-font-color;
+    }
+
+    &:not(&-disabled):hover,
+    &-selected {
+      color: @primary-color;
+      border: 1px solid @primary-color;
+    }
+  }
+
+  &-size-changer {
+    &.cuke-select {
+      width: 100px;
+    }
+    .cuke-input {
+      height: @pagination-item-size-default;
+    }
+
+    &-container {
+      .cuke-select-option {
+        height: @pagination-item-size-default;
+        padding: 0 4px;
+        line-height: @pagination-item-size-default;
+      }
+      &-large {
+        .cuke-select-option {
+          height: @pagination-item-size-large;
+          line-height: @pagination-item-size-large;
+        }
+      }
+      &-small {
+        .cuke-select-option {
+          height: @pagination-item-size-small;
+          line-height: @pagination-item-size-small;
+        }
+      }
+    }
+  }
+
+  &-large {
+    .cuke-input {
+      height: @pagination-item-size-large;
+    }
+  }
+
+  &-small {
+    .cuke-input {
+      height: @pagination-item-size-small;
+    }
   }
 }
