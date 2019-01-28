@@ -197,4 +197,29 @@ describe("<Select/>", () => {
     );
     assert(wrapper.find(".test").length === 1);
   });
+
+  it("should find loading icon", () => {
+    const wrapper = render(
+      <Select value="黄瓜" loading>
+        <Select.Option value="黄瓜">123</Select.Option>
+        <Select.Option value="茄子">123</Select.Option>
+        <Select.Option value="番茄">123</Select.Option>
+      </Select>
+    );
+    expect(wrapper.find(".cuke-select-loading")).toHaveLength(1);
+  });
+
+  it("should find loading icon", () => {
+    const wrapper = shallow(
+      <Select value="黄瓜" loading>
+        <Select.Option value="黄瓜">123</Select.Option>
+        <Select.Option value="茄子">123</Select.Option>
+        <Select.Option value="番茄">123</Select.Option>
+      </Select>
+    );
+
+    expect(wrapper.state().selectedValue).toEqual("黄瓜");
+    wrapper.setProps({ value: "番茄" });
+    expect(wrapper.state().selectedValue).toEqual("番茄");
+  });
 });

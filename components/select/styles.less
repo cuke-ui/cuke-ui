@@ -10,7 +10,7 @@
     display: inline-block;
     position: relative;
     cursor: pointer;
-    >.cuke-input:not(.cuke-input-disabled) {
+    .cuke-input:not(.cuke-input-disabled) {
       cursor: pointer;
     }
   }
@@ -33,6 +33,9 @@
     transform: translateY(-50%);
     color: @disabled-font-color;
     transition: @default-transition;
+  }
+  &-loading {
+    animation: cuke-spin @loading-time linear infinite;
   }
   &-content {
     width: 100%;

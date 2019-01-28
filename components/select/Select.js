@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Input from "../input";
-import { DownIcon } from "../icon";
+import { DownIcon, LoadingIcon } from "../icon";
 import { debounce } from "../utils";
 import scrollIntoViewIfNeeded from "scroll-into-view-if-needed";
 import Empty from "../empty";
@@ -17,7 +17,7 @@ const sizes = {
 export default class Select extends PureComponent {
   state = {
     selectedValue: this.props.defaultValue || this.props.value || "",
-    visible: null,
+    visible: this.props.visible || null,
     left: 0,
     top: 0,
     width: 0
@@ -30,7 +30,9 @@ export default class Select extends PureComponent {
     position: "bottom",
     disabled: false,
     allowClear: false,
-    notFoundContent: <Empty height={120} />
+    notFoundContent: <Empty height={120} />,
+    labelInValue: false,
+    loading: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -39,6 +41,7 @@ export default class Select extends PureComponent {
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
     allowClear: PropTypes.bool,
+    labelInValue: PropTypes.bool,
     size: PropTypes.oneOf(Object.values(sizes)),
     overlay: PropTypes.oneOfType([
       PropTypes.element,
@@ -55,10 +58,50 @@ export default class Select extends PureComponent {
     this.wrapper = createRef();
   }
 
-  onChange = value => {
+  static getDerivedStateFromProps(props) {
+    if (Reflect.has(props, "value")) {
+      return {
+        selectedValue: props.value
+      };
+    }
+    return null;
+  }
+
+  get selectedValue() {
+    const { selectedValue } = this.state;
+    const { labelInValue } = this.props;
+    if (labelInValue) {
+      return (
+        this.selectOptions.find(
+          ({ key }) =>
+            key === ((selectedValue && selectedValue.key) || selectedValue)
+        ) || {}
+      ).value;
+    }
+    return selectedValue;
+  }
+
+  get selectOptions() {
+    return this.props.children.map(({ props }) => {
+      return {
+        key: props.value,
+        value: props.children
+      };
+    });
+  }
+
+  onChange = (value, label) => {
+    const { labelInValue } = this.props;
     this.setState({ selectedValue: value, visible: false });
-    this.props.onChange(value);
     this.props.onPanelVisibleChange(false);
+    if (labelInValue) {
+      this.props.onChange({
+        key: value,
+        label
+      });
+    } else {
+      this.props.onChange(value);
+    }
   };
   onClickHandler = () => {
     const visible = !this.state.visible;
@@ -144,12 +187,12 @@ export default class Select extends PureComponent {
       style,
       allowClear,
       notFoundContent,
+      loading,
       popupContainerClassName,
+      labelInValue, //eslint-disable-line
       onPanelVisibleChange, //eslint-disable-line
       ...attr
     } = this.props;
-
-    const { selectedValue } = this.state;
 
     return (
       <div
@@ -169,13 +212,19 @@ export default class Select extends PureComponent {
             readonly
             placeholder={placeholder}
             className={cls(`${prefixCls}-input`)}
-            value={selectedValue}
+            value={this.selectedValue}
             onClick={this.onClickHandler}
             size={size}
             style={{
               width: style && style.width
             }}
-            suffix={<DownIcon className={`${prefixCls}-arrow`} />}
+            suffix={
+              loading ? (
+                <LoadingIcon className={`${prefixCls}-loading`} />
+              ) : (
+                <DownIcon className={`${prefixCls}-arrow`} />
+              )
+            }
             allowClear={allowClear}
             onClear={this.onClear}
           />
@@ -198,7 +247,7 @@ export default class Select extends PureComponent {
               ? React.Children.map(children, (element, index) => {
                   return React.cloneElement(element, {
                     key: index,
-                    selectedValue,
+                    selectedValue: this.selectedValue,
                     onChange: this.onChange
                   });
                 })
@@ -216,5 +265,8 @@ export default class Select extends PureComponent {
   componentDidMount() {
     window.addEventListener("click", this.onClickOutsideHandler, false);
     window.addEventListener("resize", this.onResizeHandler);
+    if (this.props.visible) {
+      this.setWrapperBounding();
+    }
   }
 }

@@ -12,9 +12,9 @@ export default class Option extends React.PureComponent {
     prefixCls: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
   };
-  onClick = value => {
+  onClick = (value, children) => {
     if (this.props.onChange) {
-      this.props.onChange(value);
+      this.props.onChange(value, children);
     }
   };
   render() {
@@ -31,10 +31,11 @@ export default class Option extends React.PureComponent {
     return (
       <div
         className={cls(prefixCls, className, {
-          [`${prefixCls}-selected`]: selectedValue === value,
+          [`${prefixCls}-selected`]:
+            selectedValue === value || selectedValue === children,
           [`${prefixCls}-disabled`]: disabled
         })}
-        onClick={disabled ? undefined : () => this.onClick(value)}
+        onClick={disabled ? undefined : () => this.onClick(value, children)}
         {...attr}
       >
         {children}

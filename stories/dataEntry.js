@@ -310,6 +310,11 @@ storiesOf("数据录入", module)
         <Select.Option value="茄子">茄子</Select.Option>
         <Select.Option value="番茄">番茄</Select.Option>
       </Select>
+      <Select defaultValue="黄瓜" loading>
+        <Select.Option value="黄瓜">黄瓜</Select.Option>
+        <Select.Option value="茄子">茄子</Select.Option>
+        <Select.Option value="番茄">番茄</Select.Option>
+      </Select>
 
       <h2>禁用</h2>
       <Select placeholder="请选择" disabled>
@@ -344,6 +349,17 @@ storiesOf("数据录入", module)
         <Select.Option value="番茄">番茄</Select.Option>
       </Select>
 
+      <h2>获得选项的文本</h2>
+      <Select
+        defaultValue={{ key: "黄瓜" }}
+        labelInValue
+        onChange={value => console.log(value)}
+      >
+        <Select.Option value="黄瓜">黄瓜 101</Select.Option>
+        <Select.Option value="茄子">茄子 102</Select.Option>
+        <Select.Option value="番茄">番茄 103</Select.Option>
+      </Select>
+
       <h2>三种大小</h2>
       <Select placeholder="请选择" size="small">
         <Select.Option value="黄瓜">黄瓜</Select.Option>
@@ -363,6 +379,13 @@ storiesOf("数据录入", module)
 
       <h2>可以清空</h2>
       <Select placeholder="请选择" allowClear>
+        <Select.Option value="黄瓜">黄瓜</Select.Option>
+        <Select.Option value="茄子">茄子</Select.Option>
+        <Select.Option value="番茄">番茄</Select.Option>
+      </Select>
+
+      <h2>默认打开</h2>
+      <Select placeholder="请选择" visible>
         <Select.Option value="黄瓜">黄瓜</Select.Option>
         <Select.Option value="茄子">茄子</Select.Option>
         <Select.Option value="番茄">番茄</Select.Option>
