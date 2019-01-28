@@ -71,12 +71,16 @@ export default class Select extends PureComponent {
     const { selectedValue } = this.state;
     const { labelInValue } = this.props;
     if (labelInValue) {
-      return (
-        this.selectOptions.find(
-          ({ key }) =>
-            key === ((selectedValue && selectedValue.key) || selectedValue)
-        ) || {}
-      ).value;
+      // children 如果有空格 会被解析成数组 有可能是 [10,"条数据"] 所以需要 join 一下
+      return Array.prototype.join.call(
+        (
+          this.selectOptions.find(
+            ({ key }) =>
+              key === ((selectedValue && selectedValue.key) || selectedValue)
+          ) || {}
+        ).value,
+        ""
+      );
     }
     return selectedValue;
   }

@@ -4,6 +4,7 @@ import cls from "classnames";
 import Select from "../select";
 import Button from "../button";
 import { ArrowLeftIcon, ArrowRightIcon } from "../icon";
+import NumberInput from "../number-input";
 
 const sizes = {
   small: "small",
@@ -22,7 +23,8 @@ export default class Pagination extends PureComponent {
     current:
       this.props.defaultCurrent || this.props.current || this.defaultCurrent,
     pageSize:
-      this.props.defaultPageSize || this.props.pageSize || this.defaultPageSize
+      this.props.defaultPageSize || this.props.pageSize || this.defaultPageSize,
+    quickJumperValue: ""
   };
   static defaultProps = {
     prefixCls: "cuke-pagination",
@@ -40,7 +42,8 @@ export default class Pagination extends PureComponent {
     onChange: () => {},
     onPageSizeChange: () => {},
     showTotal: () => {},
-    pageSizeOptions: [10, 20, 30, 40]
+    pageSizeOptions: [10, 20, 30, 40],
+    showQuickJumper: false
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
@@ -84,11 +87,27 @@ export default class Pagination extends PureComponent {
     });
     this.props.onChange(page, this.props.pageSize);
   };
-  onPageSizeChange = pageSize => {
+  onPageSizeChange = ({ key: pageSize }) => {
     this.setState({
       pageSize
     });
+
     this.props.onPageSizeChange(this.state.current, pageSize);
+  };
+
+  onQuickJumperKeyUp = e => {
+    const value = Number(e.target.value);
+    if (e.keyCode === 13) {
+      this.setState({
+        current: Math.min(value, this.state.pageSize),
+        quickJumperValue: ""
+      });
+    }
+  };
+  onQuickJumperChange = value => {
+    this.setState({
+      quickJumperValue: value
+    });
   };
   render() {
     const {
@@ -103,11 +122,13 @@ export default class Pagination extends PureComponent {
       simple,
       showSizeChanger,
       pageSizeOptions,
+      showQuickJumper,
+      onPageSizeChange, //eslint-disable-line
       onChange, //eslint-disable-line
       ...attr
     } = this.props;
     const { prev, next } = this.typeConfig;
-    const { current, pageSize } = this.state;
+    const { current, pageSize, quickJumperValue } = this.state;
     const pageCount = Math.ceil(total / pageSize);
 
     const isDisabledPrev = current <= this.defaultCurrent;
@@ -196,8 +217,9 @@ export default class Pagination extends PureComponent {
               `${prefixCls}-size-changer-container-${size}`
             )}
             size={size}
-            value={pageSize}
+            value={{ key: pageSize }}
             onChange={this.onPageSizeChange}
+            labelInValue
           >
             {pageSizeOptions.map(pageSize => {
               return (
@@ -207,6 +229,21 @@ export default class Pagination extends PureComponent {
               );
             })}
           </Select>
+        )}
+
+        {showQuickJumper && (
+          <>
+            <span>跳至</span>
+            <NumberInput
+              className={`${prefixCls}-quick-jumper`}
+              onChange={this.onQuickJumperChange}
+              value={quickJumperValue}
+              min={1}
+              size={size}
+              onKeyUp={this.onQuickJumperKeyUp}
+            />
+            <span>页</span>
+          </>
         )}
       </ul>
     );

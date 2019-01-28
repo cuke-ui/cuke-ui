@@ -76,6 +76,9 @@ storiesOf("导航", module)
       <h2>每页显示页数</h2>
       <Pagination current={1} total={100} showSizeChanger />
 
+      <h2>快速跳转</h2>
+      <Pagination current={1} total={100} showQuickJumper />
+
       <h2>自定义总数</h2>
       <Pagination
         current={1}
@@ -88,22 +91,37 @@ storiesOf("导航", module)
       <Pagination
         current={1}
         total={50}
+        showSizeChanger
         onChange={(page, pageIndex) => console.log(page, pageIndex)}
+        onPageSizeChange={(page, pageIndex) => console.log(page, pageIndex)}
       />
 
       <h2>简洁模式</h2>
       <Pagination current={1} total={10} simple />
 
       <h2>三种大小</h2>
-      <Pagination current={1} total={50} size="small" showSizeChanger />
+      <Pagination
+        current={1}
+        total={50}
+        size="small"
+        showSizeChanger
+        showQuickJumper
+      />
       <Pagination
         current={1}
         total={50}
         size="default"
         showSizeChanger
+        showQuickJumper
         style={{ margin: "10px 0" }}
       />
-      <Pagination current={1} total={50} size="large" showSizeChanger />
+      <Pagination
+        current={1}
+        total={50}
+        size="large"
+        showSizeChanger
+        showQuickJumper
+      />
     </div>
   ))
   .add(

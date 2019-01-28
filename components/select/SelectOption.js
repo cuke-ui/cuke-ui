@@ -17,6 +17,10 @@ export default class Option extends React.PureComponent {
       this.props.onChange(value, children);
     }
   };
+  trim = (value = "") => {
+    const _value = Array.prototype.join.call(value, "");
+    return _value.replace(/\s/g, "");
+  };
   render() {
     const {
       children,
@@ -32,7 +36,8 @@ export default class Option extends React.PureComponent {
       <div
         className={cls(prefixCls, className, {
           [`${prefixCls}-selected`]:
-            selectedValue === value || selectedValue === children,
+            selectedValue === value ||
+            this.trim(selectedValue) === this.trim(children),
           [`${prefixCls}-disabled`]: disabled
         })}
         onClick={disabled ? undefined : () => this.onClick(value, children)}

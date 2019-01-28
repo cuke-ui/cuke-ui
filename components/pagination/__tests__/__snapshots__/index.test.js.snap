@@ -4,7 +4,6 @@ exports[`<Pagination/> should find cuke-pagination classnames 1`] = `
 <ul
   className="cuke-pagination cuke-pagination-default"
   current={1}
-  onPageSizeChange={[Function]}
 >
   <li
     className="cuke-pagination-show-total"
@@ -33,7 +32,6 @@ exports[`<Pagination/> should find cuke-pagination-simple classnames when is sim
 <div
   className="cuke-pagination cuke-pagination-simple"
   current={1}
-  onPageSizeChange={[Function]}
 >
   <Button
     block={false}
@@ -229,6 +227,221 @@ exports[`<Pagination/> should render Pagination 1`] = `
       前进
     </li>
   </ul>
+  <ul
+    class="cuke-pagination cuke-pagination-default"
+    current="1"
+  >
+    <li
+      class="cuke-pagination-show-total"
+    />
+    <li
+      class="cuke-pagination-item cuke-pagination-prev cuke-pagination-item-disabled"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <polyline
+          points="15 18 9 12 15 6"
+        />
+      </svg>
+    </li>
+    <li
+      class="cuke-pagination-item cuke-pagination-item-selected"
+    >
+      1
+    </li>
+    <li
+      class="cuke-pagination-item"
+    >
+      2
+    </li>
+    <li
+      class="cuke-pagination-item"
+    >
+      3
+    </li>
+    <li
+      class="cuke-pagination-item"
+    >
+      4
+    </li>
+    <li
+      class="cuke-pagination-item"
+    >
+      5
+    </li>
+    <li
+      class="cuke-pagination-item cuke-pagination-next"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <polyline
+          points="9 18 15 12 9 6"
+        />
+      </svg>
+    </li>
+    <span>
+      跳至
+    </span>
+    <input
+      class="cuke-input cuke-number-input cuke-pagination-quick-jumper"
+      placeholder=""
+      type="text"
+      value=""
+    />
+    <span>
+      页
+    </span>
+  </ul>
+  <ul
+    class="cuke-pagination cuke-pagination-default"
+    current="1"
+  >
+    <li
+      class="cuke-pagination-show-total"
+    />
+    <li
+      class="cuke-pagination-item cuke-pagination-prev cuke-pagination-item-disabled"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <polyline
+          points="15 18 9 12 15 6"
+        />
+      </svg>
+    </li>
+    <li
+      class="cuke-pagination-item cuke-pagination-item-selected"
+    >
+      1
+    </li>
+    <li
+      class="cuke-pagination-item"
+    >
+      2
+    </li>
+    <li
+      class="cuke-pagination-item"
+    >
+      3
+    </li>
+    <li
+      class="cuke-pagination-item"
+    >
+      4
+    </li>
+    <li
+      class="cuke-pagination-item"
+    >
+      5
+    </li>
+    <li
+      class="cuke-pagination-item cuke-pagination-next"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <polyline
+          points="9 18 15 12 9 6"
+        />
+      </svg>
+    </li>
+    <div
+      class="cuke-select cuke-pagination-size-changer"
+      position="bottom"
+      value="[object Object]"
+    >
+      <div
+        class="cuke-select-inner"
+      >
+        <div
+          class="cuke-input-wrapper cuke-input-has-suffix"
+        >
+          <input
+            class="cuke-input cuke-select-input"
+            placeholder=""
+            readonly=""
+            type="text"
+            value="10 条 / 页"
+          />
+          <span
+            class="cuke-input-suffix"
+          >
+            <svg
+              class="cuke-select-arrow"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <polyline
+                points="6 9 12 15 18 9"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div
+        class="cuke-select-content cuke-pagination-size-changer-container cuke-pagination-size-changer-container-default cuke-select-close cuke-ui-no-animate"
+        style="width:0;left:0;top:0"
+      >
+        <div
+          class="cuke-select-option cuke-select-option-selected"
+        >
+          10 条 / 页
+        </div>
+        <div
+          class="cuke-select-option"
+        >
+          20 条 / 页
+        </div>
+        <div
+          class="cuke-select-option"
+        >
+          30 条 / 页
+        </div>
+        <div
+          class="cuke-select-option"
+        >
+          40 条 / 页
+        </div>
+      </div>
+    </div>
+  </ul>
 </div>
 `;
 
@@ -373,7 +586,7 @@ exports[`<Pagination/> should render sizes 1`] = `
     <div
       class="cuke-select cuke-pagination-size-changer"
       position="bottom"
-      value="10"
+      value="[object Object]"
     >
       <div
         class="cuke-select-inner"
@@ -386,7 +599,7 @@ exports[`<Pagination/> should render sizes 1`] = `
             placeholder=""
             readonly=""
             type="text"
-            value="10"
+            value="10 条 / 页"
           />
           <span
             class="cuke-input-suffix"
@@ -507,7 +720,7 @@ exports[`<Pagination/> should render sizes 1`] = `
     <div
       class="cuke-select cuke-pagination-size-changer"
       position="bottom"
-      value="10"
+      value="[object Object]"
     >
       <div
         class="cuke-select-inner"
@@ -520,7 +733,7 @@ exports[`<Pagination/> should render sizes 1`] = `
             placeholder=""
             readonly=""
             type="text"
-            value="10"
+            value="10 条 / 页"
           />
           <span
             class="cuke-input-suffix"
@@ -641,7 +854,7 @@ exports[`<Pagination/> should render sizes 1`] = `
     <div
       class="cuke-select cuke-pagination-size-changer"
       position="bottom"
-      value="10"
+      value="[object Object]"
     >
       <div
         class="cuke-select-inner"
@@ -654,7 +867,7 @@ exports[`<Pagination/> should render sizes 1`] = `
             placeholder=""
             readonly=""
             type="text"
-            value="10"
+            value="10 条 / 页"
           />
           <span
             class="cuke-input-suffix"

@@ -65,9 +65,13 @@
     }
   }
 
+  &-next {
+    margin-right: 20px;
+  }
+
   &-size-changer {
     &.cuke-select {
-      width: 100px;
+      width: 110px;
     }
     .cuke-input {
       height: @pagination-item-size-default;
@@ -76,7 +80,7 @@
     &-container {
       .cuke-select-option {
         height: @pagination-item-size-default;
-        padding: 0 4px;
+        padding: 0 8px;
         line-height: @pagination-item-size-default;
       }
       &-large {
@@ -94,6 +98,11 @@
     }
   }
 
+  &-default {
+    .cuke-input {
+      height: @pagination-item-size-default;
+    }
+  }
   &-large {
     .cuke-input {
       height: @pagination-item-size-large;
@@ -103,6 +112,12 @@
   &-small {
     .cuke-input {
       height: @pagination-item-size-small;
+    }
+  }
+
+  &-quick-jumper {
+    &.cuke-input {
+      margin: 0 10px;
     }
   }
 }

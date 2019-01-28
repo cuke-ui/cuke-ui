@@ -6,6 +6,7 @@ import toJson from "enzyme-to-json";
 import Pagination from "../index";
 import Button from "../../button";
 import { ArrowLeftIcon, ArrowRightIcon, SuccessIcon } from "../../icon";
+import NumberInput from "../../number-input";
 
 describe("<Pagination/>", () => {
   it("should render Pagination", () => {
@@ -17,6 +18,8 @@ describe("<Pagination/>", () => {
           total={50}
           locale={{ prevText: "后退", nextText: "前进" }}
         />
+        <Pagination current={1} total={50} showQuickJumper />
+        <Pagination current={1} total={50} showSizeChanger />
       </div>
     );
     expect(toJson(wrapper)).toMatchSnapshot();
@@ -162,5 +165,22 @@ describe("<Pagination/>", () => {
       />
     );
     expect(wrapper.text()).toContain("共49条数据");
+  });
+  it("should trigger onChange", () => {
+    const onChange = jest.fn();
+    const wrapper = shallow(
+      <Pagination pageSize={5} total={49} onChange={onChange} />
+    );
+    wrapper
+      .find(".cuke-pagination-item")
+      .at(2)
+      .simulate("click");
+    expect(onChange).toHaveBeenCalled();
+  });
+  it("should find quick jumper", () => {
+    const wrapper = shallow(
+      <Pagination pageSize={5} total={49} showQuickJumper />
+    );
+    expect(wrapper.find(NumberInput)).toHaveLength(1);
   });
 });
