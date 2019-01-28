@@ -9,6 +9,8 @@ import Row from "../components/row";
 import Modal from "../components/modal";
 import "../components/message/styles.less";
 import "../components/modal/styles.less";
+import "react-jinke-music-player/assets/index.css";
+import "react-turntable/assets/index.css";
 
 const prizes = new Array(8).fill(0).map((_, i) => `奖品${i + 1}`);
 
