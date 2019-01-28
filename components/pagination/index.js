@@ -72,11 +72,17 @@ export default class Pagination extends PureComponent {
     }
     return null;
   }
+  get pageCount() {
+    return Math.ceil(this.props.total / this.state.pageSize);
+  }
+  get current() {
+    return Math.min(this.state.current, this.pageCount);
+  }
   onSimpleChange = type => () => {
     let { current } = this.state;
     const { prev } = this.typeConfig;
     const _current = type === prev ? --current : ++current;
-    this.props.onChange(_current, this.props.pageSize);
+    this.props.onChange(_current, this.state.pageSize);
     this.setState({
       current: _current
     });
@@ -85,7 +91,7 @@ export default class Pagination extends PureComponent {
     this.setState({
       current: page
     });
-    this.props.onChange(page, this.props.pageSize);
+    this.props.onChange(page, this.state.pageSize);
   };
   onPageSizeChange = ({ key: pageSize }) => {
     this.setState({
@@ -96,12 +102,16 @@ export default class Pagination extends PureComponent {
   };
 
   onQuickJumperKeyUp = e => {
-    const value = Number(e.target.value);
+    const page = Number(e.target.value);
+    const current = Math.min(page, this.pageCount);
     if (e.keyCode === 13) {
       this.setState({
-        current: Math.min(value, this.state.pageSize),
+        current,
         quickJumperValue: ""
       });
+      if (page <= this.pageCount && page !== this.state.current) {
+        this.props.onChange(current, this.state.pageSize);
+      }
     }
   };
   onQuickJumperChange = value => {
@@ -129,10 +139,13 @@ export default class Pagination extends PureComponent {
     } = this.props;
     const { prev, next } = this.typeConfig;
     const { current, pageSize, quickJumperValue } = this.state;
-    const pageCount = Math.ceil(total / pageSize);
 
-    const isDisabledPrev = current <= this.defaultCurrent;
-    const isDisabledNext = simple ? current >= total : current >= pageCount;
+    const isDisabledPrev = simple
+      ? current <= this.defaultCurrent
+      : this.current <= this.defaultCurrent;
+    const isDisabledNext = simple
+      ? current >= total
+      : this.current >= this.pageCount;
 
     if (simple) {
       return (
@@ -184,12 +197,12 @@ export default class Pagination extends PureComponent {
         >
           {prevText}
         </li>
-        {new Array(pageCount).fill().map((_, index) => {
+        {new Array(this.pageCount).fill().map((_, index) => {
           const page = index + 1;
           return (
             <li
               className={cls(`${prefixCls}-item`, {
-                [`${prefixCls}-item-selected`]: page === current,
+                [`${prefixCls}-item-selected`]: page === this.current,
                 [`${prefixCls}-item-${size}`]: size !== sizes.default
               })}
               key={index}

@@ -92,6 +92,7 @@ storiesOf("导航", module)
         current={1}
         total={50}
         showSizeChanger
+        showQuickJumper
         onChange={(page, pageIndex) => console.log(page, pageIndex)}
         onPageSizeChange={(page, pageIndex) => console.log(page, pageIndex)}
       />
