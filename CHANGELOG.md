@@ -1,12 +1,49 @@
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/cuke-ui/cuke-ui/compare/v1.7.0...v1.8.0) (2019-01-30)
+
+
+### Bug Fixes
+
+* 修复 MusicPlayer 文档 样式丢失 ([abfa7c2](https://github.com/cuke-ui/cuke-ui/commit/abfa7c2))
+* 修复 Pagination pageSize 动态切换时 页码不对的 问题 ([a94b2f0](https://github.com/cuke-ui/cuke-ui/commit/a94b2f0))
+
+
+### Features
+
+* 新增Divider 组件 ([3272e73](https://github.com/cuke-ui/cuke-ui/commit/3272e73))
+
+
+
 <a name="1.7.0"></a>
-# [1.7.0](https://github.com/cuke-ui/cuke-ui/compare/v1.4.0...v1.7.0) (2019-01-28)
+# [1.7.0](https://github.com/cuke-ui/cuke-ui/compare/v1.6.2...v1.7.0) (2019-01-28)
+
+
+### Features
+
+* **pagination:** 全新的 pagination 组件 ([1c6e984](https://github.com/cuke-ui/cuke-ui/commit/1c6e984))
+* **pagination:** 分页器 怎讲 quick jumper 支持快速跳转 ([7ecfab5](https://github.com/cuke-ui/cuke-ui/commit/7ecfab5))
+* **select:** Select 新增 labelInValue 属性 ([6edf311](https://github.com/cuke-ui/cuke-ui/commit/6edf311))
+
+
+
+<a name="1.6.2"></a>
+## [1.6.2](https://github.com/cuke-ui/cuke-ui/compare/v1.6.0...v1.6.2) (2019-01-26)
+
+
+### Bug Fixes
+
+* 修复less 加载问题 ([cf81877](https://github.com/cuke-ui/cuke-ui/commit/cf81877))
+
+
+
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/cuke-ui/cuke-ui/compare/v1.4.0...v1.6.0) (2019-01-26)
 
 
 ### Bug Fixes
 
 * **avatar:** 优化 Avatar 组件 ([8037e4b](https://github.com/cuke-ui/cuke-ui/commit/8037e4b))
 * 修复 Tooltip visible 默认是 true 时 会闪烁的问题 ([c278cb0](https://github.com/cuke-ui/cuke-ui/commit/c278cb0))
-* 修复less 加载问题 ([cf81877](https://github.com/cuke-ui/cuke-ui/commit/cf81877))
 * 修复按需加载无法加载样式的问题 ([cda30ac](https://github.com/cuke-ui/cuke-ui/commit/cda30ac))
 
 
@@ -19,9 +56,6 @@
 * CityPicker, Drawer, Modal, Select 新增 wrapperClassName ([5eda0e6](https://github.com/cuke-ui/cuke-ui/commit/5eda0e6))
 * 新增 Select, CityPicker 的 notFoundContent 属性 ([3602806](https://github.com/cuke-ui/cuke-ui/commit/3602806))
 * 新增Avatar组件 ([463da17](https://github.com/cuke-ui/cuke-ui/commit/463da17))
-* **pagination:** 全新的 pagination 组件 ([1c6e984](https://github.com/cuke-ui/cuke-ui/commit/1c6e984))
-* **pagination:** 分页器 增加 quick jumper 支持快速跳转 ([7ecfab5](https://github.com/cuke-ui/cuke-ui/commit/7ecfab5))
-* **select:** Select 新增 labelInValue 属性 ([6edf311](https://github.com/cuke-ui/cuke-ui/commit/6edf311))
 
 
 
