@@ -43,6 +43,7 @@ export { default as Popconfirm } from "./popconfirm";
 export { default as Card } from "./card";
 export { default as Empty } from "./empty";
 export { default as Avatar } from "./avatar";
+export { default as Divider } from "./divider";
 // export { default as Form } from "./form";
 
 export { default as version } from "./version";

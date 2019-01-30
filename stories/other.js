@@ -59,12 +59,9 @@ storiesOf("其他", module)
         cuke ui cuke ui cuke ui cuke ui cuke ui
       </p>
 
-      <h2>标题使用</h2>
-      <h3>标题居中</h3>
-      <Divider>cuke ui title </Divider>
-      <h3>标题在左</h3>
-      <Divider position="left">cuke ui title</Divider>
-      <h3>标题在右</h3>
-      <Divider position="right">cuke ui title</Divider>
+      <h2>不同方向</h2>
+      <Divider>标题居中</Divider>
+      <Divider position="left">标题在左</Divider>
+      <Divider position="right">标题在右</Divider>
     </div>
   ));
