@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Divider/> should render a <Divider/> components 1`] = `
+<div>
+  <div
+    class="cuke-divider cuke-divider-horizontal cuke-divider-horizontal-title-center"
+  />
+  <div
+    class="cuke-divider cuke-divider-horizontal cuke-divider-horizontal-title-center cuke-divider-dashed"
+  />
+  <div
+    class="cuke-divider cuke-divider-vertical cuke-divider-horizontal-title-center"
+  />
+  <div
+    class="cuke-divider cuke-divider-horizontal cuke-divider-horizontal-title-center cuke-divider-horizontal-title"
+  >
+    <b />
+    <span
+      class="cuke-divider-title-text"
+    >
+      cuke ui
+    </span>
+    <b />
+  </div>
+  <div
+    class="cuke-divider cuke-divider-horizontal cuke-divider-horizontal-title-right cuke-divider-horizontal-title"
+  >
+    <b />
+    <span
+      class="cuke-divider-title-text"
+    >
+      cuke ui
+    </span>
+    <b />
+  </div>
+  <div
+    class="cuke-divider cuke-divider-horizontal cuke-divider-horizontal-title-left cuke-divider-horizontal-title"
+  >
+    <b />
+    <span
+      class="cuke-divider-title-text"
+    >
+      cuke ui
+    </span>
+    <b />
+  </div>
+</div>
+`;
