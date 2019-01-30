@@ -1,0 +1,80 @@
+@import "../styles/vars.less";
+
+@prefixCls: cuke-divider;
+
+.@{prefixCls} {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  background: @cuke-divider-color;
+  display: inline-block;
+  height: 1px;
+  width: 1px;
+
+  &.cuke-divider-horizontal {
+    display: block;
+    width: 100%;
+    margin: 16px 0;
+  }
+
+  &.cuke-divider-vertical {
+    vertical-align: middle;
+    position: relative;
+    height: 1em;
+    margin: 0 8px;
+  }
+
+  &.cuke-divider-dashed {
+    border-top: 1px dashed @cuke-divider-color;
+    background: none;
+  }
+
+  &.cuke-divider-horizontal-title {
+    background: none;
+    display: table;
+
+    b {
+      height: 1px;
+      width: 50%;
+      display: table-cell;
+      border-top: 1px solid @cuke-divider-color;
+      position: relative;
+      top: 50%;
+      transform: translateY(50%);
+    }
+  }
+
+  &.cuke-divider-horizontal-title-center {
+    text-align: center;
+  }
+
+  &.cuke-divider-horizontal-title-left {
+    b {
+      &:first-child {
+        width: 10%;
+      }
+      &:last-child {
+        width: 90%;
+      }
+    }
+  }
+
+  &.cuke-divider-horizontal-title-right {
+    b {
+      &:first-child {
+        width: 90%;
+      }
+      &:last-child {
+        width: 10%;
+      }
+    }
+  }
+
+  &-title-text {
+    padding: 0 20px;
+    font-size: 16px;
+    white-space: nowrap;
+    font-weight: 500;
+    display: inline-block;
+  }
+}
