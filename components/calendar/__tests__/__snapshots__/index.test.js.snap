@@ -25,7 +25,7 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
     <span
       class="cuke-calendar-date"
     >
-      2019年   1月
+      2019年   2月
     </span>
     <svg
       class="cuke-calendar-button-icon"
@@ -91,13 +91,37 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
       <span
         class="cuke-calendar-item cuke-calendar-last-month"
       >
+        28
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-last-month"
+      >
+        29
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-last-month"
+      >
+        30
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-last-month"
+      >
         31
         <div
           class="cuke-calendar-item-content"
         />
       </span>
       <span
-        class="cuke-calendar-item cuke-calendar-current-month"
+        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
       >
         1
         <div
@@ -316,30 +340,6 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         class="cuke-calendar-item cuke-calendar-current-month"
       >
         28
-        <div
-          class="cuke-calendar-item-content"
-        />
-      </span>
-      <span
-        class="cuke-calendar-item cuke-calendar-current-month"
-      >
-        29
-        <div
-          class="cuke-calendar-item-content"
-        />
-      </span>
-      <span
-        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
-      >
-        30
-        <div
-          class="cuke-calendar-item-content"
-        />
-      </span>
-      <span
-        class="cuke-calendar-item cuke-calendar-current-month"
-      >
-        31
         <div
           class="cuke-calendar-item-content"
         />
