@@ -23,6 +23,17 @@ exports[`<Divider/> should render a <Divider/> components 1`] = `
     <b />
   </div>
   <div
+    class="cuke-divider cuke-divider-horizontal cuke-divider-horizontal-title-left cuke-divider-horizontal-title"
+  >
+    <b />
+    <span
+      class="cuke-divider-title-text"
+    >
+      11
+    </span>
+    <b />
+  </div>
+  <div
     class="cuke-divider cuke-divider-horizontal cuke-divider-horizontal-title-right cuke-divider-horizontal-title"
   >
     <b />

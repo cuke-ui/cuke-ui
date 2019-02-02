@@ -14,7 +14,7 @@ const position = {
 
 export default class Divider extends PureComponent {
   static propsTypes = {
-    prefixCls: PropTypes.string,
+    prefixCls: PropTypes.string.isRequired,
     type: PropTypes.oneOf(Object.values(types)),
     position: PropTypes.oneOf(Object.values(position)),
     dashed: PropTypes.bool
@@ -35,7 +35,8 @@ export default class Divider extends PureComponent {
       type,
       dashed,
       children,
-      position
+      position,
+      ...attr
     } = this.props;
 
     return (
@@ -51,6 +52,7 @@ export default class Divider extends PureComponent {
               children && type === types.horizontal
           }
         )}
+        {...attr}
       >
         {children && (
           <>

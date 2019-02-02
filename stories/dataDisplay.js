@@ -10,6 +10,7 @@ import Col from "../components/col";
 import Timeline from "../components/timeline";
 import Tag from "../components/tag";
 import CityPicker from "../components/city-picker";
+import Table from "../components/table";
 import { SuccessIcon, InfoIcon, ErrorIcon, UserIcon } from "../components/icon";
 import Collapse from "../components/collapse";
 
@@ -27,14 +28,68 @@ import "../components/popconfirm/styles.less";
 import "../components/card/styles.less";
 import "../components/empty/styles.less";
 import "../components/badge/styles.less";
+import "../components/table/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
-import { Calendar, Popconfirm, Empty } from "../components";
+import { Calendar, Popconfirm, Empty, Divider, Input } from "../components";
 import Popover from "../components/popover";
 import PopoverPage from "./pages/popover";
 import Card from "../components/card";
 import Avatar from "../components/avatar";
+import Message from "../components/message";
 
+const columns = [
+  {
+    title: "ID",
+    dataIndex: "id",
+    key: "id"
+  },
+  {
+    title: "名字",
+    dataIndex: "name",
+    key: "name"
+  },
+  {
+    title: "数量",
+    dataIndex: "count",
+    key: "count"
+  },
+  {
+    title: "操作",
+    dataIndex: "setting",
+    key: "setting",
+    render: (value, data, index) => (
+      <>
+        <a onClick={() => Message.info("编辑")}>编辑</a>
+        <Divider type="vertical" />
+        <Popconfirm
+          title="确认删除吗?"
+          onOk={() => Message.error(`ID: ${data.id}`)}
+        >
+          <a>删除</a>
+        </Popconfirm>
+      </>
+    )
+  }
+];
+
+const dataSource = [
+  {
+    name: "黄瓜",
+    count: 1,
+    id: 1
+  },
+  {
+    name: "西瓜",
+    count: 344,
+    id: 2
+  },
+  {
+    name: "香蕉",
+    count: 199,
+    id: 3
+  }
+];
 const emptyCityList = [
   {
     group: "热门",
@@ -1179,5 +1234,51 @@ storiesOf("数据展示", module)
       <Badge count={999}>
         <Avatar icon={<UserIcon />} />
       </Badge>
+    </div>
+  ))
+  .add("Table 表格", () => (
+    <div>
+      <h2>基本使用</h2>
+
+      <Table columns={columns} dataSource={dataSource} />
+
+      <h2>自定义 render</h2>
+
+      <Table
+        columns={[
+          {
+            title: "ID",
+            dataIndex: "id",
+            key: "id"
+          },
+          {
+            title: "名字",
+            dataIndex: "name",
+            key: "name",
+            render: name => <Input defaultValue={name} style={{ width: 100 }} />
+          },
+          {
+            title: "数量",
+            dataIndex: "count",
+            key: "count",
+            render: count => (
+              <Tag type="info" circle>
+                {count}
+              </Tag>
+            )
+          },
+          {
+            title: "操作",
+            dataIndex: "setting",
+            key: "setting",
+            render: () => (
+              <Button type="primary" size="small">
+                删除
+              </Button>
+            )
+          }
+        ]}
+        dataSource={dataSource}
+      />
     </div>
   ));
