@@ -2,8 +2,12 @@ import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Pagination from "../pagination";
+import Spin from "../spin";
 
 export default class Table extends PureComponent {
+  state = {
+    pageIndex: this.props.pagination.pageIndex || 1
+  };
   static propsTypes = {
     prefixCls: PropTypes.string.isRequired,
     columns: PropTypes.arrayOf(
@@ -15,15 +19,31 @@ export default class Table extends PureComponent {
         dataIndex: PropTypes.string
       })
     ),
-    dataSource: PropTypes.array
+    dataSource: PropTypes.array,
+    loading: PropTypes.bool,
+    loadingTip: PropTypes.string
   };
   static defaultProps = {
     prefixCls: "cuke-table",
     dataSource: [],
-    columns: []
+    columns: [],
+    pagination: {
+      pageIndex: 1,
+      pageSize: 10
+    },
+    loading: false,
+    loadingTip: ""
   };
   constructor(props) {
     super(props);
+  }
+  static getDerivedStateFromProps({ pagination }, { pageIndex }) {
+    if (pagination.pageIndex !== pageIndex) {
+      return {
+        pageIndex
+      };
+    }
+    return null;
   }
   get tableHeader() {
     const { prefixCls, columns } = this.props;
@@ -38,12 +58,21 @@ export default class Table extends PureComponent {
     );
   }
 
+  get dataSource() {
+    const { dataSource, pagination } = this.props;
+    const { pageIndex } = this.state;
+    return dataSource.slice(
+      (pageIndex - 1) * pagination.pageSize,
+      pageIndex * pagination.pageSize
+    );
+  }
+
   get tableBody() {
-    const { prefixCls, columns, dataSource } = this.props;
+    const { prefixCls, columns } = this.props;
     return (
       <tbody className={`${prefixCls}-tbody`}>
-        {dataSource.map((item, index) => {
-          const { key: rowKey } = columns[index];
+        {this.dataSource.map((item, index) => {
+          const { key: rowKey } = columns[index] || {};
           return (
             <tr key={rowKey || `tbody-${index}`}>
               {columns.map(column => {
@@ -61,17 +90,51 @@ export default class Table extends PureComponent {
       </tbody>
     );
   }
+
+  get total() {
+    return this.props.dataSource.length;
+  }
+
+  onPageChange = (pageIndex, pageSize) => {
+    this.setState(
+      {
+        pageIndex
+      },
+      () => {
+        this.props.pagination.onChange(pageIndex, pageSize);
+      }
+    );
+  };
   render() {
-    const { className, prefixCls, ...attr } = this.props;
+    const {
+      className,
+      prefixCls,
+      pagination,
+      loading,
+      loadingTip,
+      dataSource, //eslint-disable-line
+      ...attr
+    } = this.props;
+    const { pageIndex } = this.state;
 
     return (
       <div className={cls(prefixCls, className)} {...attr}>
-        <table className={`${prefixCls}-origin-table`}>
-          {this.tableHeader}
-          {this.tableBody}
-        </table>
-        <div className={cls(`${prefixCls}-pagination`)} />
-        <Pagination />
+        <Spin spinning={loading} tip={loadingTip} size="large">
+          <table className={`${prefixCls}-origin-table`}>
+            {this.tableHeader}
+            {this.tableBody}
+          </table>
+          {!!pagination && (
+            <div className={cls(`${prefixCls}-pagination`)}>
+              <Pagination
+                current={pageIndex}
+                total={this.total}
+                {...pagination}
+                onChange={this.onPageChange}
+              />
+            </div>
+          )}
+        </Spin>
       </div>
     );
   }

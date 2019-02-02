@@ -1280,5 +1280,26 @@ storiesOf("数据展示", module)
         ]}
         dataSource={dataSource}
       />
+
+      <h2>分页</h2>
+      <Table
+        columns={columns}
+        pagination={{
+          pageIndex: 1,
+          pageSize: 5,
+          showTotal: total => `共${total}条数据`,
+          onChange: (page, pageSize) => console.log(page, pageSize)
+        }}
+        dataSource={new Array(30).fill().map((_, i) => ({
+          name: `黄瓜${i + 1}`,
+          count: i + 1,
+          id: i + 1,
+          key: i
+        }))}
+      />
+
+      <h2>加载中</h2>
+
+      <Table columns={columns} dataSource={dataSource} loading />
     </div>
   ));
