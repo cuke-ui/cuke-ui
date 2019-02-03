@@ -78,7 +78,8 @@ export default class Tooltip extends PureComponent {
     this.closeTimer = null;
   }
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({
       visible: nextProps.visible,
       openLock: !nextProps.visible,

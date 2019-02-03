@@ -1272,7 +1272,7 @@ storiesOf("数据展示", module)
             dataIndex: "setting",
             key: "setting",
             render: () => (
-              <Button type="primary" size="small">
+              <Button type="error" size="small">
                 删除
               </Button>
             )
@@ -1301,5 +1301,25 @@ storiesOf("数据展示", module)
       <h2>加载中</h2>
 
       <Table columns={columns} dataSource={dataSource} loading />
+
+      <h2>可选择</h2>
+      <Table
+        columns={columns}
+        dataSource={dataSource}
+        rowSelection={{
+          onChange(selectedRows) {
+            console.log("selectedRows: ", selectedRows);
+          },
+          getCheckboxProps(record) {
+            console.log("record: ", record);
+          }
+        }}
+      />
+
+      <h2>空状态</h2>
+      <Table columns={columns} dataSource={[]} />
+
+      <h2>显示边框</h2>
+      <Table columns={columns} dataSource={dataSource} bordered />
     </div>
   ));

@@ -143,4 +143,12 @@ describe("<Checkbox/>", () => {
     );
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+  it("should update checked state when props change", () => {
+    const wrapper = shallow(<Checkbox checked={true}>黄瓜 ui</Checkbox>);
+    expect(wrapper.state().checked).toBe(true);
+    wrapper.setProps({
+      checked: false
+    });
+    expect(wrapper.state().checked).toBe(false);
+  });
 });

@@ -104,4 +104,13 @@ describe("<Radio/>", () => {
     );
     expect(toJson(wrapper)).toMatchSnapshot();
   });
+
+  it("should update checked state when props change", () => {
+    const wrapper = shallow(<Radio checked={true}>黄瓜 ui</Radio>);
+    expect(wrapper.state().checked).toBe(true);
+    wrapper.setProps({
+      checked: false
+    });
+    expect(wrapper.state().checked).toBe(false);
+  });
 });

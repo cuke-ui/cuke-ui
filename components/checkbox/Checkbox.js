@@ -33,6 +33,15 @@ export default class Checkbox extends PureComponent {
     this.props.onChange(e);
   };
 
+  // eslint-disable-next-line
+  UNSAFE_componentWillReceiveProps({ checked }) {
+    if (checked !== this.props.checked) {
+      this.setState({
+        checked
+      });
+    }
+  }
+
   render() {
     const {
       className,

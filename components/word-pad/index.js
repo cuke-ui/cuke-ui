@@ -103,7 +103,9 @@ export default class WordPad extends PureComponent {
       }
     };
   }
-  componentWillReceiveProps(nextProps) {
+
+  // eslint-disable-next-line
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.clear) {
       this.clear();
       if (nextProps.onClearComplete) {

@@ -40,8 +40,8 @@ export default class Tabs extends PureComponent {
       }, 0);
     }
   }
-
-  componentWillReceiveProps({ activeKey }) {
+  // eslint-disable-next-line
+  UNSAFE_componentWillReceiveProps({ activeKey }) {
     const _activeKey = ~~activeKey;
     if (_activeKey !== this.props.activeKey) {
       this.setState({ activeKey: _activeKey });

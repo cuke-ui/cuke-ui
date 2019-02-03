@@ -74,7 +74,8 @@ export default class NumberInput extends PureComponent {
     onChange: PropTypes.func
   };
 
-  componentWillReceiveProps(nextProps) {
+  // eslint-disable-next-line
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.value !== this.props.value) {
       this.setState({
         value: getTheValueLengthAfterTheDecimalPoint(

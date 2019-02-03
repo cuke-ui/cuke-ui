@@ -35,10 +35,11 @@ export default class Radio extends PureComponent {
     }
   };
 
-  componentWillReceiveProps({ checked, defaultChecked }) {
+  // eslint-disable-next-line
+  UNSAFE_componentWillReceiveProps({ checked }) {
     if (checked !== this.props.checked) {
       this.setState({
-        checked: defaultChecked || checked
+        checked
       });
     }
   }

@@ -8,6 +8,13 @@
     border-collapse: collapse;
     border-radius: @border-radius;
   }
+  &-bordered {
+    .@{prefixCls}-origin-table {
+      th, td {
+        border: 1px solid @border-color;
+      }
+    }
+  }
 
   &-thead {
     tr > th {
