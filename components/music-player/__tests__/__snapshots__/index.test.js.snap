@@ -105,7 +105,9 @@ exports[`<MusicPlayer/> should render a <MusicPlayer/> components 1`] = `
     <div
       class="audio-lists-panel-content"
     >
-      <div>
+      <div
+        role="presentation"
+      >
         <ul>
           <li
             class="audio-item playing pause"

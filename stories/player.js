@@ -26,11 +26,29 @@ storiesOf("娱乐", module)
       <MusicPlayer
         audioLists={[
           {
-            name: "星球坠落",
-            singer: "中国新说唱",
-            musicSrc: "http://mp3.flash127.com/public/t/id/45169.html",
+            name: "难得",
+            singer: "安来宁",
+            cover: "//cdn.lijinke.cn/nande.jpg",
+            musicSrc: "//cdn.lijinke.cn/nande.mp3"
+          },
+          {
+            name: "Despacito",
+            singer: "Luis Fonsi",
             cover:
-              "http://p1.music.126.net/4k-pMEO-en8IE6PdJoAYfg==/109951163429466895.jpg?param=130y130"
+              "http://res.cloudinary.com/alick/image/upload/v1502689731/Despacito_uvolhp.jpg",
+            musicSrc: () => {
+              return Promise.resolve(
+                "http://res.cloudinary.com/alick/video/upload/v1502689683/Luis_Fonsi_-_Despacito_ft._Daddy_Yankee_uyvqw9.mp3"
+              );
+            }
+          },
+          {
+            name: "Bedtime Stories",
+            singer: "Jay Chou",
+            cover:
+              "http://res.cloudinary.com/alick/image/upload/v1502375978/bedtime_stories_bywggz.jpg",
+            musicSrc:
+              "http://res.cloudinary.com/alick/video/upload/v1502375674/Bedtime_Stories.mp3"
           }
         ]}
       />
