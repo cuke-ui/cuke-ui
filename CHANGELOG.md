@@ -1,3 +1,21 @@
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/cuke-ui/cuke-ui/compare/v1.8.0...v1.9.0) (2019-02-07)
+
+
+### Bug Fixes
+
+* 优化 divider ([fbf3f0b](https://github.com/cuke-ui/cuke-ui/commit/fbf3f0b))
+* **table:** 增加 rowSelection.getCheckboxProps 属性 ([f7712a7](https://github.com/cuke-ui/cuke-ui/commit/f7712a7))
+
+
+### Features
+
+* **table:** 增加分页器和加载效果 ([fa4230e](https://github.com/cuke-ui/cuke-ui/commit/fa4230e))
+* **table:** 新增 rowSelection ([fb3adf8](https://github.com/cuke-ui/cuke-ui/commit/fb3adf8))
+* **table:** 新增 Table 组件 ([a890b38](https://github.com/cuke-ui/cuke-ui/commit/a890b38))
+
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/cuke-ui/cuke-ui/compare/v1.7.0...v1.8.0) (2019-01-30)
 
