@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Table/> should render Table 1`] = `
+<div
+  class="cuke-table"
+  columns="[object Object],[object Object],[object Object],[object Object]"
+>
+  <table
+    class="cuke-table-origin-table"
+  >
+    <thead
+      class="cuke-table-thead"
+    >
+      <tr>
+        <th>
+          ID
+        </th>
+        <th>
+          名字
+        </th>
+        <th>
+          数量
+        </th>
+        <th>
+          操作
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      class="cuke-table-tbody"
+    >
+      <tr>
+        <td>
+          1
+        </td>
+        <td>
+          黄瓜
+        </td>
+        <td>
+          1
+        </td>
+        <td>
+          <button
+            class="cuke-button cuke-button-default cuke-button-normal"
+            type="button"
+          >
+            <span>
+              删除
+            </span>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          2
+        </td>
+        <td>
+          西瓜
+        </td>
+        <td>
+          344
+        </td>
+        <td>
+          <button
+            class="cuke-button cuke-button-default cuke-button-normal"
+            type="button"
+          >
+            <span>
+              删除
+            </span>
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          3
+        </td>
+        <td>
+          香蕉
+        </td>
+        <td>
+          199
+        </td>
+        <td>
+          <button
+            class="cuke-button cuke-button-default cuke-button-normal"
+            type="button"
+          >
+            <span>
+              删除
+            </span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="cuke-table-pagination"
+  >
+    <ul
+      class="cuke-pagination cuke-pagination-default"
+      current="1"
+      pageindex="1"
+    >
+      <li
+        class="cuke-pagination-show-total"
+      />
+      <li
+        class="cuke-pagination-item cuke-pagination-prev cuke-pagination-item-disabled"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <polyline
+            points="15 18 9 12 15 6"
+          />
+        </svg>
+      </li>
+      <li
+        class="cuke-pagination-item cuke-pagination-item-selected"
+      >
+        1
+      </li>
+      <li
+        class="cuke-pagination-item cuke-pagination-next cuke-pagination-item-disabled"
+      >
+        <svg
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+        >
+          <polyline
+            points="9 18 15 12 9 6"
+          />
+        </svg>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

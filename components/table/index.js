@@ -64,7 +64,6 @@ export default class Table extends PureComponent {
   get tableHeader() {
     const { selectedRows } = this.state;
     const { prefixCls, columns, rowSelection } = this.props;
-    console.log("selectedRows: ", selectedRows);
     const isIndeterminate =
       selectedRows.length >= 1 && selectedRows.length < this.dataSource.length;
     return (
@@ -122,6 +121,7 @@ export default class Table extends PureComponent {
                   <Checkbox
                     checked={checked}
                     onChange={this.onRowCheckboxChange(item)}
+                    {...rowSelection && rowSelection.getCheckboxProps(item)}
                   />
                 </td>
               )}
@@ -156,6 +156,9 @@ export default class Table extends PureComponent {
       isSelectAll,
       selectedRows
     });
+    if (this.props.rowSelection && this.props.rowSelection.onChange) {
+      this.props.rowSelection.onChange(selectedRows);
+    }
   };
   onRowCheckboxChange = selectedRow => e => {
     const checked = e.target.checked;
@@ -170,6 +173,9 @@ export default class Table extends PureComponent {
     this.setState({
       selectedRows
     });
+    if (this.props.rowSelection && this.props.rowSelection.onChange) {
+      this.props.rowSelection.onChange(selectedRows);
+    }
   };
 
   onPageChange = (pageIndex, pageSize) => {
@@ -191,6 +197,7 @@ export default class Table extends PureComponent {
       loadingTip,
       bordered,
       showHeader,
+      rowSelection, //eslint-disable-line
       dataSource, //eslint-disable-line
       ...attr
     } = this.props;
