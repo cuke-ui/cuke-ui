@@ -10,6 +10,7 @@ export default class Table extends PureComponent {
   state = {
     pageIndex: this.props.pagination.pageIndex || 1,
     selectedRows: [],
+    baseSelectedRows: [],
     isSelectAll: false
   };
   static propsTypes = {
@@ -53,6 +54,8 @@ export default class Table extends PureComponent {
   constructor(props) {
     super(props);
   }
+  rows = [];
+
   static getDerivedStateFromProps({ pagination }, { pageIndex }) {
     if (pagination.pageIndex !== pageIndex) {
       return {
@@ -64,8 +67,6 @@ export default class Table extends PureComponent {
   get tableHeader() {
     const { selectedRows } = this.state;
     const { prefixCls, columns, rowSelection } = this.props;
-    const isIndeterminate =
-      selectedRows.length >= 1 && selectedRows.length < this.dataSource.length;
     return (
       <thead className={`${prefixCls}-thead`}>
         <tr>
@@ -74,7 +75,7 @@ export default class Table extends PureComponent {
               <Checkbox
                 onChange={this.onSelectAllChange}
                 checked={selectedRows.length >= 1}
-                indeterminate={isIndeterminate}
+                indeterminate={this.isIndeterminate}
               />
             </th>
           )}
@@ -88,8 +89,10 @@ export default class Table extends PureComponent {
 
   get isIndeterminate() {
     const { selectedRows } = this.state;
+    const disabledRows = this.rows.filter(Boolean);
     return (
-      selectedRows.length >= 1 && selectedRows.length < this.dataSource.length
+      selectedRows.length >= 1 &&
+      selectedRows.length < this.dataSource.length - disabledRows.length
     );
   }
 
@@ -102,11 +105,9 @@ export default class Table extends PureComponent {
     );
   }
 
-  rows = [];
-
   get tableBody() {
     const { prefixCls, columns, rowSelection } = this.props;
-    const { selectedRows, isSelectAll } = this.state;
+    const { baseSelectedRows, isSelectAll } = this.state;
     this.rows = [];
     return (
       <tbody className={`${prefixCls}-tbody`}>
@@ -114,7 +115,7 @@ export default class Table extends PureComponent {
           const { key: rowKey = `tbody-${index}` } = columns[index] || {};
           const isChecked =
             isSelectAll ||
-            !!selectedRows.find(
+            !!baseSelectedRows.find(
               row => JSON.stringify(row) === JSON.stringify(item)
             );
           const checkboxProps =
@@ -160,13 +161,20 @@ export default class Table extends PureComponent {
 
   onSelectAllChange = e => {
     const isSelectAll = e.target.checked;
-    const selectedRows = isSelectAll
-      ? [...this.dataSource].filter((_, index) => !this.rows[index])
-      : [];
+    let selectedRows = [...this.dataSource].filter(
+      (_, index) => !this.rows[index]
+    );
+    if (isSelectAll) {
+      selectedRows.unshift(...this.state.baseSelectedRows);
+    } else {
+      selectedRows = [];
+      console.log(this.state.baseSelectedRows);
+    }
     const selectedRowKeys = selectedRows.map(({ key }) => key);
     this.setState({
       isSelectAll,
-      selectedRows
+      selectedRows,
+      baseSelectedRows: selectedRows
     });
     if (this.props.rowSelection && this.props.rowSelection.onChange) {
       this.props.rowSelection.onChange(selectedRowKeys, selectedRows);
@@ -174,7 +182,7 @@ export default class Table extends PureComponent {
   };
   onRowCheckboxChange = selectedRow => e => {
     const checked = e.target.checked;
-    let selectedRows = [...this.state.selectedRows];
+    let selectedRows = [...this.state.baseSelectedRows];
     if (checked) {
       selectedRows.push(selectedRow);
     } else {
@@ -182,18 +190,22 @@ export default class Table extends PureComponent {
         row => JSON.stringify(selectedRow) !== JSON.stringify(row)
       );
     }
+    const selectedRowKeys = selectedRows.map(({ key }) => key);
     this.setState({
-      selectedRows
+      selectedRows,
+      baseSelectedRows: selectedRows
     });
     if (this.props.rowSelection && this.props.rowSelection.onChange) {
-      this.props.rowSelection.onChange(selectedRows);
+      this.props.rowSelection.onChange(selectedRowKeys, selectedRows);
     }
   };
 
   onPageChange = (pageIndex, pageSize) => {
     this.setState(
       {
-        pageIndex
+        pageIndex,
+        isSelectAll: false,
+        selectedRows: []
       },
       () => {
         if (this.props.pagination && this.props.pagination.onChange) {
