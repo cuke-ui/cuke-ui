@@ -102,26 +102,35 @@ export default class Table extends PureComponent {
     );
   }
 
+  rows = [];
+
   get tableBody() {
     const { prefixCls, columns, rowSelection } = this.props;
     const { selectedRows, isSelectAll } = this.state;
+    this.rows = [];
     return (
       <tbody className={`${prefixCls}-tbody`}>
         {this.dataSource.map((item, index) => {
-          const { key: rowKey } = columns[index] || {};
-          const checked =
+          const { key: rowKey = `tbody-${index}` } = columns[index] || {};
+          const isChecked =
             isSelectAll ||
             !!selectedRows.find(
               row => JSON.stringify(row) === JSON.stringify(item)
             );
+          const checkboxProps =
+            (rowSelection &&
+              rowSelection.getCheckboxProps &&
+              rowSelection.getCheckboxProps(item)) ||
+            {};
+          this.rows.push(checkboxProps.disabled || false);
           return (
-            <tr key={rowKey || `tbody-${index}`}>
+            <tr key={rowKey}>
               {rowSelection && (
                 <td key={`tbody-checkbox`}>
                   <Checkbox
-                    checked={checked}
+                    checked={!checkboxProps.disabled && isChecked}
                     onChange={this.onRowCheckboxChange(item)}
-                    {...rowSelection && rowSelection.getCheckboxProps(item)}
+                    {...checkboxProps}
                   />
                 </td>
               )}
@@ -151,13 +160,16 @@ export default class Table extends PureComponent {
 
   onSelectAllChange = e => {
     const isSelectAll = e.target.checked;
-    const selectedRows = isSelectAll ? [...this.dataSource] : [];
+    const selectedRows = isSelectAll
+      ? [...this.dataSource].filter((_, index) => !this.rows[index])
+      : [];
+    const selectedRowKeys = selectedRows.map(({ key }) => key);
     this.setState({
       isSelectAll,
       selectedRows
     });
     if (this.props.rowSelection && this.props.rowSelection.onChange) {
-      this.props.rowSelection.onChange(selectedRows);
+      this.props.rowSelection.onChange(selectedRowKeys, selectedRows);
     }
   };
   onRowCheckboxChange = selectedRow => e => {
@@ -184,7 +196,9 @@ export default class Table extends PureComponent {
         pageIndex
       },
       () => {
-        this.props.pagination.onChange(pageIndex, pageSize);
+        if (this.props.pagination && this.props.pagination.onChange) {
+          this.props.pagination.onChange(pageIndex, pageSize);
+        }
       }
     );
   };

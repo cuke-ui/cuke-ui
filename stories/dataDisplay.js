@@ -1307,13 +1307,26 @@ storiesOf("数据展示", module)
         columns={columns}
         dataSource={dataSource}
         rowSelection={{
-          onChange(selectedRows) {
+          onChange(selectedRowKeys, selectedRows) {
+            console.log("selectedRowKeys: ", selectedRowKeys);
             console.log("selectedRows: ", selectedRows);
           },
           getCheckboxProps(record) {
-            console.log("record: ", record);
+            return {
+              disabled: record.name === "黄瓜1"
+            };
           }
         }}
+        pagination={{
+          pageIndex: 1,
+          pageSize: 5
+        }}
+        dataSource={new Array(30).fill().map((_, i) => ({
+          name: `黄瓜${i + 1}`,
+          count: i + 1,
+          id: i + 1,
+          key: i
+        }))}
       />
 
       <h2>空状态</h2>

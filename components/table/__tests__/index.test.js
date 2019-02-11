@@ -125,4 +125,48 @@ describe("<Table/>", () => {
       });
     expect(onChange).toHaveBeenCalled();
   });
+  it("should cannot checked is disabled rowSelection when select all", () => {
+    let _selectedRowKeys;
+    const wrapper = shallow(
+      <Table
+        columns={columns}
+        dataSource={dataSource}
+        rowSelection={{
+          onChange(selectedRowKeys) {
+            _selectedRowKeys = selectedRowKeys;
+          },
+          getCheckboxProps(record) {
+            return {
+              disabled: record.name === "黄瓜1"
+            };
+          }
+        }}
+        pagination={{
+          pageIndex: 1,
+          pageSize: 5
+        }}
+        dataSource={new Array(30).fill().map((_, i) => ({
+          name: `黄瓜${i + 1}`,
+          count: i + 1,
+          id: i + 1,
+          key: i
+        }))}
+      />
+    );
+    wrapper
+      .find(Checkbox)
+      .at(0)
+      .simulate("change", {
+        target: {
+          checked: true
+        }
+      });
+    expect(
+      wrapper
+        .find(Checkbox)
+        .at(1)
+        .props().checked
+    ).toBe(false);
+    expect(_selectedRowKeys).toHaveLength(4);
+  });
 });
