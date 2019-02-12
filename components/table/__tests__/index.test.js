@@ -169,4 +169,19 @@ describe("<Table/>", () => {
     ).toBe(false);
     expect(_selectedRowKeys).toHaveLength(4);
   });
+
+  it("should can not render table header", () => {
+    const wrapper = shallow(
+      <Table columns={columns} dataSource={dataSource} showHeader={false} />
+    );
+    assert(wrapper.find(".cuke-table-thead").length === 0);
+  });
+
+  it("should render stripe tr", () => {
+    const wrapper = shallow(
+      <Table columns={columns} dataSource={dataSource} stripe />
+    );
+    expect(toJson(wrapper)).toMatchSnapshot();
+    assert(wrapper.find(".cuke-table-stripe").length === 1);
+  });
 });

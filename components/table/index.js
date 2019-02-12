@@ -65,7 +65,7 @@ export default class Table extends PureComponent {
     return null;
   }
   get tableHeader() {
-    const { selectedRows } = this.state;
+    const { isSelectAll } = this.state;
     const { prefixCls, columns, rowSelection } = this.props;
     return (
       <thead className={`${prefixCls}-thead`}>
@@ -74,7 +74,7 @@ export default class Table extends PureComponent {
             <th key={`thead-checkbox`}>
               <Checkbox
                 onChange={this.onSelectAllChange}
-                checked={selectedRows.length >= 1}
+                checked={isSelectAll}
                 indeterminate={this.isIndeterminate}
               />
             </th>
@@ -89,7 +89,7 @@ export default class Table extends PureComponent {
 
   get isIndeterminate() {
     const { selectedRows } = this.state;
-    const disabledRows = this.rows.filter(Boolean);
+    const disabledRows = Object.values(this.rows).filter(Boolean);
     return (
       selectedRows.length >= 1 &&
       selectedRows.length < this.dataSource.length - disabledRows.length
@@ -106,26 +106,29 @@ export default class Table extends PureComponent {
   }
 
   get tableBody() {
-    const { prefixCls, columns, rowSelection } = this.props;
-    const { baseSelectedRows, isSelectAll } = this.state;
-    this.rows = [];
+    const { prefixCls, columns, rowSelection, stripe } = this.props;
+    const { selectedRows } = this.state;
+    this.rows = {};
     return (
       <tbody className={`${prefixCls}-tbody`}>
         {this.dataSource.map((item, index) => {
           const { key: rowKey = `tbody-${index}` } = columns[index] || {};
-          const isChecked =
-            isSelectAll ||
-            !!baseSelectedRows.find(
-              row => JSON.stringify(row) === JSON.stringify(item)
-            );
+          const isChecked = !!selectedRows.find(
+            row => JSON.stringify(row) === JSON.stringify(item)
+          );
           const checkboxProps =
             (rowSelection &&
               rowSelection.getCheckboxProps &&
               rowSelection.getCheckboxProps(item)) ||
             {};
-          this.rows.push(checkboxProps.disabled || false);
+          this.rows[index] = checkboxProps.disabled || false;
           return (
-            <tr key={rowKey}>
+            <tr
+              key={rowKey}
+              className={cls({
+                [`${prefixCls}-stripe`]: stripe && (index + 1) % 2 === 0
+              })}
+            >
               {rowSelection && (
                 <td key={`tbody-checkbox`}>
                   <Checkbox
@@ -164,11 +167,12 @@ export default class Table extends PureComponent {
     let selectedRows = [...this.dataSource].filter(
       (_, index) => !this.rows[index]
     );
+    // const { pageSize } = this.props.pagination
+    const baseSelectedRows = [...this.state.baseSelectedRows];
     if (isSelectAll) {
-      selectedRows.unshift(...this.state.baseSelectedRows);
+      selectedRows.unshift(...baseSelectedRows);
     } else {
-      selectedRows = [];
-      console.log(this.state.baseSelectedRows);
+      // TODO: 移除全选
     }
     const selectedRowKeys = selectedRows.map(({ key }) => key);
     this.setState({
@@ -195,17 +199,26 @@ export default class Table extends PureComponent {
       selectedRows,
       baseSelectedRows: selectedRows
     });
+    if (selectedRows.length < 1) {
+      this.setState({
+        isSelectAll: false
+      });
+    }
     if (this.props.rowSelection && this.props.rowSelection.onChange) {
       this.props.rowSelection.onChange(selectedRowKeys, selectedRows);
     }
   };
 
   onPageChange = (pageIndex, pageSize) => {
+    const currentPageSelectedRows = [...this.state.baseSelectedRows].slice(
+      (pageIndex - 1) * pageSize,
+      pageIndex * pageSize
+    );
     this.setState(
       {
         pageIndex,
-        isSelectAll: false,
-        selectedRows: []
+        isSelectAll: currentPageSelectedRows.length === pageSize,
+        selectedRows: currentPageSelectedRows
       },
       () => {
         if (this.props.pagination && this.props.pagination.onChange) {
@@ -223,6 +236,7 @@ export default class Table extends PureComponent {
       loadingTip,
       bordered,
       showHeader,
+      stripe, //eslint-disable-line
       rowSelection, //eslint-disable-line
       dataSource, //eslint-disable-line
       ...attr

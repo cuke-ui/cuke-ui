@@ -29,7 +29,9 @@ exports[`<Table/> should render Table 1`] = `
     <tbody
       class="cuke-table-tbody"
     >
-      <tr>
+      <tr
+        class=""
+      >
         <td>
           1
         </td>
@@ -50,7 +52,9 @@ exports[`<Table/> should render Table 1`] = `
           </button>
         </td>
       </tr>
-      <tr>
+      <tr
+        class=""
+      >
         <td>
           2
         </td>
@@ -71,7 +75,9 @@ exports[`<Table/> should render Table 1`] = `
           </button>
         </td>
       </tr>
-      <tr>
+      <tr
+        class=""
+      >
         <td>
           3
         </td>
@@ -148,5 +154,232 @@ exports[`<Table/> should render Table 1`] = `
       </li>
     </ul>
   </div>
+</div>
+`;
+
+exports[`<Table/> should render stripe tr 1`] = `
+<div
+  className="cuke-table"
+  columns={
+    Array [
+      Object {
+        "dataIndex": "id",
+        "key": "id",
+        "title": "ID",
+      },
+      Object {
+        "dataIndex": "name",
+        "key": "name",
+        "title": "名字",
+      },
+      Object {
+        "dataIndex": "count",
+        "key": "count",
+        "title": "数量",
+      },
+      Object {
+        "dataIndex": "setting",
+        "key": "setting",
+        "render": [Function],
+        "title": "操作",
+      },
+    ]
+  }
+>
+  <Spin
+    indicator={<LoadingIcon />}
+    prefixCls="cuke-spin"
+    size="large"
+    spinning={false}
+    tip=""
+  >
+    <table
+      className="cuke-table-origin-table"
+    >
+      <thead
+        className="cuke-table-thead"
+      >
+        <tr>
+          <th
+            key="thead-0"
+          >
+            ID
+          </th>
+          <th
+            key="thead-1"
+          >
+            名字
+          </th>
+          <th
+            key="thead-2"
+          >
+            数量
+          </th>
+          <th
+            key="thead-3"
+          >
+            操作
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="cuke-table-tbody"
+      >
+        <tr
+          className=""
+          key="id"
+        >
+          <td
+            key="td-id"
+          >
+            1
+          </td>
+          <td
+            key="td-name"
+          >
+            黄瓜
+          </td>
+          <td
+            key="td-count"
+          >
+            1
+          </td>
+          <td
+            key="td-setting"
+          >
+            <Button
+              block={false}
+              circle={false}
+              dashed={false}
+              disabled={false}
+              hollow={false}
+              href=""
+              htmlType="button"
+              loading={false}
+              plain={false}
+              prefixCls="cuke-button"
+              size="default"
+              type="default"
+            >
+              删除
+            </Button>
+          </td>
+        </tr>
+        <tr
+          className="cuke-table-stripe"
+          key="name"
+        >
+          <td
+            key="td-id"
+          >
+            2
+          </td>
+          <td
+            key="td-name"
+          >
+            西瓜
+          </td>
+          <td
+            key="td-count"
+          >
+            344
+          </td>
+          <td
+            key="td-setting"
+          >
+            <Button
+              block={false}
+              circle={false}
+              dashed={false}
+              disabled={false}
+              hollow={false}
+              href=""
+              htmlType="button"
+              loading={false}
+              plain={false}
+              prefixCls="cuke-button"
+              size="default"
+              type="default"
+            >
+              删除
+            </Button>
+          </td>
+        </tr>
+        <tr
+          className=""
+          key="count"
+        >
+          <td
+            key="td-id"
+          >
+            3
+          </td>
+          <td
+            key="td-name"
+          >
+            香蕉
+          </td>
+          <td
+            key="td-count"
+          >
+            199
+          </td>
+          <td
+            key="td-setting"
+          >
+            <Button
+              block={false}
+              circle={false}
+              dashed={false}
+              disabled={false}
+              hollow={false}
+              href=""
+              htmlType="button"
+              loading={false}
+              plain={false}
+              prefixCls="cuke-button"
+              size="default"
+              type="default"
+            >
+              删除
+            </Button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      className="cuke-table-pagination"
+    >
+      <Pagination
+        current={1}
+        locale={
+          Object {
+            "nextText": <ArrowRightIcon />,
+            "prevText": <ArrowLeftIcon />,
+          }
+        }
+        onChange={[Function]}
+        onPageSizeChange={[Function]}
+        pageIndex={1}
+        pageSize={10}
+        pageSizeOptions={
+          Array [
+            10,
+            20,
+            30,
+            40,
+          ]
+        }
+        prefixCls="cuke-pagination"
+        separator="/"
+        showQuickJumper={false}
+        showSizeChanger={false}
+        showTotal={[Function]}
+        simple={false}
+        size="default"
+        total={3}
+      />
+    </div>
+  </Spin>
 </div>
 `;

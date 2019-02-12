@@ -1310,21 +1310,21 @@ storiesOf("数据展示", module)
           onChange(selectedRowKeys, selectedRows) {
             console.log("selectedRowKeys: ", selectedRowKeys);
             console.log("selectedRows: ", selectedRows);
-          },
-          getCheckboxProps(record) {
-            return {
-              disabled: record.name === "黄瓜1"
-            };
           }
+          // getCheckboxProps(record) {
+          //   return {
+          //     disabled: record.name === "黄瓜1"
+          //   };
+          // }
         }}
         pagination={{
           pageIndex: 1,
           pageSize: 5
         }}
         dataSource={new Array(30).fill().map((_, i) => ({
-          name: `黄瓜${i + 1}`,
-          count: i + 1,
-          id: i + 1,
+          name: `黄瓜${i}`,
+          count: i,
+          id: i,
           key: i
         }))}
       />
@@ -1334,5 +1334,11 @@ storiesOf("数据展示", module)
 
       <h2>显示边框</h2>
       <Table columns={columns} dataSource={dataSource} bordered />
+
+      <h2>斑马纹</h2>
+      <Table columns={columns} dataSource={dataSource} stripe />
+
+      <h2>不显示表头</h2>
+      <Table columns={columns} dataSource={dataSource} showHeader={false} />
     </div>
   ));
