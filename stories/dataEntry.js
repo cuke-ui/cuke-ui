@@ -188,6 +188,9 @@ storiesOf("数据录入", module)
 
       <h2>可清空</h2>
       <Input allowClear placeholder="请输入" />
+
+      <h2>密码输入框</h2>
+      <Input.Password placeholder="请输入你的银行卡密码" />
     </div>
   ))
   .add("NumberInput 输入框", () => (

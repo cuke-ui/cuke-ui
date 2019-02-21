@@ -13,7 +13,9 @@ import {
   FiUploadCloud,
   FiCalendar,
   FiHardDrive,
-  FiUser
+  FiUser,
+  FiEye,
+  FiEyeOff
 } from "react-icons/fi";
 
 import { IoMdCloseCircle } from "react-icons/io";
@@ -33,3 +35,5 @@ export const CalendarIcon = props => <FiCalendar {...props} />;
 export const CloseCircleIcon = props => <IoMdCloseCircle {...props} />;
 export const EmptyIcon = props => <FiHardDrive {...props} />;
 export const UserIcon = props => <FiUser {...props} />;
+export const PasswordShowIcon = props => <FiEye {...props} />;
+export const PasswordHideIcon = props => <FiEyeOff {...props} />;

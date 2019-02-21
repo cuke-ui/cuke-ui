@@ -115,6 +115,46 @@ exports[`<Input/> should render custom size 1`] = `
 </div>
 `;
 
+exports[`<Input/> should render input password 1`] = `
+<div
+  class="cuke-input-wrapper cuke-input-has-suffix"
+>
+  <input
+    class="cuke-input cuke-input-password"
+    placeholder="请输入"
+    type="password"
+    value="333"
+  />
+  <span
+    class="cuke-input-suffix"
+  >
+    <div
+      class="cuke-input-password-suffix"
+    >
+      <svg
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          r="3"
+        />
+      </svg>
+    </div>
+  </span>
+</div>
+`;
+
 exports[`<Input/> should render prefix and suffix with input 1`] = `
 <div>
   <div

@@ -137,4 +137,10 @@ describe("<Input/>", () => {
       expect(wrapper.state().value).toBe("");
     });
   });
+
+  it("should render input password", () => {
+    const wrapper = render(<Input.Password placeholder="请输入" value={333} />);
+    expect(toJson(wrapper)).toMatchSnapshot();
+    expect(wrapper.find(".cuke-input-password")).toHaveLength(1);
+  });
 });
