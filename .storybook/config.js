@@ -1,11 +1,10 @@
 import React from "react"
 import { configure, addDecorator } from '@storybook/react';
-import { name, repository } from "../package.json"
+import { name, repository, version } from "../package.json"
 import { withInfo } from '@storybook/addon-info';
 import { withNotes } from '@storybook/addon-notes';
 import { configureActions } from '@storybook/addon-actions';
 import { withOptions } from '@storybook/addon-options';
-import { version } from '../package.json'
 import '@storybook/addon-console';
 import "../components/styles/index.less"
 import "../stories/styles/code.less"
