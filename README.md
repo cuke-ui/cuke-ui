@@ -90,7 +90,7 @@ class Page extends React.Component {
 
 ```js
 import Button from 'cuke-ui/lib/button';
-import 'cuke-ui/lib/button/style.less';
+import 'cuke-ui/lib/button/style';
 ```
 
 > 3. 使用 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import)
