@@ -2,7 +2,7 @@
 
 exports[`<MusicPlayer/> should render a <MusicPlayer/> components 1`] = `
 <div
-  class="react-jinke-music-player-main cuke-music-player"
+  class="react-jinke-music-player-main dark-theme cuke-music-player"
 >
   <div
     class="react-jinke-music-player react-draggable"
