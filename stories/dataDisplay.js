@@ -11,6 +11,7 @@ import Timeline from "../components/timeline";
 import Tag from "../components/tag";
 import CityPicker from "../components/city-picker";
 import Table from "../components/table";
+import CountDown from "../components/count-down";
 import { SuccessIcon, InfoIcon, ErrorIcon, UserIcon } from "../components/icon";
 import Collapse from "../components/collapse";
 
@@ -1341,4 +1342,19 @@ storiesOf("数据展示", module)
       <h2>不显示表头</h2>
       <Table columns={columns} dataSource={dataSource} showHeader={false} />
     </div>
-  ));
+  ))
+  .add("CountDown 倒计时", () => (
+    <div>
+      <h2>基本使用</h2>
+      <CountDown/>
+
+      <h2>自定义内容</h2>
+      <CountDown>
+        {
+          (time, disabled)=> (
+            <Button disabled={disabled}>点击获取验证码 {time} s</Button>
+          )
+        }
+      </CountDown>
+    </div>
+  ))
