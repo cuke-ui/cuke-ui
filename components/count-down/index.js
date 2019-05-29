@@ -1,26 +1,27 @@
-import React from "react";
+import React, { PureComponent } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
 import './index.less'
 
 // TODO: 支持 type=date 时间倒计时
 
-class CountDown extends React.PureComponent {
+export default class CountDown extends PureComponent {
   static defaultProps = {
-    disabled: false,
-    className: '',
+    prefixCls: 'cuke-count-down',
     defaultCountDown: 60,
-    autoStart: true,
+    autoStart: false,
+    interval: 1000,
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
-    defaultActiveKey: PropTypes.array,
-    disabled: PropTypes.bool,
+    defaultCountDown: PropTypes.number,
+    interval: PropTypes.number,
+    autoStart: PropTypes.bool,
   };
 
   state = {
     countDown: 0,
-    autoStart: !this.props.children,
+    autoStart: this.props.autoStart || !this.props.children,
   }
 
   timerId = null
@@ -32,9 +33,9 @@ class CountDown extends React.PureComponent {
     this.setState({
       countDown: this.props.defaultCountDown,
     }, () => {
-      const { onStartCountDown } = this.props
-      if (onStartCountDown) {
-        onStartCountDown()
+      const { onStart } = this.props
+      if (onStart) {
+        onStart(this.state.countDown)
       }
       this.startCountDown()
     })
@@ -43,8 +44,14 @@ class CountDown extends React.PureComponent {
   startCountDown = () => {
     this.timerId = setTimeout(() => {
       this.setState((prevState) => {
+        if (this.props.onChange) {
+          this.props.onChange(prevState.countDown)
+        }
         if (prevState.countDown === 0) {
           clearTimeout(this.timerId)
+          if (this.props.onEnd) {
+            this.props.onEnd(prevState.countDown)
+          }
           return {
             countDown: 0,
           }
@@ -54,7 +61,7 @@ class CountDown extends React.PureComponent {
           countDown: prevState.countDown - 1,
         }
       })
-    }, 1000)
+    }, this.props.interval)
   }
 
   render() {
@@ -64,7 +71,7 @@ class CountDown extends React.PureComponent {
       children,
       className,
       prefixCls,
-      ...attr
+      style,
     } = this.props;
     const btnDisabled = disabled || countDown > 0
     return (
@@ -74,20 +81,20 @@ class CountDown extends React.PureComponent {
           className={cls(prefixCls, className, {
             [`${prefixCls}-disabled`]: btnDisabled,
           })}
-          {...attr}
+          style={style}
         >
           {this.props.children(this.state.countDown, btnDisabled)}
         </span>
       ) : (
-        <span
-          className={cls(prefixCls, className)}
-          onClick={this.onStartCountDown}
-          disabled={btnDisabled}
-          {...attr}
-        >
-          {countDown}
-        </span>
-      )
+          <span
+            className={cls(prefixCls, className)}
+            onClick={this.onStartCountDown}
+            disabled={btnDisabled}
+            style={style}
+          >
+            {countDown}
+          </span>
+        )
     )
   }
 
@@ -95,18 +102,16 @@ class CountDown extends React.PureComponent {
     clearTimeout(this.timerId)
   }
 
-  componentWillUpdate(nextProps, nextState){
-    if(this.props.defaultCountDown !== nextProps.defaultCountDown && nextState.autoStart) {
+  componentWillUpdate(nextProps, nextState) {
+    if (this.props.defaultCountDown !== nextProps.defaultCountDown && nextState.autoStart) {
       clearTimeout(this.timerId)
       this.onStartCountDown()
     }
   }
 
-  componentDidMount(){
-    if(this.state.autoStart) {
+  componentDidMount() {
+    if (this.state.autoStart) {
       this.onStartCountDown()
     }
   }
 }
-
-export default CountDown

@@ -1346,15 +1346,40 @@ storiesOf("数据展示", module)
   .add("CountDown 倒计时", () => (
     <div>
       <h2>基本使用</h2>
-      <CountDown/>
+      <CountDown />
 
       <h2>自定义内容</h2>
       <CountDown>
         {
-          (time, disabled)=> (
-            <Button disabled={disabled}>点击获取验证码 {time} s</Button>
+          (time, disabled) => (
+            <Button disabled={disabled}>{disabled ? `${time} s 后重获` : '点击获取验证码'}</Button>
           )
         }
       </CountDown>
+
+      <h2>自定义时长</h2>
+      <CountDown defaultCountDown={20} />
+
+      <h2>2s 改变一次</h2>
+      <CountDown interval={2000} />
+
+      <h2>配合Tooltip 使用</h2>
+      <CountDown autoStart>
+        {
+          (time,disabled) => (
+            <Tooltip trigger="click" title={`${time} s 后重获`} visible={disabled} position="right">
+              <Button disabled={disabled}>获取验证码</Button>
+            </Tooltip>
+          )
+        }
+      </CountDown>
+
+      <h2>回调</h2>
+      <CountDown
+        defaultCountDown={10}
+        onStart={(time)=> console.log('onStart',time)}
+        onEnd={(time)=> console.log('onEnd', time)}
+        onChange={(time)=> console.log('onChange', time)}
+      />
     </div>
   ))
