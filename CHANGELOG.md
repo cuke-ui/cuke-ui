@@ -1,3 +1,24 @@
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/cuke-ui/cuke-ui/compare/v1.9.0...v1.10.0) (2019-05-29)
+
+
+### Bug Fixes
+
+* **table:** 修复 table rowSelection 禁用时 也会被选中的 bug ([b4f70b7](https://github.com/cuke-ui/cuke-ui/commit/b4f70b7))
+* **table:** 修复 多页情况 已选中的 row 丢失 的问题 ([6edf13a](https://github.com/cuke-ui/cuke-ui/commit/6edf13a))
+* removed repeated imports from package.json ([039277a](https://github.com/cuke-ui/cuke-ui/commit/039277a))
+* **Tooltip:** 修复默认显示时点击其他地方还能关闭的 bug ([08f3410](https://github.com/cuke-ui/cuke-ui/commit/08f3410))
+
+
+### Features
+
+* 新增 InputPassword 密码输入框 ([411b915](https://github.com/cuke-ui/cuke-ui/commit/411b915))
+* **countDown:** 新增 CountDown 测试 ([5e71003](https://github.com/cuke-ui/cuke-ui/commit/5e71003))
+* **countDown:** 新增倒计时 countDown 组件 ([eed14c0](https://github.com/cuke-ui/cuke-ui/commit/eed14c0))
+* **table:** 新增 斑马纹 stripe 属性 ([eb40cf7](https://github.com/cuke-ui/cuke-ui/commit/eb40cf7))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/cuke-ui/cuke-ui/compare/v1.8.0...v1.9.0) (2019-02-07)
 
