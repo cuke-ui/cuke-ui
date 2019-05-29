@@ -1367,7 +1367,7 @@ storiesOf("数据展示", module)
       <CountDown autoStart>
         {
           (time,disabled) => (
-            <Tooltip trigger="click" title={`${time} s 后重获`} visible={disabled} position="right">
+            <Tooltip title={`${time} s 后重获`} visible position="right">
               <Button disabled={disabled}>获取验证码</Button>
             </Tooltip>
           )

@@ -11,12 +11,14 @@ export default class CountDown extends PureComponent {
     defaultCountDown: 60,
     autoStart: false,
     interval: 1000,
+    disabled: false,
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
     defaultCountDown: PropTypes.number,
     interval: PropTypes.number,
     autoStart: PropTypes.bool,
+    disabled: PropTypes.bool,
   };
 
   state = {

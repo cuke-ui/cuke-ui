@@ -75,4 +75,22 @@ describe("<CountDown/>", () => {
       expect(onChange).toHaveBeenCalledTimes(5);
     },5000)
   });
+
+
+  it("should cannot trigger onClick with Button when start count down", () => {
+    const onClick = jest.fn();
+    const wrapper= shallow(
+      <CountDown autoStart>
+      {
+        (time,disabled) => (
+          <Button disabled={disabled}>获取验证码</Button>
+        )
+      }
+    </CountDown>
+    );
+
+    wrapper.find(Button).simulate('click')
+
+    expect(onClick).not.toHaveBeenCalled();
+  });
 });

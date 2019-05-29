@@ -85,6 +85,9 @@ export default class Tooltip extends PureComponent {
       openLock: !nextProps.visible,
       closeLock: !nextProps.visible
     });
+    if(nextProps.visible) {
+      this.setDefaultPositionIfHaveDefaultVisible()
+    }
   }
 
   getWrapperBounding = () => {
@@ -129,6 +132,10 @@ export default class Tooltip extends PureComponent {
 
   onClickOutsideHandler = e => {
     e.stopPropagation();
+    // 如果默认显示 则不做任何操作
+    if(this.props.visible) {
+      return
+    }
     if (
       this.state.visible &&
       !this.wrapper.current.contains(e.target) &&
@@ -140,6 +147,9 @@ export default class Tooltip extends PureComponent {
   };
 
   onOpenTooltip = () => {
+    if(this.props.visible) {
+      return
+    }
     // 如果 鼠标离开了当前目标 (或者划过了间隙) 马上 focus 上去 就取消关闭
     if (this.closeTimer) {
       clearTimeout(this.closeTimer);
@@ -162,6 +172,9 @@ export default class Tooltip extends PureComponent {
   };
 
   onCloseTooltip = () => {
+    if(this.props.visible) {
+      return
+    }
     this.closeTimer = setTimeout(() => {
       this.setState({ visible: false, openLock: false }, () => {
         if (!this.state.closeLock) {
