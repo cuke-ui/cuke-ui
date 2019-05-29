@@ -93,4 +93,29 @@ describe("<CountDown/>", () => {
 
     expect(onClick).not.toHaveBeenCalled();
   });
+
+
+  it("should reset countDown interval when count down changed", () => {
+    const onEnd = jest.fn();
+    const wrapper= shallow(
+      <CountDown countDown={5} onEnd={onEnd}/>
+    );
+
+    wrapper.setProps({countDown: 6})
+
+    setTimeout(()=>{
+      expect(onEnd).toHaveBeenCalled();
+    },6000)
+  });
+
+  it("should reset countDown interval with Button when count down changed", () => {
+    const onEnd = jest.fn();
+    shallow(
+      <CountDown countDown={5} interval={2} onEnd={onEnd}/>
+    );
+
+    setTimeout(()=>{
+      expect(onEnd).toHaveBeenCalled();
+    }, 5000 * 2)
+  });
 });

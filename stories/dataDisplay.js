@@ -1357,11 +1357,37 @@ storiesOf("数据展示", module)
         }
       </CountDown>
 
+      <div style={{height: 20}}/>
+
+      <CountDown autoStart>
+        {
+          (time) => (
+            <Tag circle type="primary">{time}</Tag>
+          )
+        }
+      </CountDown>
+
+      <div style={{height: 20}}/>
+
+      <CountDown autoStart>
+        {
+          (time) => (
+            <Badge count={time}>
+            <Button>
+              购物车数量
+            </Button>
+            </Badge>
+          )
+        }
+      </CountDown>
+
+
+
       <h2>自定义时长</h2>
       <CountDown defaultCountDown={20} />
 
       <h2>2s 改变一次</h2>
-      <CountDown interval={2000} />
+      <CountDown interval={2} />
 
       <h2>配合Tooltip 使用</h2>
       <CountDown autoStart>
@@ -1381,5 +1407,34 @@ storiesOf("数据展示", module)
         onEnd={(time)=> console.log('onEnd', time)}
         onChange={(time)=> console.log('onChange', time)}
       />
+
+      <h2>时间倒计时</h2>
+      <CountDown
+        defaultCountDown={1559100698744}
+        type="date"
+      />
+      <div style={{height: 20}}/>
+      <CountDown
+        defaultCountDown={"2029/5/30 18:45:06"}
+        type="date"
+      />
+
+      <h2>自定义时间倒计时格式</h2>
+      <CountDown
+        defaultCountDown={1559100698744}
+        type="date"
+        autoStart
+      >
+       {
+          (time) => (
+            <div style={{color: '#444'}}>
+            {time.d} <Tag type="primary">天</Tag>
+            {time.h} <Tag type="primary">时</Tag>
+            {time.m} <Tag type="primary">分</Tag>
+            {time.s} <Tag type="primary">秒</Tag>
+            </div>
+          )
+        }
+      </CountDown>
     </div>
   ))
