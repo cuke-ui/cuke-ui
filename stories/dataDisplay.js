@@ -30,6 +30,7 @@ import "../components/card/styles.less";
 import "../components/empty/styles.less";
 import "../components/badge/styles.less";
 import "../components/table/styles.less";
+import "../components/count-down/styles.less";
 import "./styles/dataDisplay.less";
 import "./styles/tag.less";
 import { Calendar, Popconfirm, Empty, Divider, Input } from "../components";

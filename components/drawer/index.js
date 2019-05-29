@@ -1,4 +1,4 @@
-import React, { PureComponent } from "react";
+import React, { PureComponent, createRef } from "react";
 import PropTypes from "prop-types";
 import { createPortal } from "react-dom"; //传送门 将节点挂载在root 节点之外
 import cls from "classnames";
@@ -10,6 +10,8 @@ const placements = {
   bottom: "bottom",
   left: "left"
 };
+
+const ESC_KEY_CODE = 27
 
 export default class Drawer extends PureComponent {
   state = {
@@ -28,7 +30,8 @@ export default class Drawer extends PureComponent {
     height: 300,
     zIndex: 999,
     placement: placements.right,
-    footer: null
+    footer: null,
+    escClose: true,
   };
   static propTypes = {
     title: PropTypes.oneOfType([
@@ -52,10 +55,12 @@ export default class Drawer extends PureComponent {
     placement: PropTypes.oneOf(Object.values(placements)),
     getPopupContainer: PropTypes.func,
     onClose: PropTypes.func,
-    wrapperClassName: PropTypes.string
+    wrapperClassName: PropTypes.string,
+    escClose: PropTypes.bool,
   };
   constructor(props) {
     super(props);
+    this.wrapperRef = createRef()
   }
   disableScroll = () => {
     document.body.style.overflow = "hidden";
@@ -78,8 +83,23 @@ export default class Drawer extends PureComponent {
   componentDidUpdate() {
     if (this.props.visible === true) {
       this.disableScroll();
+      if(this.wrapperRef.current){
+        this.wrapperRef.current.focus()
+      }
     } else {
       this.enableScroll();
+    }
+  }
+
+  onKeyDown = (e) => {
+    if(!this.props.escClose) {
+      return
+    }
+    if(e.keyCode === ESC_KEY_CODE) {
+      e.stopPropagation();
+      if(this.props.onClose){
+        this.props.onClose()
+      }
     }
   }
   render() {
@@ -120,9 +140,10 @@ export default class Drawer extends PureComponent {
           />
         )}
         <div
-          role="dialog"
           tabIndex="-1"
           className={cls(`${prefixCls}-wrap`, wrapperClassName)}
+          onKeyDown={this.onKeyDown}
+          ref={this.wrapperRef}
         >
           <div
             className={cls(

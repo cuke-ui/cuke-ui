@@ -7,7 +7,6 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
   />
   <div
     class="cuke-drawer-wrap"
-    role="dialog"
     tabindex="-1"
   >
     <div
@@ -61,7 +60,6 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
   />
   <div
     class="cuke-drawer-wrap"
-    role="dialog"
     tabindex="-1"
   >
     <div
@@ -115,7 +113,6 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
   />
   <div
     class="cuke-drawer-wrap"
-    role="dialog"
     tabindex="-1"
   >
     <div
@@ -174,7 +171,6 @@ exports[`<Drawer/> should render custom direction 1`] = `
   />
   <div
     class="cuke-drawer-wrap"
-    role="dialog"
     tabindex="-1"
   >
     <div
@@ -226,7 +222,6 @@ exports[`<Drawer/> should render custom direction 1`] = `
   />
   <div
     class="cuke-drawer-wrap"
-    role="dialog"
     tabindex="-1"
   >
     <div
@@ -278,7 +273,6 @@ exports[`<Drawer/> should render custom direction 1`] = `
   />
   <div
     class="cuke-drawer-wrap"
-    role="dialog"
     tabindex="-1"
   >
     <div
@@ -330,7 +324,6 @@ exports[`<Drawer/> should render custom direction 1`] = `
   />
   <div
     class="cuke-drawer-wrap"
-    role="dialog"
     tabindex="-1"
   >
     <div

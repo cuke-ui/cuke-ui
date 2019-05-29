@@ -17,6 +17,26 @@ describe("<CountDown/>", () => {
             )
           }
         </CountDown>
+        <CountDown
+          defaultCountDown={"2029/5/30 18:45:06"}
+          type="date"
+        />
+        <CountDown
+          defaultCountDown={1559100698744}
+          type="date"
+          autoStart
+        >
+          {
+            (time) => (
+              <div >
+                {time.d}
+                {time.h}
+                {time.m}
+                {time.s}
+              </div>
+            )
+          }
+        </CountDown>
       </div>
 
     );
@@ -56,9 +76,9 @@ describe("<CountDown/>", () => {
     expect(onStart).toHaveBeenCalled();
     expect(onEnd).not.toHaveBeenCalled();
 
-    setTimeout(()=>{
+    setTimeout(() => {
       expect(onEnd).toHaveBeenCalled();
-    },5000)
+    }, 5000)
   });
 
 
@@ -71,22 +91,22 @@ describe("<CountDown/>", () => {
       />
     );
 
-    setTimeout(()=>{
+    setTimeout(() => {
       expect(onChange).toHaveBeenCalledTimes(5);
-    },5000)
+    }, 5000)
   });
 
 
   it("should cannot trigger onClick with Button when start count down", () => {
     const onClick = jest.fn();
-    const wrapper= shallow(
+    const wrapper = shallow(
       <CountDown autoStart>
-      {
-        (time,disabled) => (
-          <Button disabled={disabled}>获取验证码</Button>
-        )
-      }
-    </CountDown>
+        {
+          (time, disabled) => (
+            <Button disabled={disabled}>获取验证码</Button>
+          )
+        }
+      </CountDown>
     );
 
     wrapper.find(Button).simulate('click')
@@ -97,25 +117,26 @@ describe("<CountDown/>", () => {
 
   it("should reset countDown interval when count down changed", () => {
     const onEnd = jest.fn();
-    const wrapper= shallow(
-      <CountDown countDown={5} onEnd={onEnd}/>
+    const wrapper = shallow(
+      <CountDown countDown={5} onEnd={onEnd} />
     );
 
-    wrapper.setProps({countDown: 6})
+    wrapper.setProps({ countDown: 6 })
 
-    setTimeout(()=>{
+    setTimeout(() => {
       expect(onEnd).toHaveBeenCalled();
-    },6000)
+    }, 6000)
   });
 
   it("should reset countDown interval with Button when count down changed", () => {
     const onEnd = jest.fn();
     shallow(
-      <CountDown countDown={5} interval={2} onEnd={onEnd}/>
+      <CountDown countDown={5} interval={2} onEnd={onEnd} />
     );
 
-    setTimeout(()=>{
+    setTimeout(() => {
       expect(onEnd).toHaveBeenCalled();
     }, 5000 * 2)
   });
+
 });

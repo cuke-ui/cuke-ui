@@ -1,7 +1,6 @@
 import React, { PureComponent } from "react";
 import cls from "classnames";
 import PropTypes from "prop-types";
-import './index.less'
 
 const COUNT_DOWN_TYPE = {
   TIME: 'time',
@@ -26,7 +25,14 @@ export default class CountDown extends PureComponent {
   };
   static propTypes = {
     prefixCls: PropTypes.string.isRequired,
-    defaultCountDown: PropTypes.number,
+    defaultCountDown: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]),
+    countDown: PropTypes.oneOfType([
+      PropTypes.number,
+      PropTypes.string,
+    ]),
     interval: PropTypes.number,
     autoStart: PropTypes.bool,
     disabled: PropTypes.bool,
