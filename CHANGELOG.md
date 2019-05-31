@@ -1,3 +1,15 @@
+<a name="1.10.2"></a>
+# [1.10.2](https://github.com/cuke-ui/cuke-ui/compare/v1.9.0...v1.10.2) (2019-05-31)
+
+
+### Bug Fixes
+
+* **drawer:** 修复开启抽屉会显示 横向滚动条的 Bug ([61f133b](https://github.com/cuke-ui/cuke-ui/commit/61f133b))
+* **modal:** 优化弹框内容超长时不能滚动的 Bug ([3f382af](https://github.com/cuke-ui/cuke-ui/commit/3f382af))
+
+
+
+
 <a name="1.10.0"></a>
 # [1.10.0](https://github.com/cuke-ui/cuke-ui/compare/v1.9.0...v1.10.0) (2019-05-29)
 
