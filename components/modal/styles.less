@@ -8,7 +8,6 @@
   background-color: @modal-bg-color;
   border-radius: @border-radius;
   width: @modal-width;
-  max-height: calc(~"100vh - 48px");
   z-index: @modal-z-index;
   transform-origin: bottom center;
   outline: none;
@@ -18,6 +17,8 @@
   list-style: none;
   transform: scale(0);
   top: @modal-offset-top;
+  margin-bottom: @modal-offset-bottom;
+
   &.@{prefixCls}-open {
     pointer-events: auto;
     animation: cuke-fade-in @default-transition forwards;
@@ -72,12 +73,9 @@
   &-content {
     padding: @modal-padding;
     background-clip: padding-box;
-    height: auto;
-    overflow-y: auto;
     margin: 0 auto;
     line-height: 1.5;
     word-wrap: break-word;
-    max-height: 100vh;
   }
   &-footer {
     padding: @modal-footer-padding;
@@ -163,6 +161,10 @@
   outline: 0;
   pointer-events: none;
   -webkit-overflow-scrolling: touch;
+
+  &-visible {
+    pointer-events: auto;
+  }
 }
 
 .@{prefixCls}-centered {
@@ -180,6 +182,7 @@
     top: 0;
     text-align: left;
   }
+  margin-bottom: 0
 }
 
 .@{prefixCls}-mask {
@@ -192,7 +195,7 @@
   width: 100%;
   height: 100%;
   z-index: @modal-z-index;
-  pointer-events: none;
+  // pointer-events: none;
   transform: scale(0);
   &-show {
     pointer-events: auto;

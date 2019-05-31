@@ -6,7 +6,7 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
     class="cuke-drawer-mask cuke-drawer-mask-show"
   />
   <div
-    class="cuke-drawer-wrap"
+    class="cuke-drawer-wrap cuke-drawer-wrap-visible"
     tabindex="-1"
   >
     <div
@@ -59,7 +59,7 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
     class="cuke-drawer-mask cuke-drawer-mask-show"
   />
   <div
-    class="cuke-drawer-wrap"
+    class="cuke-drawer-wrap cuke-drawer-wrap-visible"
     tabindex="-1"
   >
     <div
@@ -112,7 +112,7 @@ exports[`<Drawer/> should render a <Drawer/> components 1`] = `
     class="cuke-drawer-mask cuke-drawer-mask-show"
   />
   <div
-    class="cuke-drawer-wrap"
+    class="cuke-drawer-wrap cuke-drawer-wrap-visible"
     tabindex="-1"
   >
     <div
@@ -170,7 +170,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
     class="cuke-drawer-mask cuke-drawer-mask-show"
   />
   <div
-    class="cuke-drawer-wrap"
+    class="cuke-drawer-wrap cuke-drawer-wrap-visible"
     tabindex="-1"
   >
     <div
@@ -221,7 +221,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
     class="cuke-drawer-mask cuke-drawer-mask-show"
   />
   <div
-    class="cuke-drawer-wrap"
+    class="cuke-drawer-wrap cuke-drawer-wrap-visible"
     tabindex="-1"
   >
     <div
@@ -272,7 +272,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
     class="cuke-drawer-mask cuke-drawer-mask-show"
   />
   <div
-    class="cuke-drawer-wrap"
+    class="cuke-drawer-wrap cuke-drawer-wrap-visible"
     tabindex="-1"
   >
     <div
@@ -323,7 +323,7 @@ exports[`<Drawer/> should render custom direction 1`] = `
     class="cuke-drawer-mask cuke-drawer-mask-show"
   />
   <div
-    class="cuke-drawer-wrap"
+    class="cuke-drawer-wrap cuke-drawer-wrap-visible"
     tabindex="-1"
   >
     <div

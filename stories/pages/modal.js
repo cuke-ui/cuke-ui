@@ -101,6 +101,20 @@ export default class ModalPage extends Component {
             </Button>
           </Col>
         </Row>
+        <Row>
+          <Col span={6}>
+            <h2>超长高度</h2>
+            <Button type="primary" onClick={() => this.onShow("visible31")}>
+              姚明在弹框里面
+            </Button>
+          </Col>
+          <Col span={6}>
+            <h2>不显示蒙版</h2>
+            <Button type="primary" onClick={() => this.onShow("visible32")}>
+              打开
+            </Button>
+          </Col>
+        </Row>
         <h2>信息提示</h2>
         <Row>
           <Col span={4}>
@@ -173,7 +187,7 @@ export default class ModalPage extends Component {
             </Button>
           </Col>
         </Row>
-        <Row style={{margin: "20px 0"}}>
+        <Row style={{ margin: "20px 0" }}>
           <Col span={4}>
             <Button
               onClick={() => {
@@ -191,7 +205,7 @@ export default class ModalPage extends Component {
               onClick={() => {
                 Modal.loading({
                   title: "黄瓜ui",
-                  content: "即插即用"
+                  content: "即插即用",
                 })
               }}
             >
@@ -203,8 +217,8 @@ export default class ModalPage extends Component {
               onClick={() => {
                 Modal.prompt({
                   title: "黄瓜ui",
-                  onOk({value, checked}) {
-                    console.log(value,checked)
+                  onOk({ value, checked }) {
+                    console.log(value, checked)
                   }
                 })
               }}
@@ -217,14 +231,27 @@ export default class ModalPage extends Component {
               onClick={() => {
                 Modal.prompt({
                   title: "为以下商品付款",
-                  content: <Checkbox/>,
-                  onOk({value, checked}) {
-                    console.log(value,checked)
+                  content: <Checkbox />,
+                  onOk({ value, checked }) {
+                    console.log(value, checked)
                   }
                 })
               }}
             >
               自定义内容的 Modal.prompt()
+            </Button>
+          </Col>
+          <Col span={4} offset={2}>
+            <Button
+              onClick={() => {
+                Modal.success({
+                  title: "hello",
+                  content: "how are you",
+                  closable: true,
+                })
+              }}
+            >
+              显示X
             </Button>
           </Col>
         </Row>
@@ -236,7 +263,7 @@ export default class ModalPage extends Component {
               type="success"
               onClick={() => {
                 Modal.info({
-                  iconType:"success",
+                  iconType: "success",
                   title: "黄瓜 ui",
                   content: "即插即用"
                 })
@@ -250,7 +277,7 @@ export default class ModalPage extends Component {
               type="error"
               onClick={() => {
                 Modal.loading({
-                  iconType:"error",
+                  iconType: "error",
                   title: "黄瓜 ui",
                   content: "即插即用"
                 })
@@ -390,12 +417,32 @@ export default class ModalPage extends Component {
           okButtonProps={{
             disabled: true,
             loading: true,
+            type: "default"
           }}
           cancelButtonProps={{
             type: 'info',
           }}
         >
           <span>自定义按钮属性</span>
+        </Modal>
+
+        <Modal
+          title="超长modal"
+          visible={this.state.visible31}
+          onCancel={() => this.onCancel("visible31")}
+          onOk={() => this.onCancel("visible31")}
+        >
+          <div style={{ height: window.innerHeight * 2 }}>我是姚明</div>
+        </Modal>
+
+        <Modal
+          title="没有蒙版"
+          showMask={false}
+          visible={this.state.visible32}
+          onCancel={() => this.onCancel("visible32")}
+          onOk={() => this.onCancel("visible32")}
+        >
+          <span>123</span>
         </Modal>
       </div>
     );

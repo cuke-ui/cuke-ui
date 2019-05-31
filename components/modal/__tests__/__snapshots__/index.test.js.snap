@@ -6,7 +6,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
     class="cuke-modal-mask cuke-modal-mask-show"
   />
   <div
-    class="cuke-modal-wrap"
+    class="cuke-modal-wrap cuke-modal-wrap-visible"
     role="dialog"
     tabindex="-1"
   >
@@ -80,7 +80,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
     class="cuke-modal-mask cuke-modal-mask-show"
   />
   <div
-    class="cuke-modal-wrap"
+    class="cuke-modal-wrap cuke-modal-wrap-visible"
     role="dialog"
     tabindex="-1"
   >
@@ -154,7 +154,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
     class="cuke-modal-mask cuke-modal-mask-show"
   />
   <div
-    class="cuke-modal-wrap"
+    class="cuke-modal-wrap cuke-modal-wrap-visible"
     role="dialog"
     tabindex="-1"
   >
@@ -208,7 +208,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
     class="cuke-modal-mask cuke-modal-mask-show"
   />
   <div
-    class="cuke-modal-wrap cuke-modal-centered"
+    class="cuke-modal-wrap cuke-modal-centered cuke-modal-wrap-visible"
     role="dialog"
     tabindex="-1"
   >
@@ -283,7 +283,7 @@ exports[`<Modal/> should render a <Modal/> components 1`] = `
 
 exports[`<Modal/> should render confirm mode width <Modal/>  1`] = `
 <div
-  class="cuke-modal-wrap"
+  class="cuke-modal-wrap cuke-modal-wrap-visible"
   role="dialog"
   tabindex="-1"
 >
@@ -335,7 +335,7 @@ Array [
     class="cuke-modal-mask cuke-modal-mask-show"
   />,
   <div
-    class="cuke-modal-wrap"
+    class="cuke-modal-wrap cuke-modal-wrap-visible"
     role="dialog"
     tabindex="-1"
   >

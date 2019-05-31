@@ -671,7 +671,7 @@ exports[`<DatePicker/> should can not trigger when date is disabled 1`] = `
           28
         </span>
         <span
-          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date cuke-date-picker-disabled-date"
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
           key="date-28"
         >
           29
@@ -683,7 +683,7 @@ exports[`<DatePicker/> should can not trigger when date is disabled 1`] = `
           30
         </span>
         <span
-          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-disabled-date"
+          className="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date cuke-date-picker-disabled-date"
           key="date-30"
         >
           31
@@ -1376,7 +1376,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         28
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+        class="cuke-date-picker-item cuke-date-picker-current-month"
       >
         29
       </span>
@@ -1386,7 +1386,7 @@ exports[`<DatePicker/> should render a <DatePicker/> components 1`] = `
         30
       </span>
       <span
-        class="cuke-date-picker-item cuke-date-picker-current-month"
+        class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
       >
         31
       </span>
@@ -1723,7 +1723,7 @@ exports[`<DatePicker/> should render custom size 1`] = `
           28
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+          class="cuke-date-picker-item cuke-date-picker-current-month"
         >
           29
         </span>
@@ -1733,7 +1733,7 @@ exports[`<DatePicker/> should render custom size 1`] = `
           30
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month"
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
         >
           31
         </span>
@@ -2066,7 +2066,7 @@ exports[`<DatePicker/> should render custom size 1`] = `
           28
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+          class="cuke-date-picker-item cuke-date-picker-current-month"
         >
           29
         </span>
@@ -2076,7 +2076,7 @@ exports[`<DatePicker/> should render custom size 1`] = `
           30
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month"
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
         >
           31
         </span>
@@ -2409,7 +2409,7 @@ exports[`<DatePicker/> should render custom size 1`] = `
           28
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
+          class="cuke-date-picker-item cuke-date-picker-current-month"
         >
           29
         </span>
@@ -2419,7 +2419,7 @@ exports[`<DatePicker/> should render custom size 1`] = `
           30
         </span>
         <span
-          class="cuke-date-picker-item cuke-date-picker-current-month"
+          class="cuke-date-picker-item cuke-date-picker-current-month cuke-date-picker-selected-date"
         >
           31
         </span>

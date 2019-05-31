@@ -121,6 +121,7 @@ export default class Drawer extends PureComponent {
       style,
       footer,
       wrapperClassName,
+      escClose, // eslint-disable-line
       ...attr
     } = this.props;
 
@@ -141,7 +142,9 @@ export default class Drawer extends PureComponent {
         )}
         <div
           tabIndex="-1"
-          className={cls(`${prefixCls}-wrap`, wrapperClassName)}
+          className={cls(`${prefixCls}-wrap`, wrapperClassName, {
+            [`${prefixCls}-wrap-visible`]: visible,
+          })}
           onKeyDown={this.onKeyDown}
           ref={this.wrapperRef}
         >

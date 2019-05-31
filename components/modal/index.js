@@ -291,6 +291,7 @@ export default class Modal extends PureComponent {
       iconType, //eslint-disable-line
       staticMethodType, //eslint-disable-line
       isStaticMethod, //eslint-disable-line
+      escClose, // eslint-disable-line
       ...attr
     } = this.props;
 
@@ -319,7 +320,8 @@ export default class Modal extends PureComponent {
           role="dialog"
           tabIndex="-1"
           className={cls(`${prefixCls}-wrap`, wrapperClassName, {
-            [`${prefixCls}-centered`]: centered
+            [`${prefixCls}-centered`]: centered,
+            [`${prefixCls}-wrap-visible`]: _visible,
           })}
           onKeyDown={this.onKeyDown}
           ref={this.wrapperRef}
