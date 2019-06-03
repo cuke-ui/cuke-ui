@@ -1,6 +1,6 @@
 {
   "name": "cuke-ui",
-  "version": "1.10.2",
+  "version": "1.10.4",
   "description": "A React.js UI components for Web",
   "repository": "https://github.com/cuke-ui/cuke-ui.git",
   "homepage": "https://cuke-ui.github.io/cuke-ui-landing/",
@@ -37,7 +37,8 @@
     "build:umd": "webpack --config ./scripts/build.umd.js",
     "deploy": "./scripts/deploy.sh",
     "commit": "git-cz",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r"
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r",
+    "release": "npm publish . && standard-version"
   },
   "lint-staged": {
     "*.js": [

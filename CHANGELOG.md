@@ -1,3 +1,16 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [1.10.4](https://github.com/cuke-ui/cuke-ui/compare/v1.10.2...v1.10.4) (2019-06-03)
+
+
+### Bug Fixes
+
+* **drawer:** 修复Drawer 组件 box-shadow 丢失的问题 ([f9b96d0](https://github.com/cuke-ui/cuke-ui/commit/f9b96d0))
+
+
+
 <a name="1.10.2"></a>
 # [1.10.2](https://github.com/cuke-ui/cuke-ui/compare/v1.9.0...v1.10.2) (2019-05-31)
 
@@ -365,6 +378,3 @@
 * 添加 Notification 不显示关闭按钮 ([2559d8f](https://github.com/cuke-ui/cuke-ui/commit/2559d8f))
 * 移除 CityPicker 控制台警告 ([cdaf67e](https://github.com/cuke-ui/cuke-ui/commit/cdaf67e))
 * 重构 Tooltip 组件 ([2bc7fc5](https://github.com/cuke-ui/cuke-ui/commit/2bc7fc5))
-
-
-
