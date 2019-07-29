@@ -1,3 +1,17 @@
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/cuke-ui/cuke-ui/compare/v1.10.3...v1.11.0) (2019-07-29)
+
+
+### Features
+
+* **Turntable:** suport custom  action ([cda1d5d](https://github.com/cuke-ui/cuke-ui/commit/cda1d5d))
+
+### Bug Fixes
+
+* **MusicPlayer:** fix restart playing when click anywhere in mobile mode
+* **MusicPlayer:** support audio play time more than 1 hour text format
+
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
