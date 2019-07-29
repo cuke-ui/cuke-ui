@@ -20,7 +20,8 @@ export default class TurnTable extends PureComponent {
       fontWeight: "bold",
       fontVertical: false,
       fontFamily: "Microsoft YaHei"
-    }
+    },
+    hiddenButton: false
   };
 
   static propTypes = {
@@ -36,7 +37,9 @@ export default class TurnTable extends PureComponent {
     onComplete: PropTypes.func,
     onStart: PropTypes.func,
     fontVertical: PropTypes.bool,
-    fontStyle: PropTypes.object
+    fontStyle: PropTypes.object,
+    hiddenButton: PropTypes.bool,
+    getTurntable: PropTypes.func
   };
 
   render() {

@@ -7,12 +7,14 @@ import message from "../components/message";
 import Col from "../components/col";
 import Row from "../components/row";
 import Modal from "../components/modal";
+import Button from "../components/button";
 import "../components/message/styles.less";
 import "../components/modal/styles.less";
 import "react-jinke-music-player/assets/index.css";
 import "react-turntable/assets/index.css";
 
 const prizes = new Array(8).fill(0).map((_, i) => `奖品${i + 1}`);
+let _turntable;
 
 storiesOf("娱乐", module)
   .add(
@@ -20,7 +22,7 @@ storiesOf("娱乐", module)
     withInfo(
       `
   详细文档请查看 [https://github.com/lijinke666/react-music-player](https://github.com/lijinke666/react-music-player)
-    
+
     `
     )(() => (
       <MusicPlayer
@@ -60,7 +62,7 @@ storiesOf("娱乐", module)
     withInfo(
       `
   详细文档请查看 [https://github.com/lijinke666/react-turntable)
-    
+
     `
     )(() => (
       <Row>
@@ -136,6 +138,29 @@ storiesOf("娱乐", module)
               }
             }}
           />
+        </Col>
+        <Col>
+          <Turntable
+            {...{
+              prizes,
+              hiddenButton: true,
+              getTurntable(turntable) {
+                _turntable = turntable;
+              },
+              onComplete(prize) {
+                console.log(prize);
+                message.success(prize);
+              }
+            }}
+          />
+          <Button
+            type="primary"
+            onClick={() => _turntable.start()}
+            style={{ marginRight: 10 }}
+          >
+            开始
+          </Button>
+          <Button onClick={() => _turntable.stop()}>停止</Button>
         </Col>
       </Row>
     ))
