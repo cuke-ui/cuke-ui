@@ -25,7 +25,7 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
     <span
       class="cuke-calendar-date"
     >
-      2019年   6月
+      2019年   7月
     </span>
     <svg
       class="cuke-calendar-button-icon"
@@ -89,46 +89,6 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
       class="cuke-calendar-content"
     >
       <span
-        class="cuke-calendar-item cuke-calendar-last-month"
-      >
-        27
-        <div
-          class="cuke-calendar-item-content"
-        />
-      </span>
-      <span
-        class="cuke-calendar-item cuke-calendar-last-month"
-      >
-        28
-        <div
-          class="cuke-calendar-item-content"
-        />
-      </span>
-      <span
-        class="cuke-calendar-item cuke-calendar-last-month"
-      >
-        29
-        <div
-          class="cuke-calendar-item-content"
-        />
-      </span>
-      <span
-        class="cuke-calendar-item cuke-calendar-last-month"
-      >
-        30
-        <div
-          class="cuke-calendar-item-content"
-        />
-      </span>
-      <span
-        class="cuke-calendar-item cuke-calendar-last-month"
-      >
-        31
-        <div
-          class="cuke-calendar-item-content"
-        />
-      </span>
-      <span
         class="cuke-calendar-item cuke-calendar-current-month"
       >
         1
@@ -145,7 +105,7 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         />
       </span>
       <span
-        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
+        class="cuke-calendar-item cuke-calendar-current-month"
       >
         3
         <div
@@ -353,7 +313,7 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         />
       </span>
       <span
-        class="cuke-calendar-item cuke-calendar-current-month"
+        class="cuke-calendar-item cuke-calendar-current-month cuke-calendar-selected-date"
       >
         29
         <div
@@ -367,6 +327,34 @@ exports[`<Calendar/> should render a <Calendar/> components 1`] = `
         <div
           class="cuke-calendar-item-content"
         />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-current-month"
+      >
+        31
+        <div
+          class="cuke-calendar-item-content"
+        />
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        1
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        2
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        3
+      </span>
+      <span
+        class="cuke-calendar-item cuke-calendar-next-month"
+      >
+        4
       </span>
     </div>
   </div>
