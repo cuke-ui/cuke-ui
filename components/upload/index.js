@@ -5,6 +5,15 @@ import message from "../message";
 import Progress from "../progress";
 import Modal from "../modal";
 
+export const getFileSuffix = (file) =>{
+  const idx = file.lastIndexOf(".");
+  return file.substr(idx + 1);
+}
+
+export const formatAcceptType = (acceptType) => {
+  return acceptType.map((n) => (`.${n}`)).join();
+}
+
 export const formatFileSize = fileSize => {
   const sizeUnitArr = ["Byte", "KB", "MB", "GB"];
   if (fileSize === 0) {
@@ -49,6 +58,7 @@ export default class Upload extends PureComponent {
     type: uploadFileType, //上传的文件类型 图片 还是 文件
     typeName: uploadFileTypeNames[uploadFileType],
     name: "file", //后端接收文件字段名
+    acceptType: [], // 限制上传类型
     onComplete: () => {},
     onError: () => {},
     onStart: () => {},
@@ -66,7 +76,8 @@ export default class Upload extends PureComponent {
     accept: PropTypes.string,
     typeName: PropTypes.any,
     name: PropTypes.string,
-    type: PropTypes.oneOf([uploadFileType, uploadImageType])
+    type: PropTypes.oneOf([uploadFileType, uploadImageType]),
+    acceptType: PropTypes.array
   };
 
   constructor(props) {
@@ -87,13 +98,15 @@ export default class Upload extends PureComponent {
     files.forEach((file, index) => {
       const cover =
         (this.props.type === uploadImageType && this.getCover(file)) || "";
+      const suffix = getFileSuffix(file.name);
       const fileInfo = {
         name: file.name,
         size: file.size,
         type: file.type,
         progress: 0,
         status: UPLOAD_STATUS.PROGRESS,
-        cover
+        cover,
+        suffix
       };
       if (
         (this.props.beforeUpload && !this.props.beforeUpload(fileInfo)) ||
@@ -177,12 +190,17 @@ export default class Upload extends PureComponent {
     return imageReg.test(type);
   };
 
-  defaultBeforeUpload = ({ size, type }) => {
-    const { maxSize, type: uploadType } = this.props;
+  defaultBeforeUpload = ({ size, type, suffix }) => {
+    const { maxSize, type: uploadType, acceptType } = this.props;
     const imageType = type.split("/").pop();
 
     if (uploadType === uploadImageType && !this.isImage(type)) {
       message.error(`${this.typeName} 不支持 ${imageType} 格式`);
+      return false;
+    }
+
+    if(acceptType.length && !acceptType.includes(suffix)) {
+      message.error(`请上传 ${acceptType.join(",")} 格式的文件`);
       return false;
     }
 
@@ -241,6 +259,7 @@ export default class Upload extends PureComponent {
       onStart, //eslint-disable-line
       onComplete, //eslint-disable-line
       onTimeOut, //eslint-disable-line
+      acceptType,
       ...attr
     } = this.props;
 
@@ -257,7 +276,7 @@ export default class Upload extends PureComponent {
           type="file"
           hidden
           multiple={multiple}
-          accept={accept}
+          accept={accept || formatAcceptType(acceptType)}
           ref={this.fileRef}
           onChange={this.onSelect}
           {...isDirectory}

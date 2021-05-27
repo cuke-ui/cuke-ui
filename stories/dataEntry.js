@@ -536,6 +536,14 @@ storiesOf("数据录入", module)
         </Button>
       </Upload>
 
+      <h2>文件类型限制 (png,gif)</h2>
+      <Upload {...uploadProps} acceptType={['png', 'gif']}>
+        <Button>
+          {" "}
+          <FileUploadIcon /> 选择文件{" "}
+        </Button>
+      </Upload>
+
       <h2>上传图片</h2>
       <Upload {...uploadProps} type="image" accept="image/*">
         <Button>
