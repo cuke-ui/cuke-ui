@@ -152,6 +152,7 @@ module.exports = {
 - 勇敢的人
 - 我自己
 - [李金珂的小屋](https://www.lijinke.cn)
+- [Open Podcasts](https://github.com/LinuxSuRen/open-podcasts)
 
 ## :package: 参考轮子
 
